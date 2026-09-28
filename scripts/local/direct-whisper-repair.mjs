@@ -82,7 +82,14 @@ for (const id of IDS) {
         '-osrt', srtPrefix,
     ], { stdio: 'ignore', timeout: 1200000 });
 
-    const srt = fs.readFileSync(`${srtPrefix}.srt`, 'utf8');
+    // 该版 whisper-cli 忽略 -osrt 前缀，把 srt 写在输入 wav 旁边：两个位置都找
+    const srtCandidates = [`${srtPrefix}.srt`, `${wav}.srt`];
+    const srtPath = srtCandidates.find((candidate) => fs.existsSync(candidate));
+    if (!srtPath) {
+        console.log('  ✗ whisper 未产出 srt，跳过');
+        continue;
+    }
+    const srt = fs.readFileSync(srtPath, 'utf8');
     const segments = parseSrt(srt);
     console.log(`  识别完成：${segments.length} 段`);
     if (segments.length === 0) {
