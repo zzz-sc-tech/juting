@@ -4,8 +4,10 @@
 
 > **Fork 注意**：本仓库是上游 [VeejaLiu/duolinting](https://github.com/VeejaLiu/duolinting) 的
 > 「本地优先单人备考」分支，有意做了以下偏离（详见 docs/upstream-differences.md）：
-> 学习端与管理端免登录（单会话互顶问题已用静默续登处理）、管理端侧栏精简
-> （`SINGLE_MACHINE_MODE`）、本地磁盘存储（`MEDIA_STORAGE=local`）、默认简体中文。
+> 学习端与管理端免登录（单会话互顶问题已用静默续登处理）、管理端侧栏精简、
+> 本地磁盘存储（`MEDIA_STORAGE=local`）、默认简体中文；`mobile-app` 与
+> `official-site` 工作区已整体移除，学习者/反馈/进度等路由已删，MinIO/Docker
+> 栈仅作为可选部署方式（Windows 主路径是 `启动句听.bat` / `scripts/local/start-all.mjs`）。
 > 本文件其余内容描述上游行为，与上述偏离冲突时以 docs/upstream-differences.md 为准。
 
 This file is the entry point for AI coding agents. It assumes you know nothing

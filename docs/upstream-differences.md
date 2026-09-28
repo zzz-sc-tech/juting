@@ -35,8 +35,8 @@
 | whisper 线程/提示词 | `ASR_THREADS`、`ASR_INITIAL_PROMPT` 透传给 whisper-cli | `backend/src/env.ts` |
 
 说明：上游的协作数据表（exercise_contributor_assignments、exercise_subtitle_drafts 等）
-未做删除迁移，留在库里不影响单机运行；`mobile-app` 工作区未动（引用的 learners API
-已不存在，如需移动端要另行适配）。
+未做删除迁移，留在库里不影响单机运行；`mobile-app` 与 `official-site` 工作区已
+整体移除（移动端引用的 learners API 已不存在，如需移动端要另行适配）。
 
 ## 内容管线脚本（scripts/content/）
 

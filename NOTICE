@@ -12,5 +12,19 @@ whisper.cpp 自动转写与字幕断句管线、真题锚点系统、波形自�
 学习仪表盘；存储层改为便携 MySQL + 本地磁盘，面向单人单机部署。
 完整差异清单见 docs/upstream-differences.md。
 
-本产品包含的第三方内容（wavvesurfer.js、React、Express、Sequelize 等）
-各自遵循其原始许可证，详见 package.json 依赖声明。
+npm 依赖（wavesurfer.js、React、Express、Sequelize 等）各自遵循其
+原始许可证，详见 package.json 依赖声明。
+
+Windows 便携安装包（Releases 分发）额外附带以下第三方组件：
+
+- Node.js（https://nodejs.org，基于 MIT 等 BSD 系许可证分发，
+  仅包含 node.exe 运行时）
+- MySQL Community Server 便携版（https://www.mysql.com，
+  GPLv2 with FOSS Exception；本包仅作未修改的二进制再分发，
+  相应源码可从 mysql.com 获取）
+- whisper.cpp 可执行文件与 GGML 语音模型
+  （https://github.com/ggml-org/whisper.cpp，MIT License）
+- ZCOOL KuaiLe 字体（https://fonts.google.com/specimen/ZCOOL+KuaiLe，
+  SIL Open Font License 1.1，用于视频生成器示例资产）
+
+上述组件的版权与许可归其原作者所有，本仓库不对它们提供任何担保。
