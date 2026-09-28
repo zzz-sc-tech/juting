@@ -558,9 +558,9 @@ function LearnerAppShell() {
       id: stage,
       ...stageCopy[stage],
       // 文案走 i18n：stageCopy 的中文仅作 t() 缺 key 时的兜底
-      eyebrow: t(`stage.${stage}.eyebrow`),
       title: t(`stage.${stage}.title`),
       metric: t(`stage.${stage}.metric`),
+      tool: stage === 'waveform',
     }),
   )
   const activeSeries = useMemo(

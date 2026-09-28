@@ -83,6 +83,10 @@
   border-color: var(--success);
 }
 
+.stage-step.tool {
+  border-style: dashed;
+}
+
 .stage-number {
   align-items: center;
   background: var(--accent-soft-2);
@@ -102,14 +106,6 @@
   color: #ffffff;
 }
 
-.stage-step small {
-  color: var(--ink-3);
-  display: block;
-  font-size: 12px;
-  font-weight: 900;
-  margin-bottom: 2px;
-}
-
 .stage-label {
   align-items: baseline;
   display: flex;
@@ -127,12 +123,6 @@
   color: var(--ink-3);
   font-size: 13px;
   font-weight: 600;
-}
-
-.stage-step small {
-  color: var(--ink-3);
-  font-size: 12px;
-  font-weight: 900;
 }
 
 .stage-board {

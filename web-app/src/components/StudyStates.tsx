@@ -1,3 +1,4 @@
+import { BookOpen, Hourglass, TriangleAlert, Unplug } from 'lucide-react'
 import { useLanguage } from '../i18n/LanguageProvider'
 import '../styles/study-states.css'
 
@@ -5,7 +6,7 @@ export function EmptyStudyState() {
   const { t } = useLanguage()
   return (
     <section className="empty-study-state empty" aria-label={t('study.empty.aria')}>
-      <div className="icon-wrapper">📚</div>
+      <div className="icon-wrapper"><BookOpen size={30} aria-hidden="true" /></div>
       <p className="eyebrow">{t('study.empty.eyebrow')}</p>
       <h2>{t('study.empty.title')}</h2>
       <p>{t('study.empty.body')}</p>
@@ -17,7 +18,7 @@ export function CatalogErrorState({ onRetry }: { onRetry?: () => void }) {
   const { t } = useLanguage()
   return (
     <section className="empty-study-state error" aria-label={t('study.catalogError.aria')}>
-      <div className="icon-wrapper">🔌</div>
+      <div className="icon-wrapper"><Unplug size={30} aria-hidden="true" /></div>
       <p className="eyebrow">{t('study.catalogError.eyebrow')}</p>
       <h2>{t('study.catalogError.title')}</h2>
       <p>{t('study.catalogError.body')}</p>
@@ -34,7 +35,7 @@ export function ExerciseLoadingState() {
   const { t } = useLanguage()
   return (
     <section className="empty-study-state loading" aria-label={t('study.loading.aria')}>
-      <div className="icon-wrapper">⏳</div>
+      <div className="icon-wrapper"><Hourglass size={30} aria-hidden="true" /></div>
       <p className="eyebrow">{t('study.loading.eyebrow')}</p>
       <h2>{t('study.loading.title')}</h2>
       <p>{t('study.loading.body')}</p>
@@ -46,7 +47,7 @@ export function ExerciseErrorState() {
   const { t } = useLanguage()
   return (
     <section className="empty-study-state error" aria-label={t('study.exerciseError.aria')}>
-      <div className="icon-wrapper">⚠️</div>
+      <div className="icon-wrapper"><TriangleAlert size={30} aria-hidden="true" /></div>
       <p className="eyebrow">{t('study.exerciseError.eyebrow')}</p>
       <h2>{t('study.exerciseError.title')}</h2>
       <p>{t('study.exerciseError.body')}</p>

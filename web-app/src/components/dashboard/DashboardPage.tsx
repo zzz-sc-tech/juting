@@ -1,10 +1,4 @@
-import {
-  BookOpenText,
-  CheckCircle2,
-  Flame,
-  Layers,
-  Play,
-} from 'lucide-react'
+import { Play } from 'lucide-react'
 import { useEffect, useMemo, useState } from 'react'
 import { useNavigate } from 'react-router-dom'
 import { useLanguage } from '../../i18n/LanguageProvider'
@@ -141,10 +135,6 @@ export function DashboardPage() {
     return points
   }, [activity])
 
-  const hour = new Date().getHours()
-  const greetingKey =
-    hour < 12 ? 'dashboard.greeting.morning' : hour < 18 ? 'dashboard.greeting.afternoon' : 'dashboard.greeting.evening'
-
   const goalPercent = percentOf(todayCount, dailyGoal)
 
   const openCourse = (exercise: CatalogExerciseSummary) => {
@@ -156,48 +146,28 @@ export function DashboardPage() {
       <TopBar active="home" />
       <div className="dashboard-container">
         <header className="dashboard-hero">
-          <h1>{t(greetingKey)}</h1>
-          <p>{t('dashboard.greeting.subtitle')}</p>
+          <h1>{t('dashboard.title')}</h1>
+          <p>{t('dashboard.goal.line', { count: todayCount, goal: dailyGoal })}</p>
         </header>
 
         <div className="dashboard-layout">
           <div className="dashboard-main">
-            <section className="dashboard-stats" aria-label={t('dashboard.chart.title')}>
-              <div className="dashboard-stat-card">
-                <span className="dashboard-stat-icon accent">
-                  <CheckCircle2 size={18} aria-hidden="true" />
-                </span>
-                <span className="dashboard-stat-copy">
-                  <strong className="dashboard-stat-value">{todayCount}</strong>
-                  <span>{t('dashboard.stat.today')}</span>
-                </span>
+            <section className="dashboard-stat-strip" aria-label={t('dashboard.title')}>
+              <div className="dashboard-stat">
+                <strong className="dashboard-stat-value">{todayCount}</strong>
+                <span className="dashboard-stat-label">{t('dashboard.stat.today')}</span>
               </div>
-              <div className="dashboard-stat-card">
-                <span className="dashboard-stat-icon warm">
-                  <Flame size={18} aria-hidden="true" />
-                </span>
-                <span className="dashboard-stat-copy">
-                  <strong className="dashboard-stat-value">{streak}</strong>
-                  <span>{t('dashboard.stat.streak')}</span>
-                </span>
+              <div className="dashboard-stat">
+                <strong className="dashboard-stat-value">{streak}</strong>
+                <span className="dashboard-stat-label">{t('dashboard.stat.streak')}</span>
               </div>
-              <div className="dashboard-stat-card">
-                <span className="dashboard-stat-icon accent">
-                  <BookOpenText size={18} aria-hidden="true" />
-                </span>
-                <span className="dashboard-stat-copy">
-                  <strong className="dashboard-stat-value">{totalMastered}</strong>
-                  <span>{t('dashboard.stat.total')}</span>
-                </span>
+              <div className="dashboard-stat">
+                <strong className="dashboard-stat-value">{totalMastered}</strong>
+                <span className="dashboard-stat-label">{t('dashboard.stat.total')}</span>
               </div>
-              <div className="dashboard-stat-card">
-                <span className="dashboard-stat-icon">
-                  <Layers size={18} aria-hidden="true" />
-                </span>
-                <span className="dashboard-stat-copy">
-                  <strong className="dashboard-stat-value">{activeCourseCount}</strong>
-                  <span>{t('dashboard.stat.courses')}</span>
-                </span>
+              <div className="dashboard-stat">
+                <strong className="dashboard-stat-value">{activeCourseCount}</strong>
+                <span className="dashboard-stat-label">{t('dashboard.stat.courses')}</span>
               </div>
             </section>
 

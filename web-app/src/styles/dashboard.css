@@ -76,66 +76,36 @@
   margin: 6px 0 2px;
 }
 
-/* ── 统计卡行 ───────────────────────────────────────────── */
-.dashboard-stats {
-  display: grid;
-  gap: 14px;
-  grid-template-columns: repeat(4, minmax(0, 1fr));
-}
-
-.dashboard-stat-card {
-  align-items: center;
+/* ── 统计条：一行紧凑数字，无图标芯片 ───────────────────── */
+.dashboard-stat-strip {
+  align-items: baseline;
   background: var(--surface);
   border: 1px solid var(--line-soft);
   border-radius: var(--radius-lg);
   box-shadow: var(--shadow-card);
   display: flex;
-  gap: 12px;
-  padding: 16px 18px;
-  transition: border-color 0.15s ease;
+  flex-wrap: wrap;
+  gap: 8px 32px;
+  padding: 14px 20px;
 }
 
-.dashboard-stat-card:hover {
-  border-color: var(--accent);
+.dashboard-stat {
+  align-items: baseline;
+  display: flex;
+  gap: 8px;
 }
 
-.dashboard-stat-icon {
-  align-items: center;
-  background: var(--surface-soft);
-  border-radius: var(--radius-md);
-  color: var(--ink-2);
-  display: inline-flex;
-  flex-shrink: 0;
-  height: 40px;
-  justify-content: center;
-  width: 40px;
-}
-
-.dashboard-stat-icon.accent {
-  background: var(--accent-soft);
-  color: var(--accent);
-}
-
-.dashboard-stat-icon.warm {
-  background: var(--warning-soft);
-  color: var(--warning);
-}
-
-.dashboard-stat-copy {
-  display: grid;
-  min-width: 0;
-}
-
-.dashboard-stat-copy strong {
+.dashboard-stat-value {
   color: var(--ink);
-  font-size: 24px;
-  font-weight: 800;
+  font-size: 21px;
+  font-variant-numeric: tabular-nums;
+  font-weight: 700;
   line-height: 1.1;
 }
 
-.dashboard-stat-copy span {
+.dashboard-stat-label {
   color: var(--ink-3);
-  font-size: 12.5px;
+  font-size: 13px;
 }
 
 /* ── 图表卡 ─────────────────────────────────────────────── */
@@ -325,8 +295,8 @@
     padding: 18px 16px 40px;
   }
 
-  .dashboard-stats {
-    grid-template-columns: repeat(2, minmax(0, 1fr));
+  .dashboard-stat-strip {
+    gap: 8px 20px;
   }
 
   .dashboard-continue-body {

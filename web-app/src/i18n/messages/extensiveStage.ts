@@ -9,7 +9,7 @@ export const extensiveStageMessages: Record<UiLocale, Record<string, string>> = 
     'extensive.playbackProgress': '播放进度',
     'extensive.skipToSentenceStudy': '跳到逐句学习',
     'transcript.panelTitle': '章节句子',
-    'transcript.hiddenLineChallenge': '隐藏字幕挑战',
+    'transcript.hiddenLineChallenge': '遮罩模式',
     'transcript.selectedLineHint': '本句字幕显示在上方',
   },
   'en-US': {
@@ -18,7 +18,7 @@ export const extensiveStageMessages: Record<UiLocale, Record<string, string>> = 
     'extensive.playbackProgress': 'Playback progress',
     'extensive.skipToSentenceStudy': 'Skip to sentence study',
     'transcript.panelTitle': 'Chapter sentences',
-    'transcript.hiddenLineChallenge': 'Hidden transcript challenge',
+    'transcript.hiddenLineChallenge': 'Mask mode',
     'transcript.selectedLineHint': 'Subtitle shown above',
   },
   'th-TH': {
@@ -27,7 +27,7 @@ export const extensiveStageMessages: Record<UiLocale, Record<string, string>> = 
     'extensive.playbackProgress': 'ความคืบหน้าการเล่น',
     'extensive.skipToSentenceStudy': 'ข้ามไปเรียนทีละประโยค',
     'transcript.panelTitle': 'ประโยคในบทเรียน',
-    'transcript.hiddenLineChallenge': 'ท้าทายคำบรรยายที่ซ่อนอยู่',
+    'transcript.hiddenLineChallenge': 'โหมดซ่อนคำบรรยาย',
     'transcript.selectedLineHint': 'คำบรรยายแสดงด้านบน',
   },
   'ja-JP': {
@@ -36,7 +36,7 @@ export const extensiveStageMessages: Record<UiLocale, Record<string, string>> = 
     'extensive.playbackProgress': '再生の進捗',
     'extensive.skipToSentenceStudy': '文ごとの学習へスキップ',
     'transcript.panelTitle': 'チャプターの文',
-    'transcript.hiddenLineChallenge': '字幕非表示チャレンジ',
+    'transcript.hiddenLineChallenge': 'マスクモード',
     'transcript.selectedLineHint': '字幕は上に表示中',
   },
   "fr-FR": {
@@ -45,7 +45,7 @@ export const extensiveStageMessages: Record<UiLocale, Record<string, string>> = 
     "extensive.playbackProgress": "Progression de la lecture",
     "extensive.skipToSentenceStudy": "Passer à l’étude phrase par phrase",
     "transcript.panelTitle": "Phrases du chapitre",
-    "transcript.hiddenLineChallenge": "Défi sans transcription",
+    'transcript.hiddenLineChallenge': 'Mode masqué',
     "transcript.selectedLineHint": "Sous-titre affiché ci-dessus"
 },
   "es-ES": {
@@ -54,7 +54,7 @@ export const extensiveStageMessages: Record<UiLocale, Record<string, string>> = 
     "extensive.playbackProgress": "Progreso de reproducción",
     "extensive.skipToSentenceStudy": "Pasar al estudio por frases",
     "transcript.panelTitle": "Frases del capítulo",
-    "transcript.hiddenLineChallenge": "Reto sin transcripción",
+    'transcript.hiddenLineChallenge': 'Modo de máscara',
     "transcript.selectedLineHint": "Subtítulo mostrado arriba"
 },
 }
