@@ -61,6 +61,9 @@ if (!sevenZip) {
 }
 const compress = (archiveName, sourceDir) => {
     const archivePath = path.join(outDir, archiveName);
+    // 7z a 是增量更新模式：旧归档里已不存在于源目录的条目会被保留。
+    // 必须先删旧包，否则上一次打包的内容（比如已移除的文件）会残留。
+    fs.rmSync(archivePath, { force: true });
     execSync(`"${sevenZip}" a -t7z -mx=7 -mmt=on "${archivePath}" "${sourceDir}" -y`, { stdio: 'inherit', timeout: 1800_000 });
     return archivePath;
 };
