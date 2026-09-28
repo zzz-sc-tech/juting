@@ -10,7 +10,7 @@ export const extensiveStageMessages: Record<UiLocale, Record<string, string>> = 
     'extensive.skipToSentenceStudy': '跳到逐句学习',
     'transcript.panelTitle': '章节句子',
     'transcript.hiddenLineChallenge': '遮罩模式',
-    'transcript.selectedLineHint': '本句字幕显示在上方',
+    'transcript.selectedLineHint': '字幕在上方',
   },
   'en-US': {
     'extensive.play': 'Play',
@@ -19,7 +19,7 @@ export const extensiveStageMessages: Record<UiLocale, Record<string, string>> = 
     'extensive.skipToSentenceStudy': 'Skip to sentence study',
     'transcript.panelTitle': 'Chapter sentences',
     'transcript.hiddenLineChallenge': 'Mask mode',
-    'transcript.selectedLineHint': 'Subtitle shown above',
+    'transcript.selectedLineHint': 'Subtitle above',
   },
   'th-TH': {
     'extensive.play': 'เล่น',
@@ -28,7 +28,7 @@ export const extensiveStageMessages: Record<UiLocale, Record<string, string>> = 
     'extensive.skipToSentenceStudy': 'ข้ามไปเรียนทีละประโยค',
     'transcript.panelTitle': 'ประโยคในบทเรียน',
     'transcript.hiddenLineChallenge': 'โหมดซ่อนคำบรรยาย',
-    'transcript.selectedLineHint': 'คำบรรยายแสดงด้านบน',
+    'transcript.selectedLineHint': 'คำบรรยายอยู่ด้านบน',
   },
   'ja-JP': {
     'extensive.play': '再生',
@@ -37,7 +37,7 @@ export const extensiveStageMessages: Record<UiLocale, Record<string, string>> = 
     'extensive.skipToSentenceStudy': '文ごとの学習へスキップ',
     'transcript.panelTitle': 'チャプターの文',
     'transcript.hiddenLineChallenge': 'マスクモード',
-    'transcript.selectedLineHint': '字幕は上に表示中',
+    'transcript.selectedLineHint': '字幕は上に表示',
   },
   "fr-FR": {
     "extensive.play": "Lire",
@@ -46,7 +46,7 @@ export const extensiveStageMessages: Record<UiLocale, Record<string, string>> = 
     "extensive.skipToSentenceStudy": "Passer à l’étude phrase par phrase",
     "transcript.panelTitle": "Phrases du chapitre",
     'transcript.hiddenLineChallenge': 'Mode masqué',
-    "transcript.selectedLineHint": "Sous-titre affiché ci-dessus"
+    'transcript.selectedLineHint': 'Sous-titre ci-dessus',
 },
   "es-ES": {
     "extensive.play": "Reproducir",
@@ -55,6 +55,6 @@ export const extensiveStageMessages: Record<UiLocale, Record<string, string>> = 
     "extensive.skipToSentenceStudy": "Pasar al estudio por frases",
     "transcript.panelTitle": "Frases del capítulo",
     'transcript.hiddenLineChallenge': 'Modo de máscara',
-    "transcript.selectedLineHint": "Subtítulo mostrado arriba"
+    'transcript.selectedLineHint': 'Subtítulo arriba',
 },
 }

@@ -6,7 +6,6 @@ import type { UiLocale } from '@juting/domain'
 export const intensiveStageMessages: Record<UiLocale, Record<string, string>> = {
   'zh-CN': {
     'intensive.spaceKey': '空格',
-    'intensive.subtitlePrompt': '先听，再决定要不要揭晓字幕',
     'intensive.controlsLabel': '逐句播放',
     'intensive.prevSentence': '上一句',
     'intensive.nextSentence': '下一句',
@@ -26,7 +25,6 @@ export const intensiveStageMessages: Record<UiLocale, Record<string, string>> = 
   },
   'en-US': {
     'intensive.spaceKey': 'Space',
-    'intensive.subtitlePrompt': 'Listen first, then decide whether to reveal the transcript',
     'intensive.controlsLabel': 'Sentence-by-sentence playback',
     'intensive.prevSentence': 'Previous sentence',
     'intensive.nextSentence': 'Next sentence',
@@ -46,7 +44,6 @@ export const intensiveStageMessages: Record<UiLocale, Record<string, string>> = 
   },
   'th-TH': {
     'intensive.spaceKey': 'Space',
-    'intensive.subtitlePrompt': 'ฟังก่อน แล้วค่อยตัดสินใจว่าจะเผยคำบรรยายหรือไม่',
     'intensive.controlsLabel': 'เล่นทีละประโยค',
     'intensive.prevSentence': 'ประโยคก่อนหน้า',
     'intensive.nextSentence': 'ประโยคถัดไป',
@@ -66,7 +63,6 @@ export const intensiveStageMessages: Record<UiLocale, Record<string, string>> = 
   },
   'ja-JP': {
     'intensive.spaceKey': 'スペース',
-    'intensive.subtitlePrompt': 'まず聞いて、字幕を表示するか決めましょう',
     'intensive.controlsLabel': '文ごとの再生',
     'intensive.prevSentence': '前の文',
     'intensive.nextSentence': '次の文',
@@ -86,7 +82,6 @@ export const intensiveStageMessages: Record<UiLocale, Record<string, string>> = 
   },
   "fr-FR": {
     "intensive.spaceKey": "Espace",
-    "intensive.subtitlePrompt": "Écoutez d’abord, puis décidez si vous souhaitez afficher le texte",
     "intensive.controlsLabel": "Lecture phrase par phrase",
     "intensive.prevSentence": "Phrase précédente",
     "intensive.nextSentence": "Phrase suivante",
@@ -106,7 +101,6 @@ export const intensiveStageMessages: Record<UiLocale, Record<string, string>> = 
 },
   "es-ES": {
     "intensive.spaceKey": "Espacio",
-    "intensive.subtitlePrompt": "Escucha primero y decide si quieres mostrar la transcripción",
     "intensive.controlsLabel": "Reproducción frase por frase",
     "intensive.prevSentence": "Frase anterior",
     "intensive.nextSentence": "Frase siguiente",

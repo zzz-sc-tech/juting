@@ -308,7 +308,6 @@ export function WaveformStage({
       <div className="waveform-card">
         <header className="waveform-header">
           <div>
-            <p className="waveform-eyebrow">{t('waveform.hint')}</p>
             <p className="waveform-meta">
               {t('waveform.sentenceCount', { count: exercise.lines.length })}
             </p>

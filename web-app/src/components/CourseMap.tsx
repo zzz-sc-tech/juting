@@ -122,7 +122,7 @@ export function CourseMap({
         )}
         <span className="series-trigger-copy">
           <strong>{selectedSeries?.name ?? t('courseMap.selectCourse')}</strong>
-          <small>{selectedSeries?.description ?? t('courseMap.selectCourseHint')}</small>
+          {selectedSeries?.description && <small>{selectedSeries.description}</small>}
         </span>
         <ChevronDown size={40} aria-hidden="true" />
       </button>

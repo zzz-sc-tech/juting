@@ -4,7 +4,6 @@ import { useLanguage } from '../i18n/LanguageProvider'
 export type StageRailItem<TStage extends string> = {
   id: TStage
   title: string
-  metric: string
   /** 工具类阶段（如波形自由听）：不编号、不占学习步骤序号。 */
   tool?: boolean
   Icon: ComponentType<SVGProps<SVGSVGElement> & { size?: number }>
@@ -52,7 +51,6 @@ export function StageRail<TStage extends string>({
             <span>
               <span className="stage-label">
                 <strong>{stage.title}</strong>
-                <span className="stage-metric">{stage.metric}</span>
               </span>
             </span>
           </button>

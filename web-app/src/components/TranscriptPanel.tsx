@@ -142,7 +142,7 @@ export function TranscriptPanel({
                     <span className="anchor-section-count">
                       {section.lines.length > 0
                         ? t('transcript.groupSentences', { count: section.lines.length })
-                        : t('transcript.announcementOnly')}
+                        : null}
                     </span>
                     <ChevronDown
                       aria-hidden="true"

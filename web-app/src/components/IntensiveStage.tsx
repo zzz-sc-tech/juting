@@ -199,9 +199,7 @@ export function IntensiveStage({
               <span>{formatLineDuration(selectedLine.start, selectedLine.end)}</span>
             </div>
             <p className={sentenceVisible ? 'subtitle-text revealed' : 'subtitle-text'}>
-              {sentenceVisible
-                ? selectedLine.text
-                : t('intensive.subtitlePrompt')}
+              {sentenceVisible ? selectedLine.text : ''}
             </p>
             <p className={sentenceVisible ? 'subtitle-translation revealed' : 'subtitle-translation hidden'}>
               {translationVisible ? selectedLine.translation : ' '}
