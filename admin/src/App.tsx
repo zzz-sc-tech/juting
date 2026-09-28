@@ -346,7 +346,7 @@ function App() {
     <main className="app-shell login-shell">
       <section className="login-page" aria-label={t('管理员登录')}>
         <div className="login-brand">
-          <img alt="JuTing" className="login-brand-logo" src="/juting-mark.svg" />
+          <img alt="JuTing" className="login-brand-logo" src="/juting-icon.svg" />
           <div className="login-brand-copy">
             <h1>{t('管理后台')}</h1>
             <p>{t('统一内容管理端')}</p>
@@ -407,7 +407,7 @@ function App() {
     <main className="app-shell login-shell">
       <section className="login-page" aria-label={t('修改初始密码')}>
         <div className="login-brand">
-          <img alt="JuTing" className="login-brand-logo" src="/juting-mark.svg" />
+          <img alt="JuTing" className="login-brand-logo" src="/juting-icon.svg" />
           <div className="login-brand-copy">
             <h1>{t('欢迎加入')}</h1>
             <p>{t('请先保护你的后台账号')}</p>

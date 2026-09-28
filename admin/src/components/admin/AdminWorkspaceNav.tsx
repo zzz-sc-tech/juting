@@ -64,7 +64,7 @@ export function AdminWorkspaceNav({
     {
       className: 'admin-menu-brand',
       disabled: true,
-      icon: <img alt="" className="admin-menu-brand-icon" src="/juting-mark.svg" />,
+      icon: <img alt="" className="admin-menu-brand-icon" src="/juting-icon.svg" />,
       key: 'brand',
       label: collapsed ? 'JuTing' : `JuTing ${t('管理后台')}`,
     },
