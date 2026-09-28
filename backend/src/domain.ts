@@ -86,7 +86,9 @@ export type ListeningExercise = {
     status: ExerciseStatus;
     sortOrder: number;
     lines: TranscriptLine[];
-    localizations?: Partial<Record<ContentLocale, LocalizedExerciseContent>>;
+    localizations?: Partial<Record<ContentLocale, LocalizedExerciseContent>>
+  /** 真题答案钥匙：题号(字符串)→选项字母，如 {"1":"A"}；缺省/null=未导入。 */
+  answerKey?: Record<string, string> | null;
     contributors?: CourseContributor[];
     /** 课程页公开的协作负责人，只含展示名称，不含任何后台账号资料。 */
     workflowCredits?: CourseWorkflowCredits;

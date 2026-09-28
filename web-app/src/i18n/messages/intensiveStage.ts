@@ -5,6 +5,7 @@ import type { UiLocale } from '@juting/domain'
 // 仅 subtitlePrompt / controlsLabel / showTranscript / pausePlayback / mastered 五条为新增翻译。
 export const intensiveStageMessages: Record<UiLocale, Record<string, string>> = {
   'zh-CN': {
+    'intensive.translationToggle': '翻译',
     'intensive.spaceKey': '空格',
     'intensive.controlsLabel': '逐句播放',
     'intensive.prevSentence': '上一句',
@@ -24,6 +25,7 @@ export const intensiveStageMessages: Record<UiLocale, Record<string, string>> = 
     'intensive.undoMastered': '取消掌握',
   },
   'en-US': {
+    'intensive.translationToggle': 'Translation',
     'intensive.spaceKey': 'Space',
     'intensive.controlsLabel': 'Sentence-by-sentence playback',
     'intensive.prevSentence': 'Previous sentence',
@@ -43,6 +45,7 @@ export const intensiveStageMessages: Record<UiLocale, Record<string, string>> = 
     'intensive.undoMastered': 'Undo mastered',
   },
   'th-TH': {
+    'intensive.translationToggle': 'คำแปล',
     'intensive.spaceKey': 'Space',
     'intensive.controlsLabel': 'เล่นทีละประโยค',
     'intensive.prevSentence': 'ประโยคก่อนหน้า',
@@ -62,6 +65,7 @@ export const intensiveStageMessages: Record<UiLocale, Record<string, string>> = 
     'intensive.undoMastered': 'ยกเลิกการเชี่ยวชาญ',
   },
   'ja-JP': {
+    'intensive.translationToggle': '翻訳',
     'intensive.spaceKey': 'スペース',
     'intensive.controlsLabel': '文ごとの再生',
     'intensive.prevSentence': '前の文',
@@ -81,6 +85,7 @@ export const intensiveStageMessages: Record<UiLocale, Record<string, string>> = 
     'intensive.undoMastered': '習得を取り消す',
   },
   "fr-FR": {
+    'intensive.translationToggle': 'Traduction',
     "intensive.spaceKey": "Espace",
     "intensive.controlsLabel": "Lecture phrase par phrase",
     "intensive.prevSentence": "Phrase précédente",
@@ -100,6 +105,7 @@ export const intensiveStageMessages: Record<UiLocale, Record<string, string>> = 
     "intensive.undoMastered": "Annuler la maîtrise"
 },
   "es-ES": {
+    'intensive.translationToggle': 'Traducción',
     "intensive.spaceKey": "Espacio",
     "intensive.controlsLabel": "Reproducción frase por frase",
     "intensive.prevSentence": "Frase anterior",

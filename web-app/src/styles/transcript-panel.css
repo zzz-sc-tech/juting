@@ -191,6 +191,23 @@ li.anchor-section-head:first-child {
   border-color: var(--accent);
 }
 
+/* 纯指令组（开场 / Section A、B、C）：固化标签，不可点击 */
+li.anchor-section-head.static {
+  align-items: center;
+  background: transparent;
+  border: 1px dashed var(--line);
+  border-radius: var(--radius-pill);
+  color: var(--ink-3);
+  display: flex;
+  gap: 8px;
+  padding: 6px 12px;
+}
+
+li.anchor-section-head.static .anchor-section-label {
+  color: var(--ink-3);
+  font-weight: 700;
+}
+
 .anchor-section-label {
   font-size: 13px;
   font-weight: 800;
@@ -222,4 +239,27 @@ li.anchor-section-intro {
   display: -webkit-box;
   -webkit-box-orient: vertical;
   -webkit-line-clamp: 2;
+}
+
+/* 对答案：面板标题右侧的小开关；答案字母直接缀在题组行内 */
+.answer-toggle {
+  margin-left: auto;
+  background: none;
+  border: none;
+  color: var(--accent);
+  cursor: pointer;
+  font: inherit;
+  font-size: 12px;
+  font-weight: 700;
+  padding: 2px 4px;
+}
+
+.anchor-section-answers {
+  color: var(--accent-ink);
+  display: inline-flex;
+  flex-wrap: wrap;
+  font-variant-numeric: tabular-nums;
+  font-weight: 800;
+  gap: 5px;
+  margin-left: 4px;
 }

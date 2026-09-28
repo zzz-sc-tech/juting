@@ -3,6 +3,9 @@ import type { UiLocale } from '@juting/domain'
 // CourseMap.tsx 课程地图的文案。key 统一使用 `courseMap.` 前缀。
 export const courseMapMessages: Record<UiLocale, Record<string, string>> = {
   'zh-CN': {
+    'courseMap.group.todo': '未开始',
+    'courseMap.group.doing': '进行中',
+    'courseMap.group.done': '已完成',
     'courseMap.ariaLabel': '课程与章节',
     'courseMap.coursesHeading': '课程',
     'courseMap.coverAlt': '{{name}} 封面',
@@ -21,6 +24,9 @@ export const courseMapMessages: Record<UiLocale, Record<string, string>> = {
     'courseMap.emptyCourses': '还没有课程，请先在管理端添加内容。',
   },
   'en-US': {
+    'courseMap.group.todo': 'Not started',
+    'courseMap.group.doing': 'In progress',
+    'courseMap.group.done': 'Completed',
     'courseMap.ariaLabel': 'Courses and chapters',
     'courseMap.coursesHeading': 'Courses',
     'courseMap.coverAlt': '{{name}} cover',
@@ -39,6 +45,9 @@ export const courseMapMessages: Record<UiLocale, Record<string, string>> = {
     'courseMap.emptyCourses': 'No courses yet. Please add content in the admin panel first.',
   },
   'th-TH': {
+    'courseMap.group.todo': 'ยังไม่เริ่ม',
+    'courseMap.group.doing': 'กำลังเรียน',
+    'courseMap.group.done': 'เรียนจบแล้ว',
     'courseMap.ariaLabel': 'คอร์สและบทเรียน',
     'courseMap.coursesHeading': 'คอร์ส',
     'courseMap.coverAlt': 'ปกของ {{name}}',
@@ -57,6 +66,9 @@ export const courseMapMessages: Record<UiLocale, Record<string, string>> = {
     'courseMap.emptyCourses': 'ยังไม่มีคอร์ส โปรดเพิ่มเนื้อหาในฝั่งผู้ดูแลก่อน',
   },
   'ja-JP': {
+    'courseMap.group.todo': '未着手',
+    'courseMap.group.doing': '進行中',
+    'courseMap.group.done': '完了',
     'courseMap.ariaLabel': 'コースとチャプター',
     'courseMap.coursesHeading': 'コース',
     'courseMap.coverAlt': '{{name}} のカバー',
@@ -75,6 +87,9 @@ export const courseMapMessages: Record<UiLocale, Record<string, string>> = {
     'courseMap.emptyCourses': 'コースがまだありません。管理画面でコンテンツを追加してください。',
   },
   "fr-FR": {
+    'courseMap.group.todo': 'Pas commencé',
+    'courseMap.group.doing': 'En cours',
+    'courseMap.group.done': 'Terminé',
     "courseMap.ariaLabel": "Cours et chapitres",
     "courseMap.coursesHeading": "Cours",
     "courseMap.coverAlt": "Couverture de {{name}}",
@@ -93,6 +108,9 @@ export const courseMapMessages: Record<UiLocale, Record<string, string>> = {
     "courseMap.emptyCourses": "Aucun cours pour le moment. Ajoutez du contenu dans l’administration."
 },
   "es-ES": {
+    'courseMap.group.todo': 'Sin empezar',
+    'courseMap.group.doing': 'En curso',
+    'courseMap.group.done': 'Completado',
     "courseMap.ariaLabel": "Cursos y capítulos",
     "courseMap.coursesHeading": "Cursos",
     "courseMap.coverAlt": "Portada de {{name}}",

@@ -4,6 +4,10 @@ import type { UiLocale } from '@juting/domain'
 // key 分别使用 `extensive.` 与 `transcript.` 前缀。
 export const extensiveStageMessages: Record<UiLocale, Record<string, string>> = {
   'zh-CN': {
+    'extensive.captions': '字幕',
+    'extensive.translation': '翻译',
+    'transcript.showAnswers': '对答案',
+    'transcript.hideAnswers': '隐藏答案',
     'extensive.play': '开始',
     'extensive.pause': '暂停',
     'extensive.playbackProgress': '播放进度',
@@ -13,6 +17,10 @@ export const extensiveStageMessages: Record<UiLocale, Record<string, string>> = 
     'transcript.selectedLineHint': '字幕在上方',
   },
   'en-US': {
+    'extensive.captions': 'Subtitles',
+    'extensive.translation': 'Translation',
+    'transcript.showAnswers': 'Answer key',
+    'transcript.hideAnswers': 'Hide answers',
     'extensive.play': 'Play',
     'extensive.pause': 'Pause',
     'extensive.playbackProgress': 'Playback progress',
@@ -22,6 +30,10 @@ export const extensiveStageMessages: Record<UiLocale, Record<string, string>> = 
     'transcript.selectedLineHint': 'Subtitle above',
   },
   'th-TH': {
+    'extensive.captions': 'ซับไตเติล',
+    'extensive.translation': 'คำแปล',
+    'transcript.showAnswers': 'เฉลย',
+    'transcript.hideAnswers': 'ซ่อนเฉลย',
     'extensive.play': 'เล่น',
     'extensive.pause': 'หยุดชั่วคราว',
     'extensive.playbackProgress': 'ความคืบหน้าการเล่น',
@@ -31,6 +43,10 @@ export const extensiveStageMessages: Record<UiLocale, Record<string, string>> = 
     'transcript.selectedLineHint': 'คำบรรยายอยู่ด้านบน',
   },
   'ja-JP': {
+    'extensive.captions': '字幕',
+    'extensive.translation': '翻訳',
+    'transcript.showAnswers': '答え合わせ',
+    'transcript.hideAnswers': '答えを隠す',
     'extensive.play': '再生',
     'extensive.pause': '一時停止',
     'extensive.playbackProgress': '再生の進捗',
@@ -40,6 +56,10 @@ export const extensiveStageMessages: Record<UiLocale, Record<string, string>> = 
     'transcript.selectedLineHint': '字幕は上に表示',
   },
   "fr-FR": {
+    'extensive.captions': 'Sous-titres',
+    'extensive.translation': 'Traduction',
+    'transcript.showAnswers': 'Corriger',
+    'transcript.hideAnswers': 'Masquer',
     "extensive.play": "Lire",
     "extensive.pause": "Pause",
     "extensive.playbackProgress": "Progression de la lecture",
@@ -49,6 +69,10 @@ export const extensiveStageMessages: Record<UiLocale, Record<string, string>> = 
     'transcript.selectedLineHint': 'Sous-titre ci-dessus',
 },
   "es-ES": {
+    'extensive.captions': 'Subtítulos',
+    'extensive.translation': 'Traducción',
+    'transcript.showAnswers': 'Respuestas',
+    'transcript.hideAnswers': 'Ocultar',
     "extensive.play": "Reproducir",
     "extensive.pause": "Pausa",
     "extensive.playbackProgress": "Progreso de reproducción",

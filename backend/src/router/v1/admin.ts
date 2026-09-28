@@ -15,6 +15,7 @@ import {
     upsertCategory,
     upsertCategoryGroup,
     upsertExercise,
+    updateExerciseAnswerKey,
     updateExerciseMedia,
 } from '../../general/catalog/catalog-service';
 import {
@@ -302,6 +303,22 @@ router.put(
         }
 
         await updateExerciseMedia(exerciseId, req.body.mediaType, req.body.audioUrl);
+        res.status(200).send({ ok: true, id: exerciseId });
+    },
+);
+
+router.put(
+    '/exercises/:exerciseId/answer-key',
+    requireSuperAdmin,
+    body('answerKey').optional({ nullable: true }).isObject(),
+    validateErrorCheck,
+    async (req: any, res) => {
+        const exerciseId = toId(req.params.exerciseId);
+        if (!Number.isInteger(exerciseId) || exerciseId <= 0) {
+            return res.status(400).send({ ok: false, message: '无效的课程 ID' });
+        }
+
+        await updateExerciseAnswerKey(exerciseId, req.body.answerKey ?? null);
         res.status(200).send({ ok: true, id: exerciseId });
     },
 );

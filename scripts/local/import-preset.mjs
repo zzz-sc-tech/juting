@@ -152,21 +152,23 @@ try {
         // JSON 列以参数化字符串写入，避免预处理模式下对象序列化差异。
         const transcript = ex.transcript_json == null ? null : JSON.stringify(ex.transcript_json);
         const localizations = ex.localizations_json == null ? null : JSON.stringify(ex.localizations_json);
+        const answerKey = ex.answer_key_json == null ? null : JSON.stringify(ex.answer_key_json);
         await connection.query(
             `insert into exercises (id, category_id, title, source, source_url, difficulty, duration_label,
                 media_type, audio_object_name, audio_url, cover_image_url, summary, localizations_json,
-                transcript_json, status, claim_blocked, sort_order)
-             values (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
+                answer_key_json, transcript_json, status, claim_blocked, sort_order)
+             values (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
              on duplicate key update category_id = values(category_id), title = values(title),
                source = values(source), source_url = values(source_url), difficulty = values(difficulty),
                duration_label = values(duration_label), media_type = values(media_type),
                audio_object_name = values(audio_object_name), audio_url = values(audio_url),
                cover_image_url = values(cover_image_url), summary = values(summary),
-               localizations_json = values(localizations_json), transcript_json = values(transcript_json),
+               localizations_json = values(localizations_json), answer_key_json = values(answer_key_json),
+               transcript_json = values(transcript_json),
                status = values(status), claim_blocked = values(claim_blocked), sort_order = values(sort_order)`,
             [ex.id, ex.category_id, ex.title, ex.source, ex.source_url ?? null, ex.difficulty,
                 ex.duration_label, ex.media_type, ex.audio_object_name ?? null, ex.audio_url,
-                ex.cover_image_url ?? null, ex.summary ?? '', localizations, transcript,
+                ex.cover_image_url ?? null, ex.summary ?? '', localizations, answerKey, transcript,
                 ex.status, ex.claim_blocked ?? 0, ex.sort_order ?? 0],
         );
     }

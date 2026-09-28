@@ -56,6 +56,11 @@ const ExerciseSchema: ModelAttributes = {
         allowNull: false,
         defaultValue: {},
     },
+    // 真题答案钥匙：题号(字符串) → 选项字母，允许部分导入；null=暂无答案数据
+    answer_key_json: {
+        type: Sequelize.JSON,
+        allowNull: true,
+    },
     transcript_json: {
         type: Sequelize.JSON,
         allowNull: false,
@@ -92,6 +97,7 @@ export interface ExerciseDb {
     cover_image_url?: string | null;
     summary: string;
     localizations_json: unknown;
+    answer_key_json?: unknown | null;
     transcript_json: unknown;
     status: 'draft' | 'proofread' | 'published' | 'archived';
     sort_order: number;
@@ -110,6 +116,7 @@ export class ExerciseModel extends Model<ExerciseDb> {
     declare cover_image_url: string | null;
     declare summary: string;
     declare localizations_json: unknown;
+    declare answer_key_json: unknown | null;
     declare transcript_json: unknown;
     declare status: 'draft' | 'proofread' | 'published' | 'archived';
     declare sort_order: number;

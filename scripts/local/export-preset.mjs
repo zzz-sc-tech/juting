@@ -96,7 +96,7 @@ const categoryIds = categories.map((row) => row.id);
 const [exercises] = await connection.query(
     `select id, category_id, title, source, source_url, difficulty, duration_label, media_type,
             audio_object_name, audio_url, cover_image_url, summary, localizations_json,
-            transcript_json, status, claim_blocked, sort_order
+            answer_key_json, transcript_json, status, claim_blocked, sort_order
        from exercises
       where category_id in (?) and status = 'published'
       order by sort_order, id`,

@@ -1,7 +1,6 @@
 import { ChevronDown, ListChecks } from 'lucide-react'
 import { Fragment, useEffect, useMemo, useRef, useState } from 'react'
 import type {
-  DialogueAnchor,
   ExerciseProgress,
   ListeningExercise,
   TranscriptLine,
@@ -23,7 +22,6 @@ type TranscriptPanelProps = {
   sections: StudySection[]
   onLineSelect: (lineId: string) => void
   /** 纯题干播报组（无正文句）点击组头时的跳转回调。 */
-  onAnchorClick?: (anchor: DialogueAnchor) => void
 }
 
 /**
@@ -39,7 +37,6 @@ export function TranscriptPanel({
   revealedLineIds,
   sections,
   onLineSelect,
-  onAnchorClick,
 }: TranscriptPanelProps) {
   const { t } = useLanguage()
   const listRef = useRef<HTMLOListElement | null>(null)
@@ -52,6 +49,32 @@ export function TranscriptPanel({
     }
     return new Set(sections.map((section) => section.id))
   })
+
+  // 对答案开关：默认隐藏，避免做题时被剧透；换课程时自动收回隐藏态。
+  const [answersShown, setAnswersShown] = useState(false)
+  useEffect(() => {
+    setAnswersShown(false)
+  }, [exercise.id])
+
+  /** 题组锚点标签（Q1–4 / Q19）→ 题号区间；非题组返回 null。 */
+  const questionRangeOf = (label: string): [number, number] | null => {
+    const match = label.match(/^Q\s*(\d+)\s*[–\-—]\s*(\d+)$/) ?? label.match(/^Q\s*(\d+)$/)
+    if (!match) return null
+    const start = Number(match[1])
+    return [start, match[2] ? Number(match[2]) : start]
+  }
+
+  /** 该题组在答案钥匙里的字母串，如 "ACBD"；缺题跳过，整组无答案返回 null。 */
+  const answersOfRange = (start: number, end: number): string | null => {
+    const key = exercise.answerKey
+    if (!key) return null
+    let letters = ''
+    for (let n = start; n <= end; n += 1) {
+      const letter = key[String(n)]
+      if (letter) letters += letter
+    }
+    return letters || null
+  }
 
   const sectionOfSelected = useMemo(
     () => sections.find((section) => section.lines.some((line) => line.id === selectedLineId)) ?? null,
@@ -118,27 +141,51 @@ export function TranscriptPanel({
       <div className="panel-title">
         <ListChecks size={17} aria-hidden="true" />
         <span>{t('transcript.panelTitle')}</span>
+        {exercise.answerKey && (
+          <button
+            className="answer-toggle"
+            onClick={() => setAnswersShown((current) => !current)}
+            type="button"
+          >
+            {answersShown ? t('transcript.hideAnswers') : t('transcript.showAnswers')}
+          </button>
+        )}
       </div>
       <ol className="line-list" ref={listRef}>
         {visibleSections.map((section) => {
           const collapsed = !flatMode && collapsedIds.has(section.id)
           return (
             <Fragment key={section.id}>
-              {!flatMode && (
+              {!flatMode && section.lines.length === 0 && (
+                // 纯指令组（开场 / Section A、B、C 的播报说明）：固化为不可点击的
+                // 标签——精听不听指令，可点击的分组头只会误导（点击还可能跳播指令）。
+                <li className="anchor-section-head static">
+                  <span className="anchor-section-label">{section.label}</span>
+                </li>
+              )}
+              {!flatMode && section.lines.length > 0 && (
                 <li className="anchor-section-head">
                   <button
                     aria-expanded={!collapsed}
                     onClick={() => {
-                      if (section.lines.length === 0 && section.anchor && onAnchorClick) {
-                        // 纯题干播报组：没有可学习的句子，点击即跳转播放题干位置。
-                        onAnchorClick(section.anchor)
-                        return
-                      }
                       toggleSection(section.id)
                     }}
                     type="button"
                   >
                     <span className="anchor-section-label">{section.label}</span>
+                    {answersShown && (() => {
+                      const range = questionRangeOf(section.label)
+                      if (!range) return null
+                      const letters = answersOfRange(range[0], range[1])
+                      if (!letters) return null
+                      return (
+                        <span className="anchor-section-answers" aria-label={t('transcript.showAnswers')}>
+                          {Array.from(letters).map((letter, index) => (
+                            <span key={`${range[0] + index}`}>{range[0] + index}{letter}</span>
+                          ))}
+                        </span>
+                      )
+                    })()}
                     <span className="anchor-section-count">
                       {section.lines.length > 0
                         ? t('transcript.groupSentences', { count: section.lines.length })

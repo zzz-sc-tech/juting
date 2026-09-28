@@ -92,6 +92,8 @@ export type ListeningExercise = {
   lines: TranscriptLine[]
   sortOrder: number
   localizations?: Partial<Record<ContentLocale, LocalizedExerciseContent>>
+  /** 真题答案钥匙：题号(字符串)→选项字母，如 {"1":"A"}；缺省/null=未导入。 */
+  answerKey?: Record<string, string> | null
   /** 课程页只公开贡献者的展示名称与已完成环节，绝不返回后台登录名或邮箱。 */
   contributors?: CourseContributor[]
   /**

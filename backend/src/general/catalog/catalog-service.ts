@@ -61,6 +61,7 @@ type ExerciseRow = {
     cover_image_url?: string | null;
     summary: string;
     localizations_json?: unknown;
+    answer_key_json?: unknown | null;
     transcript_json?: unknown;
     status: ListeningExercise['status'];
     sort_order?: number | string | null;
@@ -365,6 +366,24 @@ const toStoredMediaUrl = (value: string | null | undefined) => {
 
 const getObjectNameFromUrl = getManagedMediaObjectName;
 
+/**
+ * 解析真题答案钥匙列：题号(字符串)→选项字母。容忍三种脏数据：
+ * 非对象/数组、键不是 1-25 范围内的纯数字、值不是 A-D 单字母——直接丢弃，
+ * 保证到达学习端的 answerKey 一定是干净的部分映射。
+ */
+const parseAnswerKey = (raw: unknown): Record<string, string> | null => {
+    if (!raw || typeof raw !== 'object' || Array.isArray(raw)) {
+        return null;
+    }
+    const result: Record<string, string> = {};
+    for (const [key, value] of Object.entries(raw as Record<string, unknown>)) {
+        if (!/^(?:[1-9]|1\d|2[0-5])$/.test(key)) continue;
+        if (typeof value !== 'string' || !/^[ABCD]$/.test(value)) continue;
+        result[key] = value;
+    }
+    return Object.keys(result).length > 0 ? result : null;
+};
+
 // 外部来源链接不属于 MinIO 托管媒体。写入前统一去除两端空格，
 // 空字符串转为 NULL，避免接口返回看似存在但无法打开的空链接。
 const normalizeSourceUrl = (value: string | null | undefined) => {
@@ -465,6 +484,7 @@ const buildExerciseSummary = (
     pendingSubtitleDraftCount: Number(row.pending_subtitle_draft_count ?? 0),
     workflow,
     localizations: normalizeExerciseLocalizations(row.localizations_json),
+    answerKey: parseAnswerKey(row.answer_key_json),
     };
 };
 
@@ -621,6 +641,7 @@ const buildExerciseDetail = (
     sortOrder: Number(row.sort_order ?? 0),
     lines,
     localizations: normalizeExerciseLocalizations(row.localizations_json),
+    answerKey: parseAnswerKey(row.answer_key_json),
     contributors,
     workflowCredits,
     subtitleDrafts,
@@ -833,6 +854,7 @@ export async function listCategoryExercises(
                   cover_image_url,
                   summary,
                   localizations_json,
+                  answer_key_json,
                   transcript_json,
                   status,
                   sort_order,
@@ -870,6 +892,7 @@ export async function listCategoryExercises(
                   cover_image_url,
                   summary,
                   localizations_json,
+                  answer_key_json,
                   status,
                   sort_order,
                   created_at
@@ -905,6 +928,7 @@ export async function listAllExercises(): Promise<CatalogExerciseSummary[]> {
               cover_image_url,
               summary,
               localizations_json,
+              answer_key_json,
               transcript_json,
               status,
               sort_order,
@@ -1020,6 +1044,7 @@ export async function getExercise(
               cover_image_url,
               summary,
               localizations_json,
+              answer_key_json,
               transcript_json,
               status,
               sort_order,
@@ -1239,6 +1264,20 @@ export async function updateExerciseMedia(
             );
         }
     }
+}
+
+/**
+ * 更新课程真题答案钥匙：题号(字符串)→选项字母的整表替换。
+ * 传 null 清空。入库前再过一遍 parseAnswerKey 清洗，保证脏数据进不了库。
+ */
+export async function updateExerciseAnswerKey(
+    exerciseId: number,
+    answerKey: Record<string, string> | null,
+) {
+    await ExerciseModel.update(
+        { answer_key_json: parseAnswerKey(answerKey) },
+        { where: { id: exerciseId } },
+    );
 }
 
 export async function upsertExercise(exercise: CreateExerciseRequest) {
