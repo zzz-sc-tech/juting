@@ -1,0 +1,140 @@
+/* 波形自由听：整段音频画成波形，拖动/点击即可从该位置播放，并标出每一句的范围 */
+
+.waveform-board {
+  display: grid;
+  gap: 20px;
+  min-height: 0;
+  min-width: 0;
+}
+
+.waveform-card {
+  background: #fff;
+  border: 1px solid rgba(15, 23, 42, 0.08);
+  border-radius: 18px;
+  box-shadow: 0 10px 30px rgba(15, 23, 42, 0.06);
+  display: grid;
+  gap: 14px;
+  min-width: 0;
+  padding: 16px 18px 18px;
+}
+
+.waveform-header {
+  align-items: flex-start;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  justify-content: space-between;
+}
+
+.waveform-eyebrow {
+  color: var(--accent, #5b5fef);
+  font-size: 13px;
+  font-weight: 500;
+  margin: 0;
+}
+
+.waveform-meta {
+  color: #64748b;
+  font-size: 12px;
+  margin: 4px 0 0;
+}
+
+.waveform-tools {
+  align-items: center;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+/* 波形容器：高度固定，交给 wavesurfer 内部 canvas 填充。
+   overflow-x: auto —— 放大（minPxPerSec）后波形容器会被 wavesurfer 撑到几千像素宽，
+   必须裁在卡片内横向滚动，否则巨幅画布溢出铺满整页，播放光标一动整页跟着抽搐。 */
+.waveform-surface {
+  background: linear-gradient(180deg, #f8fafc 0%, #f1f5f9 100%);
+  border: 1px solid rgba(15, 23, 42, 0.06);
+  border-radius: 14px;
+  min-height: 132px;
+  overflow-x: auto;
+  overflow-y: hidden;
+  position: relative;
+  scrollbar-width: none; /* 横向滚动用下方滑动条，藏掉原生滚动条避免重复 */
+}
+
+.waveform-surface::-webkit-scrollbar {
+  height: 0;
+}
+
+/* 视图平移滑动条：仅在放大（可滚动）时出现 */
+.waveform-pan {
+  accent-color: var(--accent, #5b5fef);
+  cursor: pointer;
+  margin: -6px 0 0;
+  width: 100%;
+}
+
+.waveform-canvas {
+  height: 132px;
+  width: 100%;
+}
+
+/* 解码/失败时的覆盖层 */
+.waveform-overlay {
+  align-items: center;
+  background: rgba(248, 250, 252, 0.92);
+  border-radius: 14px;
+  color: #475569;
+  display: flex;
+  flex-direction: column;
+  font-size: 13px;
+  gap: 8px;
+  inset: 0;
+  justify-content: center;
+  position: absolute;
+}
+
+.waveform-overlay.error {
+  background: rgba(254, 242, 242, 0.95);
+  color: #b42318;
+}
+
+.waveform-spinner {
+  animation: waveform-spin 0.9s linear infinite;
+  border: 2px solid rgba(91, 95, 239, 0.25);
+  border-radius: 50%;
+  border-top-color: var(--accent, #5b5fef);
+  height: 20px;
+  width: 20px;
+}
+
+@keyframes waveform-spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.waveform-percent {
+  color: #94a3b8;
+  font-variant-numeric: tabular-nums;
+}
+
+/* 当前句字幕 */
+.waveform-subtitle {
+  align-items: baseline;
+  display: flex;
+  gap: 10px;
+  min-width: 0;
+}
+
+.waveform-subtitle-label {
+  color: #94a3b8;
+  flex-shrink: 0;
+  font-size: 12px;
+}
+
+.waveform-subtitle-text {
+  color: #0f172a;
+  font-size: 15px;
+  line-height: 1.6;
+  margin: 0;
+  min-width: 0;
+}

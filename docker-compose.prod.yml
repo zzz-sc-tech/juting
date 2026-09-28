@@ -1,0 +1,177 @@
+# Docker logs remain the production log source. Bound json-file rotation keeps
+# a noisy request/error stream from consuming the server disk indefinitely.
+x-default-logging: &default-logging
+  driver: json-file
+  options:
+    max-size: "10m"
+    max-file: "5"
+
+services:
+  mysql:
+    image: mysql:8.4
+    restart: unless-stopped
+    environment:
+      MYSQL_ROOT_PASSWORD: ${MYSQL_ROOT_PASSWORD}
+      MYSQL_DATABASE: ${MYSQL_DATABASE}
+      MYSQL_USER: ${MYSQL_USER}
+      MYSQL_PASSWORD: ${MYSQL_PASSWORD}
+    volumes:
+      - mysql_data:/var/lib/mysql
+    healthcheck:
+      test:
+        [
+          "CMD-SHELL",
+          "mysqladmin ping -h 127.0.0.1 -uroot -p$${MYSQL_ROOT_PASSWORD}",
+        ]
+      interval: 10s
+      timeout: 5s
+      retries: 10
+    logging: *default-logging
+    networks:
+      - duolinting-network
+
+  flyway:
+    image: flyway/flyway:12.9.0-alpine
+    profiles:
+      - tools
+    depends_on:
+      mysql:
+        condition: service_healthy
+    command: -connectRetries=10 migrate
+    environment:
+      FLYWAY_URL: jdbc:mysql://mysql:3306/${MYSQL_DATABASE}?useUnicode=true&characterEncoding=utf8&useSSL=false&allowPublicKeyRetrieval=true
+      FLYWAY_USER: ${MYSQL_USER}
+      FLYWAY_PASSWORD: ${MYSQL_PASSWORD}
+      FLYWAY_LOCATIONS: filesystem:/flyway/sql
+      FLYWAY_BASELINE_ON_MIGRATE: "true"
+      FLYWAY_BASELINE_VERSION: "202606080000"
+      FLYWAY_VALIDATE_MIGRATION_NAMING: "true"
+    volumes:
+      - ./infra/mysql/migrations:/flyway/sql:ro
+    logging: *default-logging
+    networks:
+      - duolinting-network
+
+  minio:
+    image: minio/minio:RELEASE.2025-09-07T16-13-09Z
+    restart: unless-stopped
+    command: server /data --console-address ":9001"
+    environment:
+      MINIO_ROOT_USER: ${MINIO_ACCESS_KEY}
+      MINIO_ROOT_PASSWORD: ${MINIO_SECRET_KEY}
+    volumes:
+      - minio_data:/data
+    ports:
+      # 对象读取由 reverse-proxy 的 /media/ 入口承接，避免绕过 Cloudflare
+      # 直接消耗源站带宽。仅本机可访问端口保留给运维和故障排查。
+      - "127.0.0.1:${MINIO_PUBLIC_PORT:-9000}:9000"
+      - "127.0.0.1:${MINIO_CONSOLE_PUBLIC_PORT:-9001}:9001"
+    logging: *default-logging
+    networks:
+      - duolinting-network
+
+  backend:
+    # Server-side builds replace this stable tag only after the source-sync
+    # script records the committed release revision. Existing containers retain
+    # their prior image ID until an explicit service switch.
+    image: duolinting-backend:latest
+    build:
+      context: .
+      dockerfile: backend/Dockerfile
+    restart: unless-stopped
+    depends_on:
+      mysql:
+        condition: service_healthy
+      minio:
+        condition: service_started
+    environment:
+      NODE_ENV: production
+      APP_ENV: production
+      APP_HOST: 0.0.0.0
+      APP_PORT: 4000
+      APP_BACKEND_URL: ${PUBLIC_API_BASE_URL}
+      CORS_ORIGINS: ${CORS_ORIGINS}
+      SECRET_JWT: ${SECRET_JWT}
+      MYSQL_HOST: mysql
+      MYSQL_PORT: 3306
+      MYSQL_DATABASE: ${MYSQL_DATABASE}
+      MYSQL_USERNAME: ${MYSQL_USER}
+      MYSQL_PASSWORD: ${MYSQL_PASSWORD}
+      MYSQL_LOGGING: "false"
+      MINIO_ENDPOINT: minio
+      MINIO_PORT: 9000
+      MINIO_USE_SSL: "false"
+      MINIO_ACCESS_KEY: ${MINIO_ACCESS_KEY}
+      MINIO_SECRET_KEY: ${MINIO_SECRET_KEY}
+      MINIO_BUCKET: ${MINIO_BUCKET}
+      MEDIA_PUBLIC_BASE_URL: ${MEDIA_PUBLIC_BASE_URL:-}
+      DEEPSEEK_API_KEY: ${DEEPSEEK_API_KEY:-}
+      DEEPSEEK_MODEL: ${DEEPSEEK_MODEL:-deepseek-v4-flash}
+    logging: *default-logging
+    networks:
+      - duolinting-network
+
+  web-app:
+    image: duolinting-web-app:latest
+    build:
+      context: .
+      dockerfile: web-app/Dockerfile
+      args:
+        VITE_API_BASE_URL: ""
+    restart: unless-stopped
+    ports:
+      - "${WEB_PUBLIC_PORT:-8080}:80"
+    logging: *default-logging
+    networks:
+      - duolinting-network
+
+  admin:
+    image: duolinting-admin:latest
+    build:
+      context: .
+      dockerfile: admin/Dockerfile
+      args:
+        VITE_API_BASE_URL: ""
+    restart: unless-stopped
+    ports:
+      - "${ADMIN_PUBLIC_PORT:-8081}:80"
+    logging: *default-logging
+    networks:
+      - duolinting-network
+
+  api-proxy:
+    image: nginx:1.27-alpine
+    restart: unless-stopped
+    depends_on:
+      - backend
+    volumes:
+      - ./infra/nginx/api-proxy.conf:/etc/nginx/conf.d/default.conf:ro
+    ports:
+      - "${API_PUBLIC_PORT:-4000}:80"
+    logging: *default-logging
+    networks:
+      - duolinting-network
+
+  reverse-proxy:
+    image: nginx:1.27-alpine
+    restart: unless-stopped
+    depends_on:
+      - web-app
+      - admin
+    volumes:
+      - ./infra/nginx/reverse-proxy.conf:/etc/nginx/nginx.conf:ro
+      - /etc/letsencrypt:/etc/nginx/ssl:ro
+    ports:
+      - "80:80"
+      - "443:443"
+    logging: *default-logging
+    networks:
+      - duolinting-network
+
+volumes:
+  mysql_data:
+  minio_data:
+
+networks:
+  duolinting-network:
+    name: duolinting-network

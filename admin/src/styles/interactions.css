@@ -1,0 +1,36 @@
+button:hover,
+select:hover,
+input:hover,
+textarea:hover {
+  border-color: var(--accent);
+}
+
+/* Shared AI prompt actions cover both Ant Design and workbench buttons. */
+button.ai-action-button,
+button.ai-action-button.ant-btn {
+  background: var(--accent);
+  border-color: var(--accent);
+  color: #fff;
+}
+
+button.ai-action-button:not(:disabled):hover,
+button.ai-action-button.ant-btn:not(:disabled):hover,
+button.ai-action-button:not(:disabled):active,
+button.ai-action-button.ant-btn:not(:disabled):active {
+  background: var(--accent-strong);
+  border-color: var(--accent-strong);
+  color: #fff;
+}
+
+button.ai-action-button:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 2px;
+}
+
+button.ai-action-button:disabled,
+button.ai-action-button.ant-btn:disabled {
+  background: #e5e7eb;
+  border-color: #d1d5db;
+  color: #9ca3af;
+  cursor: not-allowed;
+}

@@ -1,0 +1,336 @@
+/* 仪表盘首页（/home）：浅灰紫底 + 白卡 + 靛蓝点缀，对齐「简约 B 端」参考稿。 */
+
+.dashboard-page {
+  min-height: 100vh;
+}
+
+.dashboard-container {
+  margin: 0 auto;
+  max-width: 1180px;
+  padding: 26px 28px 48px;
+}
+
+.dashboard-hero {
+  margin-bottom: 22px;
+}
+
+.dashboard-hero h1 {
+  color: var(--ink);
+  font-size: 30px;
+  font-weight: 800;
+  letter-spacing: -0.02em;
+  margin: 0 0 4px;
+}
+
+.dashboard-hero p {
+  color: var(--ink-3);
+  margin: 0;
+}
+
+.dashboard-layout {
+  align-items: start;
+  display: grid;
+  gap: 18px;
+  grid-template-columns: minmax(0, 1fr) 300px;
+}
+
+.dashboard-main,
+.dashboard-side {
+  display: grid;
+  gap: 18px;
+  min-width: 0;
+}
+
+/* ── 通用白卡 ───────────────────────────────────────────── */
+.dashboard-card {
+  background: var(--surface);
+  border: 1px solid var(--line-soft);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-card);
+  padding: 18px 20px;
+}
+
+.dashboard-card-head {
+  align-items: baseline;
+  display: flex;
+  gap: 10px;
+  justify-content: space-between;
+  margin-bottom: 12px;
+}
+
+.dashboard-card-head h2 {
+  color: var(--ink);
+  font-size: 16px;
+  font-weight: 800;
+  margin: 0;
+}
+
+.dashboard-card-subtitle {
+  color: var(--ink-3);
+  font-size: 12.5px;
+}
+
+.dashboard-empty {
+  color: var(--ink-3);
+  font-size: 13.5px;
+  margin: 6px 0 2px;
+}
+
+/* ── 统计卡行 ───────────────────────────────────────────── */
+.dashboard-stats {
+  display: grid;
+  gap: 14px;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+}
+
+.dashboard-stat-card {
+  align-items: center;
+  background: var(--surface);
+  border: 1px solid var(--line-soft);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-card);
+  display: flex;
+  gap: 12px;
+  padding: 16px 18px;
+  transition: border-color 0.15s ease;
+}
+
+.dashboard-stat-card:hover {
+  border-color: var(--accent);
+}
+
+.dashboard-stat-icon {
+  align-items: center;
+  background: var(--surface-soft);
+  border-radius: var(--radius-md);
+  color: var(--ink-2);
+  display: inline-flex;
+  flex-shrink: 0;
+  height: 40px;
+  justify-content: center;
+  width: 40px;
+}
+
+.dashboard-stat-icon.accent {
+  background: var(--accent-soft);
+  color: var(--accent);
+}
+
+.dashboard-stat-icon.warm {
+  background: var(--warning-soft);
+  color: var(--warning);
+}
+
+.dashboard-stat-copy {
+  display: grid;
+  min-width: 0;
+}
+
+.dashboard-stat-copy strong {
+  color: var(--ink);
+  font-size: 24px;
+  font-weight: 800;
+  line-height: 1.1;
+}
+
+.dashboard-stat-copy span {
+  color: var(--ink-3);
+  font-size: 12.5px;
+}
+
+/* ── 图表卡 ─────────────────────────────────────────────── */
+.dashboard-chart svg {
+  display: block;
+  width: 100%;
+}
+
+.dashboard-chart-line {
+  fill: none;
+  stroke: var(--accent);
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  stroke-width: 2.5;
+}
+
+.dashboard-chart-area {
+  fill: rgba(91, 95, 239, 0.09);
+}
+
+.dashboard-chart-dot {
+  fill: var(--surface);
+  stroke: var(--accent);
+  stroke-width: 2;
+}
+
+.dashboard-chart-label {
+  fill: var(--ink-3);
+  font-size: 11px;
+  text-anchor: middle;
+}
+
+/* ── 继续学习卡 ─────────────────────────────────────────── */
+.dashboard-continue-body {
+  align-items: center;
+  display: flex;
+  gap: 18px;
+  justify-content: space-between;
+}
+
+.dashboard-continue-info {
+  display: grid;
+  gap: 6px;
+  min-width: 0;
+}
+
+.dashboard-continue-info strong {
+  color: var(--ink);
+  font-size: 15.5px;
+}
+
+.dashboard-continue-info > span {
+  color: var(--ink-3);
+  font-size: 13px;
+}
+
+.dashboard-primary-button {
+  align-items: center;
+  background: var(--accent);
+  border: none;
+  border-radius: var(--radius-pill);
+  color: #ffffff;
+  cursor: pointer;
+  display: inline-flex;
+  flex-shrink: 0;
+  font-size: 14px;
+  font-weight: 700;
+  gap: 7px;
+  justify-content: center;
+  min-height: 40px;
+  padding: 0 22px;
+  transition: background 0.15s ease;
+}
+
+.dashboard-primary-button:hover {
+  background: var(--accent-strong);
+}
+
+/* ── 进度条 ─────────────────────────────────────────────── */
+.dashboard-progress-track {
+  background: var(--line-soft);
+  border-radius: var(--radius-pill);
+  display: block;
+  height: 7px;
+  overflow: hidden;
+  width: 100%;
+}
+
+.dashboard-progress-fill {
+  background: var(--accent);
+  border-radius: var(--radius-pill);
+  display: block;
+  height: 100%;
+  transition: width 0.3s ease;
+}
+
+/* ── 右栏：目标环 ───────────────────────────────────────── */
+.dashboard-goal-body {
+  align-items: center;
+  display: grid;
+  gap: 10px;
+  justify-items: center;
+}
+
+.dashboard-goal-ring {
+  width: 118px;
+}
+
+.dashboard-goal-track {
+  fill: none;
+  stroke: var(--line-soft);
+  stroke-width: 9;
+}
+
+.dashboard-goal-fill {
+  fill: none;
+  stroke: var(--accent);
+  stroke-linecap: round;
+  stroke-width: 9;
+  transform: rotate(-90deg);
+  transform-origin: 50% 50%;
+  transition: stroke-dashoffset 0.4s ease;
+}
+
+.dashboard-goal-percent {
+  fill: var(--ink);
+  font-size: 17px;
+  font-weight: 800;
+}
+
+.dashboard-goal-count {
+  color: var(--ink-2);
+  font-size: 13.5px;
+  margin: 0;
+  text-align: center;
+}
+
+/* ── 右栏：课程完成度 ───────────────────────────────────── */
+.dashboard-course-list {
+  display: grid;
+  gap: 4px;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.dashboard-course-list button {
+  background: none;
+  border: none;
+  border-radius: var(--radius-md);
+  cursor: pointer;
+  display: grid;
+  gap: 6px;
+  padding: 9px 10px;
+  text-align: left;
+  transition: background 0.15s ease;
+  width: 100%;
+}
+
+.dashboard-course-list button:hover {
+  background: var(--accent-soft-2);
+}
+
+.dashboard-course-title {
+  color: var(--ink);
+  font-size: 13.5px;
+  font-weight: 700;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.dashboard-course-percent {
+  color: var(--ink-3);
+  font-size: 12px;
+}
+
+/* ── 响应式 ─────────────────────────────────────────────── */
+@media (max-width: 1080px) {
+  .dashboard-layout {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 720px) {
+  .dashboard-container {
+    padding: 18px 16px 40px;
+  }
+
+  .dashboard-stats {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .dashboard-continue-body {
+    align-items: stretch;
+    flex-direction: column;
+  }
+}

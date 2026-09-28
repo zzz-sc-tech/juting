@@ -1,0 +1,61 @@
+{
+  "name": "duolinting",
+  "private": true,
+  "version": "0.1.0",
+  "license": "Apache-2.0",
+  "type": "module",
+  "workspaces": [
+    "backend",
+    "web-app",
+    "admin",
+    "packages/*"
+  ],
+  "overrides": {
+    "expo-asset": "12.0.13"
+  },
+  "scripts": {
+    "dev": "npm run build --workspace @juting/domain && npm run build --workspace @juting/app-config && npm run build --workspace @juting/ui-tokens && npm run build --workspace @juting/api-client && npm run build --workspace @juting/shared && concurrently -n backend,web-app,admin -c blue,green,magenta \"npm run dev --workspace @juting/backend\" \"npm run dev --workspace @juting/web-app\" \"npm run dev --workspace @juting/admin\"",
+    "dev:debug": "npm run build --workspace @juting/domain && npm run build --workspace @juting/app-config && npm run build --workspace @juting/ui-tokens && npm run build --workspace @juting/api-client && npm run build --workspace @juting/shared && concurrently -n backend,web-app,admin -c blue,green,magenta \"npm run dev:debug --workspace @juting/backend\" \"npm run dev:debug --workspace @juting/web-app\" \"npm run dev:debug --workspace @juting/admin\"",
+    "dev:backend": "npm run dev --workspace @juting/backend",
+    "dev:backend:debug": "npm run dev:debug --workspace @juting/backend",
+    "dev:web-app": "npm run dev --workspace @juting/web-app",
+    "dev:web-app:debug": "npm run dev:debug --workspace @juting/web-app",
+    "dev:app": "npm run dev:web-app",
+    "build:mobile-dependencies": "npm run build --workspace @juting/domain && npm run build --workspace @juting/app-config && npm run build --workspace @juting/ui-tokens && npm run build --workspace @juting/api-client",
+    "dev:admin": "npm run dev --workspace @juting/admin",
+    "dev:admin:debug": "npm run dev:debug --workspace @juting/admin",
+    "infra:up": "docker compose up -d",
+    "infra:down": "docker compose down",
+    "db:migrate": "docker compose --profile tools run --rm flyway",
+    "db:migrate:backend": "node scripts/migrate-backend-database.mjs",
+    "media:normalize": "node scripts/normalize-course-video.mjs",
+    "deploy:build-server": "bash scripts/build-production-images-on-server.sh",
+    "deploy:sync-sources": "bash scripts/sync-production-sources.sh",
+    "build": "npm run build --workspace @juting/domain && npm run build --workspace @juting/app-config && npm run build --workspace @juting/ui-tokens && npm run build --workspace @juting/api-client && npm run build --workspace @juting/shared && npm run build --workspace @juting/backend && npm run build --workspace @juting/web-app && npm run build --workspace @juting/admin",
+    "lint": "eslint .",
+    "check:admin-i18n": "node --import tsx scripts/check-admin-i18n.mjs",
+    "preview:web-app": "npm run preview --workspace @juting/web-app",
+    "preview:app": "npm run preview:web-app",
+    "preview:admin": "npm run preview --workspace @juting/admin",
+    "typecheck": "npm run typecheck --workspace @juting/domain && npm run typecheck --workspace @juting/app-config && npm run typecheck --workspace @juting/ui-tokens && npm run typecheck --workspace @juting/api-client && npm run typecheck --workspace @juting/shared && npm run typecheck --workspace @juting/backend && npm run typecheck --workspace @juting/web-app && npm run typecheck --workspace @juting/admin"
+  },
+  "devDependencies": {
+    "@eslint/js": "^10.0.1",
+    "@types/cookie-parser": "^1.4.10",
+    "@types/node": "^24.12.3",
+    "@types/react": "^19.2.14",
+    "@types/react-dom": "^19.2.3",
+    "@vitejs/plugin-react": "^6.0.1",
+    "concurrently": "^9.2.1",
+    "dotenv": "^16.4.7",
+    "eslint": "^10.3.0",
+    "eslint-plugin-react-hooks": "^7.1.1",
+    "eslint-plugin-react-refresh": "^0.5.2",
+    "expo-asset": "12.0.13",
+    "globals": "^17.6.0",
+    "tsx": "^4.21.0",
+    "typescript": "~6.0.2",
+    "typescript-eslint": "^8.59.2",
+    "vite": "^8.0.12"
+  }
+}

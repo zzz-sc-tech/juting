@@ -1,0 +1,3 @@
+/* Shared breakpoints precede workbench overrides. Load after interactions.css, as before. */
+@import './shared/responsive.css';
+@import './course-editor/responsive.css';

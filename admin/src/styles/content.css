@@ -1,0 +1,22 @@
+/* Business styles. Keep this import order: it preserves the existing cascade. See README.md. */
+@import './directory/legacy-menu.css';
+@import './shared/workspace-layout.css';
+@import './directory/tree.css';
+@import './directory/editor-shell.css';
+@import './courses/list.css';
+@import './course-editor/workbench.css';
+@import './subtitles/inspector.css';
+@import './media/upload.css';
+@import './course-editor/form.css';
+@import './media/cover.css';
+@import './media/player.css';
+@import './subtitles/waveform.css';
+@import './subtitles/editor.css';
+@import './subtitles/import.css';
+@import './course-editor/select.css';
+@import './courses/batch-import.css';
+@import './subtitles/versions.css';
+@import './course-editor/readonly.css';
+@import './subtitles/history.css';
+@import './directory/editor.css';
+@import './course-editor/ai-tools.css';

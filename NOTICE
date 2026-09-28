@@ -1,0 +1,16 @@
+句听 JuTing
+==========
+
+Copyright 2026 the JuTing (句听) fork contributors
+
+本软件基于 多邻听 DuolinTing（https://github.com/VeejaLiu/duolinting，
+Copyright 2024-2026 VeejaLiu and the DuolinTing project）修改和发展，
+依据 Apache License 2.0（见 LICENSE）开源。
+
+相对上游的显著修改包括：更名为句听并移除多用户协作体系；新增本地
+whisper.cpp 自动转写与字幕断句管线、真题锚点系统、波形自由听、
+学习仪表盘；存储层改为便携 MySQL + 本地磁盘，面向单人单机部署。
+完整差异清单见 docs/upstream-differences.md。
+
+本产品包含的第三方内容（wavvesurfer.js、React、Express、Sequelize 等）
+各自遵循其原始许可证，详见 package.json 依赖声明。

@@ -1,0 +1,510 @@
+.subtitle-import {
+  padding: 12px;
+}
+
+.subtitle-import summary {
+  align-items: center;
+  color: #374151;
+  cursor: pointer;
+  display: flex;
+  font-size: 13px;
+  font-weight: 700;
+  gap: 8px;
+  list-style: none;
+}
+
+/* 隐藏原生 disclosure 三角，改用自定义箭头，展开时旋转为向下 */
+.subtitle-import summary::-webkit-details-marker {
+  display: none;
+}
+
+.subtitle-import summary::before {
+  border-bottom: 4px solid transparent;
+  border-left: 5px solid #94a3b8;
+  border-top: 4px solid transparent;
+  content: '';
+  flex-shrink: 0;
+  height: 0;
+  transition: transform 0.15s ease;
+  width: 0;
+}
+
+.subtitle-import[open] summary::before {
+  transform: rotate(90deg);
+}
+
+.subtitle-import-title {
+  flex: 1;
+}
+
+.subtitle-import-formats {
+  background: #f1f5f9;
+  border: 1px solid #e2e8f0;
+  border-radius: 999px;
+  color: #64748b;
+  font-size: 11px;
+  font-weight: 600;
+  line-height: 1;
+  padding: 4px 8px;
+  white-space: nowrap;
+}
+
+.subtitle-import-body {
+  display: grid;
+  gap: 12px;
+  margin-top: 12px;
+}
+
+.subtitle-import-tools {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.subtitle-bilingual-options {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+
+.subtitle-import-footer {
+  align-items: center;
+  border-top: 1px solid #eef2f7;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  justify-content: space-between;
+  padding-top: 12px;
+}
+
+.subtitle-import-export {
+  border-top: 1px solid #eef2f7;
+  display: grid;
+  gap: 8px;
+  padding-top: 12px;
+}
+
+.subtitle-import-section-title {
+  align-items: baseline;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.subtitle-import-section-title strong {
+  color: #374151;
+  font-size: 12px;
+}
+
+.subtitle-import-section-title span {
+  color: #64748b;
+  font-size: 12px;
+}
+
+.subtitle-offset {
+  align-items: center;
+  display: flex;
+  gap: 6px;
+}
+
+.subtitle-offset > span {
+  color: #374151;
+  font-size: 12px;
+  font-weight: 700;
+  min-width: 60px;
+}
+
+.subtitle-offset small {
+  color: #6b7280;
+  font-size: 12px;
+}
+
+.subtitle-import .offset-input {
+  width: 80px;
+  padding: 4px 8px;
+  border: 1px solid #cfd6df;
+  border-radius: 4px;
+  font-size: 13px;
+  text-align: center;
+}
+
+/* 字幕导入抽屉：以卡片分组，避免把原来的折叠面板样式直接塞进 Drawer。 */
+.subtitle-import-drawer .ant-drawer-body {
+  background: #f7f9fc;
+}
+
+.subtitle-import-drawer .ant-drawer-header,
+.dltjson-drawer .ant-drawer-header {
+  border-bottom: 1px solid #e5eaf1;
+  padding: 12px 16px;
+}
+
+.subtitle-import-drawer .ant-drawer-title,
+.dltjson-drawer .ant-drawer-title {
+  color: #172033;
+  font-size: 16px;
+  font-weight: 800;
+}
+
+.subtitle-import-drawer .subtitle-import {
+  background: transparent;
+  padding: 10px;
+}
+
+.subtitle-import-drawer .subtitle-import > summary {
+  display: none;
+}
+
+.subtitle-import-drawer .subtitle-import-body {
+  gap: 8px;
+  margin-top: 0;
+}
+
+.subtitle-import-intro,
+.subtitle-import-body > .field,
+.subtitle-import-export,
+.subtitle-import-footer {
+  background: #ffffff;
+  border: 1px solid #e1e7ef;
+  border-radius: 8px;
+}
+
+.subtitle-import-intro {
+  display: grid;
+  gap: 2px;
+  padding: 9px 11px;
+}
+
+.subtitle-import-intro strong {
+  color: #172033;
+  font-size: 13px;
+}
+
+.subtitle-import-intro span {
+  color: #64748b;
+  font-size: 11px;
+  line-height: 1.35;
+}
+
+.subtitle-import-drawer .subtitle-import-tools {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
+.subtitle-import-drawer .subtitle-import-tools .command-button {
+  justify-content: center;
+  min-height: 34px;
+}
+
+.subtitle-import-drawer .subtitle-import-body > .field {
+  gap: 6px;
+  padding: 9px 11px;
+}
+
+.subtitle-import-drawer .subtitle-import-body > .field > span {
+  color: #334155;
+  font-size: 12px;
+  font-weight: 800;
+}
+
+.subtitle-import-drawer .subtitle-import-body .code-textarea {
+  min-height: 150px;
+  resize: vertical;
+}
+
+.subtitle-import-drawer .subtitle-bilingual-options {
+  background: #f8fafc;
+  border: 1px solid #e8edf3;
+  border-radius: 6px;
+  padding: 7px 9px;
+}
+
+.subtitle-import-drawer .subtitle-import-footer {
+  align-items: stretch;
+  display: grid;
+  gap: 7px;
+  padding: 8px;
+  position: sticky;
+  bottom: 0;
+  z-index: 1;
+}
+
+.subtitle-import-drawer .subtitle-offset {
+  background: #f8fafc;
+  border: 1px solid #e8edf3;
+  border-radius: 6px;
+  justify-content: center;
+  min-height: 34px;
+}
+
+.subtitle-import-drawer .subtitle-import-footer > .command-button {
+  justify-content: center;
+  min-height: 36px;
+}
+
+.subtitle-import-drawer .subtitle-import-export {
+  border-top: 1px solid #e1e7ef;
+  gap: 8px;
+  padding: 10px 11px;
+}
+
+.subtitle-import-drawer .dltjson-actions {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
+.subtitle-import-drawer .dltjson-actions .mini-command {
+  justify-content: center;
+  min-height: 34px;
+}
+
+.dltjson-drawer .ant-drawer-body {
+  background: #f7f9fc;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  padding: 10px;
+}
+
+.dltjson-drawer .dltjson-manual-textarea {
+  background: #ffffff;
+  border-color: #e1e7ef;
+  border-radius: 8px;
+  flex: 1 1 auto;
+  min-height: min(60vh, 480px);
+  padding: 10px;
+  resize: none;
+}
+
+.dltjson-drawer .dltjson-dialog-actions {
+  background: #ffffff;
+  border: 1px solid #e1e7ef;
+  border-radius: 8px;
+  min-height: 42px;
+  padding: 7px 9px;
+}
+
+@media (max-width: 480px) {
+  .subtitle-import-drawer .subtitle-import-tools,
+  .subtitle-import-drawer .dltjson-actions {
+    grid-template-columns: 1fr;
+  }
+}
+
+.code-textarea {
+  font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+  font-size: 13px;
+}
+
+/* ── 自动切分（本地语音识别）面板 ───────────────────────────
+   与字幕导入面板共用 .subtitle-import 折叠容器样式；这里只补充
+   引擎状态、控制行和结果操作区的布局。 */
+.asr-panel-warning {
+  background: #fff7e6;
+  border: 1px solid #ffe1a1;
+  border-radius: 8px;
+  color: #7a5200;
+  font-size: 12.5px;
+  line-height: 1.5;
+  margin: 0;
+  padding: 8px 10px;
+}
+
+.asr-panel-controls {
+  align-items: end;
+  display: grid;
+  gap: 10px;
+  grid-template-columns: minmax(120px, 160px) minmax(0, 1fr);
+}
+
+.asr-panel-controls .field {
+  margin: 0;
+}
+
+.asr-language-select {
+  background: #ffffff;
+  border: 1px solid #d7dfea;
+  border-radius: 8px;
+  font: inherit;
+  min-height: 36px;
+  padding: 0 8px;
+  width: 100%;
+}
+
+.asr-start-button {
+  justify-content: center;
+  min-height: 36px;
+  white-space: nowrap;
+}
+
+.asr-panel-status {
+  color: #42586e;
+  font-size: 12.5px;
+  margin: 0;
+}
+
+.asr-panel-result {
+  border-top: 1px dashed #e1e7ef;
+  display: grid;
+  gap: 8px;
+  padding-top: 8px;
+}
+
+.asr-panel-actions {
+  display: grid;
+  gap: 8px;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+}
+
+.asr-panel-actions .command-button {
+  justify-content: center;
+  min-height: 36px;
+}
+
+.asr-panel-actions .mini-command {
+  justify-content: center;
+  min-height: 36px;
+}
+
+@media (max-width: 480px) {
+  .asr-panel-controls,
+  .asr-panel-actions {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* ── 本机识别方案（硬件探测 + 一键准备）──────────────────────── */
+.asr-setup {
+  background: var(--surface-soft, #f7f8fc);
+  border: 1px solid var(--line, #e4e7f2);
+  border-radius: 12px;
+  display: grid;
+  gap: 12px;
+  margin: 12px 0;
+  padding: 12px 14px;
+}
+
+.asr-setup-title {
+  color: var(--ink, #1f2333);
+  font-size: 13px;
+  font-weight: 700;
+  margin: 0 0 6px;
+}
+
+.asr-setup-specs {
+  display: grid;
+  gap: 6px;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.asr-setup-specs li {
+  align-items: center;
+  color: var(--ink-2, #4a5068);
+  display: flex;
+  font-size: 12px;
+  gap: 8px;
+}
+
+.asr-setup-specs li span {
+  flex: 1 1 auto;
+  min-width: 0;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.asr-setup-specs li em {
+  color: var(--ink-3, #7b8199);
+  font-style: normal;
+  font-weight: 600;
+}
+
+.asr-setup-plan {
+  color: var(--ink-2, #4a5068);
+  font-size: 12px;
+  margin: 10px 0 4px;
+}
+
+.asr-setup-plan strong {
+  color: var(--accent, #5b5fef);
+}
+
+.asr-setup-reasons {
+  color: var(--ink-3, #7b8199);
+  display: grid;
+  font-size: 12px;
+  gap: 2px;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.asr-setup-reasons li::before {
+  content: '·';
+  margin-right: 6px;
+}
+
+.asr-setup-reason-warn {
+  color: #b45309;
+}
+
+.asr-setup-actions {
+  border-top: 1px dashed var(--line, #e4e7f2);
+  display: grid;
+  gap: 8px;
+  padding-top: 10px;
+}
+
+.asr-setup-state {
+  align-items: center;
+  color: var(--ink-2, #4a5068);
+  display: flex;
+  font-size: 12px;
+  gap: 6px;
+}
+
+.asr-state-dot {
+  background: #cbd0e0;
+  border-radius: 50%;
+  display: inline-block;
+  height: 8px;
+  width: 8px;
+}
+
+.asr-state-dot.ok {
+  background: var(--success, #3ba55d);
+}
+
+.asr-setup-hint {
+  color: var(--ink-3, #7b8199);
+  font-size: 11px;
+  line-height: 1.5;
+  margin: 0;
+}
+
+.asr-setup-progress {
+  display: grid;
+  gap: 6px;
+}
+
+.asr-setup-progress-bar {
+  background: var(--line, #e4e7f2);
+  border-radius: 999px;
+  height: 6px;
+  overflow: hidden;
+}
+
+.asr-setup-progress-bar span {
+  background: var(--accent, #5b5fef);
+  display: block;
+  height: 100%;
+  transition: width 0.3s ease;
+}
+
+.asr-setup-progress p {
+  color: var(--ink-3, #7b8199);
+  font-size: 12px;
+  margin: 0;
+}

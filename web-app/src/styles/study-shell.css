@@ -1,0 +1,208 @@
+.study-pane {
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+  min-height: 0;
+  overflow-y: auto;
+  /* 始终预留滚动条槽位，避免切换学习阶段时滚动条出现/消失导致内容宽度抖动 */
+  scrollbar-gutter: stable;
+  padding: 24px;
+}
+
+/* 学习区是纵向 flex 容器，子项默认 flex-shrink: 1：当某阶段内容超出视口时，
+   信息条/阶段导航/学习面板会被按比例压矮，且压缩量随阶段内容高度变化，
+   切换阶段时就会「抽动」。禁止压缩，超出部分统一由 .study-pane 滚动承担。 */
+.study-pane > * {
+  flex-shrink: 0;
+}
+
+/* 自定义滚动条，符合设计风格 */
+.study-pane::-webkit-scrollbar {
+  width: 6px;
+}
+
+.study-pane::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.study-pane::-webkit-scrollbar-thumb {
+  background: #c5d9eb;
+  border-radius: 3px;
+}
+
+.study-pane::-webkit-scrollbar-thumb:hover {
+  background: var(--accent);
+}
+
+.eyebrow {
+  color: rgba(255, 255, 255, 0.9);
+  font-size: 13px;
+  font-weight: 900;
+  margin: 0 0 8px;
+}
+
+.summary {
+  color: rgba(255, 255, 255, 0.9);
+  font-size: 15px;
+  font-weight: 700;
+  line-height: 1.5;
+  margin: 10px 0 0;
+  max-width: 780px;
+}
+
+.stage-rail {
+  display: grid;
+  gap: 14px;
+  grid-template-columns: repeat(auto-fit, minmax(190px, 1fr));
+  margin-bottom: 18px;
+}
+
+.stage-step {
+  align-items: center;
+  background: #ffffff;
+  border: 1px solid var(--line);
+  border-radius: var(--radius-lg);
+  color: var(--ink-2);
+  cursor: pointer;
+  display: flex;
+  font: inherit;
+  gap: 12px;
+  min-height: 78px;
+  padding: 13px 15px;
+  text-align: left;
+}
+
+.stage-step.active {
+  background: var(--accent-soft);
+  border-color: var(--accent);
+  box-shadow: var(--shadow-card);
+  color: var(--accent-ink);
+}
+
+.stage-step.completed {
+  border-color: var(--success);
+}
+
+.stage-number {
+  align-items: center;
+  background: var(--accent-soft-2);
+  border-radius: 16px;
+  color: var(--accent);
+  display: inline-flex;
+  flex: 0 0 auto;
+  font-size: 16px;
+  font-weight: 900;
+  height: 40px;
+  justify-content: center;
+  width: 40px;
+}
+
+.stage-step.active .stage-number {
+  background: var(--accent);
+  color: #ffffff;
+}
+
+.stage-step small {
+  color: var(--ink-3);
+  display: block;
+  font-size: 12px;
+  font-weight: 900;
+  margin-bottom: 2px;
+}
+
+.stage-label {
+  align-items: baseline;
+  display: flex;
+  gap: 6px;
+}
+
+.stage-label strong {
+  color: var(--ink);
+  font-size: 16px;
+  font-weight: 900;
+  white-space: nowrap;
+}
+
+.stage-metric {
+  color: var(--ink-3);
+  font-size: 13px;
+  font-weight: 600;
+}
+
+.stage-step small {
+  color: var(--ink-3);
+  font-size: 12px;
+  font-weight: 900;
+}
+
+.stage-board {
+  background: var(--surface);
+  border: 1px solid var(--line-soft);
+  border-radius: var(--radius-lg);
+  box-sizing: border-box;
+  box-shadow: var(--shadow-card);
+  min-height: 520px;
+  padding: 22px;
+  width: 100%;
+}
+
+/* ── 对话锚点条 ─────────────────────────────────────────────
+   从字幕指令句推导的「第8–11题 / 对话 2 / 第一节」跳转标签，
+   泛听与精听阶段共用；没有锚点的课程不渲染。 */
+.dialogue-anchor-bar {
+  /* 泛听/精听面板是两列网格，锚点条作为第一个子元素横跨整行，保持在媒体区上方。 */
+  grid-column: 1 / -1;
+  align-items: center;
+  background: var(--accent-soft-2);
+  border: 1.5px solid #d8ecfb;
+  border-radius: 16px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px 12px;
+  margin-bottom: 14px;
+  padding: 9px 12px;
+}
+
+.dialogue-anchor-bar-title {
+  align-items: center;
+  color: #4b6b8a;
+  display: inline-flex;
+  flex-shrink: 0;
+  font-size: 12.5px;
+  font-weight: 800;
+  gap: 5px;
+}
+
+.dialogue-anchor-chips {
+  display: flex;
+  flex: 1 1 auto;
+  flex-wrap: wrap;
+  gap: 7px;
+}
+
+.dialogue-anchor-chip {
+  background: #ffffff;
+  border: 2px solid var(--line);
+  border-radius: var(--radius-pill);
+  color: #38618c;
+  cursor: pointer;
+  font-size: 13px;
+  font-weight: 800;
+  line-height: 1;
+  padding: 7px 13px;
+  transition: border-color 0.15s ease, transform 0.1s ease;
+}
+
+.dialogue-anchor-chip:hover {
+  border-color: var(--accent);
+}
+
+.dialogue-anchor-chip:active {
+  transform: translateY(1px);
+}
+
+.dialogue-anchor-chip.active {
+  background: #ddf4ff;
+  border-color: var(--accent);
+  color: #1899d6;
+}

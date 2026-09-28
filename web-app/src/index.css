@@ -1,0 +1,80 @@
+/*
+ * 设计令牌（简约 B 端风 · 靛蓝紫）：全站视觉的单一来源。
+ * 本 fork 有意偏离上游 AGENTS.md 的「多邻国 playful + var(--accent)」约定，
+ * 统一迁移到浅灰紫底 + 白卡 + 靛蓝主色；改主题只动这里。
+ */
+:root {
+  /* 背景与卡片 */
+  --bg: #eef0f8;
+  --surface: #ffffff;
+  --surface-soft: #f6f7fc;
+  --line: #e4e7f2;
+  --line-soft: #edeff7;
+
+  /* 主色（靛蓝紫） */
+  --accent: #5b5fef;
+  --accent-strong: #4a4ed9;
+  --accent-soft: #ececff;
+  --accent-soft-2: #f4f4ff;
+  --accent-ink: #3f43b8;
+
+  /* 文字四级 */
+  --ink: #191c2e;
+  --ink-2: #565b70;
+  --ink-3: #8b90a5;
+  --ink-4: #c2c5d6;
+
+  /* 语义色（退居状态色，不再进入主视觉） */
+  --success: #3ba55d;
+  --success-soft: #e5f4eb;
+  --warning: #f5a524;
+  --warning-soft: #fdf3e0;
+  --danger: #e5484d;
+  --danger-soft: #fdebec;
+
+  /* 圆角：大卡 / 控件 / 胶囊 */
+  --radius-lg: 20px;
+  --radius-md: 12px;
+  --radius-pill: 999px;
+
+  /* 阴影：卡片 / 浮层（禁止再使用 0 Npx 0 硬底边） */
+  --shadow-card: 0 1px 2px rgba(23, 26, 44, 0.04), 0 8px 24px rgba(23, 26, 44, 0.06);
+  --shadow-float: 0 18px 48px rgba(23, 26, 44, 0.14);
+
+  /* 聚焦环 */
+  --focus-ring: 0 0 0 3px rgba(91, 95, 239, 0.18);
+
+  color: var(--ink);
+  background: var(--bg);
+  font-family:
+    "Segoe UI", ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont,
+    "Microsoft YaHei UI", "PingFang SC", sans-serif;
+  font-synthesis: none;
+  line-height: 1.5;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  min-width: 320px;
+}
+
+button,
+input,
+select,
+textarea {
+  letter-spacing: 0;
+}
+
+/* 数字统一等宽对齐（统计卡、进度、时间戳） */
+.tabular-nums,
+.dashboard-stat-value,
+.dashboard-goal-count {
+  font-variant-numeric: tabular-nums;
+}

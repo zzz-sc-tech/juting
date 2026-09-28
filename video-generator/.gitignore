@@ -1,0 +1,11 @@
+.venv/
+__pycache__/
+*.py[cod]
+.env
+cache/
+media/
+tools/
+media-manifest.json
+output/
+tmp/
+*.egg-info/

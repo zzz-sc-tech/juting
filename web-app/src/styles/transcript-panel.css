@@ -1,0 +1,225 @@
+.compact-panel {
+  max-height: 670px;
+  overflow: auto;
+}
+
+.transcript-panel {
+  background: var(--surface-soft);
+  border: 2px solid var(--line);
+  border-radius: var(--radius-lg);
+  max-width: 100%;
+  min-width: 0;
+  overflow-x: hidden;
+  padding: 18px;
+}
+
+.line-list {
+  display: grid;
+  gap: 9px;
+  list-style: none;
+  margin: 0;
+  min-width: 0;
+  padding: 0;
+}
+
+.line-row {
+  align-items: center;
+  background: var(--surface);
+  border: 1px solid var(--line);
+  border-radius: var(--radius-md);
+  display: grid;
+  gap: 8px;
+  grid-template-columns: minmax(0, 1fr) auto;
+  min-height: 62px;
+  min-width: 0;
+  padding: 7px;
+  width: 100%;
+}
+
+.line-row.active {
+  background: var(--accent-soft);
+  border-color: var(--accent);
+  box-shadow: var(--shadow-card);
+}
+
+.line-row.mastered {
+  background: var(--success-soft);
+  border-color: var(--success);
+}
+
+.line-main {
+  align-items: center;
+  background: transparent;
+  border: 0;
+  color: var(--ink);
+  display: flex;
+  flex: 1 1 auto;
+  gap: 10px;
+  min-width: 0;
+  overflow: hidden;
+  padding: 8px;
+  text-align: left;
+  width: 100%;
+}
+
+.line-index {
+  align-items: center;
+  background: var(--accent-soft-2);
+  border-radius: 12px;
+  color: var(--accent);
+  display: inline-flex;
+  flex: 0 0 34px;
+  font-size: 12px;
+  font-weight: 900;
+  height: 30px;
+  justify-content: center;
+}
+
+.line-copy {
+  display: block;
+  flex: 1 1 auto;
+  font-size: 13px;
+  font-weight: 800;
+  line-height: 1.45;
+  min-width: 0;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+/* 精听页选中句：大字幕已在上方显示，列表行只留提示，避免同句渲染两遍 */
+.line-copy.is-selected-hint {
+  color: var(--ink-3);
+  font-style: italic;
+  font-weight: 700;
+  opacity: 0.85;
+}
+
+.line-actions {
+  align-items: center;
+  display: flex;
+  gap: 6px;
+  padding-right: 4px;
+}
+
+.status-dot {
+  border-radius: var(--radius-pill);
+  display: inline-block;
+  height: 10px;
+  width: 10px;
+}
+
+.status-dot.warning {
+  background: #f59e0b;
+}
+
+.status-dot.success {
+  background: var(--success);
+}
+
+.completion-banner {
+  align-items: center;
+  background: var(--success-soft);
+  border: 2px solid var(--success);
+  border-radius: 18px;
+  color: #2b7a0b;
+  display: flex;
+  font-weight: 900;
+  gap: 8px;
+  margin-top: 14px;
+  min-height: 50px;
+  padding: 0 14px;
+}
+
+/* 锚点分组头：句列表里每个对话/题组的小胶囊，点击跳到该组首句 */
+li.anchor-group-head {
+  display: flex;
+  justify-content: flex-start;
+  margin: 4px 0 2px;
+}
+
+li.anchor-group-head:first-child {
+  margin-top: 0;
+}
+
+.anchor-group-head button {
+  background: var(--accent-soft);
+  border: none;
+  border-radius: var(--radius-pill);
+  color: var(--accent-ink);
+  cursor: pointer;
+  font-size: 12px;
+  font-weight: 800;
+  line-height: 1;
+  padding: 5px 12px;
+  transition: background 0.15s ease;
+}
+
+.anchor-group-head button:hover {
+  background: var(--accent);
+  color: #ffffff;
+}
+
+/* ── 锚点分组手风琴 ───────────────────────────────────────
+   指令行不再作为学习句子：分组头固定为标签，点击展开该段正文句。 */
+li.anchor-section-head {
+  display: flex;
+  margin: 3px 0 2px;
+}
+
+li.anchor-section-head:first-child {
+  margin-top: 0;
+}
+
+.anchor-section-head button {
+  align-items: center;
+  background: var(--accent-soft-2);
+  border: 1px solid var(--line);
+  border-radius: var(--radius-pill);
+  color: var(--accent-ink);
+  cursor: pointer;
+  display: flex;
+  font: inherit;
+  gap: 8px;
+  padding: 6px 12px;
+  text-align: left;
+  transition: background 0.15s ease, border-color 0.15s ease;
+  width: 100%;
+}
+
+.anchor-section-head button:hover {
+  border-color: var(--accent);
+}
+
+.anchor-section-label {
+  font-size: 13px;
+  font-weight: 800;
+}
+
+.anchor-section-count {
+  color: var(--ink-3);
+  font-size: 11.5px;
+  font-weight: 700;
+  margin-left: auto;
+}
+
+.anchor-section-chevron {
+  flex-shrink: 0;
+  transition: transform 0.15s ease;
+}
+
+.anchor-section-chevron.open {
+  transform: rotate(180deg);
+}
+
+li.anchor-section-intro {
+  color: var(--ink-3);
+  font-size: 12px;
+  line-height: 1.45;
+  margin: -2px 0 2px;
+  overflow: hidden;
+  padding: 2px 12px 4px;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
+}

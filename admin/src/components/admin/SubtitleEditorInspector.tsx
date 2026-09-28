@@ -1,0 +1,197 @@
+import { Button, Input, InputNumber } from 'antd'
+import { ListPlus } from 'lucide-react'
+import { useState } from 'react'
+import {
+  cleanEnglishAnswerText,
+  cleanSubtitleSpacing,
+  TRANSLATION_LOCALE_LABELS,
+  TRANSLATION_TARGET_LOCALES,
+  type DraftLine,
+} from '../../lib/mediaDraftTools'
+import { SubtitleList } from './SubtitleList'
+import { useAdminLanguage } from '../../i18n/AdminLanguageProvider'
+
+type SubtitleEditorInspectorProps = {
+  activeLineIndex: number
+  draftLines: DraftLine[]
+  onActiveLineChange: (index: number) => void
+  onUpdateLine: (index: number, patch: Partial<DraftLine>) => void
+}
+
+const millisecondsToSeconds = (milliseconds: number) => Math.round(milliseconds) / 1000
+type SubtitleInspectorTab = 'list' | 'detail'
+
+export function SubtitleEditorInspector({
+  activeLineIndex,
+  draftLines,
+  onActiveLineChange,
+  onUpdateLine,
+}: SubtitleEditorInspectorProps) {
+  const { t } = useAdminLanguage()
+  const [activeTab, setActiveTab] = useState<SubtitleInspectorTab>('list')
+  const activeLine = draftLines[activeLineIndex]
+
+  return (
+    <aside data-subtitle-history className="subtitle-editor-inspector" aria-label={t('字幕详细编辑')}>
+      <div className="subtitle-inspector-tablist" role="tablist" aria-label={t('字幕编辑视图')}>
+        <button
+          aria-controls="subtitle-list-panel"
+          aria-selected={activeTab === 'list'}
+          className={activeTab === 'list'
+            ? 'subtitle-inspector-tab active'
+            : 'subtitle-inspector-tab'}
+          id="subtitle-list-tab"
+          onClick={() => setActiveTab('list')}
+          role="tab"
+          type="button"
+        >
+          {t('字幕列表')}（{draftLines.length}）
+        </button>
+        <button
+          aria-controls="subtitle-detail-panel"
+          aria-selected={activeTab === 'detail'}
+          className={activeTab === 'detail'
+            ? 'subtitle-inspector-tab active'
+            : 'subtitle-inspector-tab'}
+          id="subtitle-detail-tab"
+          onClick={() => setActiveTab('detail')}
+          role="tab"
+          type="button"
+        >
+          {t('当前字幕详情')}
+        </button>
+      </div>
+      <div
+        aria-labelledby={activeTab === 'list' ? 'subtitle-list-tab' : 'subtitle-detail-tab'}
+        className="subtitle-inspector-tab-content"
+        id={activeTab === 'list' ? 'subtitle-list-panel' : 'subtitle-detail-panel'}
+        role="tabpanel"
+      >
+        {activeTab === 'list' ? (
+          <SubtitleList
+            activeLineIndex={activeLineIndex}
+            draftLines={draftLines}
+            embedded
+            onActiveLineChange={(index) => {
+              onActiveLineChange(index)
+              setActiveTab('detail')
+            }}
+          />
+        ) : activeLine ? (
+          <div className="subtitle-detail-tab">
+          <div className="subtitle-time-fields" aria-label={t('字幕时间范围（毫秒）')}>
+            <InputNumber
+              aria-label={t('字幕开始时间（毫秒）')}
+              className="subtitle-time-input"
+              controls={false}
+              min={0}
+              precision={0}
+              size="small"
+              value={Math.round(activeLine.start * 1000)}
+              onChange={(value) =>
+                onUpdateLine(activeLineIndex, {
+                  start: millisecondsToSeconds(value ?? 0),
+                })
+              }
+            />
+            <span className="subtitle-time-separator" aria-hidden="true">→</span>
+            <InputNumber
+              aria-label={t('字幕结束时间（毫秒）')}
+              className="subtitle-time-input"
+              controls={false}
+              min={0}
+              precision={0}
+              size="small"
+              value={Math.round(activeLine.end * 1000)}
+              onChange={(value) =>
+                onUpdateLine(activeLineIndex, {
+                  end: millisecondsToSeconds(value ?? 0),
+                })
+              }
+            />
+            <small className="subtitle-time-unit">ms</small>
+          </div>
+          <div className="subtitle-text-grid">
+            <label className="field wide">
+              <span>{t('英文字幕')}</span>
+              <Input
+                size="small"
+                value={activeLine.text}
+                onChange={(event) => onUpdateLine(activeLineIndex, { text: event.target.value })}
+                onBlur={(event) => onUpdateLine(activeLineIndex, { text: cleanEnglishAnswerText(event.target.value) })}
+              />
+            </label>
+            <div className="field wide">
+              <div className="translation-field-head">
+                <span>{t('字幕译文（按语言对照填写）')}</span>
+              </div>
+              {TRANSLATION_TARGET_LOCALES.map((locale) => (
+                <label className="translation-locale-row" key={locale}>
+                  <span>{t(TRANSLATION_LOCALE_LABELS[locale])}</span>
+                  <Input
+                    size="small"
+                    value={activeLine.translations[locale] ?? ''}
+                    onChange={(event) => onUpdateLine(activeLineIndex, { translations: { ...activeLine.translations, [locale]: event.target.value } })}
+                    onBlur={(event) => onUpdateLine(activeLineIndex, { translations: { ...activeLine.translations, [locale]: cleanSubtitleSpacing(event.target.value) } })}
+                  />
+                </label>
+              ))}
+            </div>
+            <div className="field wide answer-field">
+              <span>{t('其他可接受答案')}</span>
+              <div className="answer-input-list">
+                {(activeLine.answers ?? []).map((answer, answerIndex) => (
+                  <div className="answer-input-row" key={answerIndex}>
+                    <Input
+                      size="small"
+                      value={answer}
+                      onChange={(event) => {
+                        const answers = [...(activeLine.answers ?? [])]
+                        answers[answerIndex] = event.target.value
+                        onUpdateLine(activeLineIndex, { answers })
+                      }}
+                      onBlur={(event) => {
+                        const answers = [...(activeLine.answers ?? [])]
+                        answers[answerIndex] = cleanEnglishAnswerText(event.target.value)
+                        onUpdateLine(activeLineIndex, { answers })
+                      }}
+                      placeholder={t('填写另一种可接受答案')}
+                    />
+                    <Button
+                      className="subtitle-editor-button"
+                      danger
+                      onClick={() => onUpdateLine(activeLineIndex, { answers: (activeLine.answers ?? []).filter((_, index) => index !== answerIndex) })}
+                      size="small"
+                    >
+                      {t('删除')}
+                    </Button>
+                  </div>
+                ))}
+                <Button
+                  className="subtitle-editor-button"
+                  icon={<ListPlus size={14} aria-hidden="true" />}
+                  onClick={() => onUpdateLine(activeLineIndex, { answers: [...(activeLine.answers ?? []), ''] })}
+                  size="small"
+                  type="dashed"
+                >
+                  {t('添加答案')}
+                </Button>
+              </div>
+            </div>
+            <label className="field wide">
+              <span>{t('关键词，逗号分隔')}</span>
+              <Input
+                size="small"
+                value={activeLine.keywordsText}
+                onChange={(event) => onUpdateLine(activeLineIndex, { keywordsText: event.target.value })}
+              />
+            </label>
+          </div>
+          </div>
+        ) : (
+          <div className="subtitle-empty-state">{t('当前没有选中的字幕。')}</div>
+        )}
+      </div>
+    </aside>
+  )
+}

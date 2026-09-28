@@ -1,0 +1,40 @@
+# Logs
+logs
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+lerna-debug.log*
+
+node_modules
+dist
+dist-ssr
+*.tsbuildinfo
+*.local
+.env
+.env.*
+!.env.example
+deployment-runbook.local.md
+
+# Editor directories and files
+.vscode/*
+!.vscode/extensions.json
+!.vscode/tasks.json
+.idea
+.DS_Store
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+*.sw?
+/temp/
+
+# Local Expo build metadata and signed store artifacts stay on the developer machine.
+/app.json
+/mobile-app/temp/
+output/
+
+# AI 协作工作文档（交接/开发状态记忆）——仅本机保留，不入公开仓库
+/docs/HANDOFF.md
+/memory/
