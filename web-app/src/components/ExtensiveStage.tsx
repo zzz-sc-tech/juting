@@ -1,5 +1,5 @@
 import { ChevronRight, Pause, Play } from 'lucide-react'
-import { useMemo, useState } from 'react'
+import { useEffect, useMemo, useRef, useState } from 'react'
 import type { RefObject } from 'react'
 import type { DialogueAnchor, ListeningExercise } from '@juting/shared'
 import { DialogueAnchorBar } from './DialogueAnchorBar'
@@ -68,6 +68,26 @@ export function ExtensiveStage({
       ? activeLine.translation
       : null
 
+  // 歌词式滚动字幕：当前句居中高亮，上下文句淡显可点（点击跳播到该句）。
+  // 首帧定位用瞬时滚动，之后跟句用平滑滚动。
+  const lyricsRef = useRef<HTMLDivElement | null>(null)
+  const scrolledOnceRef = useRef(false)
+  useEffect(() => {
+    const container = lyricsRef.current
+    if (!container || !activeLine) {
+      return
+    }
+    const active = container.querySelector<HTMLElement>('[data-active="true"]')
+    if (!active) {
+      return
+    }
+    container.scrollTo({
+      top: active.offsetTop - container.clientHeight / 2 + active.clientHeight / 2,
+      behavior: scrolledOnceRef.current ? 'smooth' : 'auto',
+    })
+    scrolledOnceRef.current = true
+  }, [activeLine?.id])
+
   return (
     <section className="stage-board extensive-board">
       <DialogueAnchorBar
@@ -91,17 +111,31 @@ export function ExtensiveStage({
                 src={resolveApiUrl(exercise.audioUrl)}
                 preload="metadata"
               />
-              <div aria-hidden="true" className="listen-visual-waves" />
-            </>
-          )}
-          {/* 实时字幕 + 翻译浮层（可在控制栏关闭） */}
-          {captionsOn && activeLine && (
-            <div className="extensive-subtitle" aria-live="polite">
-              <p className="extensive-subtitle-text">{activeLine.text}</p>
-              {translationOn && activeTranslation && (
-                <p className="extensive-subtitle-translation">{activeTranslation}</p>
+              {/* 歌词式滚动字幕填满波形区：当前句高亮居中，任意句可点跳播 */}
+              {captionsOn ? (
+                <div className="extensive-lyrics" ref={lyricsRef} aria-live="polite">
+                  {exercise.lines.map((line) => {
+                    const active = line.id === activeLine?.id
+                    return (
+                      <button
+                        className={active ? 'extensive-lyric active' : 'extensive-lyric'}
+                        data-active={active || undefined}
+                        key={line.id}
+                        onClick={() => onSeek(line.start)}
+                        type="button"
+                      >
+                        <span className="extensive-lyric-text">{line.text}</span>
+                        {active && translationOn && activeTranslation && (
+                          <span className="extensive-lyric-translation">{activeTranslation}</span>
+                        )}
+                      </button>
+                    )
+                  })}
+                </div>
+              ) : (
+                <div aria-hidden="true" className="listen-visual-waves" />
               )}
-            </div>
+            </>
           )}
           {/* 浮动控制栏：视频/音频底部叠加进度条和播放按钮 */}
           <div className="listen-visual-controls">
