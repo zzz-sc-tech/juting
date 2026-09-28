@@ -486,11 +486,13 @@ function LearnerAppShell() {
   }
 
   const moveSelectedLineAndPlay = async (offset: number) => {
-    if (!activeExercise) {
+    if (!activeExercise || !studyExercise) {
       return
     }
 
-    const nextLine = activeExercise.lines[selectedLineIndex + offset]
+    // 必须用正文列表（studyExercise）移动：selectedLineIndex 是正文序号；
+    // 以前误用全量 lines（含指令行），两套索引错位会让「下一句」越走越靠前。
+    const nextLine = studyExercise.lines[selectedLineIndex + offset]
     if (!nextLine) {
       return
     }

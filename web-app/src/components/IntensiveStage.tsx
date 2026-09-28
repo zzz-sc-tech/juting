@@ -88,11 +88,14 @@ export function IntensiveStage({
   onLineSelect,
 }: IntensiveStageProps) {
   const [ratePickerOpen, setRatePickerOpen] = useState(false)
+  // 译文开关：默认开（保持既有行为），做题时不想看可以关掉
+  const [translationOn, setTranslationOn] = useState(true)
   const { t } = useLanguage()
   const sentenceVisible = Boolean(revealedLineIds[selectedLine.id])
   // 译文行只在「真的有译文且与原文不同」时显示：接口若把原文回填进译文，
   // 这里会渲染成同一句英文出现两次。
   const translationVisible =
+    translationOn &&
     Boolean(selectedLine.translation) && selectedLine.translation !== selectedLine.text
 
   const handleMarkMastered = useCallback(() => {
@@ -196,7 +199,17 @@ export function IntensiveStage({
           <div className="media-subtitle-overlay">
             <div className="subtitle-topline">
               <span>{String(selectedLineIndex + 1).padStart(2, '0')} / {exercise.lines.length}</span>
-              <span>{formatLineDuration(selectedLine.start, selectedLine.end)}</span>
+              <span className="subtitle-topline-right">
+                <button
+                  className={translationOn ? 'subtitle-chip on' : 'subtitle-chip'}
+                  onClick={() => setTranslationOn((current) => !current)}
+                  type="button"
+                  aria-pressed={translationOn}
+                >
+                  {t('intensive.translationToggle')}
+                </button>
+                <span>{formatLineDuration(selectedLine.start, selectedLine.end)}</span>
+              </span>
             </div>
             <p className={sentenceVisible ? 'subtitle-text revealed' : 'subtitle-text'}>
               {sentenceVisible ? selectedLine.text : ''}
@@ -342,7 +355,6 @@ export function IntensiveStage({
         selectedLineId={selectedLine.id}
         revealedLineIds={revealedLineIds}
         sections={sections}
-        onAnchorClick={onJumpToAnchor}
         onLineSelect={onLineSelect}
       />
     </section>

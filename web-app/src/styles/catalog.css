@@ -513,69 +513,46 @@
   width: 24px;
 }
 
-.chapter-progress-ring {
+/* 章节状态框：未开始=空框 / 进行中=半充填 / 已完成=打勾 */
+.chapter-status-box {
   align-items: center;
-  color: var(--accent);
+  border: 2px solid var(--line);
+  border-radius: 7px;
+  color: #ffffff;
   display: inline-flex;
   flex: 0 0 auto;
-  font-size: 10px;
-  font-weight: 900;
-  height: 40px;
+  height: 22px;
   justify-content: center;
-  position: relative;
-  width: 40px;
+  width: 22px;
 }
 
-.chapter-progress-ring-svg {
-  display: block;
-  height: 40px;
-  left: 0;
-  position: absolute;
-  top: 0;
-  transform: rotate(-90deg);
-  width: 40px;
+.chapter-status-box.doing {
+  background: linear-gradient(90deg, var(--warning) 0 50%, transparent 50% 100%);
+  border-color: var(--warning);
 }
 
-.chapter-progress-ring-bg,
-.chapter-progress-ring-fill {
-  fill: none;
-  stroke-linecap: round;
-  stroke-width: 7;
-}
-
-.chapter-progress-ring-bg {
-  stroke: var(--line);
-}
-
-.chapter-progress-ring-fill {
-  stroke: var(--success);
-}
-
-.chapter-progress-ring span {
-  position: relative;
-  z-index: 1;
-}
-
-.chapter-progress-ring.complete {
-  color: #ffffff;
-}
-
-.chapter-progress-ring.complete::before {
+.chapter-status-box.done {
   background: var(--success);
-  border-radius: var(--radius-pill);
-  box-shadow: var(--shadow-card);
-  content: '';
-  height: 32px;
-  position: absolute;
-  width: 32px;
-  z-index: 1;
+  border-color: var(--success);
 }
 
-.chapter-progress-ring.complete .chapter-progress-ring-svg {
-  display: none;
+.chapter-group-label {
+  color: var(--ink-3);
+  font-size: 11.5px;
+  font-weight: 800;
+  letter-spacing: 0.04em;
+  margin: 10px 2px 4px;
 }
 
-.chapter-progress-ring.complete > svg + * {
-  position: relative;
-  z-index: 2;
+.chapter-group-label:first-child {
+  margin-top: 0;
+}
+
+.chapter-group-label span {
+  background: var(--surface-soft);
+  border-radius: 999px;
+  display: inline-block;
+  font-size: 10.5px;
+  margin-left: 5px;
+  padding: 0 7px;
 }

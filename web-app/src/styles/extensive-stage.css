@@ -318,3 +318,73 @@
   -webkit-mask-image: radial-gradient(ellipse 90% 70% at 50% 45%, #000 40%, transparent 100%);
   mask-image: radial-gradient(ellipse 90% 70% at 50% 45%, #000 40%, transparent 100%);
 }
+
+/* 泛听实时字幕 + 翻译浮层：底部控制栏上方的深色字幕条 */
+.extensive-subtitle {
+  bottom: 58px;
+  left: 16px;
+  position: absolute;
+  right: 16px;
+  text-align: center;
+  z-index: 2;
+}
+
+.extensive-subtitle-text {
+  background: rgba(25, 28, 46, 0.82);
+  border-radius: 10px;
+  color: #ffffff;
+  display: inline-block;
+  font-size: 16px;
+  font-weight: 700;
+  line-height: 1.5;
+  margin: 0 auto;
+  max-width: 100%;
+  padding: 8px 16px;
+}
+
+.extensive-subtitle-translation {
+  background: rgba(25, 28, 46, 0.62);
+  border-radius: 8px;
+  color: rgba(255, 255, 255, 0.92);
+  display: inline-block;
+  font-size: 13.5px;
+  line-height: 1.5;
+  margin: 6px auto 0;
+  max-width: 100%;
+  padding: 5px 12px;
+}
+
+/* 字幕/翻译开关 chip（泛听控制栏与精听卡顶栏共用） */
+.subtitle-chip {
+  align-items: center;
+  background: rgba(255, 255, 255, 0.9);
+  border: 1px solid var(--line);
+  border-radius: 999px;
+  color: var(--ink-3);
+  cursor: pointer;
+  display: inline-flex;
+  flex: 0 0 auto;
+  font: inherit;
+  font-size: 12px;
+  font-weight: 800;
+  min-height: 30px;
+  padding: 0 11px;
+  transition: color 0.15s ease, border-color 0.15s ease;
+}
+
+.subtitle-chip.on {
+  border-color: var(--accent);
+  color: var(--accent);
+}
+
+.subtitle-topline-right {
+  align-items: center;
+  display: inline-flex;
+  gap: 8px;
+}
+
+.media-subtitle-overlay .subtitle-chip {
+  min-height: 24px;
+  padding: 0 9px;
+  font-size: 11px;
+}

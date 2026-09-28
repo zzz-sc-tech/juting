@@ -1,5 +1,5 @@
 import { BookOpen, Check, ChevronDown, Layers3, X } from 'lucide-react'
-import { useEffect, useMemo, useState, type CSSProperties } from 'react'
+import { Fragment, useEffect, useMemo, useState, type CSSProperties } from 'react'
 import type {
   CatalogExerciseSummary,
   ExerciseCategory,
@@ -17,7 +17,6 @@ const emptySeriesProgress: SeriesProgressSummary = {
   percent: 0,
   totalLineCount: 0,
 }
-const CHAPTER_PROGRESS_CIRCUMFERENCE = 113
 
 type CourseMapProps = {
   catalog: {
@@ -44,6 +43,31 @@ export function CourseMap({
   onExerciseSelect,
 }: CourseMapProps) {
   const { t } = useLanguage()
+  // 章节按学习状态三分类：进行中 → 未开始 → 已完成（组内保持时间顺序）。
+  // 做一半的排最前方便续学；完成态沉底归档。
+  const chapterGroups = useMemo(() => {
+    const decorate = (exercise: CatalogExerciseSummary, index: number) => {
+      const progress = chapterProgressByExercise[exercise.id] ?? {
+        exerciseId: exercise.id,
+        masteredLineCount: 0,
+        percent: 0,
+        totalLineCount: exercise.lineCount,
+      }
+      const status =
+        progress.totalLineCount > 0 && progress.percent >= 100
+          ? 'done'
+          : progress.percent > 0
+            ? 'doing'
+            : 'todo'
+      return { exercise, progress, status, index }
+    }
+    const decorated = seriesExercises.map(decorate)
+    return [
+      { key: 'doing', labelKey: 'courseMap.group.doing' as const, items: decorated.filter((item) => item.status === 'doing') },
+      { key: 'todo', labelKey: 'courseMap.group.todo' as const, items: decorated.filter((item) => item.status === 'todo') },
+      { key: 'done', labelKey: 'courseMap.group.done' as const, items: decorated.filter((item) => item.status === 'done') },
+    ]
+  }, [seriesExercises, chapterProgressByExercise])
   const [seriesDialogOpen, setSeriesDialogOpen] = useState(false)
 
   const visibleCategories = catalog.categories
@@ -133,74 +157,46 @@ export function CourseMap({
       </div>
 
       <div className="exercise-list quest-list">
-        {seriesExercises.map((exercise, index) => {
-          const progress = chapterProgressByExercise[exercise.id] ?? {
-            exerciseId: exercise.id,
-            masteredLineCount: 0,
-            percent: 0,
-            totalLineCount: exercise.lineCount,
-          }
-          const completed =
-            progress.totalLineCount > 0 && progress.percent >= 100
-
-          return (
-            <button
-              className={
-                exercise.id === activeExerciseId
-                  ? 'exercise-item quest-node active'
-                  : 'exercise-item quest-node'
-              }
-              key={exercise.id}
-              onClick={() => onExerciseSelect(exercise)}
-              type="button"
-            >
-              <span className="quest-badge">{index + 1}</span>
-              <span className="exercise-main">
-                <span className="exercise-title">{exercise.title}</span>
-              </span>
-              <span
-                aria-label={
-                  completed
-                    ? t('courseMap.chapterCompletedAria')
-                    : t('courseMap.chapterProgressAria', {
-                        percent: progress.percent,
-                      })
-                }
-                className={
-                  completed
-                    ? 'chapter-progress-ring complete'
-                    : 'chapter-progress-ring'
-                }
-                role="img"
-              >
-                <svg
-                  className="chapter-progress-ring-svg"
-                  viewBox="0 0 48 48"
-                  aria-hidden="true"
+        {chapterGroups.map((group) => (
+          <Fragment key={group.key}>
+            {group.items.length > 0 && (
+              <div className="chapter-group-label" aria-hidden="true">
+                {t(group.labelKey)}
+                <span>{group.items.length}</span>
+              </div>
+            )}
+            {group.items.map(({ exercise, progress, status, index }) => {
+              const statusAria =
+                status === 'done'
+                  ? t('courseMap.chapterCompletedAria')
+                  : t('courseMap.chapterProgressAria', { percent: progress.percent })
+              return (
+                <button
+                  className={
+                    exercise.id === activeExerciseId
+                      ? 'exercise-item quest-node active'
+                      : 'exercise-item quest-node'
+                  }
+                  key={exercise.id}
+                  onClick={() => onExerciseSelect(exercise)}
+                  type="button"
                 >
-                  <circle
-                    className="chapter-progress-ring-bg"
-                    cx="24"
-                    cy="24"
-                    r="18"
-                  />
-                  <circle
-                    className="chapter-progress-ring-fill"
-                    cx="24"
-                    cy="24"
-                    r="18"
-                    strokeDasharray={`${(progress.percent / 100) * CHAPTER_PROGRESS_CIRCUMFERENCE} ${CHAPTER_PROGRESS_CIRCUMFERENCE}`}
-                  />
-                </svg>
-                {completed ? (
-                  <Check size={18} strokeWidth={4} aria-hidden="true" />
-                ) : (
-                  <span>{progress.percent}</span>
-                )}
-              </span>
-            </button>
-          )
-        })}
+                  <span className="quest-badge">{index + 1}</span>
+                  <span className="exercise-main">
+                    <span className="exercise-title">{exercise.title}</span>
+                  </span>
+                  <span
+                    aria-label={statusAria}
+                    className={`chapter-status-box ${status}`}
+                    role="img"
+                  >
+                    {status === 'done' && <Check size={15} strokeWidth={3.5} aria-hidden="true" />}
+                  </span>
+                </button>
+              )
+            })}
+          </Fragment>
+        ))}
       </div>
 
       {seriesDialogOpen && (

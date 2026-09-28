@@ -1,4 +1,5 @@
 import { ChevronRight, Pause, Play } from 'lucide-react'
+import { useMemo, useState } from 'react'
 import type { RefObject } from 'react'
 import type { DialogueAnchor, ListeningExercise } from '@juting/shared'
 import { DialogueAnchorBar } from './DialogueAnchorBar'
@@ -47,6 +48,26 @@ export function ExtensiveStage({
   const progressPercent =
     duration > 0 ? Math.min((currentTime / duration) * 100, 100) : 0
 
+  // 实时字幕：按播放进度取"最后一句已开始的台词"（含指令句——泛听听的就是全篇）；
+  // 句间空档沿用上一句，避免字幕闪烁消失。
+  const [captionsOn, setCaptionsOn] = useState(true)
+  const [translationOn, setTranslationOn] = useState(true)
+  const activeLine = useMemo(() => {
+    let current: ListeningExercise['lines'][number] | null = null
+    for (const line of exercise.lines) {
+      if (line.start <= currentTime + 0.05) {
+        current = line
+      } else {
+        break
+      }
+    }
+    return current
+  }, [exercise.lines, currentTime])
+  const activeTranslation =
+    activeLine?.translation && activeLine.translation !== activeLine.text
+      ? activeLine.translation
+      : null
+
   return (
     <section className="stage-board extensive-board">
       <DialogueAnchorBar
@@ -73,11 +94,36 @@ export function ExtensiveStage({
               <div aria-hidden="true" className="listen-visual-waves" />
             </>
           )}
+          {/* 实时字幕 + 翻译浮层（可在控制栏关闭） */}
+          {captionsOn && activeLine && (
+            <div className="extensive-subtitle" aria-live="polite">
+              <p className="extensive-subtitle-text">{activeLine.text}</p>
+              {translationOn && activeTranslation && (
+                <p className="extensive-subtitle-translation">{activeTranslation}</p>
+              )}
+            </div>
+          )}
           {/* 浮动控制栏：视频/音频底部叠加进度条和播放按钮 */}
           <div className="listen-visual-controls">
             <button className="media-play-btn" onClick={onTogglePlayback} type="button">
               {isPlaying ? <Pause size={16} aria-hidden="true" /> : <Play size={16} aria-hidden="true" />}
               <span>{isPlaying ? t('extensive.pause') : t('extensive.play')}</span>
+            </button>
+            <button
+              className={captionsOn ? 'subtitle-chip on' : 'subtitle-chip'}
+              onClick={() => setCaptionsOn((current) => !current)}
+              type="button"
+              aria-pressed={captionsOn}
+            >
+              {t('extensive.captions')}
+            </button>
+            <button
+              className={translationOn ? 'subtitle-chip on' : 'subtitle-chip'}
+              onClick={() => setTranslationOn((current) => !current)}
+              type="button"
+              aria-pressed={translationOn}
+            >
+              {t('extensive.translation')}
             </button>
             <label className="media-progress-track overlay">
               <span className="sr-only">{t('extensive.playbackProgress')}</span>
