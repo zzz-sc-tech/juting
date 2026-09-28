@@ -1,0 +1,2 @@
+# cmd batch files must be CRLF on disk AND in repo: LF breaks goto/label parsing
+*.bat -text
