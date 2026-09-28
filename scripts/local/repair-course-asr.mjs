@@ -185,10 +185,20 @@ for (const id of IDS) {
     log(`已排队 jobId=${q.job.id}（约 4 分钟/门，期间可 Ctrl+C 退出，缓存会保留）`)
 
     let job = null
+    // 卡死检测：进度 8 分钟无变化 → 放弃该课（worker 僵死时唯一解是重启后端）
+    let lastStamp = { progress: -1, at: Date.now() }
     while (true) {
         await new Promise((r) => setTimeout(r, POLL_MS))
         job = await fetch(`${BASE}/api/v1/admin/asr-jobs/${q.job.id}`, { headers: adminAuth }).then(j).catch(() => null)
         if (job?.status === 'succeeded' || job?.status === 'failed') break
+        const progress = job?.progress ?? -1
+        if (progress !== lastStamp.progress) {
+            lastStamp = { progress, at: Date.now() }
+        } else if (Date.now() - lastStamp.at > 8 * 60 * 1000) {
+            log(`✗ 任务卡死（${progress}% 已 8 分钟无进展），放弃。该课保持原字幕，可稍后重试。`)
+            job = { status: 'failed', errorMessage: '任务卡死：8 分钟无进展' }
+            break
+        }
         log(`  ${job?.status ?? '?'} ${job?.progress != null ? job.progress + '%' : ''}`)
     }
     if (job.status !== 'succeeded') {

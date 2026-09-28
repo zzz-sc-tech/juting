@@ -4,6 +4,7 @@ import type { RefObject } from 'react'
 import type { DialogueAnchor, ListeningExercise } from '@juting/shared'
 import { DialogueAnchorBar } from './DialogueAnchorBar'
 import { resolveApiUrl } from '../lib/apiClient'
+import { resolveLineTranslation } from '../lib/lineTranslation'
 import { useLanguage } from '../i18n/LanguageProvider'
 
 type ExtensiveStageProps = {
@@ -44,7 +45,7 @@ export function ExtensiveStage({
   onTogglePlayback,
   onNextStage,
 }: ExtensiveStageProps) {
-  const { t } = useLanguage()
+  const { t, contentLocale } = useLanguage()
   const progressPercent =
     duration > 0 ? Math.min((currentTime / duration) * 100, 100) : 0
 
@@ -63,10 +64,9 @@ export function ExtensiveStage({
     }
     return current
   }, [exercise.lines, currentTime])
-  const activeTranslation =
-    activeLine?.translation && activeLine.translation !== activeLine.text
-      ? activeLine.translation
-      : null
+  const activeTranslation = activeLine
+    ? resolveLineTranslation(activeLine, contentLocale)
+    : ''
 
   // 歌词式滚动字幕：当前句居中高亮，上下文句淡显可点（点击跳播到该句）。
   // 首帧定位用瞬时滚动，之后跟句用平滑滚动。

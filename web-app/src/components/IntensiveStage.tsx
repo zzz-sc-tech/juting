@@ -25,6 +25,7 @@ import type { StudySection } from '../lib/studySections'
 import { TranscriptPanel } from './TranscriptPanel'
 import { useLanguage } from '../i18n/LanguageProvider'
 import { resolveApiUrl } from '../lib/apiClient'
+import { resolveLineTranslation } from '../lib/lineTranslation'
 
 type IntensiveStageProps = {
   exercise: ListeningExercise
@@ -90,13 +91,12 @@ export function IntensiveStage({
   const [ratePickerOpen, setRatePickerOpen] = useState(false)
   // 译文开关：默认开（保持既有行为），做题时不想看可以关掉
   const [translationOn, setTranslationOn] = useState(true)
-  const { t } = useLanguage()
+  const { t, contentLocale } = useLanguage()
   const sentenceVisible = Boolean(revealedLineIds[selectedLine.id])
   // 译文行只在「真的有译文且与原文不同」时显示：接口若把原文回填进译文，
-  // 这里会渲染成同一句英文出现两次。
-  const translationVisible =
-    translationOn &&
-    Boolean(selectedLine.translation) && selectedLine.translation !== selectedLine.text
+  // 这里会渲染成同一句英文出现两次。译文权威数据在 translations[contentLocale]。
+  const resolvedTranslation = resolveLineTranslation(selectedLine, contentLocale)
+  const translationVisible = translationOn && Boolean(resolvedTranslation)
 
   const handleMarkMastered = useCallback(() => {
     // 点击"我已掌握"时触发一次显示字幕
@@ -215,7 +215,7 @@ export function IntensiveStage({
               {sentenceVisible ? selectedLine.text : ''}
             </p>
             <p className={sentenceVisible ? 'subtitle-translation revealed' : 'subtitle-translation hidden'}>
-              {translationVisible ? selectedLine.translation : ' '}
+              {translationVisible ? resolvedTranslation : ' '}
             </p>
           </div>
 
