@@ -159,8 +159,22 @@ export function TranscriptPanel({
               {!flatMode && section.lines.length === 0 && (
                 // 纯指令组（开场 / Section A、B、C 的播报说明）：固化为不可点击的
                 // 标签——精听不听指令，可点击的分组头只会误导（点击还可能跳播指令）。
+                // 对答案的字母就挂在这类题组标签上（它们正是做题对答案的地方）。
                 <li className="anchor-section-head static">
                   <span className="anchor-section-label">{section.label}</span>
+                  {answersShown && (() => {
+                    const range = questionRangeOf(section.label)
+                    if (!range) return null
+                    const letters = answersOfRange(range[0], range[1])
+                    if (!letters) return null
+                    return (
+                      <span className="anchor-section-answers" aria-label={t('transcript.showAnswers')}>
+                        {Array.from(letters).map((letter, index) => (
+                          <span key={`${range[0] + index}`}>{range[0] + index}{letter}</span>
+                        ))}
+                      </span>
+                    )
+                  })()}
                 </li>
               )}
               {!flatMode && section.lines.length > 0 && (
