@@ -545,8 +545,8 @@ function LearnerAppShell() {
       },
       { replace: false },
     )
-    if (stage === 'intensive' && activeExercise?.lines[0]) {
-      selectLine(activeExercise.lines[0].id)
+    if (stage === 'intensive' && studyExercise?.lines[0]) {
+      selectLine(studyExercise.lines[0].id)
       setRevealedLineIds({})
     }
     if (stage === 'review' && difficultLines[0]) {

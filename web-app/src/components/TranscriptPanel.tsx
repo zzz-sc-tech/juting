@@ -55,13 +55,25 @@ export function TranscriptPanel({
   useEffect(() => {
     setAnswersShown(false)
   }, [exercise.id])
+  // 折叠状态同样随课程重置：锚点 id（da-N/lead）跨课程撞名，不重置会泄漏
+  const [collapsedResetKey, setCollapsedResetKey] = useState(exercise.id)
+  useEffect(() => {
+    if (exercise.id !== collapsedResetKey) {
+      setCollapsedResetKey(exercise.id)
+      setCollapsedIds(new Set(sections.map((section) => section.id)))
+    }
+  }, [exercise.id, sections])
 
-  /** 题组锚点标签（Q1–4 / Q19）→ 题号区间；非题组返回 null。 */
+  /** 题组锚点标签（Q1–4 / Q19 / 第8–11题 / 第8题）→ 题号区间；非题组返回 null。 */
   const questionRangeOf = (label: string): [number, number] | null => {
     const match = label.match(/^Q\s*(\d+)\s*[–\-—]\s*(\d+)$/) ?? label.match(/^Q\s*(\d+)$/)
-    if (!match) return null
-    const start = Number(match[1])
-    return [start, match[2] ? Number(match[2]) : start]
+    if (match) {
+      const start = Number(match[1])
+      return [start, match[2] ? Number(match[2]) : start]
+    }
+    const cn = label.match(/^第\s*(\d+)\s*[–\-—~至]\s*(\d+)?\s*题/)
+    if (cn) return [Number(cn[1]), Number(cn[2] ?? cn[1])]
+    return null
   }
 
   /** 该题组在答案钥匙里的字母串，如 "ACBD"；缺题跳过，整组无答案返回 null。 */
@@ -193,7 +205,7 @@ export function TranscriptPanel({
                       const letters = answersOfRange(range[0], range[1])
                       if (!letters) return null
                       return (
-                        <span className="anchor-section-answers" aria-label={t('transcript.showAnswers')}>
+                        <span className="anchor-section-answers" aria-label={t('transcript.showAnswers') + ' ' + section.label}>
                           {Array.from(letters).map((letter, index) => (
                             <span key={`${range[0] + index}`}>{range[0] + index}{letter}</span>
                           ))}
@@ -201,9 +213,7 @@ export function TranscriptPanel({
                       )
                     })()}
                     <span className="anchor-section-count">
-                      {section.lines.length > 0
-                        ? t('transcript.groupSentences', { count: section.lines.length })
-                        : null}
+                      {t('transcript.groupSentences', { count: section.lines.length })}
                     </span>
                     <ChevronDown
                       aria-hidden="true"

@@ -1,5 +1,5 @@
 import { ChevronRight, Pause, Play } from 'lucide-react'
-import { useEffect, useMemo, useRef, useState } from 'react'
+import { memo, useEffect, useMemo, useRef, useState } from 'react'
 import type { RefObject } from 'react'
 import type { DialogueAnchor, ListeningExercise } from '@juting/shared'
 import { DialogueAnchorBar } from './DialogueAnchorBar'
@@ -86,7 +86,8 @@ export function ExtensiveStage({
       behavior: scrolledOnceRef.current ? 'smooth' : 'auto',
     })
     scrolledOnceRef.current = true
-  }, [activeLine?.id])
+    // captionsOn 关→开时容器重新挂载，需要重跑定位
+  }, [activeLine?.id, captionsOn])
 
   return (
     <section className="stage-board extensive-board">
@@ -111,27 +112,17 @@ export function ExtensiveStage({
                 src={resolveApiUrl(exercise.audioUrl)}
                 preload="metadata"
               />
-              {/* 歌词式滚动字幕填满波形区：当前句高亮居中，任意句可点跳播 */}
+              {/* 歌词式滚动字幕填满波形区：当前句高亮居中，任意句可点跳播。
+                  列表抽成 memo 子组件——currentTime 4Hz 变化只重渲染进度条，
+                  不再对 200+ 歌词按钮做 VDOM diff。 */}
               {captionsOn ? (
-                <div className="extensive-lyrics" ref={lyricsRef} aria-live="polite">
-                  {exercise.lines.map((line) => {
-                    const active = line.id === activeLine?.id
-                    return (
-                      <button
-                        className={active ? 'extensive-lyric active' : 'extensive-lyric'}
-                        data-active={active || undefined}
-                        key={line.id}
-                        onClick={() => onSeek(line.start)}
-                        type="button"
-                      >
-                        <span className="extensive-lyric-text">{line.text}</span>
-                        {active && translationOn && activeTranslation && (
-                          <span className="extensive-lyric-translation">{activeTranslation}</span>
-                        )}
-                      </button>
-                    )
-                  })}
-                </div>
+                <ExtensiveLyrics
+                  activeTranslation={translationOn ? activeTranslation : ''}
+                  activeId={activeLine?.id ?? ''}
+                  lines={exercise.lines}
+                  lyricsRef={lyricsRef}
+                  onSeek={onSeek}
+                />
               ) : (
                 <div aria-hidden="true" className="listen-visual-waves" />
               )}
@@ -203,3 +194,39 @@ export function ExtensiveStage({
     </section>
   )
 }
+
+const ExtensiveLyrics = memo(function ExtensiveLyrics({
+  lines,
+  activeId,
+  activeTranslation,
+  lyricsRef,
+  onSeek,
+}: {
+  lines: ListeningExercise['lines']
+  activeId: string
+  activeTranslation: string
+  lyricsRef: RefObject<HTMLDivElement | null>
+  onSeek: (time: number) => void
+}) {
+  return (
+    <div className="extensive-lyrics" ref={lyricsRef} aria-live="polite">
+      {lines.map((line) => {
+        const active = line.id === activeId
+        return (
+          <button
+            className={active ? 'extensive-lyric active' : 'extensive-lyric'}
+            data-active={active || undefined}
+            key={line.id}
+            onClick={() => onSeek(line.start)}
+            type="button"
+          >
+            <span className="extensive-lyric-text">{line.text}</span>
+            {active && activeTranslation && (
+              <span className="extensive-lyric-translation">{activeTranslation}</span>
+            )}
+          </button>
+        )
+      })}
+    </div>
+  )
+})

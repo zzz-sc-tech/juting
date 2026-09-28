@@ -378,8 +378,9 @@ const parseAnswerKey = (raw: unknown): Record<string, string> | null => {
     const result: Record<string, string> = {};
     for (const [key, value] of Object.entries(raw as Record<string, unknown>)) {
         if (!/^(?:[1-9]|1\d|2[0-5])$/.test(key)) continue;
-        if (typeof value !== 'string' || !/^[ABCD]$/.test(value)) continue;
-        result[key] = value;
+        // 小写 a-d 归一为大写再校验，避免导入方大小写疏忽被静默丢弃
+        if (typeof value !== 'string' || !/^[A-Da-d]$/.test(value)) continue;
+        result[key] = value.toUpperCase();
     }
     return Object.keys(result).length > 0 ? result : null;
 };
