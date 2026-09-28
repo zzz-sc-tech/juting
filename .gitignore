@@ -38,3 +38,10 @@ output/
 # AI 协作工作文档（交接/开发状态记忆）——仅本机保留，不入公开仓库
 /docs/HANDOFF.md
 /memory/
+
+# 预设课程包：seed.json（课程元数据与官方原文）入仓；音频媒体 818 MB 级，
+# 只随「完整版 / 六级课程包」发布包分发，进 git 会永久拖累克隆体积
+/presets/*/media/
+
+# 授权往来邮件截图含私人信息，仅本机保留
+docs/images/youzack-authorization-email.png
