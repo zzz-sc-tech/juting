@@ -20,7 +20,7 @@ const root = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..', '.
 const APPLY = process.argv.includes('--apply');
 
 const tlDir = path.join(root, 'temp', 'translations');
-const files = fs.readdirSync(tlDir).filter((f) => /^tl_\d+\.json$/.test(f));
+const files = fs.readdirSync(tlDir).filter((f) => /^tl(m)?_\d+\.json$/.test(f));
 if (files.length === 0) {
     console.error('temp/translations/ 下没有 tl_<id>.json');
     process.exit(1);
@@ -43,7 +43,7 @@ let totalLines = 0;
 let totalMatched = 0;
 const report = [];
 for (const file of files) {
-    const id = Number(file.match(/tl_(\d+)\.json/)[1]);
+    const id = Number(file.match(/tlm?_(\d+)\.json/)[1]);
     const dict = JSON.parse(fs.readFileSync(path.join(tlDir, file), 'utf8'));
     const exactMap = new Map(Object.entries(dict));
     const normMap = new Map(Object.entries(dict).map(([k, v]) => [normalize(k), v]));
