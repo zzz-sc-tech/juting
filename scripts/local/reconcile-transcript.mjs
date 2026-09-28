@@ -82,7 +82,11 @@ const splitLineBySentences = (line) => {
     return result;
 };
 
-const seed = JSON.parse(fs.readFileSync(path.join(root, 'presets', 'cet6', 'seed.json'), 'utf8'));
+// 旧字幕底稿：默认当前 seed；修复重跑时用 --old-seed 指向修复前的
+// 官方文本基线（当前 seed 若已是修复后导出，会把既有缺口当真值）。
+const oldSeedIdx = process.argv.indexOf('--old-seed');
+const oldSeedPath = oldSeedIdx >= 0 ? path.resolve(root, process.argv[oldSeedIdx + 1]) : path.join(root, 'presets', 'cet6', 'seed.json');
+const seed = JSON.parse(fs.readFileSync(oldSeedPath, 'utf8'));
 const fileEnvironment = {};
 dotenv.config({ path: path.join(root, 'temp', 'runtime', 'portable.env'), processEnv: fileEnvironment, quiet: true });
 const env = { ...fileEnvironment, ...process.env };
@@ -108,18 +112,26 @@ for (const id of IDS) {
     let newLines = null;
     let source = '当前库转录';
     if (rows[0].audio_object_name) {
+        // 汇聚该音频全部成功识别轮的分段（whisper 各轮漏听区域不同，
+        // 合并多轮池让 DP 对齐在任一轮覆盖处找到匹配），按时间排序。
         const [jobs] = await c.query(
-            "select result_json from media_asr_jobs where object_name = ? and status = 'succeeded' order by updated_at desc limit 1",
+            "select result_json from media_asr_jobs where object_name = ? and status = 'succeeded'",
             [rows[0].audio_object_name],
         );
-        if (jobs.length > 0) {
-            const result = typeof jobs[0].result_json === 'string'
-                ? JSON.parse(jobs[0].result_json)
-                : jobs[0].result_json;
-            // 缓存形态兼容：新版直接存分段数组，旧版包在 {segments:[...]} 里
+        const pool = [];
+        for (const job of jobs) {
+            const result = typeof job.result_json === 'string'
+                ? JSON.parse(job.result_json)
+                : job.result_json;
             const segs = Array.isArray(result) ? result : (result.segments ?? []);
-            newLines = segs.map((seg) => ({ start: seg.start, end: seg.end, text: seg.text }));
-            source = 'ASR缓存原始分段';
+            for (const seg of segs) {
+                pool.push({ start: seg.start, end: seg.end, text: seg.text });
+            }
+        }
+        if (pool.length > 0) {
+            pool.sort((a, b) => a.start - b.start);
+            newLines = pool;
+            source = `ASR缓存 ${jobs.length} 轮合并 ${pool.length} 段`;
         }
     }
     if (!newLines || newLines.length === 0) {
@@ -144,34 +156,68 @@ for (const id of IDS) {
         }
     }
 
-    // ── 时间窗匹配：每条老行只在自家时间窗内认领新分段 ──────────
-    // 老行时间轴整体近正确（个别巨句/碎片是局部伤），窗口法没有指针连锁问题。
-    const segUsed = new Array(newLines.length).fill(false);
-    const collectCandidates = (old, backPad) => {
-        const winStart = old.start - backPad;
-        const winEnd = old.end + 60;
-        const taken = [];
-        for (let k = 0; k < newLines.length; k += 1) {
-            if (segUsed[k]) continue;
-            const seg = newLines[k];
-            if (seg.end < winStart || seg.start > winEnd) continue;
-            if (similarity(old.text, seg.text) >= 0.35) {
-                // 时间连续的候选才接得上；断开的候选属于别的行
-                if (taken.length === 0 || k === taken[taken.length - 1] + 1) {
-                    taken.push(k);
+    // ── 全局单调 DP 对齐：老行(文本真值) × 新分段(时间真值) ──────
+    // 贪心窗口法会被长内容行"偷"走后面老行的分段（44 处 >15s 空档的根因），
+    // DP 保证：每条分段至多被认领一次、认领顺序严格单调、老行可吞并一段连续
+    // 分段（≤25 条）。跳过代价 0.02，匹配收益 = 包含度 − 0.32（≥0.32 才肯认）。
+    const n = prepped.length, m = newLines.length;
+    const simCache = new Map();
+    const runSim = (i, j, k) => {
+        const key = i * 1000000 + j * 1000 + k;
+        if (simCache.has(key)) return simCache.get(key);
+        const joined = newLines.slice(j, k + 1).map((x) => x.text).join(' ');
+        const v = similarity(prepped[i].text, joined);
+        simCache.set(key, v);
+        return v;
+    };
+    const dp = Array.from({ length: n + 1 }, () => new Float64Array(m + 1).fill(-Infinity));
+    const bt = Array.from({ length: n + 1 }, () => new Array(m + 1).fill(null));
+    dp[0][0] = 0;
+    const SKIP = 0.02;
+    for (let i = 0; i <= n; i += 1) {
+        for (let j = 0; j <= m; j += 1) {
+            const cur = dp[i][j];
+            if (cur === -Infinity) continue;
+            if (j < m && cur - SKIP > dp[i][j + 1]) {
+                dp[i][j + 1] = cur - SKIP;
+                bt[i][j + 1] = { pi: i, pj: j, kind: 'new' };
+            }
+            if (i < n && cur - SKIP > dp[i + 1][j]) {
+                dp[i + 1][j] = cur - SKIP;
+                bt[i + 1][j] = { pi: i, pj: j, kind: 'old' };
+            }
+            if (i < n) {
+                const kMax = Math.min(m - 1, j + 24);
+                for (let k = j; k <= kMax; k += 1) {
+                    const sim = runSim(i, j, k);
+                    if (sim < 0.32) continue;
+                    const gain = cur + sim - 0.32;
+                    if (gain > dp[i + 1][k + 1]) {
+                        dp[i + 1][k + 1] = gain;
+                        bt[i + 1][k + 1] = { pi: i, pj: j, kind: 'match', runEnd: k };
+                    }
                 }
             }
         }
-        return taken;
-    };
+    }
+    // 回溯：每条老行的认领段（或无）
     const oldMatched = [];
-    for (let i = 0; i < prepped.length; i += 1) {
-        const old = prepped[i];
-        // 老字幕里个别行本来就漂移十几秒：窄窗失败时用宽窗重试一次
-        let taken = collectCandidates(old, 8);
-        if (taken.length === 0) taken = collectCandidates(old, 45);
-        taken.forEach((k) => { segUsed[k] = true; });
-        oldMatched.push({ old, taken });
+    let i = n, j = m;
+    const runs = new Map();
+    while (i > 0 || j > 0) {
+        const b = bt[i][j];
+        if (!b) break;
+        if (b.kind === 'match') runs.set(b.pi, [b.pj, b.runEnd]);
+        i = b.pi; j = b.pj;
+    }
+    for (let oi = 0; oi < n; oi += 1) {
+        const run = runs.get(oi);
+        oldMatched.push({ old: prepped[oi], taken: run ? Array.from({ length: run[1] - run[0] + 1 }, (_, x) => run[0] + x) : [] });
+    }
+    if (DEBUG) {
+        let matched = 0;
+        for (const om of oldMatched) if (om.taken.length) matched += 1;
+        console.log(`  [dp] 老行 ${n}：匹配 ${matched}、未匹配 ${n - matched}；新分段 ${m}`);
     }
 
     // ── 按匹配结果重建：旧行文本全保留，时间换成真实分段边界 ────
@@ -197,6 +243,8 @@ for (const id of IDS) {
     // ── 插入找回：新分段有、老字幕没有的内容（如漏听的题干播报）───
     // 未被认领的分段按连续组成团；整团落在老行间隙（无重叠）且文本量足够才插入，
     // 连续重复文本视为 whisper 幻觉直接丢弃。
+    const segUsed = new Array(newLines.length).fill(false);
+    for (const om of oldMatched) for (const k of om.taken) segUsed[k] = true;
     {
         const free = [];
         for (let k = 0; k < newLines.length; k += 1) {
