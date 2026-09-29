@@ -1,7 +1,7 @@
 {
  "preset": "cet6",
- "version": "20260928.4",
- "generatedAt": "2026-09-28T19:03:13.511Z",
+ "version": "20260929.1",
+ "generatedAt": "2026-09-29T12:39:00.445Z",
  "group": {
   "id": 8,
   "name": "英语六级真题",
@@ -12501,7 +12501,7 @@
     },
     {
      "id": "l127",
-     "end": 832.3,
+     "end": 816,
      "text": "Q14. What made the speaker change her lifestyle?",
      "start": 805.3,
      "answers": [],
@@ -12510,7 +12510,13 @@
      "translations": {}
     },
     {
-     "id": "l128",
+     "text": "Question 15. What happened after the speaker changed her lifestyle?",
+     "start": 816,
+     "end": 823,
+     "id": "l128"
+    },
+    {
+     "id": "l129",
      "end": 855.3,
      "text": "In this section you will hear three recordings of lectures or talks, followed by three or four questions. The recordings will be played only once. After you hear a question, you must choose the best answer from the four choices, marked A, B, C and D.",
      "start": 832.3,
@@ -12520,7 +12526,7 @@
      "translations": {}
     },
     {
-     "id": "l129",
+     "id": "l130",
      "end": 862.3,
      "text": "Then mark the corresponding letter on answer sheet 1 with a single line through the centre.",
      "start": 855.3,
@@ -12530,7 +12536,7 @@
      "translations": {}
     },
     {
-     "id": "l130",
+     "id": "l131",
      "end": 865.3,
      "text": "RECORDING 1",
      "start": 862.3,
@@ -12540,7 +12546,7 @@
      "translations": {}
     },
     {
-     "id": "l131",
+     "id": "l132",
      "end": 881.3,
      "text": "Governments, private groups and individuals spend billions of dollars a year trying to root out non-native organisms that are considered dangerous to ecosystems, and to prevent the introduction of new intruders.",
      "start": 865.3,
@@ -12550,7 +12556,7 @@
      "translations": {}
     },
     {
-     "id": "l132",
+     "id": "l133",
      "end": 890.3,
      "text": "But a number of scientists question the assumption that the presence of alien species can never be acceptable in a natural ecosystem.",
      "start": 881.3,
@@ -12560,7 +12566,7 @@
      "translations": {}
     },
     {
-     "id": "l133",
+     "id": "l134",
      "end": 897.668,
      "text": "They say that portraying introduced species as inherently bad is an unscientific approach.",
      "start": 890.3,
@@ -12570,7 +12576,7 @@
      "translations": {}
     },
     {
-     "id": "l134",
+     "id": "l135",
      "end": 925.3,
      "text": "\"Distinctions between exotic and native species are artificial,\" said Dr. Michael Rosenzweig, a professor of evolutionary biology at the University of Arizona, \"because they depend on picking a date and calling the plants and animals that show up after that date 'exotic'.\" Ecosystems free of species defined as exotic are, by default, considered the most natural.",
      "start": 897.668,
@@ -12580,7 +12586,7 @@
      "translations": {}
     },
     {
-     "id": "l135",
+     "id": "l136",
      "end": 933.3,
      "text": "\"You can't roll back the clock and remove all exotics or fix habitats,\" Dr. Rosenzweig said.",
      "start": 925.3,
@@ -12590,7 +12596,7 @@
      "translations": {}
     },
     {
-     "id": "l136",
+     "id": "l137",
      "end": 955.3,
      "text": "\"Both native and exotic species can become invasive, and so they all have to be monitored and controlled when they begin to get out of hand.\" At its core, the debate is about how to manage the world's remaining natural ecosystems and about how, and how much, to restore other habitats.",
      "start": 933.3,
@@ -12600,7 +12606,7 @@
      "translations": {}
     },
     {
-     "id": "l137",
+     "id": "l138",
      "end": 962.2,
      "text": "Species that invade a territory can harm ecosystems, agriculture, and human health.",
      "start": 955.3,
@@ -12610,7 +12616,7 @@
      "translations": {}
     },
     {
-     "id": "l138",
+     "id": "l139",
      "end": 968.3,
      "text": "They can threaten some native species or even destroy and replace others.",
      "start": 962.2,
@@ -12620,7 +12626,7 @@
      "translations": {}
     },
     {
-     "id": "l139",
+     "id": "l140",
      "end": 979.3,
      "text": "Next to habitat loss, these invasive species represent the greatest threat to biodiversity worldwide, many ecologists say.",
      "start": 968.3,
@@ -12630,7 +12636,7 @@
      "translations": {}
     },
     {
-     "id": "l140",
+     "id": "l141",
      "end": 990.3,
      "text": "Ecologists generally define an alien species as one that people, accidentally or deliberately, carried to its new location.",
      "start": 979.3,
@@ -12640,7 +12646,7 @@
      "translations": {}
     },
     {
-     "id": "l141",
+     "id": "l142",
      "end": 998.3,
      "text": "Across the American continents, exotic species are those introduced after the first European contact.",
      "start": 990.3,
@@ -12650,7 +12656,7 @@
      "translations": {}
     },
     {
-     "id": "l142",
+     "id": "l143",
      "end": 1016.3,
      "text": "That date, rounded off to 1500 AD, represents what ecologists consider to have been a major shift in the spread of species, including crops and livestock, as they began to migrate with humans from continent to continent.",
      "start": 998.3,
@@ -12660,7 +12666,7 @@
      "translations": {}
     },
     {
-     "id": "l143",
+     "id": "l144",
      "end": 1030.3,
      "text": "\"Only a small percentage of alien species cause problems in their new habitats,\" said Don Smith, professor of ecology and evolutionary biology at the University of Tennessee.",
      "start": 1016.3,
@@ -12670,7 +12676,7 @@
      "translations": {}
     },
     {
-     "id": "l144",
+     "id": "l145",
      "end": 1042.325,
      "text": "\"Of the 7,000 alien species in the United States-out of a total of 150,000 species-only about 10 percent are invasive,\" he pointed out.",
      "start": 1030.3,
@@ -12680,7 +12686,7 @@
      "translations": {}
     },
     {
-     "id": "l145",
+     "id": "l146",
      "end": 1050.3,
      "text": "The other 90 percent have fit into their environments and are considered naturalized.",
      "start": 1042.325,
@@ -12690,7 +12696,7 @@
      "translations": {}
     },
     {
-     "id": "l146",
+     "id": "l147",
      "end": 1063.3,
      "text": "Yet appearances can deceive, ecologists caution, and many of these exotics may be considered acceptable only because no one has documented their harmful effects.",
      "start": 1050.3,
@@ -12700,7 +12706,7 @@
      "translations": {}
     },
     {
-     "id": "l147",
+     "id": "l148",
      "end": 1071.3,
      "text": "What is more, non-native species can appear harmless for decades, then turn invasive.",
      "start": 1063.3,
@@ -12710,7 +12716,7 @@
      "translations": {}
     },
     {
-     "id": "l148",
+     "id": "l149",
      "end": 1081.078,
      "text": "Questions 16 to 18 are based on the recording you have just heard.",
      "start": 1071.3,
@@ -12720,7 +12726,7 @@
      "translations": {}
     },
     {
-     "id": "l149",
+     "id": "l150",
      "end": 1098.419,
      "text": "Q16. What assumption about introduced species is challenged by a number of scientists?",
      "start": 1082.849,
@@ -12730,7 +12736,7 @@
      "translations": {}
     },
     {
-     "id": "l150",
+     "id": "l151",
      "end": 1117.755,
      "text": "Q17. What does Dr. Michael Rosenzweig think of exotic and native species?",
      "start": 1098.419,
@@ -12740,7 +12746,7 @@
      "translations": {}
     },
     {
-     "id": "l151",
+     "id": "l152",
      "end": 1133.3,
      "text": "Q18. What does Professor Don Smith say about alien species?",
      "start": 1117.755,
@@ -12750,7 +12756,7 @@
      "translations": {}
     },
     {
-     "id": "l152",
+     "id": "l153",
      "end": 1134.292,
      "text": "RECORDING 2",
      "start": 1133.3,
@@ -12760,7 +12766,7 @@
      "translations": {}
     },
     {
-     "id": "l153",
+     "id": "l154",
      "end": 1137.168,
      "text": "Good morning, ladies and gentlemen!",
      "start": 1134.292,
@@ -12770,7 +12776,7 @@
      "translations": {}
     },
     {
-     "id": "l154",
+     "id": "l155",
      "end": 1145.3,
      "text": "And welcome to the third in our series of business seminars in the program-Doing Business Abroad.",
      "start": 1137.168,
@@ -12780,7 +12786,7 @@
      "translations": {}
     },
     {
-     "id": "l155",
+     "id": "l156",
      "end": 1158.3,
      "text": "Today we are going to look at intercultural awareness, that is, the fact that not everyone is British, not everyone speaks English, and not everyone does business in the British way.",
      "start": 1145.3,
@@ -12790,7 +12796,7 @@
      "translations": {}
     },
     {
-     "id": "l156",
+     "id": "l157",
      "end": 1159.654,
      "text": "And why should they?",
      "start": 1158.3,
@@ -12800,7 +12806,7 @@
      "translations": {}
     },
     {
-     "id": "l157",
+     "id": "l158",
      "end": 1169.3,
      "text": "If overseas business people are selling to us, then they will make every effort to speak English and to respect our traditions and methods.",
      "start": 1159.654,
@@ -12810,7 +12816,7 @@
      "translations": {}
     },
     {
-     "id": "l158",
+     "id": "l159",
      "end": 1173.72,
      "text": "It is only polite for us to do the same when we visit them.",
      "start": 1169.3,
@@ -12820,7 +12826,7 @@
      "translations": {}
     },
     {
-     "id": "l159",
+     "id": "l160",
      "end": 1175.389,
      "text": "It is not only polite.",
      "start": 1173.72,
@@ -12830,7 +12836,7 @@
      "translations": {}
     },
     {
-     "id": "l160",
+     "id": "l161",
      "end": 1180.3,
      "text": "It is essential if we want to sell British products overseas.",
      "start": 1175.389,
@@ -12840,7 +12846,7 @@
      "translations": {}
     },
     {
-     "id": "l161",
+     "id": "l162",
      "end": 1183.377,
      "text": "First, a short quiz.",
      "start": 1180.3,
@@ -12850,7 +12856,7 @@
      "translations": {}
     },
     {
-     "id": "l162",
+     "id": "l163",
      "end": 1188.3,
      "text": "Let's see how interculturally aware you are.",
      "start": 1183.377,
@@ -12860,7 +12866,7 @@
      "translations": {}
     },
     {
-     "id": "l163",
+     "id": "l164",
      "end": 1194.3,
      "text": "Question 1: Where must you not drink alcohol on the first and seventh of every month?",
      "start": 1188.3,
@@ -12870,7 +12876,7 @@
      "translations": {}
     },
     {
-     "id": "l164",
+     "id": "l165",
      "end": 1200.3,
      "text": "Question 2: Where should you never admire your host's possessions?",
      "start": 1194.3,
@@ -12880,7 +12886,7 @@
      "translations": {}
     },
     {
-     "id": "l165",
+     "id": "l166",
      "end": 1208.038,
      "text": "Question 3: How should you attract the waiter during a business lunch in Bangkok?",
      "start": 1200.3,
@@ -12890,7 +12896,7 @@
      "translations": {}
     },
     {
-     "id": "l166",
+     "id": "l167",
      "end": 1217.3,
      "text": "And Question 4: Where should you try to make all your appointments either before 2:00 or after 5:30 p.m.?",
      "start": 1208.038,
@@ -12900,7 +12906,7 @@
      "translations": {}
     },
     {
-     "id": "l167",
+     "id": "l168",
      "end": 1217.8,
      "text": "OK.",
      "start": 1217.3,
@@ -12910,7 +12916,7 @@
      "translations": {}
     },
     {
-     "id": "l168",
+     "id": "l169",
      "end": 1220.633,
      "text": "Everyone had a chance to make some notes?",
      "start": 1217.8,
@@ -12920,7 +12926,7 @@
      "translations": {}
     },
     {
-     "id": "l169",
+     "id": "l170",
      "end": 1231.3,
      "text": "Right, here are the answers-although I'm sure the information could equally well apply to countries other than those I have chosen.",
      "start": 1220.633,
@@ -12930,7 +12936,7 @@
      "translations": {}
     },
     {
-     "id": "l170",
+     "id": "l171",
      "end": 1237.791,
      "text": "So No.1: You must not drink alcohol on the first and seventh of the month in India.",
      "start": 1231.3,
@@ -12940,7 +12946,7 @@
      "translations": {}
     },
     {
-     "id": "l171",
+     "id": "l172",
      "end": 1252.3,
      "text": "In international hotels, you may find it served, but if you are having a meal with an Indian colleague, remember to avoid asking for a beer.",
      "start": 1237.791,
@@ -12950,7 +12956,7 @@
      "translations": {}
     },
     {
-     "id": "l172",
+     "id": "l173",
      "end": 1258.888,
      "text": "No.2: In other countries, the politeness in general society is that people give away their possessions.",
      "start": 1252.3,
@@ -12960,7 +12966,7 @@
      "translations": {}
     },
     {
-     "id": "l173",
+     "id": "l174",
      "end": 1268.3,
      "text": "If you admire your colleague's beautiful golden bowls, you may well find yourself being presented with them.",
      "start": 1258.888,
@@ -12970,7 +12976,7 @@
      "translations": {}
     },
     {
-     "id": "l174",
+     "id": "l175",
      "end": 1281.3,
      "text": "This is not a cheap way, however, as your host will find the equal worth and beauty.",
      "start": 1268.3,
@@ -12980,7 +12986,7 @@
      "translations": {}
     },
     {
-     "id": "l175",
+     "id": "l176",
      "end": 1294.4,
      "text": "No.3: In Thailand, keeping your fingers clapping your hands or shouting at the waiter will embarrass your hosts, fellow diners, the waiter himself and, most of all, you.",
      "start": 1281.3,
@@ -12990,7 +12996,7 @@
      "translations": {}
     },
     {
-     "id": "l176",
+     "id": "l177",
      "end": 1304.3,
      "text": "Place your palm down to make an implicit gesture and wait for the results.",
      "start": 1294.4,
@@ -13000,7 +13006,7 @@
      "translations": {}
     },
     {
-     "id": "l177",
+     "id": "l178",
      "end": 1319.3,
      "text": "And finally, No.4: In Spain, some businesses may stay working until 2 o'clock and return to the office from 5:30 to 8 or 9 in the evening.",
      "start": 1304.3,
@@ -13010,7 +13016,7 @@
      "translations": {}
     },
     {
-     "id": "l178",
+     "id": "l179",
      "end": 1326.3,
      "text": "Questions 19 to 21 are based on the recording you have just heard.",
      "start": 1319.3,
@@ -13020,7 +13026,7 @@
      "translations": {}
     },
     {
-     "id": "l179",
+     "id": "l180",
      "end": 1346.448,
      "text": "Q19. What should you do when you do business with foreigners?",
      "start": 1329.336,
@@ -13030,7 +13036,7 @@
      "translations": {}
     },
     {
-     "id": "l180",
+     "id": "l181",
      "end": 1363.508,
      "text": "Q20. What must you avoid doing with your Indian colleague?",
      "start": 1346.448,
@@ -13040,7 +13046,7 @@
      "translations": {}
     },
     {
-     "id": "l181",
+     "id": "l182",
      "end": 1377.3,
      "text": "Q21. What do we learn about some Spanish people?",
      "start": 1363.508,
@@ -13050,7 +13056,7 @@
      "translations": {}
     },
     {
-     "id": "l182",
+     "id": "l183",
      "end": 1378.287,
      "text": "RECORDING 3",
      "start": 1377.3,
@@ -13060,7 +13066,7 @@
      "translations": {}
     },
     {
-     "id": "l183",
+     "id": "l184",
      "end": 1392.3,
      "text": "Shortly after he took over the Reader's Digest Association in 1984, George Grune unlocked the company's boardroom and announced that the room was now open to the employees.",
      "start": 1378.287,
@@ -13070,7 +13076,7 @@
      "translations": {}
     },
     {
-     "id": "l184",
+     "id": "l185",
      "end": 1400.3,
      "text": "It was a symbolic act, indicating that under Grune's leadership, Reader's Digest was going to be different.",
      "start": 1392.3,
@@ -13080,7 +13086,7 @@
      "translations": {}
     },
     {
-     "id": "l185",
+     "id": "l186",
      "end": 1404.378,
      "text": "True to his word, Grune has shaken up the culture here.",
      "start": 1400.3,
@@ -13090,7 +13096,7 @@
      "translations": {}
     },
     {
-     "id": "l186",
+     "id": "l187",
      "end": 1411.3,
      "text": "To get an idea of the culture we're talking about, consider the boardroom Grune opened up.",
      "start": 1404.378,
@@ -13100,7 +13106,7 @@
      "translations": {}
     },
     {
-     "id": "l187",
+     "id": "l188",
      "end": 1422.3,
      "text": "It has artworks that any museum in the world would want to collect, paintings by many world-famous artists like Monet and Picasso.",
      "start": 1411.3,
@@ -13110,7 +13116,7 @@
      "translations": {}
     },
     {
-     "id": "l188",
+     "id": "l189",
      "end": 1426.253,
      "text": "Its headquarters houses some 3,000 works of art.",
      "start": 1422.3,
@@ -13120,7 +13126,7 @@
      "translations": {}
     },
     {
-     "id": "l189",
+     "id": "l190",
      "end": 1437.3,
      "text": "The main building is topped with a Georgian Tower with four sculptures of the mythical winged horse, the magazine's corporate logo.",
      "start": 1426.253,
@@ -13130,7 +13136,7 @@
      "translations": {}
     },
     {
-     "id": "l190",
+     "id": "l191",
      "end": 1441.29,
      "text": "It sits on 127 acres of well-trimmed lawns.",
      "start": 1437.3,
@@ -13140,7 +13146,7 @@
      "translations": {}
     },
     {
-     "id": "l191",
+     "id": "l192",
      "end": 1460.3,
      "text": "The editor's office used to be occupied by founder Dewitt Wallace, who, along with his wife Lila Acheson Wallace, launched Reader's Digest in 1922 with condensed articles from other publications.",
      "start": 1441.29,
@@ -13150,7 +13156,7 @@
      "translations": {}
     },
     {
-     "id": "l192",
+     "id": "l193",
      "end": 1472.3,
      "text": "It has become the world's most widely read magazine, selling 28 million copies each month in 17 languages and 41 different editions.",
      "start": 1460.3,
@@ -13160,7 +13166,7 @@
      "translations": {}
     },
     {
-     "id": "l193",
+     "id": "l194",
      "end": 1480.736,
      "text": "The Wallaces, both children of church ministers, had a clearly defined formula for their little magazine.",
      "start": 1472.3,
@@ -13170,7 +13176,7 @@
      "translations": {}
     },
     {
-     "id": "l194",
+     "id": "l195",
      "end": 1488.3,
      "text": "As Reader's Digest was originally subtitled, articles were to be short, readable and uplifting.",
      "start": 1480.736,
@@ -13180,7 +13186,7 @@
      "translations": {}
     },
     {
-     "id": "l195",
+     "id": "l196",
      "end": 1492.522,
      "text": "Subjects were picked to inspire or entertain.",
      "start": 1488.3,
@@ -13190,7 +13196,7 @@
      "translations": {}
     },
     {
-     "id": "l196",
+     "id": "l197",
      "end": 1505.3,
      "text": "The Wallaces didn't accept advertising in the US edition until 1955 and even then they didn't allow any ads for cigarettes, liquor or drugs.",
      "start": 1492.522,
@@ -13200,7 +13206,7 @@
      "translations": {}
     },
     {
-     "id": "l197",
+     "id": "l198",
      "end": 1511.3,
      "text": "The Wallaces also had a clear sense of the kind of workplace they wanted.",
      "start": 1505.3,
@@ -13210,7 +13216,7 @@
      "translations": {}
     },
     {
-     "id": "l198",
+     "id": "l199",
      "end": 1520.3,
      "text": "It started as a mom-and-pop operation, and the childless Wallaces always considered employees to be part of their family.",
      "start": 1511.3,
@@ -13220,7 +13226,7 @@
      "translations": {}
     },
     {
-     "id": "l199",
+     "id": "l200",
      "end": 1535.3,
      "text": "Employees still tell stories of how the Wallaces would take care of their employees who had met with misfortunes and they showered their employees with unusual benefits like a turkey on Thanksgiving and Fridays off in May.",
      "start": 1520.3,
@@ -13230,7 +13236,7 @@
      "translations": {}
     },
     {
-     "id": "l200",
+     "id": "l201",
      "end": 1539.287,
      "text": "This cozy workplace no longer exists here.",
      "start": 1535.3,
@@ -13240,7 +13246,7 @@
      "translations": {}
     },
     {
-     "id": "l201",
+     "id": "l202",
      "end": 1544.3,
      "text": "The Wallaces both died in their nineties in the early 1980s.",
      "start": 1539.287,
@@ -13250,7 +13256,7 @@
      "translations": {}
     },
     {
-     "id": "l202",
+     "id": "l203",
      "end": 1553.3,
      "text": "George Grune, a former ad salesman who joined Reader's Digest in 1960, has his eyes focused on the bottom line.",
      "start": 1544.3,
@@ -13260,7 +13266,7 @@
      "translations": {}
     },
     {
-     "id": "l203",
+     "id": "l204",
      "end": 1557.586,
      "text": "In a few short years, he turned the magazine on its head.",
      "start": 1553.3,
@@ -13270,7 +13276,7 @@
      "translations": {}
     },
     {
-     "id": "l204",
+     "id": "l205",
      "end": 1568.3,
      "text": "He laid off several hundred workers, especially hard hit were the blue- and pink-collar departments such as subscription fulfillment.",
      "start": 1557.586,
@@ -13280,7 +13286,7 @@
      "translations": {}
     },
     {
-     "id": "l205",
+     "id": "l206",
      "end": 1573.3,
      "text": "Questions 22 to 25 are based on the recording you have just heard.",
      "start": 1568.3,
@@ -13290,7 +13296,7 @@
      "translations": {}
     },
     {
-     "id": "l206",
+     "id": "l207",
      "end": 1590.351,
      "text": "Q22. What did George Grune do in 1984?",
      "start": 1574.967,
@@ -13300,7 +13306,7 @@
      "translations": {}
     },
     {
-     "id": "l207",
+     "id": "l208",
      "end": 1612.179,
      "text": "Q23. What was the Wallaces' formula for Reader's Digest?",
      "start": 1590.351,
@@ -13310,7 +13316,7 @@
      "translations": {}
     },
     {
-     "id": "l208",
+     "id": "l209",
      "end": 1631.179,
      "text": "Q24. What do we learn about the founder of Reader's Digest Dewitt Wallace?",
      "start": 1612.179,
@@ -13320,7 +13326,7 @@
      "translations": {}
     },
     {
-     "id": "l209",
+     "id": "l210",
      "end": 1639.239,
      "text": "Q25. What change took place in Reader's Digest after the Wallaces' death?",
      "start": 1631.179,
@@ -72006,17 +72012,29 @@
      "translations": {}
     },
     {
-     "id": "l117",
+     "text": "Questions 12 to 15 are based on the passage you have just heard.",
+     "start": 754.9,
+     "end": 761.2,
+     "id": "l117"
+    },
+    {
+     "text": "Question 12. What do we learn about American workers from the passage?",
+     "start": 761.2,
+     "end": 779.7,
+     "id": "l118"
+    },
+    {
+     "id": "l119",
      "end": 784.9,
      "text": "Question 13. What does the passage say \"long working hours\" contribute to?",
-     "start": 754.86,
+     "start": 779.7,
      "answers": [],
      "keywords": [],
      "translation": "问题 13：短文说“长时间工作”造成了什么？",
      "translations": {}
     },
     {
-     "id": "l118",
+     "id": "l120",
      "end": 815.26,
      "text": "Question 14. What does automation do according to the passage?",
      "start": 784.9,
@@ -72026,7 +72044,7 @@
      "translations": {}
     },
     {
-     "id": "l119",
+     "id": "l121",
      "end": 821.7,
      "text": "Question 15. What do post-work theorists advocate?",
      "start": 815.26,
@@ -72036,7 +72054,7 @@
      "translations": {}
     },
     {
-     "id": "l120",
+     "id": "l122",
      "end": 836.62,
      "text": "Section C",
      "start": 821.7,
@@ -72046,7 +72064,7 @@
      "translations": {}
     },
     {
-     "id": "l121",
+     "id": "l123",
      "end": 837.12,
      "text": "Directions.",
      "start": 836.62,
@@ -72056,7 +72074,7 @@
      "translations": {}
     },
     {
-     "id": "l122",
+     "id": "l124",
      "end": 840.452,
      "text": "In this section, you will hear three recordings of lectures or talks followed by three or four questions. The recordings will be played only once.",
      "start": 837.12,
@@ -72066,7 +72084,7 @@
      "translations": {}
     },
     {
-     "id": "l123",
+     "id": "l125",
      "end": 841.86,
      "text": "After you hear a question, you must choose the best answer from the four",
      "start": 840.452,
@@ -72076,7 +72094,7 @@
      "translations": {}
     },
     {
-     "id": "l124",
+     "id": "l126",
      "end": 846.412,
      "text": "choices marked A, B, C, and D.",
      "start": 841.86,
@@ -72086,7 +72104,7 @@
      "translations": {}
     },
     {
-     "id": "l125",
+     "id": "l127",
      "end": 860.219,
      "text": "Then mark the corresponding letter on answer sheet 1 with a single line through the centre.",
      "start": 846.412,
@@ -72096,7 +72114,7 @@
      "translations": {}
     },
     {
-     "id": "l126",
+     "id": "l128",
      "end": 862.04,
      "text": "Recording 1.",
      "start": 860.219,
@@ -72106,7 +72124,7 @@
      "translations": {}
     },
     {
-     "id": "l127",
+     "id": "l129",
      "end": 867.66,
      "text": "Recent studies show that self-control and persistence increase academic outcomes independent of IQ.",
      "start": 862.04,
@@ -72116,7 +72134,7 @@
      "translations": {}
     },
     {
-     "id": "l128",
+     "id": "l130",
      "end": 874.44,
      "text": "Even our personal beliefs about effort can affect academic outcomes.",
      "start": 867.66,
@@ -72126,7 +72144,7 @@
      "translations": {}
     },
     {
-     "id": "l129",
+     "id": "l131",
      "end": 882.08,
      "text": "Children who think effort leads to achievement outperform those who believe ability is a fixed trait. Given the link between persistence and academic success, decisions about effort are particularly important in childhood, yet relatively little",
      "start": 874.44,
@@ -72136,7 +72154,7 @@
      "translations": {}
     },
     {
-     "id": "l130",
+     "id": "l132",
      "end": 896.48,
      "text": "research has explored how young children learn what's worth the effort.",
      "start": 882.08,
@@ -72146,7 +72164,7 @@
      "translations": {}
     },
     {
-     "id": "l131",
+     "id": "l133",
      "end": 902,
      "text": "We all know that infants are keen observers of the social world.",
      "start": 896.48,
@@ -72156,7 +72174,7 @@
      "translations": {}
     },
     {
-     "id": "l132",
+     "id": "l134",
      "end": 905.018,
      "text": "But they're not just idly watching.",
      "start": 902,
@@ -72166,7 +72184,7 @@
      "translations": {}
     },
     {
-     "id": "l133",
+     "id": "l135",
      "end": 907.778,
      "text": "They are tiny learning machines.",
      "start": 905.018,
@@ -72176,7 +72194,7 @@
      "translations": {}
     },
     {
-     "id": "l134",
+     "id": "l136",
      "end": 911.4,
      "text": "They can generalize such abstract concepts",
      "start": 907.778,
@@ -72186,7 +72204,7 @@
      "translations": {}
     },
     {
-     "id": "l135",
+     "id": "l137",
      "end": 913.683,
      "text": "as causal relationships and social roles from just a few examples.",
      "start": 911.4,
@@ -72196,7 +72214,7 @@
      "translations": {}
     },
     {
-     "id": "l136",
+     "id": "l138",
      "end": 916.38,
      "text": "Even a 15-month-old infant can outperform a high-level computer in such tasks.",
      "start": 913.683,
@@ -72206,7 +72224,7 @@
      "translations": {}
     },
     {
-     "id": "l137",
+     "id": "l139",
      "end": 928.28,
      "text": "Could infants also make broad, generalizable inferences from a few examples when it comes to effort?",
      "start": 916.38,
@@ -72216,7 +72234,7 @@
      "translations": {}
     },
     {
-     "id": "l138",
+     "id": "l140",
      "end": 935.539,
      "text": "If so, then maybe persistence isn't simply a character trait.",
      "start": 928.28,
@@ -72226,7 +72244,7 @@
      "translations": {}
     },
     {
-     "id": "l139",
+     "id": "l141",
      "end": 937.8,
      "text": "Maybe it's flexible",
      "start": 935.539,
@@ -72236,7 +72254,7 @@
      "translations": {}
     },
     {
-     "id": "l140",
+     "id": "l142",
      "end": 939.25,
      "text": "and adaptable based on social context.",
      "start": 937.8,
@@ -72246,7 +72264,7 @@
      "translations": {}
     },
     {
-     "id": "l141",
+     "id": "l143",
      "end": 944.4,
      "text": "To explore this question, we showed 15-month-old babies one of two things - an experimenter working hard to achieve two different goals",
      "start": 939.25,
@@ -72256,7 +72274,7 @@
      "translations": {}
     },
     {
-     "id": "l142",
+     "id": "l144",
      "end": 953.8,
      "text": "or an experimenter who effortlessly reached each goal.",
      "start": 944.4,
@@ -72266,7 +72284,7 @@
      "translations": {}
     },
     {
-     "id": "l143",
+     "id": "l145",
      "end": 962.814,
      "text": "Then we introduced the baby to a novel music toy that seemed as if it could be activated by pushing a big button on top.",
      "start": 953.8,
@@ -72276,7 +72294,7 @@
      "translations": {}
     },
     {
-     "id": "l144",
+     "id": "l146",
      "end": 967.223,
      "text": "The button could be pressed down but didn't actually activate anything.",
      "start": 962.814,
@@ -72286,7 +72304,7 @@
      "translations": {}
     },
     {
-     "id": "l145",
+     "id": "l147",
      "end": 970.463,
      "text": "Out of sight of the babies, we turned on the music toy with a hidden button so that they heard the toy making music.",
      "start": 967.223,
@@ -72296,7 +72314,7 @@
      "translations": {}
     },
     {
-     "id": "l146",
+     "id": "l148",
      "end": 972.25,
      "text": "We gave the babies the music toy and left the room.",
      "start": 970.463,
@@ -72306,7 +72324,7 @@
      "translations": {}
     },
     {
-     "id": "l147",
+     "id": "l149",
      "end": 992.46,
      "text": "Then analysts who didn't know which condition each baby was in watched videotapes of the experiment and counted how many times babies tried to activate the toy by pressing the button. Across one study and a pre-registered duplication, babies who had seen an adult persist and succeed pushed the button about twice as many times as those who saw an adult effortlessly succeed.",
      "start": 972.25,
@@ -72316,7 +72334,7 @@
      "translations": {}
     },
     {
-     "id": "l148",
+     "id": "l150",
      "end": 1015.44,
      "text": "In other words, babies learned that effort was valuable after watching just two examples of an adult working hard and succeeding.",
      "start": 992.46,
@@ -72326,7 +72344,7 @@
      "translations": {}
     },
     {
-     "id": "l149",
+     "id": "l151",
      "end": 1017.899,
      "text": "Part of what's exciting about this finding is that the babies didn't just imitate the adult's actions.",
      "start": 1015.44,
@@ -72336,7 +72354,7 @@
      "translations": {}
     },
     {
-     "id": "l150",
+     "id": "l152",
      "end": 1019.78,
      "text": "Instead, they generalised the value of effort to a novel task. The experimenter",
      "start": 1017.899,
@@ -72346,7 +72364,7 @@
      "translations": {}
     },
     {
-     "id": "l151",
+     "id": "l153",
      "end": 1032.06,
      "text": "never demonstrated pushing a button or trying to make music.",
      "start": 1019.78,
@@ -72356,7 +72374,7 @@
      "translations": {}
     },
     {
-     "id": "l152",
+     "id": "l154",
      "end": 1036.68,
      "text": "Instead, the babies learned from different examples of effortful actions that the new toy probably also required persistence.",
      "start": 1032.06,
@@ -72366,17 +72384,29 @@
      "translations": {}
     },
     {
-     "id": "l153",
+     "text": "Questions 16 to 18 are based on the recording you have just heard.",
+     "start": 1037.3,
+     "end": 1044.8,
+     "id": "l155"
+    },
+    {
+     "text": "Question 16. What does the speaker say even our personal beliefs about effort can do?",
+     "start": 1046.6,
+     "end": 1059.8,
+     "id": "l156"
+    },
+    {
+     "id": "l157",
      "end": 1085.14,
      "text": "Question 17. How did the researchers turn on the music toy in their experiment?",
-     "start": 1036.68,
+     "start": 1059.8,
      "answers": [],
      "keywords": [],
      "translation": "问题 17：研究人员在实验中是怎样打开音乐玩具的？",
      "translations": {}
     },
     {
-     "id": "l154",
+     "id": "l158",
      "end": 1108.78,
      "text": "Question 18. What could the infants do in the experiment, according to the speaker?",
      "start": 1085.14,
@@ -72386,7 +72416,7 @@
      "translations": {}
     },
     {
-     "id": "l155",
+     "id": "l159",
      "end": 1111.12,
      "text": "Question 19. If chronic lateness has taken over your life and turned into a defining trait of who you are, it's likely that you're losing out on job offers, recreational opportunities,",
      "start": 1108.78,
@@ -72396,7 +72426,7 @@
      "translations": {}
     },
     {
-     "id": "l156",
+     "id": "l160",
      "end": 1113.978,
      "text": "friendships, and more.",
      "start": 1111.12,
@@ -72406,7 +72436,7 @@
      "translations": {}
     },
     {
-     "id": "l157",
+     "id": "l161",
      "end": 1129.305,
      "text": "If you are showing up late to your own life, get organised, prioritise punctuality, and address any underlying causes.",
      "start": 1113.978,
@@ -72416,7 +72446,7 @@
      "translations": {}
     },
     {
-     "id": "l158",
+     "id": "l162",
      "end": 1135.02,
      "text": "When you have to be somewhere, try to arrive",
      "start": 1129.305,
@@ -72426,7 +72456,7 @@
      "translations": {}
     },
     {
-     "id": "l159",
+     "id": "l163",
      "end": 1136.292,
      "text": "fifteen to thirty minutes before you need to.",
      "start": 1135.02,
@@ -72436,7 +72466,7 @@
      "translations": {}
     },
     {
-     "id": "l160",
+     "id": "l164",
      "end": 1138.949,
      "text": "If you always run late, that means you must be failing to account for something you always do.",
      "start": 1136.292,
@@ -72446,7 +72476,7 @@
      "translations": {}
     },
     {
-     "id": "l161",
+     "id": "l165",
      "end": 1140.08,
      "text": "Anticipate that by giving yourself extra",
      "start": 1138.949,
@@ -72456,7 +72486,7 @@
      "translations": {}
     },
     {
-     "id": "l162",
+     "id": "l166",
      "end": 1141.785,
      "text": "time to arrive.",
      "start": 1140.08,
@@ -72466,7 +72496,7 @@
      "translations": {}
     },
     {
-     "id": "l163",
+     "id": "l167",
      "end": 1148.377,
      "text": "Keep track of whether or not you actually do arrive early.",
      "start": 1141.785,
@@ -72476,7 +72506,7 @@
      "translations": {}
     },
     {
-     "id": "l164",
+     "id": "l168",
      "end": 1156.72,
      "text": "You might find that leaving early gets you to places exactly on time. Set two alarms.",
      "start": 1148.377,
@@ -72486,7 +72516,7 @@
      "translations": {}
     },
     {
-     "id": "l165",
+     "id": "l169",
      "end": 1158.1,
      "text": "Set one alarm that lets you know it's time to drop what you're doing, and a second alarm that means you need to walk out the door. Obey the alarms. As soon",
      "start": 1156.72,
@@ -72496,7 +72526,7 @@
      "translations": {}
     },
     {
-     "id": "l166",
+     "id": "l170",
      "end": 1165.939,
      "text": "as the first alarm goes off, stop what you're doing.",
      "start": 1158.1,
@@ -72506,7 +72536,7 @@
      "translations": {}
     },
     {
-     "id": "l167",
+     "id": "l171",
      "end": 1184.48,
      "text": "If it's something you'll be coming back to, like a project for work, make a note to remind yourself where you left off. Grab",
      "start": 1165.939,
@@ -72516,7 +72546,7 @@
      "translations": {}
     },
     {
-     "id": "l168",
+     "id": "l172",
      "end": 1186.708,
      "text": "everything you need and make sure you know how to get where you're going.",
      "start": 1184.48,
@@ -72526,7 +72556,7 @@
      "translations": {}
     },
     {
-     "id": "l169",
+     "id": "l173",
      "end": 1189.76,
      "text": "Aim to be out the door and on your way before the second alarm rings. This will only work if you take",
      "start": 1186.708,
@@ -72536,7 +72566,7 @@
      "translations": {}
     },
     {
-     "id": "l170",
+     "id": "l174",
      "end": 1199.76,
      "text": "the alarms seriously, so make sure you react as soon as you hear them.",
      "start": 1189.76,
@@ -72546,7 +72576,7 @@
      "translations": {}
     },
     {
-     "id": "l171",
+     "id": "l175",
      "end": 1201.34,
      "text": "Remember for the day ahead.",
      "start": 1199.76,
@@ -72556,7 +72586,7 @@
      "translations": {}
     },
     {
-     "id": "l172",
+     "id": "l176",
      "end": 1210.12,
      "text": "Have all of your notes and materials organized well in advance of each event, so that all you have to do is grab them and go when it's the actual day.",
      "start": 1201.34,
@@ -72566,7 +72596,7 @@
      "translations": {}
     },
     {
-     "id": "l173",
+     "id": "l177",
      "end": 1212.774,
      "text": "If mornings are a struggle for you, do as much as you can to ready yourself the night before.",
      "start": 1210.12,
@@ -72576,7 +72606,7 @@
      "translations": {}
     },
     {
-     "id": "l174",
+     "id": "l178",
      "end": 1215,
      "text": "Before you go to bed, lay out your clothes and pack your bag for the next day.",
      "start": 1212.774,
@@ -72586,7 +72616,7 @@
      "translations": {}
     },
     {
-     "id": "l175",
+     "id": "l179",
      "end": 1221.302,
      "text": "Time to leave time in between tasks and meetings.",
      "start": 1215,
@@ -72596,7 +72626,7 @@
      "translations": {}
     },
     {
-     "id": "l176",
+     "id": "l180",
      "end": 1233.264,
      "text": "It soon becomes unbearable to shift between one meeting and another without space in between.",
      "start": 1221.302,
@@ -72606,7 +72636,7 @@
      "translations": {}
     },
     {
-     "id": "l177",
+     "id": "l181",
      "end": 1239.837,
      "text": "If you over-schedule yourself, however, you'll arrive late as soon as you hit a bump.",
      "start": 1233.264,
@@ -72616,7 +72646,7 @@
      "translations": {}
     },
     {
-     "id": "l178",
+     "id": "l182",
      "end": 1242.36,
      "text": "As well as giving you space, this time also acts as a buffer between events, which can be borrowed from, should you be held up in a prior meeting,",
      "start": 1239.837,
@@ -72626,7 +72656,7 @@
      "translations": {}
     },
     {
-     "id": "l179",
+     "id": "l183",
      "end": 1253.34,
      "text": "allowing you to still get to the next one on time.",
      "start": 1242.36,
@@ -72636,7 +72666,7 @@
      "translations": {}
     },
     {
-     "id": "l180",
+     "id": "l184",
      "end": 1271.1,
      "text": "Calculate transit time between activities and then add 10 to 30 minutes for unexpected delays.",
      "start": 1253.34,
@@ -72646,7 +72676,7 @@
      "translations": {}
     },
     {
-     "id": "l181",
+     "id": "l185",
      "end": 1294.34,
      "text": "Question 20. What should you do if mornings are a struggle for you?",
      "start": 1271.1,
@@ -72656,7 +72686,7 @@
      "translations": {}
     },
     {
-     "id": "l182",
+     "id": "l186",
      "end": 1310.34,
      "text": "Question 21. According to the speaker, what can we do to combat unexpected delays?",
      "start": 1294.34,
@@ -72666,7 +72696,7 @@
      "translations": {}
     },
     {
-     "id": "l183",
+     "id": "l187",
      "end": 1324.5,
      "text": "Recording 3",
      "start": 1310.34,
@@ -72676,7 +72706,7 @@
      "translations": {}
     },
     {
-     "id": "l184",
+     "id": "l188",
      "end": 1327.8,
      "text": "Do you think Bostonians put out the welcome mat?",
      "start": 1324.5,
@@ -72686,7 +72716,7 @@
      "translations": {}
     },
     {
-     "id": "l185",
+     "id": "l189",
      "end": 1331.58,
      "text": "Do you find other cities to be more or less polite?",
      "start": 1327.8,
@@ -72696,7 +72726,7 @@
      "translations": {}
     },
     {
-     "id": "l186",
+     "id": "l190",
      "end": 1335.08,
      "text": "Different cities have different feels for visitors.",
      "start": 1331.58,
@@ -72706,7 +72736,7 @@
      "translations": {}
     },
     {
-     "id": "l187",
+     "id": "l191",
      "end": 1337.18,
      "text": "Some are friendly and open.",
      "start": 1335.08,
@@ -72716,7 +72746,7 @@
      "translations": {}
     },
     {
-     "id": "l188",
+     "id": "l192",
      "end": 1340.3,
      "text": "Some are formal and distant.",
      "start": 1337.18,
@@ -72726,7 +72756,7 @@
      "translations": {}
     },
     {
-     "id": "l189",
+     "id": "l193",
      "end": 1344.3,
      "text": "Boston",
      "start": 1340.3,
@@ -72736,7 +72766,7 @@
      "translations": {}
     },
     {
-     "id": "l190",
+     "id": "l194",
      "end": 1345.905,
      "text": "tends to seem hurried and sometimes a little rude.",
      "start": 1344.3,
@@ -72746,7 +72776,7 @@
      "translations": {}
     },
     {
-     "id": "l191",
+     "id": "l195",
      "end": 1347.06,
      "text": "That's what some tourists have said.",
      "start": 1345.905,
@@ -72756,7 +72786,7 @@
      "translations": {}
     },
     {
-     "id": "l192",
+     "id": "l196",
      "end": 1350.669,
      "text": "One study found that people here are less willing to volunteer to help strangers than those residents of other US cities.",
      "start": 1347.06,
@@ -72766,7 +72796,7 @@
      "translations": {}
     },
     {
-     "id": "l193",
+     "id": "l197",
      "end": 1352.1,
      "text": "Take a close look next time you're in Boston and",
      "start": 1350.669,
@@ -72776,7 +72806,7 @@
      "translations": {}
     },
     {
-     "id": "l194",
+     "id": "l198",
      "end": 1358.233,
      "text": "here are some of the things you'll probably see.",
      "start": 1352.1,
@@ -72786,7 +72816,7 @@
      "translations": {}
     },
     {
-     "id": "l195",
+     "id": "l199",
      "end": 1368.71,
      "text": "People smoking in the subway stations despite the frequent reminders not to do so.",
      "start": 1358.233,
@@ -72796,7 +72826,7 @@
      "translations": {}
     },
     {
-     "id": "l196",
+     "id": "l200",
      "end": 1375.297,
      "text": "Pedestrians walking when the crosswalk lights say not to do so, ignoring the cars.",
      "start": 1368.71,
@@ -72806,7 +72836,7 @@
      "translations": {}
     },
     {
-     "id": "l197",
+     "id": "l201",
      "end": 1377.507,
      "text": "Car drivers speeding, making a loud noise with the horn and occasionally cursing at each other.",
      "start": 1375.297,
@@ -72816,7 +72846,7 @@
      "translations": {}
     },
     {
-     "id": "l198",
+     "id": "l202",
      "end": 1378.74,
      "text": "Drives who can't be bothered to find a place to park,",
      "start": 1377.507,
@@ -72826,7 +72856,7 @@
      "translations": {}
     },
     {
-     "id": "l199",
+     "id": "l203",
      "end": 1389.46,
      "text": "but instead simply turn on their blinker and stop in the middle of the street.",
      "start": 1378.74,
@@ -72836,7 +72866,7 @@
      "translations": {}
     },
     {
-     "id": "l200",
+     "id": "l204",
      "end": 1394.012,
      "text": "Sometimes Bostonians seem like they're just too busy to be polite.",
      "start": 1389.46,
@@ -72846,7 +72876,7 @@
      "translations": {}
     },
     {
-     "id": "l201",
+     "id": "l205",
      "end": 1396.081,
      "text": "Why is there a city like that?",
      "start": 1394.012,
@@ -72856,7 +72886,7 @@
      "translations": {}
     },
     {
-     "id": "l202",
+     "id": "l206",
      "end": 1401.46,
      "text": "Former US representative Chester Atkins says it's because the Puritan founding",
      "start": 1396.081,
@@ -72866,7 +72896,7 @@
      "translations": {}
     },
     {
-     "id": "l203",
+     "id": "l207",
      "end": 1403.772,
      "text": "fathers were themselves impatient and bad-tempered and had little time for courtesy.",
      "start": 1401.46,
@@ -72876,7 +72906,7 @@
      "translations": {}
     },
     {
-     "id": "l204",
+     "id": "l208",
      "end": 1405.479,
      "text": "That culture has carried down to the present day, he believes.",
      "start": 1403.772,
@@ -72886,7 +72916,7 @@
      "translations": {}
     },
     {
-     "id": "l205",
+     "id": "l209",
      "end": 1406.58,
      "text": "Boston College professor Thomas O'Connor",
      "start": 1405.479,
@@ -72896,7 +72926,7 @@
      "translations": {}
     },
     {
-     "id": "l206",
+     "id": "l210",
      "end": 1423.958,
      "text": "thinks a contributing factor is Boston's history as a city where each new group of immigrants was treated with suspicion and exclusion.",
      "start": 1406.58,
@@ -72906,7 +72936,7 @@
      "translations": {}
     },
     {
-     "id": "l207",
+     "id": "l211",
      "end": 1427.82,
      "text": "That's given Boston a sense of",
      "start": 1423.958,
@@ -72916,7 +72946,7 @@
      "translations": {}
     },
     {
-     "id": "l208",
+     "id": "l212",
      "end": 1428.961,
      "text": "clannishness and reserve, he thinks.",
      "start": 1427.82,
@@ -72926,7 +72956,7 @@
      "translations": {}
     },
     {
-     "id": "l209",
+     "id": "l213",
      "end": 1432.067,
      "text": "The idea of a stranger greeting another stranger is simply not part of the local culture, he says.",
      "start": 1428.961,
@@ -72936,7 +72966,7 @@
      "translations": {}
     },
     {
-     "id": "l210",
+     "id": "l214",
      "end": 1433.24,
      "text": "People will begin a conversation with",
      "start": 1432.067,
@@ -72946,7 +72976,7 @@
      "translations": {}
     },
     {
-     "id": "l211",
+     "id": "l215",
      "end": 1437.679,
      "text": "someone they know, but not with a stranger.",
      "start": 1433.24,
@@ -72956,7 +72986,7 @@
      "translations": {}
     },
     {
-     "id": "l212",
+     "id": "l216",
      "end": 1451.1,
      "text": "Ralph Whitehead, a professor of journalism at the University of Massachusetts at Amherst, thinks it's because Boston's upper class",
      "start": 1437.679,
@@ -72966,7 +72996,7 @@
      "translations": {}
     },
     {
-     "id": "l213",
+     "id": "l217",
      "end": 1452.502,
      "text": "used manners to make class distinctions.",
      "start": 1451.1,
@@ -72976,7 +73006,7 @@
      "translations": {}
     },
     {
-     "id": "l214",
+     "id": "l218",
      "end": 1455.973,
      "text": "By being snobbish about manners, proper Bostonians made other people scornful of courtesy, he says.",
      "start": 1452.502,
@@ -72986,7 +73016,7 @@
      "translations": {}
     },
     {
-     "id": "l215",
+     "id": "l219",
      "end": 1457.2,
      "text": "Some say that's just the way Boston",
      "start": 1455.973,
@@ -72996,7 +73026,7 @@
      "translations": {}
     },
     {
-     "id": "l216",
+     "id": "l220",
      "end": 1460.725,
      "text": "is and that the city will never change.",
      "start": 1457.2,
@@ -73006,7 +73036,7 @@
      "translations": {}
     },
     {
-     "id": "l217",
+     "id": "l221",
      "end": 1469.312,
      "text": "Still, other cities with reputations for worse rudeness are trying hard to change their images.",
      "start": 1460.725,
@@ -73016,7 +73046,7 @@
      "translations": {}
     },
     {
-     "id": "l218",
+     "id": "l222",
      "end": 1475.34,
      "text": "Paris is one example where people are trying to be friendly. New York City is another. There, the city is trying to persuade subway riders to be more considerate. If those cities can make the effort, maybe Boston should as well.",
      "start": 1469.312,
@@ -73026,7 +73056,7 @@
      "translations": {}
     },
     {
-     "id": "l219",
+     "id": "l223",
      "end": 1491.34,
      "text": "Questions 22 to 25 are based on the recording you have just heard.",
      "start": 1475.34,
@@ -73036,7 +73066,7 @@
      "translations": {}
     },
     {
-     "id": "l220",
+     "id": "l224",
      "end": 1496.34,
      "text": "Question 22. What do visitors find about the cities they've been to?",
      "start": 1491.34,
@@ -73046,7 +73076,7 @@
      "translations": {}
     },
     {
-     "id": "l221",
+     "id": "l225",
      "end": 1513.311,
      "text": "Question 23. What did one city find about Bostonians compared with residents of other U.",
      "start": 1499.34,
@@ -73056,7 +73086,7 @@
      "translations": {}
     },
     {
-     "id": "l222",
+     "id": "l226",
      "end": 1514.74,
      "text": "S. cities?",
      "start": 1513.311,
@@ -73066,7 +73096,7 @@
      "translations": {}
     },
     {
-     "id": "l223",
+     "id": "l227",
      "end": 1549.1,
      "text": "Question 24. What does Thomas O'Connor say about the idea of strangers greeting one another?",
      "start": 1514.74,
@@ -73076,7 +73106,7 @@
      "translations": {}
     },
     {
-     "id": "l224",
+     "id": "l228",
      "end": 1567.98,
      "text": "Question 25. What does the speaker think Boston should do?",
      "start": 1549.1,
@@ -73086,7 +73116,7 @@
      "translations": {}
     },
     {
-     "id": "l225",
+     "id": "l229",
      "end": 1570.26,
      "text": "That's the end of listening comprehension.",
      "start": 1567.98,
