@@ -1,7 +1,7 @@
 {
  "preset": "cet6",
- "version": "20260929.10",
- "generatedAt": "2026-09-29T18:15:12.599Z",
+ "version": "20260929.11",
+ "generatedAt": "2026-09-29T18:33:24.472Z",
  "group": {
   "id": 8,
   "name": "英语六级真题",
@@ -51666,2243 +51666,1353 @@
    "transcript_json": [
     {
      "id": "l1",
-     "end": 8,
-     "text": "Section A)",
      "start": 0,
-     "answers": [],
-     "keywords": [],
-     "translation": "Section A)",
-     "translations": {}
+     "end": 8,
+     "text": "Section A)"
     },
     {
      "id": "l2",
-     "end": 8.677,
-     "text": "Directions.",
      "start": 8,
-     "answers": [],
-     "keywords": [],
-     "translation": "题目说明。",
-     "translations": {}
+     "end": 8.677,
+     "text": "Directions."
     },
     {
      "id": "l3",
-     "end": 12,
-     "text": "In this section, you will hear two long conversations.",
      "start": 8.677,
-     "answers": [],
-     "keywords": [],
-     "translation": "在本部分，你将听到两段长对话。",
-     "translations": {}
+     "end": 12,
+     "text": "In this section, you will hear two long conversations."
     },
     {
      "id": "l4",
-     "end": 16,
-     "text": "At the end of each conversation, you will hear four questions.",
      "start": 12,
-     "answers": [],
-     "keywords": [],
-     "translation": "每段对话结束时，你会听到四个问题。",
-     "translations": {}
+     "end": 16,
+     "text": "At the end of each conversation, you will hear four questions."
     },
     {
      "id": "l5",
-     "end": 20,
-     "text": "Both the conversation and the questions will be spoken only once.",
      "start": 16,
-     "answers": [],
-     "keywords": [],
-     "translation": "对话和问题都只放一遍。",
-     "translations": {}
+     "end": 20,
+     "text": "Both the conversation and the questions will be spoken only once."
     },
     {
      "id": "l6",
-     "end": 24,
-     "text": "After you hear a question, you must choose the best answer from the four",
      "start": 20,
-     "answers": [],
-     "keywords": [],
-     "translation": "听到问题后，你必须从四个",
-     "translations": {}
+     "end": 24,
+     "text": "After you hear a question, you must choose the best answer from the four"
     },
     {
      "id": "l7",
-     "end": 28,
-     "text": "choices marked A, B, C, and D.",
      "start": 24,
-     "answers": [],
-     "keywords": [],
-     "translation": "标有 A、B、C、D 的选项中选出最佳答案。",
-     "translations": {}
+     "end": 28,
+     "text": "choices marked A, B, C, and D."
     },
     {
      "id": "l8",
-     "end": 32.96,
-     "text": "mark the corresponding letter on answer sheet 1 with a single line through the center.",
      "start": 28,
-     "answers": [],
-     "keywords": [],
-     "translation": "在答题卡 1 上把对应字母从中间划一条横线。",
-     "translations": {}
+     "end": 32.96,
+     "text": "mark the corresponding letter on answer sheet 1 with a single line through the center."
     },
     {
      "id": "l9",
-     "end": 35.44,
-     "text": "CONVERSATION 1",
      "start": 34.24,
-     "answers": [],
-     "keywords": [],
-     "translation": "CONVERSATION 1",
-     "translations": {}
+     "end": 35.44,
+     "text": "CONVERSATION 1"
     },
     {
      "id": "l10",
-     "end": 38.343,
-     "text": "M: Thanks for inviting me out tonight.",
      "start": 36.48,
-     "answers": [],
-     "keywords": [],
-     "translation": "M: 谢谢你今晚约我出来。",
-     "translations": {}
+     "end": 38.343,
+     "text": "M: Thanks for inviting me out tonight."
     },
     {
      "id": "l11",
-     "end": 40.72,
-     "text": "I've been wanting to try this place for weeks.",
      "start": 38.343,
-     "answers": [],
-     "keywords": [],
-     "translation": "好几周了，我一直想来这家店试试。",
-     "translations": {}
+     "end": 40.72,
+     "text": "I've been wanting to try this place for weeks."
     },
     {
      "id": "l12",
-     "end": 46.16,
-     "text": "I usually pass it on my way home from work but never seem to have time to stop.",
      "start": 41.68,
-     "answers": [],
-     "keywords": [],
-     "translation": "下班回家路上常路过这里，但好像总没时间停下。",
-     "translations": {}
+     "end": 46.16,
+     "text": "I usually pass it on my way home from work but never seem to have time to stop."
     },
     {
      "id": "l13",
-     "end": 48.789,
-     "text": "W: I've been dying to come here as well.",
      "start": 46.72,
-     "answers": [],
-     "keywords": [],
-     "translation": "W: 我也一直盼着来这儿。",
-     "translations": {}
+     "end": 48.789,
+     "text": "W: I've been dying to come here as well."
     },
     {
      "id": "l14",
-     "end": 52,
-     "text": "I was worried that the menu might not be accommodating.",
      "start": 48.789,
-     "answers": [],
-     "keywords": [],
-     "translation": "我本来还担心菜单可能不好照顾我的饮食习惯。",
-     "translations": {}
+     "end": 52,
+     "text": "I was worried that the menu might not be accommodating."
     },
     {
      "id": "l15",
-     "end": 55.072,
-     "text": "But one of my close friends ate here last week.",
      "start": 52,
-     "answers": [],
-     "keywords": [],
-     "translation": "不过我的一位好朋友上周在这里吃过。",
-     "translations": {}
+     "end": 55.072,
+     "text": "But one of my close friends ate here last week."
     },
     {
      "id": "l16",
-     "end": 56.4,
-     "text": "She's a vegetarian.",
      "start": 55.072,
-     "answers": [],
-     "keywords": [],
-     "translation": "她是素食者。",
-     "translations": {}
+     "end": 56.4,
+     "text": "She's a vegetarian."
     },
     {
      "id": "l17",
-     "end": 61.36,
-     "text": "She told me that there were a lot of options for her, and they offered alternative dishes.",
      "start": 56.4,
-     "answers": [],
-     "keywords": [],
-     "translation": "她告诉我，这里她能吃的选择很多，他们还提供替代菜品。",
-     "translations": {}
+     "end": 61.36,
+     "text": "She told me that there were a lot of options for her, and they offered alternative dishes."
     },
     {
      "id": "l18",
-     "end": 64.4,
-     "text": "M: But you're not vegetarian, are you?",
      "start": 61.92,
-     "answers": [],
-     "keywords": [],
-     "translation": "M: 可你不是素食者，对吧？",
-     "translations": {}
+     "end": 64.4,
+     "text": "M: But you're not vegetarian, are you?"
     },
     {
      "id": "l19",
-     "end": 65.771,
-     "text": "W: Well, not entirely.",
      "start": 64.4,
-     "answers": [],
-     "keywords": [],
-     "translation": "W: 嗯，不完全是。",
-     "translations": {}
+     "end": 65.771,
+     "text": "W: Well, not entirely."
     },
     {
      "id": "l20",
-     "end": 71.44,
-     "text": "I don't eat meat at all, but I don't have a problem eating fish, seafood, or eggs.",
      "start": 65.771,
-     "answers": [],
-     "keywords": [],
-     "translation": "我完全不吃肉，但吃鱼、海鲜或鸡蛋都没问题。",
-     "translations": {}
+     "end": 71.44,
+     "text": "I don't eat meat at all, but I don't have a problem eating fish, seafood, or eggs."
     },
     {
      "id": "l21",
-     "end": 73.76,
-     "text": "M: Isn't that very difficult?",
      "start": 72,
-     "answers": [],
-     "keywords": [],
-     "translation": "M: 那不很难吗？",
-     "translations": {}
+     "end": 73.76,
+     "text": "M: Isn't that very difficult?"
     },
     {
      "id": "l22",
-     "end": 78.48,
-     "text": "I can't imagine giving up a premium juicy steak or bacon cheeseburgers.",
      "start": 73.76,
-     "answers": [],
-     "keywords": [],
-     "translation": "我无法想象放弃上好的多汁牛排或培根芝士汉堡。",
-     "translations": {}
+     "end": 78.48,
+     "text": "I can't imagine giving up a premium juicy steak or bacon cheeseburgers."
     },
     {
      "id": "l23",
-     "end": 79.555,
-     "text": "W: I wouldn't know.",
      "start": 78.48,
-     "answers": [],
-     "keywords": [],
-     "translation": "W: 我可体会不到那是什么滋味。",
-     "translations": {}
+     "end": 79.555,
+     "text": "W: I wouldn't know."
     },
     {
      "id": "l24",
-     "end": 83.44,
-     "text": "My parents followed the same diet.",
      "start": 79.555,
-     "answers": [],
-     "keywords": [],
-     "translation": "我父母就是这样的饮食习惯。",
-     "translations": {}
+     "end": 83.44,
+     "text": "My parents followed the same diet."
     },
     {
      "id": "l25",
-     "end": 87.84,
-     "text": "Even when I was younger, we never had meat during meals. And I never really had a craving to try it.",
      "start": 83.44,
-     "answers": [],
-     "keywords": [],
-     "translation": "从小到大，我们吃饭从来就没有肉。",
-     "translations": {}
+     "end": 87.84,
+     "text": "Even when I was younger, we never had meat during meals. And I never really had a craving to try it."
     },
     {
      "id": "l26",
-     "end": 92.64,
-     "text": "I bet it would be hard though, giving up something you're accustomed to eating.",
      "start": 88.72,
-     "answers": [],
-     "keywords": [],
-     "translation": "不过我想，放弃吃惯的东西肯定很难。",
-     "translations": {}
+     "end": 92.64,
+     "text": "I bet it would be hard though, giving up something you're accustomed to eating."
     },
     {
      "id": "l27",
-     "end": 98.56,
-     "text": "I tried cutting back on coffee in the morning and it was awful.",
      "start": 93.44,
-     "answers": [],
-     "keywords": [],
-     "translation": "我试过早上少喝咖啡，那滋味太难受了。",
-     "translations": {}
+     "end": 98.56,
+     "text": "I tried cutting back on coffee in the morning and it was awful."
     },
     {
      "id": "l28",
-     "end": 103.36,
-     "text": "Come to think of it, it was probably even worse for my colleagues that had to deal with me at morning meetings.",
      "start": 98.56,
-     "answers": [],
-     "keywords": [],
-     "translation": "想想看，对那些早会上还得应付我的同事来说，恐怕更糟。",
-     "translations": {}
+     "end": 103.36,
+     "text": "Come to think of it, it was probably even worse for my colleagues that had to deal with me at morning meetings."
     },
     {
      "id": "l29",
-     "end": 107.44,
-     "text": "M: That's even harder to imagine you without coffee.",
      "start": 103.92,
-     "answers": [],
-     "keywords": [],
-     "translation": "M: 你不喝咖啡，这更让人无法想象。",
-     "translations": {}
+     "end": 107.44,
+     "text": "M: That's even harder to imagine you without coffee."
     },
     {
      "id": "l30",
-     "end": 111.76,
-     "text": "So you say your parents also followed a partially vegetarian diet.",
      "start": 108.16,
-     "answers": [],
-     "keywords": [],
-     "translation": "那么你说你父母也是半素食的饮食习惯。",
-     "translations": {}
+     "end": 111.76,
+     "text": "So you say your parents also followed a partially vegetarian diet."
     },
     {
      "id": "l31",
-     "end": 117.52,
-     "text": "Why did they decide to do that?",
      "start": 112.4,
-     "answers": [],
-     "keywords": [],
-     "translation": "他们当初为什么决定这么做？",
-     "translations": {}
+     "end": 117.52,
+     "text": "Why did they decide to do that?"
     },
     {
      "id": "l32",
-     "end": 119.414,
-     "text": "W: That's an interesting question.",
      "start": 117.52,
-     "answers": [],
-     "keywords": [],
-     "translation": "W: 这个问题有意思。",
-     "translations": {}
+     "end": 119.414,
+     "text": "W: That's an interesting question."
     },
     {
      "id": "l33",
-     "end": 121.461,
-     "text": "I never thought to ask them though.",
      "start": 119.414,
-     "answers": [],
-     "keywords": [],
-     "translation": "不过我从没想过问他们。",
-     "translations": {}
+     "end": 121.461,
+     "text": "I never thought to ask them though."
     },
     {
      "id": "l34",
-     "end": 124.16,
-     "text": "My best guess is for health reasons.",
      "start": 121.461,
-     "answers": [],
-     "keywords": [],
-     "translation": "我最大的猜测是为了健康。",
-     "translations": {}
+     "end": 124.16,
+     "text": "My best guess is for health reasons."
     },
     {
      "id": "l35",
-     "end": 130.24,
-     "text": "They're not terribly active or knowledgeable about animal preservation efforts, but they're serious about their health.",
      "start": 124.16,
-     "answers": [],
-     "keywords": [],
-     "translation": "他们对动物保护行动并不怎么积极，也了解不多，但他们对健康非常认真。",
-     "translations": {}
+     "end": 130.24,
+     "text": "They're not terribly active or knowledgeable about animal preservation efforts, but they're serious about their health."
     },
     {
      "id": "l36",
-     "end": 135.04,
-     "text": "Both are in their 70s now, eat organic as often as possible and take part in regular physical exercise.",
      "start": 130.24,
-     "answers": [],
-     "keywords": [],
-     "translation": "他们如今都 70 多岁了，尽量吃有机食品，还坚持定期锻炼。",
-     "translations": {}
+     "end": 135.04,
+     "text": "Both are in their 70s now, eat organic as often as possible and take part in regular physical exercise."
     },
     {
      "id": "l37",
-     "end": 139.52,
-     "text": "Neither of them has any health problems, and they hardly ever get sick.",
      "start": 135.84,
-     "answers": [],
-     "keywords": [],
-     "translation": "他们俩都没有健康问题，几乎从不生病。",
-     "translations": {}
+     "end": 139.52,
+     "text": "Neither of them has any health problems, and they hardly ever get sick."
     },
     {
      "id": "l38",
-     "end": 143.44,
-     "text": "M: In that case, I might give it a try someday.",
      "start": 140.16,
-     "answers": [],
-     "keywords": [],
-     "translation": "M: 那样的话，我哪天也许可以试试。",
-     "translations": {}
+     "end": 143.44,
+     "text": "M: In that case, I might give it a try someday."
     },
     {
      "id": "l39",
-     "end": 144.893,
-     "text": "W: Now back to the menu.",
      "start": 143.44,
-     "answers": [],
-     "keywords": [],
-     "translation": "W: 还是回到菜单吧。",
-     "translations": {}
+     "end": 144.893,
+     "text": "W: Now back to the menu."
     },
     {
      "id": "l40",
-     "end": 146.8,
-     "text": "What are you going to have?",
      "start": 144.893,
-     "answers": [],
-     "keywords": [],
-     "translation": "你打算点什么？",
-     "translations": {}
+     "end": 146.8,
+     "text": "What are you going to have?"
     },
     {
      "id": "l41",
-     "end": 151.52,
-     "text": "Questions one to four are based on the conversation you have just heard.",
      "start": 146.8,
-     "answers": [],
-     "keywords": [],
-     "translation": "问题 1 至 4 基于你刚才听到的对话。",
-     "translations": {}
+     "end": 151.52,
+     "text": "Questions one to four are based on the conversation you have just heard."
     },
     {
      "id": "l42",
-     "end": 158.32,
-     "text": "Q1. Where does the conversation most probably take place?",
      "start": 151.52,
-     "answers": [],
-     "keywords": [],
-     "translation": "Q1. 这段对话最可能发生在哪里？",
-     "translations": {}
+     "end": 158.32,
+     "text": "Q1. Where does the conversation most probably take place?"
     },
     {
      "id": "l43",
-     "end": 173.6,
-     "text": "Q2. What do we learn about the woman?",
      "start": 169.68,
-     "answers": [],
-     "keywords": [],
-     "translation": "Q2. 关于女士我们了解到什么？",
-     "translations": {}
+     "end": 173.6,
+     "text": "Q2. What do we learn about the woman?"
     },
     {
      "id": "l44",
-     "end": 207.08,
-     "text": "Q3. What would be a difficult thing to do according to the woman?",
      "start": 186.8,
-     "answers": [],
-     "keywords": [],
-     "translation": "Q3. 据女士所说，做什么事会很难？",
-     "translations": {}
+     "end": 207.08,
+     "text": "Q3. What would be a difficult thing to do according to the woman?"
     },
     {
      "id": "l45",
-     "end": 223.48,
-     "text": "Q4. What does the woman say about her parents?",
      "start": 207.08,
-     "answers": [],
-     "keywords": [],
-     "translation": "Q4. 关于她的父母，女士说了什么？",
-     "translations": {}
+     "end": 223.48,
+     "text": "Q4. What does the woman say about her parents?"
     },
     {
      "id": "l46",
-     "end": 225.44,
-     "text": "CONVERSATION 2",
      "start": 223.48,
-     "answers": [],
-     "keywords": [],
-     "translation": "CONVERSATION 2",
-     "translations": {}
+     "end": 225.44,
+     "text": "CONVERSATION 2"
     },
     {
      "id": "l47",
-     "end": 229.82,
-     "text": "W: How did your annual performance evaluation meeting with your manager go?",
      "start": 225.44,
-     "answers": [],
-     "keywords": [],
-     "translation": "W: 你和经理的年度绩效评估会谈进行得怎么样？",
-     "translations": {}
+     "end": 229.82,
+     "text": "W: How did your annual performance evaluation meeting with your manager go?"
     },
     {
      "id": "l48",
-     "end": 232.1,
-     "text": "Did you get much in the way of praise?",
      "start": 229.82,
-     "answers": [],
-     "keywords": [],
-     "translation": "得到多少表扬？",
-     "translations": {}
+     "end": 232.1,
+     "text": "Did you get much in the way of praise?"
     },
     {
      "id": "l49",
-     "end": 233.7,
-     "text": "M: Next to zero.",
      "start": 232.1,
-     "answers": [],
-     "keywords": [],
-     "translation": "M: 几乎为零。",
-     "translations": {}
+     "end": 233.7,
+     "text": "M: Next to zero."
     },
     {
      "id": "l50",
-     "end": 238.66,
-     "text": "When we came to the part about discussing my areas for growth, he bluntly told me that I had an attitude problem.",
      "start": 233.7,
-     "answers": [],
-     "keywords": [],
-     "translation": "谈到我的成长空间时，他直截了当地说我态度有问题。",
-     "translations": {}
+     "end": 238.66,
+     "text": "When we came to the part about discussing my areas for growth, he bluntly told me that I had an attitude problem."
     },
     {
      "id": "l51",
-     "end": 243.94,
-     "text": "But he wouldn't really expand on that description.",
      "start": 238.66,
-     "answers": [],
-     "keywords": [],
-     "translation": "但他并没有就这个评价展开细说。",
-     "translations": {}
+     "end": 243.94,
+     "text": "But he wouldn't really expand on that description."
     },
     {
      "id": "l52",
-     "end": 247.02,
-     "text": "He said it's the little things I do and say.",
      "start": 243.94,
-     "answers": [],
-     "keywords": [],
-     "translation": "他说，指的是我平时言行中的细枝末节。",
-     "translations": {}
+     "end": 247.02,
+     "text": "He said it's the little things I do and say."
     },
     {
      "id": "l53",
-     "end": 249.7,
-     "text": "W: Did you ask him for a specific example?",
      "start": 247.02,
-     "answers": [],
-     "keywords": [],
-     "translation": "W: 你有没有让他举个具体的例子？",
-     "translations": {}
+     "end": 249.7,
+     "text": "W: Did you ask him for a specific example?"
     },
     {
      "id": "l54",
-     "end": 254.1,
-     "text": "M: I did ask him a few more questions to try to narrow it down.",
      "start": 249.7,
-     "answers": [],
-     "keywords": [],
-     "translation": "M: 我确实又多问了几个问题，想弄得更具体些。",
-     "translations": {}
+     "end": 254.1,
+     "text": "M: I did ask him a few more questions to try to narrow it down."
     },
     {
      "id": "l55",
-     "end": 259.34,
-     "text": "He said my constant questioning of him and his decisions was the most obvious example he could give.",
      "start": 254.1,
-     "answers": [],
-     "keywords": [],
-     "translation": "他说，他能给出的最明显的例子，就是我不停地质疑他和他的决定。",
-     "translations": {}
+     "end": 259.34,
+     "text": "He said my constant questioning of him and his decisions was the most obvious example he could give."
     },
     {
      "id": "l56",
-     "end": 264.3,
-     "text": "Then our conversation was swiftly brought to a close.",
      "start": 259.34,
-     "answers": [],
-     "keywords": [],
-     "translation": "随后我们的谈话就被迅速收尾了。",
-     "translations": {}
+     "end": 264.3,
+     "text": "Then our conversation was swiftly brought to a close."
     },
     {
      "id": "l57",
-     "end": 266.82,
-     "text": "W: I had a similar experience once, my manager told me I was too honest.",
      "start": 264.3,
-     "answers": [],
-     "keywords": [],
-     "translation": "W: 我有过类似经历，我的经理说我太诚实了。",
-     "translations": {}
+     "end": 266.82,
+     "text": "W: I had a similar experience once, my manager told me I was too honest."
     },
     {
      "id": "l58",
-     "end": 276.7,
-     "text": "In most cases, I thought my honesty was helpful, as did my colleagues, but my manager thought otherwise.",
      "start": 266.82,
-     "answers": [],
-     "keywords": [],
-     "translation": "在大多数情况下，我和同事都认为我的诚实是有益的，但我的经理不这么看。",
-     "translations": {}
+     "end": 276.7,
+     "text": "In most cases, I thought my honesty was helpful, as did my colleagues, but my manager thought otherwise."
     },
     {
      "id": "l59",
-     "end": 282.06,
-     "text": "Some managers really adopt manipulative language to disguise the unreasonable choices they have made.",
      "start": 276.7,
-     "answers": [],
-     "keywords": [],
-     "translation": "有些经理确实用操控性的话术来掩饰他们做出的不合理决定。",
-     "translations": {}
+     "end": 282.06,
+     "text": "Some managers really adopt manipulative language to disguise the unreasonable choices they have made."
     },
     {
      "id": "l60",
-     "end": 291.1,
-     "text": "They don't use the rational power of arguments to resolve issues of conflict or complaints about unfairness.",
      "start": 282.06,
-     "answers": [],
-     "keywords": [],
-     "translation": "他们不用摆事实讲道理的方式去解决冲突或对不公平的抱怨。",
-     "translations": {}
+     "end": 291.1,
+     "text": "They don't use the rational power of arguments to resolve issues of conflict or complaints about unfairness."
     },
     {
      "id": "l61",
-     "end": 292.3,
-     "text": "M: Right.",
      "start": 291.1,
-     "answers": [],
-     "keywords": [],
-     "translation": "M: 没错。",
-     "translations": {}
+     "end": 292.3,
+     "text": "M: Right."
     },
     {
      "id": "l62",
-     "end": 303.02,
-     "text": "Some employ their persuasive and influential communication style to win workplace arguments by compelling people to perform the intended action.",
      "start": 292.3,
-     "answers": [],
-     "keywords": [],
-     "translation": "有些人靠有说服力、有影响力的沟通风格，迫使人们按其意图行事，从而在职场争论中获胜。",
-     "translations": {}
+     "end": 303.02,
+     "text": "Some employ their persuasive and influential communication style to win workplace arguments by compelling people to perform the intended action."
     },
     {
      "id": "l63",
-     "end": 304.02,
-     "text": "W: Exactly.",
      "start": 303.02,
-     "answers": [],
-     "keywords": [],
-     "translation": "W: 一点没错。",
-     "translations": {}
+     "end": 304.02,
+     "text": "W: Exactly."
     },
     {
      "id": "l64",
-     "end": 305.02,
-     "text": "Too honest, isn't that a good thing?",
      "start": 304.02,
-     "answers": [],
-     "keywords": [],
-     "translation": "太诚实，这难道不是好事吗？",
-     "translations": {}
+     "end": 305.02,
+     "text": "Too honest, isn't that a good thing?"
     },
     {
      "id": "l65",
-     "end": 317.62,
-     "text": "I thought that's surely something we should have covered earlier in the section discussing strengths and talents.",
      "start": 305.02,
-     "answers": [],
-     "keywords": [],
-     "translation": "我以为这种品质早该在前面讨论优点和才干的部分里被提到了。",
-     "translations": {}
+     "end": 317.62,
+     "text": "I thought that's surely something we should have covered earlier in the section discussing strengths and talents."
     },
     {
      "id": "l66",
-     "end": 323.62,
-     "text": "But now, honesty was deemed to be more of a sin than a virtue, since it made people feel uncomfortable or at least it made the most powerful folks feel uncomfortable.",
      "start": 317.62,
-     "answers": [],
-     "keywords": [],
-     "translation": "可如今，诚实被看成与其说是美德，不如说是罪过，因为它让人不舒服——或者说，至少让那些最有权势的人不舒服。",
-     "translations": {}
+     "end": 323.62,
+     "text": "But now, honesty was deemed to be more of a sin than a virtue, since it made people feel uncomfortable or at least it made the most powerful folks feel uncomfortable."
     },
     {
      "id": "l67",
-     "end": 330.82,
-     "text": "M: Indeed, rhetoric is viewed by many philosophers as the method through which the powerful accumulate more power.",
      "start": 324.34,
-     "answers": [],
-     "keywords": [],
-     "translation": "M: 的确，在许多哲学家看来，修辞正是有权者积累更多权力的手段。",
-     "translations": {}
+     "end": 330.82,
+     "text": "M: Indeed, rhetoric is viewed by many philosophers as the method through which the powerful accumulate more power."
     },
     {
      "id": "l68",
-     "end": 337.38,
-     "text": "By virtue of having the loudest voice, they're able to command greater attention and to further assert their dominance.",
      "start": 330.82,
-     "answers": [],
-     "keywords": [],
-     "translation": "凭着最大的嗓门，他们能赢得更多关注，并进一步确立自己的支配地位。",
-     "translations": {}
+     "end": 337.38,
+     "text": "By virtue of having the loudest voice, they're able to command greater attention and to further assert their dominance."
     },
     {
      "id": "l69",
-     "end": 343.28,
-     "text": "Even when what they're saying doesn't really make much sense.",
      "start": 337.38,
-     "answers": [],
-     "keywords": [],
-     "translation": "哪怕他们说的话其实并没有多大道理。",
-     "translations": {}
+     "end": 343.28,
+     "text": "Even when what they're saying doesn't really make much sense."
     },
     {
      "id": "l70",
-     "end": 347.28,
-     "text": "W: And retaining their power and prestige is their priority.",
      "start": 343.28,
-     "answers": [],
-     "keywords": [],
-     "translation": "W: 而保住自己的权力和威望，才是他们优先考虑的事。",
-     "translations": {}
+     "end": 347.28,
+     "text": "W: And retaining their power and prestige is their priority."
     },
     {
      "id": "l71",
-     "end": 350.88,
-     "text": "M: It's what makes the most sense to a lot of them.",
      "start": 347.28,
-     "answers": [],
-     "keywords": [],
-     "translation": "M: 对他们中的许多人来说，这就是最合理的选择。",
-     "translations": {}
+     "end": 350.88,
+     "text": "M: It's what makes the most sense to a lot of them."
     },
     {
      "id": "l72",
-     "end": 356.68,
-     "text": "Questions 5 to 8 are based on the conversation you have just heard.",
      "start": 350.88,
-     "answers": [],
-     "keywords": [],
-     "translation": "问题 5 至 8 基于你刚才听到的对话。",
-     "translations": {}
+     "end": 356.68,
+     "text": "Questions 5 to 8 are based on the conversation you have just heard."
     },
     {
      "id": "l73",
-     "end": 361.78,
-     "text": "Q5. What was the manager's reason for giving little praise for the man's performance?",
      "start": 356.68,
-     "answers": [],
-     "keywords": [],
-     "translation": "Q5. 经理对男士的表现几乎不给表扬的理由是什么？",
-     "translations": {}
+     "end": 361.78,
+     "text": "Q5. What was the manager's reason for giving little praise for the man's performance?"
     },
     {
      "id": "l74",
-     "end": 393.56,
-     "text": "Q6. What does the woman say about some managers?",
      "start": 376.98,
-     "answers": [],
-     "keywords": [],
-     "translation": "Q6. 关于某些经理，女士说了什么？",
-     "translations": {}
+     "end": 393.56,
+     "text": "Q6. What does the woman say about some managers?"
     },
     {
      "id": "l75",
-     "end": 412.82,
-     "text": "Q7. According to the woman, what do some managers think of honesty?",
      "start": 395.16,
-     "answers": [],
-     "keywords": [],
-     "translation": "Q7. 据女士所说，某些经理如何看待诚实？",
-     "translations": {}
+     "end": 412.82,
+     "text": "Q7. According to the woman, what do some managers think of honesty?"
     },
     {
      "id": "l76",
-     "end": 417.1,
-     "text": "Q8. What does the woman think is the priority of many managers?",
      "start": 413.82,
-     "answers": [],
-     "keywords": [],
-     "translation": "Q8. 女士认为许多经理优先考虑的是什么？",
-     "translations": {}
+     "end": 417.1,
+     "text": "Q8. What does the woman think is the priority of many managers?"
     },
     {
      "id": "l77",
-     "end": 432.52,
-     "text": "Section B, directions.",
      "start": 430.26,
-     "answers": [],
-     "keywords": [],
-     "translation": "B 部分，指令：",
-     "translations": {}
+     "end": 432.52,
+     "text": "Section B, directions."
     },
     {
      "id": "l78",
-     "end": 435.38,
-     "text": "In this section, you will hear two passages.",
      "start": 432.52,
-     "answers": [],
-     "keywords": [],
-     "translation": "在这一部分，你将听到两篇短文。",
-     "translations": {}
+     "end": 435.38,
+     "text": "In this section, you will hear two passages."
     },
     {
      "id": "l79",
-     "end": 437.54,
-     "text": "At the end of each passage, you will hear",
      "start": 435.38,
-     "answers": [],
-     "keywords": [],
-     "translation": "每篇短文结束时，你会听到",
-     "translations": {}
+     "end": 437.54,
+     "text": "At the end of each passage, you will hear"
     },
     {
      "id": "l80",
-     "end": 439.42,
-     "text": "three or four questions.",
      "start": 437.54,
-     "answers": [],
-     "keywords": [],
-     "translation": "三四个问题。",
-     "translations": {}
+     "end": 439.42,
+     "text": "three or four questions."
     },
     {
      "id": "l81",
-     "end": 441.48,
-     "text": "Both the passage and the questions",
      "start": 439.42,
-     "answers": [],
-     "keywords": [],
-     "translation": "短文和问题",
-     "translations": {}
+     "end": 441.48,
+     "text": "Both the passage and the questions"
     },
     {
      "id": "l82",
-     "end": 443.5,
-     "text": "will be spoken only once.",
      "start": 441.48,
-     "answers": [],
-     "keywords": [],
-     "translation": "都只放一遍。",
-     "translations": {}
+     "end": 443.5,
+     "text": "will be spoken only once."
     },
     {
      "id": "l83",
-     "end": 446.82,
-     "text": "After you hear a question, you must choose the best answer",
      "start": 443.5,
-     "answers": [],
-     "keywords": [],
-     "translation": "听到问题后，你必须选出最佳答案，",
-     "translations": {}
+     "end": 446.82,
+     "text": "After you hear a question, you must choose the best answer"
     },
     {
      "id": "l84",
-     "end": 451.18,
-     "text": "from the four choices marked A, B, C, and D.",
      "start": 446.82,
-     "answers": [],
-     "keywords": [],
-     "translation": "即从标有 A、B、C、D 的四个选项中选出。",
-     "translations": {}
+     "end": 451.18,
+     "text": "from the four choices marked A, B, C, and D."
     },
     {
      "id": "l85",
-     "end": 454.58,
-     "text": "Then mark the corresponding letter on answer sheet one",
      "start": 451.18,
-     "answers": [],
-     "keywords": [],
-     "translation": "然后在答题卡 1 上",
-     "translations": {}
+     "end": 454.58,
+     "text": "Then mark the corresponding letter on answer sheet one"
     },
     {
      "id": "l86",
-     "end": 456.86,
-     "text": "with a single line through the center.",
      "start": 454.58,
-     "answers": [],
-     "keywords": [],
-     "translation": "把对应字母从中间划一条横线。",
-     "translations": {}
+     "end": 456.86,
+     "text": "with a single line through the center."
     },
     {
      "id": "l87",
-     "end": 461.5,
-     "text": "PASSAGE 1",
      "start": 457.66,
-     "answers": [],
-     "keywords": [],
-     "translation": "PASSAGE 1",
-     "translations": {}
+     "end": 461.5,
+     "text": "PASSAGE 1"
     },
     {
      "id": "l88",
-     "end": 465.16,
-     "text": "Athletes are seen as heroes because they can do things that most of us can't do.",
      "start": 461.5,
-     "answers": [],
-     "keywords": [],
-     "translation": "运动员被视为英雄，因为他们能做到我们大多数人做不到的事。",
-     "translations": {}
+     "end": 465.16,
+     "text": "Athletes are seen as heroes because they can do things that most of us can't do."
     },
     {
      "id": "l89",
-     "end": 467.54,
-     "text": "They can hit fastballs coming at them",
      "start": 465.16,
-     "answers": [],
-     "keywords": [],
-     "translation": "他们能击中朝自己飞来的快球。",
-     "translations": {}
+     "end": 467.54,
+     "text": "They can hit fastballs coming at them"
     },
     {
      "id": "l90",
-     "end": 472.54,
-     "text": "They can hit fast balls coming at them at nearly 100 miles an hour, and leap and hang in the air, seemingly defying gravity.",
      "start": 467.54,
-     "answers": [],
-     "keywords": [],
-     "translation": "他们能击中时速近 100 英里朝他们飞来的快球，能跃起滞留在空中，仿佛不受重力束缚。",
-     "translations": {}
+     "end": 472.54,
+     "text": "They can hit fast balls coming at them at nearly 100 miles an hour, and leap and hang in the air, seemingly defying gravity."
     },
     {
      "id": "l91",
-     "end": 484.8,
-     "text": "They get paid millions of dollars for their efforts, and their names and faces appear on everything from running shoes to advertising boards.",
      "start": 472.58,
-     "answers": [],
-     "keywords": [],
-     "translation": "他们凭这些本事挣数百万美元，他们的名字和面孔出现在从跑鞋到广告牌的一切东西上。",
-     "translations": {}
+     "end": 484.8,
+     "text": "They get paid millions of dollars for their efforts, and their names and faces appear on everything from running shoes to advertising boards."
     },
     {
      "id": "l92",
-     "end": 488.64,
-     "text": "Athletes who are champions also show qualities such as perseverance, dedication, and the ability to keep their cool under pressure.",
      "start": 485.8,
-     "answers": [],
-     "keywords": [],
-     "translation": "冠军级的运动员还展现出坚韧不拔、全心投入、在压力下保持冷静等品质。",
-     "translations": {}
+     "end": 488.64,
+     "text": "Athletes who are champions also show qualities such as perseverance, dedication, and the ability to keep their cool under pressure."
     },
     {
      "id": "l93",
-     "end": 498.68,
-     "text": "Many show those same qualities off the playing field, too.",
      "start": 488.64,
-     "answers": [],
-     "keywords": [],
-     "translation": "许多人走出赛场也保持着同样的品质。",
-     "translations": {}
+     "end": 498.68,
+     "text": "Many show those same qualities off the playing field, too."
     },
     {
      "id": "l94",
-     "end": 514.04,
-     "text": "Stories about superstar athletes teach us about working hard and believing in ourselves and in being passionate about what we do.",
      "start": 499.52,
-     "answers": [],
-     "keywords": [],
-     "translation": "超级巨星运动员的故事教会我们努力奋斗、相信自己，并对所做的事情满怀热情。",
-     "translations": {}
+     "end": 514.04,
+     "text": "Stories about superstar athletes teach us about working hard and believing in ourselves and in being passionate about what we do."
     },
     {
      "id": "l95",
-     "end": 519.64,
-     "text": "Although it's usually bad behavior that gets an athlete a spot on the 6 o'clock news, many high-profile players work hard to be positive role models to children.",
      "start": 514.04,
-     "answers": [],
-     "keywords": [],
-     "translation": "虽然能让运动员上六点新闻的通常是负面行为，但许多知名运动员都在努力成为孩子们的正面榜样。",
-     "translations": {}
+     "end": 519.64,
+     "text": "Although it's usually bad behavior that gets an athlete a spot on the 6 o'clock news, many high-profile players work hard to be positive role models to children."
     },
     {
      "id": "l96",
-     "end": 523.12,
-     "text": "They raise money for charities and act as mentors, talking to student groups and volunteering their time to programs that help children keep off drugs and stay in school.",
      "start": 519.64,
-     "answers": [],
-     "keywords": [],
-     "translation": "他们为慈善机构筹款、担任导师，与学生团体交流，并志愿投入时间，参与帮助孩子们远离毒品、留在学校的项目。",
-     "translations": {}
+     "end": 523.12,
+     "text": "They raise money for charities and act as mentors, talking to student groups and volunteering their time to programs that help children keep off drugs and stay in school."
     },
     {
      "id": "l97",
-     "end": 535.62,
-     "text": "Still, even the greatest champions have flaws.",
      "start": 523.12,
-     "answers": [],
-     "keywords": [],
-     "translation": "尽管如此，最伟大的冠军也有缺点。",
-     "translations": {}
+     "end": 535.62,
+     "text": "Still, even the greatest champions have flaws."
     },
     {
      "id": "l98",
-     "end": 538.6,
-     "text": "Just because an athlete has the perfect golf swing doesn't mean he is the perfect parent, friend, or spokesperson.",
      "start": 535.62,
-     "answers": [],
-     "keywords": [],
-     "translation": "一个运动员挥杆姿势完美，并不意味着他也是完美的父亲、朋友或代言人。",
-     "translations": {}
+     "end": 538.6,
+     "text": "Just because an athlete has the perfect golf swing doesn't mean he is the perfect parent, friend, or spokesperson."
     },
     {
      "id": "l99",
-     "end": 546.16,
-     "text": "They also make mistakes.",
      "start": 538.6,
-     "answers": [],
-     "keywords": [],
-     "translation": "他们也会犯错。",
-     "translations": {}
+     "end": 546.16,
+     "text": "They also make mistakes."
     },
     {
      "id": "l100",
-     "end": 551.56,
-     "text": "Separating an athlete's professional and personal lives can be tough.",
      "start": 546.16,
-     "answers": [],
-     "keywords": [],
-     "translation": "要把运动员的职业生活和个人生活分开来看，可能很难。",
-     "translations": {}
+     "end": 551.56,
+     "text": "Separating an athlete's professional and personal lives can be tough."
     },
     {
      "id": "l101",
-     "end": 554.36,
-     "text": "When a sports star gets in trouble with the law or does something wrong in their private life, fans are often left disappointed.",
      "start": 551.56,
-     "answers": [],
-     "keywords": [],
-     "translation": "当体育明星触犯法律或在私生活中做错事时，球迷们往往大失所望。",
-     "translations": {}
+     "end": 554.36,
+     "text": "When a sports star gets in trouble with the law or does something wrong in their private life, fans are often left disappointed."
     },
     {
      "id": "l102",
-     "end": 596.9,
-     "text": "Before he died, baseball star, Mickey Mantle, who was plagued with alcohol problems, told young ball players and the fans who admired him \"To play like me; don't be like me\".",
      "start": 554.36,
-     "answers": [],
-     "keywords": [],
-     "translation": "棒球明星米基·曼特尔饱受酒精问题困扰，他在去世前对年轻球员和崇拜他的球迷说：\"打球学我，做人别学我。\"",
-     "translations": {}
+     "end": 596.9,
+     "text": "Before he died, baseball star, Mickey Mantle, who was plagued with alcohol problems, told young ball players and the fans who admired him \"To play like me; don't be like me\"."
     },
     {
      "id": "l103",
-     "end": 598.636,
-     "text": "Q9. Why does the speaker say athletes are often viewed as heroes?",
      "start": 597.836,
-     "answers": [],
-     "keywords": [],
-     "translation": "Q9. 说话人为什么说运动员常被视为英雄？",
-     "translations": {}
+     "end": 598.636,
+     "text": "Q9. Why does the speaker say athletes are often viewed as heroes?"
     },
     {
      "id": "l104",
-     "end": 613.86,
-     "text": "Q10. What does the speaker say many high-profile players do?",
      "start": 598.636,
-     "answers": [],
-     "keywords": [],
-     "translation": "Q10. 关于许多知名运动员的做法，说话人说了什么？",
-     "translations": {}
+     "end": 613.86,
+     "text": "Q10. What does the speaker say many high-profile players do?"
     },
     {
      "id": "l105",
-     "end": 630.72,
-     "text": "Q11. What does the speaker say can be difficult?",
      "start": 615.26,
-     "answers": [],
-     "keywords": [],
-     "translation": "Q11. 说话人说什么事可能很难？",
-     "translations": {}
+     "end": 630.72,
+     "text": "Q11. What does the speaker say can be difficult?"
     },
     {
      "id": "l106",
-     "end": 632.72,
-     "text": "PASSAGE 2",
      "start": 630.72,
-     "answers": [],
-     "keywords": [],
-     "translation": "PASSAGE 2",
-     "translations": {}
+     "end": 632.72,
+     "text": "PASSAGE 2"
     },
     {
      "id": "l107",
-     "end": 636.68,
-     "text": "We don't need to tell you that weddings can get expensive.",
      "start": 632.72,
-     "answers": [],
-     "keywords": [],
-     "translation": "婚礼花费可能很高，这不用我们多说。",
-     "translations": {}
+     "end": 636.68,
+     "text": "We don't need to tell you that weddings can get expensive."
     },
     {
      "id": "l108",
-     "end": 642.96,
-     "text": "Even with the most meticulous budgeting, a few unexpected costs are bound to occur.",
      "start": 636.68,
-     "answers": [],
-     "keywords": [],
-     "translation": "即使预算做得再细致，也难免出现一些意料之外的开销。",
-     "translations": {}
+     "end": 642.96,
+     "text": "Even with the most meticulous budgeting, a few unexpected costs are bound to occur."
     },
     {
      "id": "l109",
-     "end": 649.16,
-     "text": "While most brides tend to accept this as fact, one Canadian woman who is only known as Susan, attempted to avoid all wedding costs.",
      "start": 642.96,
-     "answers": [],
-     "keywords": [],
-     "translation": "大多数新娘都会接受这个现实，而一位只知道叫苏珊的加拿大女子却试图躲掉婚礼的所有开销。",
-     "translations": {}
+     "end": 649.16,
+     "text": "While most brides tend to accept this as fact, one Canadian woman who is only known as Susan, attempted to avoid all wedding costs."
     },
     {
      "id": "l110",
-     "end": 657.48,
-     "text": "She did this by asking her friends and family to pay up to attend her wedding.",
      "start": 649.16,
-     "answers": [],
-     "keywords": [],
-     "translation": "她的办法是让亲友付钱才能参加她的婚礼。",
-     "translations": {}
+     "end": 657.48,
+     "text": "She did this by asking her friends and family to pay up to attend her wedding."
     },
     {
      "id": "l111",
-     "end": 660.48,
-     "text": "It went about as well as you'd expect.",
      "start": 657.48,
-     "answers": [],
-     "keywords": [],
-     "translation": "结果嘛，跟你料想的一样。",
-     "translations": {}
+     "end": 660.48,
+     "text": "It went about as well as you'd expect."
     },
     {
      "id": "l112",
-     "end": 669,
-     "text": "Susan is causing quite the debate online after posting a bizarre Facebook complaint about her now canceled wedding.",
      "start": 660.48,
-     "answers": [],
-     "keywords": [],
-     "translation": "苏珊在 Facebook 上发了一篇关于她如今已取消的婚礼的离奇抱怨帖，在网上引发了不小的争论。",
-     "translations": {}
+     "end": 669,
+     "text": "Susan is causing quite the debate online after posting a bizarre Facebook complaint about her now canceled wedding."
     },
     {
      "id": "l113",
-     "end": 675.08,
-     "text": "Yes, the couple called off the wedding just days before their wedding vows, since the guests refused to pay the $1500 attendance fee, the $60000 dream wedding was put on permanent hold.",
      "start": 669,
-     "answers": [],
-     "keywords": [],
-     "translation": "没错，就在宣读婚礼誓言的前几天，这对新人取消了婚礼——因为宾客拒绝支付 1500 美元的出席费，那场 6 万美元的梦幻婚礼被永久搁置了。",
-     "translations": {}
+     "end": 675.08,
+     "text": "Yes, the couple called off the wedding just days before their wedding vows, since the guests refused to pay the $1500 attendance fee, the $60000 dream wedding was put on permanent hold."
     },
     {
      "id": "l114",
-     "end": 700.8,
-     "text": "In her long explanation filled with cursing and swearing, the bride accused her friends and family of ruining her marriage and her life.",
      "start": 675.08,
-     "answers": [],
-     "keywords": [],
-     "translation": "在满是脏话咒骂的长篇解释里，新娘指责亲友毁了她的婚姻和人生。",
-     "translations": {}
+     "end": 700.8,
+     "text": "In her long explanation filled with cursing and swearing, the bride accused her friends and family of ruining her marriage and her life."
     },
     {
      "id": "l115",
-     "end": 702.32,
-     "text": "She stated that each guest would only need to pay $1500, while she sacrificed everything for the day.",
      "start": 700.8,
-     "answers": [],
-     "keywords": [],
-     "translation": "她声称，每位宾客只需要付 1500 美元，而她为了这一天付出了一切。",
-     "translations": {}
+     "end": 702.32,
+     "text": "She stated that each guest would only need to pay $1500, while she sacrificed everything for the day."
     },
     {
      "id": "l116",
-     "end": 707.04,
-     "text": "Her maid of honour told her to stick to the budget as she was asking too much from her guests, but Susan ignored her.",
      "start": 702.32,
-     "answers": [],
-     "keywords": [],
-     "translation": "她的伴娘劝她遵守预算，说她对宾客要求太多，但苏珊没听。",
-     "translations": {}
+     "end": 707.04,
+     "text": "Her maid of honour told her to stick to the budget as she was asking too much from her guests, but Susan ignored her."
     },
     {
      "id": "l117",
-     "end": 709.46,
-     "text": "guest, but Susan ignored her.",
      "start": 707.04,
-     "answers": [],
-     "keywords": [],
-     "translation": "客人，但苏珊没有理会她。",
-     "translations": {}
+     "end": 709.46,
+     "text": "guest, but Susan ignored her."
     },
     {
      "id": "l118",
-     "end": 716.72,
-     "text": "Not surprisingly, only eight people responded positively to the wedding invitations and",
      "start": 709.46,
-     "answers": [],
-     "keywords": [],
-     "translation": "毫不意外，只有八个人积极回应了这场婚礼。",
-     "translations": {}
+     "end": 716.72,
+     "text": "Not surprisingly, only eight people responded positively to the wedding invitations and"
     },
     {
      "id": "l119",
-     "end": 719.16,
-     "text": "Not surprisingly, only 8 people responded positively to the wedding invitations and money requests.",
      "start": 716.72,
-     "answers": [],
-     "keywords": [],
-     "translation": "不出所料，对婚礼请柬和要钱请求作出积极回应的只有 8 个人。",
-     "translations": {}
+     "end": 719.16,
+     "text": "Not surprisingly, only 8 people responded positively to the wedding invitations and money requests."
     },
     {
      "id": "l120",
-     "end": 727.12,
-     "text": "Realizing they would not be able to afford their dream wedding, Susan's future husband suggested getting married in Las Vegas.",
      "start": 719.16,
-     "answers": [],
-     "keywords": [],
-     "translation": "意识到他们办不起梦幻婚礼后，苏珊的未婚夫提议去拉斯维加斯结婚。",
-     "translations": {}
+     "end": 727.12,
+     "text": "Realizing they would not be able to afford their dream wedding, Susan's future husband suggested getting married in Las Vegas."
     },
     {
      "id": "l121",
-     "end": 732.02,
-     "text": "The bride quickly shut down the idea, saying she did not want a wedding of gambling and heavy drinking.",
      "start": 727.12,
-     "answers": [],
-     "keywords": [],
-     "translation": "新娘立刻否决了这个主意，说她不想要一个充满赌博和豪饮的婚礼。",
-     "translations": {}
+     "end": 732.02,
+     "text": "The bride quickly shut down the idea, saying she did not want a wedding of gambling and heavy drinking."
     },
     {
      "id": "l122",
-     "end": 762.52,
-     "text": "It seems her dream wedding has now become a nightmare.",
      "start": 732.02,
-     "answers": [],
-     "keywords": [],
-     "translation": "看来她的梦幻婚礼如今已经变成了一场噩梦。",
-     "translations": {}
+     "end": 762.52,
+     "text": "It seems her dream wedding has now become a nightmare."
     },
     {
      "id": "l123",
-     "end": 763.32,
-     "text": "Q12. What does the speaker say about weddings?",
      "start": 762.52,
-     "answers": [],
-     "keywords": [],
-     "translation": "Q12. 关于婚礼，说话人说了什么？",
-     "translations": {}
+     "end": 763.32,
+     "text": "Q12. What does the speaker say about weddings?"
     },
     {
      "id": "l124",
-     "end": 780.04,
-     "text": "Q13. What do we learn about the wedding of the Canadian woman, Susan?",
      "start": 763.32,
-     "answers": [],
-     "keywords": [],
-     "translation": "Q13. 关于加拿大女子苏珊的婚礼，我们了解到什么？",
-     "translations": {}
+     "end": 780.04,
+     "text": "Q13. What do we learn about the wedding of the Canadian woman, Susan?"
     },
     {
      "id": "l125",
-     "end": 798.24,
-     "text": "Q14. What did Susan's maid of honor advise her to do?",
      "start": 780.04,
-     "answers": [],
-     "keywords": [],
-     "translation": "Q14. 苏珊的伴娘建议她做什么？",
-     "translations": {}
+     "end": 798.24,
+     "text": "Q14. What did Susan's maid of honor advise her to do?"
     },
     {
      "id": "l126",
-     "end": 803.32,
-     "text": "Q15. How did Susan respond to her future husband's suggestion?",
      "start": 798.24,
-     "answers": [],
-     "keywords": [],
-     "translation": "Q15. 苏珊对未婚夫的提议作何回应？",
-     "translations": {}
+     "end": 803.32,
+     "text": "Q15. How did Susan respond to her future husband's suggestion?"
     },
     {
      "id": "l127",
-     "end": 824.28,
-     "text": "In this section, you will hear three recordings of lectures or talks, followed by three or",
      "start": 810.04,
-     "answers": [],
-     "keywords": [],
-     "translation": "在这一部分，你将听到三段讲座或讲话录音，每段后面有三或",
-     "translations": {}
+     "end": 824.28,
+     "text": "In this section, you will hear three recordings of lectures or talks, followed by three or"
     },
     {
      "id": "l128",
-     "end": 825.76,
-     "text": "four questions.",
      "start": 824.28,
-     "answers": [],
-     "keywords": [],
-     "translation": "四个问题。",
-     "translations": {}
+     "end": 825.76,
+     "text": "four questions."
     },
     {
      "id": "l129",
-     "end": 828.36,
-     "text": "The recordings will be played only once.",
      "start": 825.76,
-     "answers": [],
-     "keywords": [],
-     "translation": "录音只放一遍。",
-     "translations": {}
+     "end": 828.36,
+     "text": "The recordings will be played only once."
     },
     {
      "id": "l130",
-     "end": 831.6,
-     "text": "After you hear a question, you must choose the best answer.",
      "start": 828.36,
-     "answers": [],
-     "keywords": [],
-     "translation": "听到问题后，你必须选出最佳答案。",
-     "translations": {}
+     "end": 831.6,
+     "text": "After you hear a question, you must choose the best answer."
     },
     {
      "id": "l131",
-     "end": 834.907,
-     "text": "From the four choices, marked A, B, C, and D.",
      "start": 831.6,
-     "answers": [],
-     "keywords": [],
-     "translation": "从标有 A、B、C、D 的四个选项中。",
-     "translations": {}
+     "end": 834.907,
+     "text": "From the four choices, marked A, B, C, and D."
     },
     {
      "id": "l132",
-     "end": 838.14,
-     "text": "Then mark the corresponding letter on answer",
      "start": 834.907,
-     "answers": [],
-     "keywords": [],
-     "translation": "然后把对应字母在答题",
-     "translations": {}
+     "end": 838.14,
+     "text": "Then mark the corresponding letter on answer"
     },
     {
      "id": "l133",
-     "end": 843.14,
-     "text": "sheet 1 with a single line through the center.",
      "start": 838.14,
-     "answers": [],
-     "keywords": [],
-     "translation": "卡 1 上把对应字母从中间划一条横线。",
-     "translations": {}
+     "end": 843.14,
+     "text": "sheet 1 with a single line through the center."
     },
     {
      "id": "l134",
-     "end": 844.74,
-     "text": "RECORDING 1",
      "start": 843.14,
-     "answers": [],
-     "keywords": [],
-     "translation": "RECORDING 1",
-     "translations": {}
+     "end": 844.74,
+     "text": "RECORDING 1"
     },
     {
      "id": "l135",
-     "end": 851.1,
-     "text": "It has long been scientifically established that weather changes can affect people's moods.",
      "start": 844.74,
-     "answers": [],
-     "keywords": [],
-     "translation": "天气变化会影响人的情绪，这在科学上早有定论。",
-     "translations": {}
+     "end": 851.1,
+     "text": "It has long been scientifically established that weather changes can affect people's moods."
     },
     {
      "id": "l136",
-     "end": 858.22,
-     "text": "Now a new study has provided evidence that temperature can influence people's personalities.",
      "start": 851.1,
-     "answers": [],
-     "keywords": [],
-     "translation": "如今一项新研究提供了证据，表明气温能影响人的性格。",
-     "translations": {}
+     "end": 858.22,
+     "text": "Now a new study has provided evidence that temperature can influence people's personalities."
     },
     {
      "id": "l137",
-     "end": 859.476,
-     "text": "This study of over 1.",
      "start": 858.22,
-     "answers": [],
-     "keywords": [],
-     "translation": "这项研究调查了超过",
-     "translations": {}
+     "end": 859.476,
+     "text": "This study of over 1."
     },
     {
      "id": "l138",
-     "end": 864.98,
-     "text": "6 million people revealed that 22-degrees Celsius is the perfect air temperature to live in.",
      "start": 859.476,
-     "answers": [],
-     "keywords": [],
-     "translation": "160 万人，结果显示 22 摄氏度是最适宜居住的气温。",
-     "translations": {}
+     "end": 864.98,
+     "text": "6 million people revealed that 22-degrees Celsius is the perfect air temperature to live in."
     },
     {
      "id": "l139",
-     "end": 878.94,
-     "text": "A city with an average annual temperature closer to 22 tends to have a population who are more agreeable, conscientious, emotionally stable, and outgoing.",
      "start": 864.98,
-     "answers": [],
-     "keywords": [],
-     "translation": "年平均气温越接近 22 度的城市，居民往往更随和、更尽责、情绪更稳定、性格更外向。",
-     "translations": {}
+     "end": 878.94,
+     "text": "A city with an average annual temperature closer to 22 tends to have a population who are more agreeable, conscientious, emotionally stable, and outgoing."
     },
     {
      "id": "l140",
-     "end": 884,
-     "text": "It is the least taxing temperature for the body to regulate its own temperature.",
      "start": 878.94,
-     "answers": [],
-     "keywords": [],
-     "translation": "在这个温度下，身体调节自身体温的负担最小。",
-     "translations": {}
+     "end": 884,
+     "text": "It is the least taxing temperature for the body to regulate its own temperature."
     },
     {
      "id": "l141",
-     "end": 888.88,
-     "text": "The study was observational and didn't show cause and effect, but the scientists behind it theorized that better weather leads people to leave their home more often.",
      "start": 884,
-     "answers": [],
-     "keywords": [],
-     "translation": "这项研究是观察性的，并未证明因果关系，但其背后的科学家推想，更好的天气会促使人们更常出门。",
-     "translations": {}
+     "end": 888.88,
+     "text": "The study was observational and didn't show cause and effect, but the scientists behind it theorized that better weather leads people to leave their home more often."
     },
     {
      "id": "l142",
-     "end": 903.9,
-     "text": "This in turn leads to more social interaction, which encourages them to develop a friendlier and socially more acceptable personality.",
      "start": 888.88,
-     "answers": [],
-     "keywords": [],
-     "translation": "这又带来更多社交互动，促使人们养成更友善、更符合社会期待的性格。",
-     "translations": {}
+     "end": 903.9,
+     "text": "This in turn leads to more social interaction, which encourages them to develop a friendlier and socially more acceptable personality."
     },
     {
      "id": "l143",
-     "end": 907.96,
-     "text": "Warmer climates also make people feel more positive in general.",
      "start": 903.9,
-     "answers": [],
-     "keywords": [],
-     "translation": "温暖的气候总体上也让人心态更积极。",
-     "translations": {}
+     "end": 907.96,
+     "text": "Warmer climates also make people feel more positive in general."
     },
     {
      "id": "l144",
-     "end": 911.68,
-     "text": "They tend to be more agreeable and conscientious.",
      "start": 907.96,
-     "answers": [],
-     "keywords": [],
-     "translation": "人们往往更随和、更尽责。",
-     "translations": {}
+     "end": 911.68,
+     "text": "They tend to be more agreeable and conscientious."
     },
     {
      "id": "l145",
-     "end": 917.12,
-     "text": "The findings might help explain why colder and warmer countries tend to produce people with different personalities.",
      "start": 911.68,
-     "answers": [],
-     "keywords": [],
-     "translation": "这些发现或许有助于解释，为什么较冷和较热的国家往往造就性格不同的人。",
-     "translations": {}
+     "end": 917.12,
+     "text": "The findings might help explain why colder and warmer countries tend to produce people with different personalities."
     },
     {
      "id": "l146",
-     "end": 924.5,
-     "text": "Roughly speaking, about 40% of a person's personality is determined by their genes, the other 60% by their environment.",
      "start": 917.12,
-     "answers": [],
-     "keywords": [],
-     "translation": "大致来说，一个人的性格约 40% 由基因决定，另外 60% 由环境决定。",
-     "translations": {}
+     "end": 924.5,
+     "text": "Roughly speaking, about 40% of a person's personality is determined by their genes, the other 60% by their environment."
     },
     {
      "id": "l147",
-     "end": 939.52,
-     "text": "It was already well-known that personality traits vary across geographic regions.",
      "start": 924.5,
-     "answers": [],
-     "keywords": [],
-     "translation": "性格特质因地理区域而异，这早已为人所知。",
-     "translations": {}
+     "end": 939.52,
+     "text": "It was already well-known that personality traits vary across geographic regions."
     },
     {
      "id": "l148",
-     "end": 946.24,
-     "text": "Scientists also knew that these geographic personality traits are associated with a broad range of consequential outcomes.",
      "start": 939.52,
-     "answers": [],
-     "keywords": [],
-     "translation": "科学家还知道，这些地域性性格特质与一系列重要结果相关联。",
-     "translations": {}
+     "end": 946.24,
+     "text": "Scientists also knew that these geographic personality traits are associated with a broad range of consequential outcomes."
     },
     {
      "id": "l149",
-     "end": 953.56,
-     "text": "economic activity, for example, entrepreneurial start-up rates, and also crime rates, health",
      "start": 946.24,
-     "answers": [],
-     "keywords": [],
-     "translation": "经济活动，例如创业率，以及",
-     "translations": {}
+     "end": 953.56,
+     "text": "economic activity, for example, entrepreneurial start-up rates, and also crime rates, health"
     },
     {
      "id": "l150",
-     "end": 957.12,
-     "text": "These outcomes include economic activity, for example entrepreneurial startup rates, and also crime rates, health behaviors, and health outcomes.",
      "start": 953.56,
-     "answers": [],
-     "keywords": [],
-     "translation": "这些结果包括经济活动（例如创业比率），还包括犯罪率、健康行为和健康结果。",
-     "translations": {}
+     "end": 957.12,
+     "text": "These outcomes include economic activity, for example entrepreneurial startup rates, and also crime rates, health behaviors, and health outcomes."
     },
     {
      "id": "l151",
-     "end": 962.18,
-     "text": "And it is well established that personality traits differ between countries.",
      "start": 957.12,
-     "answers": [],
-     "keywords": [],
-     "translation": "国与国之间性格特质存在差异，这也是公认的。",
-     "translations": {}
+     "end": 962.18,
+     "text": "And it is well established that personality traits differ between countries."
     },
     {
      "id": "l152",
-     "end": 966.8,
-     "text": "The research team speculated the two might be linked.",
      "start": 962.18,
-     "answers": [],
-     "keywords": [],
-     "translation": "研究团队推测，二者之间可能存在联系。",
-     "translations": {}
+     "end": 966.8,
+     "text": "The research team speculated the two might be linked."
     },
     {
      "id": "l153",
-     "end": 974.024,
-     "text": "To test this, they gave online personality tests to 5587 Chinese students and 1.",
      "start": 966.8,
-     "answers": [],
-     "keywords": [],
-     "translation": "为验证这一点，他们让 5587 名中国学生和",
-     "translations": {}
+     "end": 974.024,
+     "text": "To test this, they gave online personality tests to 5587 Chinese students and 1."
     },
     {
      "id": "l154",
-     "end": 975.92,
-     "text": "66 million Americans.",
      "start": 974.024,
-     "answers": [],
-     "keywords": [],
-     "translation": "166 万美国人做了在线性格测试。",
-     "translations": {}
+     "end": 975.92,
+     "text": "66 million Americans."
     },
     {
      "id": "l155",
-     "end": 981.6,
-     "text": "They then compared the results with the average annual temperature where they grew up.",
      "start": 975.92,
-     "answers": [],
-     "keywords": [],
-     "translation": "然后，他们把测试结果与他们成长地的年平均气温进行对比。",
-     "translations": {}
+     "end": 981.6,
+     "text": "They then compared the results with the average annual temperature where they grew up."
     },
     {
      "id": "l156",
-     "end": 989.28,
-     "text": "The tests measured personality along 5 well-studied characteristics.",
      "start": 982.48,
-     "answers": [],
-     "keywords": [],
-     "translation": "测试围绕 5 个被充分研究过的性格特征进行测量。",
-     "translations": {}
+     "end": 989.28,
+     "text": "The tests measured personality along 5 well-studied characteristics."
     },
     {
      "id": "l157",
-     "end": 997.36,
-     "text": "The 5 were agreeability, conscientiousness, emotional stability, outgoingness, and openness to new experiences.",
      "start": 989.28,
-     "answers": [],
-     "keywords": [],
-     "translation": "这 5 项是：宜人性、尽责性、情绪稳定性、外向性和对新经验的开放性。",
-     "translations": {}
+     "end": 997.36,
+     "text": "The 5 were agreeability, conscientiousness, emotional stability, outgoingness, and openness to new experiences."
     },
     {
      "id": "l158",
-     "end": 1004.8,
-     "text": "In both groups, the researchers found the closer a town's average annual temperature was to 22 degrees, the more its population exhibited those personality characteristics.",
      "start": 998.72,
-     "answers": [],
-     "keywords": [],
-     "translation": "在两组人群中，研究人员都发现，一个城镇的年平均气温越接近 22 度，其居民就越多地表现出那些性格特征。",
-     "translations": {}
+     "end": 1004.8,
+     "text": "In both groups, the researchers found the closer a town's average annual temperature was to 22 degrees, the more its population exhibited those personality characteristics."
     },
     {
      "id": "l159",
-     "end": 1012.08,
-     "text": "degrees, the Mord's population exhibited those personality characteristics. However,",
      "start": 1004.8,
-     "answers": [],
-     "keywords": [],
-     "translation": "在程度上，莫德镇居民确实表现出那些性格特征。",
-     "translations": {}
+     "end": 1012.08,
+     "text": "degrees, the Mord's population exhibited those personality characteristics. However,"
     },
     {
      "id": "l160",
-     "end": 1019.12,
-     "text": "However, the findings were much stronger for the Chinese group than the Americans studied, which suggests that though temperature plays a role, it does not play a dominant role.",
      "start": 1012.08,
-     "answers": [],
-     "keywords": [],
-     "translation": "不过，这一发现在中国受试者中比在美国受试者中明显得多，这说明气温虽然起作用，但并不起主导作用。",
-     "translations": {}
+     "end": 1019.12,
+     "text": "However, the findings were much stronger for the Chinese group than the Americans studied, which suggests that though temperature plays a role, it does not play a dominant role."
     },
     {
      "id": "l161",
-     "end": 1029.72,
-     "text": "The effects are fairly weak.",
      "start": 1019.12,
-     "answers": [],
-     "keywords": [],
-     "translation": "其影响相当微弱。",
-     "translations": {}
+     "end": 1029.72,
+     "text": "The effects are fairly weak."
     },
     {
      "id": "l162",
-     "end": 1032.48,
-     "text": "It's unlikely to lead to many arguments over the temperature setting of the office air conditioner.",
      "start": 1029.72,
-     "answers": [],
-     "keywords": [],
-     "translation": "它不太可能引发多少关于办公室空调温度设定的争论。",
-     "translations": {}
+     "end": 1032.48,
+     "text": "It's unlikely to lead to many arguments over the temperature setting of the office air conditioner."
     },
     {
      "id": "l163",
-     "end": 1038.68,
-     "text": "Question 16 to 18 are based on the recording you have just heard.",
      "start": 1032.48,
-     "answers": [],
-     "keywords": [],
-     "translation": "问题 16 至 18 基于你刚才听到的录音。",
-     "translations": {}
+     "end": 1038.68,
+     "text": "Question 16 to 18 are based on the recording you have just heard."
     },
     {
      "id": "l164",
-     "end": 1054.92,
-     "text": "Q16. What has a new study revealed about temperature?",
      "start": 1038.68,
-     "answers": [],
-     "keywords": [],
-     "translation": "Q16. 一项新研究揭示了气温的什么情况？",
-     "translations": {}
+     "end": 1054.92,
+     "text": "Q16. What has a new study revealed about temperature?"
     },
     {
      "id": "l165",
-     "end": 1072.28,
-     "text": "Q17. What does the speaker say about warmer climates?",
      "start": 1056.56,
-     "answers": [],
-     "keywords": [],
-     "translation": "Q17. 关于温暖的气候，说话人说了什么？",
-     "translations": {}
+     "end": 1072.28,
+     "text": "Q17. What does the speaker say about warmer climates?"
     },
     {
      "id": "l166",
-     "end": 1090.58,
-     "text": "Q18. What did the online personality tests suggest?",
      "start": 1074.28,
-     "answers": [],
-     "keywords": [],
-     "translation": "Q18. 在线性格测试表明了什么？",
-     "translations": {}
+     "end": 1090.58,
+     "text": "Q18. What did the online personality tests suggest?"
     },
     {
      "id": "l167",
-     "end": 1092.82,
-     "text": "RECORDING 2",
      "start": 1090.58,
-     "answers": [],
-     "keywords": [],
-     "translation": "RECORDING 2",
-     "translations": {}
+     "end": 1092.82,
+     "text": "RECORDING 2"
     },
     {
      "id": "l168",
-     "end": 1096.46,
-     "text": "Today we're talking about loneliness.",
      "start": 1092.82,
-     "answers": [],
-     "keywords": [],
-     "translation": "今天我们来谈谈孤独。",
-     "translations": {}
+     "end": 1096.46,
+     "text": "Today we're talking about loneliness."
     },
     {
      "id": "l169",
-     "end": 1101.76,
-     "text": "Loneliness and social isolation are growing public health concerns for people of all ages in the United States, from adolescence to the elderly.",
      "start": 1096.46,
-     "answers": [],
-     "keywords": [],
-     "translation": "在美国，孤独和社会隔绝正成为从青少年到老年人各年龄段人群日益突出的公共卫生问题。",
-     "translations": {}
+     "end": 1101.76,
+     "text": "Loneliness and social isolation are growing public health concerns for people of all ages in the United States, from adolescence to the elderly."
     },
     {
      "id": "l170",
-     "end": 1113.4,
-     "text": "Public health experts are worried because loneliness seems to be on the rise.",
      "start": 1101.76,
-     "answers": [],
-     "keywords": [],
-     "translation": "公共卫生专家忧心忡忡，因为孤独问题似乎正在加剧。",
-     "translations": {}
+     "end": 1113.4,
+     "text": "Public health experts are worried because loneliness seems to be on the rise."
     },
     {
      "id": "l171",
-     "end": 1120.56,
-     "text": "And studies have long found correlations between loneliness and an assortment of medical conditions that threaten health and longevity.",
      "start": 1113.4,
-     "answers": [],
-     "keywords": [],
-     "translation": "而且研究早已发现，孤独与多种威胁健康和寿命的疾病存在相关性。",
-     "translations": {}
+     "end": 1120.56,
+     "text": "And studies have long found correlations between loneliness and an assortment of medical conditions that threaten health and longevity."
     },
     {
      "id": "l172",
-     "end": 1126.44,
-     "text": "The problem of loneliness may be even greater than we thought.",
      "start": 1120.56,
-     "answers": [],
-     "keywords": [],
-     "translation": "孤独问题可能比我们想的还要严重。",
-     "translations": {}
+     "end": 1126.44,
+     "text": "The problem of loneliness may be even greater than we thought."
     },
     {
      "id": "l173",
-     "end": 1133.1,
-     "text": "A new national poll found that about a third of older Americans are lonely; and almost as many seniors feel isolated.",
      "start": 1126.44,
-     "answers": [],
-     "keywords": [],
-     "translation": "一项新的全国民意调查发现，约三分之一的美国老年人感到孤独，感到与世隔绝的老人数量几乎与此相当。",
-     "translations": {}
+     "end": 1133.1,
+     "text": "A new national poll found that about a third of older Americans are lonely; and almost as many seniors feel isolated."
     },
     {
      "id": "l174",
-     "end": 1135.62,
-     "text": "This is a serious problem, as research shows that chronic loneliness in particular can impair older adults' memory and damage their physical and mental health.",
      "start": 1133.1,
-     "answers": [],
-     "keywords": [],
-     "translation": "这是个严重的问题，因为研究表明，尤其是长期孤独会损害老年人的记忆，伤害其身心健康。",
-     "translations": {}
+     "end": 1135.62,
+     "text": "This is a serious problem, as research shows that chronic loneliness in particular can impair older adults' memory and damage their physical and mental health."
     },
     {
      "id": "l175",
-     "end": 1154.82,
-     "text": "Chronic loneliness even impacts the life expectancy of seniors, increasing their risk of early mortality.",
      "start": 1135.62,
-     "answers": [],
-     "keywords": [],
-     "translation": "长期孤独甚至影响老年人的预期寿命，增加他们早逝的风险。",
-     "translations": {}
+     "end": 1154.82,
+     "text": "Chronic loneliness even impacts the life expectancy of seniors, increasing their risk of early mortality."
     },
     {
      "id": "l176",
-     "end": 1159.56,
-     "text": "Let's take a closer look at that poll now.",
      "start": 1156.3,
-     "answers": [],
-     "keywords": [],
-     "translation": "现在我们来仔细看看那项民调。",
-     "translations": {}
+     "end": 1159.56,
+     "text": "Let's take a closer look at that poll now."
     },
     {
      "id": "l177",
-     "end": 1165.34,
-     "text": "More than a third of seniors in the poll said they felt lonely at least some of the time, and 27% said they sometimes or often felt isolated.",
      "start": 1159.56,
-     "answers": [],
-     "keywords": [],
-     "translation": "民调中超过三分之一的老人说他们至少有时感到孤独，27% 说自己有时或经常感到与世隔绝。",
-     "translations": {}
+     "end": 1165.34,
+     "text": "More than a third of seniors in the poll said they felt lonely at least some of the time, and 27% said they sometimes or often felt isolated."
     },
     {
      "id": "l178",
-     "end": 1175.54,
-     "text": "This reflects how much time the seniors spent with others.",
      "start": 1165.34,
-     "answers": [],
-     "keywords": [],
-     "translation": "这反映出老人们与他人相处的时间有多少。",
-     "translations": {}
+     "end": 1175.54,
+     "text": "This reflects how much time the seniors spent with others."
     },
     {
      "id": "l179",
-     "end": 1183.42,
-     "text": "Almost 30% said they socialized with friends, family, or neighbors once a week or less.",
      "start": 1175.54,
-     "answers": [],
-     "keywords": [],
-     "translation": "近 30% 的人说，他们每周至多与朋友、家人或邻居社交一次。",
-     "translations": {}
+     "end": 1183.42,
+     "text": "Almost 30% said they socialized with friends, family, or neighbors once a week or less."
     },
     {
      "id": "l180",
-     "end": 1186.86,
-     "text": "Women were more likely than men to report loneliness.",
      "start": 1183.42,
-     "answers": [],
-     "keywords": [],
-     "translation": "女性报告孤独的比例高于男性。",
-     "translations": {}
+     "end": 1186.86,
+     "text": "Women were more likely than men to report loneliness."
     },
     {
      "id": "l181",
-     "end": 1190.3,
-     "text": "But there is good news.",
      "start": 1186.86,
-     "answers": [],
-     "keywords": [],
-     "translation": "但也有好消息。",
-     "translations": {}
+     "end": 1190.3,
+     "text": "But there is good news."
     },
     {
      "id": "l182",
-     "end": 1193.085,
-     "text": "It looks like loneliness can be reversed.",
      "start": 1190.3,
-     "answers": [],
-     "keywords": [],
-     "translation": "看起来孤独是可以逆转的。",
-     "translations": {}
+     "end": 1193.085,
+     "text": "It looks like loneliness can be reversed."
     },
     {
      "id": "l183",
-     "end": 1196.86,
-     "text": "But researchers are still trying to determine the best way to do so. Why is that?",
      "start": 1193.085,
-     "answers": [],
-     "keywords": [],
-     "translation": "但研究人员仍在努力确定做到这一点的最佳方式。这是为什么呢？",
-     "translations": {}
+     "end": 1196.86,
+     "text": "But researchers are still trying to determine the best way to do so. Why is that?"
     },
     {
      "id": "l184",
-     "end": 1202.62,
-     "text": "Resolving the problem of loneliness among seniors often isn't as simple as getting them together with others or moving them in with their children.",
      "start": 1196.86,
-     "answers": [],
-     "keywords": [],
-     "translation": "解决老年人的孤独问题，往往不像让他们与他人聚在一起、或搬去与子女同住那么简单。",
-     "translations": {}
+     "end": 1202.62,
+     "text": "Resolving the problem of loneliness among seniors often isn't as simple as getting them together with others or moving them in with their children."
     },
     {
      "id": "l185",
-     "end": 1214.78,
-     "text": "In fact, the poll found that seniors who lived with their children were more likely to report feeling lonely than those who didn't.",
      "start": 1202.62,
-     "answers": [],
-     "keywords": [],
-     "translation": "事实上，民调发现，与子女同住的老人报告孤独感的比例反而高于不同住的老人。",
-     "translations": {}
+     "end": 1214.78,
+     "text": "In fact, the poll found that seniors who lived with their children were more likely to report feeling lonely than those who didn't."
     },
     {
      "id": "l186",
-     "end": 1222.3,
-     "text": "This may be because loneliness refers to the discrepancy between actual and desired relationships.",
      "start": 1215.82,
-     "answers": [],
-     "keywords": [],
-     "translation": "这可能是因为，孤独指的是现实人际关系与期望人际关系之间的落差。",
-     "translations": {}
+     "end": 1222.3,
+     "text": "This may be because loneliness refers to the discrepancy between actual and desired relationships."
     },
     {
      "id": "l187",
-     "end": 1228.22,
-     "text": "So it's possible that someone who lives alone doesn't meet that definition, while someone in a house full of busy people does.",
      "start": 1223.18,
-     "answers": [],
-     "keywords": [],
-     "translation": "所以，独居的人未必符合这一定义，而身处满是忙碌之人家里的人反而符合。",
-     "translations": {}
+     "end": 1228.22,
+     "text": "So it's possible that someone who lives alone doesn't meet that definition, while someone in a house full of busy people does."
     },
     {
      "id": "l188",
-     "end": 1239.98,
-     "text": "How can we solve the problem?",
      "start": 1228.86,
-     "answers": [],
-     "keywords": [],
-     "translation": "我们该如何解决这个问题？",
-     "translations": {}
+     "end": 1239.98,
+     "text": "How can we solve the problem?"
     },
     {
      "id": "l189",
-     "end": 1247.1,
-     "text": "Well, the researchers assert that it's important to address each person's underlying cause of loneliness, whether it's the death of a spouse, medical problems, or social expectations that haven't been fulfilled.",
      "start": 1239.98,
-     "answers": [],
-     "keywords": [],
-     "translation": "研究人员断言，重要的是找出并应对每个人孤独的深层原因，无论是丧偶、健康问题，还是未实现的社会期望。",
-     "translations": {}
+     "end": 1247.1,
+     "text": "Well, the researchers assert that it's important to address each person's underlying cause of loneliness, whether it's the death of a spouse, medical problems, or social expectations that haven't been fulfilled."
     },
     {
      "id": "l190",
-     "end": 1261.26,
-     "text": "It's noteworthy that there is one general recommendation.",
      "start": 1247.1,
-     "answers": [],
-     "keywords": [],
-     "translation": "值得注意的是，有一条普适的建议。",
-     "translations": {}
+     "end": 1261.26,
+     "text": "It's noteworthy that there is one general recommendation."
     },
     {
      "id": "l191",
-     "end": 1267.5,
-     "text": "While finding solutions for loneliness is highly personal, research suggests the best interventions are those that involve meaningful social contact at least once a week.",
      "start": 1261.26,
-     "answers": [],
-     "keywords": [],
-     "translation": "虽然解决孤独的办法因人而异，但研究表明，最好的干预是那些每周至少包含一次有意义社交接触的干预。",
-     "translations": {}
+     "end": 1267.5,
+     "text": "While finding solutions for loneliness is highly personal, research suggests the best interventions are those that involve meaningful social contact at least once a week."
     },
     {
      "id": "l192",
-     "end": 1274.46,
-     "text": "Depending on the person, that could mean volunteering, calling an old friend, or something else.",
      "start": 1268.62,
-     "answers": [],
-     "keywords": [],
-     "translation": "具体到个人，可以是做志愿者、给老朋友打电话，或者其他方式。",
-     "translations": {}
+     "end": 1274.46,
+     "text": "Depending on the person, that could mean volunteering, calling an old friend, or something else."
     },
     {
      "id": "l193",
-     "end": 1280.54,
-     "text": "Questions 19 to 21 are based on the recording you have just heard.",
      "start": 1276.14,
-     "answers": [],
-     "keywords": [],
-     "translation": "问题 19 至 21 基于你刚才听到的录音。",
-     "translations": {}
+     "end": 1280.54,
+     "text": "Questions 19 to 21 are based on the recording you have just heard."
     },
     {
      "id": "l194",
-     "end": 1304.38,
-     "text": "Q19. Why does the speaker say the finding of a new national poll reveals a serious problem?",
      "start": 1281.5,
-     "answers": [],
-     "keywords": [],
-     "translation": "Q19. 说话人为什么说一项新全国民调的发现揭示了一个严重问题？",
-     "translations": {}
+     "end": 1304.38,
+     "text": "Q19. Why does the speaker say the finding of a new national poll reveals a serious problem?"
     },
     {
      "id": "l195",
-     "end": 1320.58,
-     "text": "Q20. What is the good news the speaker talks about?",
      "start": 1304.38,
-     "answers": [],
-     "keywords": [],
-     "translation": "Q20. 说话人谈到的好消息是什么？",
-     "translations": {}
+     "end": 1320.58,
+     "text": "Q20. What is the good news the speaker talks about?"
     },
     {
      "id": "l196",
-     "end": 1340.86,
-     "text": "Q21. What is the key to solving the loneliness problem, according to the speaker?",
      "start": 1320.58,
-     "answers": [],
-     "keywords": [],
-     "translation": "Q21. 据说话人所说，解决孤独问题的关键是什么？",
-     "translations": {}
+     "end": 1340.86,
+     "text": "Q21. What is the key to solving the loneliness problem, according to the speaker?"
     },
     {
      "id": "l197",
-     "end": 1341.86,
-     "text": "RECORDING 3",
      "start": 1340.86,
-     "answers": [],
-     "keywords": [],
-     "translation": "RECORDING 3",
-     "translations": {}
+     "end": 1341.86,
+     "text": "RECORDING 3"
     },
     {
      "id": "l198",
-     "end": 1348.9,
-     "text": "Hello, I am co-founder of the popular female travel community, We Are Travel Girls.",
      "start": 1341.86,
-     "answers": [],
-     "keywords": [],
-     "translation": "大家好，我是颇受欢迎的女性旅行社区 We Are Travel Girls 的联合创始人。",
-     "translations": {}
+     "end": 1348.9,
+     "text": "Hello, I am co-founder of the popular female travel community, We Are Travel Girls."
     },
     {
      "id": "l199",
-     "end": 1354.18,
-     "text": "We collect and publish stories from women traveling all over the world.",
      "start": 1348.9,
-     "answers": [],
-     "keywords": [],
-     "translation": "我们收集并发表世界各地旅行女性的故事。",
-     "translations": {}
+     "end": 1354.18,
+     "text": "We collect and publish stories from women traveling all over the world."
     },
     {
      "id": "l200",
-     "end": 1359.64,
-     "text": "We promote women's blogs.",
      "start": 1354.18,
-     "answers": [],
-     "keywords": [],
-     "translation": "我们推广女性的博客。",
-     "translations": {}
+     "end": 1359.64,
+     "text": "We promote women's blogs."
     },
     {
      "id": "l201",
-     "end": 1365.66,
-     "text": "We host meetings and events and are getting ready to launch our Travel with Us trips in Bali, Japan and Malawi.",
      "start": 1359.64,
-     "answers": [],
-     "keywords": [],
-     "translation": "我们举办聚会和活动，还准备推出\"与我们同行\"的巴厘岛、日本和马拉维之旅。",
-     "translations": {}
+     "end": 1365.66,
+     "text": "We host meetings and events and are getting ready to launch our Travel with Us trips in Bali, Japan and Malawi."
     },
     {
      "id": "l202",
-     "end": 1376.06,
-     "text": "Before I started We Are Travel Girls, I had a successful 10-year career in finance in London where I advised private clients on their investments.",
      "start": 1365.66,
-     "answers": [],
-     "keywords": [],
-     "translation": "在创办 We Are Travel Girls 之前，我在伦敦金融行业有过成功的 10 年职业生涯，为私人客户提供投资建议。",
-     "translations": {}
+     "end": 1376.06,
+     "text": "Before I started We Are Travel Girls, I had a successful 10-year career in finance in London where I advised private clients on their investments."
     },
     {
      "id": "l203",
-     "end": 1382.26,
-     "text": "Having always had a huge love for travel, I finally took the leap and left finance to pursue my dream of starting a travel company.",
      "start": 1376.06,
-     "answers": [],
-     "keywords": [],
-     "translation": "因为一直酷爱旅行，我最终放手一搏，离开金融业，去追寻创办旅行公司的梦想。",
-     "translations": {}
+     "end": 1382.26,
+     "text": "Having always had a huge love for travel, I finally took the leap and left finance to pursue my dream of starting a travel company."
     },
     {
      "id": "l204",
-     "end": 1390.36,
-     "text": "For as long as I can remember, I wanted to be a travel writer.",
      "start": 1382.26,
-     "answers": [],
-     "keywords": [],
-     "translation": "从记事起，我就想成为一名旅行作家。",
-     "translations": {}
+     "end": 1390.36,
+     "text": "For as long as I can remember, I wanted to be a travel writer."
     },
     {
      "id": "l205",
-     "end": 1400.56,
-     "text": "Before blogs existed, and everything we read was online, I would go to travel writing seminars by writers who were published in travel magazines.",
      "start": 1390.36,
-     "answers": [],
-     "keywords": [],
-     "translation": "在博客出现、我们读的东西都在网上之前，我会去参加旅行写作研讨班，主讲人都是在旅行杂志上发表过作品的作家。",
-     "translations": {}
+     "end": 1400.56,
+     "text": "Before blogs existed, and everything we read was online, I would go to travel writing seminars by writers who were published in travel magazines."
     },
     {
      "id": "l206",
-     "end": 1405.18,
-     "text": "I was desperate to write for one of those magazines but didn't know how to break into that industry.",
      "start": 1400.56,
-     "answers": [],
-     "keywords": [],
-     "translation": "我迫切想为其中一家杂志撰稿，却不知道如何打入那个行业。",
-     "translations": {}
+     "end": 1405.18,
+     "text": "I was desperate to write for one of those magazines but didn't know how to break into that industry."
     },
     {
      "id": "l207",
-     "end": 1420.06,
-     "text": "After university, I ended up working in finance, but always had a desire to travel and write about it.",
      "start": 1405.18,
-     "answers": [],
-     "keywords": [],
-     "translation": "大学毕业后我进了金融业，但始终怀有去旅行并写作的愿望。",
-     "translations": {}
+     "end": 1420.06,
+     "text": "After university, I ended up working in finance, but always had a desire to travel and write about it."
     },
     {
      "id": "l208",
-     "end": 1425.66,
-     "text": "In 2015, I was looking at ways to leave finance, and my friend Vanessa, who grew up on a ranch on the central coast of California, suggested starting a blog.",
      "start": 1420.06,
-     "answers": [],
-     "keywords": [],
-     "translation": "2015 年，我正在寻找离开金融业的途径，我朋友瓦妮莎——她在加利福尼亚中部海岸的一个牧场长大——建议我开博客。",
-     "translations": {}
+     "end": 1425.66,
+     "text": "In 2015, I was looking at ways to leave finance, and my friend Vanessa, who grew up on a ranch on the central coast of California, suggested starting a blog."
     },
     {
      "id": "l209",
-     "end": 1432.3,
-     "text": "But when we started creating it, we realized that was the same thing every girl was doing.",
      "start": 1426.54,
-     "answers": [],
-     "keywords": [],
-     "translation": "但当我们开始动手做时，发现每个女孩都在做同样的事。",
-     "translations": {}
+     "end": 1432.3,
+     "text": "But when we started creating it, we realized that was the same thing every girl was doing."
     },
     {
      "id": "l210",
-     "end": 1435.82,
-     "text": "So we turned our attention to creating a community among these women.",
      "start": 1432.3,
-     "answers": [],
-     "keywords": [],
-     "translation": "于是我们把注意力转向在这些女性中建立一个社区。",
-     "translations": {}
+     "end": 1435.82,
+     "text": "So we turned our attention to creating a community among these women."
     },
     {
      "id": "l211",
-     "end": 1443.42,
-     "text": "This led us to start We Are Travel Girls, which has now grown into a community of over 200,000 followers.",
      "start": 1436.78,
-     "answers": [],
-     "keywords": [],
-     "translation": "这促使我们创办了 We Are Travel Girls，如今它已发展成一个拥有 20 多万关注者的社区。",
-     "translations": {}
+     "end": 1443.42,
+     "text": "This led us to start We Are Travel Girls, which has now grown into a community of over 200,000 followers."
     },
     {
      "id": "l212",
-     "end": 1450.3,
-     "text": "To anyone thinking about becoming a travel writer, I would suggest they first try and look for a unique way to enter the industry.",
      "start": 1443.42,
-     "answers": [],
-     "keywords": [],
-     "translation": "对任何想成为旅行作家的人，我建议首先设法找到一条独特的入行之路。",
-     "translations": {}
+     "end": 1450.3,
+     "text": "To anyone thinking about becoming a travel writer, I would suggest they first try and look for a unique way to enter the industry."
     },
     {
      "id": "l213",
-     "end": 1461.66,
-     "text": "There are a lot of travel writers now and it can be hard to stand out from the crowd.",
      "start": 1450.3,
-     "answers": [],
-     "keywords": [],
-     "translation": "如今旅行作家很多，想脱颖而出并不容易。",
-     "translations": {}
+     "end": 1461.66,
+     "text": "There are a lot of travel writers now and it can be hard to stand out from the crowd."
     },
     {
      "id": "l214",
-     "end": 1465.402,
-     "text": "My advice would be to find a niche and focus on that. For example, if you love adventure travel, focus on that. If you love food, focus on food travel.",
      "start": 1462.3,
-     "answers": [],
-     "keywords": [],
-     "translation": "比如，如果你热爱探险旅行，就专注于探险；如果你热爱美食，就专注于美食之旅。",
-     "translations": {}
+     "end": 1465.402,
+     "text": "My advice would be to find a niche and focus on that. For example, if you love adventure travel, focus on that. If you love food, focus on food travel."
     },
     {
      "id": "l215",
-     "end": 1468.625,
-     "text": "The more specific you are, the easier it will be to build an audience.",
      "start": 1465.402,
-     "answers": [],
-     "keywords": [],
-     "translation": "定位越具体，就越容易积累读者。",
-     "translations": {}
+     "end": 1468.625,
+     "text": "The more specific you are, the easier it will be to build an audience."
     },
     {
      "id": "l216",
-     "end": 1471.159,
-     "text": "Another thing I would suggest is to avoid too much advertising early on.",
      "start": 1468.625,
-     "answers": [],
-     "keywords": [],
-     "translation": "另外我建议，前期不要投放太多广告。",
-     "translations": {}
+     "end": 1471.159,
+     "text": "Another thing I would suggest is to avoid too much advertising early on."
     },
     {
      "id": "l217",
-     "end": 1480.714,
-     "text": "When you first start out, your audience is there for your content, not to be sold to.",
      "start": 1471.159,
-     "answers": [],
-     "keywords": [],
-     "translation": "刚起步时，读者是冲着你的内容来的，不是来被推销的。",
-     "translations": {}
+     "end": 1480.714,
+     "text": "When you first start out, your audience is there for your content, not to be sold to."
     },
     {
      "id": "l218",
-     "end": 1485,
-     "text": "If you start bombarding them with ads too early, they will lose interest.",
      "start": 1480.714,
-     "answers": [],
-     "keywords": [],
-     "translation": "如果太早开始用广告轰炸他们，他们会失去兴趣。",
-     "translations": {}
+     "end": 1485,
+     "text": "If you start bombarding them with ads too early, they will lose interest."
     },
     {
      "id": "l219",
-     "end": 1490.92,
-     "text": "Questions 22 to 25 are based on the recording.",
      "start": 1486.36,
-     "answers": [],
-     "keywords": [],
-     "translation": "问题 22 至 25 基于这段录音。",
-     "translations": {}
+     "end": 1490.92,
+     "text": "Questions 22 to 25 are based on the recording."
     },
     {
      "id": "l220",
-     "end": 1494.214,
-     "text": "Wait until you have built up a loyal following before you start introducing any kind of advertising.",
      "start": 1490.92,
-     "answers": [],
-     "keywords": [],
-     "translation": "等你积累起一批忠实粉丝后，再开始引入任何形式的广告。",
-     "translations": {}
+     "end": 1494.214,
+     "text": "Wait until you have built up a loyal following before you start introducing any kind of advertising."
     },
     {
      "id": "l221",
-     "end": 1499.44,
-     "text": "Q22. What do we learn about the speaker before she started We Are Travel Girls?",
      "start": 1494.214,
-     "answers": [],
-     "keywords": [],
-     "translation": "Q22. 关于说话人创办 We Are Travel Girls 之前的情况，我们了解到什么？",
-     "translations": {}
+     "end": 1499.44,
+     "text": "Q22. What do we learn about the speaker before she started We Are Travel Girls?"
     },
     {
      "id": "l222",
-     "end": 1518.16,
-     "text": "Q23. What did the speaker's friend Vanessa suggest she do in 2015?",
      "start": 1512.56,
-     "answers": [],
-     "keywords": [],
-     "translation": "Q23. 2015 年，说话人的朋友瓦妮莎建议她做什么？",
-     "translations": {}
+     "end": 1518.16,
+     "text": "Q23. What did the speaker's friend Vanessa suggest she do in 2015?"
     },
     {
      "id": "l223",
-     "end": 1574.92,
-     "text": "Q24. What does the speaker suggest people do to become travel writers?",
-     "start": 1521.92,
-     "answers": [],
-     "keywords": [],
-     "translation": "Q24. 想成为旅行作家，说话人建议人们怎么做？",
-     "translations": {}
+     "start": 1531.9,
+     "end": 1538.6,
+     "text": "Question 24. What does the speaker advise people to do if they want to become travel writers?"
     },
     {
      "id": "l224",
-     "end": 1580.82,
-     "text": "Q25. What does the speaker advise travel writers to do when they first start out?",
-     "start": 1574.92,
-     "answers": [],
-     "keywords": [],
-     "translation": "Q25. 旅行作家刚起步时，说话人建议他们做什么？",
-     "translations": {}
+     "start": 1552.4,
+     "end": 1557.8,
+     "text": "Question 25. What is the speaker's advice on winning a loyal audience?"
+    },
+    {
+     "id": "l225",
+     "start": 1571.4,
+     "end": 1573.9,
+     "text": "That's the end of listening comprehension."
     }
    ],
    "status": "published",
