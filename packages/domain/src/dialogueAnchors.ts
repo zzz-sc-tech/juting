@@ -159,11 +159,15 @@ const MATERIAL_PATTERN = new RegExp(
 )
 
 const TEXT_PATTERN =
-  /^\s*(text|conversation|passage|recording|lecture|talk|section)\s+(one|two|three|four|five|six|seven|eight|nine|ten|eleven|twelve|thirteen|fourteen|fifteen|sixteen|seventeen|eighteen|nineteen|twenty|[0-9]+|[a-d])\b\s*[.:,]?\s*$/i
+  /^[\s\-\u2013\u2014>*•]*(text|conversation|passage|recording|lecture|talk|section)\s+(one|two|three|four|five|six|seven|eight|nine|ten|eleven|twelve|thirteen|fourteen|fifteen|sixteen|seventeen|eighteen|nineteen|twenty|[0-9]+|[a-d])\b\s*[.:,]?\s*$/i
 
-/** 指令头前缀：「Section A - Directions」「Section A (Directions)」「Section A)」「Conversation 1 - Welcome ...」——只认头部，限长防误报。 */
+/**
+ * 指令头前缀：「Section A - Directions」「Section A (Directions)」「Section A)」「Conversation 1 - Welcome ...」——只认头部，限长防误报。
+ * 允许行首出现短横/圆点列表符：ASR/修复管线会给题干与报头行加「- 」前缀
+ * （2025年6月第1套实测整批「- Conversation two.」「- Questions one to four …」）。
+ */
 const TEXT_HEAD_PATTERN =
-  /^\s*(text|conversation|passage|recording|lecture|talk|section)\s+(one|two|three|four|five|six|seven|eight|nine|ten|eleven|twelve|thirteen|fourteen|fifteen|sixteen|seventeen|eighteen|nineteen|twenty|[0-9]+|[a-d])\b(?:\s*[-\u2013\u2014:,)（(]\s*|\s+directions\b|\s*$)/i
+  /^[\s\-\u2013\u2014>*•]*(text|conversation|passage|recording|lecture|talk|section)\s+(one|two|three|four|five|six|seven|eight|nine|ten|eleven|twelve|thirteen|fourteen|fifteen|sixteen|seventeen|eighteen|nineteen|twenty|[0-9]+|[a-d])\b(?:\s*[-\u2013\u2014:,)（(]\s*|\s+directions\b|\s*$)/i
 
 /**
  * 报头与说明段被 whisper 塞进同一行、行长超过上面限长门槛的那种：
@@ -175,12 +179,12 @@ const LONG_SECTION_HEAD_PATTERN =
 
 /** 英文真题题干指令：「Questions one to four are based on ...」（六级原音频的官方播报形式）。 */
 const EN_QUESTIONS_RANGE_PATTERN =
-  /^\s*questions?\s+(one|two|three|four|five|six|seven|eight|nine|ten|eleven|twelve|thirteen|fourteen|fifteen|sixteen|seventeen|eighteen|nineteen|twenty|[0-9]+)\s*(?:to|through|–|—|-)\s*(one|two|three|four|five|six|seven|eight|nine|ten|eleven|twelve|thirteen|fourteen|fifteen|sixteen|seventeen|eighteen|nineteen|twenty|[0-9]+)\b/i
+  /^[\s\-\u2013\u2014>*•]*questions?\s+(one|two|three|four|five|six|seven|eight|nine|ten|eleven|twelve|thirteen|fourteen|fifteen|sixteen|seventeen|eighteen|nineteen|twenty|[0-9]+)\s*(?:to|through|–|—|-)\s*(one|two|three|four|five|six|seven|eight|nine|ten|eleven|twelve|thirteen|fourteen|fifteen|sixteen|seventeen|eighteen|nineteen|twenty|[0-9]+)\b/i
 const EN_SINGLE_QUESTION_PATTERN =
-  /^\s*questions?\s+(one|two|three|four|five|six|seven|eight|nine|ten|eleven|twelve|thirteen|fourteen|fifteen|sixteen|seventeen|eighteen|nineteen|twenty|[0-9]+)\b/i
+  /^[\s\-\u2013\u2014>*•]*questions?\s+(one|two|three|four|five|six|seven|eight|nine|ten|eleven|twelve|thirteen|fourteen|fifteen|sixteen|seventeen|eighteen|nineteen|twenty|[0-9]+)\b/i
 
 /** 原文 md 的题干写法：「Q1. What is the …」/「Q12: …」/「Q3。…」。 */
-const EN_Q_LABEL_PATTERN = /^\s*q\s*([0-9]{1,2})\s*[.。:：,，)]\s*\S/i
+const EN_Q_LABEL_PATTERN = /^[\s\-\u2013\u2014>*•]*q\s*([0-9]{1,2})\s*[.。:：,，)]\s*\S/i
 
 /**
  * 四六级「指令说明段」的续行片段。音频里这段只有首行带「Section X Directions」头，
@@ -202,6 +206,8 @@ const EN_DIRECTIONS_LINE_PATTERN = new RegExp(
     '|a single line through\\b' +
     '|talks?\\s+followed\\b' +
     '|(?:passage|recording|conversation)s?,\\s*you will hear\\b' +
+    '|at the end of each (?:conversation|passage|recording|section)\\b' +
+    '|after you hear a question\\b' +
     '|the cent(?:er|re)\\s*[.。]?$' +
   ')',
   'i',
@@ -255,6 +261,64 @@ const materialKindToAnchorKind = (kind: string): DialogueAnchorKind => {
     return 'monologue'
   }
   return 'passage'
+}
+
+/** 从锚点标签解析「Q19」/「Q19–22」/「第19题」/「第19–22题」形态的题号区间；其他形态返回 null。 */
+const parseQuestionRangeLabel = (
+  label: string,
+): { first: number; last: number; cjk: boolean } | null => {
+  const qMatch = label.match(/^Q(\d{1,2})(?:[–—-](\d{1,2}))?$/)
+  if (qMatch) {
+    const first = Number.parseInt(qMatch[1], 10)
+    const last = qMatch[2] ? Number.parseInt(qMatch[2], 10) : first
+    return first >= 1 && last >= first && last <= 99
+      ? { first, last, cjk: false }
+      : null
+  }
+  const cjkMatch = label.match(/^第(\d{1,2})(?:[–—-](\d{1,2}))?题$/)
+  if (cjkMatch) {
+    const first = Number.parseInt(cjkMatch[1], 10)
+    const last = cjkMatch[2] ? Number.parseInt(cjkMatch[2], 10) : first
+    return first >= 1 && last >= first && last <= 99
+      ? { first, last, cjk: true }
+      : null
+  }
+  return null
+}
+
+/**
+ * 相邻题干句（「Q19. …」后面跟「Q20. …」）并进前一个题号块时，把题号区间
+ * 向外扩展，而不是被下面的「标签只升不降」吞掉——否则区间指令句缺失的课程
+ * （如 2017年6月第1套的 Recording 2）整段只剩第一个题号的锚点，Q20–22 就
+ * 从锚点条上消失了（38 门课 24 门有此缺口，2026-09-29 审计）。
+ * 返回扩展后的标签；无法按题号区间处理时返回 null（走原有的只升不降覆盖）。
+ */
+const extendQuestionRangeLabel = (
+  previousLabel: string,
+  incomingLabel: string,
+): string | null => {
+  const previous = parseQuestionRangeLabel(previousLabel)
+  if (!previous) {
+    return null
+  }
+  const incoming = incomingLabel.match(/^Q(\d{1,2})$/) ?? incomingLabel.match(/^第(\d{1,2})题$/)
+  if (!incoming) {
+    return null
+  }
+  const number = Number.parseInt(incoming[1], 10)
+  if (!Number.isInteger(number) || number < 1 || number > 99) {
+    return null
+  }
+  // 区间内的重复题干（题组播报后跟 Qn.）：吸收进块，标签不动
+  if (number >= previous.first && number <= previous.last) {
+    return previousLabel
+  }
+  const first = Math.min(previous.first, number)
+  const last = Math.max(previous.last, number)
+  if (first === last) {
+    return previousLabel
+  }
+  return previous.cjk ? `第${first}–${last}题` : `Q${first}–${last}`
 }
 
 /** 判断单行字幕是否为指令行，命中则返回分类与标签候选。 */
@@ -488,9 +552,16 @@ export const extractDialogueAnchors = (
       // 相邻题号播报合并进前一个锚点；标签取信息量更高（rank 更大且非空）的那条。
       previous.lineIds.push(line.id)
       previous.lastLine = line
-      // 标签只升不降：高信息量（rank 大且非空）的指令覆盖低信息量的，
-      // 例如「Section A」+「Question one,...」相邻时保留题号而不是节名。
-      if (match.label && match.rank > previous.rank) {
+      // 连续题干句先尝试向外扩展题号区间（Q19. + Q20. + … → Q19–22）；
+      // 扩展成功（含区间内吸收）就把块升到区间级，后面的同 rank 题干继续扩展。
+      const extendedLabel = extendQuestionRangeLabel(previous.label, match.label)
+      if (extendedLabel !== null) {
+        previous.label = extendedLabel
+        previous.kind = 'question-range'
+        previous.rank = Math.max(previous.rank, 4)
+      } else if (match.label && match.rank > previous.rank) {
+        // 标签只升不降：高信息量（rank 大且非空）的指令覆盖低信息量的，
+        // 例如「Section A」+「Question one,...」相邻时保留题号而不是节名。
         previous.label = match.label
         previous.kind = match.kind
         previous.rank = match.rank
@@ -581,7 +652,43 @@ export const extractDialogueAnchors = (
     anchor.id = `da-${index + 1}`
   })
 
-  return deduped.filter(
+  // 题号锚点的重叠合并：题干句链在内容行处断开后，会新起一个与前面区间
+  // 指令重叠的题号锚点（如「Q16–18」之后题干句又扩出同名块；#14/#24/#28 实测）。
+  // 保留先出现者（区间指令句在题组开头，点击跳转语义正确），后续重叠块的
+  // lineIds 并入它，标签取两者区间的并集（锚点覆盖完整性优先）。
+  const mergedRanges: DialogueAnchor[] = []
+  for (const anchor of deduped) {
+    const previous = mergedRanges[mergedRanges.length - 1]
+    if (
+      anchor.kind === 'question-range' &&
+      previous?.kind === 'question-range'
+    ) {
+      const a = parseQuestionRangeLabel(previous.label)
+      const b = parseQuestionRangeLabel(anchor.label)
+      if (a && b && b.first <= a.last && a.first <= b.last) {
+        previous.lineIds = [...new Set([...previous.lineIds, ...anchor.lineIds])]
+          .sort(
+            (left, right) =>
+              (startById.get(left) ?? 0) - (startById.get(right) ?? 0),
+          )
+        previous.end = Math.max(previous.end, anchor.end)
+        const first = Math.min(a.first, b.first)
+        const last = Math.max(a.last, b.last)
+        previous.label =
+          first === last
+            ? a.cjk || b.cjk
+              ? `第${first}题`
+              : `Q${first}`
+            : a.cjk || b.cjk
+              ? `第${first}–${last}题`
+              : `Q${first}–${last}`
+        continue
+      }
+    }
+    mergedRanges.push(anchor)
+  }
+
+  return mergedRanges.filter(
     (anchor) =>
       Number.isFinite(anchor.start) &&
       Number.isFinite(anchor.end) &&
