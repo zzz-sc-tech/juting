@@ -1,7 +1,7 @@
 {
  "preset": "cet6",
- "version": "20260929.1",
- "generatedAt": "2026-09-29T12:39:00.445Z",
+ "version": "20260929.3",
+ "generatedAt": "2026-09-29T15:34:52.818Z",
  "group": {
   "id": 8,
   "name": "英语六级真题",
@@ -21366,7 +21366,7 @@
     {
      "id": "l168",
      "end": 1416.022,
-     "text": "Questions 19 to 21 are based on the recording you have just heard.",
+     "text": "Question 21. What information did Russian and American space probes provide about Venus?",
      "start": 1392.342,
      "answers": [],
      "keywords": [],
@@ -62327,224 +62327,70 @@
      "translations": {}
     },
     {
-     "id": "l183",
-     "end": 1314.4,
-     "text": "By the end of 2016, anyone who had been paying even passing attention to the news headlines was highly likely to conclude that everything was terrible, and that the world was going to hell.",
-     "start": 1309.4,
-     "answers": [],
-     "keywords": [],
-     "translation": "到 2016 年底，哪怕只是偶尔扫一眼新闻标题的人，都极可能得出结论：一切都糟透了，世界正在走向地狱。",
-     "translations": {}
-    },
-    {
-     "id": "l184",
-     "end": 1322.77,
-     "text": "It was easy to feel depressed by the wars in different parts of the world, the spread of deadly viruses or terror attacks.",
-     "start": 1314.4,
-     "answers": [],
-     "keywords": [],
-     "translation": "世界各地的战争、致命病毒的蔓延或恐怖袭击，都很容易让人沮丧。",
-     "translations": {}
-    },
-    {
-     "id": "l185",
-     "end": 1327.4,
-     "text": "Yet, 2016 was the best year in the history of humanity.",
-     "start": 1322.77,
-     "answers": [],
-     "keywords": [],
-     "translation": "然而，2016 年是人类历史上最好的一年。",
-     "translations": {}
-    },
-    {
-     "id": "l186",
-     "end": 1332.772,
-     "text": "Child mortality was roughly half what it was as recently as 1990.",
-     "start": 1327.4,
-     "answers": [],
-     "keywords": [],
-     "translation": "儿童死亡率大约只有 1990 年的一半。",
-     "translations": {}
-    },
-    {
-     "id": "l187",
-     "end": 1337.748,
-     "text": "And 300,000 more people gained access to electricity each day.",
-     "start": 1332.772,
-     "answers": [],
-     "keywords": [],
-     "translation": "每天还有 30 万人用上了电。",
-     "translations": {}
-    },
-    {
-     "id": "l188",
-     "end": 1349.4,
-     "text": "Every single measure of material and environmental welfare in America, Europe, Asia, Africa and the world as a whole has improved rather than deteriorated.",
-     "start": 1337.748,
-     "answers": [],
-     "keywords": [],
-     "translation": "美洲、欧洲、亚洲、非洲乃至整个世界，物质与环境福祉的每一项指标都在改善而非恶化。",
-     "translations": {}
-    },
-    {
-     "id": "l189",
-     "end": 1356.989,
-     "text": "We are living in history's most peaceful era, with violence of all kinds in steep decline.",
-     "start": 1350.049,
-     "answers": [],
-     "keywords": [],
-     "translation": "我们生活在历史上最和平的时代，各种暴力都在急剧减少。",
-     "translations": {}
-    },
-    {
-     "id": "l190",
-     "end": 1358.914,
-     "text": "Those are the facts.",
-     "start": 1356.989,
-     "answers": [],
-     "keywords": [],
-     "translation": "这些是事实。",
-     "translations": {}
-    },
-    {
-     "id": "l191",
-     "end": 1360.4,
-     "text": "So why aren't we all optimists?",
-     "start": 1358.914,
-     "answers": [],
-     "keywords": [],
-     "translation": "那我们为什么没有人人都成为乐观主义者？",
-     "translations": {}
-    },
-    {
-     "id": "l192",
-     "end": 1372.454,
-     "text": "In a 2015 survey for YouGov, 65% of British people and 81% of the French said they thought the world was getting worse.",
-     "start": 1362.218,
-     "answers": [],
-     "keywords": [],
-     "translation": "在 2015 年舆观公司的一项调查中，65% 的英国人和 81% 的法国人说他们认为世界正在变糟。",
-     "translations": {}
-    },
-    {
-     "id": "l193",
-     "end": 1378.486,
-     "text": "However, according to numerous sensible statistics, these people are simply wrong.",
-     "start": 1372.454,
-     "answers": [],
-     "keywords": [],
-     "translation": "然而，根据众多可靠的统计数据，这些人就是错了。",
-     "translations": {}
-    },
-    {
-     "id": "l194",
-     "end": 1385.167,
-     "text": "Nobody in their right mind should wish to have lived in a previous century.",
-     "start": 1378.486,
-     "answers": [],
-     "keywords": [],
-     "translation": "任何头脑正常的人都不该希望自己活在上一个世纪。",
-     "translations": {}
-    },
-    {
-     "id": "l195",
-     "end": 1387.329,
-     "text": "Yet people do. Why?",
-     "start": 1385.167,
-     "answers": [],
-     "keywords": [],
-     "translation": "然而人们偏偏还是这么认为。为什么？",
-     "translations": {}
-    },
-    {
-     "id": "l196",
-     "end": 1408.4,
-     "text": "Our prevailing mood of despair is irrational.",
-     "start": 1387.329,
-     "answers": [],
-     "keywords": [],
-     "translation": "我们弥漫的绝望情绪是非理性的。",
-     "translations": {}
-    },
-    {
-     "id": "l197",
-     "end": 1479.4,
-     "text": "It says more about us than it does about how things really are.",
      "start": 1408.4,
-     "answers": [],
-     "keywords": [],
-     "translation": "它更多地说明了我们自己，而不是事情的真实状况。",
-     "translations": {}
+     "end": 1417.36,
+     "text": "Once upon a time, it was of great survival value to be worried about everything that could go wrong. This is what makes bad news especially compelling.",
+     "id": "l183"
     },
     {
-     "id": "l198",
-     "end": 1492.808,
-     "text": "It is best explained as the result of various psychological biases that served a purpose for our evolutionary ancestors- but now, in a media-saturated era, constantly mislead us.",
-     "start": 1479.4,
-     "answers": [],
-     "keywords": [],
-     "translation": "最好的解释是：这是各种心理偏差的结果，这些偏差在我们进化祖先那里曾派上用场，但如今在这个媒体饱和的时代，却不断误导着我们。",
-     "translations": {}
+     "start": 1417.36,
+     "end": 1430.6,
+     "text": "In our evolutionary past, it was a very good thing that our attention could be easily seized by negative information, since it might well indicate a dangerous risk to our own survival.",
+     "id": "l184"
     },
     {
-     "id": "l199",
-     "end": 1530.45,
-     "text": "Once upon a time, in our evolutionary past, it was a very good thing that our attention could be easily seized by negative information, as it alerted us to potential dangers.",
-     "start": 1492.808,
-     "answers": [],
-     "keywords": [],
-     "translation": "在很久以前的进化历程中，注意力容易被负面信息抓住是件大好事，因为它能提醒我们提防潜在危险。",
-     "translations": {}
+     "start": 1430.6,
+     "end": 1443.6,
+     "text": "The caveman, who always assumed there was a lion behind the next rock, would usually be wrong, but he'd be much more likely to survive and reproduce than one who always assumed the opposite.",
+     "id": "l185"
     },
     {
-     "id": "l200",
-     "end": 1588.486,
-     "text": "But in today's world, this bias means that we are constantly bombarded with bad news, which distorts our perception of reality.",
-     "start": 1530.45,
-     "answers": [],
-     "keywords": [],
-     "translation": "但在今天的世界上，这种偏差意味着我们不断被坏消息轰炸，从而扭曲了我们对接现实的感知。",
-     "translations": {}
+     "start": 1443.6,
+     "end": 1462,
+     "text": "But that was all before newspapers, television, and the Internet. In today's hyper-connected times, our addiction to bad news just leads us to vacuum up depressing stories from around the globe.",
+     "id": "l186"
     },
     {
-     "id": "l201",
-     "end": 1604.008,
-     "text": "Q22. What does the speaker say about the year 2016?",
-     "start": 1588.486,
-     "answers": [],
-     "keywords": [],
-     "translation": "问题 22：关于 2016 年，讲话人说了什么？",
-     "translations": {}
+     "start": 1462,
+     "end": 1480.28,
+     "text": "Whether these news stories threaten us or not, we conclude that things are much worse than they actually are. Really good news, on the other hand, can be a lot harder to spot in a newspaper because predictable daily events, by definition, aren't news.",
+     "id": "l187"
     },
     {
-     "id": "l202",
-     "end": 1604.808,
-     "text": "Q23. What did the 2015 YouGov survey find?",
-     "start": 1604.008,
-     "answers": [],
-     "keywords": [],
-     "translation": "问题 23：2015 年舆观调查有什么发现？",
-     "translations": {}
+     "start": 1480.28,
+     "end": 1485.96,
+     "text": "Questions 22 to 25 are based on the recording you have just heard.",
+     "id": "l188"
     },
     {
-     "id": "l203",
-     "end": 1605.608,
-     "text": "Q24. What does the speaker say explains our prevailing mood of despair?",
-     "start": 1604.808,
-     "answers": [],
-     "keywords": [],
-     "translation": "问题 24：讲话人说是什么解释了我们弥漫的绝望情绪？",
-     "translations": {}
+     "start": 1485.96,
+     "end": 1504.2,
+     "text": "Q22. What is one of the facts stated by the speaker?",
+     "id": "l189"
     },
     {
-     "id": "l204",
-     "end": 1611.663,
-     "text": "Q25. Why was it beneficial for our evolutionary ancestors to be easily attracted by negative information?",
-     "start": 1605.608,
-     "answers": [],
-     "keywords": [],
-     "translation": "问题 25：为什么容易被负面信息吸引对我们的进化祖先有利？",
-     "translations": {}
+     "start": 1504.2,
+     "end": 1524.88,
+     "text": "Q23. What do we learn about most British and French people in a 2015 survey for YouGov?",
+     "id": "l190"
+    },
+    {
+     "start": 1524.88,
+     "end": 1542.96,
+     "text": "Q24. What does our prevailing mood of despair indicate?",
+     "id": "l191"
+    },
+    {
+     "start": 1542.96,
+     "end": 1561.42,
+     "text": "Q25. What was a very good thing in our evolutionary past?",
+     "id": "l192"
+    },
+    {
+     "start": 1561.42,
+     "end": 1570.58,
+     "text": "That's the end of listening comprehension.",
+     "id": "l193"
     }
    ],
    "status": "published",
@@ -68150,7 +67996,7 @@
     {
      "id": "l159",
      "end": 1179.02,
-     "text": "Questions 16 to 18 are based on the recording you have just heard.",
+     "text": "Around the world,\" he said. These descriptions were made independent of, and prior to, the theory we're testing. In future, if social scientists are serious about testing theories of morality, they will need to gather new data more systematically out in the field.",
      "start": 1154.927,
      "answers": [],
      "keywords": [],
@@ -68159,8 +68005,8 @@
     },
     {
      "id": "l160",
-     "end": 1180.5,
-     "text": "Question 16.",
+     "end": 1184.32,
+     "text": "Question 16. What do we learn from the conclusion of the Oxford University researchers?",
      "start": 1179.02,
      "answers": [],
      "keywords": [],
@@ -68169,16 +68015,6 @@
     },
     {
      "id": "l161",
-     "end": 1184.32,
-     "text": "What do we learn from the conclusion of the Oxford University researchers?",
-     "start": 1180.5,
-     "answers": [],
-     "keywords": [],
-     "translation": "从牛津大学研究人员的结论中我们了解到什么？",
-     "translations": {}
-    },
-    {
-     "id": "l162",
      "end": 1202.94,
      "text": "Question 17. What did the new study by Oxford researchers aim to do?",
      "start": 1184.32,
@@ -68188,7 +68024,7 @@
      "translations": {}
     },
     {
-     "id": "l163",
+     "id": "l162",
      "end": 1213.681,
      "text": "Q18. What does Dr.",
      "start": 1202.94,
@@ -68198,7 +68034,7 @@
      "translations": {}
     },
     {
-     "id": "l164",
+     "id": "l163",
      "end": 1238.743,
      "text": "Oliver Scott Curry suggest researchers do?",
      "start": 1213.681,
@@ -68208,7 +68044,7 @@
      "translations": {}
     },
     {
-     "id": "l165",
+     "id": "l164",
      "end": 1240.24,
      "text": "RECORDING 2",
      "start": 1238.743,
@@ -68218,7 +68054,7 @@
      "translations": {}
     },
     {
-     "id": "l166",
+     "id": "l165",
      "end": 1243.44,
      "text": "When it comes to food, color is money.",
      "start": 1240.24,
@@ -68228,7 +68064,7 @@
      "translations": {}
     },
     {
-     "id": "l167",
+     "id": "l166",
      "end": 1248.82,
      "text": "Food companies know that better color gives better prices, so they ensure that their products are attractive in color to bolster earnings.",
      "start": 1243.44,
@@ -68238,7 +68074,7 @@
      "translations": {}
     },
     {
-     "id": "l168",
+     "id": "l167",
      "end": 1262.16,
      "text": "Oranges, for example, have to meet specific color standards, and oranges are just the beginning.",
      "start": 1248.82,
@@ -68248,7 +68084,7 @@
      "translations": {}
     },
     {
-     "id": "l169",
+     "id": "l168",
      "end": 1269.88,
      "text": "There are color standards for foods including French fries, tomatoes, pumpkins, olives, honey, and cherries.",
      "start": 1262.16,
@@ -68258,7 +68094,7 @@
      "translations": {}
     },
     {
-     "id": "l170",
+     "id": "l169",
      "end": 1272.46,
      "text": "The attention to color is for good reason.",
      "start": 1269.88,
@@ -68268,7 +68104,7 @@
      "translations": {}
     },
     {
-     "id": "l171",
+     "id": "l170",
      "end": 1279.52,
      "text": "For all the talk of the tongue, our eyes really might be the most important part of our eating experience.",
      "start": 1272.46,
@@ -68278,7 +68114,7 @@
      "translations": {}
     },
     {
-     "id": "l172",
+     "id": "l171",
      "end": 1285.62,
      "text": "A great number of our brain functions are dedicated to processing vision, while only a percent or two is given over to taste faculties, and the result is that color actually changes how we taste food.",
      "start": 1279.52,
@@ -68288,7 +68124,7 @@
      "translations": {}
     },
     {
-     "id": "l173",
+     "id": "l172",
      "end": 1303.52,
      "text": "Scientists have demonstrated many times the importance of color to taste.",
      "start": 1285.62,
@@ -68298,7 +68134,7 @@
      "translations": {}
     },
     {
-     "id": "l174",
+     "id": "l173",
      "end": 1305.62,
      "text": "In a 1980s study, for example, test participants were asked to name the flavor of the beverage they were drinking without being able to see that beverage.",
      "start": 1303.52,
@@ -68308,7 +68144,7 @@
      "translations": {}
     },
     {
-     "id": "l175",
+     "id": "l174",
      "end": 1315.04,
      "text": "Only one in five was able to identify it as orange.",
      "start": 1305.62,
@@ -68318,7 +68154,7 @@
      "translations": {}
     },
     {
-     "id": "l176",
+     "id": "l175",
      "end": 1321.7,
      "text": "But when they were allowed to see what they were drinking which was orange in color, each of them identified the orange flavor.",
      "start": 1315.04,
@@ -68328,7 +68164,7 @@
      "translations": {}
     },
     {
-     "id": "l177",
+     "id": "l176",
      "end": 1325.44,
      "text": "And when a drink that was lime flavor was colored orange, nearly half of respondents identified the flavor of the beverage as orange.",
      "start": 1321.7,
@@ -68338,7 +68174,7 @@
      "translations": {}
     },
     {
-     "id": "l178",
+     "id": "l177",
      "end": 1337,
      "text": "None made that mistake when the beverage was green in color.",
      "start": 1325.44,
@@ -68348,7 +68184,7 @@
      "translations": {}
     },
     {
-     "id": "l179",
+     "id": "l178",
      "end": 1338.86,
      "text": "What's happening when someone fails to identify the flavor of a beverage they can't see or that has an abnormal color?",
      "start": 1337,
@@ -68358,7 +68194,7 @@
      "translations": {}
     },
     {
-     "id": "l180",
+     "id": "l179",
      "end": 1347.12,
      "text": "Is it that participants can't discern what the flavor is, and so rely on visual cues?",
      "start": 1338.86,
@@ -68368,7 +68204,7 @@
      "translations": {}
     },
     {
-     "id": "l181",
+     "id": "l180",
      "end": 1350.12,
      "text": "Or does color actually change the experience of taste?",
      "start": 1347.12,
@@ -68378,7 +68214,7 @@
      "translations": {}
     },
     {
-     "id": "l182",
+     "id": "l181",
      "end": 1358.04,
      "text": "The key to these questions is the effect of color on expectation.",
      "start": 1350.12,
@@ -68388,7 +68224,7 @@
      "translations": {}
     },
     {
-     "id": "l183",
+     "id": "l182",
      "end": 1359.74,
      "text": "The brain makes predictions using color.",
      "start": 1358.04,
@@ -68398,7 +68234,7 @@
      "translations": {}
     },
     {
-     "id": "l184",
+     "id": "l183",
      "end": 1364.9,
      "text": "These predictions rely on expectations that come from experience.",
      "start": 1359.74,
@@ -68408,7 +68244,7 @@
      "translations": {}
     },
     {
-     "id": "l185",
+     "id": "l184",
      "end": 1370.34,
      "text": "Research shows that we're all born liking sweet things and desire to eat them, but we aren't born knowing what the sweet things we crave look like.",
      "start": 1364.9,
@@ -68418,7 +68254,7 @@
      "translations": {}
     },
     {
-     "id": "l186",
+     "id": "l185",
      "end": 1378.16,
      "text": "So we need to learn this over time.",
      "start": 1370.34,
@@ -68428,9 +68264,9 @@
      "translations": {}
     },
     {
-     "id": "l187",
+     "id": "l186",
      "end": 1403.8,
-     "text": "Questions 19 to 21 are based on the recording you have",
+     "text": "Gets information from the environment, and we learn, for example, that fruits go from green and sour to red and ripe and sweet. Thus, if we see a green berry, we equate its color with a sour taste, and just looking at a red fruit will activate our expectations that it will taste sweet and delicious.",
      "start": 1378.16,
      "answers": [],
      "keywords": [],
@@ -68438,7 +68274,7 @@
      "translations": {}
     },
     {
-     "id": "l188",
+     "id": "l187",
      "end": 1424.24,
      "text": "Q19. What does the speaker say about our eyes?",
      "start": 1403.8,
@@ -68448,7 +68284,7 @@
      "translations": {}
     },
     {
-     "id": "l189",
+     "id": "l188",
      "end": 1443.06,
      "text": "Q20. What does color actually do according to this lecture?",
      "start": 1424.24,
@@ -68458,7 +68294,7 @@
      "translations": {}
     },
     {
-     "id": "l190",
+     "id": "l189",
      "end": 1463.5,
      "text": "Q21. What does the brain use color to do?",
      "start": 1443.06,
@@ -68468,7 +68304,7 @@
      "translations": {}
     },
     {
-     "id": "l191",
+     "id": "l190",
      "end": 1464.3,
      "text": "RECORDING 3",
      "start": 1463.5,
@@ -68478,7 +68314,7 @@
      "translations": {}
     },
     {
-     "id": "l192",
+     "id": "l191",
      "end": 1468.02,
      "text": "Searching for meaning is something many of us experience throughout our lives.",
      "start": 1464.3,
@@ -68488,7 +68324,7 @@
      "translations": {}
     },
     {
-     "id": "l193",
+     "id": "l192",
      "end": 1470.9,
      "text": "For some, this meaning is religious, some political and some interpersonal.",
      "start": 1468.02,
@@ -68498,7 +68334,7 @@
      "translations": {}
     },
     {
-     "id": "l194",
+     "id": "l193",
      "end": 1478.1,
      "text": "And having a sense of meaning can bring us happiness.",
      "start": 1470.9,
@@ -68508,7 +68344,7 @@
      "translations": {}
     },
     {
-     "id": "l195",
+     "id": "l194",
      "end": 1488.14,
      "text": "A new study looks at the relationship between meaning and happiness in the context of financial resources. Rhia Catapano from the University of Toronto and colleagues find meaning is a far weaker predictor of happiness for rich people than poorer people, suggesting economic resources can impact how we experience meaning.",
      "start": 1478.1,
@@ -68518,7 +68354,7 @@
      "translations": {}
     },
     {
-     "id": "l196",
+     "id": "l195",
      "end": 1515.74,
      "text": "The team analysed data from over 500,000 people across 123 countries.",
      "start": 1488.14,
@@ -68528,7 +68364,7 @@
      "translations": {}
     },
     {
-     "id": "l197",
+     "id": "l196",
      "end": 1517.3,
      "text": "The first study used data from a daily poll of US residents collected between 2013 and 2015.",
      "start": 1515.74,
@@ -68538,7 +68374,7 @@
      "translations": {}
     },
     {
-     "id": "l198",
+     "id": "l197",
      "end": 1539.38,
      "text": "Well-being was tracked using measures of positive affect-whether, during the day before they were surveyed, participants had smiled or laughed a lot or experienced a lot of happiness.",
      "start": 1517.3,
@@ -68548,7 +68384,7 @@
      "translations": {}
     },
     {
-     "id": "l199",
+     "id": "l198",
      "end": 1541.44,
      "text": "Meaning was measured through a daily \"purpose index\", which explored the extent to which participants felt that they like what they do every day and are motivated to achieve their goals.",
      "start": 1539.38,
@@ -68558,7 +68394,7 @@
      "translations": {}
     },
     {
-     "id": "l200",
+     "id": "l199",
      "end": 1554.66,
      "text": "Finally, income levels were assessed.",
      "start": 1541.44,
@@ -68568,7 +68404,7 @@
      "translations": {}
     },
     {
-     "id": "l201",
+     "id": "l200",
      "end": 1562.26,
      "text": "The results showed that the correlation between meaning and happiness was strongest among those in lower income brackets.",
      "start": 1554.66,
@@ -68578,7 +68414,7 @@
      "translations": {}
     },
     {
-     "id": "l202",
+     "id": "l201",
      "end": 1570.74,
      "text": "But as income levels increased, the correlation became weaker.",
      "start": 1562.26,
@@ -68588,7 +68424,7 @@
      "translations": {}
     },
     {
-     "id": "l203",
+     "id": "l202",
      "end": 1578.32,
      "text": "The second study looked at worldwide data.",
      "start": 1570.74,
@@ -68598,7 +68434,7 @@
      "translations": {}
     },
     {
-     "id": "l204",
+     "id": "l203",
      "end": 1583.34,
      "text": "Happiness was measured using the same questions as in the first study, while meaning was measured using the single question: \"Do you feel your life has an important purpose or meaning?",
      "start": 1578.32,
@@ -68608,7 +68444,7 @@
      "translations": {}
     },
     {
-     "id": "l205",
+     "id": "l204",
      "end": 1596.1,
      "text": "\" Again, the strength of the relationship between meaning and happiness depended on participants' income.",
      "start": 1583.34,
@@ -68618,7 +68454,7 @@
      "translations": {}
     },
     {
-     "id": "l206",
+     "id": "l205",
      "end": 1603.08,
      "text": "Meaning had a greater influence on happiness for those on lower incomes compared to those in higher brackets.",
      "start": 1596.1,
@@ -68628,7 +68464,7 @@
      "translations": {}
     },
     {
-     "id": "l207",
+     "id": "l206",
      "end": 1617.2,
      "text": "In the final study, French participants indicated the extent to which they felt they led a purposeful and meaningful life and how much they considered themselves a happy person.",
      "start": 1603.08,
@@ -68638,7 +68474,7 @@
      "translations": {}
     },
     {
-     "id": "l208",
+     "id": "l207",
      "end": 1623.76,
      "text": "Finally, rather than using specific income brackets, they placed themselves on a social ladder, representing where they stood in terms of wealth, education and occupation.",
      "start": 1617.2,
@@ -68648,7 +68484,7 @@
      "translations": {}
     },
     {
-     "id": "l209",
+     "id": "l208",
      "end": 1638.46,
      "text": "The results from the study duplicated those of the first two.",
      "start": 1623.76,
@@ -68658,7 +68494,7 @@
      "translations": {}
     },
     {
-     "id": "l210",
+     "id": "l209",
      "end": 1649.32,
      "text": "So overall, meaning and happiness had a stronger relationship for those with fewer resources than those with more.",
      "start": 1638.46,
@@ -68668,7 +68504,7 @@
      "translations": {}
     },
     {
-     "id": "l211",
+     "id": "l210",
      "end": 1656.26,
      "text": "This might be the case because richer individuals have more access to other sources of happiness, many of which will be external, like lack of stress or community.",
      "start": 1649.32,
@@ -68678,8 +68514,8 @@
      "translations": {}
     },
     {
-     "id": "l212",
-     "end": 1670.24,
+     "id": "l211",
+     "end": 1681.88,
      "text": "Thus, a focus on an internal sense of satisfaction, purpose or meaning is less important.",
      "start": 1656.26,
      "answers": [],
@@ -68688,50 +68524,50 @@
      "translations": {}
     },
     {
-     "id": "l213",
-     "end": 1695.78,
+     "id": "l212",
+     "end": 1693,
      "text": "Questions 22 to 25 are based on the recording you have just heard.",
-     "start": 1670.24,
+     "start": 1681.88,
      "answers": [],
      "keywords": [],
      "translation": "问题 22 到 25 基于你刚才听到的录音。",
      "translations": {}
     },
     {
-     "id": "l214",
-     "end": 1696.58,
+     "id": "l213",
+     "end": 1695.2,
      "text": "Q22. What does the speaker say many of us search for throughout our lives?",
-     "start": 1695.78,
+     "start": 1693,
      "answers": [],
      "keywords": [],
      "translation": "问题 22：讲话人说我们许多人一生都在寻找什么？",
      "translations": {}
     },
     {
-     "id": "l215",
-     "end": 1716.68,
+     "id": "l214",
+     "end": 1702.28,
      "text": "Q23. What do Rhia Catapano and colleagues find about economic resources?",
-     "start": 1696.58,
+     "start": 1695.24,
      "answers": [],
      "keywords": [],
      "translation": "问题 23：莉亚·卡塔帕诺及其同事对经济资源有什么发现？",
      "translations": {}
     },
     {
-     "id": "l216",
-     "end": 1769.92,
+     "id": "l215",
+     "end": 1722.36,
      "text": "Q24. What do we learn about the second study conducted by the team?",
-     "start": 1716.68,
+     "start": 1716.12,
      "answers": [],
      "keywords": [],
      "translation": "问题 24：关于该团队开展的第二项研究，我们了解到什么？",
      "translations": {}
     },
     {
-     "id": "l217",
-     "end": 1785.891,
+     "id": "l216",
+     "end": 1743.32,
      "text": "Q25. Why is meaning less important for richer people according to the speaker?",
-     "start": 1769.92,
+     "start": 1725,
      "answers": [],
      "keywords": [],
      "translation": "问题 25：讲话人认为，为什么意义对更富有的人不那么重要？",
@@ -71483,8 +71319,8 @@
     },
     {
      "id": "l64",
-     "end": 402.64,
-     "text": "Question seven.",
+     "end": 416.4,
+     "text": "Question 7. Why does the man say it's usually better to resolve problems outside of court?",
      "start": 385.44,
      "answers": [],
      "keywords": [],
@@ -71493,16 +71329,6 @@
     },
     {
      "id": "l65",
-     "end": 416.4,
-     "text": "Why does the man say it's usually better to resolve problems outside of court whenever possible?",
-     "start": 402.64,
-     "answers": [],
-     "keywords": [],
-     "translation": "通常最好在庭外解决问题。",
-     "translations": {}
-    },
-    {
-     "id": "l66",
      "end": 417.44,
      "text": "Question eight.",
      "start": 416.4,
@@ -71512,7 +71338,7 @@
      "translations": {}
     },
     {
-     "id": "l67",
+     "id": "l66",
      "end": 421.88,
      "text": "What does the man think is required of any law professional?",
      "start": 417.44,
@@ -71522,7 +71348,7 @@
      "translations": {}
     },
     {
-     "id": "l68",
+     "id": "l67",
      "end": 440.4,
      "text": "Section B.",
      "start": 421.88,
@@ -71532,7 +71358,7 @@
      "translations": {}
     },
     {
-     "id": "l69",
+     "id": "l68",
      "end": 440.948,
      "text": "Directions.",
      "start": 440.4,
@@ -71542,7 +71368,7 @@
      "translations": {}
     },
     {
-     "id": "l70",
+     "id": "l69",
      "end": 443.14,
      "text": "In this section, you will hear two passages.",
      "start": 440.948,
@@ -71552,7 +71378,7 @@
      "translations": {}
     },
     {
-     "id": "l71",
+     "id": "l70",
      "end": 446.428,
      "text": "At the end of each passage, you will hear three or four questions.",
      "start": 443.14,
@@ -71562,7 +71388,7 @@
      "translations": {}
     },
     {
-     "id": "l72",
+     "id": "l71",
      "end": 449.02,
      "text": "Both the passage and the questions will be spoken only once.",
      "start": 446.428,
@@ -71572,7 +71398,7 @@
      "translations": {}
     },
     {
-     "id": "l73",
+     "id": "l72",
      "end": 451.115,
      "text": "After you hear a question, you must choose the best answer from the four choices marked A, B, C, and D.",
      "start": 449.02,
@@ -71582,7 +71408,7 @@
      "translations": {}
     },
     {
-     "id": "l74",
+     "id": "l73",
      "end": 452.16,
      "text": "Then mark the corresponding letter on answer sheet one with",
      "start": 451.115,
@@ -71592,7 +71418,7 @@
      "translations": {}
     },
     {
-     "id": "l75",
+     "id": "l74",
      "end": 470.5,
      "text": "a single line through the center. Page one.",
      "start": 452.16,
@@ -71602,7 +71428,7 @@
      "translations": {}
     },
     {
-     "id": "l76",
+     "id": "l75",
      "end": 473.04,
      "text": "When a person tries to access a memory, their brains quickly examine everything stored in it to find the relevant information. But as we age, many of us have difficulty",
      "start": 470.5,
@@ -71612,7 +71438,7 @@
      "translations": {}
     },
     {
-     "id": "l77",
+     "id": "l76",
      "end": 475.517,
      "text": "retrieving memories.",
      "start": 473.04,
@@ -71622,7 +71448,7 @@
      "translations": {}
     },
     {
-     "id": "l78",
+     "id": "l77",
      "end": 494.221,
      "text": "In a review published in the journal Trends in Cognitive Sciences on February 11th, researchers propose an explanation for why this might be happening.",
      "start": 475.517,
@@ -71632,7 +71458,7 @@
      "translations": {}
     },
     {
-     "id": "l79",
+     "id": "l78",
      "end": 495.46,
      "text": "The brains",
      "start": 494.221,
@@ -71642,7 +71468,7 @@
      "translations": {}
     },
     {
-     "id": "l80",
+     "id": "l79",
      "end": 498.252,
      "text": "of older adults allocate more space to accumulated knowledge and have more material to navigate when attempting to access memories.",
      "start": 495.46,
@@ -71652,7 +71478,7 @@
      "translations": {}
     },
     {
-     "id": "l81",
+     "id": "l80",
      "end": 499.36,
      "text": "While this wealth of prior knowledge can make memory",
      "start": 498.252,
@@ -71662,7 +71488,7 @@
      "translations": {}
     },
     {
-     "id": "l82",
+     "id": "l81",
      "end": 506.249,
      "text": "retrieval challenging, the researchers say it has its upsides.",
      "start": 499.36,
@@ -71672,7 +71498,7 @@
      "translations": {}
     },
     {
-     "id": "l83",
+     "id": "l82",
      "end": 513.471,
      "text": "This life experience can aid with creativity and decision-making.",
      "start": 506.249,
@@ -71682,7 +71508,7 @@
      "translations": {}
     },
     {
-     "id": "l84",
+     "id": "l83",
      "end": 518.36,
      "text": "Researchers Tariq Ammer, Jordana Nguyen, and",
      "start": 513.471,
@@ -71692,7 +71518,7 @@
      "translations": {}
     },
     {
-     "id": "l85",
+     "id": "l84",
      "end": 524.92,
      "text": "Lynn Hasher looked at several behavioral and brain-imaging studies, which show that older adults have difficulty suppressing information that is no longer relevant, and that when searching",
      "start": 518.36,
@@ -71702,7 +71528,7 @@
      "translations": {}
     },
     {
-     "id": "l86",
+     "id": "l85",
      "end": 538.5,
      "text": "for a specific memory, they often retrieve other, irrelevant memories along with it.",
      "start": 524.92,
@@ -71712,7 +71538,7 @@
      "translations": {}
     },
     {
-     "id": "l87",
+     "id": "l86",
      "end": 540.36,
      "text": "The studies also showed that when given a cognitive task, older adults rely more heavily on previous knowledge than younger adults do. While the researchers focus primarily on",
      "start": 538.5,
@@ -71722,7 +71548,7 @@
      "translations": {}
     },
     {
-     "id": "l88",
+     "id": "l87",
      "end": 561.695,
      "text": "the difficulties that these disorderly crowded memories may pose, they also highlight a few situations in which these same memory patterns may be useful.",
      "start": 540.36,
@@ -71732,7 +71558,7 @@
      "translations": {}
     },
     {
-     "id": "l89",
+     "id": "l88",
      "end": 565.6,
      "text": "Evidence suggests that older",
      "start": 561.695,
@@ -71742,7 +71568,7 @@
      "translations": {}
     },
     {
-     "id": "l90",
+     "id": "l89",
      "end": 568.646,
      "text": "adults show preserved and at times enhanced creativity as a function of enriched memories, other researchers write.",
      "start": 565.6,
@@ -71752,7 +71578,7 @@
      "translations": {}
     },
     {
-     "id": "l91",
+     "id": "l90",
      "end": 570.5,
      "text": "They further hypothesize that older adults may be well served by their",
      "start": 568.646,
@@ -71762,7 +71588,7 @@
      "translations": {}
     },
     {
-     "id": "l92",
+     "id": "l91",
      "end": 592.42,
      "text": "prior knowledge when it comes to decision-making, where they can pull on their accumulated wisdom.",
      "start": 570.5,
@@ -71772,7 +71598,7 @@
      "translations": {}
     },
     {
-     "id": "l93",
+     "id": "l92",
      "end": 593.22,
      "text": "Questions 9 to 11 are based on the passage you have just heard.",
      "start": 592.42,
@@ -71782,7 +71608,7 @@
      "translations": {}
     },
     {
-     "id": "l94",
+     "id": "l93",
      "end": 602.66,
      "text": "Question 9. What did the researchers do in their review in the journal Trends in Cognitive Sciences?",
      "start": 593.22,
@@ -71792,7 +71618,7 @@
      "translations": {}
     },
     {
-     "id": "l95",
+     "id": "l94",
      "end": 607.14,
      "text": "Question 10. What do several behavioral and brain-imaging studies show?",
      "start": 602.66,
@@ -71802,7 +71628,7 @@
      "translations": {}
     },
     {
-     "id": "l96",
+     "id": "l95",
      "end": 641.98,
      "text": "Question 11. What does evidence suggest regarding older adults?",
      "start": 607.14,
@@ -71812,7 +71638,7 @@
      "translations": {}
     },
     {
-     "id": "l97",
+     "id": "l96",
      "end": 644.1,
      "text": "Passage 2",
      "start": 641.98,
@@ -71822,7 +71648,7 @@
      "translations": {}
     },
     {
-     "id": "l98",
+     "id": "l97",
      "end": 650.022,
      "text": "There are at least four major problems with work in America today.",
      "start": 644.1,
@@ -71832,7 +71658,7 @@
      "translations": {}
     },
     {
-     "id": "l99",
+     "id": "l98",
      "end": 652.713,
      "text": "First, work can be alienating.",
      "start": 650.022,
@@ -71842,7 +71668,7 @@
      "translations": {}
     },
     {
-     "id": "l100",
+     "id": "l99",
      "end": 663.48,
      "text": "Workers are often not in control of how they work, when they work, what is done with the goods and services they produce",
      "start": 652.713,
@@ -71852,7 +71678,7 @@
      "translations": {}
     },
     {
-     "id": "l101",
+     "id": "l100",
      "end": 665.354,
      "text": "and what is done with the profits made from their work.",
      "start": 663.48,
@@ -71862,7 +71688,7 @@
      "translations": {}
     },
     {
-     "id": "l102",
+     "id": "l101",
      "end": 667.365,
      "text": "Second, workers are not paid the full value of their labor.",
      "start": 665.354,
@@ -71872,7 +71698,7 @@
      "translations": {}
     },
     {
-     "id": "l103",
+     "id": "l102",
      "end": 669.58,
      "text": "Real wages have not kept pace with productivity, driving economic",
      "start": 667.365,
@@ -71882,7 +71708,7 @@
      "translations": {}
     },
     {
-     "id": "l104",
+     "id": "l103",
      "end": 676.12,
      "text": "inequality and a decline in labor's share of income.",
      "start": 669.58,
@@ -71892,7 +71718,7 @@
      "translations": {}
     },
     {
-     "id": "l105",
+     "id": "l104",
      "end": 685.26,
      "text": "Third, people are time poor.",
      "start": 676.12,
@@ -71902,7 +71728,7 @@
      "translations": {}
     },
     {
-     "id": "l106",
+     "id": "l105",
      "end": 687.26,
      "text": "In the US, full-time employees work an average of 8.",
      "start": 685.26,
@@ -71912,7 +71738,7 @@
      "translations": {}
     },
     {
-     "id": "l107",
+     "id": "l106",
      "end": 694.84,
      "text": "72 hours per day despite productivity increases. Long working hours contribute to the feeling of time poverty, which has an adverse effect on psychological well-being.",
      "start": 687.26,
@@ -71922,7 +71748,7 @@
      "translations": {}
     },
     {
-     "id": "l108",
+     "id": "l107",
      "end": 703.44,
      "text": "Fourth, automation puts jobs and wages at risk.",
      "start": 694.84,
@@ -71932,7 +71758,7 @@
      "translations": {}
     },
     {
-     "id": "l109",
+     "id": "l108",
      "end": 707.82,
      "text": "Technological innovation could in theory liberate people from the 40-hour work week, but unless changes are made to the structure of work, automation will simply exert downward pressure",
      "start": 703.44,
@@ -71942,7 +71768,7 @@
      "translations": {}
     },
     {
-     "id": "l110",
+     "id": "l109",
      "end": 718.3,
      "text": "on wages and further diminish work opportunities.",
      "start": 707.82,
@@ -71952,7 +71778,7 @@
      "translations": {}
     },
     {
-     "id": "l111",
+     "id": "l110",
      "end": 720.092,
      "text": "So, what can be done to alleviate these problems?",
      "start": 718.3,
@@ -71962,7 +71788,7 @@
      "translations": {}
     },
     {
-     "id": "l112",
+     "id": "l111",
      "end": 722.58,
      "text": "There are competing visions of the best way to arrive at a solution.",
      "start": 720.092,
@@ -71972,7 +71798,7 @@
      "translations": {}
     },
     {
-     "id": "l113",
+     "id": "l112",
      "end": 728.855,
      "text": "One vision is what's known as the post-work position.",
      "start": 722.58,
@@ -71982,7 +71808,7 @@
      "translations": {}
     },
     {
-     "id": "l114",
+     "id": "l113",
      "end": 743.18,
      "text": "The post-work theorists believe that work should not hold a central position in our lives or take up so much of our time.",
      "start": 728.855,
@@ -71992,7 +71818,7 @@
      "translations": {}
     },
     {
-     "id": "l115",
+     "id": "l114",
      "end": 744.82,
      "text": "They assert that, although doing some work might be necessary, meaning, purpose and social value reside in the communities and relationships built and sustained outside of the workplace.",
      "start": 743.18,
@@ -72002,7 +71828,7 @@
      "translations": {}
     },
     {
-     "id": "l116",
+     "id": "l115",
      "end": 754.86,
      "text": "Thus, life should be seen as an end in itself.",
      "start": 744.82,
@@ -72015,16 +71841,16 @@
      "text": "Questions 12 to 15 are based on the passage you have just heard.",
      "start": 754.9,
      "end": 761.2,
-     "id": "l117"
+     "id": "l116"
     },
     {
      "text": "Question 12. What do we learn about American workers from the passage?",
      "start": 761.2,
      "end": 779.7,
-     "id": "l118"
+     "id": "l117"
     },
     {
-     "id": "l119",
+     "id": "l118",
      "end": 784.9,
      "text": "Question 13. What does the passage say \"long working hours\" contribute to?",
      "start": 779.7,
@@ -72034,7 +71860,7 @@
      "translations": {}
     },
     {
-     "id": "l120",
+     "id": "l119",
      "end": 815.26,
      "text": "Question 14. What does automation do according to the passage?",
      "start": 784.9,
@@ -72044,7 +71870,7 @@
      "translations": {}
     },
     {
-     "id": "l121",
+     "id": "l120",
      "end": 821.7,
      "text": "Question 15. What do post-work theorists advocate?",
      "start": 815.26,
@@ -72054,7 +71880,7 @@
      "translations": {}
     },
     {
-     "id": "l122",
+     "id": "l121",
      "end": 836.62,
      "text": "Section C",
      "start": 821.7,
@@ -72064,7 +71890,7 @@
      "translations": {}
     },
     {
-     "id": "l123",
+     "id": "l122",
      "end": 837.12,
      "text": "Directions.",
      "start": 836.62,
@@ -72074,7 +71900,7 @@
      "translations": {}
     },
     {
-     "id": "l124",
+     "id": "l123",
      "end": 840.452,
      "text": "In this section, you will hear three recordings of lectures or talks followed by three or four questions. The recordings will be played only once.",
      "start": 837.12,
@@ -72084,7 +71910,7 @@
      "translations": {}
     },
     {
-     "id": "l125",
+     "id": "l124",
      "end": 841.86,
      "text": "After you hear a question, you must choose the best answer from the four",
      "start": 840.452,
@@ -72094,7 +71920,7 @@
      "translations": {}
     },
     {
-     "id": "l126",
+     "id": "l125",
      "end": 846.412,
      "text": "choices marked A, B, C, and D.",
      "start": 841.86,
@@ -72104,7 +71930,7 @@
      "translations": {}
     },
     {
-     "id": "l127",
+     "id": "l126",
      "end": 860.219,
      "text": "Then mark the corresponding letter on answer sheet 1 with a single line through the centre.",
      "start": 846.412,
@@ -72114,7 +71940,7 @@
      "translations": {}
     },
     {
-     "id": "l128",
+     "id": "l127",
      "end": 862.04,
      "text": "Recording 1.",
      "start": 860.219,
@@ -72124,7 +71950,7 @@
      "translations": {}
     },
     {
-     "id": "l129",
+     "id": "l128",
      "end": 867.66,
      "text": "Recent studies show that self-control and persistence increase academic outcomes independent of IQ.",
      "start": 862.04,
@@ -72134,7 +71960,7 @@
      "translations": {}
     },
     {
-     "id": "l130",
+     "id": "l129",
      "end": 874.44,
      "text": "Even our personal beliefs about effort can affect academic outcomes.",
      "start": 867.66,
@@ -72144,7 +71970,7 @@
      "translations": {}
     },
     {
-     "id": "l131",
+     "id": "l130",
      "end": 882.08,
      "text": "Children who think effort leads to achievement outperform those who believe ability is a fixed trait. Given the link between persistence and academic success, decisions about effort are particularly important in childhood, yet relatively little",
      "start": 874.44,
@@ -72154,7 +71980,7 @@
      "translations": {}
     },
     {
-     "id": "l132",
+     "id": "l131",
      "end": 896.48,
      "text": "research has explored how young children learn what's worth the effort.",
      "start": 882.08,
@@ -72164,7 +71990,7 @@
      "translations": {}
     },
     {
-     "id": "l133",
+     "id": "l132",
      "end": 902,
      "text": "We all know that infants are keen observers of the social world.",
      "start": 896.48,
@@ -72174,7 +72000,7 @@
      "translations": {}
     },
     {
-     "id": "l134",
+     "id": "l133",
      "end": 905.018,
      "text": "But they're not just idly watching.",
      "start": 902,
@@ -72184,7 +72010,7 @@
      "translations": {}
     },
     {
-     "id": "l135",
+     "id": "l134",
      "end": 907.778,
      "text": "They are tiny learning machines.",
      "start": 905.018,
@@ -72194,7 +72020,7 @@
      "translations": {}
     },
     {
-     "id": "l136",
+     "id": "l135",
      "end": 911.4,
      "text": "They can generalize such abstract concepts",
      "start": 907.778,
@@ -72204,7 +72030,7 @@
      "translations": {}
     },
     {
-     "id": "l137",
+     "id": "l136",
      "end": 913.683,
      "text": "as causal relationships and social roles from just a few examples.",
      "start": 911.4,
@@ -72214,7 +72040,7 @@
      "translations": {}
     },
     {
-     "id": "l138",
+     "id": "l137",
      "end": 916.38,
      "text": "Even a 15-month-old infant can outperform a high-level computer in such tasks.",
      "start": 913.683,
@@ -72224,7 +72050,7 @@
      "translations": {}
     },
     {
-     "id": "l139",
+     "id": "l138",
      "end": 928.28,
      "text": "Could infants also make broad, generalizable inferences from a few examples when it comes to effort?",
      "start": 916.38,
@@ -72234,7 +72060,7 @@
      "translations": {}
     },
     {
-     "id": "l140",
+     "id": "l139",
      "end": 935.539,
      "text": "If so, then maybe persistence isn't simply a character trait.",
      "start": 928.28,
@@ -72244,7 +72070,7 @@
      "translations": {}
     },
     {
-     "id": "l141",
+     "id": "l140",
      "end": 937.8,
      "text": "Maybe it's flexible",
      "start": 935.539,
@@ -72254,7 +72080,7 @@
      "translations": {}
     },
     {
-     "id": "l142",
+     "id": "l141",
      "end": 939.25,
      "text": "and adaptable based on social context.",
      "start": 937.8,
@@ -72264,7 +72090,7 @@
      "translations": {}
     },
     {
-     "id": "l143",
+     "id": "l142",
      "end": 944.4,
      "text": "To explore this question, we showed 15-month-old babies one of two things - an experimenter working hard to achieve two different goals",
      "start": 939.25,
@@ -72274,7 +72100,7 @@
      "translations": {}
     },
     {
-     "id": "l144",
+     "id": "l143",
      "end": 953.8,
      "text": "or an experimenter who effortlessly reached each goal.",
      "start": 944.4,
@@ -72284,7 +72110,7 @@
      "translations": {}
     },
     {
-     "id": "l145",
+     "id": "l144",
      "end": 962.814,
      "text": "Then we introduced the baby to a novel music toy that seemed as if it could be activated by pushing a big button on top.",
      "start": 953.8,
@@ -72294,7 +72120,7 @@
      "translations": {}
     },
     {
-     "id": "l146",
+     "id": "l145",
      "end": 967.223,
      "text": "The button could be pressed down but didn't actually activate anything.",
      "start": 962.814,
@@ -72304,7 +72130,7 @@
      "translations": {}
     },
     {
-     "id": "l147",
+     "id": "l146",
      "end": 970.463,
      "text": "Out of sight of the babies, we turned on the music toy with a hidden button so that they heard the toy making music.",
      "start": 967.223,
@@ -72314,7 +72140,7 @@
      "translations": {}
     },
     {
-     "id": "l148",
+     "id": "l147",
      "end": 972.25,
      "text": "We gave the babies the music toy and left the room.",
      "start": 970.463,
@@ -72324,7 +72150,7 @@
      "translations": {}
     },
     {
-     "id": "l149",
+     "id": "l148",
      "end": 992.46,
      "text": "Then analysts who didn't know which condition each baby was in watched videotapes of the experiment and counted how many times babies tried to activate the toy by pressing the button. Across one study and a pre-registered duplication, babies who had seen an adult persist and succeed pushed the button about twice as many times as those who saw an adult effortlessly succeed.",
      "start": 972.25,
@@ -72334,7 +72160,7 @@
      "translations": {}
     },
     {
-     "id": "l150",
+     "id": "l149",
      "end": 1015.44,
      "text": "In other words, babies learned that effort was valuable after watching just two examples of an adult working hard and succeeding.",
      "start": 992.46,
@@ -72344,7 +72170,7 @@
      "translations": {}
     },
     {
-     "id": "l151",
+     "id": "l150",
      "end": 1017.899,
      "text": "Part of what's exciting about this finding is that the babies didn't just imitate the adult's actions.",
      "start": 1015.44,
@@ -72354,7 +72180,7 @@
      "translations": {}
     },
     {
-     "id": "l152",
+     "id": "l151",
      "end": 1019.78,
      "text": "Instead, they generalised the value of effort to a novel task. The experimenter",
      "start": 1017.899,
@@ -72364,7 +72190,7 @@
      "translations": {}
     },
     {
-     "id": "l153",
+     "id": "l152",
      "end": 1032.06,
      "text": "never demonstrated pushing a button or trying to make music.",
      "start": 1019.78,
@@ -72374,7 +72200,7 @@
      "translations": {}
     },
     {
-     "id": "l154",
+     "id": "l153",
      "end": 1036.68,
      "text": "Instead, the babies learned from different examples of effortful actions that the new toy probably also required persistence.",
      "start": 1032.06,
@@ -72387,16 +72213,16 @@
      "text": "Questions 16 to 18 are based on the recording you have just heard.",
      "start": 1037.3,
      "end": 1044.8,
-     "id": "l155"
+     "id": "l154"
     },
     {
      "text": "Question 16. What does the speaker say even our personal beliefs about effort can do?",
      "start": 1046.6,
      "end": 1059.8,
-     "id": "l156"
+     "id": "l155"
     },
     {
-     "id": "l157",
+     "id": "l156",
      "end": 1085.14,
      "text": "Question 17. How did the researchers turn on the music toy in their experiment?",
      "start": 1059.8,
@@ -72406,7 +72232,7 @@
      "translations": {}
     },
     {
-     "id": "l158",
+     "id": "l157",
      "end": 1108.78,
      "text": "Question 18. What could the infants do in the experiment, according to the speaker?",
      "start": 1085.14,
@@ -72416,9 +72242,9 @@
      "translations": {}
     },
     {
-     "id": "l159",
-     "end": 1111.12,
-     "text": "Question 19. If chronic lateness has taken over your life and turned into a defining trait of who you are, it's likely that you're losing out on job offers, recreational opportunities,",
+     "id": "l158",
+     "end": 1113.978,
+     "text": "Question 19. If chronic lateness has taken over your life and turned into a defining trait of who you are, it's likely that you're losing out on job offers.",
      "start": 1108.78,
      "answers": [],
      "keywords": [],
@@ -72426,17 +72252,7 @@
      "translations": {}
     },
     {
-     "id": "l160",
-     "end": 1113.978,
-     "text": "friendships, and more.",
-     "start": 1111.12,
-     "answers": [],
-     "keywords": [],
-     "translation": "还有友谊等方方面面。",
-     "translations": {}
-    },
-    {
-     "id": "l161",
+     "id": "l159",
      "end": 1129.305,
      "text": "If you are showing up late to your own life, get organised, prioritise punctuality, and address any underlying causes.",
      "start": 1113.978,
@@ -72446,7 +72262,7 @@
      "translations": {}
     },
     {
-     "id": "l162",
+     "id": "l160",
      "end": 1135.02,
      "text": "When you have to be somewhere, try to arrive",
      "start": 1129.305,
@@ -72456,7 +72272,7 @@
      "translations": {}
     },
     {
-     "id": "l163",
+     "id": "l161",
      "end": 1136.292,
      "text": "fifteen to thirty minutes before you need to.",
      "start": 1135.02,
@@ -72466,7 +72282,7 @@
      "translations": {}
     },
     {
-     "id": "l164",
+     "id": "l162",
      "end": 1138.949,
      "text": "If you always run late, that means you must be failing to account for something you always do.",
      "start": 1136.292,
@@ -72476,7 +72292,7 @@
      "translations": {}
     },
     {
-     "id": "l165",
+     "id": "l163",
      "end": 1140.08,
      "text": "Anticipate that by giving yourself extra",
      "start": 1138.949,
@@ -72486,7 +72302,7 @@
      "translations": {}
     },
     {
-     "id": "l166",
+     "id": "l164",
      "end": 1141.785,
      "text": "time to arrive.",
      "start": 1140.08,
@@ -72496,7 +72312,7 @@
      "translations": {}
     },
     {
-     "id": "l167",
+     "id": "l165",
      "end": 1148.377,
      "text": "Keep track of whether or not you actually do arrive early.",
      "start": 1141.785,
@@ -72506,7 +72322,7 @@
      "translations": {}
     },
     {
-     "id": "l168",
+     "id": "l166",
      "end": 1156.72,
      "text": "You might find that leaving early gets you to places exactly on time. Set two alarms.",
      "start": 1148.377,
@@ -72516,7 +72332,7 @@
      "translations": {}
     },
     {
-     "id": "l169",
+     "id": "l167",
      "end": 1158.1,
      "text": "Set one alarm that lets you know it's time to drop what you're doing, and a second alarm that means you need to walk out the door. Obey the alarms. As soon",
      "start": 1156.72,
@@ -72526,7 +72342,7 @@
      "translations": {}
     },
     {
-     "id": "l170",
+     "id": "l168",
      "end": 1165.939,
      "text": "as the first alarm goes off, stop what you're doing.",
      "start": 1158.1,
@@ -72536,7 +72352,7 @@
      "translations": {}
     },
     {
-     "id": "l171",
+     "id": "l169",
      "end": 1184.48,
      "text": "If it's something you'll be coming back to, like a project for work, make a note to remind yourself where you left off. Grab",
      "start": 1165.939,
@@ -72546,7 +72362,7 @@
      "translations": {}
     },
     {
-     "id": "l172",
+     "id": "l170",
      "end": 1186.708,
      "text": "everything you need and make sure you know how to get where you're going.",
      "start": 1184.48,
@@ -72556,7 +72372,7 @@
      "translations": {}
     },
     {
-     "id": "l173",
+     "id": "l171",
      "end": 1189.76,
      "text": "Aim to be out the door and on your way before the second alarm rings. This will only work if you take",
      "start": 1186.708,
@@ -72566,7 +72382,7 @@
      "translations": {}
     },
     {
-     "id": "l174",
+     "id": "l172",
      "end": 1199.76,
      "text": "the alarms seriously, so make sure you react as soon as you hear them.",
      "start": 1189.76,
@@ -72576,7 +72392,7 @@
      "translations": {}
     },
     {
-     "id": "l175",
+     "id": "l173",
      "end": 1201.34,
      "text": "Remember for the day ahead.",
      "start": 1199.76,
@@ -72586,7 +72402,7 @@
      "translations": {}
     },
     {
-     "id": "l176",
+     "id": "l174",
      "end": 1210.12,
      "text": "Have all of your notes and materials organized well in advance of each event, so that all you have to do is grab them and go when it's the actual day.",
      "start": 1201.34,
@@ -72596,7 +72412,7 @@
      "translations": {}
     },
     {
-     "id": "l177",
+     "id": "l175",
      "end": 1212.774,
      "text": "If mornings are a struggle for you, do as much as you can to ready yourself the night before.",
      "start": 1210.12,
@@ -72606,7 +72422,7 @@
      "translations": {}
     },
     {
-     "id": "l178",
+     "id": "l176",
      "end": 1215,
      "text": "Before you go to bed, lay out your clothes and pack your bag for the next day.",
      "start": 1212.774,
@@ -72616,7 +72432,7 @@
      "translations": {}
     },
     {
-     "id": "l179",
+     "id": "l177",
      "end": 1221.302,
      "text": "Time to leave time in between tasks and meetings.",
      "start": 1215,
@@ -72626,7 +72442,7 @@
      "translations": {}
     },
     {
-     "id": "l180",
+     "id": "l178",
      "end": 1233.264,
      "text": "It soon becomes unbearable to shift between one meeting and another without space in between.",
      "start": 1221.302,
@@ -72636,7 +72452,7 @@
      "translations": {}
     },
     {
-     "id": "l181",
+     "id": "l179",
      "end": 1239.837,
      "text": "If you over-schedule yourself, however, you'll arrive late as soon as you hit a bump.",
      "start": 1233.264,
@@ -72646,7 +72462,7 @@
      "translations": {}
     },
     {
-     "id": "l182",
+     "id": "l180",
      "end": 1242.36,
      "text": "As well as giving you space, this time also acts as a buffer between events, which can be borrowed from, should you be held up in a prior meeting,",
      "start": 1239.837,
@@ -72656,7 +72472,7 @@
      "translations": {}
     },
     {
-     "id": "l183",
+     "id": "l181",
      "end": 1253.34,
      "text": "allowing you to still get to the next one on time.",
      "start": 1242.36,
@@ -72666,7 +72482,7 @@
      "translations": {}
     },
     {
-     "id": "l184",
+     "id": "l182",
      "end": 1271.1,
      "text": "Calculate transit time between activities and then add 10 to 30 minutes for unexpected delays.",
      "start": 1253.34,
@@ -72676,7 +72492,7 @@
      "translations": {}
     },
     {
-     "id": "l185",
+     "id": "l183",
      "end": 1294.34,
      "text": "Question 20. What should you do if mornings are a struggle for you?",
      "start": 1271.1,
@@ -72686,7 +72502,7 @@
      "translations": {}
     },
     {
-     "id": "l186",
+     "id": "l184",
      "end": 1310.34,
      "text": "Question 21. According to the speaker, what can we do to combat unexpected delays?",
      "start": 1294.34,
@@ -72696,7 +72512,7 @@
      "translations": {}
     },
     {
-     "id": "l187",
+     "id": "l185",
      "end": 1324.5,
      "text": "Recording 3",
      "start": 1310.34,
@@ -72706,7 +72522,7 @@
      "translations": {}
     },
     {
-     "id": "l188",
+     "id": "l186",
      "end": 1327.8,
      "text": "Do you think Bostonians put out the welcome mat?",
      "start": 1324.5,
@@ -72716,7 +72532,7 @@
      "translations": {}
     },
     {
-     "id": "l189",
+     "id": "l187",
      "end": 1331.58,
      "text": "Do you find other cities to be more or less polite?",
      "start": 1327.8,
@@ -72726,7 +72542,7 @@
      "translations": {}
     },
     {
-     "id": "l190",
+     "id": "l188",
      "end": 1335.08,
      "text": "Different cities have different feels for visitors.",
      "start": 1331.58,
@@ -72736,7 +72552,7 @@
      "translations": {}
     },
     {
-     "id": "l191",
+     "id": "l189",
      "end": 1337.18,
      "text": "Some are friendly and open.",
      "start": 1335.08,
@@ -72746,7 +72562,7 @@
      "translations": {}
     },
     {
-     "id": "l192",
+     "id": "l190",
      "end": 1340.3,
      "text": "Some are formal and distant.",
      "start": 1337.18,
@@ -72756,7 +72572,7 @@
      "translations": {}
     },
     {
-     "id": "l193",
+     "id": "l191",
      "end": 1344.3,
      "text": "Boston",
      "start": 1340.3,
@@ -72766,7 +72582,7 @@
      "translations": {}
     },
     {
-     "id": "l194",
+     "id": "l192",
      "end": 1345.905,
      "text": "tends to seem hurried and sometimes a little rude.",
      "start": 1344.3,
@@ -72776,7 +72592,7 @@
      "translations": {}
     },
     {
-     "id": "l195",
+     "id": "l193",
      "end": 1347.06,
      "text": "That's what some tourists have said.",
      "start": 1345.905,
@@ -72786,7 +72602,7 @@
      "translations": {}
     },
     {
-     "id": "l196",
+     "id": "l194",
      "end": 1350.669,
      "text": "One study found that people here are less willing to volunteer to help strangers than those residents of other US cities.",
      "start": 1347.06,
@@ -72796,7 +72612,7 @@
      "translations": {}
     },
     {
-     "id": "l197",
+     "id": "l195",
      "end": 1352.1,
      "text": "Take a close look next time you're in Boston and",
      "start": 1350.669,
@@ -72806,7 +72622,7 @@
      "translations": {}
     },
     {
-     "id": "l198",
+     "id": "l196",
      "end": 1358.233,
      "text": "here are some of the things you'll probably see.",
      "start": 1352.1,
@@ -72816,7 +72632,7 @@
      "translations": {}
     },
     {
-     "id": "l199",
+     "id": "l197",
      "end": 1368.71,
      "text": "People smoking in the subway stations despite the frequent reminders not to do so.",
      "start": 1358.233,
@@ -72826,7 +72642,7 @@
      "translations": {}
     },
     {
-     "id": "l200",
+     "id": "l198",
      "end": 1375.297,
      "text": "Pedestrians walking when the crosswalk lights say not to do so, ignoring the cars.",
      "start": 1368.71,
@@ -72836,7 +72652,7 @@
      "translations": {}
     },
     {
-     "id": "l201",
+     "id": "l199",
      "end": 1377.507,
      "text": "Car drivers speeding, making a loud noise with the horn and occasionally cursing at each other.",
      "start": 1375.297,
@@ -72846,7 +72662,7 @@
      "translations": {}
     },
     {
-     "id": "l202",
+     "id": "l200",
      "end": 1378.74,
      "text": "Drives who can't be bothered to find a place to park,",
      "start": 1377.507,
@@ -72856,7 +72672,7 @@
      "translations": {}
     },
     {
-     "id": "l203",
+     "id": "l201",
      "end": 1389.46,
      "text": "but instead simply turn on their blinker and stop in the middle of the street.",
      "start": 1378.74,
@@ -72866,7 +72682,7 @@
      "translations": {}
     },
     {
-     "id": "l204",
+     "id": "l202",
      "end": 1394.012,
      "text": "Sometimes Bostonians seem like they're just too busy to be polite.",
      "start": 1389.46,
@@ -72876,7 +72692,7 @@
      "translations": {}
     },
     {
-     "id": "l205",
+     "id": "l203",
      "end": 1396.081,
      "text": "Why is there a city like that?",
      "start": 1394.012,
@@ -72886,7 +72702,7 @@
      "translations": {}
     },
     {
-     "id": "l206",
+     "id": "l204",
      "end": 1401.46,
      "text": "Former US representative Chester Atkins says it's because the Puritan founding",
      "start": 1396.081,
@@ -72896,7 +72712,7 @@
      "translations": {}
     },
     {
-     "id": "l207",
+     "id": "l205",
      "end": 1403.772,
      "text": "fathers were themselves impatient and bad-tempered and had little time for courtesy.",
      "start": 1401.46,
@@ -72906,7 +72722,7 @@
      "translations": {}
     },
     {
-     "id": "l208",
+     "id": "l206",
      "end": 1405.479,
      "text": "That culture has carried down to the present day, he believes.",
      "start": 1403.772,
@@ -72916,7 +72732,7 @@
      "translations": {}
     },
     {
-     "id": "l209",
+     "id": "l207",
      "end": 1406.58,
      "text": "Boston College professor Thomas O'Connor",
      "start": 1405.479,
@@ -72926,7 +72742,7 @@
      "translations": {}
     },
     {
-     "id": "l210",
+     "id": "l208",
      "end": 1423.958,
      "text": "thinks a contributing factor is Boston's history as a city where each new group of immigrants was treated with suspicion and exclusion.",
      "start": 1406.58,
@@ -72936,7 +72752,7 @@
      "translations": {}
     },
     {
-     "id": "l211",
+     "id": "l209",
      "end": 1427.82,
      "text": "That's given Boston a sense of",
      "start": 1423.958,
@@ -72946,7 +72762,7 @@
      "translations": {}
     },
     {
-     "id": "l212",
+     "id": "l210",
      "end": 1428.961,
      "text": "clannishness and reserve, he thinks.",
      "start": 1427.82,
@@ -72956,7 +72772,7 @@
      "translations": {}
     },
     {
-     "id": "l213",
+     "id": "l211",
      "end": 1432.067,
      "text": "The idea of a stranger greeting another stranger is simply not part of the local culture, he says.",
      "start": 1428.961,
@@ -72966,7 +72782,7 @@
      "translations": {}
     },
     {
-     "id": "l214",
+     "id": "l212",
      "end": 1433.24,
      "text": "People will begin a conversation with",
      "start": 1432.067,
@@ -72976,7 +72792,7 @@
      "translations": {}
     },
     {
-     "id": "l215",
+     "id": "l213",
      "end": 1437.679,
      "text": "someone they know, but not with a stranger.",
      "start": 1433.24,
@@ -72986,7 +72802,7 @@
      "translations": {}
     },
     {
-     "id": "l216",
+     "id": "l214",
      "end": 1451.1,
      "text": "Ralph Whitehead, a professor of journalism at the University of Massachusetts at Amherst, thinks it's because Boston's upper class",
      "start": 1437.679,
@@ -72996,7 +72812,7 @@
      "translations": {}
     },
     {
-     "id": "l217",
+     "id": "l215",
      "end": 1452.502,
      "text": "used manners to make class distinctions.",
      "start": 1451.1,
@@ -73006,7 +72822,7 @@
      "translations": {}
     },
     {
-     "id": "l218",
+     "id": "l216",
      "end": 1455.973,
      "text": "By being snobbish about manners, proper Bostonians made other people scornful of courtesy, he says.",
      "start": 1452.502,
@@ -73016,7 +72832,7 @@
      "translations": {}
     },
     {
-     "id": "l219",
+     "id": "l217",
      "end": 1457.2,
      "text": "Some say that's just the way Boston",
      "start": 1455.973,
@@ -73026,7 +72842,7 @@
      "translations": {}
     },
     {
-     "id": "l220",
+     "id": "l218",
      "end": 1460.725,
      "text": "is and that the city will never change.",
      "start": 1457.2,
@@ -73036,7 +72852,7 @@
      "translations": {}
     },
     {
-     "id": "l221",
+     "id": "l219",
      "end": 1469.312,
      "text": "Still, other cities with reputations for worse rudeness are trying hard to change their images.",
      "start": 1460.725,
@@ -73046,7 +72862,7 @@
      "translations": {}
     },
     {
-     "id": "l222",
+     "id": "l220",
      "end": 1475.34,
      "text": "Paris is one example where people are trying to be friendly. New York City is another. There, the city is trying to persuade subway riders to be more considerate. If those cities can make the effort, maybe Boston should as well.",
      "start": 1469.312,
@@ -73056,9 +72872,9 @@
      "translations": {}
     },
     {
-     "id": "l223",
+     "id": "l221",
      "end": 1491.34,
-     "text": "Questions 22 to 25 are based on the recording you have just heard.",
+     "text": "There, the city is trying to persuade subway riders to be more considerate. If those cities can make the effort, maybe Boston should as well.",
      "start": 1475.34,
      "answers": [],
      "keywords": [],
@@ -73066,7 +72882,7 @@
      "translations": {}
     },
     {
-     "id": "l224",
+     "id": "l222",
      "end": 1496.34,
      "text": "Question 22. What do visitors find about the cities they've been to?",
      "start": 1491.34,
@@ -73076,9 +72892,9 @@
      "translations": {}
     },
     {
-     "id": "l225",
-     "end": 1513.311,
-     "text": "Question 23. What did one city find about Bostonians compared with residents of other U.",
+     "id": "l223",
+     "end": 1514.74,
+     "text": "Question 23. What did one city find about Bostonians compared with residents of other U.S. cities?",
      "start": 1499.34,
      "answers": [],
      "keywords": [],
@@ -73086,17 +72902,7 @@
      "translations": {}
     },
     {
-     "id": "l226",
-     "end": 1514.74,
-     "text": "S. cities?",
-     "start": 1513.311,
-     "answers": [],
-     "keywords": [],
-     "translation": "美国城市的居民相比，某项研究对波士顿人有什么发现？",
-     "translations": {}
-    },
-    {
-     "id": "l227",
+     "id": "l224",
      "end": 1549.1,
      "text": "Question 24. What does Thomas O'Connor say about the idea of strangers greeting one another?",
      "start": 1514.74,
@@ -73106,7 +72912,7 @@
      "translations": {}
     },
     {
-     "id": "l228",
+     "id": "l225",
      "end": 1567.98,
      "text": "Question 25. What does the speaker think Boston should do?",
      "start": 1549.1,
@@ -73116,7 +72922,7 @@
      "translations": {}
     },
     {
-     "id": "l229",
+     "id": "l226",
      "end": 1570.26,
      "text": "That's the end of listening comprehension.",
      "start": 1567.98,
@@ -79535,16 +79341,6 @@
     },
     {
      "id": "l9",
-     "end": 38.368,
-     "text": "*Questions 1 to 4 are based on the conversation you have just heard.*",
-     "start": 37.868,
-     "answers": [],
-     "keywords": [],
-     "translation": "*问题1至4基于你刚刚听到的对话。*",
-     "translations": {}
-    },
-    {
-     "id": "l10",
      "end": 40.134,
      "text": "M: Welcome to \"Business Matters\".",
      "start": 38.368,
@@ -79554,7 +79350,7 @@
      "translations": {}
     },
     {
-     "id": "l11",
+     "id": "l10",
      "end": 47.28,
      "text": "Today we have invited career development consultant Lucy Williams to talk about how to get ahead at work.",
      "start": 40.134,
@@ -79564,7 +79360,7 @@
      "translations": {}
     },
     {
-     "id": "l12",
+     "id": "l11",
      "end": 47.88,
      "text": "Hi, Lucy.",
      "start": 47.28,
@@ -79574,7 +79370,7 @@
      "translations": {}
     },
     {
-     "id": "l13",
+     "id": "l12",
      "end": 50.88,
      "text": "Many of us never seem to get promoted.",
      "start": 47.88,
@@ -79584,7 +79380,7 @@
      "translations": {}
     },
     {
-     "id": "l14",
+     "id": "l13",
      "end": 51.84,
      "text": "Why is that?",
      "start": 50.88,
@@ -79594,7 +79390,7 @@
      "translations": {}
     },
     {
-     "id": "l15",
+     "id": "l14",
      "end": 54.08,
      "text": "And what can we do about it?",
      "start": 51.84,
@@ -79604,7 +79400,7 @@
      "translations": {}
     },
     {
-     "id": "l16",
+     "id": "l15",
      "end": 58.8,
      "text": "W: One mistake people make is to limit communication only to their bosses.",
      "start": 54.08,
@@ -79614,7 +79410,7 @@
      "translations": {}
     },
     {
-     "id": "l17",
+     "id": "l16",
      "end": 62.72,
      "text": "It's important to expand your network and include your co-workers.",
      "start": 58.8,
@@ -79624,7 +79420,7 @@
      "translations": {}
     },
     {
-     "id": "l18",
+     "id": "l17",
      "end": 66.08,
      "text": "M: But some of our co-workers are less senior to us.",
      "start": 62.72,
@@ -79634,7 +79430,7 @@
      "translations": {}
     },
     {
-     "id": "l19",
+     "id": "l18",
      "end": 69.12,
      "text": "Is it really necessary to connect with them?",
      "start": 66.08,
@@ -79644,7 +79440,7 @@
      "translations": {}
     },
     {
-     "id": "l20",
+     "id": "l19",
      "end": 71.92,
      "text": "W: It's important not to underestimate your colleagues.",
      "start": 69.12,
@@ -79654,7 +79450,7 @@
      "translations": {}
     },
     {
-     "id": "l21",
+     "id": "l20",
      "end": 77.28,
      "text": "Sometimes a job title might not clearly demonstrate the influence they may have.",
      "start": 71.92,
@@ -79664,7 +79460,7 @@
      "translations": {}
     },
     {
-     "id": "l22",
+     "id": "l21",
      "end": 82.923,
      "text": "M: Now many of us think that working hard creates a good impression, but this isn't always true, is it?",
      "start": 77.28,
@@ -79674,7 +79470,7 @@
      "translations": {}
     },
     {
-     "id": "l23",
+     "id": "l22",
      "end": 83.787,
      "text": "W: That's right.",
      "start": 82.923,
@@ -79684,7 +79480,7 @@
      "translations": {}
     },
     {
-     "id": "l24",
+     "id": "l23",
      "end": 91.47,
      "text": "We should avoid trying to take on too much work and constantly staying late, just to show that you are committed.",
      "start": 83.787,
@@ -79694,7 +79490,7 @@
      "translations": {}
     },
     {
-     "id": "l25",
+     "id": "l24",
      "end": 91.97,
      "text": "M: I see.",
      "start": 91.47,
@@ -79704,7 +79500,7 @@
      "translations": {}
     },
     {
-     "id": "l26",
+     "id": "l25",
      "end": 97.92,
      "text": "So setting expectations too high at the beginning can make us look bad if we don't maintain them.",
      "start": 91.97,
@@ -79714,7 +79510,7 @@
      "translations": {}
     },
     {
-     "id": "l27",
+     "id": "l26",
      "end": 104.461,
      "text": "W: Yeah, it's better to make sure you are putting in quality time instead of just a large quantity of time.",
      "start": 97.92,
@@ -79724,7 +79520,7 @@
      "translations": {}
     },
     {
-     "id": "l28",
+     "id": "l27",
      "end": 109.28,
      "text": "And these efforts can easily be demonstrated by the results we achieve.",
      "start": 104.461,
@@ -79734,7 +79530,7 @@
      "translations": {}
     },
     {
-     "id": "l29",
+     "id": "l28",
      "end": 111.079,
      "text": "M: What about helping others at work?",
      "start": 109.28,
@@ -79744,7 +79540,7 @@
      "translations": {}
     },
     {
-     "id": "l30",
+     "id": "l29",
      "end": 117.6,
      "text": "Should you try and go beyond your normal responsibilities and offer to help people with their projects?",
      "start": 111.079,
@@ -79754,7 +79550,7 @@
      "translations": {}
     },
     {
-     "id": "l31",
+     "id": "l30",
      "end": 123.839,
      "text": "W: Extend your assistance to those who need it, but only as long as your own work will not go unattended.",
      "start": 117.6,
@@ -79764,7 +79560,7 @@
      "translations": {}
     },
     {
-     "id": "l32",
+     "id": "l31",
      "end": 130.64,
      "text": "If someone can benefit from your assistance or advice, help them out to gain their respect and trust.",
      "start": 123.839,
@@ -79774,7 +79570,7 @@
      "translations": {}
     },
     {
-     "id": "l33",
+     "id": "l32",
      "end": 136.859,
      "text": "M: But it goes without saying that you shouldn't act like a know-it-all, otherwise you'll appear arrogant.",
      "start": 130.64,
@@ -79784,7 +79580,7 @@
      "translations": {}
     },
     {
-     "id": "l34",
+     "id": "l33",
      "end": 137.68,
      "text": "W: Absolutely.",
      "start": 136.859,
@@ -79794,7 +79590,7 @@
      "translations": {}
     },
     {
-     "id": "l35",
+     "id": "l34",
      "end": 142.4,
      "text": "Be humble, and you'll get a lot of time later on to show your genius.",
      "start": 137.68,
@@ -79804,7 +79600,7 @@
      "translations": {}
     },
     {
-     "id": "l36",
+     "id": "l35",
      "end": 146.8,
      "text": "Questions one to four are based on the conversation you have just heard.",
      "start": 142.4,
@@ -79814,7 +79610,7 @@
      "translations": {}
     },
     {
-     "id": "l37",
+     "id": "l36",
      "end": 164.995,
      "text": "Q1. What are the speakers mainly talking about?",
      "start": 148.111,
@@ -79824,7 +79620,7 @@
      "translations": {}
     },
     {
-     "id": "l38",
+     "id": "l37",
      "end": 182.747,
      "text": "Q2. What does the woman say is one mistake people make?",
      "start": 164.995,
@@ -79834,7 +79630,7 @@
      "translations": {}
     },
     {
-     "id": "l39",
+     "id": "l38",
      "end": 196.168,
      "text": "Q3. What does the woman advise people to do in their work?",
      "start": 182.747,
@@ -79844,7 +79640,7 @@
      "translations": {}
     },
     {
-     "id": "l40",
+     "id": "l39",
      "end": 217.44,
      "text": "Q4. Why does the man say one should not act like a know-it-all?",
      "start": 196.168,
@@ -79854,7 +79650,7 @@
      "translations": {}
     },
     {
-     "id": "l41",
+     "id": "l40",
      "end": 218.88,
      "text": "CONVERSATION 2",
      "start": 217.44,
@@ -79864,17 +79660,7 @@
      "translations": {}
     },
     {
-     "id": "l42",
-     "end": 219.38,
-     "text": "*Questions 5 to 8 are based on the conversation you have just heard.*",
-     "start": 218.88,
-     "answers": [],
-     "keywords": [],
-     "translation": "*问题5至8基于你刚刚听到的对话。*",
-     "translations": {}
-    },
-    {
-     "id": "l43",
+     "id": "l41",
      "end": 224.56,
      "text": "W: I think we first need to decide how to divide up the presentation responsibilities.",
      "start": 219.38,
@@ -79884,7 +79670,7 @@
      "translations": {}
     },
     {
-     "id": "l44",
+     "id": "l42",
      "end": 231.778,
      "text": "From what I recall, the presentation consists of five parts, not including the introduction and conclusion.",
      "start": 224.56,
@@ -79894,7 +79680,7 @@
      "translations": {}
     },
     {
-     "id": "l45",
+     "id": "l43",
      "end": 236.88,
      "text": "That would mean altogether, we need to allocate seven parts between the two of us.",
      "start": 231.778,
@@ -79904,7 +79690,7 @@
      "translations": {}
     },
     {
-     "id": "l46",
+     "id": "l44",
      "end": 244.08,
      "text": "M: So, we have the abstract, background research, the project design, the results and the discussion portions.",
      "start": 236.88,
@@ -79914,7 +79700,7 @@
      "translations": {}
     },
     {
-     "id": "l47",
+     "id": "l45",
      "end": 249.92,
      "text": "As the abstract section only applies to the article, we needn't include it in the presentation.",
      "start": 244.08,
@@ -79924,7 +79710,7 @@
      "translations": {}
     },
     {
-     "id": "l48",
+     "id": "l46",
      "end": 252.358,
      "text": "How would you suggest we dole out the rest?",
      "start": 249.92,
@@ -79934,7 +79720,7 @@
      "translations": {}
     },
     {
-     "id": "l49",
+     "id": "l47",
      "end": 255.451,
      "text": "W: How do you feel about handling the background bit?",
      "start": 252.358,
@@ -79944,7 +79730,7 @@
      "translations": {}
     },
     {
-     "id": "l50",
+     "id": "l48",
      "end": 261.005,
      "text": "In this way, we can both discuss the part of the project that we devoted most of our time to.",
      "start": 255.451,
@@ -79954,7 +79740,7 @@
      "translations": {}
     },
     {
-     "id": "l51",
+     "id": "l49",
      "end": 262.261,
      "text": "M: Hold on a minute.",
      "start": 261.005,
@@ -79964,7 +79750,7 @@
      "translations": {}
     },
     {
-     "id": "l52",
+     "id": "l50",
      "end": 268.24,
      "text": "You want me, the one who did the bulk of the task, to also do the majority of the presentation?",
      "start": 262.261,
@@ -79974,7 +79760,7 @@
      "translations": {}
     },
     {
-     "id": "l53",
+     "id": "l51",
      "end": 272.951,
      "text": "The background research which was so meticulous took more than a month.",
      "start": 268.24,
@@ -79984,7 +79770,7 @@
      "translations": {}
     },
     {
-     "id": "l54",
+     "id": "l52",
      "end": 273.451,
      "text": "W: OK.",
      "start": 272.951,
@@ -79994,7 +79780,7 @@
      "translations": {}
     },
     {
-     "id": "l55",
+     "id": "l53",
      "end": 273.951,
      "text": "OK.",
      "start": 273.451,
@@ -80004,7 +79790,7 @@
      "translations": {}
     },
     {
-     "id": "l56",
+     "id": "l54",
      "end": 274.451,
      "text": "I get it.",
      "start": 273.951,
@@ -80014,7 +79800,7 @@
      "translations": {}
     },
     {
-     "id": "l57",
+     "id": "l55",
      "end": 274.951,
      "text": "Quit your moaning.",
      "start": 274.451,
@@ -80024,7 +79810,7 @@
      "translations": {}
     },
     {
-     "id": "l58",
+     "id": "l56",
      "end": 282.639,
      "text": "I appreciate the rigorous work ethic you applied to the research, but not the sarcasm that comes up every time I mention it.",
      "start": 274.951,
@@ -80034,7 +79820,7 @@
      "translations": {}
     },
     {
-     "id": "l59",
+     "id": "l57",
      "end": 285.44,
      "text": "What do you think would be a fair arrangement?",
      "start": 282.639,
@@ -80044,7 +79830,7 @@
      "translations": {}
     },
     {
-     "id": "l60",
+     "id": "l58",
      "end": 291.419,
      "text": "M: I think the best arrangement would be to split the research into two parts: before-1980 and afterward.",
      "start": 285.44,
@@ -80054,7 +79840,7 @@
      "translations": {}
     },
     {
-     "id": "l61",
+     "id": "l59",
      "end": 298.813,
      "text": "I would take the before-portion and you would be assigned the after-1980, leaving the project and results.",
      "start": 291.419,
@@ -80064,7 +79850,7 @@
      "translations": {}
     },
     {
-     "id": "l62",
+     "id": "l60",
      "end": 301.36,
      "text": "I volunteer to describe the project.",
      "start": 298.813,
@@ -80074,7 +79860,7 @@
      "translations": {}
     },
     {
-     "id": "l63",
+     "id": "l61",
      "end": 307.12,
      "text": "But as I struggled a bit with the statistics in the results section, how about you handling that?",
      "start": 301.36,
@@ -80084,7 +79870,7 @@
      "translations": {}
     },
     {
-     "id": "l64",
+     "id": "l62",
      "end": 308.617,
      "text": "W: That's agreeable to me.",
      "start": 307.12,
@@ -80094,7 +79880,7 @@
      "translations": {}
     },
     {
-     "id": "l65",
+     "id": "l63",
      "end": 317.72,
      "text": "I propose we both handle the discussion section in parts along with the question and answer afterward, leaving only the introduction and conclusion.",
      "start": 308.617,
@@ -80104,7 +79890,7 @@
      "translations": {}
     },
     {
-     "id": "l66",
+     "id": "l64",
      "end": 323.391,
      "text": "M: I will take responsibility for the conclusion and put you in charge of the introduction.",
      "start": 317.72,
@@ -80114,7 +79900,7 @@
      "translations": {}
     },
     {
-     "id": "l67",
+     "id": "l65",
      "end": 330.8,
      "text": "This will make it so that we alternate presenting, so as to avoid sounding monotonous to the audience.",
      "start": 323.391,
@@ -80124,7 +79910,7 @@
      "translations": {}
     },
     {
-     "id": "l68",
+     "id": "l66",
      "end": 335.36,
      "text": "Questions five to eight are based on the conversation you have just heard.",
      "start": 330.8,
@@ -80134,7 +79920,7 @@
      "translations": {}
     },
     {
-     "id": "l69",
+     "id": "l67",
      "end": 354.4,
      "text": "Q5. What does the woman say they first need to do?",
      "start": 336.506,
@@ -80144,7 +79930,7 @@
      "translations": {}
     },
     {
-     "id": "l70",
+     "id": "l68",
      "end": 369.232,
      "text": "Q6. Why does the man refuse to handle the background part?",
      "start": 354.4,
@@ -80154,7 +79940,7 @@
      "translations": {}
     },
     {
-     "id": "l71",
+     "id": "l69",
      "end": 388.799,
      "text": "Q7. What does the woman urge the man to stop doing?",
      "start": 369.232,
@@ -80164,7 +79950,7 @@
      "translations": {}
     },
     {
-     "id": "l72",
+     "id": "l70",
      "end": 408.24,
      "text": "Q8. Why does the man suggest he present the conclusion and the woman do the introduction?",
      "start": 388.799,
@@ -80174,7 +79960,7 @@
      "translations": {}
     },
     {
-     "id": "l73",
+     "id": "l71",
      "end": 409.977,
      "text": "Section B, directions.",
      "start": 408.24,
@@ -80184,7 +79970,7 @@
      "translations": {}
     },
     {
-     "id": "l74",
+     "id": "l72",
      "end": 414.4,
      "text": "In this section, you will hear two passages. At the end",
      "start": 409.977,
@@ -80194,7 +79980,7 @@
      "translations": {}
     },
     {
-     "id": "l75",
+     "id": "l73",
      "end": 418,
      "text": "of each passage, you will hear three or four questions.",
      "start": 414.4,
@@ -80204,7 +79990,7 @@
      "translations": {}
     },
     {
-     "id": "l76",
+     "id": "l74",
      "end": 422.16,
      "text": "Both the passage and the questions will be spoken only once.",
      "start": 418,
@@ -80214,7 +80000,7 @@
      "translations": {}
     },
     {
-     "id": "l77",
+     "id": "l75",
      "end": 425.92,
      "text": "After you hear a question, you must choose the best answer from the four",
      "start": 422.16,
@@ -80224,7 +80010,7 @@
      "translations": {}
     },
     {
-     "id": "l78",
+     "id": "l76",
      "end": 432.24,
      "text": "choices marked A, B, C, and D. Then mark the corresponding letter on",
      "start": 425.92,
@@ -80234,7 +80020,7 @@
      "translations": {}
     },
     {
-     "id": "l79",
+     "id": "l77",
      "end": 436.16,
      "text": "answer sheet one with a single line through the centre.",
      "start": 432.24,
@@ -80244,7 +80030,7 @@
      "translations": {}
     },
     {
-     "id": "l80",
+     "id": "l78",
      "end": 437.035,
      "text": "PASSAGE 1",
      "start": 436.16,
@@ -80254,17 +80040,7 @@
      "translations": {}
     },
     {
-     "id": "l81",
-     "end": 437.535,
-     "text": "*Questions 9 to 11 are based on the passage you have just heard.*",
-     "start": 437.035,
-     "answers": [],
-     "keywords": [],
-     "translation": "*问题9至11基于你刚刚听到的短文。*",
-     "translations": {}
-    },
-    {
-     "id": "l82",
+     "id": "l79",
      "end": 446.64,
      "text": "Makeup can do more than just change your appearance-it can also alter others' perceptions of you, for better or for worse.",
      "start": 437.535,
@@ -80274,7 +80050,7 @@
      "translations": {}
     },
     {
-     "id": "l83",
+     "id": "l80",
      "end": 466.803,
      "text": "According to new research from the University of Stirling in Scotland, although both men and women perceive women who wear makeup as being of a higher status, men associate makeup with prestigious, positive qualities, while women view other women wearing makeup as being dominant and a potential threat.",
      "start": 446.64,
@@ -80284,7 +80060,7 @@
      "translations": {}
     },
     {
-     "id": "l84",
+     "id": "l81",
      "end": 484.56,
      "text": "The research showed that men and women both rated the faces with cosmetics as being more attractive, but only women rated made-up faces as being more dominant, while only men rated made-up faces as being higher in prestige.",
      "start": 466.803,
@@ -80294,7 +80070,7 @@
      "translations": {}
     },
     {
-     "id": "l85",
+     "id": "l82",
      "end": 498.08,
      "text": "A follow-up study investigated the root cause behind these differences in perception, and found that female-on-female jealousy seemed to be the main cause of the differences in perception.",
      "start": 484.56,
@@ -80304,7 +80080,7 @@
      "translations": {}
     },
     {
-     "id": "l86",
+     "id": "l83",
      "end": 508.189,
      "text": "Women rating women with makeup said they would be more jealous of them and thought they would be more attractive to men than their non-makeup wearing counterparts.",
      "start": 498.08,
@@ -80314,7 +80090,7 @@
      "translations": {}
     },
     {
-     "id": "l87",
+     "id": "l84",
      "end": 512.945,
      "text": "Cosmetic products are good for more than just giving you a pretty face.",
      "start": 508.189,
@@ -80324,7 +80100,7 @@
      "translations": {}
     },
     {
-     "id": "l88",
+     "id": "l85",
      "end": 525.088,
      "text": "It can be particularly useful for women to understand how wearing makeup alters others' perceptions of them in situations where they are trying to gain others' trust and admiration.",
      "start": 512.945,
@@ -80334,7 +80110,7 @@
      "translations": {}
     },
     {
-     "id": "l89",
+     "id": "l86",
      "end": 536.08,
      "text": "At a job interview, knowing whether the hiring committee will consist of men or women might influence a female candidate's decision about wearing makeup.",
      "start": 525.088,
@@ -80344,7 +80120,7 @@
      "translations": {}
     },
     {
-     "id": "l90",
+     "id": "l87",
      "end": 547.92,
      "text": "Whether the interviewers will view her as attractive, dominant and prestigious can affect the interviewers' actions and perhaps the outcome of the interview itself.",
      "start": 536.08,
@@ -80354,7 +80130,7 @@
      "translations": {}
     },
     {
-     "id": "l91",
+     "id": "l88",
      "end": 552.56,
      "text": "Questions 9 to 11 are based on the passage you have just heard.",
      "start": 547.92,
@@ -80364,7 +80140,7 @@
      "translations": {}
     },
     {
-     "id": "l92",
+     "id": "l89",
      "end": 568.167,
      "text": "Q9. What can makeup do according to new research from the University of Stirling in Scotland?",
      "start": 553.307,
@@ -80374,7 +80150,7 @@
      "translations": {}
     },
     {
-     "id": "l93",
+     "id": "l90",
      "end": 592.935,
      "text": "Q10. How did both men and women rate the faces with cosmetics in the new research?",
      "start": 568.167,
@@ -80384,7 +80160,7 @@
      "translations": {}
     },
     {
-     "id": "l94",
+     "id": "l91",
      "end": 611.44,
      "text": "Q11. Why does a female candidate need to know the gender of the hiring committee members?",
      "start": 592.935,
@@ -80394,7 +80170,7 @@
      "translations": {}
     },
     {
-     "id": "l95",
+     "id": "l92",
      "end": 612.115,
      "text": "PASSAGE 2",
      "start": 611.44,
@@ -80404,17 +80180,7 @@
      "translations": {}
     },
     {
-     "id": "l96",
-     "end": 612.615,
-     "text": "*Questions 12 to 15 are based on the passage you have just heard.*",
-     "start": 612.115,
-     "answers": [],
-     "keywords": [],
-     "translation": "*问题12至15基于你刚刚听到的短文。*",
-     "translations": {}
-    },
-    {
-     "id": "l97",
+     "id": "l93",
      "end": 621.04,
      "text": "You may have seen advertisements trumpeting methods of changing a habit that require absolutely no willpower whatsoever.",
      "start": 612.615,
@@ -80424,7 +80190,7 @@
      "translations": {}
     },
     {
-     "id": "l98",
+     "id": "l94",
      "end": 626.24,
      "text": "But can you really change a bad habit or create a good one without willpower?",
      "start": 621.04,
@@ -80434,7 +80200,7 @@
      "translations": {}
     },
     {
-     "id": "l99",
+     "id": "l95",
      "end": 637.693,
      "text": "To answer this question, we first have to ask: \"What is willpower?\" Most people, sadly, think of it only as the ability to clench their teeth and resist attractive temptations.",
      "start": 626.24,
@@ -80444,7 +80210,7 @@
      "translations": {}
     },
     {
-     "id": "l100",
+     "id": "l96",
      "end": 641.733,
      "text": "In this view, willpower means self-denial and no fun.",
      "start": 637.693,
@@ -80454,7 +80220,7 @@
      "translations": {}
     },
     {
-     "id": "l101",
+     "id": "l97",
      "end": 646,
      "text": "No wonder people hope to make changes without it.",
      "start": 641.733,
@@ -80464,7 +80230,7 @@
      "translations": {}
     },
     {
-     "id": "l102",
+     "id": "l98",
      "end": 657.535,
      "text": "I define willpower as \"using only the thought of your motivators to control your actions.\" Let's say your motivators are \"prevent diabetes\" and \"reach a healthy weight\".",
      "start": 646,
@@ -80474,7 +80240,7 @@
      "translations": {}
     },
     {
-     "id": "l103",
+     "id": "l99",
      "end": 669.04,
      "text": "So if you are at the all-you-can-eat buffet, you think about your motivator-avoid diabetes through weight loss-and you take small portions and avoid the dessert table.",
      "start": 657.535,
@@ -80484,7 +80250,7 @@
      "translations": {}
     },
     {
-     "id": "l104",
+     "id": "l100",
      "end": 677.92,
      "text": "So, amazingly enough, willpower begins with a thought-a bright idea-some way to improve your life or contribute to others.",
      "start": 669.04,
@@ -80494,7 +80260,7 @@
      "translations": {}
     },
     {
-     "id": "l105",
+     "id": "l101",
      "end": 680.92,
      "text": "This bright idea is your motivator.",
      "start": 677.92,
@@ -80504,7 +80270,7 @@
      "translations": {}
     },
     {
-     "id": "l106",
+     "id": "l102",
      "end": 688.24,
      "text": "Doctor Walter Mischel, an expert on willpower skills, uses the expressive term \"a burning goal\".",
      "start": 680.92,
@@ -80514,7 +80280,7 @@
      "translations": {}
     },
     {
-     "id": "l107",
+     "id": "l103",
      "end": 696.56,
      "text": "Whether you call it a motivator, a burning goal, or a bright idea, this idea is the force behind your willpower.",
      "start": 688.24,
@@ -80524,7 +80290,7 @@
      "translations": {}
     },
     {
-     "id": "l108",
+     "id": "l104",
      "end": 701.6,
      "text": "What sort of bright ideas-motivators-make for effective willpower?",
      "start": 696.56,
@@ -80534,7 +80300,7 @@
      "translations": {}
     },
     {
-     "id": "l109",
+     "id": "l105",
      "end": 705.44,
      "text": "In fact, any goal that you value strongly counts.",
      "start": 701.6,
@@ -80544,7 +80310,7 @@
      "translations": {}
     },
     {
-     "id": "l110",
+     "id": "l106",
      "end": 714.08,
      "text": "The list may include good health, self-respect, a better future for your family, a personal mission and being a role model for your child.",
      "start": 705.44,
@@ -80554,7 +80320,7 @@
      "translations": {}
     },
     {
-     "id": "l111",
+     "id": "l107",
      "end": 717.588,
      "text": "All these can certainly drive a positive change.",
      "start": 714.08,
@@ -80564,7 +80330,7 @@
      "translations": {}
     },
     {
-     "id": "l112",
+     "id": "l108",
      "end": 721.2,
      "text": "Questions 12 to 15 are based on the passage",
      "start": 717.588,
@@ -80574,7 +80340,7 @@
      "translations": {}
     },
     {
-     "id": "l113",
+     "id": "l109",
      "end": 738.196,
      "text": "Q12. What methods do some advertisements trumpet about changing a habit?",
      "start": 724.054,
@@ -80584,7 +80350,7 @@
      "translations": {}
     },
     {
-     "id": "l114",
+     "id": "l110",
      "end": 751.146,
      "text": "Q13. What does the speaker define willpower as?",
      "start": 738.196,
@@ -80594,7 +80360,7 @@
      "translations": {}
     },
     {
-     "id": "l115",
+     "id": "l111",
      "end": 768.736,
      "text": "Q14. What may sound amazing enough as regards willpower?",
      "start": 751.146,
@@ -80604,7 +80370,7 @@
      "translations": {}
     },
     {
-     "id": "l116",
+     "id": "l112",
      "end": 795.76,
      "text": "Q15. What does the speaker say may make for effective willpower?",
      "start": 768.736,
@@ -80614,7 +80380,7 @@
      "translations": {}
     },
     {
-     "id": "l117",
+     "id": "l113",
      "end": 796.651,
      "text": "Section C.",
      "start": 795.76,
@@ -80624,7 +80390,7 @@
      "translations": {}
     },
     {
-     "id": "l118",
+     "id": "l114",
      "end": 802,
      "text": "Directions. In this section, you will hear three recordings",
      "start": 796.651,
@@ -80634,7 +80400,7 @@
      "translations": {}
     },
     {
-     "id": "l119",
+     "id": "l115",
      "end": 806.16,
      "text": "of lectures or talks followed by three or four questions.",
      "start": 802,
@@ -80644,7 +80410,7 @@
      "translations": {}
     },
     {
-     "id": "l120",
+     "id": "l116",
      "end": 810.48,
      "text": "The recordings will be played only once. After you hear a question,",
      "start": 806.16,
@@ -80654,7 +80420,7 @@
      "translations": {}
     },
     {
-     "id": "l121",
+     "id": "l117",
      "end": 816.64,
      "text": "you must choose the best answer from the four choices marked A, B, C, and D.",
      "start": 810.48,
@@ -80664,7 +80430,7 @@
      "translations": {}
     },
     {
-     "id": "l122",
+     "id": "l118",
      "end": 820.32,
      "text": "Then, mark the corresponding letter on answer sheet one",
      "start": 816.64,
@@ -80674,7 +80440,7 @@
      "translations": {}
     },
     {
-     "id": "l123",
+     "id": "l119",
      "end": 824.944,
      "text": "RECORDING 1",
      "start": 823.816,
@@ -80684,17 +80450,7 @@
      "translations": {}
     },
     {
-     "id": "l124",
-     "end": 825.444,
-     "text": "*Questions 16 to 18 are based on the recording you have just heard.*",
-     "start": 824.944,
-     "answers": [],
-     "keywords": [],
-     "translation": "*问题16至18基于你刚刚听到的录音。*",
-     "translations": {}
-    },
-    {
-     "id": "l125",
+     "id": "l120",
      "end": 836.48,
      "text": "For many pregnant women, understanding what seafood is safe and healthy and what should be avoided because of mercury concerns comes with a lot of worrying.",
      "start": 825.444,
@@ -80704,7 +80460,7 @@
      "translations": {}
     },
     {
-     "id": "l126",
+     "id": "l121",
      "end": 845.3,
      "text": "In part, that's because the federal government's advice on the matter, first issued in 2004, has long been criticized as vague.",
      "start": 836.48,
@@ -80714,7 +80470,7 @@
      "translations": {}
     },
     {
-     "id": "l127",
+     "id": "l122",
      "end": 857.071,
      "text": "That guidance has included advice on how much seafood to eat, and which species pregnant and breastfeeding women should avoid over concerns about mercury contamination.",
      "start": 845.3,
@@ -80724,7 +80480,7 @@
      "translations": {}
     },
     {
-     "id": "l128",
+     "id": "l123",
      "end": 868.126,
      "text": "But critics say the government advisory has done more harm than good, scaring many pregnant and breastfeeding women away from eating seafood altogether.",
      "start": 857.071,
@@ -80734,7 +80490,7 @@
      "translations": {}
     },
     {
-     "id": "l129",
+     "id": "l124",
      "end": 869.76,
      "text": "The problem is real.",
      "start": 868.126,
@@ -80744,7 +80500,7 @@
      "translations": {}
     },
     {
-     "id": "l130",
+     "id": "l125",
      "end": 888,
      "text": "According to a spokesman for the Food and Drug Administration, or FDA for short, the agency analyzed fish consumption data from more than 1,000 pregnant women in the US and found that 21 per cent of them ate no fish whatsoever in the previous month.",
      "start": 869.76,
@@ -80754,7 +80510,7 @@
      "translations": {}
     },
     {
-     "id": "l131",
+     "id": "l126",
      "end": 894.229,
      "text": "And those who did eat fish consumed far less than recommended by the dietary guidelines.",
      "start": 888,
@@ -80764,7 +80520,7 @@
      "translations": {}
     },
     {
-     "id": "l132",
+     "id": "l127",
      "end": 902.304,
      "text": "Some 50 per cent ate less than two ounces a week and 75 per cent ate less than four ounces.",
      "start": 894.229,
@@ -80774,7 +80530,7 @@
      "translations": {}
     },
     {
-     "id": "l133",
+     "id": "l128",
      "end": 916.64,
      "text": "This week the FDA issued an update to the advice, listing more than sixty species in a chart that ranks fish as A Best Choice, Good Choice and Choices to Avoid.",
      "start": 902.304,
@@ -80784,7 +80540,7 @@
      "translations": {}
     },
     {
-     "id": "l134",
+     "id": "l129",
      "end": 924.8,
      "text": "The goal is to make it easier for mothers-to-be to feel confident about the type of seafood they include in their diets.",
      "start": 916.64,
@@ -80794,7 +80550,7 @@
      "translations": {}
     },
     {
-     "id": "l135",
+     "id": "l130",
      "end": 942.32,
      "text": "The new advice recommends consumers choose a variety of fish to eat, and it comes with an easy-to-understand illustration of what an appropriate portion size should be-four ounces for an adult and two ounces for children aged four to seven.",
      "start": 924.8,
@@ -80804,7 +80560,7 @@
      "translations": {}
     },
     {
-     "id": "l136",
+     "id": "l131",
      "end": 956.24,
      "text": "And while expectant mothers have long been warned to stay away from shark and four other particular types of fish from the Gulf of Mexico, now there are three new species on the list of what to avoid.",
      "start": 942.32,
@@ -80814,7 +80570,7 @@
      "translations": {}
     },
     {
-     "id": "l137",
+     "id": "l132",
      "end": 960,
      "text": "But not everyone is thrilled with the new advice.",
      "start": 956.24,
@@ -80824,7 +80580,7 @@
      "translations": {}
     },
     {
-     "id": "l138",
+     "id": "l133",
      "end": 965.989,
      "text": "Critics say the new advice doesn't always agree with the agency's own scientific findings.",
      "start": 960,
@@ -80834,7 +80590,7 @@
      "translations": {}
     },
     {
-     "id": "l139",
+     "id": "l134",
      "end": 976.32,
      "text": "While mercury is of great concern when people are talking about pregnant women and seafood, it's not the only factor contributing to anxiety.",
      "start": 965.989,
@@ -80844,7 +80600,7 @@
      "translations": {}
     },
     {
-     "id": "l140",
+     "id": "l135",
      "end": 983.76,
      "text": "The FDA maintains that its final consumption recommendations were based on thorough scientific analysis.",
      "start": 976.32,
@@ -80854,7 +80610,7 @@
      "translations": {}
     },
     {
-     "id": "l141",
+     "id": "l136",
      "end": 993.059,
      "text": "Agency spokesman Cassell says the FDA believes their recommendations will increase confidence, not uncertainty.",
      "start": 983.76,
@@ -80864,7 +80620,7 @@
      "translations": {}
     },
     {
-     "id": "l142",
+     "id": "l137",
      "end": 994.96,
      "text": "But critics disagree.",
      "start": 993.059,
@@ -80874,7 +80630,7 @@
      "translations": {}
     },
     {
-     "id": "l143",
+     "id": "l138",
      "end": 1004.24,
      "text": "They think the FDA's advice is not based on the evidence in its own detailed report, and so it confuses everyone.",
      "start": 994.96,
@@ -80884,7 +80640,7 @@
      "translations": {}
     },
     {
-     "id": "l144",
+     "id": "l139",
      "end": 1009.28,
      "text": "Questions 16 to 18 are based on the recording you have just heard.",
      "start": 1004.24,
@@ -80894,7 +80650,7 @@
      "translations": {}
     },
     {
-     "id": "l145",
+     "id": "l140",
      "end": 1030.136,
      "text": "Q16. What does the speaker say about the federal government's advice on seafood safety?",
      "start": 1010.146,
@@ -80904,7 +80660,7 @@
      "translations": {}
     },
     {
-     "id": "l146",
+     "id": "l141",
      "end": 1041.513,
      "text": "Q17. What did the Food and Drug Administration do this week?",
      "start": 1030.136,
@@ -80914,7 +80670,7 @@
      "translations": {}
     },
     {
-     "id": "l147",
+     "id": "l142",
      "end": 1066.16,
      "text": "Q18. According to the speaker, what are people concerned about regarding pregnant women and seafood?",
      "start": 1041.513,
@@ -80924,7 +80680,7 @@
      "translations": {}
     },
     {
-     "id": "l148",
+     "id": "l143",
      "end": 1067.251,
      "text": "RECORDING 2",
      "start": 1066.16,
@@ -80934,17 +80690,7 @@
      "translations": {}
     },
     {
-     "id": "l149",
-     "end": 1067.751,
-     "text": "*Questions 19 to 21 are based on the recording you have just heard.*",
-     "start": 1067.251,
-     "answers": [],
-     "keywords": [],
-     "translation": "*问题19至21基于你刚刚听到的录音。*",
-     "translations": {}
-    },
-    {
-     "id": "l150",
+     "id": "l144",
      "end": 1074.24,
      "text": "I know you're busy with work, but you also need to take some time off to recharge those batteries.",
      "start": 1067.751,
@@ -80954,7 +80700,7 @@
      "translations": {}
     },
     {
-     "id": "l151",
+     "id": "l145",
      "end": 1082.08,
      "text": "So, should you plan one big vacation for the year, or should you take multiple short vacations throughout?",
      "start": 1074.24,
@@ -80964,7 +80710,7 @@
      "translations": {}
     },
     {
-     "id": "l152",
+     "id": "l146",
      "end": 1084.674,
      "text": "Quantity can sometimes beat quality.",
      "start": 1082.08,
@@ -80974,7 +80720,7 @@
      "translations": {}
     },
     {
-     "id": "l153",
+     "id": "l147",
      "end": 1092.24,
      "text": "First and foremost, regardless of how you use your vacation days, you need to be using them, and soon.",
      "start": 1084.674,
@@ -80984,7 +80730,7 @@
      "translations": {}
     },
     {
-     "id": "l154",
+     "id": "l148",
      "end": 1097.36,
      "text": "The longer you put off your time off, the worse you're making things for yourself.",
      "start": 1092.24,
@@ -80994,7 +80740,7 @@
      "translations": {}
     },
     {
-     "id": "l155",
+     "id": "l149",
      "end": 1108.8,
      "text": "One 9-year-long study published in Psychosomatic Medicine suggests not taking at least one vacation a year may increase your risk of mortality due to heart disease.",
      "start": 1097.36,
@@ -81004,7 +80750,7 @@
      "translations": {}
     },
     {
-     "id": "l156",
+     "id": "l150",
      "end": 1113.68,
      "text": "So, not only are you killing your joy, you're possibly killing yourself.",
      "start": 1108.8,
@@ -81014,7 +80760,7 @@
      "translations": {}
     },
     {
-     "id": "l157",
+     "id": "l151",
      "end": 1115.488,
      "text": "Give yourself a break, folks.",
      "start": 1113.68,
@@ -81024,7 +80770,7 @@
      "translations": {}
     },
     {
-     "id": "l158",
+     "id": "l152",
      "end": 1130.067,
      "text": "When you should take those breaks, however, depends on a few factors: how many days you have available to use, what activities bring you joy, whether you have a family or not, and other variables come into play.",
      "start": 1115.488,
@@ -81034,7 +80780,7 @@
      "translations": {}
     },
     {
-     "id": "l159",
+     "id": "l153",
      "end": 1138.96,
      "text": "Because of that, there's no perfect formula that works for everyone, but there are still a few things everyone can try to shoot for.",
      "start": 1130.067,
@@ -81044,7 +80790,7 @@
      "translations": {}
     },
     {
-     "id": "l160",
+     "id": "l154",
      "end": 1147.44,
      "text": "We know that in terms of maximizing relaxation, you should aim for vacations that range somewhere between 7 and 11 days long.",
      "start": 1138.96,
@@ -81054,7 +80800,7 @@
      "translations": {}
     },
     {
-     "id": "l161",
+     "id": "l155",
      "end": 1154.24,
      "text": "That gives you enough time to let go of your stress at work, completely loosen up, and achieve full-on calm.",
      "start": 1147.44,
@@ -81064,7 +80810,7 @@
      "translations": {}
     },
     {
-     "id": "l162",
+     "id": "l156",
      "end": 1162.8,
      "text": "That above-mentioned study also recommends you space out your vacations evenly instead of using up all of your days at once.",
      "start": 1154.24,
@@ -81074,7 +80820,7 @@
      "translations": {}
     },
     {
-     "id": "l163",
+     "id": "l157",
      "end": 1167.724,
      "text": "Eight days might sound like a lot for someone who only gets 10 days of vacation a year.",
      "start": 1162.8,
@@ -81084,7 +80830,7 @@
      "translations": {}
     },
     {
-     "id": "l164",
+     "id": "l158",
      "end": 1175.12,
      "text": "But if you frame them with weekends, you can manage two evenly spaced 8-day vacations a year.",
      "start": 1167.724,
@@ -81094,7 +80840,7 @@
      "translations": {}
     },
     {
-     "id": "l165",
+     "id": "l159",
      "end": 1183.169,
      "text": "If you have 14 days of paid leave, that's almost three separate 8-day vacations you can use to split your year into thirds.",
      "start": 1175.12,
@@ -81104,7 +80850,7 @@
      "translations": {}
     },
     {
-     "id": "l166",
+     "id": "l160",
      "end": 1194.98,
      "text": "As tempting as it might be to use all your days to take one long summer break, your overall goal should be to achieve the perfect balance between length plus joy and frequency.",
      "start": 1183.169,
@@ -81114,7 +80860,7 @@
      "translations": {}
     },
     {
-     "id": "l167",
+     "id": "l161",
      "end": 1202.736,
      "text": "Vacation frequency is important because planning multiple breaks throughout the year means you always have something to look forward to.",
      "start": 1194.98,
@@ -81124,7 +80870,7 @@
      "translations": {}
     },
     {
-     "id": "l168",
+     "id": "l162",
      "end": 1208.212,
      "text": "Planning things and the anticipation that comes with it tend to make us happier.",
      "start": 1202.736,
@@ -81134,7 +80880,7 @@
      "translations": {}
     },
     {
-     "id": "l169",
+     "id": "l163",
      "end": 1219.6,
      "text": "If you only take one long vacation every year, the excitement builds much more slowly and seems so far off that it can actually lead to feelings of despair.",
      "start": 1208.212,
@@ -81144,7 +80890,7 @@
      "translations": {}
     },
     {
-     "id": "l170",
+     "id": "l164",
      "end": 1224.64,
      "text": "Questions 19 to 21 are based on the recording you have just heard.",
      "start": 1219.6,
@@ -81154,7 +80900,7 @@
      "translations": {}
     },
     {
-     "id": "l171",
+     "id": "l165",
      "end": 1244.287,
      "text": "Q19. What does the speaker say about people not taking any vacation?",
      "start": 1225.535,
@@ -81164,7 +80910,7 @@
      "translations": {}
     },
     {
-     "id": "l172",
+     "id": "l166",
      "end": 1261.395,
      "text": "Q20. What does the 9-year study recommend people do when planning vacations?",
      "start": 1244.287,
@@ -81174,7 +80920,7 @@
      "translations": {}
     },
     {
-     "id": "l173",
+     "id": "l167",
      "end": 1281.84,
      "text": "Q21. Why is vacation frequency important according to the speaker?",
      "start": 1261.395,
@@ -81184,7 +80930,7 @@
      "translations": {}
     },
     {
-     "id": "l174",
+     "id": "l168",
      "end": 1282.96,
      "text": "RECORDING 3",
      "start": 1281.84,
@@ -81194,17 +80940,7 @@
      "translations": {}
     },
     {
-     "id": "l175",
-     "end": 1283.46,
-     "text": "*Questions 22 to 25 are based on the recording you have just heard.*",
-     "start": 1282.96,
-     "answers": [],
-     "keywords": [],
-     "translation": "*问题22至25基于你刚刚听到的录音。*",
-     "translations": {}
-    },
-    {
-     "id": "l176",
+     "id": "l169",
      "end": 1291.84,
      "text": "Autonomous cars that can take over from drivers if they are tired or caught in the heat of an argument are being developed in Sweden.",
      "start": 1283.46,
@@ -81214,7 +80950,7 @@
      "translations": {}
     },
     {
-     "id": "l177",
+     "id": "l170",
      "end": 1306.48,
      "text": "Researchers working as part of the European Union's €77 billion research program are developing sensor-based systems that monitor whether a driver is distracted, anxious or tired.",
      "start": 1291.84,
@@ -81224,7 +80960,7 @@
      "translations": {}
     },
     {
-     "id": "l178",
+     "id": "l171",
      "end": 1315.715,
      "text": "If a driver is not in a fit state to be on the road, the car automatically takes control of the wheel to prevent accidents.",
      "start": 1306.48,
@@ -81234,7 +80970,7 @@
      "translations": {}
     },
     {
-     "id": "l179",
+     "id": "l172",
      "end": 1333.187,
      "text": "Doctor Anna Anund from the Swedish National Road and Transport Research Institute, who is leading the project, said a driver's state can be measured using a number of sensors, including heart rate monitors and eye sensors, which track where a driver's gaze is.",
      "start": 1315.715,
@@ -81244,7 +80980,7 @@
      "translations": {}
     },
     {
-     "id": "l180",
+     "id": "l173",
      "end": 1352.96,
      "text": "She said the aim was to really make sure that the transition from the driver to the vehicle is done in a safe way, so we can take into consideration the driver's state, and so we do not give control to a driver who is under pressure of fatigue, stress, anxiety, and so on.",
      "start": 1333.187,
@@ -81254,7 +80990,7 @@
      "translations": {}
     },
     {
-     "id": "l181",
+     "id": "l174",
      "end": 1361.68,
      "text": "According to data from the European Commission, Sweden has the safest roads in the EU, with the UK a close second.",
      "start": 1352.96,
@@ -81264,7 +81000,7 @@
      "translations": {}
     },
     {
-     "id": "l182",
+     "id": "l175",
      "end": 1367.522,
      "text": "However, the number of road accidents in both has largely levelled out since 2010.",
      "start": 1361.68,
@@ -81274,7 +81010,7 @@
      "translations": {}
     },
     {
-     "id": "l183",
+     "id": "l176",
      "end": 1380.24,
      "text": "Driver fatigue is thought to be responsible for as many as a fifth of road crashes across the EU, although there are certain times of the day when more accidents happen.",
      "start": 1367.522,
@@ -81284,7 +81020,7 @@
      "translations": {}
     },
     {
-     "id": "l184",
+     "id": "l177",
      "end": 1388.055,
      "text": "At 6:00 a.m., for example, drivers are said to be 20 times more likely to have an accident than at 10:00 a.m.",
      "start": 1380.24,
@@ -81294,7 +81030,7 @@
      "translations": {}
     },
     {
-     "id": "l185",
+     "id": "l178",
      "end": 1399.36,
      "text": "While most experts agree driverless technology should help bring down accident numbers in the long term, some have questioned whether it is safe.",
      "start": 1388.055,
@@ -81304,7 +81040,7 @@
      "translations": {}
     },
     {
-     "id": "l186",
+     "id": "l179",
      "end": 1416.8,
      "text": "The researchers have said the technology they are developing is seeking to bridge the gap between Level 3 on the autonomy scale, in which drivers have to be ready to take control of the car at any point, and Level 4, in which driving is automated.",
      "start": 1399.36,
@@ -81314,7 +81050,7 @@
      "translations": {}
     },
     {
-     "id": "l187",
+     "id": "l180",
      "end": 1438.8,
      "text": "Daniel Ruiz, the chief executive of the UK's connected and autonomous vehicle programme Meridian, said: \"there is a strong debate going on about how it is possible to make a Level 3 car completely safe.\" Despite advances in technology, we still have some way to go in shifting public sentiment.",
      "start": 1416.8,
@@ -81324,7 +81060,7 @@
      "translations": {}
     },
     {
-     "id": "l188",
+     "id": "l181",
      "end": 1448.64,
      "text": "With an increase in attention-grabbing accidents recently, drivers now view self-driving cars as less safe than they used to.",
      "start": 1438.8,
@@ -81334,7 +81070,7 @@
      "translations": {}
     },
     {
-     "id": "l189",
+     "id": "l182",
      "end": 1454,
      "text": "Questions 22 to 25 are based on the recording you have just heard.",
      "start": 1448.64,
@@ -81344,7 +81080,7 @@
      "translations": {}
     },
     {
-     "id": "l190",
+     "id": "l183",
      "end": 1472.668,
      "text": "Q22. What are researchers doing in Sweden?",
      "start": 1455.53,
@@ -81354,7 +81090,7 @@
      "translations": {}
     },
     {
-     "id": "l191",
+     "id": "l184",
      "end": 1486.906,
      "text": "Q23. What did the researchers' project aim to do according to Dr. Anna Anund?",
      "start": 1472.668,
@@ -81364,7 +81100,7 @@
      "translations": {}
     },
     {
-     "id": "l192",
+     "id": "l185",
      "end": 1512.945,
      "text": "Q24. What is thought to be responsible for a fifth of road accidents across the European Union?",
      "start": 1486.906,
@@ -81374,7 +81110,7 @@
      "translations": {}
     },
     {
-     "id": "l193",
+     "id": "l186",
      "end": 1516.552,
      "text": "Q25. Why do drivers now view self-driving cars as less safe than they used to?",
      "start": 1512.945,
