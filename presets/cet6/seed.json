@@ -1,7 +1,7 @@
 {
  "preset": "cet6",
- "version": "20260930.4",
- "generatedAt": "2026-09-29T20:41:53.729Z",
+ "version": "20260930.9",
+ "generatedAt": "2026-09-29T21:04:51.433Z",
  "group": {
   "id": 8,
   "name": "英语六级真题",
@@ -2694,12 +2694,12 @@
     {
      "id": "l170",
      "start": 1216.28,
-     "end": 1221,
+     "end": 1220.93,
      "text": "We would remember a lot more if we had more confidence in your memories and knew how to use them properly."
     },
     {
      "id": "l171",
-     "start": 1221,
+     "start": 1220.98,
      "end": 1226.96,
      "text": "One useful tip is that things are more likely to be remembered if you are in exactly the same state and place as you were when you learn them."
     },
@@ -2718,24 +2718,24 @@
     {
      "id": "l174",
      "start": 1250.08,
-     "end": 1255.94,
+     "end": 1255.87,
      "text": "When you learn is also important."
     },
     {
      "id": "l175",
-     "start": 1255.96,
-     "end": 1262.32,
-     "text": "Lots of people swear they can absorb new information more efficiently at some times of the day than at others."
-    },
-    {
-     "id": "l176",
-     "start": 1262.32,
-     "end": 1265.67,
+     "start": 1255.92,
+     "end": 1259.8,
      "text": "Research shows this is not just imagination."
     },
     {
+     "id": "l176",
+     "start": 1260.6,
+     "end": 1267,
+     "text": "Lots of people swear they can absorb new information more efficiently at some times of the day than at others."
+    },
+    {
      "id": "l177",
-     "start": 1265.67,
+     "start": 1267.5,
      "end": 1274.68,
      "text": "There is a biological rhythm for learning, though it affects different people in different ways."
     },
@@ -2981,7 +2981,7 @@
     },
     {
      "id": "l218",
-     "start": 1666.16,
+     "start": 1670.46,
      "end": 1673.36,
      "text": "This is the end of listening comprehension."
     }
@@ -6713,12 +6713,12 @@
     {
      "id": "l12",
      "start": 54.13,
-     "end": 58.61,
+     "end": 54.79,
      "text": "W: Gazpacho is a cold soup from Spain. It's mostly vegetables."
     },
     {
      "id": "l13",
-     "start": 58.61,
+     "start": 54.84,
      "end": 62.87,
      "text": "I guess you could call it a liquid salad. M: Cold soup?"
     },
@@ -6947,12 +6947,12 @@
     {
      "id": "l51",
      "start": 255.14,
-     "end": 263.47,
+     "end": 256.45,
      "text": "M: Hello, I wish to buy a bottle of wine."
     },
     {
      "id": "l52",
-     "start": 263.47,
+     "start": 256.5,
      "end": 265.76,
      "text": "W: Hi, yes. What kind of wine would you like?"
     },
@@ -7001,12 +7001,12 @@
     {
      "id": "l60",
      "start": 284.32,
-     "end": 291.76,
+     "end": 287.25,
      "text": "W: Well, it varies greatly."
     },
     {
      "id": "l61",
-     "start": 291.76,
+     "start": 287.3,
      "end": 293.21,
      "text": "Our lowest prices are around $6 a bottle, but those are table wines."
     },
@@ -7613,12 +7613,12 @@
     {
      "id": "l162",
      "start": 971.34,
-     "end": 974.56,
+     "end": 972.59,
      "text": "Short segments of the road had been observed"
     },
     {
      "id": "l163",
-     "start": 974.56,
+     "start": 972.64,
      "end": 980.88,
      "text": "Short segments of the road had been observed by earlier explorers, Bown said, but they failed to realize its significance or follow up on their observations."
     },
@@ -7901,20 +7901,20 @@
     {
      "id": "l210",
      "start": 1321.82,
-     "end": 1350.64,
+     "end": 1334.75,
      "text": "Q20. Why did the speaker go see Dr."
     },
     {
      "id": "l211",
-     "start": 1350.64,
-     "end": 1354.76,
-     "text": "Gong?"
+     "start": 1334.8,
+     "end": 1350.59,
+     "text": "Q21. What accounts for the growing popularity of acupuncture in the United States, according to the speaker?"
     },
     {
      "id": "l212",
-     "start": 1354.76,
-     "end": 1368.54,
-     "text": "Q21. What accounts for the growing popularity of acupuncture in the United States, according to the speaker?"
+     "start": 1350.64,
+     "end": 1354.76,
+     "text": "Gong?"
     },
     {
      "id": "l213",
@@ -8728,12 +8728,12 @@
     {
      "id": "l98",
      "start": 482.77,
-     "end": 494.39,
+     "end": 487.61,
      "text": "At some 1,000 miles, the Mackenzie is the longest river in Canada."
     },
     {
      "id": "l99",
-     "start": 494.39,
+     "start": 487.66,
      "end": 496.12,
      "text": "But these waterways seem minute in comparison to the world's two lengthiest rivers-the Nile and the Amazon."
     },
@@ -14169,9 +14169,9 @@
     },
     {
      "id": "l8",
-     "start": 24.76,
-     "end": 35.37,
-     "text": "you must choose the best answer from the four choices marked A, B, C, and D."
+     "start": 29.64,
+     "end": 35.32,
+     "text": "corresponding letter on answer sheet 1 with a single line through the centre."
     },
     {
      "id": "l9",
@@ -14181,843 +14181,843 @@
     },
     {
      "id": "l10",
-     "start": 37.18,
-     "end": 40.22,
-     "text": "corresponding letter on answer sheet 1 with a single line through the centre."
-    },
-    {
-     "id": "l11",
      "start": 40.22,
      "end": 41.22,
      "text": "CONVERSATION 1"
     },
     {
-     "id": "l12",
+     "id": "l11",
      "start": 41.22,
      "end": 45.68,
      "text": "W: Wow, I would give anything to be more like Audrey Hepburn."
     },
     {
-     "id": "l13",
+     "id": "l12",
      "start": 45.68,
      "end": 50.96,
      "text": "M: I never really understood why so many girls were such big fans of her."
     },
     {
-     "id": "l14",
+     "id": "l13",
      "start": 50.96,
      "end": 58.04,
      "text": "I mean, I've seen the famous films, Roman Holiday, Breakfast At Tiffany's and a few others, but I still don't fully get it."
     },
     {
-     "id": "l15",
+     "id": "l14",
      "start": 58.04,
      "end": 63.16,
      "text": "Was she that great of an actress?"
     },
     {
-     "id": "l16",
+     "id": "l15",
      "start": 63.16,
      "end": 67.92,
      "text": "W: Well, for me, my adoration goes beyond her movies."
     },
     {
-     "id": "l17",
+     "id": "l16",
      "start": 67.92,
      "end": 71.6,
      "text": "She had such a classic elegance about her."
     },
     {
-     "id": "l18",
+     "id": "l17",
      "start": 71.6,
      "end": 80.36,
      "text": "She was always so poised, in part because she spent years training as a ballet dancer before becoming an actress."
     },
     {
-     "id": "l19",
+     "id": "l18",
      "start": 80.36,
      "end": 83.36,
      "text": "M: Why didn't she stick to dancing as a career?"
     },
     {
-     "id": "l20",
+     "id": "l19",
      "start": 83.36,
      "end": 85.24,
      "text": "W: It seems it was fate."
     },
     {
-     "id": "l21",
+     "id": "l20",
      "start": 85.24,
      "end": 90.76,
      "text": "She suffered from inadequate nutrition during the war, and therefore, a career as a professional dancer would have been too demanding on her body."
     },
     {
-     "id": "l22",
+     "id": "l21",
      "start": 90.76,
      "end": 97.64,
      "text": "So she focused on acting instead."
     },
     {
-     "id": "l23",
+     "id": "l22",
      "start": 97.64,
      "end": 102.44,
      "text": "Roman Holiday was her first big break which made her a star."
     },
     {
-     "id": "l24",
+     "id": "l23",
      "start": 102.44,
      "end": 107.46,
      "text": "M: Was that the film that opened with her shopping for jewelry in New York city?"
     },
     {
-     "id": "l25",
+     "id": "l24",
      "start": 107.46,
      "end": 108.96,
      "text": "You know, the scene she was wearing a black dress and dark sunglasses with a pearl necklace and long black gloves."
     },
     {
-     "id": "l26",
+     "id": "l25",
      "start": 108.96,
      "end": 117.74,
      "text": "I see the photo of her in that costume everywhere."
     },
     {
-     "id": "l27",
+     "id": "l26",
      "start": 117.74,
      "end": 118.88,
      "text": "W: No, that one is Breakfast At Tiffany's."
     },
     {
-     "id": "l28",
+     "id": "l27",
      "start": 118.88,
      "end": 127.82,
      "text": "That costume is often referred to as the most famous little black dress of all time."
     },
     {
-     "id": "l29",
+     "id": "l28",
      "start": 127.82,
      "end": 138.12,
      "text": "Her character in that film is very outgoing and charming, even though in real life, Audrey always described herself as shy and quiet."
     },
     {
-     "id": "l30",
+     "id": "l29",
      "start": 138.12,
      "end": 141.48,
      "text": "M: So what did she do after her acting career?"
     },
     {
-     "id": "l31",
+     "id": "l30",
      "start": 141.48,
      "end": 147.44,
      "text": "W: She dedicated much of her life to helping children in need."
     },
     {
-     "id": "l32",
+     "id": "l31",
      "start": 147.44,
      "end": 153.52,
      "text": "Her family received international aid during the war when she was growing up. I think that left a big impression on her."
     },
     {
-     "id": "l33",
+     "id": "l32",
      "start": 153.52,
      "end": 158.36,
      "text": "That's where I got the idea to volunteer for children's charity next weekend."
     },
     {
-     "id": "l34",
+     "id": "l33",
      "start": 158.36,
      "end": 159.81,
      "text": "M: I'll join you."
     },
     {
-     "id": "l35",
+     "id": "l34",
      "start": 159.86,
      "end": 167.24,
      "text": "I may not be as charming as Audrey Hepburn, but I'm all for supporting a good cause."
     },
     {
-     "id": "l36",
+     "id": "l35",
      "start": 167.24,
      "end": 172.2,
      "text": "Questions one to four are based on the conversation you have just heard."
     },
     {
-     "id": "l37",
+     "id": "l36",
      "start": 172.2,
      "end": 190.08,
      "text": "Q1. What does the man say he never really understood?"
     },
     {
-     "id": "l38",
+     "id": "l37",
      "start": 190.08,
      "end": 208.58,
      "text": "Q2. What prevented Audrey Hepburn from becoming a professional dancer?"
     },
     {
-     "id": "l39",
+     "id": "l38",
      "start": 208.58,
      "end": 226.58,
      "text": "Q3. What do we learn about Audrey Hepburn in real life?"
     },
     {
-     "id": "l40",
+     "id": "l39",
      "start": 226.58,
      "end": 233.06,
      "text": "Q4. Why did Audrey Hepburn devote much of her life to charity after her acting career?"
     },
     {
-     "id": "l41",
+     "id": "l40",
      "start": 247.44,
      "end": 248.44,
      "text": "CONVERSATION 2"
     },
     {
-     "id": "l42",
+     "id": "l41",
      "start": 248.44,
      "end": 252.46,
      "text": "W: So how is our presentation about the restructuring of the company coming along?"
     },
     {
-     "id": "l43",
+     "id": "l42",
      "start": 252.46,
      "end": 262.62,
      "text": "M: Fine, I am putting the finishing touches to it now, but we will have to be prepared for questions."
     },
     {
-     "id": "l44",
+     "id": "l43",
      "start": 262.62,
      "end": 268.1,
      "text": "W: Yes, there is already a feeling that this is a top-down change, we really need to get everyone on board."
     },
     {
-     "id": "l45",
+     "id": "l44",
      "start": 268.1,
      "end": 272.06,
      "text": "M: Well, there's been an extensive consultation period."
     },
     {
-     "id": "l46",
+     "id": "l45",
      "start": 272.06,
      "end": 277.26,
      "text": "W: I know, but there is always the feeling that if it isn't broken, don't fix it."
     },
     {
-     "id": "l47",
+     "id": "l46",
      "start": 277.26,
      "end": 279.94,
      "text": "M: People are worried about their jobs too."
     },
     {
-     "id": "l48",
+     "id": "l47",
      "start": 279.94,
      "end": 284.94,
      "text": "I think we need to stress that, while there will be some job changes, there won't be anyone"
     },
     {
-     "id": "l49",
+     "id": "l48",
      "start": 284.94,
      "end": 286.74,
      "text": "I think we need to address that while there will be some job changes, there won't be anyone getting dismissed."
     },
     {
-     "id": "l50",
+     "id": "l49",
      "start": 286.74,
      "end": 289.9,
      "text": "In fact, we are looking to take on more staff."
     },
     {
-     "id": "l51",
+     "id": "l50",
      "start": 289.9,
      "end": 290.9,
      "text": "W: Agreed."
     },
     {
-     "id": "l52",
+     "id": "l51",
      "start": 290.9,
      "end": 293.78,
      "text": "You can hardly blame people for worrying, though."
     },
     {
-     "id": "l53",
+     "id": "l52",
      "start": 293.78,
      "end": 298.46,
      "text": "We need to make it clear that it's not just change for change's sake."
     },
     {
-     "id": "l54",
+     "id": "l53",
      "start": 298.46,
      "end": 303.34,
      "text": "In other words, we really must make the case for why we are doing it."
     },
     {
-     "id": "l55",
+     "id": "l54",
      "start": 303.34,
      "end": 306.94,
      "text": "So, what's the outline of the presentation?"
     },
     {
-     "id": "l56",
+     "id": "l55",
      "start": 306.94,
      "end": 312.02,
      "text": "M: I'll start with a brief review of the reasons for the change that we really need to make a clean break to restart growth."
     },
     {
-     "id": "l57",
+     "id": "l56",
      "start": 312.02,
      "end": 321.06,
      "text": "After that, I will outline the new company structures and who is going where."
     },
     {
-     "id": "l58",
+     "id": "l57",
      "start": 321.06,
      "end": 328.78,
      "text": "Then I will hand it over to you to discuss the timeline and summarize, and we will take questions together at the end."
     },
     {
-     "id": "l59",
+     "id": "l58",
      "start": 328.78,
      "end": 329.78,
      "text": "Anything else?"
     },
     {
-     "id": "l60",
+     "id": "l59",
      "start": 329.78,
      "end": 340.02,
      "text": "W: Oh, yeah, we should let the staff know the channels of communication, you know, who they can contact or direct questions to about these changes."
     },
     {
-     "id": "l61",
+     "id": "l60",
      "start": 340.02,
      "end": 345.88,
      "text": "M: Yes, and we can collect some frequently asked questions and present some general answers."
     },
     {
-     "id": "l62",
+     "id": "l61",
      "start": 345.88,
      "end": 353.92,
      "text": "W: Hmm, and will the presentation be available on the company network?"
     },
     {
-     "id": "l63",
+     "id": "l62",
      "start": 353.92,
      "end": 357.92,
      "text": "M: Yes, we are putting it up on the website tomorrow morning, so staff can review the details themselves."
     },
     {
-     "id": "l64",
+     "id": "l63",
      "start": 362.26,
      "end": 363.06,
      "text": "W: Good."
     },
     {
-     "id": "l65",
+     "id": "l64",
      "start": 363.06,
      "end": 366.24,
      "text": "I think that will answer most of their concerns."
     },
     {
-     "id": "l66",
+     "id": "l65",
      "start": 366.24,
      "end": 371.02,
      "text": "Questions five to eight are based on the conversation you have just heard."
     },
     {
-     "id": "l67",
+     "id": "l66",
      "start": 376.99,
      "end": 391.36,
      "text": "Q5. What is the man doing now?"
     },
     {
-     "id": "l68",
+     "id": "l67",
      "start": 391.36,
      "end": 405.08,
      "text": "Q6. What does the man say about the restructuring?"
     },
     {
-     "id": "l69",
+     "id": "l68",
      "start": 405.08,
      "end": 422.24,
      "text": "Q7. What will the man explain first in the presentation?"
     },
     {
-     "id": "l70",
+     "id": "l69",
      "start": 422.24,
      "end": 431,
      "text": "Q8. How can the staff learn more about the company's restructuring?"
     },
     {
-     "id": "l71",
+     "id": "l70",
      "start": 431,
      "end": 443.5,
      "text": "Section B, directions."
     },
     {
-     "id": "l72",
+     "id": "l71",
      "start": 443.5,
      "end": 446.88,
      "text": "In this section, you will hear two passages. At the end of each"
     },
     {
-     "id": "l73",
+     "id": "l72",
      "start": 446.88,
      "end": 449.42,
      "text": "passage, you will hear three or four questions."
     },
     {
-     "id": "l74",
+     "id": "l73",
      "start": 449.42,
      "end": 451.68,
      "text": "Both the passage and the questions will be"
     },
     {
-     "id": "l75",
+     "id": "l74",
      "start": 451.68,
      "end": 453.5,
      "text": "spoken only once."
     },
     {
-     "id": "l76",
-     "start": 453.5,
-     "end": 461.2,
-     "text": "After you hear a question, you must choose the best answer from the four"
-    },
-    {
-     "id": "l77",
-     "start": 461.2,
-     "end": 463.83,
-     "text": "choices marked A, B, C, and D."
-    },
-    {
-     "id": "l78",
-     "start": 463.83,
-     "end": 469,
-     "text": "Then mark the corresponding letter on answer sheet one with"
-    },
-    {
-     "id": "l79",
+     "id": "l75",
      "start": 469,
      "end": 471.52,
      "text": "a single line through the centre."
     },
     {
-     "id": "l80",
+     "id": "l76",
      "start": 471.52,
      "end": 473.08,
      "text": "PASSAGE 1"
     },
     {
-     "id": "l81",
+     "id": "l77",
      "start": 473.08,
      "end": 485.32,
      "text": "Airline passengers have to deal with a lot these days, getting bumped from flights and losing luggage on top of the general anxiety that nervous passengers always feel."
     },
     {
-     "id": "l82",
+     "id": "l78",
      "start": 485.32,
      "end": 491.44,
      "text": "At the Cincinnati/Northern Kentucky International Airport, miniature horses deliver a calming force two times a month."
     },
     {
-     "id": "l83",
+     "id": "l79",
      "start": 491.44,
      "end": 502.68,
      "text": "Denver and Ruby are two of the 34 therapy horses brought in from a local farm."
     },
     {
-     "id": "l84",
+     "id": "l80",
      "start": 502.68,
      "end": 508.8,
      "text": "They can usually be found in the ticket counter area interacting with travelers."
     },
     {
-     "id": "l85",
+     "id": "l81",
      "start": 508.8,
      "end": 514.28,
      "text": "More than 30 airports across the country now have therapy dogs."
     },
     {
-     "id": "l86",
+     "id": "l82",
      "start": 514.28,
      "end": 517.23,
      "text": "San Francisco has a therapy pig."
     },
     {
-     "id": "l87",
+     "id": "l83",
      "start": 517.28,
      "end": 532.26,
      "text": "San Jose, California, began a dog program after the terrorist attacks of September 11. Since its beginning, the program has now grown and has 21 therapy dogs and a therapy cat."
     },
     {
-     "id": "l88",
+     "id": "l84",
      "start": 532.26,
      "end": 537.96,
      "text": "The animals don't get startled."
     },
     {
-     "id": "l89",
+     "id": "l85",
      "start": 537.96,
      "end": 544.72,
      "text": "They have had hundreds of hours of airport training, so they are used to having luggage and people crowding around them."
     },
     {
-     "id": "l90",
+     "id": "l86",
      "start": 544.72,
      "end": 550.16,
      "text": "These professional animals are probably better at finding their way in the airports than the most frequent of travelers."
     },
     {
-     "id": "l91",
+     "id": "l87",
      "start": 550.16,
      "end": 556.72,
      "text": "The passengers often say that seeing animals makes them feel much better and helps them to calm down before a flight."
     },
     {
-     "id": "l92",
+     "id": "l88",
      "start": 556.72,
      "end": 569.44,
      "text": "This little bit of support can sometimes make a big difference."
     },
     {
-     "id": "l93",
+     "id": "l89",
      "start": 569.44,
      "end": 575.92,
      "text": "Some passengers enjoy the animals so much that they call the airport to schedule flights around their visits."
     },
     {
-     "id": "l94",
+     "id": "l90",
      "start": 575.92,
      "end": 582.28,
      "text": "Visits to nursing homes and schools are also a regular part of the horses' schedule."
     },
     {
-     "id": "l95",
+     "id": "l91",
      "start": 582.28,
      "end": 592.16,
      "text": "Their owner is already working on a new idea for a therapy animal--donkeys."
     },
     {
-     "id": "l96",
+     "id": "l92",
      "start": 593.12,
      "end": 599.12,
      "text": "Q9. What is special about the Cincinnati/Northern Kentucky International Airport?"
     },
     {
-     "id": "l97",
+     "id": "l93",
      "start": 612.4,
      "end": 618.32,
      "text": "Q10. What are the therapy animals at the airport trained to do?"
     },
     {
-     "id": "l98",
+     "id": "l94",
      "start": 623.12,
      "end": 648.66,
      "text": "Q11. What do some passengers do to see the therapy animals?"
     },
     {
-     "id": "l99",
+     "id": "l95",
      "start": 648.66,
      "end": 649.46,
      "text": "PASSAGE 2"
     },
     {
-     "id": "l100",
+     "id": "l96",
      "start": 649.46,
      "end": 655.14,
      "text": "Hello, viewers."
     },
     {
-     "id": "l101",
+     "id": "l97",
      "start": 655.14,
      "end": 662.85,
      "text": "Today I'm standing at a two-thousand-year-old Roman-era site. Here the brightly colored scenes that once decorated a mansion are being dug up."
     },
     {
-     "id": "l102",
+     "id": "l98",
      "start": 662.85,
      "end": 668.58,
      "text": "These scenes are turning up in the southern French city of Arles, surprising the historians who have been working here since 2014."
     },
     {
-     "id": "l103",
+     "id": "l99",
      "start": 668.58,
      "end": 681.1,
      "text": "Patches of paint still cling to the stone walls of the bedroom and reception hall."
     },
     {
-     "id": "l104",
+     "id": "l100",
      "start": 681.1,
      "end": 686.33,
      "text": "Some of these painted walls are preserved in places to a height of one meter."
     },
     {
-     "id": "l105",
+     "id": "l101",
      "start": 686.33,
      "end": 688.02,
      "text": "In addition, thousands of fragments that fell off the walls have been recovered."
     },
     {
-     "id": "l106",
+     "id": "l102",
      "start": 688.02,
      "end": 701.9,
      "text": "These pieces have been put back together with great care and display a variety of images."
     },
     {
-     "id": "l107",
+     "id": "l103",
      "start": 701.9,
      "end": 709.02,
      "text": "Some of these images include figures never seen before in France, such as a woman playing a stringed instrument, possibly a character from mythology."
     },
     {
-     "id": "l108",
+     "id": "l104",
      "start": 709.02,
      "end": 714.86,
      "text": "The paintings were done with such skill and with such expensive dyes that experts believe the artist originally came from Italy."
     },
     {
-     "id": "l109",
+     "id": "l105",
      "start": 714.86,
      "end": 718.66,
      "text": "the artists originally came from Italy."
     },
     {
-     "id": "l110",
+     "id": "l106",
      "start": 718.66,
      "end": 722.26,
      "text": "They were likely hired by one of the city's elite, perhaps a Roman official wanted to make his home more beautiful, or maybe a wealthy local wanted to show off his worldly sophistication."
     },
     {
-     "id": "l111",
+     "id": "l107",
      "start": 742.8,
      "end": 754.1,
      "text": "The paintings may yield even more stunning surprises as additional sections are put together, like pieces of a puzzle."
     },
     {
-     "id": "l112",
+     "id": "l108",
      "start": 754.1,
      "end": 760.42,
      "text": "Whoever it was that created such magnificent pieces of art, they surely had no idea that their work would still be around thousands of years later."
     },
     {
-     "id": "l113",
+     "id": "l109",
      "start": 765.76,
      "end": 770.96,
      "text": "Questions 12-15 are based on the passage you have just heard."
     },
     {
-     "id": "l114",
+     "id": "l110",
      "start": 775.71,
      "end": 790.29,
      "text": "Q12. Where is the speaker standing?"
     },
     {
-     "id": "l115",
+     "id": "l111",
      "start": 790.29,
      "end": 809.9,
      "text": "Q13. What have the historians found after putting the fragments together?"
     },
     {
-     "id": "l116",
+     "id": "l112",
      "start": 809.9,
      "end": 832.18,
      "text": "Q14. What impresses the experts about the paintings?"
     },
     {
-     "id": "l117",
+     "id": "l113",
      "start": 832.18,
      "end": 848.07,
      "text": "Q15. What do we learn about the artist who created the paintings?"
     },
     {
-     "id": "l118",
+     "id": "l114",
      "start": 848.07,
      "end": 848.87,
      "text": "Section C."
     },
     {
-     "id": "l119",
+     "id": "l115",
      "start": 848.87,
      "end": 849.95,
      "text": "Directions."
     },
     {
-     "id": "l120",
+     "id": "l116",
      "start": 849.95,
      "end": 854.48,
      "text": "In this section you will hear three recordings"
     },
     {
-     "id": "l121",
-     "start": 854.48,
-     "end": 857.69,
+     "id": "l117",
+     "start": 854.5,
+     "end": 857.64,
      "text": "of lectures or talks, followed by three or four questions. The recordings will be played only once."
     },
     {
-     "id": "l122",
+     "id": "l118",
      "start": 857.69,
-     "end": 864.82,
+     "end": 859.95,
      "text": "After you hear a question, you must choose the best answer from the four"
     },
     {
-     "id": "l123",
-     "start": 864.82,
-     "end": 877.46,
+     "id": "l119",
+     "start": 864.8,
+     "end": 873.3,
+     "text": "choices marked A, B, C, and D."
+    },
+    {
+     "id": "l120",
+     "start": 873.4,
+     "end": 875.7,
+     "text": "a single line through the centre."
+    },
+    {
+     "id": "l121",
+     "start": 875.8,
+     "end": 877.4,
      "text": "RECORDING 1"
     },
     {
-     "id": "l124",
+     "id": "l122",
      "start": 877.46,
      "end": 878.26,
      "text": "Good afternoon, class."
     },
     {
-     "id": "l125",
+     "id": "l123",
      "start": 878.26,
-     "end": 885.22,
+     "end": 884.4,
      "text": "Today I want to discuss with you a new approach to empirical research."
     },
     {
-     "id": "l126",
+     "id": "l124",
+     "start": 884.5,
+     "end": 885.17,
+     "text": "In the past, scientists often worked"
+    },
+    {
+     "id": "l125",
      "start": 885.22,
      "end": 888.16,
      "text": "choices marked A, B, C, and D."
     },
     {
-     "id": "l127",
+     "id": "l126",
      "start": 888.16,
-     "end": 893.84,
+     "end": 888.75,
      "text": "Then mark the corresponding letter on answer sheet 1, with"
     },
     {
+     "id": "l127",
+     "start": 888.8,
+     "end": 894.8,
+     "text": "were confined to the university or research center where they worked."
+    },
+    {
      "id": "l128",
-     "start": 893.84,
-     "end": 907.16,
-     "text": "a single line through the centre. In the past, scientists often worked alone."
+     "start": 894.9,
+     "end": 905.4,
+     "text": "Today, though, we are seeing mergers of some of the greatest scientific minds, regardless of their location. There has never been a better time for collaborations with foreign scientists."
     },
     {
      "id": "l129",
-     "start": 907.16,
-     "end": 909.96,
-     "text": "They were confined to the university or research center where they worked. Today, though, we are seeing mergers of some of the greatest scientific minds, regardless of their location. There has never been a better time for collaborations with foreign scientists."
-    },
-    {
-     "id": "l130",
      "start": 909.96,
      "end": 913.22,
      "text": "In fact, the European Union is taking the lead."
     },
     {
-     "id": "l131",
+     "id": "l130",
      "start": 913.22,
      "end": 925.98,
      "text": "Spurred on by funding policies, half of European research articles had international co-authors in 2007, this is more than twice the level of two decades ago."
     },
     {
-     "id": "l132",
+     "id": "l131",
      "start": 925.98,
      "end": 931.78,
      "text": "The European Union's level of international co-authorship is about twice that of the United States, Japan, and India."
     },
     {
-     "id": "l133",
+     "id": "l132",
      "start": 931.78,
      "end": 940.6,
      "text": "Even so, the levels in these countries are also rising."
     },
     {
-     "id": "l134",
+     "id": "l133",
      "start": 940.6,
      "end": 948.94,
      "text": "This is a sign of the continued allure of creating scientific coalitions across borders."
     },
     {
-     "id": "l135",
+     "id": "l134",
      "start": 948.94,
      "end": 954.78,
      "text": "Andrew Schubert, a researcher at the Institute for Science Policy Research, says that the rising collaboration is partly out of necessity."
     },
     {
-     "id": "l136",
+     "id": "l135",
      "start": 954.78,
      "end": 963.58,
      "text": "This necessity comes with the rise of big science."
     },
     {
-     "id": "l137",
+     "id": "l136",
      "start": 963.58,
      "end": 967.74,
      "text": "Many scientific endeavors have become more complicated."
     },
     {
-     "id": "l138",
+     "id": "l137",
      "start": 967.74,
      "end": 973.1,
      "text": "These new complications require the money and labor of many nations."
     },
     {
-     "id": "l139",
+     "id": "l138",
      "start": 973.1,
      "end": 980.86,
      "text": "But he says collaborations have also emerged because of increased possibilities: the Internet allows like-minded scientists to find each other."
     },
     {
-     "id": "l140",
+     "id": "l139",
      "start": 980.86,
      "end": 995.38,
      "text": "Simultaneously, dramatic drops in communication costs ease long-distance interactions, and there's a reward."
     },
     {
-     "id": "l141",
+     "id": "l140",
      "start": 995.38,
      "end": 1002.66,
      "text": "Studies of citation counts show that internationally co-authored papers have better visibility and are likely to be cited more often than papers written by a single researcher."
     },
     {
-     "id": "l142",
+     "id": "l141",
      "start": 1002.66,
      "end": 1084.61,
      "text": "However, there are challenges. For example, different countries have different regulations regarding intellectual property rights."
     },
     {
-     "id": "l143",
+     "id": "l142",
      "start": 1084.61,
      "end": 1091.66,
      "text": "Also, language barriers can sometimes make communication difficult."
     },
     {
-     "id": "l144",
+     "id": "l143",
      "start": 1091.66,
      "end": 1099.3,
      "text": "But despite these challenges, the trend towards international collaboration in science is clearly growing."
     },
     {
-     "id": "l145",
+     "id": "l144",
      "start": 1099.3,
      "end": 1104.74,
      "text": "Questions 16 to 18 are based on the recording you have just heard."
     },
     {
-     "id": "l146",
+     "id": "l145",
      "start": 1104.74,
      "end": 1106.54,
      "text": "Questions 16. What do"
     },
     {
-     "id": "l147",
+     "id": "l146",
      "start": 1106.54,
      "end": 1124.34,
      "text": "we learn about the research funding policies in the European Union?"
     },
     {
-     "id": "l148",
+     "id": "l147",
      "start": 1124.34,
      "end": 1143.48,
      "text": "Questions 17. Why do researchers today favor international collaboration?"
     },
     {
-     "id": "l149",
+     "id": "l148",
      "start": 1143.48,
-     "end": 1161.44,
+     "end": 1150.05,
      "text": "Q16. What do we learn about the European Union's scientific research?"
+    },
+    {
+     "id": "l149",
+     "start": 1150.1,
+     "end": 1162.64,
+     "text": "In 1959, on the day that I was born, a headline in Life magazine proclaimed \"Target Venus: There May be Life There!"
     },
     {
      "id": "l150",
@@ -15045,264 +15045,258 @@
     },
     {
      "id": "l154",
-     "start": 1170.08,
-     "end": 1176.32,
-     "text": "In 1959, on the day that I was born, a headline in Life magazine proclaimed \"Target Venus: There May be Life There!"
-    },
-    {
-     "id": "l155",
      "start": 1176.32,
      "end": 1182.72,
      "text": "\" It told of how scientists rode a balloon to an altitude of 80,000 feet to make telescope observations of Venus's atmosphere, and how their discovery of water raised hopes that there could be living things there."
     },
     {
-     "id": "l156",
-     "start": 1182.72,
+     "id": "l155",
+     "start": 1202.28,
      "end": 1207.72,
      "text": "For many of my generation, Venus was the ultimate symbol of romance."
     },
     {
-     "id": "l157",
+     "id": "l156",
      "start": 1207.72,
      "end": 1213.75,
      "text": "It was the brightest object in the night sky, except for the moon."
     },
     {
-     "id": "l158",
+     "id": "l157",
      "start": 1213.75,
      "end": 1226.57,
      "text": "And it was often called the Earth's twin because it's about the same size and mass as our planet."
     },
     {
-     "id": "l159",
+     "id": "l158",
      "start": 1226.57,
      "end": 1229.96,
      "text": "But as we've learned more about Venus, that romantic image has faded. Today, we know that Venus is a hellish place."
     },
     {
-     "id": "l160",
+     "id": "l159",
      "start": 1229.96,
      "end": 1235.12,
      "text": "Its surface temperature is hot enough to melt lead. Its atmosphere is 96% carbon dioxide, with clouds of sulfuric acid. The atmospheric pressure at the surface is 92 times that of Earth."
     },
     {
-     "id": "l161",
+     "id": "l160",
      "start": 1235.12,
      "end": 1238.41,
      "text": "But despite all this, there are still some scientists who believe that Venus could have been a habitable planet in the past. Recent studies suggest that Venus may have had a shallow ocean of liquid water on its surface for billions of years. It may have had a climate similar to Earth's, with temperatures that were comfortable for life."
     },
     {
-     "id": "l162",
+     "id": "l161",
      "start": 1238.41,
      "end": 1270.76,
      "text": "But something happened about 700 million years ago that caused a runaway greenhouse effect."
     },
     {
-     "id": "l163",
+     "id": "l162",
      "start": 1270.76,
      "end": 1279.49,
      "text": "The planet's surface temperature rose dramatically, and the oceans evaporated. Scientists are now planning new missions to Venus to learn more about its history."
     },
     {
-     "id": "l164",
+     "id": "l163",
      "start": 1279.49,
      "end": 1349.26,
      "text": "They want to find out if there really was life on Venus, and if so, what happened to it."
     },
     {
-     "id": "l165",
+     "id": "l164",
      "start": 1349.26,
      "end": 1378.33,
      "text": "These missions could also help us better understand the effects of climate change on our own planet."
     },
     {
-     "id": "l166",
+     "id": "l165",
      "start": 1378.33,
      "end": 1391.54,
      "text": "Q19. What did the Life magazine headline say about Venus in 1959?"
     },
     {
-     "id": "l167",
+     "id": "l166",
      "start": 1391.54,
      "end": 1392.34,
      "text": "Q20. Why was Venus once called the Earth's twin?"
     },
     {
-     "id": "l168",
+     "id": "l167",
      "start": 1392.34,
      "end": 1416.02,
      "text": "Question 21. What information did Russian and American space probes provide about Venus?"
     },
     {
-     "id": "l169",
+     "id": "l168",
      "start": 1416.02,
      "end": 1416.82,
      "text": "Question 20. What are scientists' findings about Venus?"
     },
     {
-     "id": "l170",
+     "id": "l169",
      "start": 1416.82,
      "end": 1417.62,
      "text": "Q21. What do some scientists believe about Venus?"
     },
     {
-     "id": "l171",
+     "id": "l170",
      "start": 1417.62,
      "end": 1418.54,
      "text": "RECORDING 3"
     },
     {
-     "id": "l172",
+     "id": "l171",
      "start": 1418.54,
      "end": 1424.26,
      "text": "I'm a psychology professor at the University of British Columbia."
     },
     {
-     "id": "l173",
+     "id": "l172",
      "start": 1424.26,
      "end": 1440.1,
      "text": "I specialize in cultural psychology, examining similarities and differences between East Asians and North Americans."
     },
     {
-     "id": "l174",
+     "id": "l173",
      "start": 1440.1,
      "end": 1445.94,
      "text": "Our research team has been looking at cultural differences in self-enhancing motivation, helping people have positive feelings towards not only themselves but things connected to themselves."
     },
     {
-     "id": "l175",
+     "id": "l174",
      "start": 1445.94,
      "end": 1453.3,
      "text": "For example, when you own something, you view it as more valuable than when you don't own it."
     },
     {
-     "id": "l176",
+     "id": "l175",
      "start": 1453.3,
      "end": 1460.34,
      "text": "It's called the endowment effect."
     },
     {
-     "id": "l177",
+     "id": "l176",
      "start": 1460.34,
      "end": 1467.62,
      "text": "The strength of that effect is stronger in Western cultures than in East Asian cultures."
     },
     {
-     "id": "l178",
+     "id": "l177",
      "start": 1467.62,
      "end": 1474.02,
      "text": "So we've been looking at other ways of seeing whether this motivation to view oneself positively is shaped by cultural experiences."
     },
     {
-     "id": "l179",
+     "id": "l178",
      "start": 1475.46,
      "end": 1482.02,
      "text": "We've also started to look at how culture shapes sleep."
     },
     {
-     "id": "l180",
+     "id": "l179",
      "start": 1482.02,
      "end": 1489.62,
      "text": "We are still in the exploratory stages of this project, although what's noteworthy is that East Asians on average sleep about an hour and a half less each night than North Americans do."
     },
     {
-     "id": "l181",
+     "id": "l180",
      "start": 1489.62,
      "end": 1503.04,
      "text": "And it's not a more efficient sleep, not like they're compressing relatively more value out of their hours."
     },
     {
-     "id": "l182",
+     "id": "l181",
      "start": 1503.04,
      "end": 1510.18,
      "text": "Studies have found that even infants in East Asia sleep about an hour less than European infants."
     },
     {
-     "id": "l183",
+     "id": "l182",
      "start": 1510.18,
      "end": 1516.3,
      "text": "So we're trying to figure out how culture shapes the way you sleep."
     },
     {
-     "id": "l184",
+     "id": "l183",
      "start": 1516.3,
      "end": 1523.66,
      "text": "Our experiment does not take place in a sleep lab."
     },
     {
-     "id": "l185",
+     "id": "l184",
      "start": 1523.66,
      "end": 1529.58,
      "text": "Instead, we lend people motion-detecting watches and they wear them for a week at a time, whenever they are not having a shower or swimming."
     },
     {
-     "id": "l186",
+     "id": "l185",
      "start": 1532.39,
      "end": 1538.23,
      "text": "These watches record movement, so we can determine when someone is asleep and when they're awake."
     },
     {
-     "id": "l187",
+     "id": "l186",
      "start": 1538.23,
      "end": 1549.18,
      "text": "We also ask people to keep sleep diaries, where they write down when they go to bed and when they wake up."
     },
     {
-     "id": "l188",
+     "id": "l187",
      "start": 1549.18,
      "end": 1558.78,
      "text": "So far, our results suggest that cultural differences in sleep are real."
     },
     {
-     "id": "l189",
+     "id": "l188",
      "start": 1558.78,
      "end": 1574.99,
      "text": "But we still don't know exactly why these differences exist."
     },
     {
-     "id": "l190",
+     "id": "l189",
      "start": 1574.99,
      "end": 1592.62,
      "text": "Is it because of differences in work schedules?"
     },
     {
-     "id": "l191",
+     "id": "l190",
      "start": 1592.62,
      "end": 1595.64,
      "text": "Or is it because of differences in family structures?"
     },
     {
-     "id": "l192",
+     "id": "l191",
      "start": 1595.64,
      "end": 1598.48,
      "text": "Questions 22 to 25 are based on the recording you have just heard."
     },
     {
-     "id": "l193",
+     "id": "l192",
      "start": 1598.48,
      "end": 1599.62,
      "text": "We hope to answer these questions in future studies."
     },
     {
-     "id": "l194",
+     "id": "l193",
      "start": 1599.62,
      "end": 1614.1,
      "text": "Q22. What is the speaker's area of specialization?"
     },
     {
-     "id": "l195",
+     "id": "l194",
      "start": 1615.86,
      "end": 1636.86,
      "text": "Q23. What do we learn about East Asians' sleep compared to North Americans'?"
     },
     {
-     "id": "l196",
+     "id": "l195",
      "start": 1636.86,
      "end": 1654.45,
-     "text": "Q24. How does the speaker's team conduct their sleep research?"
+     "text": "Question 24. How did the speaker conduct the sleep study?"
     },
     {
-     "id": "l197",
+     "id": "l196",
      "start": 1654.45,
      "end": 1670.88,
      "text": "Q25. What does the speaker say about their sleep research?"
@@ -22363,20 +22357,20 @@
     {
      "id": "l1",
      "start": 7.63,
-     "end": 15.08,
+     "end": 10.11,
      "text": "Section A."
     },
     {
      "id": "l2",
-     "start": 15.08,
-     "end": 15.58,
-     "text": "Directions."
+     "start": 10.16,
+     "end": 15.03,
+     "text": "In this section you will hear two long conversations. At the end of"
     },
     {
      "id": "l3",
-     "start": 15.58,
-     "end": 15.97,
-     "text": "In this section you will hear two long conversations. At the end of"
+     "start": 15.08,
+     "end": 15.58,
+     "text": "Directions."
     },
     {
      "id": "l4",
@@ -22585,26 +22579,26 @@
     {
      "id": "l38",
      "start": 226.9,
-     "end": 235.67,
+     "end": 232.09,
      "text": "W: How do you feel about the future of artificial intelligence?"
     },
     {
      "id": "l39",
-     "start": 235.67,
-     "end": 240.5,
+     "start": 232.14,
+     "end": 235.19,
      "text": "Personally, I feel quite optimistic about it. M: AI?"
     },
     {
      "id": "l40",
-     "start": 240.5,
-     "end": 243,
-     "text": "I'm not so optimistic actually."
+     "start": 235.24,
+     "end": 240.45,
+     "text": "In fact, it's something we should be concerned about."
     },
     {
      "id": "l41",
-     "start": 243,
-     "end": 246.78,
-     "text": "In fact, it's something we should be concerned about."
+     "start": 240.5,
+     "end": 243,
+     "text": "I'm not so optimistic actually."
     },
     {
      "id": "l42",
@@ -23335,12 +23329,12 @@
     {
      "id": "l163",
      "start": 1097.38,
-     "end": 1102.27,
+     "end": 1100.03,
      "text": "How many miles do you think you'd claim in your expense report?"
     },
     {
      "id": "l164",
-     "start": 1105.22,
+     "start": 1100.08,
      "end": 1110.13,
      "text": "The scientists asked this exact question as part of the study we're discussing today."
     },
@@ -25757,12 +25751,12 @@
     {
      "id": "l125",
      "start": 880.48,
-     "end": 886.08,
+     "end": 882.67,
      "text": "In this section you will hear three recordings of lectures or talks, followed by three or"
     },
     {
      "id": "l126",
-     "start": 886.08,
+     "start": 882.72,
      "end": 889.08,
      "text": "four questions. The recordings will be played only once."
     },
@@ -26374,26 +26368,26 @@
     {
      "id": "l5",
      "start": 26.07,
-     "end": 32.22,
+     "end": 31.65,
      "text": "Both the conversation and the questions will be spoken only once."
     },
     {
      "id": "l6",
+     "start": 31.7,
+     "end": 32.17,
+     "text": "Then mark the corresponding letter on answer sheet 1, with a single line"
+    },
+    {
+     "id": "l7",
      "start": 32.22,
      "end": 38.06,
      "text": "After you hear a question, you must choose the best answer, from the four choices marked"
     },
     {
-     "id": "l7",
+     "id": "l8",
      "start": 38.06,
      "end": 39.52,
      "text": "A, B, C, and D."
-    },
-    {
-     "id": "l8",
-     "start": 39.52,
-     "end": 46.54,
-     "text": "Then mark the corresponding letter on answer sheet 1, with a single line"
     },
     {
      "id": "l9",
@@ -27298,26 +27292,26 @@
     {
      "id": "l159",
      "start": 1364.16,
-     "end": 1364.96,
+     "end": 1364.75,
      "text": "At best, if the major causes of death in developed countries were eliminated, this would only add a decade to average life expectancy."
     },
     {
      "id": "l160",
+     "start": 1364.8,
+     "end": 1364.91,
+     "text": "Question 19. What do we learn about the possible reason why women tend to live longer?"
+    },
+    {
+     "id": "l161",
      "start": 1364.96,
      "end": 1384.27,
      "text": "But while there is money available to be spent on it, the search to understand the secrets of ageing will be ongoing."
     },
     {
-     "id": "l161",
+     "id": "l162",
      "start": 1384.32,
      "end": 1389.02,
-     "text": "Question 20. Question What is the recent discovery about human cells?"
-    },
-    {
-     "id": "l162",
-     "start": 1389.07,
-     "end": 1389.87,
-     "text": "Q19. What do we learn about the possible reason why women tend to live longer?"
+     "text": "Question 20. What is the recent discovery about human cells?"
     },
     {
      "id": "l163",
@@ -31656,20 +31650,20 @@
     {
      "id": "l21",
      "start": 105.92,
-     "end": 119.12,
+     "end": 115.99,
      "text": "M: I'm always amazed at how much my expenses add up, but designating each item as an income or an expense really helps me have a much better sense of all my spending."
     },
     {
      "id": "l22",
-     "start": 119.12,
-     "end": 119.92,
-     "text": "W: Right."
+     "start": 116.04,
+     "end": 119.07,
+     "text": "Most people have no idea how much they spend each day, let alone each week or month, no matter how careful they are."
     },
     {
      "id": "l23",
-     "start": 123.41,
-     "end": 123.59,
-     "text": "Most people have no idea how much they spend each day, let alone each week or month, no matter how careful they are."
+     "start": 119.12,
+     "end": 119.92,
+     "text": "W: Right."
     },
     {
      "id": "l24",
@@ -33581,20 +33575,20 @@
     {
      "id": "l118",
      "start": 862.98,
-     "end": 875.26,
+     "end": 868.81,
      "text": "must choose the best answer from the four choices marked A, B, C, and D."
     },
     {
      "id": "l119",
-     "start": 875.26,
-     "end": 877.48,
-     "text": "Then mark the"
+     "start": 868.86,
+     "end": 875.21,
+     "text": "corresponding letter on answer sheet 1 with a single line through the center."
     },
     {
      "id": "l120",
-     "start": 877.48,
-     "end": 880.18,
-     "text": "corresponding letter on answer sheet 1 with a single line through the center."
+     "start": 875.26,
+     "end": 877.48,
+     "text": "Then mark the"
     },
     {
      "id": "l121",
@@ -34031,20 +34025,20 @@
     {
      "id": "l193",
      "start": 1530.64,
-     "end": 1580.26,
+     "end": 1561.05,
      "text": "Whether or not your wish comes true after tossing a coin into a fountain, you can rest assured knowing that the change is likely going to someone who needs it."
     },
     {
      "id": "l194",
-     "start": 1580.26,
-     "end": 1581.06,
-     "text": "Q22. What problem might be caused by the growing piles of coins in fountains?"
+     "start": 1561.1,
+     "end": 1580.21,
+     "text": "Q23. What does the speaker say about the coins collected from New York City's park fountains?"
     },
     {
      "id": "l195",
-     "start": 1581.06,
-     "end": 1595.1,
-     "text": "Q23. What does the speaker say about the coins collected from New York City's park fountains?"
+     "start": 1580.26,
+     "end": 1581.06,
+     "text": "Q22. What problem might be caused by the growing piles of coins in fountains?"
     },
     {
      "id": "l196",
@@ -36871,2203 +36865,1323 @@
    "transcript_json": [
     {
      "id": "l1",
-     "end": 8,
-     "text": "Section A - Directions",
      "start": 5.7,
-     "answers": [],
-     "keywords": [],
-     "translation": "Section A - Directions",
-     "translations": {}
+     "end": 8,
+     "text": "Section A - Directions"
     },
     {
      "id": "l2",
-     "end": 11.8,
-     "text": "In this section, you will hear two long conversations.",
      "start": 8,
-     "answers": [],
-     "keywords": [],
-     "translation": "在本部分，你将听到两段长对话。",
-     "translations": {}
+     "end": 11.8,
+     "text": "In this section, you will hear two long conversations."
     },
     {
      "id": "l3",
-     "end": 15.8,
-     "text": "At the end of each conversation, you will hear four questions.",
      "start": 11.8,
-     "answers": [],
-     "keywords": [],
-     "translation": "每段对话结束后，你将听到四个问题。",
-     "translations": {}
+     "end": 15.8,
+     "text": "At the end of each conversation, you will hear four questions."
     },
     {
      "id": "l4",
-     "end": 20.4,
-     "text": "Both the conversation and the questions will be spoken only once.",
      "start": 15.8,
-     "answers": [],
-     "keywords": [],
-     "translation": "对话和问题都只播放一遍。",
-     "translations": {}
+     "end": 20.4,
+     "text": "Both the conversation and the questions will be spoken only once."
     },
     {
      "id": "l5",
-     "end": 28.1,
-     "text": "After you hear a question, you must choose the best answer from the four choices marked A, B, C and D.",
      "start": 20.4,
-     "answers": [],
-     "keywords": [],
-     "translation": "听完问题后，你必须从标有 A、B、C、D 的四个选项中选出最佳答案。",
-     "translations": {}
+     "end": 28.1,
+     "text": "After you hear a question, you must choose the best answer from the four choices marked A, B, C and D."
     },
     {
      "id": "l6",
-     "end": 34.8,
-     "text": "Then mark the corresponding letter on answer sheet 1 with a single line through the centre.",
      "start": 28.1,
-     "answers": [],
-     "keywords": [],
-     "translation": "然后在答题卡1上用一条横线划过中间标出对应的字母。",
-     "translations": {}
+     "end": 34.8,
+     "text": "Then mark the corresponding letter on answer sheet 1 with a single line through the centre."
     },
     {
      "id": "l7",
-     "end": 36.9,
-     "text": "CONVERSATION 1",
      "start": 34.8,
-     "answers": [],
-     "keywords": [],
-     "translation": "CONVERSATION 1",
-     "translations": {}
+     "end": 36.9,
+     "text": "CONVERSATION 1"
     },
     {
      "id": "l8",
-     "end": 39.4,
-     "text": "M: Hi Lily, how's the new apartment?",
      "start": 36.9,
-     "answers": [],
-     "keywords": [],
-     "translation": "M: 你好，莉莉，新公寓怎么样？",
-     "translations": {}
+     "end": 39.4,
+     "text": "M: Hi Lily, how's the new apartment?"
     },
     {
      "id": "l9",
-     "end": 40.7,
-     "text": "W: It's okay.",
      "start": 39.4,
-     "answers": [],
-     "keywords": [],
-     "translation": "W: 还行吧。",
-     "translations": {}
+     "end": 40.7,
+     "text": "W: It's okay."
     },
     {
      "id": "l10",
-     "end": 41.2,
-     "text": "M: What?",
      "start": 40.7,
-     "answers": [],
-     "keywords": [],
-     "translation": "M: 什么？",
-     "translations": {}
+     "end": 41.2,
+     "text": "M: What?"
     },
     {
      "id": "l11",
-     "end": 49.1,
-     "text": "How can it be just okay when last week you were thrilled about the place and kept posting photos of it online?",
      "start": 41.2,
-     "answers": [],
-     "keywords": [],
-     "translation": "上周你还对那个地方兴奋不已，不停在网上晒照片，怎么会只是还行？",
-     "translations": {}
+     "end": 49.1,
+     "text": "How can it be just okay when last week you were thrilled about the place and kept posting photos of it online?"
     },
     {
      "id": "l12",
-     "end": 56,
-     "text": "W: Well, last week when I moved in, the apartment seemed cozy, just the right size for one person.",
      "start": 49.1,
-     "answers": [],
-     "keywords": [],
-     "translation": "W: 唉，上周刚搬进来的时候，公寓显得温馨舒适，对一个人来说大小正合适。",
-     "translations": {}
+     "end": 56,
+     "text": "W: Well, last week when I moved in, the apartment seemed cozy, just the right size for one person."
     },
     {
      "id": "l13",
-     "end": 60.7,
-     "text": "But now it just seems tiny, shabby and solitary.",
      "start": 56,
-     "answers": [],
-     "keywords": [],
-     "translation": "但现在它看起来又小又破又冷清。",
-     "translations": {}
+     "end": 60.7,
+     "text": "But now it just seems tiny, shabby and solitary."
     },
     {
      "id": "l14",
-     "end": 63.3,
-     "text": "M: Ah that's the problem.",
      "start": 60.7,
-     "answers": [],
-     "keywords": [],
-     "translation": "M: 啊，问题就在这儿。",
-     "translations": {}
+     "end": 63.3,
+     "text": "M: Ah that's the problem."
     },
     {
      "id": "l15",
-     "end": 66.6,
-     "text": "You miss your roommates from university, don't you?",
      "start": 63.3,
-     "answers": [],
-     "keywords": [],
-     "translation": "你想念大学时的室友了，是不是？",
-     "translations": {}
+     "end": 66.6,
+     "text": "You miss your roommates from university, don't you?"
     },
     {
      "id": "l16",
-     "end": 82.7,
-     "text": "W: I'm going to sound like an idiot because I used to complain to you all the time about how crowded our dormitory room was, and about all the things they did to irritate me, like watching movies late at night without headphones, or talking loudly early in the morning.",
      "start": 66.6,
-     "answers": [],
-     "keywords": [],
-     "translation": "W: 我这么说会显得很傻，因为我以前老是向你抱怨宿舍房间多么拥挤，抱怨她们怎么招我烦，比如深夜不带耳机看电影，或者一大早大声说话。",
-     "translations": {}
+     "end": 82.7,
+     "text": "W: I'm going to sound like an idiot because I used to complain to you all the time about how crowded our dormitory room was, and about all the things they did to irritate me, like watching movies late at night without headphones, or talking loudly early in the morning."
     },
     {
      "id": "l17",
-     "end": 85.1,
-     "text": "But now I miss them terribly.",
      "start": 82.7,
-     "answers": [],
-     "keywords": [],
-     "translation": "可现在我特别想念她们。",
-     "translations": {}
+     "end": 85.1,
+     "text": "But now I miss them terribly."
     },
     {
      "id": "l18",
-     "end": 86.209,
-     "text": "M: Of course you do.",
      "start": 85.1,
-     "answers": [],
-     "keywords": [],
-     "translation": "M: 你当然会想。",
-     "translations": {}
+     "end": 86.21,
+     "text": "M: Of course you do."
     },
     {
      "id": "l19",
+     "start": 86.21,
      "end": 88,
-     "text": "That's perfectly normal.",
-     "start": 86.209,
-     "answers": [],
-     "keywords": [],
-     "translation": "这再正常不过了。",
-     "translations": {}
+     "text": "That's perfectly normal."
     },
     {
      "id": "l20",
-     "end": 97.6,
-     "text": "When I got my first place, I remember thinking I couldn't wait to live by myself and get away from my juvenile roommates and all their annoying habits.",
      "start": 88,
-     "answers": [],
-     "keywords": [],
-     "translation": "我有了第一个住处时，还记得自己心想，终于可以迫不及待地独自生活，摆脱那些幼稚的室友和他们所有恼人的习惯了。",
-     "translations": {}
+     "end": 97.6,
+     "text": "When I got my first place, I remember thinking I couldn't wait to live by myself and get away from my juvenile roommates and all their annoying habits."
     },
     {
      "id": "l21",
-     "end": 104.3,
-     "text": "But then I began missing them and feeling lonely and thinking that our dormitory was like paradise.",
      "start": 97.6,
-     "answers": [],
-     "keywords": [],
-     "translation": "可后来我开始想念他们，觉得孤独，甚至觉得我们的宿舍简直就是天堂。",
-     "translations": {}
+     "end": 104.3,
+     "text": "But then I began missing them and feeling lonely and thinking that our dormitory was like paradise."
     },
     {
      "id": "l22",
-     "end": 108.5,
-     "text": "Even though there were six of us guys in one small room.",
      "start": 104.3,
-     "answers": [],
-     "keywords": [],
-     "translation": "尽管我们六个男生挤在一间小屋里。",
-     "translations": {}
+     "end": 108.5,
+     "text": "Even though there were six of us guys in one small room."
     },
     {
      "id": "l23",
-     "end": 111.5,
-     "text": "W: I thought it was just me who felt like that.",
      "start": 108.5,
-     "answers": [],
-     "keywords": [],
-     "translation": "W: 我还以为只有我有这种感觉呢。",
-     "translations": {}
+     "end": 111.5,
+     "text": "W: I thought it was just me who felt like that."
     },
     {
      "id": "l24",
-     "end": 113.994,
-     "text": "M: Look, you lived at home with us.",
      "start": 111.5,
-     "answers": [],
-     "keywords": [],
-     "translation": "M: 你看，你以前和我们住在一起。",
-     "translations": {}
+     "end": 113.99,
+     "text": "M: Look, you lived at home with us."
     },
     {
      "id": "l25",
+     "start": 113.99,
      "end": 116.8,
-     "text": "And then you had three roommates.",
-     "start": 113.994,
-     "answers": [],
-     "keywords": [],
-     "translation": "后来你有三个室友。",
-     "translations": {}
+     "text": "And then you had three roommates."
     },
     {
      "id": "l26",
-     "end": 120.023,
-     "text": "And this is your first time living alone.",
      "start": 116.8,
-     "answers": [],
-     "keywords": [],
-     "translation": "而这是你第一次独自生活。",
-     "translations": {}
+     "end": 120.02,
+     "text": "And this is your first time living alone."
     },
     {
      "id": "l27",
+     "start": 120.02,
      "end": 121,
-     "text": "So it's hard.",
-     "start": 120.023,
-     "answers": [],
-     "keywords": [],
-     "translation": "所以会难受。",
-     "translations": {}
+     "text": "So it's hard."
     },
     {
      "id": "l28",
-     "end": 124.844,
-     "text": "But your first apartment is a milestone in your life.",
      "start": 121,
-     "answers": [],
-     "keywords": [],
-     "translation": "但你的第一套公寓是你人生的一个里程碑。",
-     "translations": {}
+     "end": 124.84,
+     "text": "But your first apartment is a milestone in your life."
     },
     {
      "id": "l29",
+     "start": 124.84,
      "end": 126.9,
-     "text": "And you should celebrate it.",
-     "start": 124.844,
-     "answers": [],
-     "keywords": [],
-     "translation": "你应该庆祝一下。",
-     "translations": {}
+     "text": "And you should celebrate it."
     },
     {
      "id": "l30",
-     "end": 128.9,
-     "text": "Tell me about the apartment.",
      "start": 126.9,
-     "answers": [],
-     "keywords": [],
-     "translation": "跟我说说那套公寓吧。",
-     "translations": {}
+     "end": 128.9,
+     "text": "Tell me about the apartment."
     },
     {
      "id": "l31",
-     "end": 131,
-     "text": "W: Actually, it's not bad.",
      "start": 128.9,
-     "answers": [],
-     "keywords": [],
-     "translation": "W: 其实还不错。",
-     "translations": {}
+     "end": 131,
+     "text": "W: Actually, it's not bad."
     },
     {
      "id": "l32",
-     "end": 132.92,
-     "text": "In fact, it's pretty adorable.",
      "start": 131,
-     "answers": [],
-     "keywords": [],
-     "translation": "说真的，还挺可爱的。",
-     "translations": {}
+     "end": 132.92,
+     "text": "In fact, it's pretty adorable."
     },
     {
      "id": "l33",
-     "end": 136.6,
-     "text": "Now that I have decorated it and it has everything I need.",
      "start": 132.92,
-     "answers": [],
-     "keywords": [],
-     "translation": "现在我把它布置好了，需要的东西都齐了。",
-     "translations": {}
+     "end": 136.6,
+     "text": "Now that I have decorated it and it has everything I need."
     },
     {
      "id": "l34",
-     "end": 140.2,
-     "text": "I have a kitchen to cook in, the bathroom all to myself.",
      "start": 136.6,
-     "answers": [],
-     "keywords": [],
-     "translation": "我有厨房可以做饭，浴室归我一个人用。",
-     "translations": {}
+     "end": 140.2,
+     "text": "I have a kitchen to cook in, the bathroom all to myself."
     },
     {
      "id": "l35",
-     "end": 147.9,
-     "text": "And then another room with my bed at one end and the sofa, a small table and chairs at the other end.",
      "start": 140.2,
-     "answers": [],
-     "keywords": [],
-     "translation": "还有一个房间，一头放着我的床，另一头是沙发、一张小桌子和几把椅子。",
-     "translations": {}
+     "end": 147.9,
+     "text": "And then another room with my bed at one end and the sofa, a small table and chairs at the other end."
     },
     {
      "id": "l36",
-     "end": 152,
-     "text": "M: That does sound adorable, and I can't wait to see it.",
      "start": 147.9,
-     "answers": [],
-     "keywords": [],
-     "translation": "M: 听起来确实很可爱，我都等不及想看了。",
-     "translations": {}
+     "end": 152,
+     "text": "M: That does sound adorable, and I can't wait to see it."
     },
     {
      "id": "l37",
-     "end": 154.2,
-     "text": "And neither can mom and dad.",
      "start": 152,
-     "answers": [],
-     "keywords": [],
-     "translation": "爸爸妈妈也一样。",
-     "translations": {}
+     "end": 154.2,
+     "text": "And neither can mom and dad."
     },
     {
      "id": "l38",
-     "end": 158.6,
-     "text": "Questions one to four are based on the conversation you have just heard.",
      "start": 154.2,
-     "answers": [],
-     "keywords": [],
-     "translation": "问题1至4基于你刚刚听到的对话。",
-     "translations": {}
+     "end": 158.6,
+     "text": "Questions one to four are based on the conversation you have just heard."
     },
     {
      "id": "l39",
-     "end": 172.051,
-     "text": "Q1. What was the woman's first impression of the apartment?",
-     "start": 159.777,
-     "answers": [],
-     "keywords": [],
-     "translation": "Q1. 女士对公寓的第一印象是什么？",
-     "translations": {}
+     "start": 159.78,
+     "end": 172.05,
+     "text": "Q1. What was the woman's first impression of the apartment?"
     },
     {
      "id": "l40",
+     "start": 172.05,
      "end": 197,
-     "text": "Q2. Why does the woman say she's going to sound like an idiot?",
-     "start": 172.051,
-     "answers": [],
-     "keywords": [],
-     "translation": "Q2. 女士为什么说自己会显得很傻？",
-     "translations": {}
+     "text": "Q2. Why does the woman say she's going to sound like an idiot?"
     },
     {
      "id": "l41",
-     "end": 235.991,
-     "text": "Q3. What do we learn about the man when he left the dormitory to live on his own?",
      "start": 197,
-     "answers": [],
-     "keywords": [],
-     "translation": "Q3. 关于男士离开宿舍独自生活时的情况，我们了解到什么？",
-     "translations": {}
+     "end": 235.99,
+     "text": "Q3. What do we learn about the man when he left the dormitory to live on his own?"
     },
     {
      "id": "l42",
-     "end": 242.536,
-     "text": "Q4. What is the man say he can't wait to do?",
-     "start": 235.991,
-     "answers": [],
-     "keywords": [],
-     "translation": "Q4. 男士说他等不及想做什么？",
-     "translations": {}
+     "start": 235.99,
+     "end": 239.09,
+     "text": "Q4. What is the man say he can't wait to do?"
     },
     {
      "id": "l43",
-     "end": 243.036,
-     "text": "CONVERSATION 2",
-     "start": 242.536,
-     "answers": [],
-     "keywords": [],
-     "translation": "CONVERSATION 2",
-     "translations": {}
+     "start": 239.14,
+     "end": 242.49,
+     "text": "Our guest today is Frank Jones, a critic of our education system and the author of new book, How to reform our universities."
     },
     {
      "id": "l44",
-     "end": 244.667,
-     "text": "W: Welcome to our program book talk.",
-     "start": 243.036,
-     "answers": [],
-     "keywords": [],
-     "translation": "W: 欢迎收听我们的节目《读书漫谈》。",
-     "translations": {}
+     "start": 242.54,
+     "end": 243.04,
+     "text": "CONVERSATION 2"
     },
     {
      "id": "l45",
-     "end": 255.9,
-     "text": "Our guest today is Frank Jones, a critic of our education system and the author of new book, How to reform our universities.",
-     "start": 244.667,
-     "answers": [],
-     "keywords": [],
-     "translation": "今天的嘉宾是弗兰克·琼斯，一位教育体制批评者，也是新书《如何改革我们的大学》的作者。",
-     "translations": {}
+     "start": 243.04,
+     "end": 244.67,
+     "text": "W: Welcome to our program book talk."
     },
     {
      "id": "l46",
-     "end": 256.4,
-     "text": "M: Hello, Susan.",
-     "start": 255.9,
-     "answers": [],
-     "keywords": [],
-     "translation": "M: 你好，苏珊。",
-     "translations": {}
+     "start": 250.96,
+     "end": 255.85,
+     "text": "W: Frank, you support radically changing universities in America."
     },
     {
      "id": "l47",
-     "end": 256.9,
-     "text": "W: Frank, you support radically changing universities in America.",
-     "start": 256.4,
-     "answers": [],
-     "keywords": [],
-     "translation": "W: 弗兰克，你支持对美国大学进行彻底变革。",
-     "translations": {}
+     "start": 255.9,
+     "end": 256.4,
+     "text": "M: Hello, Susan."
     },
     {
      "id": "l48",
-     "end": 257.4,
-     "text": "Yes.",
      "start": 256.9,
-     "answers": [],
-     "keywords": [],
-     "translation": "是的。",
-     "translations": {}
+     "end": 257.4,
+     "text": "Yes."
     },
     {
      "id": "l49",
-     "end": 266.9,
-     "text": "M: I believe that the purpose of higher education is to prepare young people to enter the workforce and that our current system fails to do this.",
      "start": 257.4,
-     "answers": [],
-     "keywords": [],
-     "translation": "M: 我认为高等教育的目的是让年轻人做好进入职场的准备，而我们当前的体制没有做到这一点。",
-     "translations": {}
+     "end": 266.9,
+     "text": "M: I believe that the purpose of higher education is to prepare young people to enter the workforce and that our current system fails to do this."
     },
     {
      "id": "l50",
-     "end": 272.9,
-     "text": "We're allocating too many resources to disciplines that don't match the needs of employers.",
      "start": 266.9,
-     "answers": [],
-     "keywords": [],
-     "translation": "我们把太多资源分配给了与雇主需求不匹配的学科。",
-     "translations": {}
+     "end": 272.9,
+     "text": "We're allocating too many resources to disciplines that don't match the needs of employers."
     },
     {
      "id": "l51",
-     "end": 276.9,
-     "text": "W: I think your attitude to education is a bit cynical Frank.",
      "start": 272.9,
-     "answers": [],
-     "keywords": [],
-     "translation": "W: 弗兰克，我觉得你对教育的态度有点愤世嫉俗。",
-     "translations": {}
+     "end": 276.9,
+     "text": "W: I think your attitude to education is a bit cynical Frank."
     },
     {
      "id": "l52",
-     "end": 286.9,
-     "text": "Surely the purpose of university is to prepare young people to participate fully in civic life rather than just to find well paid jobs.",
      "start": 276.9,
-     "answers": [],
-     "keywords": [],
-     "translation": "大学的目的一定是让年轻人做好准备充分参与公民生活，而不仅仅是找到高薪工作。",
-     "translations": {}
+     "end": 286.9,
+     "text": "Surely the purpose of university is to prepare young people to participate fully in civic life rather than just to find well paid jobs."
     },
     {
      "id": "l53",
-     "end": 292.9,
-     "text": "M: Susan, many young graduates struggle to find any job let alone a good one.",
      "start": 286.9,
-     "answers": [],
-     "keywords": [],
-     "translation": "M: 苏珊，许多刚毕业的年轻人连份工作都难找，更别说好工作了。",
-     "translations": {}
+     "end": 292.9,
+     "text": "M: Susan, many young graduates struggle to find any job let alone a good one."
     },
     {
      "id": "l54",
-     "end": 294.507,
-     "text": "The job market is grim.",
      "start": 292.9,
-     "answers": [],
-     "keywords": [],
-     "translation": "就业市场很严峻。",
-     "translations": {}
+     "end": 294.51,
+     "text": "The job market is grim."
     },
     {
      "id": "l55",
+     "start": 294.51,
      "end": 297.9,
-     "text": "Particularly for students who study the arts.",
-     "start": 294.507,
-     "answers": [],
-     "keywords": [],
-     "translation": "对学文科的学生来说尤其如此。",
-     "translations": {}
+     "text": "Particularly for students who study the arts."
     },
     {
      "id": "l56",
-     "end": 308.9,
-     "text": "W: I agree that it isn't easy for young people to find work, but you propose closing down all departments that aren't directly related to science and technology.",
      "start": 297.9,
-     "answers": [],
-     "keywords": [],
-     "translation": "W: 我同意年轻人找工作不容易，可你提议关闭所有与科学技术没有直接关系的院系。",
-     "translations": {}
+     "end": 308.9,
+     "text": "W: I agree that it isn't easy for young people to find work, but you propose closing down all departments that aren't directly related to science and technology."
     },
     {
      "id": "l57",
-     "end": 310.9,
-     "text": "Is that really the solution?",
      "start": 308.9,
-     "answers": [],
-     "keywords": [],
-     "translation": "那真的是解决办法吗？",
-     "translations": {}
+     "end": 310.9,
+     "text": "Is that really the solution?"
     },
     {
      "id": "l58",
-     "end": 313.9,
-     "text": "M: You're overstating my point.",
      "start": 310.9,
-     "answers": [],
-     "keywords": [],
-     "translation": "M: 你把我的观点说过头了。",
-     "translations": {}
+     "end": 313.9,
+     "text": "M: You're overstating my point."
     },
     {
      "id": "l59",
-     "end": 319.9,
-     "text": "My argument is that we need to use more of our budget on areas like science and engineering.",
      "start": 313.9,
-     "answers": [],
-     "keywords": [],
-     "translation": "我的主张是，我们需要把更多预算用在科学和工程这类领域上。",
-     "translations": {}
+     "end": 319.9,
+     "text": "My argument is that we need to use more of our budget on areas like science and engineering."
     },
     {
      "id": "l60",
-     "end": 325.9,
-     "text": "To do that, we need to take money from subjects like literature and music.",
      "start": 319.9,
-     "answers": [],
-     "keywords": [],
-     "translation": "要做到这一点，我们就得从文学、音乐这类学科那里挪钱。",
-     "translations": {}
+     "end": 325.9,
+     "text": "To do that, we need to take money from subjects like literature and music."
     },
     {
      "id": "l61",
-     "end": 327.334,
-     "text": "W: But the arts have value.",
      "start": 325.9,
-     "answers": [],
-     "keywords": [],
-     "translation": "W: 但人文学科是有价值的。",
-     "translations": {}
+     "end": 327.33,
+     "text": "W: But the arts have value."
     },
     {
      "id": "l62",
+     "start": 327.33,
      "end": 329.9,
-     "text": "They're an important part of our culture.",
-     "start": 327.334,
-     "answers": [],
-     "keywords": [],
-     "translation": "它们是我们文化的重要组成部分。",
-     "translations": {}
+     "text": "They're an important part of our culture."
     },
     {
      "id": "l63",
-     "end": 334.9,
-     "text": "Studying literature or music or sculpture might not result in a job in that area.",
      "start": 329.9,
-     "answers": [],
-     "keywords": [],
-     "translation": "学习文学、音乐或雕塑，未必能带来那一行的工作。",
-     "translations": {}
+     "end": 334.9,
+     "text": "Studying literature or music or sculpture might not result in a job in that area."
     },
     {
      "id": "l64",
-     "end": 343.9,
-     "text": "But it helps young people to think about the world in a deeper way, which makes them better citizens and makes for a better society.",
      "start": 334.9,
-     "answers": [],
-     "keywords": [],
-     "translation": "但它有助于年轻人更深地思考世界，这使他们成为更好的公民，也让社会变得更好。",
-     "translations": {}
+     "end": 343.9,
+     "text": "But it helps young people to think about the world in a deeper way, which makes them better citizens and makes for a better society."
     },
     {
      "id": "l65",
-     "end": 355.9,
-     "text": "M: I agree that the arts are valuable to society, but it's naive to think that not only the most talented, but all students should study them at university level.",
      "start": 343.9,
-     "answers": [],
-     "keywords": [],
-     "translation": "M: 我承认人文学科对社会有价值，但认为不仅是最有天分的、而是所有学生都应该在大学阶段学习这些学科，那就太天真了。",
-     "translations": {}
+     "end": 355.9,
+     "text": "M: I agree that the arts are valuable to society, but it's naive to think that not only the most talented, but all students should study them at university level."
     },
     {
      "id": "l66",
-     "end": 366.9,
-     "text": "The odds are very competitive, and most graduates will end up with a great deal of debt, obtaining a degree that has little value on the job market.",
      "start": 355.9,
-     "answers": [],
-     "keywords": [],
-     "translation": "竞争非常激烈，大多数毕业生最终会背上一大笔债，拿到的学位在就业市场上却没什么价值。",
-     "translations": {}
+     "end": 366.9,
+     "text": "The odds are very competitive, and most graduates will end up with a great deal of debt, obtaining a degree that has little value on the job market."
     },
     {
      "id": "l67",
-     "end": 371.9,
-     "text": "Questions 5 to 8 are based on the conversation you have just heard.",
      "start": 366.9,
-     "answers": [],
-     "keywords": [],
-     "translation": "问题5至8基于你刚刚听到的对话。",
-     "translations": {}
+     "end": 371.9,
+     "text": "Questions 5 to 8 are based on the conversation you have just heard."
     },
     {
      "id": "l68",
-     "end": 391.072,
-     "text": "Q5. What do we learn from the conversation about the man?",
-     "start": 374.842,
-     "answers": [],
-     "keywords": [],
-     "translation": "Q5. 从对话中我们了解到关于男士的什么情况？",
-     "translations": {}
+     "start": 374.84,
+     "end": 391.07,
+     "text": "Q5. What do we learn from the conversation about the man?"
     },
     {
      "id": "l69",
-     "end": 412.431,
-     "text": "Q6. What does the man believe is the problem with the current American System of Higher Education?",
-     "start": 391.072,
-     "answers": [],
-     "keywords": [],
-     "translation": "Q6. 男士认为美国现行高等教育体制的问题是什么？",
-     "translations": {}
+     "start": 391.07,
+     "end": 412.43,
+     "text": "Q6. What does the man believe is the problem with the current American System of Higher Education?"
     },
     {
      "id": "l70",
-     "end": 431.725,
-     "text": "Q7. How should the education budget be allocated according to the man?",
-     "start": 412.431,
-     "answers": [],
-     "keywords": [],
-     "translation": "Q7. 据男士说，教育预算应该如何分配？",
-     "translations": {}
+     "start": 412.43,
+     "end": 431.73,
+     "text": "Q7. How should the education budget be allocated according to the man?"
     },
     {
      "id": "l71",
+     "start": 431.73,
      "end": 444.9,
-     "text": "Q8. What does the woman say the arts can do?",
-     "start": 431.725,
-     "answers": [],
-     "keywords": [],
-     "translation": "Q8. 女士说人文学科能起到什么作用？",
-     "translations": {}
+     "text": "Q8. What does the woman say the arts can do?"
     },
     {
      "id": "l72",
-     "end": 458.9,
-     "text": "In this section, you will hear two passages. At the end of each passage, you will hear three or four questions.",
      "start": 444.9,
-     "answers": [],
-     "keywords": [],
-     "translation": "在本部分，你将听到两篇短文。每篇短文结束后，你将听到三至四个问题。",
-     "translations": {}
+     "end": 458.9,
+     "text": "In this section, you will hear two passages. At the end of each passage, you will hear three or four questions."
     },
     {
      "id": "l73",
-     "end": 466.9,
-     "text": "After you hear a question, you must choose the best answer from the four choices marked A, B, C and D.",
      "start": 458.9,
-     "answers": [],
-     "keywords": [],
-     "translation": "听完问题后，你必须从标有 A、B、C、D 的四个选项中选出最佳答案。",
-     "translations": {}
+     "end": 466.9,
+     "text": "After you hear a question, you must choose the best answer from the four choices marked A, B, C and D."
     },
     {
      "id": "l74",
-     "end": 471.9,
-     "text": "Then mark the corresponding letter on answer sheet one with a single line through the centre.",
      "start": 466.9,
-     "answers": [],
-     "keywords": [],
-     "translation": "然后在答题卡1上用一条横线划过中间标出对应的字母。",
-     "translations": {}
+     "end": 471.9,
+     "text": "Then mark the corresponding letter on answer sheet one with a single line through the centre."
     },
     {
      "id": "l75",
-     "end": 472.71,
-     "text": "PASSAGE 1",
      "start": 471.9,
-     "answers": [],
-     "keywords": [],
-     "translation": "PASSAGE 1",
-     "translations": {}
+     "end": 472.71,
+     "text": "PASSAGE 1"
     },
     {
      "id": "l76",
-     "end": 480.468,
-     "text": "Do you ever have the annoying feeling that you don't have time to really think anymore?",
      "start": 472.71,
-     "answers": [],
-     "keywords": [],
-     "translation": "你有没有过那种烦人的感觉：自己再也没有时间真正地思考了？",
-     "translations": {}
+     "end": 480.47,
+     "text": "Do you ever have the annoying feeling that you don't have time to really think anymore?"
     },
     {
      "id": "l77",
-     "end": 481.226,
-     "text": "You're not alone.",
-     "start": 480.468,
-     "answers": [],
-     "keywords": [],
-     "translation": "有这种感受的不止你一个。",
-     "translations": {}
+     "start": 480.47,
+     "end": 481.23,
+     "text": "You're not alone."
     },
     {
      "id": "l78",
-     "end": 489.926,
-     "text": "A variety of factors have conspired to rob us of time for reflection on ourselves and our lives.",
-     "start": 481.226,
-     "answers": [],
-     "keywords": [],
-     "translation": "种种因素合起伙来，夺走了我们审视自己和生活的反思时间。",
-     "translations": {}
+     "start": 481.23,
+     "end": 489.93,
+     "text": "A variety of factors have conspired to rob us of time for reflection on ourselves and our lives."
     },
     {
      "id": "l79",
+     "start": 489.93,
      "end": 493.9,
-     "text": "Preoccupied minds are rarely silent.",
-     "start": 489.926,
-     "answers": [],
-     "keywords": [],
-     "translation": "被杂事占满的头脑很少安静。",
-     "translations": {}
+     "text": "Preoccupied minds are rarely silent."
     },
     {
      "id": "l80",
-     "end": 499.144,
-     "text": "The average person receives hundreds of texts and voice messages a day.",
      "start": 493.9,
-     "answers": [],
-     "keywords": [],
-     "translation": "普通人每天会收到数百条文字和语音消息。",
-     "translations": {}
+     "end": 499.14,
+     "text": "The average person receives hundreds of texts and voice messages a day."
     },
     {
      "id": "l81",
+     "start": 499.14,
      "end": 509.9,
-     "text": "And holidays for many of us are action-packed weeks more likely full of family activities than opportunities for tranquility and contemplation.",
-     "start": 499.144,
-     "answers": [],
-     "keywords": [],
-     "translation": "对我们许多人来说，假期是行程满满的一周，更可能是被家庭活动填满，而不是宁静与沉思的机会。",
-     "translations": {}
+     "text": "And holidays for many of us are action-packed weeks more likely full of family activities than opportunities for tranquility and contemplation."
     },
     {
      "id": "l82",
-     "end": 514.58,
-     "text": "Regular reflection, however, underlies all great professionals.",
      "start": 509.9,
-     "answers": [],
-     "keywords": [],
-     "translation": "然而，经常性的反思是一切杰出专业人士的根基。",
-     "translations": {}
+     "end": 514.58,
+     "text": "Regular reflection, however, underlies all great professionals."
     },
     {
      "id": "l83",
-     "end": 522.9,
-     "text": "It's a prerequisite for you to recharge your mental batteries, see things in a new light and tap into your creativity.",
      "start": 514.58,
-     "answers": [],
-     "keywords": [],
-     "translation": "它是你给精神充电、以新视角看待事物、激发创造力的前提。",
-     "translations": {}
+     "end": 522.9,
+     "text": "It's a prerequisite for you to recharge your mental batteries, see things in a new light and tap into your creativity."
     },
     {
      "id": "l84",
-     "end": 531.9,
-     "text": "Almost all of the great advisors that I have studied have found ways to get away from it all and contemplate their life and work.",
      "start": 522.9,
-     "answers": [],
-     "keywords": [],
-     "translation": "我研究过的几乎所有杰出顾问，都找到了抽身出局、沉思自己生活与工作的办法。",
-     "translations": {}
+     "end": 531.9,
+     "text": "Almost all of the great advisors that I have studied have found ways to get away from it all and contemplate their life and work."
     },
     {
      "id": "l85",
-     "end": 543.9,
-     "text": "Some researchers in the field of creativity, in fact, believe that insight occurs during the reflection and relaxation that follows a period of intense activity.",
      "start": 531.9,
-     "answers": [],
-     "keywords": [],
-     "translation": "事实上，创造力领域的一些研究者认为，顿悟发生在一段高强度活动之后的反思与放松之中。",
-     "translations": {}
+     "end": 543.9,
+     "text": "Some researchers in the field of creativity, in fact, believe that insight occurs during the reflection and relaxation that follows a period of intense activity."
     },
     {
      "id": "l86",
-     "end": 550.536,
-     "text": "Schedule your time for reflection about your work or a particular project you're engaged in.",
      "start": 543.9,
-     "answers": [],
-     "keywords": [],
-     "translation": "为你自己的工作或正在参与的某个特定项目安排反思时间。",
-     "translations": {}
+     "end": 550.54,
+     "text": "Schedule your time for reflection about your work or a particular project you're engaged in."
     },
     {
      "id": "l87",
+     "start": 550.54,
      "end": 552.9,
-     "text": "I usually block out half an hour.",
-     "start": 550.536,
-     "answers": [],
-     "keywords": [],
-     "translation": "我通常会留出半小时。",
-     "translations": {}
+     "text": "I usually block out half an hour."
     },
     {
      "id": "l88",
-     "end": 554.71,
-     "text": "Don't answer the phone.",
      "start": 552.9,
-     "answers": [],
-     "keywords": [],
-     "translation": "不要接电话。",
-     "translations": {}
+     "end": 554.71,
+     "text": "Don't answer the phone."
     },
     {
      "id": "l89",
-     "end": 556.9,
-     "text": "Push your papers to the side.",
      "start": 554.71,
-     "answers": [],
-     "keywords": [],
-     "translation": "把文件推到一边。",
-     "translations": {}
+     "end": 556.9,
+     "text": "Push your papers to the side."
     },
     {
      "id": "l90",
-     "end": 562.9,
-     "text": "Sketch, make lists, draw mind maps of ideas that come to you.",
      "start": 556.9,
-     "answers": [],
-     "keywords": [],
-     "translation": "画草图、列清单，把脑海里冒出的想法画成思维导图。",
-     "translations": {}
+     "end": 562.9,
+     "text": "Sketch, make lists, draw mind maps of ideas that come to you."
     },
     {
      "id": "l91",
-     "end": 566.9,
-     "text": "At the end, write down any emerging ideas.",
      "start": 562.9,
-     "answers": [],
-     "keywords": [],
-     "translation": "最后，把浮现出来的任何想法写下来。",
-     "translations": {}
+     "end": 566.9,
+     "text": "At the end, write down any emerging ideas."
     },
     {
      "id": "l92",
-     "end": 570.15,
-     "text": "When you're alone, stop worrying and think.",
      "start": 566.9,
-     "answers": [],
-     "keywords": [],
-     "translation": "独处时，别再忧心，去思考。",
-     "translations": {}
+     "end": 570.15,
+     "text": "When you're alone, stop worrying and think."
     },
     {
      "id": "l93",
-     "end": 579.9,
-     "text": "A lot of our downtime is spent worrying about troubles or things in our lives or fantasizing about how we'd like our lives to be.",
      "start": 570.15,
-     "answers": [],
-     "keywords": [],
-     "translation": "我们的许多闲暇时间都花在为生活中的麻烦事担忧，或者幻想自己希望的生活是什么样。",
-     "translations": {}
+     "end": 579.9,
+     "text": "A lot of our downtime is spent worrying about troubles or things in our lives or fantasizing about how we'd like our lives to be."
     },
     {
      "id": "l94",
-     "end": 586.674,
-     "text": "Revisit things during moments of relaxation after a period of intense work.",
      "start": 579.9,
-     "answers": [],
-     "keywords": [],
-     "translation": "在一段高强度工作之后的放松时刻，重新回想那些事。",
-     "translations": {}
+     "end": 586.67,
+     "text": "Revisit things during moments of relaxation after a period of intense work."
     },
     {
      "id": "l95",
+     "start": 586.67,
      "end": 589.9,
-     "text": "This is when we are the most creative.",
-     "start": 586.674,
-     "answers": [],
-     "keywords": [],
-     "translation": "这正是我们最有创造力的时候。",
-     "translations": {}
+     "text": "This is when we are the most creative."
     },
     {
      "id": "l96",
-     "end": 594.9,
-     "text": "Questions 9 to 11 are based on the passage you have just heard.",
      "start": 589.9,
-     "answers": [],
-     "keywords": [],
-     "translation": "问题9至11基于你刚刚听到的短文。",
-     "translations": {}
+     "end": 594.9,
+     "text": "Questions 9 to 11 are based on the passage you have just heard."
     },
     {
      "id": "l97",
-     "end": 618.943,
-     "text": "Q9. What do we learn about the feeling that one doesn't have time to think anymore?",
-     "start": 597.366,
-     "answers": [],
-     "keywords": [],
-     "translation": "Q9. 关于\"没有时间思考了\"的这种感觉，我们了解到什么？",
-     "translations": {}
+     "start": 597.37,
+     "end": 618.94,
+     "text": "Q9. What do we learn about the feeling that one doesn't have time to think anymore?"
     },
     {
      "id": "l98",
-     "end": 636.869,
-     "text": "Q10. What trait do all great professionals share?",
-     "start": 618.943,
-     "answers": [],
-     "keywords": [],
-     "translation": "Q10. 所有杰出专业人士的共同特质是什么？",
-     "translations": {}
+     "start": 618.94,
+     "end": 636.87,
+     "text": "Q10. What trait do all great professionals share?"
     },
     {
      "id": "l99",
+     "start": 636.87,
      "end": 652.9,
-     "text": "Q11. What do some researchers believe is conducive to creative ideas?",
-     "start": 636.869,
-     "answers": [],
-     "keywords": [],
-     "translation": "Q11. 一些研究者认为什么有助于产生创意？",
-     "translations": {}
+     "text": "Q11. What do some researchers believe is conducive to creative ideas?"
     },
     {
      "id": "l100",
-     "end": 653.857,
-     "text": "PASSAGE 2",
      "start": 652.9,
-     "answers": [],
-     "keywords": [],
-     "translation": "PASSAGE 2",
-     "translations": {}
+     "end": 653.86,
+     "text": "PASSAGE 2"
     },
     {
      "id": "l101",
-     "end": 659.003,
-     "text": "Before Colorado became a state, it already had post offices.",
-     "start": 654.336,
-     "answers": [],
-     "keywords": [],
-     "translation": "在科罗拉多建州之前，它就已经有邮局了。",
-     "translations": {}
+     "start": 654.34,
+     "end": 659,
+     "text": "Before Colorado became a state, it already had post offices."
     },
     {
      "id": "l102",
+     "start": 659,
      "end": 666.9,
-     "text": "The first opened in 1859 in a settlement founded by migrants searching for gold.",
-     "start": 659.003,
-     "answers": [],
-     "keywords": [],
-     "translation": "第一家于1859年开设在一个由淘金移民建立的定居点。",
-     "translations": {}
+     "text": "The first opened in 1859 in a settlement founded by migrants searching for gold."
     },
     {
      "id": "l103",
-     "end": 670.075,
-     "text": "Life could be unpredictable out west.",
      "start": 666.9,
-     "answers": [],
-     "keywords": [],
-     "translation": "在西部，生活难以预料。",
-     "translations": {}
+     "end": 670.08,
+     "text": "Life could be unpredictable out west."
     },
     {
      "id": "l104",
-     "end": 671.918,
-     "text": "Gold failed to appear.",
-     "start": 670.075,
-     "answers": [],
-     "keywords": [],
-     "translation": "金子没有出现。",
-     "translations": {}
+     "start": 670.08,
+     "end": 671.92,
+     "text": "Gold failed to appear."
     },
     {
      "id": "l105",
-     "end": 677.755,
-     "text": "Drought ruined farmers, and settlers clashed with Native Americans.",
-     "start": 671.918,
-     "answers": [],
-     "keywords": [],
-     "translation": "旱灾毁了农民，定居者与印第安人发生冲突。",
-     "translations": {}
+     "start": 671.92,
+     "end": 677.75,
+     "text": "Drought ruined farmers, and settlers clashed with Native Americans."
     },
     {
      "id": "l106",
+     "start": 677.75,
      "end": 683.9,
-     "text": "On the settlement's location now stands a sprawling University campus.",
-     "start": 677.755,
-     "answers": [],
-     "keywords": [],
-     "translation": "如今，那个定居点的位置上矗立着一座占地广阔的大学校园。",
-     "translations": {}
+     "text": "On the settlement's location now stands a sprawling University campus."
     },
     {
      "id": "l107",
-     "end": 690.393,
-     "text": "Amid all the changes, one feature remained constant: the postal service.",
      "start": 683.9,
-     "answers": [],
-     "keywords": [],
-     "translation": "在所有这些变迁中，有一点始终不变：邮政服务。",
-     "translations": {}
+     "end": 690.39,
+     "text": "Amid all the changes, one feature remained constant: the postal service."
     },
     {
      "id": "l108",
-     "end": 695.895,
-     "text": "The maps tracing America's westward expansion are telling.",
-     "start": 690.393,
-     "answers": [],
-     "keywords": [],
-     "translation": "描绘美国西进扩张的地图很能说明问题。",
-     "translations": {}
+     "start": 690.39,
+     "end": 695.89,
+     "text": "The maps tracing America's westward expansion are telling."
     },
     {
      "id": "l109",
+     "start": 695.89,
      "end": 706.9,
-     "text": "In 1864 there were few postal branches on land controlled by Native Americans, which still accounted for most of the West.",
-     "start": 695.895,
-     "answers": [],
-     "keywords": [],
-     "translation": "1864年，在印第安人控制的土地上几乎没有邮政分支，而那些土地当时仍占西部的大部分。",
-     "translations": {}
+     "text": "In 1864 there were few postal branches on land controlled by Native Americans, which still accounted for most of the West."
     },
     {
      "id": "l110",
-     "end": 711.307,
-     "text": "Over the next 25 years, post offices grew quickly.",
      "start": 706.9,
-     "answers": [],
-     "keywords": [],
-     "translation": "在接下来的25年里，邮局迅速增多。",
-     "translations": {}
+     "end": 711.31,
+     "text": "Over the next 25 years, post offices grew quickly."
     },
     {
      "id": "l111",
+     "start": 711.31,
      "end": 719.9,
-     "text": "Colonization of the West could be regarded as a result of big government rather than pioneers.",
-     "start": 711.307,
-     "answers": [],
-     "keywords": [],
-     "translation": "对西部的开拓可以看作是大政府的功劳，而不是拓荒者的功劳。",
-     "translations": {}
+     "text": "Colonization of the West could be regarded as a result of big government rather than pioneers."
     },
     {
      "id": "l112",
-     "end": 729.9,
-     "text": "As federal subsidies and land grants tempted people into the deserts and plains, the post kept them connected.",
      "start": 719.9,
-     "answers": [],
-     "keywords": [],
-     "translation": "联邦补贴和赠地吸引人们进入沙漠和平原，邮政则让他们保持联系。",
-     "translations": {}
+     "end": 729.9,
+     "text": "As federal subsidies and land grants tempted people into the deserts and plains, the post kept them connected."
     },
     {
      "id": "l113",
-     "end": 737.553,
-     "text": "In the mid-19th century, the Post Office Department was far from a centralized bureaucracy.",
      "start": 729.9,
-     "answers": [],
-     "keywords": [],
-     "translation": "在19世纪中叶，邮政部门远不是一个集权化的官僚机构。",
-     "translations": {}
+     "end": 737.55,
+     "text": "In the mid-19th century, the Post Office Department was far from a centralized bureaucracy."
     },
     {
      "id": "l114",
+     "start": 737.55,
      "end": 744.9,
-     "text": "To keep up with migration patterns, postal services were added to existing businesses.",
-     "start": 737.553,
-     "answers": [],
-     "keywords": [],
-     "translation": "为了跟上移民的流动趋势，邮政服务被附加到现有的商户上。",
-     "translations": {}
+     "text": "To keep up with migration patterns, postal services were added to existing businesses."
     },
     {
      "id": "l115",
-     "end": 750.264,
-     "text": "The federal government commissioned private wagons to carry the mail.",
      "start": 744.9,
-     "answers": [],
-     "keywords": [],
-     "translation": "联邦政府委托私人马车运送邮件。",
-     "translations": {}
+     "end": 750.26,
+     "text": "The federal government commissioned private wagons to carry the mail."
     },
     {
      "id": "l116",
-     "end": 756.173,
-     "text": "Short term contracts were granted to local businessmen to act as postmasters.",
-     "start": 750.264,
-     "answers": [],
-     "keywords": [],
-     "translation": "当地商人通过短期合同受聘担任邮政局长。",
-     "translations": {}
+     "start": 750.26,
+     "end": 756.17,
+     "text": "Short term contracts were granted to local businessmen to act as postmasters."
     },
     {
      "id": "l117",
+     "start": 756.17,
      "end": 764.9,
-     "text": "These partnerships enabled the mail to quickly follow migrants, helping knit together remote parts of the country.",
-     "start": 756.173,
-     "answers": [],
-     "keywords": [],
-     "translation": "这些合作让邮件迅速跟上移民的脚步，帮助把这个国家偏远的地区联结在一起。",
-     "translations": {}
+     "text": "These partnerships enabled the mail to quickly follow migrants, helping knit together remote parts of the country."
     },
     {
      "id": "l118",
-     "end": 772.318,
-     "text": "Mr. Bellavance, a digital historian, wrote a book on the history of the US postal service.",
      "start": 764.9,
-     "answers": [],
-     "keywords": [],
-     "translation": "数字历史学家贝拉旺斯先生写了一本关于美国邮政历史的书。",
-     "translations": {}
+     "end": 772.32,
+     "text": "Mr. Bellavance, a digital historian, wrote a book on the history of the US postal service."
     },
     {
      "id": "l119",
+     "start": 772.32,
      "end": 776.9,
-     "text": "He used data science to analyze historical trends.",
-     "start": 772.318,
-     "answers": [],
-     "keywords": [],
-     "translation": "他用数据科学来分析历史趋势。",
-     "translations": {}
+     "text": "He used data science to analyze historical trends."
     },
     {
      "id": "l120",
-     "end": 784.088,
-     "text": "Most strikingly he built an accompanying website, complete with interactive maps.",
      "start": 776.9,
-     "answers": [],
-     "keywords": [],
-     "translation": "最引人注目的是，他还建了一个配套网站，配有交互式地图。",
-     "translations": {}
+     "end": 784.09,
+     "text": "Most strikingly he built an accompanying website, complete with interactive maps."
     },
     {
      "id": "l121",
+     "start": 784.09,
      "end": 791.9,
-     "text": "They show readers how within a generation the postal service helped colonize a continent.",
-     "start": 784.088,
-     "answers": [],
-     "keywords": [],
-     "translation": "这些地图向读者展示，在一代人的时间里，邮政服务是如何帮助开拓了一片大陆的。",
-     "translations": {}
+     "text": "They show readers how within a generation the postal service helped colonize a continent."
     },
     {
      "id": "l122",
-     "end": 798.9,
-     "text": "These online interactive maps illustrate the formative power of snail mail.",
      "start": 791.9,
-     "answers": [],
-     "keywords": [],
-     "translation": "这些在线交互地图展示了传统平信的塑造力量。",
-     "translations": {}
+     "end": 798.9,
+     "text": "These online interactive maps illustrate the formative power of snail mail."
     },
     {
      "id": "l123",
-     "end": 803.9,
-     "text": "Questions 12 to 15 are based on the passage you have just heard.",
      "start": 798.9,
-     "answers": [],
-     "keywords": [],
-     "translation": "问题12至15基于你刚刚听到的短文。",
-     "translations": {}
+     "end": 803.9,
+     "text": "Questions 12 to 15 are based on the passage you have just heard."
     },
     {
      "id": "l124",
-     "end": 825.757,
-     "text": "Q12. What does the passage say about Colorado before it became a state?",
-     "start": 806.869,
-     "answers": [],
-     "keywords": [],
-     "translation": "Q12. 关于建州之前的科罗拉多，短文说了什么？",
-     "translations": {}
+     "start": 806.87,
+     "end": 825.76,
+     "text": "Q12. What does the passage say about Colorado before it became a state?"
     },
     {
      "id": "l125",
-     "end": 845.183,
-     "text": "Q13. How did the postal service contribute to America's westward expansion?",
-     "start": 825.757,
-     "answers": [],
-     "keywords": [],
-     "translation": "Q13. 邮政服务如何促进了美国的西进扩张？",
-     "translations": {}
+     "start": 825.76,
+     "end": 845.18,
+     "text": "Q13. How did the postal service contribute to America's westward expansion?"
     },
     {
      "id": "l126",
-     "end": 867.131,
-     "text": "Q14. What did the federal government do to meet the increasing demand for the postal service in the West?",
-     "start": 845.183,
-     "answers": [],
-     "keywords": [],
-     "translation": "Q14. 联邦政府为满足西部日益增长的邮政需求做了什么？",
-     "translations": {}
+     "start": 845.18,
+     "end": 867.13,
+     "text": "Q14. What did the federal government do to meet the increasing demand for the postal service in the West?"
     },
     {
      "id": "l127",
+     "start": 867.13,
      "end": 884.9,
-     "text": "Q15. What did Mr. Bellavance do to study the history of the US postal service?",
-     "start": 867.131,
-     "answers": [],
-     "keywords": [],
-     "translation": "Q15. 贝拉旺斯先生为研究美国邮政史做了什么？",
-     "translations": {}
+     "text": "Q15. What did Mr. Bellavance do to study the history of the US postal service?"
     },
     {
      "id": "l128",
-     "end": 885.675,
-     "text": "Section C.",
      "start": 884.9,
-     "answers": [],
-     "keywords": [],
-     "translation": "Section C.",
-     "translations": {}
+     "end": 885.67,
+     "text": "Section C."
     },
     {
      "id": "l129",
+     "start": 885.67,
      "end": 894.9,
-     "text": "Directions. In this section, you will hear three recordings of lectures or talks, followed by three or four questions.",
-     "start": 885.675,
-     "answers": [],
-     "keywords": [],
-     "translation": "题目说明。在本部分，你将听到三段讲座或讲话录音，每段后面有三至四个问题。",
-     "translations": {}
+     "text": "Directions. In this section, you will hear three recordings of lectures or talks, followed by three or four questions."
     },
     {
      "id": "l130",
-     "end": 904.9,
-     "text": "The recordings will be played only once. After you hear a question, you must choose the best answer from the four choices marked A, B, C and D.",
      "start": 894.9,
-     "answers": [],
-     "keywords": [],
-     "translation": "录音只播放一遍。听完问题后，你必须从标有 A、B、C、D 的四个选项中选出最佳答案。",
-     "translations": {}
+     "end": 904.9,
+     "text": "The recordings will be played only once. After you hear a question, you must choose the best answer from the four choices marked A, B, C and D."
     },
     {
      "id": "l131",
-     "end": 910.9,
-     "text": "Then mark the corresponding letter and answer sheet one with a single line through the centre.",
      "start": 904.9,
-     "answers": [],
-     "keywords": [],
-     "translation": "然后在答题卡1上用一条横线划过中间标出对应的字母。",
-     "translations": {}
+     "end": 910.9,
+     "text": "Then mark the corresponding letter and answer sheet one with a single line through the centre."
     },
     {
      "id": "l132",
-     "end": 911.929,
-     "text": "RECORDING 1",
      "start": 910.9,
-     "answers": [],
-     "keywords": [],
-     "translation": "RECORDING 1",
-     "translations": {}
+     "end": 911.93,
+     "text": "RECORDING 1"
     },
     {
      "id": "l133",
+     "start": 911.93,
      "end": 917.9,
-     "text": "In last week's lecture, we discussed reasons why people forget things.",
-     "start": 911.929,
-     "answers": [],
-     "keywords": [],
-     "translation": "在上周的课上，我们讨论了人们遗忘的原因。",
-     "translations": {}
+     "text": "In last week's lecture, we discussed reasons why people forget things."
     },
     {
      "id": "l134",
-     "end": 924.483,
-     "text": "This week we will discuss a surprising reason why we might remember some things: anxiety.",
      "start": 917.9,
-     "answers": [],
-     "keywords": [],
-     "translation": "本周我们将讨论一个让人记住某些事情的惊人原因：焦虑。",
-     "translations": {}
+     "end": 924.48,
+     "text": "This week we will discuss a surprising reason why we might remember some things: anxiety."
     },
     {
      "id": "l135",
-     "end": 927.983,
-     "text": "Think about something as simple as buying a coffee.",
-     "start": 924.483,
-     "answers": [],
-     "keywords": [],
-     "translation": "想想买杯咖啡这么简单的事。",
-     "translations": {}
+     "start": 924.48,
+     "end": 927.98,
+     "text": "Think about something as simple as buying a coffee."
     },
     {
      "id": "l136",
-     "end": 933.817,
-     "text": "That may not seem like an experience that would make a deep impression on your memory.",
-     "start": 927.983,
-     "answers": [],
-     "keywords": [],
-     "translation": "这看起来不像会给你留下深刻记忆的经历。",
-     "translations": {}
+     "start": 927.98,
+     "end": 933.82,
+     "text": "That may not seem like an experience that would make a deep impression on your memory."
     },
     {
      "id": "l137",
+     "start": 933.82,
      "end": 935.9,
-     "text": "But anxiety could change that.",
-     "start": 933.817,
-     "answers": [],
-     "keywords": [],
-     "translation": "但焦虑可能会改变这一点。",
-     "translations": {}
+     "text": "But anxiety could change that."
     },
     {
      "id": "l138",
-     "end": 947.9,
-     "text": "In fact, a new study suggests that people with higher anxiety levels might remember certain information better than people with lower anxiety levels.",
      "start": 935.9,
-     "answers": [],
-     "keywords": [],
-     "translation": "事实上，一项新研究表明，焦虑水平较高的人对某些信息的记忆可能比焦虑水平较低的人更好。",
-     "translations": {}
+     "end": 947.9,
+     "text": "In fact, a new study suggests that people with higher anxiety levels might remember certain information better than people with lower anxiety levels."
     },
     {
      "id": "l139",
-     "end": 957.9,
-     "text": "That's because higher levels of anxiety may make people more susceptible to negative feelings, putting them in a more negative state of mind.",
      "start": 947.9,
-     "answers": [],
-     "keywords": [],
-     "translation": "这是因为较高的焦虑水平可能使人更容易受负面情绪影响，让他们处于更消极的心理状态。",
-     "translations": {}
+     "end": 957.9,
+     "text": "That's because higher levels of anxiety may make people more susceptible to negative feelings, putting them in a more negative state of mind."
     },
     {
      "id": "l140",
-     "end": 962.9,
-     "text": "That in turn, may make them able to better remember some events.",
      "start": 957.9,
-     "answers": [],
-     "keywords": [],
-     "translation": "这反过来又可能使他们能更好地记住某些事件。",
-     "translations": {}
+     "end": 962.9,
+     "text": "That in turn, may make them able to better remember some events."
     },
     {
      "id": "l141",
-     "end": 966.9,
-     "text": "Let's take a closer look at that new study now.",
      "start": 962.9,
-     "answers": [],
-     "keywords": [],
-     "translation": "现在我们来仔细看看那项新研究。",
-     "translations": {}
+     "end": 966.9,
+     "text": "Let's take a closer look at that new study now."
     },
     {
      "id": "l142",
-     "end": 973.9,
-     "text": "In this study, the researchers started by giving 80 undergraduate students an anxiety test.",
      "start": 966.9,
-     "answers": [],
-     "keywords": [],
-     "translation": "在这项研究中，研究人员首先对80名本科生进行了焦虑测试。",
-     "translations": {}
+     "end": 973.9,
+     "text": "In this study, the researchers started by giving 80 undergraduate students an anxiety test."
     },
     {
      "id": "l143",
-     "end": 978.9,
-     "text": "The test measured the participants' anxiety levels over the proceeding two weeks.",
      "start": 973.9,
-     "answers": [],
-     "keywords": [],
-     "translation": "该测试测量了参与者在之前两周内的焦虑水平。",
-     "translations": {}
+     "end": 978.9,
+     "text": "The test measured the participants' anxiety levels over the proceeding two weeks."
     },
     {
      "id": "l144",
-     "end": 986.9,
-     "text": "Then, to test memory, the participants were shown a series of neutral words one at a time.",
      "start": 978.9,
-     "answers": [],
-     "keywords": [],
-     "translation": "然后，为了测试记忆，参与者被逐个展示一系列中性词汇。",
-     "translations": {}
+     "end": 986.9,
+     "text": "Then, to test memory, the participants were shown a series of neutral words one at a time."
     },
     {
      "id": "l145",
-     "end": 998.9,
-     "text": "Some of the words were printed onto photos of negative scenes, meaning images that could affect their emotions negatively, such as a photo of a car accident, or a cemetery.",
      "start": 986.9,
-     "answers": [],
-     "keywords": [],
-     "translation": "其中一些词印在负面场景的照片上，也就是可能对情绪产生负面影响的照片，比如车祸或墓地的照片。",
-     "translations": {}
+     "end": 998.9,
+     "text": "Some of the words were printed onto photos of negative scenes, meaning images that could affect their emotions negatively, such as a photo of a car accident, or a cemetery."
     },
     {
      "id": "l146",
-     "end": 1006.9,
-     "text": "The rest of the words were printed onto photos of neutral scenes, such as a photo of a lake or trees.",
      "start": 998.9,
-     "answers": [],
-     "keywords": [],
-     "translation": "其余的词则印在中性场景的照片上，比如湖泊或树林的照片。",
-     "translations": {}
+     "end": 1006.9,
+     "text": "The rest of the words were printed onto photos of neutral scenes, such as a photo of a lake or trees."
     },
     {
      "id": "l147",
-     "end": 1013.9,
-     "text": "Neutral words included words like table or desk that don't elicit emotion.",
      "start": 1006.9,
-     "answers": [],
-     "keywords": [],
-     "translation": "中性词包括\"桌子\"这类不会引发情绪的词。",
-     "translations": {}
+     "end": 1013.9,
+     "text": "Neutral words included words like table or desk that don't elicit emotion."
     },
     {
      "id": "l148",
-     "end": 1023.9,
-     "text": "Later, the participants were asked to think back to the words they were shown earlier, which caused them to reenter either a negative or neutral mindset.",
      "start": 1013.9,
-     "answers": [],
-     "keywords": [],
-     "translation": "随后，参与者被要求回想之前看到的词，这让他们重新进入负面或中性的心态。",
-     "translations": {}
+     "end": 1023.9,
+     "text": "Later, the participants were asked to think back to the words they were shown earlier, which caused them to reenter either a negative or neutral mindset."
     },
     {
      "id": "l149",
-     "end": 1031.9,
-     "text": "The participants were then presented with another set of neutral words, and their memory of these new words was tested.",
      "start": 1023.9,
-     "answers": [],
-     "keywords": [],
-     "translation": "接着，向参与者展示另一组中性词，并测试他们对这些新词的记忆。",
-     "translations": {}
+     "end": 1031.9,
+     "text": "The participants were then presented with another set of neutral words, and their memory of these new words was tested."
     },
     {
      "id": "l150",
-     "end": 1043.9,
-     "text": "The researchers found that the new words presented to people in a negative mindset were better remembered by people with higher levels of anxiety than those with lower levels of anxiety.",
      "start": 1031.9,
-     "answers": [],
-     "keywords": [],
-     "translation": "研究人员发现，对于在负面心态下展示的新词，焦虑水平较高的人比焦虑水平较低的人记得更牢。",
-     "translations": {}
+     "end": 1043.9,
+     "text": "The researchers found that the new words presented to people in a negative mindset were better remembered by people with higher levels of anxiety than those with lower levels of anxiety."
     },
     {
      "id": "l151",
-     "end": 1058.9,
-     "text": "In other words, when highly anxious individuals took in otherwise emotionally neutral information that was presented to them, it became colored by their negative mindset, making them remember the information better.",
      "start": 1043.9,
-     "answers": [],
-     "keywords": [],
-     "translation": "换句话说，当高度焦虑的人接收那些本无情绪色彩的中性信息时，这些信息被他们的消极心态染上了色，使他们把信息记得更牢。",
-     "translations": {}
+     "end": 1058.9,
+     "text": "In other words, when highly anxious individuals took in otherwise emotionally neutral information that was presented to them, it became colored by their negative mindset, making them remember the information better."
     },
     {
      "id": "l152",
-     "end": 1063.9,
-     "text": "But these same effects were not seen in people with low levels of anxiety.",
      "start": 1058.9,
-     "answers": [],
-     "keywords": [],
-     "translation": "但同样的效应没有出现在焦虑水平低的人身上。",
-     "translations": {}
+     "end": 1063.9,
+     "text": "But these same effects were not seen in people with low levels of anxiety."
     },
     {
      "id": "l153",
-     "end": 1077.9,
-     "text": "Previous studies have found that extreme levels of anxiety such as those experienced by people diagnosed with an anxiety disorder can be quite detrimental to memory and cognitive performance.",
      "start": 1063.9,
-     "answers": [],
-     "keywords": [],
-     "translation": "此前的研究发现，极端的焦虑水平——比如被诊断为焦虑症的人所经历的——对记忆和认知表现可能相当有害。",
-     "translations": {}
+     "end": 1077.9,
+     "text": "Previous studies have found that extreme levels of anxiety such as those experienced by people diagnosed with an anxiety disorder can be quite detrimental to memory and cognitive performance."
     },
     {
      "id": "l154",
-     "end": 1087.9,
-     "text": "But the highly anxious people in this study represent individuals who are managing their anxiety and for whom anxiety is not a serious problem.",
      "start": 1077.9,
-     "answers": [],
-     "keywords": [],
-     "translation": "但这项研究中高度焦虑的人，指的是那些能够管理自己焦虑、焦虑对他们来说并不是严重问题的人。",
-     "translations": {}
+     "end": 1087.9,
+     "text": "But the highly anxious people in this study represent individuals who are managing their anxiety and for whom anxiety is not a serious problem."
     },
     {
      "id": "l155",
-     "end": 1092.9,
-     "text": "Questions 16 to 18 are based on the recording you have just heard.",
      "start": 1087.9,
-     "answers": [],
-     "keywords": [],
-     "translation": "问题16至18基于你刚刚听到的录音。",
-     "translations": {}
+     "end": 1092.9,
+     "text": "Questions 16 to 18 are based on the recording you have just heard."
     },
     {
      "id": "l156",
-     "end": 1115.165,
-     "text": "Q16. What does the speaker say the new study suggests?",
-     "start": 1096.782,
-     "answers": [],
-     "keywords": [],
-     "translation": "Q16. 说话人说新研究揭示了什么？",
-     "translations": {}
+     "start": 1096.78,
+     "end": 1115.16,
+     "text": "Q16. What does the speaker say the new study suggests?"
     },
     {
      "id": "l157",
+     "start": 1115.16,
      "end": 1133.7,
-     "text": "Q17. What did researchers do first in the new study?",
-     "start": 1115.165,
-     "answers": [],
-     "keywords": [],
-     "translation": "Q17. 在新研究中，研究人员首先做了什么？",
-     "translations": {}
+     "text": "Q17. What did researchers do first in the new study?"
     },
     {
      "id": "l158",
-     "end": 1148.9,
-     "text": "Q18. What do we learn from previous studies about anxiety?",
      "start": 1133.7,
-     "answers": [],
-     "keywords": [],
-     "translation": "Q18. 关于焦虑，我们从此前的研究中了解到什么？",
-     "translations": {}
+     "end": 1148.9,
+     "text": "Q18. What do we learn from previous studies about anxiety?"
     },
     {
      "id": "l159",
-     "end": 1149.715,
-     "text": "RECORDING 2",
      "start": 1148.9,
-     "answers": [],
-     "keywords": [],
-     "translation": "RECORDING 2",
-     "translations": {}
+     "end": 1149.71,
+     "text": "RECORDING 2"
     },
     {
      "id": "l160",
-     "end": 1155.666,
-     "text": "Over the past 20 years, the internet has gradually become a dominant feature of our lives.",
-     "start": 1149.715,
-     "answers": [],
-     "keywords": [],
-     "translation": "过去20年里，互联网已逐渐成为我们生活中的主导性特征。",
-     "translations": {}
+     "start": 1149.71,
+     "end": 1155.67,
+     "text": "Over the past 20 years, the internet has gradually become a dominant feature of our lives."
     },
     {
      "id": "l161",
-     "end": 1159.009,
-     "text": "It has changed how we communicate with each other.",
-     "start": 1155.666,
-     "answers": [],
-     "keywords": [],
-     "translation": "它改变了我们相互交流的方式。",
-     "translations": {}
+     "start": 1155.67,
+     "end": 1159.01,
+     "text": "It has changed how we communicate with each other."
     },
     {
      "id": "l162",
+     "start": 1159.01,
      "end": 1163.9,
-     "text": "And it has definitely transformed the way we do business with each other.",
-     "start": 1159.009,
-     "answers": [],
-     "keywords": [],
-     "translation": "它也确确实实改变了我们彼此做生意的方式。",
-     "translations": {}
+     "text": "And it has definitely transformed the way we do business with each other."
     },
     {
      "id": "l163",
-     "end": 1167.9,
-     "text": "Marketing has also changed in a number of ways.",
      "start": 1163.9,
-     "answers": [],
-     "keywords": [],
-     "translation": "营销也在多个方面发生了变化。",
-     "translations": {}
+     "end": 1167.9,
+     "text": "Marketing has also changed in a number of ways."
     },
     {
      "id": "l164",
-     "end": 1177.516,
-     "text": "For instance, in the past, consumers had to call a phone number and patiently wait on hold in order to get the information they wanted.",
      "start": 1167.9,
-     "answers": [],
-     "keywords": [],
-     "translation": "比如，过去消费者得打电话，然后耐心等待接通，才能获得想要的信息。",
-     "translations": {}
+     "end": 1177.52,
+     "text": "For instance, in the past, consumers had to call a phone number and patiently wait on hold in order to get the information they wanted."
     },
     {
      "id": "l165",
+     "start": 1177.52,
      "end": 1180.9,
-     "text": "Today, they want the information immediately.",
-     "start": 1177.516,
-     "answers": [],
-     "keywords": [],
-     "translation": "如今，他们想要立刻获得信息。",
-     "translations": {}
+     "text": "Today, they want the information immediately."
     },
     {
      "id": "l166",
-     "end": 1188.9,
-     "text": "They'll go to the company's social media pages and post comments and questions expecting to receive an immediate response.",
      "start": 1180.9,
-     "answers": [],
-     "keywords": [],
-     "translation": "他们会去公司的社交媒体页面发表评论和提问，期待马上得到回复。",
-     "translations": {}
+     "end": 1188.9,
+     "text": "They'll go to the company's social media pages and post comments and questions expecting to receive an immediate response."
     },
     {
      "id": "l167",
-     "end": 1196.9,
-     "text": "If they don't get their questions answered soon, they'll move on to another company that will answer them quickly.",
      "start": 1188.9,
-     "answers": [],
-     "keywords": [],
-     "translation": "如果问题没有得到及时解答，他们就会转向另一家能快速回应的公司。",
-     "translations": {}
+     "end": 1196.9,
+     "text": "If they don't get their questions answered soon, they'll move on to another company that will answer them quickly."
     },
     {
      "id": "l168",
-     "end": 1201.9,
-     "text": "Marketing departments today need to follow technological development.",
      "start": 1196.9,
-     "answers": [],
-     "keywords": [],
-     "translation": "如今的营销部门需要跟上技术发展。",
-     "translations": {}
+     "end": 1201.9,
+     "text": "Marketing departments today need to follow technological development."
     },
     {
      "id": "l169",
-     "end": 1207.008,
-     "text": "For example, this year's smartphone is smarter than last year's.",
      "start": 1201.9,
-     "answers": [],
-     "keywords": [],
-     "translation": "比如，今年的智能手机比去年的更智能。",
-     "translations": {}
+     "end": 1207.01,
+     "text": "For example, this year's smartphone is smarter than last year's."
     },
     {
      "id": "l170",
+     "start": 1207.01,
      "end": 1209.9,
-     "text": "Self-driving cars are now on the road.",
-     "start": 1207.008,
-     "answers": [],
-     "keywords": [],
-     "translation": "自动驾驶汽车已经上路了。",
-     "translations": {}
+     "text": "Self-driving cars are now on the road."
     },
     {
      "id": "l171",
-     "end": 1219.9,
-     "text": "Marketers have to do research on which technologies are coming into being, otherwise, they risk being left behind in the virtual dust.",
      "start": 1209.9,
-     "answers": [],
-     "keywords": [],
-     "translation": "营销人员必须研究哪些技术正在兴起，否则就有在虚拟世界的尘埃中被甩在后面的风险。",
-     "translations": {}
+     "end": 1219.9,
+     "text": "Marketers have to do research on which technologies are coming into being, otherwise, they risk being left behind in the virtual dust."
     },
     {
      "id": "l172",
-     "end": 1224.9,
-     "text": "Marketing has also changed due to the importance of video.",
      "start": 1219.9,
-     "answers": [],
-     "keywords": [],
-     "translation": "由于视频的重要性，营销也发生了变化。",
-     "translations": {}
+     "end": 1224.9,
+     "text": "Marketing has also changed due to the importance of video."
     },
     {
      "id": "l173",
-     "end": 1227.358,
-     "text": "People don't just want to read text.",
      "start": 1224.9,
-     "answers": [],
-     "keywords": [],
-     "translation": "人们不再只想读文字。",
-     "translations": {}
+     "end": 1227.36,
+     "text": "People don't just want to read text."
     },
     {
      "id": "l174",
+     "start": 1227.36,
      "end": 1229.9,
-     "text": "They want to watch things happening.",
-     "start": 1227.358,
-     "answers": [],
-     "keywords": [],
-     "translation": "他们想看到事情在发生。",
-     "translations": {}
+     "text": "They want to watch things happening."
     },
     {
      "id": "l175",
-     "end": 1238.9,
-     "text": "Companies now have to explore how they can use video on a consistent basis to share information about their businesses.",
      "start": 1229.9,
-     "answers": [],
-     "keywords": [],
-     "translation": "公司现在必须探索如何持续利用视频来分享自己业务的信息。",
-     "translations": {}
+     "end": 1238.9,
+     "text": "Companies now have to explore how they can use video on a consistent basis to share information about their businesses."
     },
     {
      "id": "l176",
-     "end": 1244.479,
-     "text": "Fortunately, it's extremely easy to shoot something these days.",
      "start": 1238.9,
-     "answers": [],
-     "keywords": [],
-     "translation": "幸运的是，如今拍点东西极其容易。",
-     "translations": {}
+     "end": 1244.48,
+     "text": "Fortunately, it's extremely easy to shoot something these days."
     },
     {
      "id": "l177",
+     "start": 1244.48,
      "end": 1246.9,
-     "text": "All you need is a smartphone.",
-     "start": 1244.479,
-     "answers": [],
-     "keywords": [],
-     "translation": "你只需要一部智能手机。",
-     "translations": {}
+     "text": "All you need is a smartphone."
     },
     {
      "id": "l178",
-     "end": 1249.9,
-     "text": "But what's the result of all this?",
      "start": 1246.9,
-     "answers": [],
-     "keywords": [],
-     "translation": "但这一切的结果是什么呢？",
-     "translations": {}
+     "end": 1249.9,
+     "text": "But what's the result of all this?"
     },
     {
      "id": "l179",
-     "end": 1252.271,
-     "text": "Shorter attention spans?",
      "start": 1249.9,
-     "answers": [],
-     "keywords": [],
-     "translation": "注意力持续时间更短了？",
-     "translations": {}
+     "end": 1252.27,
+     "text": "Shorter attention spans?"
     },
     {
      "id": "l180",
+     "start": 1252.27,
      "end": 1256.9,
-     "text": "We aren't the same people that we were 20 years ago.",
-     "start": 1252.271,
-     "answers": [],
-     "keywords": [],
-     "translation": "我们已经不是20年前的我们了。",
-     "translations": {}
+     "text": "We aren't the same people that we were 20 years ago."
     },
     {
      "id": "l181",
-     "end": 1266.9,
-     "text": "Not only have we grown accustomed to getting the information we want instantaneously, our attention spans are much shorter.",
      "start": 1256.9,
-     "answers": [],
-     "keywords": [],
-     "translation": "我们不仅习惯了即时获得想要的信息，注意力持续的时间也短得多了。",
-     "translations": {}
+     "end": 1266.9,
+     "text": "Not only have we grown accustomed to getting the information we want instantaneously, our attention spans are much shorter."
     },
     {
      "id": "l182",
-     "end": 1273.9,
-     "text": "If something doesn't capture our attention within a few seconds, we're on to the next piece of content.",
      "start": 1266.9,
-     "answers": [],
-     "keywords": [],
-     "translation": "如果一件事几秒钟内抓不住我们的注意力，我们就去看下一条内容了。",
-     "translations": {}
+     "end": 1273.9,
+     "text": "If something doesn't capture our attention within a few seconds, we're on to the next piece of content."
     },
     {
      "id": "l183",
-     "end": 1284.9,
-     "text": "Marketers need to figure out ways to speak directly to the customer's emotions and they need to figure out how to do that as quickly as possible.",
      "start": 1273.9,
-     "answers": [],
-     "keywords": [],
-     "translation": "营销人员需要想出直击顾客情感的方法，而且要尽快想出来。",
-     "translations": {}
+     "end": 1284.9,
+     "text": "Marketers need to figure out ways to speak directly to the customer's emotions and they need to figure out how to do that as quickly as possible."
     },
     {
      "id": "l184",
-     "end": 1289.9,
-     "text": "Once people are emotionally engaged, they'll stick with you.",
      "start": 1284.9,
-     "answers": [],
-     "keywords": [],
-     "translation": "一旦人们在情感上被调动起来，他们就会一直跟着你。",
-     "translations": {}
+     "end": 1289.9,
+     "text": "Once people are emotionally engaged, they'll stick with you."
     },
     {
      "id": "l185",
-     "end": 1297.9,
-     "text": "If marketing has changed this much in the past 20 years, imagine what the next 20 years will bring.",
      "start": 1289.9,
-     "answers": [],
-     "keywords": [],
-     "translation": "如果过去20年营销发生了这么大的变化，想象一下未来20年会带来什么。",
-     "translations": {}
+     "end": 1297.9,
+     "text": "If marketing has changed this much in the past 20 years, imagine what the next 20 years will bring."
     },
     {
      "id": "l186",
-     "end": 1306.9,
-     "text": "In a recent survey, only 9% of marketers could say with confidence that their marketing efforts were actually working.",
      "start": 1297.9,
-     "answers": [],
-     "keywords": [],
-     "translation": "在最近的一项调查中，只有9%的营销人员能够自信地说他们的营销努力确实有效。",
-     "translations": {}
+     "end": 1306.9,
+     "text": "In a recent survey, only 9% of marketers could say with confidence that their marketing efforts were actually working."
     },
     {
      "id": "l187",
-     "end": 1313.9,
-     "text": "Their confidence is being shaken because the rules of the game change every year.",
      "start": 1306.9,
-     "answers": [],
-     "keywords": [],
-     "translation": "他们的信心正在动摇，因为游戏规则每年都在变。",
-     "translations": {}
+     "end": 1313.9,
+     "text": "Their confidence is being shaken because the rules of the game change every year."
     },
     {
      "id": "l188",
-     "end": 1323.9,
-     "text": "That's why it's important for marketers to pay attention to the latest technological developments and consider collaborating with technological innovators.",
      "start": 1313.9,
-     "answers": [],
-     "keywords": [],
-     "translation": "这就是为什么营销人员要关注最新的技术发展，并考虑与技术革新者合作。",
-     "translations": {}
+     "end": 1323.9,
+     "text": "That's why it's important for marketers to pay attention to the latest technological developments and consider collaborating with technological innovators."
     },
     {
      "id": "l189",
-     "end": 1329.9,
-     "text": "That way, they'll be moving at the same pace as the tech industry.",
      "start": 1323.9,
-     "answers": [],
-     "keywords": [],
-     "translation": "这样，他们就能与科技行业保持同步前进。",
-     "translations": {}
+     "end": 1329.9,
+     "text": "That way, they'll be moving at the same pace as the tech industry."
     },
     {
      "id": "l190",
-     "end": 1334.9,
-     "text": "Questions 19 to 21 are based on the recording you have just heard.",
      "start": 1329.9,
-     "answers": [],
-     "keywords": [],
-     "translation": "问题19至21基于你刚刚听到的录音。",
-     "translations": {}
+     "end": 1334.9,
+     "text": "Questions 19 to 21 are based on the recording you have just heard."
     },
     {
      "id": "l191",
-     "end": 1355.654,
-     "text": "Q19. What does the speaker say about today's consumers?",
-     "start": 1338.362,
-     "answers": [],
-     "keywords": [],
-     "translation": "Q19. 关于如今的消费者，说话人说了什么？",
-     "translations": {}
+     "start": 1338.36,
+     "end": 1355.65,
+     "text": "Q19. What does the speaker say about today's consumers?"
     },
     {
      "id": "l192",
-     "end": 1374.841,
-     "text": "Q20. How do marketers capture consumers' attention as quickly as possible?",
-     "start": 1355.654,
-     "answers": [],
-     "keywords": [],
-     "translation": "Q20. 营销人员如何尽快抓住消费者的注意力？",
-     "translations": {}
+     "start": 1355.65,
+     "end": 1374.84,
+     "text": "Q20. How do marketers capture consumers' attention as quickly as possible?"
     },
     {
      "id": "l193",
+     "start": 1374.84,
      "end": 1391.9,
-     "text": "Q21. What does the speaker suggest marketers do to meet future challenges?",
-     "start": 1374.841,
-     "answers": [],
-     "keywords": [],
-     "translation": "Q21. 说话人建议营销人员做什么来应对未来的挑战？",
-     "translations": {}
+     "text": "Q21. What does the speaker suggest marketers do to meet future challenges?"
     },
     {
      "id": "l194",
-     "end": 1392.9,
-     "text": "RECORDING 3",
      "start": 1391.9,
-     "answers": [],
-     "keywords": [],
-     "translation": "RECORDING 3",
-     "translations": {}
+     "end": 1392.9,
+     "text": "RECORDING 3"
     },
     {
      "id": "l195",
-     "end": 1413.9,
-     "text": "You might be surprised to learn that the benefits of friendships extend beyond people's social life and into their work, which is interesting when you consider the extent to which people sacrifice friendships, or at least the time they spend with friends because of the extra hours they're devoting to work.",
      "start": 1392.9,
-     "answers": [],
-     "keywords": [],
-     "translation": "你可能会惊讶地发现，友谊的好处不仅延伸到人们的社交生活，还延伸到工作中。想到人们为了工作多投入的那些时间，在多大程度上牺牲了友谊、或至少牺牲了与朋友相处的时光，这一点就格外有意思。",
-     "translations": {}
+     "end": 1413.9,
+     "text": "You might be surprised to learn that the benefits of friendships extend beyond people's social life and into their work, which is interesting when you consider the extent to which people sacrifice friendships, or at least the time they spend with friends because of the extra hours they're devoting to work."
     },
     {
      "id": "l196",
-     "end": 1420.9,
-     "text": "Just last week, I was remarking to a colleague that I'm content with only one social engagement per week.",
      "start": 1413.9,
-     "answers": [],
-     "keywords": [],
-     "translation": "就在上周，我还跟一位同事说，我每周只有一次社交活动就很满足了。",
-     "translations": {}
+     "end": 1420.9,
+     "text": "Just last week, I was remarking to a colleague that I'm content with only one social engagement per week."
     },
     {
      "id": "l197",
-     "end": 1425.9,
-     "text": "But according to recent research, that's evidently not enough.",
      "start": 1420.9,
-     "answers": [],
-     "keywords": [],
-     "translation": "但根据最近的研究，这显然还不够。",
-     "translations": {}
+     "end": 1425.9,
+     "text": "But according to recent research, that's evidently not enough."
     },
     {
      "id": "l198",
-     "end": 1438.9,
-     "text": "In an initial study of more than 700 respondents, scholars from an American university analyzed the impact that friends, as opposed to family, have on self-esteem and well-being.",
      "start": 1425.9,
-     "answers": [],
-     "keywords": [],
-     "translation": "在一项对700多名受访者的初步研究中，一所美国大学的学者分析了朋友（相对于家人）对自尊和幸福感的影响。",
-     "translations": {}
+     "end": 1438.9,
+     "text": "In an initial study of more than 700 respondents, scholars from an American university analyzed the impact that friends, as opposed to family, have on self-esteem and well-being."
     },
     {
      "id": "l199",
-     "end": 1442.9,
-     "text": "Friends came out substantially on top.",
      "start": 1438.9,
-     "answers": [],
-     "keywords": [],
-     "translation": "朋友的影响明显更胜一筹。",
-     "translations": {}
+     "end": 1442.9,
+     "text": "Friends came out substantially on top."
     },
     {
      "id": "l200",
-     "end": 1446.695,
-     "text": "That's because to be someone's mate is a voluntary act.",
      "start": 1442.9,
-     "answers": [],
-     "keywords": [],
-     "translation": "这是因为做一个人的朋友是一种自愿行为。",
-     "translations": {}
+     "end": 1446.69,
+     "text": "That's because to be someone's mate is a voluntary act."
     },
     {
      "id": "l201",
+     "start": 1446.69,
      "end": 1449.9,
-     "text": "Unlike family who people rarely get to choose.",
-     "start": 1446.695,
-     "answers": [],
-     "keywords": [],
-     "translation": "而家人则很少能由人自己选择。",
-     "translations": {}
+     "text": "Unlike family who people rarely get to choose."
     },
     {
      "id": "l202",
-     "end": 1460.9,
-     "text": "The researchers found that when people choose to cultivate and maintain supportive friendships with an individual, it means that the person is valued and worthy of their limited time.",
      "start": 1449.9,
-     "answers": [],
-     "keywords": [],
-     "translation": "研究人员发现，当人们选择与某个人培养并维持相互支持的友谊时，这意味着这个人受到重视、值得他们付出有限的时间。",
-     "translations": {}
+     "end": 1460.9,
+     "text": "The researchers found that when people choose to cultivate and maintain supportive friendships with an individual, it means that the person is valued and worthy of their limited time."
     },
     {
      "id": "l203",
-     "end": 1466.9,
-     "text": "Such sentiments of value and worthiness boost our self-esteem.",
      "start": 1460.9,
-     "answers": [],
-     "keywords": [],
-     "translation": "这种被重视、被认可的感觉会提升我们的自尊。",
-     "translations": {}
+     "end": 1466.9,
+     "text": "Such sentiments of value and worthiness boost our self-esteem."
     },
     {
      "id": "l204",
-     "end": 1470.9,
-     "text": "The second study comprised more than 300 participants.",
      "start": 1466.9,
-     "answers": [],
-     "keywords": [],
-     "translation": "第二项研究有300多名参与者。",
-     "translations": {}
+     "end": 1470.9,
+     "text": "The second study comprised more than 300 participants."
     },
     {
      "id": "l205",
-     "end": 1478.9,
-     "text": "It proved that the better we feel about ourselves, the more likely we will perform our job confidently and competently.",
      "start": 1470.9,
-     "answers": [],
-     "keywords": [],
-     "translation": "研究证明，我们对自己的感觉越好，就越有可能自信而胜任地完成工作。",
-     "translations": {}
+     "end": 1478.9,
+     "text": "It proved that the better we feel about ourselves, the more likely we will perform our job confidently and competently."
     },
     {
      "id": "l206",
-     "end": 1485.9,
-     "text": "This follow-up study found that non-work friends even improved people's job satisfaction.",
      "start": 1478.9,
-     "answers": [],
-     "keywords": [],
-     "translation": "这项后续研究发现，工作之外的朋友甚至能提高人们的工作满意度。",
-     "translations": {}
+     "end": 1485.9,
+     "text": "This follow-up study found that non-work friends even improved people's job satisfaction."
     },
     {
      "id": "l207",
-     "end": 1495.9,
-     "text": "They have as much of an impact on how much they love their jobs, as do the friends they have at work, despite not actually being at our place of work.",
      "start": 1485.9,
-     "answers": [],
-     "keywords": [],
-     "translation": "他们虽然并不出现在我们的工作场所，但对人们热爱自己工作程度的影响，和职场朋友一样大。",
-     "translations": {}
+     "end": 1495.9,
+     "text": "They have as much of an impact on how much they love their jobs, as do the friends they have at work, despite not actually being at our place of work."
     },
     {
      "id": "l208",
-     "end": 1502.9,
-     "text": "These types of friends tend to be our preferred outlet for complaining about work-related matters.",
      "start": 1495.9,
-     "answers": [],
-     "keywords": [],
-     "translation": "这类朋友往往是我们抱怨工作相关事情时的首选倾诉对象。",
-     "translations": {}
+     "end": 1502.9,
+     "text": "These types of friends tend to be our preferred outlet for complaining about work-related matters."
     },
     {
      "id": "l209",
-     "end": 1507.9,
-     "text": "This is an avenue that may not be available at the office.",
      "start": 1502.9,
-     "answers": [],
-     "keywords": [],
-     "translation": "这种渠道在办公室里可能并不存在。",
-     "translations": {}
+     "end": 1507.9,
+     "text": "This is an avenue that may not be available at the office."
     },
     {
      "id": "l210",
-     "end": 1519.9,
-     "text": "So even though friendships can be easy to neglect when confronted by pressures at work, or even pressures at home, neglecting our friends can turn out to be harmful and counterproductive.",
      "start": 1507.9,
-     "answers": [],
-     "keywords": [],
-     "translation": "所以，尽管面对工作压力甚至家庭压力时友谊容易被忽视，忽视朋友最终可能有害无益、适得其反。",
-     "translations": {}
+     "end": 1519.9,
+     "text": "So even though friendships can be easy to neglect when confronted by pressures at work, or even pressures at home, neglecting our friends can turn out to be harmful and counterproductive."
     },
     {
      "id": "l211",
-     "end": 1534.9,
-     "text": "That's why when determining how to create a better work-life balance, we need to consider not only how to balance work and family demands, but also how to cultivate and sustain supportive friendships.",
      "start": 1519.9,
-     "answers": [],
-     "keywords": [],
-     "translation": "这就是为什么在决定如何更好地平衡工作与生活时，我们不仅要考虑如何平衡工作与家庭需求，还要考虑如何培养和维系相互支持的友谊。",
-     "translations": {}
+     "end": 1534.9,
+     "text": "That's why when determining how to create a better work-life balance, we need to consider not only how to balance work and family demands, but also how to cultivate and sustain supportive friendships."
     },
     {
      "id": "l212",
-     "end": 1543.9,
-     "text": "It's for employees for flexible work arrangements.",
      "start": 1534.9,
-     "answers": [],
-     "keywords": [],
-     "translation": "这对申请弹性工作安排的员工来说也是如此。",
-     "translations": {}
+     "end": 1543.9,
+     "text": "It's for employees for flexible work arrangements."
     },
     {
      "id": "l213",
-     "end": 1553.9,
-     "text": "It's irrelevant whether their need for a desired schedule is due to say, parenting responsibilities, or a craving to hang out with their best mate.",
      "start": 1543.9,
-     "answers": [],
-     "keywords": [],
-     "translation": "他们想要某种日程安排，是出于抚养孩子的责任，还是想跟最好的朋友聚一聚，这并不重要。",
-     "translations": {}
+     "end": 1553.9,
+     "text": "It's irrelevant whether their need for a desired schedule is due to say, parenting responsibilities, or a craving to hang out with their best mate."
     },
     {
      "id": "l214",
-     "end": 1560.061,
-     "text": "What matters is the opportunity to engage in a nourishing activity outside of work.",
      "start": 1553.9,
-     "answers": [],
-     "keywords": [],
-     "translation": "重要的是有机会在工作之外从事一种滋养身心的活动。",
-     "translations": {}
+     "end": 1560.06,
+     "text": "What matters is the opportunity to engage in a nourishing activity outside of work."
     },
     {
      "id": "l215",
+     "start": 1560.06,
      "end": 1563.9,
-     "text": "That will definitely have a follow-on effect at work.",
-     "start": 1560.061,
-     "answers": [],
-     "keywords": [],
-     "translation": "这肯定会在工作中产生后续的积极影响。",
-     "translations": {}
+     "text": "That will definitely have a follow-on effect at work."
     },
     {
      "id": "l216",
-     "end": 1569.9,
-     "text": "Questions 22-25 are based on the recording you have just heard.",
      "start": 1563.9,
-     "answers": [],
-     "keywords": [],
-     "translation": "问题22至25基于你刚刚听到的录音。",
-     "translations": {}
+     "end": 1569.9,
+     "text": "Questions 22-25 are based on the recording you have just heard."
     },
     {
      "id": "l217",
-     "end": 1590.592,
-     "text": "Q22. What does the speaker say is interesting?",
-     "start": 1573.991,
-     "answers": [],
-     "keywords": [],
-     "translation": "Q22. 说话人说什么事有意思？",
-     "translations": {}
+     "start": 1573.99,
+     "end": 1588.63,
+     "text": "Q22. What does the speaker say is interesting?"
     },
     {
      "id": "l218",
-     "end": 1612.604,
-     "text": "Q23. What did researchers from an American university analyze in their initial study?",
-     "start": 1590.592,
-     "answers": [],
-     "keywords": [],
-     "translation": "Q23. 美国一所大学的研究人员在初步研究中分析了什么？",
-     "translations": {}
+     "start": 1588.68,
+     "end": 1612.6,
+     "text": "Q23. What did researchers from an American university analyze in their initial study?"
     },
     {
      "id": "l219",
-     "end": 1633.122,
-     "text": "Q24. What did the second study find about non-work friends?",
-     "start": 1612.604,
-     "answers": [],
-     "keywords": [],
-     "translation": "Q24. 第二项研究关于工作之外的朋友发现了什么？",
-     "translations": {}
+     "start": 1612.6,
+     "end": 1633.12,
+     "text": "Q24. What did the second study find about non-work friends?"
     },
     {
      "id": "l220",
-     "end": 1640.511,
-     "text": "Q25. What does the speaker suggest managers do?",
-     "start": 1633.122,
-     "answers": [],
-     "keywords": [],
-     "translation": "Q25. 说话人建议管理者做什么？",
-     "translations": {}
+     "start": 1633.12,
+     "end": 1640.51,
+     "text": "Q25. What does the speaker suggest managers do?"
     }
    ],
    "status": "published",
@@ -39125,32 +38239,32 @@
     {
      "id": "l2",
      "start": 8.2,
-     "end": 17.16,
+     "end": 16.03,
      "text": "In this section you will hear two long conversations."
     },
     {
      "id": "l3",
-     "start": 17.16,
-     "end": 19.66,
-     "text": "At the end of each conversation, you will"
-    },
-    {
-     "id": "l4",
-     "start": 19.66,
-     "end": 21.3,
-     "text": "hear four questions."
-    },
-    {
-     "id": "l5",
-     "start": 21.3,
-     "end": 26.64,
+     "start": 16.08,
+     "end": 17.11,
      "text": "Both the conversation and the questions will be spoken only once."
     },
     {
-     "id": "l6",
-     "start": 26.64,
-     "end": 31.52,
+     "id": "l4",
+     "start": 17.16,
+     "end": 18.53,
+     "text": "At the end of each conversation, you will"
+    },
+    {
+     "id": "l5",
+     "start": 18.58,
+     "end": 19.61,
      "text": "After you hear a question, you must choose the best answer from the four choices marked"
+    },
+    {
+     "id": "l6",
+     "start": 19.66,
+     "end": 21.3,
+     "text": "hear four questions."
     },
     {
      "id": "l7",
@@ -39419,12 +38533,12 @@
     {
      "id": "l51",
      "start": 295.01,
-     "end": 299.26,
+     "end": 298.21,
      "text": "So frankly, I don't have much prior working experience."
     },
     {
      "id": "l52",
-     "start": 314.76,
+     "start": 298.26,
      "end": 334.96,
      "text": "I am, however, very excited about the prospect of joining this company and very keen to start from the bottom in whatever capacity I may be of use."
     },
@@ -40109,26 +39223,26 @@
     {
      "id": "l166",
      "start": 1367.05,
-     "end": 1396.87,
+     "end": 1386.27,
      "text": "Q20. What did Julius Morton do that increased his influence in Nebraska City?"
     },
     {
      "id": "l167",
+     "start": 1386.32,
+     "end": 1396.82,
+     "text": "Modern humans arose in Africa about 200,000 years ago. They then spread across Europe and Asia sometime after 60,000 years ago. This is the \"Out of Africa\" model, as it's commonly known."
+    },
+    {
+     "id": "l168",
      "start": 1396.87,
      "end": 1397.67,
      "text": "Q21. What does the speaker say happened on April 10, 1872?"
     },
     {
-     "id": "l168",
+     "id": "l169",
      "start": 1397.67,
      "end": 1398.47,
      "text": "RECORDING 3"
-    },
-    {
-     "id": "l169",
-     "start": 1398.47,
-     "end": 1405.25,
-     "text": "Modern humans arose in Africa about 200,000 years ago. They then spread across Europe and Asia sometime after 60,000 years ago. This is the \"Out of Africa\" model, as it's commonly known."
     },
     {
      "id": "l170",
@@ -40324,26 +39438,26 @@
     {
      "id": "l2",
      "start": 11.24,
-     "end": 21.16,
+     "end": 20.83,
      "text": "In this section you will hear two long conversations."
     },
     {
      "id": "l3",
+     "start": 20.88,
+     "end": 21.11,
+     "text": "Both the conversation and the questions will be spoken only once. After you hear a question you must choose the best answer from the four choices marked A, B, C and D."
+    },
+    {
+     "id": "l4",
      "start": 21.16,
      "end": 24.12,
      "text": "At the end of each conversation you will hear"
     },
     {
-     "id": "l4",
+     "id": "l5",
      "start": 24.12,
      "end": 25.33,
      "text": "four questions."
-    },
-    {
-     "id": "l5",
-     "start": 25.33,
-     "end": 31.03,
-     "text": "Both the conversation and the questions will be spoken only once. After you hear a question you must choose the best answer from the four choices marked A, B, C and D."
     },
     {
      "id": "l6",
@@ -41044,24 +40158,24 @@
     {
      "id": "l122",
      "start": 828.66,
-     "end": 837.48,
+     "end": 836.13,
      "text": "In this section, you will hear three recordings"
     },
     {
      "id": "l123",
-     "start": 837.48,
-     "end": 839.96,
-     "text": "of lectures or talks followed by three or four questions."
-    },
-    {
-     "id": "l124",
-     "start": 839.96,
-     "end": 841.72,
+     "start": 836.18,
+     "end": 837.43,
      "text": "The recordings will be played only once."
     },
     {
+     "id": "l124",
+     "start": 837.48,
+     "end": 838.95,
+     "text": "of lectures or talks followed by three or four questions."
+    },
+    {
      "id": "l125",
-     "start": 841.72,
+     "start": 839,
      "end": 843.92,
      "text": "After you hear a question, you must choose the best answer from the four choices"
     },
@@ -42842,12 +41956,12 @@
     {
      "id": "l13",
      "start": 48.04,
-     "end": 53.36,
+     "end": 48.17,
      "text": "W: I have, indeed."
     },
     {
      "id": "l14",
-     "start": 53.36,
+     "start": 48.22,
      "end": 54.36,
      "text": "And I wish to sign the agreement pending one small change to be made to the contract."
     },
@@ -44018,20 +43132,20 @@
     {
      "id": "l209",
      "start": 1576.74,
-     "end": 1596.92,
+     "end": 1593.15,
      "text": "Q24. Why does Professor Tom Oliver claim that the material \"us\" is constantly changing?"
     },
     {
      "id": "l210",
-     "start": 1596.92,
-     "end": 1603.28,
-     "text": "Questions 25-How can we solve pressing environmental and societal problems according to Professor"
+     "start": 1593.2,
+     "end": 1596.87,
+     "text": "Q25. How can we solve pressing environmental and societal problems according to Professor Tom Oliver?"
     },
     {
      "id": "l211",
-     "start": 1603.28,
-     "end": 1619.72,
-     "text": "Q25. How can we solve pressing environmental and societal problems according to Professor Tom Oliver?"
+     "start": 1596.92,
+     "end": 1603.28,
+     "text": "Questions 25-How can we solve pressing environmental and societal problems according to Professor"
     }
    ],
    "status": "published",
@@ -44208,27 +43322,27 @@
     },
     {
      "id": "l22",
+     "start": 88.6,
+     "end": 92.5,
+     "text": "M: I've never had one before. And now that I do, I use it all the time."
+    },
+    {
+     "id": "l23",
      "start": 93.02,
      "end": 97.07,
      "text": "This way, the soups and juices I make come out really fine and smooth, with no lumpy bits."
     },
     {
-     "id": "l23",
+     "id": "l24",
      "start": 97.07,
      "end": 98.15,
      "text": "W: Hmm, I see."
     },
     {
-     "id": "l24",
+     "id": "l25",
      "start": 98.15,
      "end": 101.42,
      "text": "I've never thought of getting one myself. It sounds like the kind of thing that, for me personally, I would rarely use."
-    },
-    {
-     "id": "l25",
-     "start": 101.42,
-     "end": 103.88,
-     "text": "M: I've never had one before. And now that I do, I use it all the time."
     },
     {
      "id": "l26",
@@ -44809,30 +43923,30 @@
     {
      "id": "l122",
      "start": 941.08,
-     "end": 950.16,
+     "end": 946.25,
      "text": "Each was several pages long, and either presented the arguments and data in favor of physical punishment or against it. After this, the students answered some questions to test their comprehension and memory of the text."
     },
     {
      "id": "l123",
+     "start": 946.3,
+     "end": 950.11,
+     "text": "The more their belief had changed, the larger this memory bias tended to be, suggesting the students were relying on their current belief to deduce their initial belief."
+    },
+    {
+     "id": "l124",
      "start": 950.16,
      "end": 957.26,
      "text": "Then, the students again scored their belief in whether physical punishment is effective or not. Finally, the researchers asked them to recall what their belief had been at the start of the study."
     },
     {
-     "id": "l124",
+     "id": "l125",
      "start": 957.26,
-     "end": 966.29,
+     "end": 959.85,
      "text": "The students' belief about physical punishment changed when they read a text that argued against their own initial position. Crucially, the memory of their initial belief was shifted in the direction of their new belief - in fact, their memory was closer to their current belief than their original belief."
     },
     {
-     "id": "l125",
-     "start": 966.29,
-     "end": 969.02,
-     "text": "The more their belief had changed, the larger this memory bias tended to be, suggesting the students were relying on their current belief to deduce their initial belief."
-    },
-    {
      "id": "l126",
-     "start": 969.02,
+     "start": 959.9,
      "end": 975.71,
      "text": "The memory bias was unrelated to the measures of how well they'd understood or recalled the text, suggesting these factors didn't play a role in memory of initial belief or awareness of belief change."
     },
@@ -45097,20 +44211,20 @@
     {
      "id": "l170",
      "start": 1450.72,
-     "end": 1471.06,
+     "end": 1463.95,
      "text": "But it's also a great example of how scientific research should continually reexamine and question findings to get closer to the ground truth of understanding what's actually happening."
     },
     {
      "id": "l171",
-     "start": 1471.06,
-     "end": 1471.86,
-     "text": "Questions 22 to 25 are based on the recording you have just heard"
+     "start": 1464,
+     "end": 1469.5,
+     "text": "Q22. What does NASA's 1989 paper claim houseplants can do?"
     },
     {
      "id": "l172",
-     "start": 1471.86,
-     "end": 1506.72,
-     "text": "Q22. What does NASA's 1989 paper claim houseplants can do?"
+     "start": 1471.06,
+     "end": 1471.86,
+     "text": "Questions 22 to 25 are based on the recording you have just heard"
     },
     {
      "id": "l173",
@@ -45372,30 +44486,30 @@
     {
      "id": "l33",
      "start": 148.16,
-     "end": 148.96,
+     "end": 148.61,
      "text": "CONVERSATION 1"
     },
     {
      "id": "l34",
+     "start": 148.66,
+     "end": 148.91,
+     "text": "The report is yours to take with you. We'll go through the main points together now."
+    },
+    {
+     "id": "l35",
      "start": 148.96,
      "end": 150.56,
      "text": "M: OK then, this here is your yearly performance review. You've been with the company for 3 years and under my direct supervision for the past 12 months."
     },
     {
-     "id": "l35",
+     "id": "l36",
      "start": 150.56,
      "end": 153.31,
      "text": "Your report is mostly good. But there are a couple of issues we must discuss."
     },
     {
-     "id": "l36",
-     "start": 153.31,
-     "end": 159.96,
-     "text": "The report is yours to take with you. We'll go through the main points together now."
-    },
-    {
      "id": "l37",
-     "start": 159.96,
+     "start": 155.78,
      "end": 164.92,
      "text": "And you can come through it in greater detail later. Do you have any questions before we start? W: No, sir."
     },
@@ -45743,15 +44857,15 @@
     },
     {
      "id": "l95",
-     "start": 538.34,
-     "end": 545.99,
-     "text": "At the end of each passage, you will hear three or four questions."
-    },
-    {
-     "id": "l96",
      "start": 546.04,
      "end": 547.04,
      "text": "In this section, you will hear two passages."
+    },
+    {
+     "id": "l96",
+     "start": 548.96,
+     "end": 549.96,
+     "text": "At the end of each passage, you will hear three or four questions."
     },
     {
      "id": "l97",
@@ -45888,20 +45002,20 @@
     {
      "id": "l119",
      "start": 781.82,
-     "end": 805.64,
+     "end": 797.65,
      "text": "A virtual coach then uses that information to suggest a personalised training regime."
     },
     {
      "id": "l120",
-     "start": 805.64,
-     "end": 806.66,
-     "text": "After the workout, the app's artificial intelligence software system uses feedback from Ms."
+     "start": 797.7,
+     "end": 805.59,
+     "text": "Weiner and its other 53 million users around the world to adjust future training sessions. Now Ms."
     },
     {
      "id": "l121",
-     "start": 806.66,
-     "end": 808.24,
-     "text": "Weiner and its other 53 million users around the world to adjust future training sessions. Now Ms."
+     "start": 805.64,
+     "end": 806.66,
+     "text": "After the workout, the app's artificial intelligence software system uses feedback from Ms."
     },
     {
      "id": "l122",
@@ -48238,20 +47352,20 @@
     {
      "id": "l77",
      "start": 475.52,
-     "end": 494.22,
+     "end": 489.21,
      "text": "In a review published in the journal Trends in Cognitive Sciences on February 11th, researchers propose an explanation for why this might be happening."
     },
     {
      "id": "l78",
-     "start": 494.22,
-     "end": 495.46,
-     "text": "The brains"
+     "start": 489.26,
+     "end": 494.17,
+     "text": "of older adults allocate more space to accumulated knowledge and have more material to navigate when attempting to access memories."
     },
     {
      "id": "l79",
-     "start": 495.46,
-     "end": 498.25,
-     "text": "of older adults allocate more space to accumulated knowledge and have more material to navigate when attempting to access memories."
+     "start": 494.22,
+     "end": 495.46,
+     "text": "The brains"
     },
     {
      "id": "l80",
@@ -51308,26 +50422,26 @@
     {
      "id": "l2",
      "start": 9,
-     "end": 18.6,
+     "end": 16.59,
      "text": "In this section, you will hear two long conversations."
     },
     {
      "id": "l3",
-     "start": 18.6,
-     "end": 21.59,
-     "text": "At the end of each conversation, you will hear four questions."
-    },
-    {
-     "id": "l4",
-     "start": 21.59,
-     "end": 27.07,
+     "start": 16.64,
+     "end": 18.15,
      "text": "Both the conversation and the questions will be spoken only once."
     },
     {
-     "id": "l5",
-     "start": 27.07,
-     "end": 27.95,
+     "id": "l4",
+     "start": 18.2,
+     "end": 18.55,
      "text": "After you hear a question, you must choose the best answer from the four choices, marked A, B, C and D."
+    },
+    {
+     "id": "l5",
+     "start": 18.6,
+     "end": 21.59,
+     "text": "At the end of each conversation, you will hear four questions."
     },
     {
      "id": "l6",
@@ -51728,24 +50842,24 @@
     {
      "id": "l72",
      "start": 454.96,
-     "end": 458.7,
+     "end": 456.27,
      "text": "Then mark the corresponding letter on answer sheet one with a single line through the centre."
     },
     {
      "id": "l73",
-     "start": 458.7,
-     "end": 466.63,
-     "text": "PASSAGE 1"
-    },
-    {
-     "id": "l74",
-     "start": 466.63,
-     "end": 467.43,
+     "start": 456.32,
+     "end": 458.65,
      "text": "One thing I've learned in a quarter-century of management is that there are ample gray areas in human behavior, and that there may not always be clear right-or-wrong solutions to employee disputes."
     },
     {
+     "id": "l74",
+     "start": 458.7,
+     "end": 464.53,
+     "text": "PASSAGE 1"
+    },
+    {
      "id": "l75",
-     "start": 467.43,
+     "start": 464.58,
      "end": 470.05,
      "text": "When two people have different versions of the same event, it can be hard to know whom to believe."
     },
@@ -52016,26 +51130,26 @@
     {
      "id": "l120",
      "start": 833.8,
-     "end": 857.15,
+     "end": 853.07,
      "text": "RECORDING 1"
     },
     {
      "id": "l121",
+     "start": 853.12,
+     "end": 857.1,
+     "text": "Bad weather and flight delays, miscoded destination tags and some people simply forgetting to pick up one of their bags are a few of the reasons."
+    },
+    {
+     "id": "l122",
      "start": 857.15,
      "end": 857.65,
      "text": "Every year, of the more than 2."
     },
     {
-     "id": "l122",
+     "id": "l123",
      "start": 857.65,
      "end": 859.4,
      "text": "5 billion bags checked onto flights worldwide, 26 million go missing - and of that 26 million, 1 million never make it back to their original owner."
-    },
-    {
-     "id": "l123",
-     "start": 859.4,
-     "end": 870.29,
-     "text": "Bad weather and flight delays, miscoded destination tags and some people simply forgetting to pick up one of their bags are a few of the reasons."
     },
     {
      "id": "l124",
@@ -52429,7 +51543,7 @@
     },
     {
      "id": "l189",
-     "start": 1401.01,
+     "start": 1418.78,
      "end": 1422.22,
      "text": "Another important factor is the lifestyle of you and your family."
     },
@@ -53131,20 +52245,20 @@
     {
      "id": "l101",
      "start": 630,
-     "end": 661,
+     "end": 641.45,
      "text": "Q11. How do altered menu designs affect frequent eaters of vegetarian food?"
     },
     {
      "id": "l102",
-     "start": 661,
-     "end": 661.5,
-     "text": "PASSAGE 2"
+     "start": 641.5,
+     "end": 660.95,
+     "text": "Nottingham Trent University and the Chinese Academy of Sciences have been trying to find a way to prevent deadly outdoor air pollution from penetrating indoors."
     },
     {
      "id": "l103",
-     "start": 661.5,
-     "end": 662,
-     "text": "Nottingham Trent University and the Chinese Academy of Sciences have been trying to find a way to prevent deadly outdoor air pollution from penetrating indoors."
+     "start": 661,
+     "end": 661.5,
+     "text": "PASSAGE 2"
     },
     {
      "id": "l104",
