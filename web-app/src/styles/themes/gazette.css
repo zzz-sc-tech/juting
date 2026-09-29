@@ -1,0 +1,565 @@
+/* ══════════════════════════════════════════════════════════════
+   主题 B「黑白晨报」（[data-theme='gazette']）——结构装饰层。
+   令牌覆盖在 index.css；这里处理双细线刊头、栏间发丝线、
+   small-caps 栏目标签、油墨按钮等「只靠令牌表达不了」的部分。
+   ══════════════════════════════════════════════════════════════ */
+
+:root[data-theme='gazette'] {
+  /* ── 刊头（顶栏）：报名 + 双细线 ─────────────────────────── */
+  & .topbar {
+    border-bottom: 4px double var(--line-strong);
+    min-height: 82px;
+  }
+
+  /* 滚动条沿用中性灰——--line-strong 在本主题是纯黑，不能上 scrollbar */
+  & .exercise-list::-webkit-scrollbar-thumb,
+  & .study-pane::-webkit-scrollbar-thumb,
+  & .compact-panel::-webkit-scrollbar-thumb,
+  & .series-grid::-webkit-scrollbar-thumb {
+    background: var(--ink-4);
+  }
+
+  & .exercise-list::-webkit-scrollbar-thumb:hover,
+  & .study-pane::-webkit-scrollbar-thumb:hover,
+  & .compact-panel::-webkit-scrollbar-thumb:hover,
+  & .series-grid::-webkit-scrollbar-thumb:hover {
+    background: var(--ink-3);
+  }
+
+  & .brand-lockup h1 {
+    font-size: 28px;
+    font-weight: 700;
+    letter-spacing: 0.06em;
+  }
+
+  & .brand-lockup p {
+    font-size: 11px;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+  }
+
+  & .topbar-nav-item {
+    border-bottom: 3px solid transparent;
+    color: var(--ink-2);
+    font-size: 12.5px;
+    letter-spacing: 0.1em;
+    min-height: 80px;
+    text-transform: uppercase;
+  }
+
+  & .topbar-nav-item:hover {
+    color: var(--ink);
+  }
+
+  & .topbar-nav-item.active {
+    border-bottom-color: var(--ink);
+    color: var(--ink);
+    font-weight: 700;
+  }
+
+  & .account-trigger {
+    border-color: var(--ink);
+    font-size: 12px;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+  }
+
+  & .account-trigger:hover {
+    background: var(--bg-sunken);
+    color: var(--ink);
+  }
+
+  /* ── 侧栏：目录栏 ────────────────────────────────────────── */
+  & .library-pane {
+    border-right: 1px solid var(--line-strong);
+  }
+
+  & .pane-heading,
+  & .panel-title {
+    border-bottom: 1px solid var(--ink);
+    color: var(--ink);
+    letter-spacing: 0.14em;
+    padding-bottom: 7px;
+    text-transform: uppercase;
+  }
+
+  & .series-trigger {
+    border-color: var(--ink);
+  }
+
+  & .series-trigger:hover {
+    background: var(--bg-sunken);
+  }
+
+  & .exercise-item.active {
+    background: var(--bg-sunken);
+    box-shadow: inset 3px 0 0 var(--ink);
+  }
+
+  & .exercise-item.active .exercise-title {
+    color: var(--ink);
+  }
+
+  & .quest-node.active .quest-badge {
+    background: var(--ink);
+    border-color: var(--ink);
+  }
+
+  & .chapter-group-label {
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+  }
+
+  & .chapter-status-box {
+    border-radius: 0;
+  }
+
+  & .chapter-status-box.done {
+    background: var(--ink);
+    border-color: var(--ink);
+  }
+
+  /* ── 章节报头：kicker 小题 + 衬线大标题 + 双细线 ─────────── */
+  & .study-chapter-banner {
+    border-bottom: 4px double var(--line-strong);
+    padding-bottom: 20px;
+  }
+
+  & .study-chapter-banner-icon {
+    background: transparent;
+    border: 1px solid var(--ink);
+    border-radius: 0;
+    color: var(--ink);
+  }
+
+  & .study-chapter-banner-title {
+    font-size: 34px;
+    font-weight: 700;
+    letter-spacing: 0;
+  }
+
+  & .study-chapter-banner-metrics span {
+    font-size: 11.5px;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+  }
+
+  & .study-chapter-progress {
+    border-radius: 0;
+    height: 3px;
+  }
+
+  & .study-chapter-progress span {
+    background: var(--ink);
+  }
+
+  /* ── 阶段导航：报刊栏目条（强调=墨黑描边+米灰衬底+加粗，实心黑只留小方块） ── */
+  & .stage-step {
+    border-color: var(--ink);
+  }
+
+  & .stage-step.active {
+    background: var(--bg-sunken);
+    border: 1.5px solid var(--ink);
+    color: var(--ink);
+  }
+
+  & .stage-step.active .stage-label strong {
+    color: var(--ink);
+    font-weight: 700;
+  }
+
+  & .stage-number {
+    border-color: var(--ink);
+    color: var(--ink);
+    font-weight: 600;
+  }
+
+  & .stage-step.active .stage-number,
+  & .stage-step.completed .stage-number {
+    background: var(--ink);
+    border-color: var(--ink);
+    color: var(--bg);
+  }
+
+  /* ── 舞台面板：活版书页 ──────────────────────────────────── */
+  & .stage-board {
+    background: var(--surface);
+    border: 1px solid var(--ink);
+  }
+
+  & .dialogue-anchor-bar {
+    border-bottom: 1px solid var(--ink);
+  }
+
+  & .dialogue-anchor-bar-title {
+    color: var(--ink);
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+  }
+
+  & .dialogue-anchor-chip {
+    border-color: var(--ink-3);
+    border-radius: 0;
+  }
+
+  & .dialogue-anchor-chip:hover {
+    border-color: var(--ink);
+    color: var(--ink);
+  }
+
+  & .dialogue-anchor-chip.active {
+    background: var(--bg-sunken);
+    border-width: 1.5px;
+    border-color: var(--ink);
+    color: var(--ink);
+    font-weight: 700;
+  }
+
+  /* ── 揭晓字幕：上下双线引文块（pull quote） ─────────────── */
+  & .subtitle-text.revealed {
+    background: none;
+    border-left: none;
+    border-bottom: 1px solid var(--ink);
+    border-top: 1px solid var(--ink);
+    border-radius: 0;
+    font-size: 21px;
+    padding: 14px 8px;
+    text-align: center;
+  }
+
+  & .subtitle-translation.revealed {
+    padding: 10px 8px 0;
+    text-align: center;
+  }
+
+  & .review-media-card {
+    border-color: var(--ink);
+  }
+
+  /* ── 按钮：墨黑描边 + 米灰衬底 + 加粗（实心黑不做大块面） ── */
+  & .icon-button {
+    border-color: var(--ink);
+    color: var(--ink);
+  }
+
+  & .icon-button:hover:not(:disabled) {
+    background: var(--bg-sunken);
+    border-color: var(--ink);
+    color: var(--ink);
+  }
+
+  & .icon-button.primary {
+    background: var(--bg-sunken);
+    border-width: 1.5px;
+    border-color: var(--ink);
+    color: var(--ink);
+  }
+
+  & .icon-button.primary span {
+    font-weight: 700;
+  }
+
+  & .icon-button.primary:hover:not(:disabled) {
+    background: #e3dcc9;
+    border-color: var(--ink);
+    color: var(--ink);
+  }
+
+  & .icon-button.reveal,
+  & .icon-button.active {
+    background: var(--bg-sunken);
+    border-color: var(--ink);
+    color: var(--ink);
+  }
+
+  & .media-play-btn,
+  & .command-button {
+    background: var(--bg-sunken);
+    border: 1.5px solid var(--ink);
+    color: var(--ink);
+    font-weight: 700;
+  }
+
+  & .media-play-btn:hover,
+  & .command-button:hover {
+    background: #e3dcc9;
+    border-color: var(--ink);
+    color: var(--ink);
+  }
+
+  & .rate-trigger,
+  & .rate-trigger:hover,
+  & .rate-trigger.active {
+    border-color: var(--ink);
+  }
+
+  & .rate-option.active {
+    background: var(--bg-sunken);
+    color: var(--ink);
+  }
+
+  & .settings-submit {
+    background: var(--bg-sunken);
+    border-width: 1.5px;
+    border-color: var(--ink);
+    color: var(--ink);
+    font-weight: 700;
+  }
+
+  & .settings-submit:hover:not(:disabled) {
+    background: #e3dcc9;
+    border-color: var(--ink);
+    color: var(--ink);
+  }
+
+  & .settings-back {
+    border-color: var(--ink);
+  }
+
+  & .settings-back:hover {
+    background: var(--ink);
+    color: var(--bg);
+  }
+
+  & .settings-card,
+  & .settings-input,
+  & .settings-select-trigger,
+  & .settings-goal-input,
+  & .settings-row {
+    border-color: var(--ink);
+  }
+
+  & .settings-card-title {
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+  }
+
+  /* ── 状态动作：难点=牛血红、掌握=墨黑 ────────────────────── */
+  & .status-actions .pill {
+    border-color: var(--ink);
+    color: var(--ink);
+  }
+
+  & .status-actions .pill:hover {
+    background: var(--bg-sunken);
+    color: var(--ink);
+  }
+
+  & .status-actions .pill.success,
+  & .status-actions .pill.success:hover {
+    background: var(--bg-sunken);
+    border-width: 1.5px;
+    border-color: var(--ink);
+    color: var(--ink);
+    font-weight: 700;
+  }
+
+  /* ── 泛听：报纸分栏阅读列 ────────────────────────────────── */
+  & .listen-visual {
+    border-color: var(--ink);
+  }
+
+  & .media-progress-track.overlay .media-progress-fill {
+    background: var(--ink);
+  }
+
+  & .media-progress-track.overlay input[type='range']::-webkit-slider-thumb {
+    background: var(--ink);
+  }
+
+  & .media-progress-track.overlay input[type='range']::-moz-range-thumb {
+    background: var(--ink);
+  }
+
+  & .extensive-lyric {
+    color: var(--ink-3);
+  }
+
+  & .extensive-lyric:hover {
+    color: var(--ink-2);
+  }
+
+  & .extensive-lyric.active {
+    color: var(--ink);
+    font-weight: 700;
+  }
+
+  & .subtitle-chip {
+    border-color: var(--ink);
+    color: var(--ink-2);
+  }
+
+  & .subtitle-chip:hover {
+    border-color: var(--ink);
+    color: var(--ink);
+  }
+
+  & .subtitle-chip.on {
+    background: var(--bg-sunken);
+    border-color: var(--ink);
+    color: var(--ink);
+    font-weight: 600;
+  }
+
+  & .subtitle-chip:not(.on) {
+    border-style: dashed;
+    border-color: var(--ink-3);
+    color: var(--ink-3);
+  }
+
+  & .listen-visual-waves {
+    background: repeating-linear-gradient(
+      90deg,
+      rgba(23, 21, 18, 0.1) 0 3px,
+      transparent 3px 9px,
+      rgba(23, 21, 18, 0.05) 9px 11px,
+      transparent 11px 17px
+    );
+  }
+
+  /* ── 句列表：栏间发丝线 ──────────────────────────────────── */
+  & .transcript-panel {
+    border-left-color: var(--ink);
+  }
+
+  & .line-row.active {
+    background: var(--bg-sunken);
+    border-left-color: var(--ink);
+  }
+
+  & .line-row.active .line-index {
+    color: var(--ink);
+  }
+
+  & .status-dot.success {
+    background: var(--ink);
+  }
+
+  & .answer-toggle {
+    color: var(--ink);
+    text-decoration: underline;
+    text-underline-offset: 3px;
+  }
+
+  & .answer-toggle:hover {
+    background: var(--bg-sunken);
+  }
+
+  /* ── 波形 ────────────────────────────────────────────────── */
+  & .waveform-surface {
+    border-color: var(--ink);
+  }
+
+  /* ── 复习空态 ────────────────────────────────────────────── */
+  & .review-empty-card {
+    border-color: var(--ink);
+  }
+
+  /* ── 课程弹窗：活版框 ────────────────────────────────────── */
+  & .modal-backdrop {
+    background: rgba(23, 21, 18, 0.5);
+  }
+
+  & .series-dialog {
+    border: 2px solid var(--ink);
+  }
+
+  & .series-dialog-head {
+    border-bottom: 4px double var(--line-strong);
+  }
+
+  & .series-dialog-head h2 {
+    font-weight: 700;
+  }
+
+  & .dialog-close {
+    border-color: var(--ink);
+  }
+
+  & .dialog-close:hover {
+    background: var(--ink);
+    border-color: var(--ink);
+    color: var(--bg);
+  }
+
+  & .series-group-tabs {
+    border-bottom-color: var(--ink);
+  }
+
+  & .series-group-tab {
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+  }
+
+  & .series-group-tab.active {
+    border-bottom-color: var(--ink);
+    color: var(--ink);
+  }
+
+  & .series-option {
+    border-color: var(--ink);
+  }
+
+  & .series-option.active {
+    background: var(--bg-sunken);
+    border-color: var(--ink);
+  }
+
+  /* ── 仪表盘：报版统计 ────────────────────────────────────── */
+  & .dashboard-stat-strip {
+    border-top: 1px solid var(--ink);
+    border-bottom: 4px double var(--line-strong);
+  }
+
+  & .dashboard-card {
+    border-color: var(--ink);
+  }
+
+  & .dashboard-primary-button {
+    background: var(--bg-sunken);
+    border: 1.5px solid var(--ink);
+    color: var(--ink);
+    font-weight: 700;
+  }
+
+  & .dashboard-primary-button:hover {
+    background: #e3dcc9;
+    border-color: var(--ink);
+    color: var(--ink);
+  }
+
+  & .dashboard-chart-line {
+    stroke: var(--ink);
+  }
+
+  & .dashboard-chart-area {
+    fill: rgba(23, 21, 18, 0.06);
+  }
+
+  & .dashboard-chart-dot {
+    stroke: var(--ink);
+  }
+
+  & .dashboard-goal-fill {
+    stroke: var(--ink);
+  }
+
+  & .dashboard-progress-fill {
+    background: var(--ink);
+  }
+
+  /* ── 空态 / 提示 ─────────────────────────────────────────── */
+  & .empty-study-state .icon-wrapper {
+    border-color: var(--ink);
+  }
+
+  & .custom-tooltip {
+    background: var(--ink);
+    color: var(--bg);
+  }
+
+  & .custom-tooltip-arrow {
+    fill: var(--ink);
+  }
+}

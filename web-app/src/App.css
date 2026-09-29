@@ -8,3 +8,5 @@
 @import './styles/waveform-stage.css';
 @import './styles/settings.css';
 @import './styles/responsive.css';
+/* 主题装饰层放在最后：同优先级时靠后覆盖 */
+@import './styles/themes/gazette.css';

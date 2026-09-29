@@ -62,6 +62,20 @@ const findLineAtTime = (lines: readonly TranscriptLine[], time: number): Transcr
   return candidate ?? lines[0] ?? null
 }
 
+// canvas 画不进 CSS 变量：统一从 :root 读令牌实值；主题切换随页面重挂生效
+function readWavePalette() {
+  const rootStyle = getComputedStyle(document.documentElement)
+  const token = (name: string, fallback: string) =>
+    rootStyle.getPropertyValue(name).trim() || fallback
+  return {
+    cursor: token('--ink', '#1d1b16'),
+    progress: token('--accent', '#24584a'),
+    region: token('--wave-region', 'rgba(36, 88, 74, 0.10)'),
+    regionActive: token('--wave-region-active', 'rgba(36, 88, 74, 0.32)'),
+    wave: token('--ink-4', '#c6c1b4'),
+  }
+}
+
 export function WaveformStage({
   exercise,
   mediaRef,
@@ -121,6 +135,8 @@ export function WaveformStage({
     let disposed = false
     setStatus({ kind: 'loading', percent: 0 })
 
+    const palette = readWavePalette()
+
     const regions = RegionsPlugin.create()
     const wavesurfer = WaveSurfer.create({
       autoCenter: false,
@@ -130,7 +146,7 @@ export function WaveformStage({
       barRadius: 2,
       barWidth: 2,
       container,
-      cursorColor: '#1d1b16',
+      cursorColor: palette.cursor,
       cursorWidth: 2,
       // 拖动时由 wavesurfer 自己 seek，配合下面的 interaction 处理实现「拖到哪就从哪播」
       dragToSeek: true,
@@ -140,12 +156,11 @@ export function WaveformStage({
       interact: true,
       normalize: true,
       plugins: [regions],
-      // 画布色与 index.css 令牌保持一致（canvas 不解析 CSS 变量，只能给具体值）
-      progressColor: '#24584a',
+      progressColor: palette.progress,
       // 与校波台一致：8k 采样率足够画波形，兼容性也更好（部分设备不支持 4k）
       sampleRate: 8000,
       media,
-      waveColor: '#c6c1b4',
+      waveColor: palette.wave,
     })
 
     wsRef.current = wavesurfer
@@ -172,7 +187,7 @@ export function WaveformStage({
         map[line.id] = regions.addRegion({
           start: line.start,
           end,
-          color: 'rgba(36, 88, 74, 0.10)',
+          color: palette.region,
           drag: false,
           resize: false,
         })
@@ -181,7 +196,7 @@ export function WaveformStage({
       // 重建区域后补一次当前句着色（activeLineIdRef 在主 effect 清空后仍可能指向当前句）
       const activeId = activeLineIdRef.current
       if (activeId && map[activeId]) {
-        map[activeId].setOptions({ color: 'rgba(36, 88, 74, 0.32)' })
+        map[activeId].setOptions({ color: palette.regionActive })
       }
     }
     const onError = (error: Error) => {
@@ -232,13 +247,14 @@ export function WaveformStage({
     if (nextId === activeLineIdRef.current) {
       return
     }
+    const palette = readWavePalette()
     const map = regionByLineIdRef.current
     const previous = activeLineIdRef.current
     if (previous && map[previous]) {
-      map[previous].setOptions({ color: 'rgba(36, 88, 74, 0.10)' })
+      map[previous].setOptions({ color: palette.region })
     }
     if (nextId && map[nextId]) {
-      map[nextId].setOptions({ color: 'rgba(36, 88, 74, 0.32)' })
+      map[nextId].setOptions({ color: palette.regionActive })
     }
     activeLineIdRef.current = nextId
   }, [currentLine?.id])

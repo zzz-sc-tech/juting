@@ -5,7 +5,6 @@ import type {
   ExerciseCategory,
   MaterialCategory,
 } from '@juting/shared'
-import { resolveApiUrl } from '../lib/apiClient'
 import { useLanguage } from '../i18n/LanguageProvider'
 import type {
   ChapterProgressSummary,
@@ -102,8 +101,6 @@ export function CourseMap({
     [activeGroupId, visibleCategories],
   )
 
-  const selectedSeriesCover = selectedSeries?.coverImageUrl
-
   const selectSeries = (seriesId: number) => {
     onSeriesSelect(seriesId)
     setSeriesDialogOpen(false)
@@ -129,21 +126,6 @@ export function CourseMap({
         aria-haspopup="dialog"
         aria-expanded={seriesDialogOpen}
       >
-        {selectedSeriesCover ? (
-          <img
-            className="series-mark"
-            src={resolveApiUrl(selectedSeriesCover)}
-            alt={t('courseMap.coverAlt', { name: selectedSeries?.name ?? '' })}
-          />
-        ) : (
-          <span
-            className="series-mark series-mark-fallback"
-            style={{ background: selectedSeries?.accent }}
-            aria-hidden="true"
-          >
-            <Layers3 size={20} />
-          </span>
-        )}
         <span className="series-trigger-copy">
           <strong>{selectedSeries?.name ?? t('courseMap.selectCourse')}</strong>
           {selectedSeries?.description && <small>{selectedSeries.description}</small>}
@@ -276,21 +258,6 @@ export function CourseMap({
                         onClick={() => selectSeries(item.id)}
                         type="button"
                       >
-                        {item.coverImageUrl ? (
-                          <img
-                            className="series-mark"
-                            src={resolveApiUrl(item.coverImageUrl)}
-                            alt={t('courseMap.coverAlt', { name: item.name })}
-                          />
-                        ) : (
-                          <span
-                            className="series-mark series-mark-fallback"
-                            style={{ background: item.accent }}
-                            aria-hidden="true"
-                          >
-                            <Layers3 size={20} />
-                          </span>
-                        )}
                         <span className="series-option-copy">
                           <strong>{item.name}</strong>
                           <small>{item.description}</small>

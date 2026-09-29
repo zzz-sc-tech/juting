@@ -20,7 +20,6 @@ export function TopBar({ active }: TopBarProps) {
         onClick={() => navigate('/home')}
         type="button"
       >
-        <img alt="" className="brand-logo" src="/juting-icon.svg" />
         <div>
           <h1>{t('brand')}</h1>
           <p>{t('courseLabel')}</p>

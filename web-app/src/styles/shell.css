@@ -31,13 +31,6 @@
   text-align: left;
 }
 
-.brand-logo {
-  display: block;
-  height: 40px;
-  object-fit: contain;
-  width: 40px;
-}
-
 .brand-lockup h1 {
   color: var(--ink);
   font-size: 21px;

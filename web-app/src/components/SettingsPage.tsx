@@ -1,9 +1,15 @@
-import { ArrowLeft, Languages, Target } from 'lucide-react'
+import { ArrowLeft, Languages, Newspaper, Target } from 'lucide-react'
 import { useState } from 'react'
 import { useNavigate } from 'react-router-dom'
 import type { ContentLocale, UiLocale } from '@juting/domain'
 import { contentLocaleLabels, uiLocaleLabels, useLanguage } from '../i18n/LanguageProvider'
 import { DEFAULT_DAILY_GOAL, loadDailyGoal, persistDailyGoal } from '../lib/progressStore'
+import {
+  applyTheme,
+  getStoredTheme,
+  persistTheme,
+  type UiTheme,
+} from '../lib/theme'
 import { SettingsSelect } from './SettingsSelect'
 import { TopBar } from './TopBar'
 
@@ -15,10 +21,17 @@ export function SettingsPage() {
   const navigate = useNavigate()
   const { contentLocale, setContentLocale, setUiLocale, t, uiLocale } = useLanguage()
   const [dailyGoal, setDailyGoal] = useState(loadDailyGoal)
+  const [theme, setTheme] = useState<UiTheme>(getStoredTheme)
 
   const handleDailyGoalChange = (value: number) => {
     setDailyGoal(value)
     persistDailyGoal(value)
+  }
+
+  const handleThemeChange = (value: UiTheme) => {
+    setTheme(value)
+    applyTheme(value)
+    persistTheme(value)
   }
 
   const handleUiLocaleChange = (locale: UiLocale) => {
@@ -67,6 +80,25 @@ export function SettingsPage() {
               onChange={(value) => handleContentLocaleChange(value as ContentLocale)}
               options={Object.entries(contentLocaleLabels).map(([locale, label]) => ({ value: locale, label }))}
               value={contentLocale}
+            />
+          </label>
+        </section>
+
+        <section className="settings-card">
+          <h2 className="settings-card-title">
+            <Newspaper size={15} />
+            {t('settings.theme')}
+          </h2>
+          <label className="settings-field">
+            <span className="settings-field-label">{t('settings.theme')}</span>
+            <SettingsSelect
+              ariaLabel={t('settings.theme')}
+              onChange={(value) => handleThemeChange(value as UiTheme)}
+              options={[
+                { value: 'paper', label: t('settings.themePaper') },
+                { value: 'gazette', label: t('settings.themeGazette') },
+              ]}
+              value={theme}
             />
           </label>
         </section>

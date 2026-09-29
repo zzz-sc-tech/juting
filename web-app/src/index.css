@@ -46,13 +46,18 @@
   --focus-ring: 0 0 0 3px rgba(36, 88, 74, 0.22);
 
   /* 英文内容衬线（字幕/歌词/精听句）：离线可用的书房感 */
+  --font-ui:
+    "Segoe UI", ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont,
+    "Microsoft YaHei UI", "PingFang SC", sans-serif;
   --font-serif: Georgia, "Times New Roman", "Songti SC", "SimSun", serif;
+
+  /* 波形画布色（canvas 不解析 CSS 变量，WaveformStage 用 getComputedStyle 读这里） */
+  --wave-region: rgba(36, 88, 74, 0.1);
+  --wave-region-active: rgba(36, 88, 74, 0.32);
 
   color: var(--ink);
   background: var(--bg);
-  font-family:
-    "Segoe UI", ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont,
-    "Microsoft YaHei UI", "PingFang SC", sans-serif;
+  font-family: var(--font-ui);
   font-synthesis: none;
   line-height: 1.5;
   text-rendering: optimizeLegibility;
@@ -87,4 +92,48 @@ textarea {
 .dashboard-stat-value,
 .dashboard-goal-count {
   font-variant-numeric: tabular-nums;
+}
+
+/* ══════════════════════════════════════════════════════════════
+   主题 B「黑白晨报」（gazette）：做旧象牙纸 + 墨黑油墨 + 牛血红点缀。
+   令牌在 :root 层整体覆盖；结构性装饰（双细线刊头等）在
+   styles/themes/gazette.css。
+   ══════════════════════════════════════════════════════════════ */
+:root[data-theme='gazette'] {
+  --bg: #f4f0e6;
+  --bg-sunken: #ebe6d8;
+  --surface: #faf8f1;
+  --line: #d9d2c0;
+  --line-strong: #171512;
+
+  --accent: #9a3b2e;
+  --accent-strong: #7f2f24;
+  --accent-soft: #eee3d9;
+  --accent-soft-2: #f3ebe1;
+  --accent-ink: #9a3b2e;
+
+  --ink: #171512;
+  --ink-2: #454039;
+  --ink-3: #7b7466;
+  --ink-4: #b3ab99;
+
+  --success: #171512;
+  --success-soft: #e9e4d6;
+  --warning: #9a3b2e;
+  --warning-soft: #efe0d8;
+  --danger: #8c2f23;
+  --danger-soft: #efe0da;
+
+  --radius-lg: 0;
+  --radius-md: 0;
+  --radius-sm: 0;
+
+  --font-ui: Georgia, "Times New Roman", "Songti SC", "SimSun",
+    "Noto Serif CJK SC", serif;
+  --font-serif: var(--font-ui);
+
+  --focus-ring: 0 0 0 2px #f4f0e6, 0 0 0 4px #171512;
+
+  --wave-region: rgba(23, 21, 18, 0.07);
+  --wave-region-active: rgba(23, 21, 18, 0.28);
 }

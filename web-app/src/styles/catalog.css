@@ -103,26 +103,6 @@
   opacity: 0.6;
 }
 
-.series-mark {
-  border-radius: var(--radius-md);
-  /* 系列色是数据自带的身份色：大幅压低饱和与亮度，让它在纸面上只留个调子 */
-  filter: saturate(0.45) brightness(0.88);
-  flex: 0 0 auto;
-  height: 42px;
-  object-fit: cover;
-  width: 42px;
-}
-
-.series-mark-fallback {
-  align-items: center;
-  /* 占位图标不带内容语义：统一用主题绿，压过数据里的旧 accent 蓝 */
-  background: var(--accent) !important;
-  color: #ffffff;
-  display: flex;
-  filter: none;
-  justify-content: center;
-}
-
 .series-trigger-copy {
   display: grid;
   flex: 1 1 auto;
@@ -335,7 +315,7 @@
   display: grid;
   font: inherit;
   gap: 12px;
-  grid-template-columns: auto minmax(0, 1fr) auto;
+  grid-template-columns: minmax(0, 1fr) auto;
   min-height: 92px;
   padding: 14px;
   text-align: left;
