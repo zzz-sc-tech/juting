@@ -130,7 +130,7 @@ export function WaveformStage({
       barRadius: 2,
       barWidth: 2,
       container,
-      cursorColor: '#111827',
+      cursorColor: '#1d1b16',
       cursorWidth: 2,
       // 拖动时由 wavesurfer 自己 seek，配合下面的 interaction 处理实现「拖到哪就从哪播」
       dragToSeek: true,
@@ -140,11 +140,12 @@ export function WaveformStage({
       interact: true,
       normalize: true,
       plugins: [regions],
-      progressColor: '#5b5fef',
+      // 画布色与 index.css 令牌保持一致（canvas 不解析 CSS 变量，只能给具体值）
+      progressColor: '#24584a',
       // 与校波台一致：8k 采样率足够画波形，兼容性也更好（部分设备不支持 4k）
       sampleRate: 8000,
       media,
-      waveColor: '#c2c5d6',
+      waveColor: '#c6c1b4',
     })
 
     wsRef.current = wavesurfer
@@ -171,7 +172,7 @@ export function WaveformStage({
         map[line.id] = regions.addRegion({
           start: line.start,
           end,
-          color: 'rgba(91, 95, 239, 0.10)',
+          color: 'rgba(36, 88, 74, 0.10)',
           drag: false,
           resize: false,
         })
@@ -180,7 +181,7 @@ export function WaveformStage({
       // 重建区域后补一次当前句着色（activeLineIdRef 在主 effect 清空后仍可能指向当前句）
       const activeId = activeLineIdRef.current
       if (activeId && map[activeId]) {
-        map[activeId].setOptions({ color: 'rgba(91, 95, 239, 0.32)' })
+        map[activeId].setOptions({ color: 'rgba(36, 88, 74, 0.32)' })
       }
     }
     const onError = (error: Error) => {
@@ -234,10 +235,10 @@ export function WaveformStage({
     const map = regionByLineIdRef.current
     const previous = activeLineIdRef.current
     if (previous && map[previous]) {
-      map[previous].setOptions({ color: 'rgba(91, 95, 239, 0.10)' })
+      map[previous].setOptions({ color: 'rgba(36, 88, 74, 0.10)' })
     }
     if (nextId && map[nextId]) {
-      map[nextId].setOptions({ color: 'rgba(91, 95, 239, 0.32)' })
+      map[nextId].setOptions({ color: 'rgba(36, 88, 74, 0.32)' })
     }
     activeLineIdRef.current = nextId
   }, [currentLine?.id])

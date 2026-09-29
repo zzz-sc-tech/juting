@@ -1,3 +1,5 @@
+/* 泛听舞台：整段播放 + 歌词式滚动字幕。歌词区是一块嵌在白纸里的纸面。 */
+
 .extensive-board {
   display: grid;
   gap: 20px;
@@ -5,32 +7,9 @@
   grid-template-rows: auto 1fr;
 }
 
-/* 标题区域：左列第 1 行 */
-.stage-header {
-  grid-column: 1;
-  grid-row: 1;
-  display: grid;
-  gap: 8px;
-}
-
-.stage-eyebrow {
-  color: var(--success);
-  font-size: 14px;
-  font-weight: 900;
-  margin: 0;
-}
-
-.stage-header h3 {
-  color: var(--ink);
-  font-size: 36px;
-  line-height: 1.12;
-  margin: 0;
-  max-width: 620px;
-}
-
 /* 媒体播放器：左列第 2 行 */
 .listen-visual {
-  background: var(--surface-soft);
+  background: var(--bg);
   border: 1px solid var(--line);
   border-radius: var(--radius-lg);
   grid-column: 1;
@@ -59,21 +38,14 @@
   object-fit: contain;
 }
 
-.lesson-media-card {
-  background: var(--accent-soft-2);
-  border: 2px solid var(--line);
-  border-radius: var(--radius-lg);
-  overflow: hidden;
-}
-
 .lesson-audio {
   padding: 18px;
 }
 
-/* 浮动控制栏：叠加在媒体容器底部 */
+/* 浮动控制栏：叠加在媒体容器底部，纸色渐隐 */
 .listen-visual-controls {
   align-items: center;
-  background: linear-gradient(0deg, rgba(255, 255, 255, 0.95) 0%, rgba(255, 255, 255, 0.55) 75%, transparent 100%);
+  background: linear-gradient(0deg, rgba(247, 245, 241, 0.96) 0%, rgba(247, 245, 241, 0.6) 75%, transparent 100%);
   bottom: 0;
   display: flex;
   gap: 10px;
@@ -88,28 +60,22 @@
   align-items: center;
   background: var(--accent);
   border: 0;
-  border-radius: 12px;
-  box-shadow: var(--shadow-card);
+  border-radius: var(--radius-md);
   color: #ffffff;
   cursor: pointer;
   display: inline-flex;
   flex: 0 0 auto;
   font: inherit;
   font-size: 13px;
-  font-weight: 900;
-  gap: 5px;
+  font-weight: 500;
+  gap: 6px;
   min-height: 36px;
-  padding: 0 13px;
-  transition: background 0.15s ease, transform 0.1s ease;
+  padding: 0 14px;
+  transition: background 0.15s ease;
 }
 
 .media-play-btn:hover {
-  background: #6de00a;
-}
-
-.media-play-btn:active {
-  transform: translateY(2px);
-  box-shadow: var(--shadow-card);
+  background: var(--accent-strong);
 }
 
 .media-play-btn svg {
@@ -117,15 +83,14 @@
 }
 
 .media-time-label {
-  color: rgba(255, 255, 255, 0.86);
+  color: var(--ink-2);
   flex: 0 0 auto;
   font-size: 12px;
-  font-weight: 800;
   font-variant-numeric: tabular-nums;
   white-space: nowrap;
 }
 
-/* 叠加在媒体上的进度条 — 更细、半透明轨道 */
+/* 叠加在媒体上的进度条：发丝轨道 + 主色填充 */
 .media-progress-track.overlay {
   display: block;
   flex: 1;
@@ -146,42 +111,40 @@
 }
 
 .media-progress-track.overlay input[type='range']::-webkit-slider-runnable-track {
-  background: rgba(255, 255, 255, 0.24);
+  background: var(--line-strong);
   border-radius: var(--radius-pill);
-  height: 6px;
+  height: 4px;
 }
 
 .media-progress-track.overlay input[type='range']::-moz-range-track {
-  background: rgba(255, 255, 255, 0.24);
+  background: var(--line-strong);
   border-radius: var(--radius-pill);
-  height: 6px;
+  height: 4px;
 }
 
 .media-progress-track.overlay input[type='range']::-webkit-slider-thumb {
   -webkit-appearance: none;
   appearance: none;
-  background: #ffffff;
+  background: var(--accent);
   border: 0;
   border-radius: var(--radius-pill);
-  box-shadow: 0 1px 6px rgba(0, 0, 0, 0.28);
-  height: 14px;
+  height: 12px;
   margin-top: -4px;
-  width: 14px;
+  width: 12px;
 }
 
 .media-progress-track.overlay input[type='range']::-moz-range-thumb {
-  background: #ffffff;
+  background: var(--accent);
   border: 0;
   border-radius: var(--radius-pill);
-  box-shadow: 0 1px 6px rgba(0, 0, 0, 0.28);
-  height: 14px;
-  width: 14px;
+  height: 12px;
+  width: 12px;
 }
 
 .media-progress-track.overlay .media-progress-fill {
-  background: rgba(255, 255, 255, 0.72);
+  background: var(--accent);
   border-radius: var(--radius-pill);
-  height: 6px;
+  height: 4px;
   left: 0;
   pointer-events: none;
   position: absolute;
@@ -205,41 +168,37 @@
   align-items: center;
   background: var(--accent);
   border: 0;
-  border-radius: var(--radius-pill);
-  box-shadow: var(--shadow-card);
+  border-radius: var(--radius-md);
   color: #ffffff;
   cursor: pointer;
   display: inline-flex;
   font: inherit;
-  font-size: 15px;
-  font-weight: 900;
+  font-size: 14.5px;
+  font-weight: 500;
   gap: 8px;
   justify-content: center;
-  min-height: 44px;
+  min-height: 42px;
   padding: 0 18px;
+  transition: background 0.15s ease;
+}
+
+.command-button:hover {
+  background: var(--accent-strong);
 }
 
 .command-button.large {
-  min-height: 52px;
+  min-height: 46px;
   padding: 0 22px;
 }
 
-.command-button.secondary {
-  background: #ffffff;
-  box-shadow: var(--shadow-card);
-  color: var(--ink-2);
-}
-
 .command-button:disabled {
-  background: #cbd5e1;
-  box-shadow: var(--shadow-card);
+  background: var(--ink-4);
   cursor: not-allowed;
 }
 
-/* ── 右侧进度卡（多邻国风格） ── */
+/* ── 右侧进度卡：线框素卡 + 细环百分比 ── */
 .stage-side {
-  background: #ffffff;
-  border: 2px solid var(--line);
+  border: 1px solid var(--line);
   border-radius: var(--radius-lg);
   min-width: 0;
 }
@@ -263,8 +222,8 @@
   align-items: center;
   justify-content: center;
   position: relative;
-  width: 80%;
-  max-width: 220px;
+  width: 72%;
+  max-width: 200px;
 }
 
 .listen-progress-icon svg {
@@ -274,11 +233,12 @@
 }
 
 .listen-progress-pct {
-  color: var(--accent);
-  font-size: clamp(32px, 7vw, 52px);
-  font-weight: 900;
+  color: var(--accent-ink);
+  font-size: clamp(28px, 6vw, 44px);
+  font-variant-numeric: tabular-nums;
+  font-weight: 650;
   left: 50%;
-  letter-spacing: -0.02em;
+  letter-spacing: -0.01em;
   position: absolute;
   top: 50%;
   transform: translate(-50%, -50%);
@@ -286,21 +246,11 @@
 }
 
 .listen-progress-cta {
-  width: 100% !important;
-  font-size: 16px;
-  min-height: 52px;
-  border-radius: 16px;
+  width: 100%;
+  min-height: 46px;
 }
 
-.listen-progress-step {
-  color: #94a3b8;
-  font-size: 12px;
-  font-weight: 800;
-  margin-top: 14px;
-}
-
-
-/* 装饰性声波：CSS 竖条替代原位图（随主题色变化） */
+/* 装饰性声波：字幕关闭时的回退纹理（随主题色变化） */
 .listen-visual-waves {
   bottom: 0;
   left: 0;
@@ -310,16 +260,16 @@
   top: 0;
   background: repeating-linear-gradient(
     90deg,
-    rgba(91, 95, 239, 0.16) 0 3px,
+    rgba(36, 88, 74, 0.12) 0 3px,
     transparent 3px 9px,
-    rgba(91, 95, 239, 0.08) 9px 11px,
+    rgba(36, 88, 74, 0.06) 9px 11px,
     transparent 11px 17px
   );
   -webkit-mask-image: radial-gradient(ellipse 90% 70% at 50% 45%, #000 40%, transparent 100%);
   mask-image: radial-gradient(ellipse 90% 70% at 50% 45%, #000 40%, transparent 100%);
 }
 
-/* 歌词式滚动字幕：填满波形区，当前句居中高亮，上下文淡显可点跳播 */
+/* 歌词式滚动字幕：当前句衬线墨色居中，上下文淡显可点跳播 */
 .extensive-lyrics {
   -webkit-mask-image: linear-gradient(180deg, transparent 0, #000 14%, #000 82%, transparent 100%);
   bottom: 56px;
@@ -347,10 +297,10 @@
   cursor: pointer;
   display: block;
   font: inherit;
-  font-size: 14.5px;
-  font-weight: 600;
-  line-height: 1.5;
-  margin: 14px auto;
+  font-family: var(--font-serif);
+  font-size: 15.5px;
+  line-height: 1.6;
+  margin: 16px auto;
   max-width: 640px;
   padding: 4px 10px;
   text-align: center;
@@ -364,8 +314,8 @@
 
 .extensive-lyric.active {
   color: var(--ink);
-  font-size: 17px;
-  font-weight: 800;
+  font-size: 19px;
+  font-weight: 600;
 }
 
 .extensive-lyric-text {
@@ -373,34 +323,46 @@
 }
 
 .extensive-lyric-translation {
-  color: var(--accent-ink);
+  color: var(--ink-3);
   display: block;
-  font-size: 13.5px;
-  font-weight: 600;
-  margin-top: 4px;
+  font-family:
+    "Segoe UI", ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont,
+    "Microsoft YaHei UI", "PingFang SC", sans-serif;
+  font-size: 13px;
+  margin-top: 5px;
+}
+
+.extensive-lyric.active .extensive-lyric-translation {
+  color: var(--accent-ink);
 }
 
 /* 字幕/翻译开关 chip（泛听控制栏与精听卡顶栏共用） */
 .subtitle-chip {
   align-items: center;
-  background: rgba(255, 255, 255, 0.9);
-  border: 1px solid var(--line);
-  border-radius: 999px;
+  background: transparent;
+  border: 1px solid var(--line-strong);
+  border-radius: var(--radius-pill);
   color: var(--ink-3);
   cursor: pointer;
   display: inline-flex;
   flex: 0 0 auto;
   font: inherit;
   font-size: 12px;
-  font-weight: 800;
-  min-height: 30px;
+  font-weight: 500;
+  min-height: 28px;
   padding: 0 11px;
-  transition: color 0.15s ease, border-color 0.15s ease;
+  transition: color 0.15s ease, border-color 0.15s ease, background 0.15s ease;
+}
+
+.subtitle-chip:hover {
+  border-color: var(--accent);
+  color: var(--accent-ink);
 }
 
 .subtitle-chip.on {
+  background: var(--accent-soft);
   border-color: var(--accent);
-  color: var(--accent);
+  color: var(--accent-ink);
 }
 
 .subtitle-topline-right {

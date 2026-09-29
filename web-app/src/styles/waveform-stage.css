@@ -8,14 +8,10 @@
 }
 
 .waveform-card {
-  background: #fff;
-  border: 1px solid rgba(15, 23, 42, 0.08);
-  border-radius: 18px;
-  box-shadow: 0 10px 30px rgba(15, 23, 42, 0.06);
   display: grid;
   gap: 14px;
   min-width: 0;
-  padding: 16px 18px 18px;
+  padding: 4px 2px 0;
 }
 
 .waveform-header {
@@ -26,17 +22,10 @@
   justify-content: space-between;
 }
 
-.waveform-eyebrow {
-  color: var(--accent, #5b5fef);
-  font-size: 13px;
-  font-weight: 500;
-  margin: 0;
-}
-
 .waveform-meta {
-  color: #64748b;
+  color: var(--ink-3);
   font-size: 12px;
-  margin: 4px 0 0;
+  margin: 2px 0 0;
 }
 
 .waveform-tools {
@@ -50,9 +39,9 @@
    overflow-x: auto —— 放大（minPxPerSec）后波形容器会被 wavesurfer 撑到几千像素宽，
    必须裁在卡片内横向滚动，否则巨幅画布溢出铺满整页，播放光标一动整页跟着抽搐。 */
 .waveform-surface {
-  background: linear-gradient(180deg, #f8fafc 0%, #f1f5f9 100%);
-  border: 1px solid rgba(15, 23, 42, 0.06);
-  border-radius: 14px;
+  background: var(--bg);
+  border: 1px solid var(--line);
+  border-radius: var(--radius-md);
   min-height: 132px;
   overflow-x: auto;
   overflow-y: hidden;
@@ -66,7 +55,7 @@
 
 /* 视图平移滑动条：仅在放大（可滚动）时出现 */
 .waveform-pan {
-  accent-color: var(--accent, #5b5fef);
+  accent-color: var(--accent);
   cursor: pointer;
   margin: -6px 0 0;
   width: 100%;
@@ -80,9 +69,9 @@
 /* 解码/失败时的覆盖层 */
 .waveform-overlay {
   align-items: center;
-  background: rgba(248, 250, 252, 0.92);
-  border-radius: 14px;
-  color: #475569;
+  background: rgba(247, 245, 241, 0.94);
+  border-radius: var(--radius-md);
+  color: var(--ink-2);
   display: flex;
   flex-direction: column;
   font-size: 13px;
@@ -93,15 +82,15 @@
 }
 
 .waveform-overlay.error {
-  background: rgba(254, 242, 242, 0.95);
-  color: #b42318;
+  background: var(--danger-soft);
+  color: var(--danger);
 }
 
 .waveform-spinner {
   animation: waveform-spin 0.9s linear infinite;
-  border: 2px solid rgba(91, 95, 239, 0.25);
+  border: 2px solid rgba(36, 88, 74, 0.18);
   border-radius: 50%;
-  border-top-color: var(--accent, #5b5fef);
+  border-top-color: var(--accent);
   height: 20px;
   width: 20px;
 }
@@ -113,7 +102,7 @@
 }
 
 .waveform-percent {
-  color: #94a3b8;
+  color: var(--ink-3);
   font-variant-numeric: tabular-nums;
 }
 
@@ -126,14 +115,15 @@
 }
 
 .waveform-subtitle-label {
-  color: #94a3b8;
+  color: var(--ink-3);
   flex-shrink: 0;
   font-size: 12px;
 }
 
 .waveform-subtitle-text {
-  color: #0f172a;
-  font-size: 15px;
+  color: var(--ink);
+  font-family: var(--font-serif);
+  font-size: 15.5px;
   line-height: 1.6;
   margin: 0;
   min-width: 0;

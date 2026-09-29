@@ -2,14 +2,12 @@
   .workspace,
   .extensive-board,
   .difficult-review-board,
-  .intensive-board,
-  .admin-grid,
-  .course-grid {
+  .intensive-board {
     grid-template-columns: 1fr;
   }
 
   .library-pane {
-    border-bottom: 2px solid var(--line);
+    border-bottom: 1px solid var(--line);
     border-right: 0;
   }
 
@@ -21,63 +19,22 @@
 @media (max-width: 720px) {
   .topbar {
     gap: 14px;
-    padding: 16px;
-  }
-
-  .open-source-trigger { padding: 0 11px; }
-
-  .open-source-trigger-label { display: none; }
-
-  .view-tabs {
-    overflow-x: auto;
-    padding: 8px 14px;
+    padding: 0 16px;
   }
 
   .workspace {
     height: auto;
   }
 
-  .admin-pane,
   .study-pane,
   .library-pane {
     padding: 14px;
   }
 
-  .admin-header {
-    flex-direction: column;
-  }
-
-  .admin-status,
-  .admin-side {
-    width: 100%;
-  }
-
-  .form-grid,
   .series-grid,
   .exercise-list,
   .stage-rail {
     grid-template-columns: 1fr;
-  }
-
-  .hero-card,
-  .stage-board {
-    border-radius: 20px;
-  }
-
-  .stage-main {
-    min-height: auto;
-  }
-
-  .stage-main h3 {
-    font-size: 28px;
-  }
-
-  .sentence-text {
-    font-size: 21px;
-  }
-
-  .sentence-controls {
-    align-items: stretch;
   }
 
   .control-cluster {

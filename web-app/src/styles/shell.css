@@ -1,3 +1,5 @@
+/* 全局壳：暖纸底、发丝线分层、文字导航。纸墨书房基调从这里铺开。 */
+
 .app-shell {
   background: var(--bg);
   color: var(--ink);
@@ -7,31 +9,14 @@
   overflow: hidden;
 }
 
-.global-toast {
-  background: var(--ink);
-  border: 2px solid rgba(255, 255, 255, 0.24);
-  border-radius: var(--radius-pill);
-  box-shadow: 0 14px 34px rgba(23, 32, 51, 0.18);
-  color: #ffffff;
-  font-size: 13px;
-  font-weight: 900;
-  left: 50%;
-  min-height: 38px;
-  padding: 8px 16px;
-  position: fixed;
-  top: 88px;
-  transform: translateX(-50%);
-  z-index: 30;
-}
-
 .topbar {
   align-items: center;
-  background: var(--surface);
-  border-bottom: 2px solid var(--line);
+  background: var(--bg);
+  border-bottom: 1px solid var(--line-strong);
   display: flex;
   gap: 20px;
   justify-content: space-between;
-  min-height: 76px;
+  min-height: 64px;
   padding: 0 28px;
 }
 
@@ -48,35 +33,34 @@
 
 .brand-logo {
   display: block;
-  height: 46px;
+  height: 40px;
   object-fit: contain;
-  width: 46px;
+  width: 40px;
 }
 
 .brand-lockup h1 {
   color: var(--ink);
-  font-size: 24px;
+  font-size: 21px;
+  font-weight: 650;
+  letter-spacing: 0.01em;
   line-height: 1;
   margin: 0;
 }
 
 .brand-lockup p {
   color: var(--ink-3);
-  font-size: 13px;
-  font-weight: 700;
-  margin: 5px 0 0;
+  font-size: 12px;
+  font-weight: 400;
+  margin: 4px 0 0;
 }
 
 .topbar-actions {
   align-items: center;
   display: flex;
   flex-wrap: wrap;
-  gap: 10px;
+  gap: 8px;
   justify-content: flex-end;
 }
-
-
-
 
 .sr-only {
   position: absolute;
@@ -90,148 +74,57 @@
   border: 0;
 }
 
+/* 顶栏右侧的安静按钮：线框、无填充，hover 才见主色 */
 .account-trigger {
   align-items: center;
-  background: #ffffff;
-  border: 2px solid var(--line);
-  border-radius: 16px;
-  box-shadow: var(--shadow-card);
+  background: transparent;
+  border: 1px solid var(--line-strong);
+  border-radius: var(--radius-md);
   color: var(--ink-2);
   cursor: pointer;
   display: inline-flex;
   font: inherit;
-  font-size: 14px;
-  font-weight: 900;
+  font-size: 13.5px;
+  font-weight: 500;
   gap: 7px;
-  min-height: 40px;
-  padding: 0 14px;
+  min-height: 36px;
+  padding: 0 13px;
+  transition: border-color 0.15s ease, color 0.15s ease;
 }
 
-.account-trigger.signed-in {
-  background: var(--accent-soft);
+.account-trigger:hover {
   border-color: var(--accent);
-  box-shadow: var(--shadow-card);
-  color: #2b7a0b;
+  color: var(--accent-ink);
 }
 
-/* 账户下拉菜单：与设置页同一套 chunky 卡片语言 */
-.topbar-menu {
-  z-index: 60;
-  min-width: 220px;
-  background: #ffffff;
-  border: 2px solid var(--line);
-  border-bottom-width: 5px;
-  border-radius: 16px;
-  padding: 8px;
-  box-shadow: 0 12px 32px rgba(23, 32, 51, 0.12);
-}
-
-.topbar-menu-user {
-  display: flex;
-  align-items: center;
-  gap: 10px;
-  padding: 8px 10px;
-}
-
-.topbar-menu-avatar {
+/* ── 顶栏「首页 / 学习」导航：文字式，激活态用下划线 ─────────── */
+.topbar-nav {
   display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  width: 38px;
-  height: 38px;
-  border-radius: 12px;
-  background: var(--success-soft);
-  color: #2b7a0b;
-  font-size: 16px;
-  font-weight: 900;
-  flex-shrink: 0;
+  gap: 2px;
+  margin-left: 22px;
 }
 
-.topbar-menu-identity {
-  display: flex;
-  flex-direction: column;
-  min-width: 0;
-}
-
-.topbar-menu-identity strong {
+.topbar-nav-item {
+  background: none;
+  border: none;
+  border-bottom: 2px solid transparent;
+  color: var(--ink-2);
+  cursor: pointer;
   font-size: 14px;
-  font-weight: 800;
-  color: var(--ink);
-  overflow: hidden;
-  text-overflow: ellipsis;
-  white-space: nowrap;
+  font-weight: 500;
+  min-height: 62px;
+  padding: 0 14px;
+  transition: color 0.15s ease, border-color 0.15s ease;
 }
 
-.topbar-menu-identity span {
-  font-size: 12px;
+.topbar-nav-item:hover {
+  color: var(--ink);
+}
+
+.topbar-nav-item.active {
+  border-bottom-color: var(--accent);
+  color: var(--accent-ink);
   font-weight: 600;
-  color: var(--ink-4);
-  overflow: hidden;
-  text-overflow: ellipsis;
-  white-space: nowrap;
-}
-
-.topbar-menu-separator {
-  height: 2px;
-  background: #eef3f9;
-  margin: 4px 6px;
-}
-
-.topbar-menu-item {
-  display: flex;
-  align-items: center;
-  gap: 8px;
-  border-radius: 10px;
-  padding: 10px;
-  font-size: 14px;
-  font-weight: 700;
-  color: var(--ink);
-  cursor: pointer;
-  outline: none;
-  user-select: none;
-}
-
-.topbar-menu-item[data-highlighted] {
-  background: var(--accent-soft-2);
-  color: #1899d6;
-}
-
-.topbar-menu-item.danger[data-highlighted] {
-  background: #fff1e0;
-  color: #d97706;
-}
-
-.view-tabs {
-  align-items: center;
-  background: var(--surface);
-  border-bottom: 2px solid var(--line);
-  display: flex;
-  gap: 10px;
-  min-height: 58px;
-  padding: 8px 28px;
-}
-
-.view-tab {
-  align-items: center;
-  background: #ffffff;
-  border: 2px solid var(--line);
-  border-radius: 14px;
-  color: var(--ink-2);
-  cursor: pointer;
-  display: inline-flex;
-  font: inherit;
-  font-size: 14px;
-  font-weight: 800;
-  gap: 7px;
-  min-height: 40px;
-  padding: 0 14px;
-}
-
-.view-tab.active {
-  background: var(--accent);
-  border-color: var(--accent);
-  box-shadow: var(--shadow-card);
-  color: #ffffff;
 }
 
 .workspace {
@@ -243,9 +136,9 @@
 }
 
 .library-pane {
-  background: var(--surface);
-  border-right: 2px solid var(--line);
-  padding: 22px 18px;
+  background: var(--bg);
+  border-right: 1px solid var(--line);
+  padding: 20px 16px;
   display: flex;
   flex-direction: column;
   overflow: hidden;
@@ -253,20 +146,16 @@
   min-height: 0;
 }
 
-.quest-pane {
-  background:
-    var(--surface),
-    #ffffff;
-}
-
+/* 小字组头：弱化、宽字距，报纸栏目的感觉 */
 .pane-heading,
 .panel-title {
   align-items: center;
-  color: var(--ink-2);
+  color: var(--ink-3);
   display: flex;
-  font-size: 14px;
-  font-weight: 900;
+  font-size: 12px;
+  font-weight: 600;
   gap: 8px;
+  letter-spacing: 0.08em;
   margin-bottom: 12px;
 }
 
@@ -274,19 +163,18 @@
   margin-top: 24px;
 }
 
+/* ── 章节横幅：取消卡片，纸面上直接用发丝线框出一块 ─────────── */
 .study-chapter-banner {
-  background: var(--surface);
-  border: 1px solid var(--line-soft);
-  border-radius: var(--radius-lg);
-  box-shadow: var(--shadow-card);
+  background: transparent;
+  border: none;
+  border-bottom: 1px solid var(--line-strong);
   display: grid;
-  gap: 18px;
+  gap: 14px;
   grid-template-columns: auto minmax(0, 1fr) auto;
   align-items: center;
   margin-bottom: 20px;
-  padding: 20px 22px;
+  padding: 4px 2px 18px;
   position: relative;
-  overflow: hidden;
 }
 
 .study-chapter-banner-icon {
@@ -295,22 +183,23 @@
   border-radius: var(--radius-md);
   color: var(--accent);
   display: inline-flex;
-  flex: 0 0 48px;
-  height: 48px;
+  flex: 0 0 44px;
+  height: 44px;
   justify-content: center;
-  width: 48px;
+  width: 44px;
 }
 
 .study-chapter-banner-copy {
   display: grid;
-  gap: 8px;
+  gap: 6px;
   min-width: 0;
 }
 
 .study-chapter-banner-kicker {
-  color: var(--accent);
-  font-size: 13px;
-  font-weight: 900;
+  color: var(--accent-ink);
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 0.08em;
   margin: 0;
 }
 
@@ -325,82 +214,49 @@
 .study-chapter-banner-title {
   color: var(--ink);
   display: block;
-  font-size: 34px;
-  font-weight: 900;
-  line-height: 1.08;
+  font-size: 30px;
+  font-weight: 650;
+  letter-spacing: -0.01em;
+  line-height: 1.15;
   margin: 0;
   overflow-wrap: anywhere;
-  text-shadow: 0 2px 0 rgba(15, 40, 70, 0.18);
 }
 
-/* Credit the people behind a course without separating that context from its title. */
-
-
-
+/* 系列名 / 第 N 章：纯文字，圆点分隔，不再用药丸 */
 .study-chapter-banner-metrics {
   display: flex;
   flex-wrap: wrap;
-  gap: 8px;
+  gap: 6px 12px;
   justify-content: flex-end;
 }
 
 .study-chapter-banner-metrics span {
   align-items: center;
-  background: var(--accent-soft-2);
-  border: 1px solid var(--line);
-  border-radius: var(--radius-pill);
-  color: var(--accent-ink);
+  color: var(--ink-2);
   display: inline-flex;
   font-size: 13px;
-  font-weight: 900;
-  gap: 6px;
-  min-height: 36px;
-  padding: 0 12px;
+  font-variant-numeric: tabular-nums;
+  min-height: 24px;
 }
 
+.study-chapter-banner-metrics span + span::before {
+  color: var(--ink-4);
+  content: "·";
+  margin-right: 12px;
+}
+
+/* 2px 发丝进度条：主色实心 */
 .study-chapter-progress {
-  background: var(--line-soft);
+  background: var(--line);
   border-radius: var(--radius-pill);
-  box-shadow: inset 0 1px 3px rgba(15, 40, 70, 0.16);
   grid-column: 1 / -1;
-  height: 10px;
+  height: 2px;
   overflow: hidden;
 }
 
 .study-chapter-progress span {
-  background: #ffffff;
+  background: var(--accent);
   border-radius: inherit;
   display: block;
   height: 100%;
-}
-
-
-/* ── 顶栏「首页 / 学习」导航（本地免登录版） ────────────────── */
-.topbar-nav {
-  display: inline-flex;
-  gap: 4px;
-  margin-left: 26px;
-}
-
-.topbar-nav-item {
-  background: none;
-  border: none;
-  border-radius: var(--radius-pill);
-  color: var(--ink-2);
-  cursor: pointer;
-  font-size: 14px;
-  font-weight: 700;
-  min-height: 36px;
-  padding: 0 16px;
-  transition: background 0.15s ease, color 0.15s ease;
-}
-
-.topbar-nav-item:hover {
-  background: var(--accent-soft-2);
-  color: var(--ink);
-}
-
-.topbar-nav-item.active {
-  background: var(--accent-soft);
-  color: var(--accent-ink);
 }

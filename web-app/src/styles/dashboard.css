@@ -1,4 +1,4 @@
-/* 仪表盘首页（/home）：浅灰紫底 + 白卡 + 靛蓝点缀，对齐「简约 B 端」参考稿。 */
+/* 仪表盘首页（/home）：纸面上的事实陈列——大数字、细标签、发丝线。 */
 
 .dashboard-page {
   min-height: 100vh;
@@ -16,14 +16,15 @@
 
 .dashboard-hero h1 {
   color: var(--ink);
-  font-size: 30px;
-  font-weight: 800;
-  letter-spacing: -0.02em;
-  margin: 0 0 4px;
+  font-size: 27px;
+  font-weight: 650;
+  letter-spacing: -0.01em;
+  margin: 0 0 6px;
 }
 
 .dashboard-hero p {
   color: var(--ink-3);
+  font-size: 14px;
   margin: 0;
 }
 
@@ -41,12 +42,11 @@
   min-width: 0;
 }
 
-/* ── 通用白卡 ───────────────────────────────────────────── */
+/* ── 工作纸卡：白底发丝线，无投影 ──────────────────────────── */
 .dashboard-card {
   background: var(--surface);
-  border: 1px solid var(--line-soft);
+  border: 1px solid var(--line);
   border-radius: var(--radius-lg);
-  box-shadow: var(--shadow-card);
   padding: 18px 20px;
 }
 
@@ -60,14 +60,14 @@
 
 .dashboard-card-head h2 {
   color: var(--ink);
-  font-size: 16px;
-  font-weight: 800;
+  font-size: 15px;
+  font-weight: 650;
   margin: 0;
 }
 
 .dashboard-card-subtitle {
   color: var(--ink-3);
-  font-size: 12.5px;
+  font-size: 12px;
 }
 
 .dashboard-empty {
@@ -76,17 +76,16 @@
   margin: 6px 0 2px;
 }
 
-/* ── 统计条：一行紧凑数字，无图标芯片 ───────────────────── */
+/* ── 统计条：一行大数字细标签，上下发丝线，不再是白卡 ───────── */
 .dashboard-stat-strip {
   align-items: baseline;
-  background: var(--surface);
-  border: 1px solid var(--line-soft);
-  border-radius: var(--radius-lg);
-  box-shadow: var(--shadow-card);
+  border-bottom: 1px solid var(--line-strong);
+  border-top: 1px solid var(--line-strong);
   display: flex;
   flex-wrap: wrap;
-  gap: 8px 32px;
-  padding: 14px 20px;
+  gap: 10px 40px;
+  margin-bottom: 18px;
+  padding: 14px 4px;
 }
 
 .dashboard-stat {
@@ -97,15 +96,15 @@
 
 .dashboard-stat-value {
   color: var(--ink);
-  font-size: 21px;
+  font-size: 24px;
   font-variant-numeric: tabular-nums;
-  font-weight: 700;
+  font-weight: 650;
   line-height: 1.1;
 }
 
 .dashboard-stat-label {
   color: var(--ink-3);
-  font-size: 13px;
+  font-size: 12.5px;
 }
 
 /* ── 图表卡 ─────────────────────────────────────────────── */
@@ -119,17 +118,17 @@
   stroke: var(--accent);
   stroke-linecap: round;
   stroke-linejoin: round;
-  stroke-width: 2.5;
+  stroke-width: 2;
 }
 
 .dashboard-chart-area {
-  fill: rgba(91, 95, 239, 0.09);
+  fill: rgba(36, 88, 74, 0.08);
 }
 
 .dashboard-chart-dot {
   fill: var(--surface);
   stroke: var(--accent);
-  stroke-width: 2;
+  stroke-width: 1.5;
 }
 
 .dashboard-chart-label {
@@ -148,13 +147,14 @@
 
 .dashboard-continue-info {
   display: grid;
-  gap: 6px;
+  gap: 5px;
   min-width: 0;
 }
 
 .dashboard-continue-info strong {
   color: var(--ink);
   font-size: 15.5px;
+  font-weight: 600;
 }
 
 .dashboard-continue-info > span {
@@ -166,17 +166,17 @@
   align-items: center;
   background: var(--accent);
   border: none;
-  border-radius: var(--radius-pill);
+  border-radius: var(--radius-md);
   color: #ffffff;
   cursor: pointer;
   display: inline-flex;
   flex-shrink: 0;
   font-size: 14px;
-  font-weight: 700;
+  font-weight: 500;
   gap: 7px;
   justify-content: center;
   min-height: 40px;
-  padding: 0 22px;
+  padding: 0 20px;
   transition: background 0.15s ease;
 }
 
@@ -186,10 +186,10 @@
 
 /* ── 进度条 ─────────────────────────────────────────────── */
 .dashboard-progress-track {
-  background: var(--line-soft);
+  background: var(--line);
   border-radius: var(--radius-pill);
   display: block;
-  height: 7px;
+  height: 4px;
   overflow: hidden;
   width: 100%;
 }
@@ -216,15 +216,15 @@
 
 .dashboard-goal-track {
   fill: none;
-  stroke: var(--line-soft);
-  stroke-width: 9;
+  stroke: var(--line);
+  stroke-width: 6;
 }
 
 .dashboard-goal-fill {
   fill: none;
   stroke: var(--accent);
   stroke-linecap: round;
-  stroke-width: 9;
+  stroke-width: 6;
   transform: rotate(-90deg);
   transform-origin: 50% 50%;
   transition: stroke-dashoffset 0.4s ease;
@@ -233,7 +233,8 @@
 .dashboard-goal-percent {
   fill: var(--ink);
   font-size: 17px;
-  font-weight: 800;
+  font-variant-numeric: tabular-nums;
+  font-weight: 650;
 }
 
 .dashboard-goal-count {
@@ -246,7 +247,7 @@
 /* ── 右栏：课程完成度 ───────────────────────────────────── */
 .dashboard-course-list {
   display: grid;
-  gap: 4px;
+  gap: 2px;
   list-style: none;
   margin: 0;
   padding: 0;
@@ -259,7 +260,7 @@
   cursor: pointer;
   display: grid;
   gap: 6px;
-  padding: 9px 10px;
+  padding: 8px 10px;
   text-align: left;
   transition: background 0.15s ease;
   width: 100%;
@@ -272,7 +273,7 @@
 .dashboard-course-title {
   color: var(--ink);
   font-size: 13.5px;
-  font-weight: 700;
+  font-weight: 550;
   overflow: hidden;
   text-overflow: ellipsis;
   white-space: nowrap;
@@ -281,6 +282,7 @@
 .dashboard-course-percent {
   color: var(--ink-3);
   font-size: 12px;
+  font-variant-numeric: tabular-nums;
 }
 
 /* ── 响应式 ─────────────────────────────────────────────── */
@@ -296,7 +298,7 @@
   }
 
   .dashboard-stat-strip {
-    gap: 8px 20px;
+    gap: 10px 22px;
   }
 
   .dashboard-continue-body {

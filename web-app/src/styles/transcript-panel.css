@@ -1,21 +1,34 @@
+/* 章节句子面板：笔记本式行列表——发丝行线、衬线英文、选中行左侧主色起线 */
+
 .compact-panel {
   max-height: 670px;
   overflow: auto;
 }
 
 .transcript-panel {
-  background: var(--surface-soft);
-  border: 2px solid var(--line);
-  border-radius: var(--radius-lg);
+  border-left: 1px solid var(--line);
   max-width: 100%;
   min-width: 0;
   overflow-x: hidden;
-  padding: 18px;
+  padding: 2px 0 2px 18px;
+}
+
+.compact-panel::-webkit-scrollbar {
+  width: 5px;
+}
+
+.compact-panel::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.compact-panel::-webkit-scrollbar-thumb {
+  background: var(--line-strong);
+  border-radius: 3px;
 }
 
 .line-list {
   display: grid;
-  gap: 9px;
+  gap: 0;
   list-style: none;
   margin: 0;
   min-width: 0;
@@ -24,27 +37,31 @@
 
 .line-row {
   align-items: center;
-  background: var(--surface);
-  border: 1px solid var(--line);
-  border-radius: var(--radius-md);
+  background: transparent;
+  border: none;
+  border-bottom: 1px solid var(--line);
+  border-left: 2px solid transparent;
   display: grid;
   gap: 8px;
   grid-template-columns: minmax(0, 1fr) auto;
-  min-height: 62px;
+  min-height: 44px;
   min-width: 0;
-  padding: 7px;
+  padding: 6px 8px 6px 10px;
+  transition: background 0.12s ease, border-color 0.12s ease;
   width: 100%;
+}
+
+.line-row:hover {
+  background: var(--bg-sunken);
 }
 
 .line-row.active {
   background: var(--accent-soft);
-  border-color: var(--accent);
-  box-shadow: var(--shadow-card);
+  border-left-color: var(--accent);
 }
 
-.line-row.mastered {
-  background: var(--success-soft);
-  border-color: var(--success);
+.line-row.mastered .line-copy {
+  color: var(--ink-3);
 }
 
 .line-main {
@@ -57,30 +74,30 @@
   gap: 10px;
   min-width: 0;
   overflow: hidden;
-  padding: 8px;
+  padding: 4px;
   text-align: left;
   width: 100%;
 }
 
 .line-index {
-  align-items: center;
-  background: var(--accent-soft-2);
-  border-radius: 12px;
-  color: var(--accent);
-  display: inline-flex;
-  flex: 0 0 34px;
-  font-size: 12px;
-  font-weight: 900;
-  height: 30px;
-  justify-content: center;
+  color: var(--ink-4);
+  flex: 0 0 26px;
+  font-size: 11.5px;
+  font-variant-numeric: tabular-nums;
+  text-align: left;
+}
+
+.line-row.active .line-index {
+  color: var(--accent-ink);
+  font-weight: 600;
 }
 
 .line-copy {
   display: block;
   flex: 1 1 auto;
-  font-size: 13px;
-  font-weight: 800;
-  line-height: 1.45;
+  font-family: var(--font-serif);
+  font-size: 13.5px;
+  line-height: 1.5;
   min-width: 0;
   overflow: hidden;
   text-overflow: ellipsis;
@@ -90,81 +107,38 @@
 /* 精听页选中句：大字幕已在上方显示，列表行只留提示，避免同句渲染两遍 */
 .line-copy.is-selected-hint {
   color: var(--ink-3);
-  font-style: italic;
-  font-weight: 700;
-  opacity: 0.85;
+  font-family: inherit;
+  font-size: 12.5px;
+  font-style: normal;
 }
 
 .line-actions {
   align-items: center;
   display: flex;
   gap: 6px;
-  padding-right: 4px;
+  padding-right: 2px;
 }
 
 .status-dot {
   border-radius: var(--radius-pill);
   display: inline-block;
-  height: 10px;
-  width: 10px;
+  height: 8px;
+  width: 8px;
 }
 
 .status-dot.warning {
-  background: #f59e0b;
+  background: var(--warning);
 }
 
 .status-dot.success {
-  background: var(--success);
-}
-
-.completion-banner {
-  align-items: center;
-  background: var(--success-soft);
-  border: 2px solid var(--success);
-  border-radius: 18px;
-  color: #2b7a0b;
-  display: flex;
-  font-weight: 900;
-  gap: 8px;
-  margin-top: 14px;
-  min-height: 50px;
-  padding: 0 14px;
-}
-
-/* 锚点分组头：句列表里每个对话/题组的小胶囊，点击跳到该组首句 */
-li.anchor-group-head {
-  display: flex;
-  justify-content: flex-start;
-  margin: 4px 0 2px;
-}
-
-li.anchor-group-head:first-child {
-  margin-top: 0;
-}
-
-.anchor-group-head button {
-  background: var(--accent-soft);
-  border: none;
-  border-radius: var(--radius-pill);
-  color: var(--accent-ink);
-  cursor: pointer;
-  font-size: 12px;
-  font-weight: 800;
-  line-height: 1;
-  padding: 5px 12px;
-  transition: background 0.15s ease;
-}
-
-.anchor-group-head button:hover {
   background: var(--accent);
-  color: #ffffff;
 }
 
 /* ── 锚点分组手风琴 ───────────────────────────────────────
    指令行不再作为学习句子：分组头固定为标签，点击展开该段正文句。 */
 li.anchor-section-head {
   display: flex;
-  margin: 3px 0 2px;
+  margin: 10px 0 0;
 }
 
 li.anchor-section-head:first-child {
@@ -173,54 +147,54 @@ li.anchor-section-head:first-child {
 
 .anchor-section-head button {
   align-items: center;
-  background: var(--accent-soft-2);
-  border: 1px solid var(--line);
-  border-radius: var(--radius-pill);
-  color: var(--accent-ink);
+  background: transparent;
+  border: none;
+  border-radius: var(--radius-sm);
+  color: var(--ink-2);
   cursor: pointer;
   display: flex;
   font: inherit;
   gap: 8px;
-  padding: 6px 12px;
+  padding: 6px 8px;
   text-align: left;
-  transition: background 0.15s ease, border-color 0.15s ease;
+  transition: background 0.12s ease, color 0.12s ease;
   width: 100%;
 }
 
 .anchor-section-head button:hover {
-  border-color: var(--accent);
+  background: var(--bg-sunken);
+  color: var(--ink);
 }
 
 /* 纯指令组（开场 / Section A、B、C）：固化标签，不可点击 */
 li.anchor-section-head.static {
   align-items: center;
-  background: transparent;
-  border: 1px dashed var(--line);
-  border-radius: var(--radius-pill);
   color: var(--ink-3);
   display: flex;
   gap: 8px;
-  padding: 6px 12px;
+  padding: 6px 8px;
+}
+
+.anchor-section-label {
+  font-size: 12.5px;
+  font-weight: 600;
+  letter-spacing: 0.02em;
 }
 
 li.anchor-section-head.static .anchor-section-label {
   color: var(--ink-3);
-  font-weight: 700;
-}
-
-.anchor-section-label {
-  font-size: 13px;
-  font-weight: 800;
+  font-weight: 500;
 }
 
 .anchor-section-count {
-  color: var(--ink-3);
+  color: var(--ink-4);
   font-size: 11.5px;
-  font-weight: 700;
+  font-variant-numeric: tabular-nums;
   margin-left: auto;
 }
 
 .anchor-section-chevron {
+  color: var(--ink-4);
   flex-shrink: 0;
   transition: transform 0.15s ease;
 }
@@ -231,14 +205,14 @@ li.anchor-section-head.static .anchor-section-label {
 
 li.anchor-section-intro {
   color: var(--ink-3);
-  font-size: 12px;
-  line-height: 1.45;
-  margin: -2px 0 2px;
-  overflow: hidden;
-  padding: 2px 12px 4px;
   display: -webkit-box;
+  font-size: 12px;
   -webkit-box-orient: vertical;
   -webkit-line-clamp: 2;
+  line-height: 1.45;
+  margin: 0 0 2px;
+  overflow: hidden;
+  padding: 2px 12px 4px;
 }
 
 /* 对答案：面板标题右侧的小开关；答案字母直接缀在题组行内 */
@@ -246,20 +220,27 @@ li.anchor-section-intro {
   margin-left: auto;
   background: none;
   border: none;
-  color: var(--accent);
+  border-radius: var(--radius-sm);
+  color: var(--accent-ink);
   cursor: pointer;
   font: inherit;
   font-size: 12px;
-  font-weight: 700;
-  padding: 2px 4px;
+  font-weight: 500;
+  padding: 2px 6px;
+}
+
+.answer-toggle:hover {
+  background: var(--accent-soft);
 }
 
 .anchor-section-answers {
   color: var(--accent-ink);
   display: inline-flex;
   flex-wrap: wrap;
+  font-size: 12px;
   font-variant-numeric: tabular-nums;
-  font-weight: 800;
+  font-weight: 600;
   gap: 5px;
-  margin-left: 4px;
+  letter-spacing: 0.02em;
+  margin-left: 6px;
 }

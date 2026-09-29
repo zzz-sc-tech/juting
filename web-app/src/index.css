@@ -1,48 +1,52 @@
 /*
- * 设计令牌（简约 B 端风 · 靛蓝紫）：全站视觉的单一来源。
- * 本 fork 有意偏离上游 AGENTS.md 的「多邻国 playful + var(--accent)」约定，
- * 统一迁移到浅灰紫底 + 白卡 + 靛蓝主色；改主题只动这里。
+ * 设计令牌（纸墨书房）：全站视觉的单一来源。
+ * 暖纸底 + 墨色文字 + 松绿主色；英文内容衬线、界面系统黑体；
+ * 1px 发丝线分层，阴影只留给浮层。改主题只动这里。
  */
 :root {
-  /* 背景与卡片 */
-  --bg: #eef0f8;
-  --surface: #ffffff;
-  --surface-soft: #f6f7fc;
-  --line: #e4e7f2;
-  --line-soft: #edeff7;
+  /* 纸面层次 */
+  --bg: #f7f5f1;
+  --bg-sunken: #f0ede5;
+  --surface: #ffffff; /* 仅浮层（弹窗/下拉/工具提示） */
+  --line: #e4e0d6;
+  --line-strong: #d4cfc0;
 
-  /* 主色（靛蓝紫） */
-  --accent: #5b5fef;
-  --accent-strong: #4a4ed9;
-  --accent-soft: #ececff;
-  --accent-soft-2: #f4f4ff;
-  --accent-ink: #3f43b8;
+  /* 主色：深松绿 */
+  --accent: #24584a;
+  --accent-strong: #1b4439;
+  --accent-soft: #e5ede9;
+  --accent-soft-2: #eef3f0;
+  --accent-ink: #1b4439; /* 淡绿底上的主色文字态 */
 
-  /* 文字四级 */
-  --ink: #191c2e;
-  --ink-2: #565b70;
-  --ink-3: #8b90a5;
-  --ink-4: #c2c5d6;
+  /* 墨色四级 */
+  --ink: #1d1b16;
+  --ink-2: #57534a;
+  --ink-3: #8a8578;
+  --ink-4: #c6c1b4;
 
-  /* 语义色（退居状态色，不再进入主视觉） */
-  --success: #3ba55d;
-  --success-soft: #e5f4eb;
-  --warning: #f5a524;
-  --warning-soft: #fdf3e0;
-  --danger: #e5484d;
-  --danger-soft: #fdebec;
+  /* 语义色：掌握并入绿族，难点用赭橙 */
+  --success: #2f6b4f;
+  --success-soft: #e3eee7;
+  --warning: #b4531f;
+  --warning-soft: #f4e8dc;
+  --danger: #b3261e;
+  --danger-soft: #f5e3e0;
 
-  /* 圆角：大卡 / 控件 / 胶囊 */
-  --radius-lg: 20px;
-  --radius-md: 12px;
+  /* 圆角：卡 / 控件 / 小件 / 胶囊 */
+  --radius-lg: 12px;
+  --radius-md: 8px;
+  --radius-sm: 6px;
   --radius-pill: 999px;
 
-  /* 阴影：卡片 / 浮层（禁止再使用 0 Npx 0 硬底边） */
-  --shadow-card: 0 1px 2px rgba(23, 26, 44, 0.04), 0 8px 24px rgba(23, 26, 44, 0.06);
-  --shadow-float: 0 18px 48px rgba(23, 26, 44, 0.14);
+  /* 阴影：卡片恒为 none（1px 发丝线分层），浮层才有投影 */
+  --shadow-card: none;
+  --shadow-float: 0 12px 32px rgba(29, 27, 22, 0.14), 0 2px 8px rgba(29, 27, 22, 0.08);
 
   /* 聚焦环 */
-  --focus-ring: 0 0 0 3px rgba(91, 95, 239, 0.18);
+  --focus-ring: 0 0 0 3px rgba(36, 88, 74, 0.22);
+
+  /* 英文内容衬线（字幕/歌词/精听句）：离线可用的书房感 */
+  --font-serif: Georgia, "Times New Roman", "Songti SC", "SimSun", serif;
 
   color: var(--ink);
   background: var(--bg);
@@ -70,6 +74,12 @@ input,
 select,
 textarea {
   letter-spacing: 0;
+}
+
+/* 统一焦点可见性：键盘导航可见、鼠标点击不残留 */
+:focus-visible {
+  outline: none;
+  box-shadow: var(--focus-ring);
 }
 
 /* 数字统一等宽对齐（统计卡、进度、时间戳） */

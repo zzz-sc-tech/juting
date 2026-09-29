@@ -175,8 +175,11 @@ export function ExtensiveStage({
         <aside className="stage-side listen-progress-card">
         <div className="listen-progress-icon">
           <svg width="80" height="80" viewBox="0 0 80 80" fill="none" aria-hidden="true">
-            <circle cx="40" cy="40" r="33" stroke="#e4eef8" strokeWidth="12" strokeLinecap="round" transform="rotate(-90 40 40)" />
-            <circle cx="40" cy="40" r="33" stroke="var(--accent)" strokeWidth="12" strokeDasharray={`${progressPercent * 2.08} 208`} strokeLinecap="round" transform="rotate(-90 40 40)" />
+            <circle cx="40" cy="40" r="33" stroke="var(--line)" strokeWidth="7" strokeLinecap="round" transform="rotate(-90 40 40)" />
+            {/* 0% 时不渲染弧线：零长虚线配圆角线帽会显示成一个圆点 */}
+            {progressPercent > 0 && (
+              <circle cx="40" cy="40" r="33" stroke="var(--accent)" strokeWidth="7" strokeDasharray={`${progressPercent * 2.08} 208`} strokeLinecap="round" transform="rotate(-90 40 40)" />
+            )}
           </svg>
           <span className="listen-progress-pct">
             {duration > 0 ? Math.round(progressPercent) : 0}%

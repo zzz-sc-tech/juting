@@ -231,7 +231,7 @@ export function CourseMap({
                 onClick={() => setActiveGroupId(-1)}
                 type="button"
               >
-                <span className="series-tab-dot" style={{ background: '#64748b' }} aria-hidden="true" />
+                <span className="series-tab-dot" style={{ background: 'var(--ink-4)' }} aria-hidden="true" />
                 {t('courseMap.allGroups')}
               </button>
               {visibleGroups.map((group) => (

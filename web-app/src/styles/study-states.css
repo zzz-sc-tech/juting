@@ -1,3 +1,5 @@
+/* 空态 / 错误 / 加载：安静的中置排版，不发徽章不发渐变 */
+
 .empty-study-state {
   display: flex;
   flex-direction: column;
@@ -9,83 +11,60 @@
 }
 
 .empty-study-state .eyebrow {
+  color: var(--accent-ink);
   font-size: 12px;
-  font-weight: 700;
-  letter-spacing: 1px;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  margin-bottom: 10px;
   text-transform: uppercase;
-  margin-bottom: 12px;
-  padding: 6px 16px;
-  border-radius: 20px;
 }
 
 .empty-study-state h2 {
-  font-size: 24px;
-  font-weight: 900;
   color: var(--ink);
-  margin-bottom: 12px;
+  font-size: 20px;
+  font-weight: 650;
+  margin: 0 0 10px;
 }
 
 .empty-study-state p {
+  color: var(--ink-3);
   font-size: 14px;
-  color: #6b7a90;
   line-height: 1.6;
-  max-width: 320px;
+  margin: 0;
+  max-width: 340px;
 }
 
 .empty-study-state .icon-wrapper {
-  width: 80px;
-  height: 80px;
-  border-radius: 50%;
-  display: flex;
   align-items: center;
+  border: 1px solid var(--line-strong);
+  border-radius: var(--radius-lg);
+  color: var(--ink-3);
+  display: flex;
+  height: 64px;
   justify-content: center;
-  margin-bottom: 20px;
-  font-size: 36px;
-  transition: transform 0.3s ease;
-}
-
-.empty-study-state .icon-wrapper:hover {
-  transform: scale(1.1);
-}
-
-.empty-study-state.empty .eyebrow {
-  background: #eef5ff;
-  color: var(--accent);
-}
-
-.empty-study-state.empty .icon-wrapper {
-  background: var(--accent-soft);
-  color: var(--accent);
+  margin-bottom: 18px;
+  width: 64px;
 }
 
 .empty-study-state.error .eyebrow {
-  background: #fff0f0;
-  color: #ff4d4f;
+  color: var(--danger);
 }
 
 .empty-study-state.error .icon-wrapper {
-  background: linear-gradient(135deg, #fff0f0, #ffd6d6);
-  color: #ff4d4f;
-}
-
-.empty-study-state.loading .eyebrow {
-  background: #fffbe6;
-  color: #faad14;
+  border-color: var(--danger);
+  color: var(--danger);
 }
 
 .empty-study-state.loading .icon-wrapper {
-  background: linear-gradient(135deg, #fffbe6, #fff5d6);
-  color: #faad14;
-  animation: pulse 2s infinite;
+  color: var(--accent);
+  animation: state-breathe 2.4s ease-in-out infinite;
 }
 
-@keyframes pulse {
+@keyframes state-breathe {
   0%, 100% {
     opacity: 1;
-    transform: scale(1);
   }
   50% {
-    opacity: 0.7;
-    transform: scale(0.95);
+    opacity: 0.55;
   }
 }
