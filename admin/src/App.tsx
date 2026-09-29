@@ -26,8 +26,8 @@ import { adminUiLocaleLabels, useAdminLanguage } from './i18n/AdminLanguageProvi
 // （例如改过密码）时回退到登录表单。生产多用户部署请勿启用本地免登录凭据。
 // 放在模块作用域：import.meta.env 编译期即固定，放进组件会让每次渲染都产生新引用，
 // 既不该写进 useEffect 依赖（会反复触发自动登录），又会触发 exhaustive-deps 告警。
-const AUTO_ADMIN_EMAIL = import.meta.env.VITE_LOCAL_ADMIN_EMAIL ?? 'admin@duolinting.local'
-const AUTO_ADMIN_PASSWORD = import.meta.env.VITE_LOCAL_ADMIN_PASSWORD ?? 'duolinting2026'
+const AUTO_ADMIN_EMAIL = import.meta.env.VITE_LOCAL_ADMIN_EMAIL ?? 'admin@juting.local'
+const AUTO_ADMIN_PASSWORD = import.meta.env.VITE_LOCAL_ADMIN_PASSWORD ?? 'juting2026'
 const ADMIN_LOGGED_OUT_KEY = 'juting.admin.manually-logged-out'
 const LOCAL_AUTO_LOGIN_ENABLED = import.meta.env.VITE_LOCAL_ADMIN_AUTO_LOGIN !== 'false'
 

@@ -3,7 +3,7 @@
  * 本脚本在没有任何可用超管时创建一个（幂等，已有超管则跳过）。
  *
  * 用法：node scripts/local/bootstrap-admin.mjs [--env-file backend/.env] [--password <密码>]
- * 默认账号 admin@duolinting.local / duolinting2026，登录后可在「我的账号」里改密。
+ * 默认账号 admin@juting.local / juting2026，登录后可在「我的账号」里改密。
  */
 import { fileURLToPath } from 'node:url';
 import path from 'node:path';
@@ -29,7 +29,7 @@ dotenv.config({ path: envFile, processEnv: fileEnvironment, quiet: true });
 const environment = { ...fileEnvironment, ...process.env };
 
 const passwordIndex = process.argv.indexOf('--password');
-const initialPassword = passwordIndex >= 0 ? process.argv[passwordIndex + 1] : 'duolinting2026';
+const initialPassword = passwordIndex >= 0 ? process.argv[passwordIndex + 1] : 'juting2026';
 if (!initialPassword || initialPassword.length < 8) {
     throw new Error('初始密码至少 8 位。');
 }
@@ -56,11 +56,11 @@ await connection.query(
     'insert into admin_users (username, email, display_name, password_hash, role, must_change_password, is_active) ' +
     "values (?, ?, ?, ?, 'super_admin', false, true) " +
     'on duplicate key update password_hash = values(password_hash), is_active = true',
-    ['admin', 'admin@duolinting.local', '本地管理员', passwordHash],
+    ['admin', 'admin@juting.local', '本地管理员', passwordHash],
 );
 
 console.log('[bootstrap] 已创建本地超级管理员：');
-console.log('  登录邮箱: admin@duolinting.local');
+console.log('  登录邮箱: admin@juting.local');
 console.log(`  初始密码: ${initialPassword}`);
 console.log('  （请登录管理后台后在「我的账号」修改密码）');
 await connection.end();
