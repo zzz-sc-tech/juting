@@ -1,4 +1,4 @@
-import { useMemo } from 'react'
+import { useCallback, useMemo } from 'react'
 import type {
   ExerciseProgress,
   LineProgress,
@@ -10,7 +10,6 @@ import {
   createLineProgress,
   ensureExerciseProgress,
 } from '../lib/progressStore'
-import { isDictationAccepted } from '../lib/studyStages'
 
 type UseStudyProgressOptions = {
   activeExercise?: ListeningExercise
@@ -18,6 +17,8 @@ type UseStudyProgressOptions = {
   setStore: React.Dispatch<React.SetStateAction<StudyStore>>
 }
 
+// 选中态的唯一持久来源是 ExerciseProgress.lastLineId；调用方传入的
+// activeExercise 必须是「正文行集」（studyExercise），保证行号与句列表同源。
 export function useStudyProgress({
   activeExercise,
   store,
@@ -59,110 +60,84 @@ export function useStudyProgress({
   const masteryPercent = activeExercise?.lines.length
     ? Math.round((masteredInContent / activeExercise.lines.length) * 100)
     : 0
-  const acceptedAnswers = selectedLine
-    ? [selectedLine.text, ...(selectedLine.answers ?? [])]
-    : []
-  const dictationMatches = isDictationAccepted(
-    lineProgress.dictation,
-    acceptedAnswers,
+
+  const updateActiveProgress = useCallback(
+    (updater: (progress: ExerciseProgress) => ExerciseProgress) => {
+      if (!activeExercise) {
+        return
+      }
+
+      setStore((current) => {
+        const prepared = ensureExerciseProgress(current, activeExercise)
+        return {
+          ...prepared,
+          progressByExercise: {
+            ...prepared.progressByExercise,
+            [activeExercise.id]: {
+              ...updater(prepared.progressByExercise[activeExercise.id]),
+              updatedAt: new Date().toISOString(),
+            },
+          },
+        }
+      })
+    },
+    [activeExercise, setStore],
   )
 
-  const updateActiveProgress = (
-    updater: (progress: ExerciseProgress) => ExerciseProgress,
-  ) => {
-    if (!activeExercise) {
-      return
-    }
-
-    setStore((current) => {
-      const prepared = ensureExerciseProgress(current, activeExercise)
-      return {
-        ...prepared,
-        progressByExercise: {
-          ...prepared.progressByExercise,
-          [activeExercise.id]: {
-            ...updater(prepared.progressByExercise[activeExercise.id]),
-            updatedAt: new Date().toISOString(),
-          },
+  const updateLineProgress = useCallback(
+    (lineId: string, updater: (line: LineProgress) => LineProgress) => {
+      updateActiveProgress((current) => ({
+        ...current,
+        lines: {
+          ...current.lines,
+          [lineId]: updater(current.lines[lineId] ?? createLineProgress()),
         },
-      }
-    })
-  }
+      }))
+    },
+    [updateActiveProgress],
+  )
 
-  const updateLineProgress = (
-    lineId: string,
-    updater: (line: LineProgress) => LineProgress,
-  ) => {
-    updateActiveProgress((current) => ({
-      ...current,
-      lines: {
-        ...current.lines,
-        [lineId]: updater(current.lines[lineId] ?? createLineProgress()),
-      },
-    }))
-  }
+  const selectLine = useCallback(
+    (lineId: string) => {
+      updateActiveProgress((current) => ({
+        ...current,
+        lastLineId: lineId,
+      }))
+    },
+    [updateActiveProgress],
+  )
 
-  const selectLine = (lineId: string) => {
-    updateActiveProgress((current) => ({
-      ...current,
-      lastLineId: lineId,
-    }))
-  }
+  const markLineMastered = useCallback(
+    (lineId: string) => {
+      // mastered 是 toggle；每日活动统计由调用方（会话上下文）在本地记录，
+      // 这里只负责切换状态。
+      updateLineProgress(lineId, (current) => ({
+        ...current,
+        mastered: !current.mastered,
+      }))
+    },
+    [updateLineProgress],
+  )
 
-  const addVocabulary = (word: string, line = selectedLine) => {
-    if (!line) {
-      return
-    }
-
-    updateActiveProgress((current) => ({
-      ...current,
-      vocabulary: {
-        ...current.vocabulary,
-        [word]: line.text,
-      },
-    }))
-  }
-
-  const moveSelectedLine = (offset: number) => {
-    if (!activeExercise) {
-      return
-    }
-
-    const nextLine = activeExercise.lines[selectedLineIndex + offset]
-    if (nextLine) {
-      selectLine(nextLine.id)
-    }
-  }
-
-  const markLineMastered = (lineId: string) => {
-    // mastered 是 toggle；每日活动统计由调用方（App）在本地记录，
-    // 这里只负责切换状态。
-    updateLineProgress(lineId, (current) => ({
-      ...current,
-      mastered: !current.mastered,
-    }))
-  }
-
-  const markLineUnclear = (lineId: string) => {
-    updateLineProgress(lineId, (current) => ({
-      ...current,
-      unclear: !current.unclear,
-    }))
-  }
+  const markLineUnclear = useCallback(
+    (lineId: string) => {
+      updateLineProgress(lineId, (current) => ({
+        ...current,
+        unclear: !current.unclear,
+      }))
+    },
+    [updateLineProgress],
+  )
 
   return {
-    addVocabulary,
-    dictationMatches,
     lineProgress,
     markLineMastered,
     markLineUnclear,
     masteryPercent,
-    moveSelectedLine,
     progress,
     selectedLine,
     selectedLineIndex,
     selectLine,
     updateActiveProgress,
-    updateLineProgress,
   }
 }

@@ -13,6 +13,7 @@ import type {
   TranscriptLine,
 } from '@juting/shared'
 import { useLanguage } from '../i18n/LanguageProvider'
+import { resolveLineTranslation } from '../lib/lineTranslation'
 import { createLineProgress } from '../lib/progressStore'
 import { resolveApiUrl } from '../lib/apiClient'
 import { Tooltip } from './Tooltip'
@@ -48,10 +49,13 @@ export function DifficultReviewStage({
   onPlayLine,
   onTogglePlayback,
 }: DifficultReviewStageProps) {
-  const { t } = useLanguage()
-  // 译文行只在「真的有译文且与原文不同」时显示，避免接口回填原文导致同一句显示两次
-  const translationVisible =
-    Boolean(selectedLine?.translation) && selectedLine?.translation !== selectedLine?.text
+  const { t, contentLocale } = useLanguage()
+  // 译文权威字段是 translations[contentLocale]（line.translation 对新数据为空），
+  // 与泛听/精听同走 resolveLineTranslation；空串=隐藏译文层。
+  const translation = selectedLine
+    ? resolveLineTranslation(selectedLine, contentLocale)
+    : ''
+  const translationVisible = Boolean(translation)
   const selectedIndex = selectedLine
     ? reviewLines.findIndex((line) => line.id === selectedLine.id)
     : -1
@@ -154,7 +158,7 @@ export function DifficultReviewStage({
             </div>
             <p className="subtitle-text revealed">{selectedLine.text}</p>
             <p className="subtitle-translation revealed">
-              {translationVisible ? selectedLine.translation : ' '}
+              {translationVisible ? translation : ' '}
             </p>
           </div>
 

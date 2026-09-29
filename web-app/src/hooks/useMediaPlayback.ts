@@ -1,4 +1,4 @@
-import { useEffect, useRef, useState, type RefObject } from 'react'
+import { useCallback, useEffect, useRef, useState, type RefObject } from 'react'
 
 type UseMediaPlaybackOptions = {
   mediaRef: RefObject<HTMLMediaElement | null>
@@ -58,13 +58,13 @@ export function useMediaPlayback({
     [],
   )
 
-  const applyPlaybackRate = () => {
+  const applyPlaybackRate = useCallback(() => {
     if (mediaRef.current) {
       mediaRef.current.playbackRate = playbackRate
     }
-  }
+  }, [mediaRef, playbackRate])
 
-  const seekMediaTo = (media: HTMLMediaElement, targetTime: number) =>
+  const seekMediaTo = useCallback((media: HTMLMediaElement, targetTime: number) =>
     new Promise<void>((resolve) => {
       const finish = () => {
         globalThis.clearTimeout(timeoutId)
@@ -81,9 +81,9 @@ export function useMediaPlayback({
       if (!media.seeking && Math.abs(media.currentTime - targetTime) < 0.025) {
         finish()
       }
-    })
+    }), [])
 
-  const stopPlayback = () => {
+  const stopPlayback = useCallback(() => {
     playbackTokenRef.current += 1
     rangeCleanupRef.current?.()
     rangeCleanupRef.current = null
@@ -94,9 +94,9 @@ export function useMediaPlayback({
     }
     window.speechSynthesis?.cancel()
     setIsPlaying(false)
-  }
+  }, [mediaRef])
 
-  const playMediaRange = (start: number, end?: number) =>
+  const playMediaRange = useCallback((start: number, end?: number) =>
     new Promise<void>((resolve) => {
       const runPlaybackRange = async () => {
         const media = mediaRef.current
@@ -187,9 +187,9 @@ export function useMediaPlayback({
       }
 
       void runPlaybackRange()
-    })
+    }), [mediaRef, playbackRate, seekMediaTo])
 
-  const playMedia = async (startAt?: number) => {
+  const playMedia = useCallback(async (startAt?: number) => {
     const media = mediaRef.current
     if (!media) {
       return false
@@ -210,13 +210,13 @@ export function useMediaPlayback({
       setIsPlaying(false)
       return false
     }
-  }
+  }, [applyPlaybackRate, mediaRef, seekMediaTo])
 
-  const pauseMedia = () => {
+  const pauseMedia = useCallback(() => {
     mediaRef.current?.pause()
-  }
+  }, [mediaRef])
 
-  const toggleMediaPlayback = async (options?: { restartAt?: number }) => {
+  const toggleMediaPlayback = useCallback(async (options?: { restartAt?: number }) => {
     const media = mediaRef.current
     if (!media) {
       return
@@ -228,9 +228,9 @@ export function useMediaPlayback({
     }
 
     await playMedia(options?.restartAt)
-  }
+  }, [mediaRef, pauseMedia, playMedia])
 
-  const seekMedia = (time: number) => {
+  const seekMedia = useCallback((time: number) => {
     const media = mediaRef.current
     if (!media) {
       return
@@ -238,9 +238,9 @@ export function useMediaPlayback({
 
     media.currentTime = Math.max(0, Math.min(time, media.duration || time))
     setCurrentTime(media.currentTime)
-  }
+  }, [mediaRef])
 
-  const runPlayback = async (task: () => Promise<void>) => {
+  const runPlayback = useCallback(async (task: () => Promise<void>) => {
     if (isPlayingRef.current) {
       return false
     }
@@ -257,7 +257,7 @@ export function useMediaPlayback({
       setIsPlaying(false)
     }
     return !stopPlaybackRef.current
-  }
+  }, [])
 
   return {
     currentTime,
