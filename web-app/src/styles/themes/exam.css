@@ -1,0 +1,523 @@
+/* ══════════════════════════════════════════════════════════════
+   主题 D「油印试卷」（[data-theme='exam']）——装饰层。
+   再生纸灰底 + 蜡纸蓝黑油墨 + 红笔批改痕迹；英文 Courier 打字机体、
+   中文楷体。装订线、答题区虚线框、红波浪当前句都在这一层。
+   ══════════════════════════════════════════════════════════════ */
+
+:root[data-theme='exam'] {
+  /* ── 装订线：侧栏左缘一道红 ─────────────────────────────── */
+  & .library-pane {
+    border-left: 3px solid var(--accent);
+    border-right: 1px solid var(--line);
+  }
+
+  /* ── 栏目标签：试卷式【课程】 ────────────────────────────── */
+  & .pane-heading,
+  & .panel-title {
+    color: var(--ink-3);
+    font-size: 12px;
+    font-weight: 400;
+    letter-spacing: 0.02em;
+  }
+
+  & .pane-heading::before,
+  & .panel-title::before {
+    content: "【";
+  }
+
+  & .pane-heading::after,
+  & .panel-title::after {
+    content: "】";
+  }
+
+  & .series-trigger {
+    border-color: var(--ink);
+  }
+
+  & .series-trigger:hover {
+    background: var(--bg-sunken);
+  }
+
+  /* 侧栏章节行：红色序号，像试卷题号 */
+  & .quest-badge {
+    border: none;
+    color: var(--accent);
+    font-weight: 600;
+  }
+
+  & .quest-node.active .quest-badge {
+    background: transparent;
+    border: none;
+    color: var(--accent);
+  }
+
+  & .exercise-item.active {
+    background: var(--accent-soft-2);
+  }
+
+  & .exercise-item.active .exercise-title {
+    color: var(--ink);
+  }
+
+  & .chapter-status-box {
+    border-color: var(--ink-3);
+  }
+
+  & .chapter-status-box.doing {
+    background: linear-gradient(90deg, var(--accent) 0 50%, transparent 50% 100%);
+    border-color: var(--accent);
+  }
+
+  & .chapter-status-box.done {
+    background: var(--ink);
+    border-color: var(--ink);
+  }
+
+  /* ── 章节卷头 ────────────────────────────────────────────── */
+  & .study-chapter-banner {
+    border-bottom: 2px solid var(--ink);
+  }
+
+  & .study-chapter-banner-icon {
+    background: transparent;
+    border: 1px solid var(--ink);
+    color: var(--ink);
+  }
+
+  & .study-chapter-banner-kicker {
+    color: var(--ink-3);
+    font-weight: 400;
+    letter-spacing: 0.02em;
+  }
+
+  & .study-chapter-banner-title {
+    font-weight: 700;
+    letter-spacing: 0.01em;
+  }
+
+  & .study-chapter-banner-metrics span {
+    color: var(--ink-3);
+  }
+
+  & .study-chapter-progress {
+    background: var(--line);
+    border-radius: 0;
+    height: 2px;
+  }
+
+  & .study-chapter-progress span {
+    background: var(--accent);
+  }
+
+  /* ── 阶段导航：第①②③步 ────────────────────────────────── */
+  & .stage-step {
+    border-color: var(--ink-3);
+  }
+
+  & .stage-step:hover {
+    border-color: var(--ink);
+  }
+
+  & .stage-step.active {
+    background: var(--surface);
+    border: 1.5px solid var(--ink);
+    color: var(--ink);
+  }
+
+  & .stage-step.active .stage-label strong {
+    color: var(--ink);
+    font-weight: 700;
+  }
+
+  & .stage-number {
+    border: 1px solid var(--ink);
+    color: var(--ink);
+    font-weight: 600;
+  }
+
+  & .stage-step.active .stage-number {
+    background: var(--ink);
+    color: var(--surface);
+  }
+
+  & .stage-step.completed .stage-number {
+    border-color: var(--ink);
+    color: var(--ink);
+  }
+
+  /* ── 面板与锚点：红笔圈重点 ─────────────────────────────── */
+  & .stage-board {
+    background: var(--surface);
+    border: 1px solid var(--line-strong);
+  }
+
+  & .dialogue-anchor-bar {
+    border-bottom: 1px dashed var(--ink-3);
+  }
+
+  & .dialogue-anchor-bar-title {
+    color: var(--ink-3);
+  }
+
+  & .dialogue-anchor-chip {
+    border-color: var(--ink-3);
+    color: var(--ink-2);
+  }
+
+  & .dialogue-anchor-chip:hover {
+    border-color: var(--ink);
+    color: var(--ink);
+  }
+
+  & .dialogue-anchor-chip.active {
+    background: transparent;
+    border-color: var(--accent);
+    color: var(--accent);
+    font-weight: 600;
+  }
+
+  /* ── 揭晓字幕：答题区虚线框 + 打字机/楷体 ────────────────── */
+  & .subtitle-text.revealed {
+    background: transparent;
+    border: 1px dashed var(--ink-3);
+    border-radius: 0;
+    color: var(--ink);
+    font-size: 20px;
+    line-height: 1.6;
+  }
+
+  & .subtitle-translation.revealed {
+    color: var(--ink-2);
+  }
+
+  & .review-media-card {
+    border-color: var(--line-strong);
+  }
+
+  /* ── 按钮：油墨描边；主操作实心蓝黑 ──────────────────────── */
+  & .icon-button {
+    border-color: var(--ink-3);
+    color: var(--ink-2);
+  }
+
+  & .icon-button:hover:not(:disabled) {
+    border-color: var(--ink);
+    color: var(--ink);
+  }
+
+  & .icon-button.primary {
+    background: var(--ink);
+    border-color: var(--ink);
+    color: #f8f7f2;
+  }
+
+  & .icon-button.primary:hover:not(:disabled) {
+    background: var(--accent-strong);
+    border-color: var(--accent-strong);
+  }
+
+  & .icon-button.reveal,
+  & .icon-button.active {
+    background: var(--accent-soft-2);
+    border-color: var(--accent);
+    color: var(--accent);
+  }
+
+  & .media-play-btn,
+  & .command-button {
+    background: var(--ink);
+    color: #f8f7f2;
+  }
+
+  & .media-play-btn:hover,
+  & .command-button:hover {
+    background: var(--accent-strong);
+  }
+
+  & .rate-trigger {
+    border-color: var(--ink-3);
+  }
+
+  & .rate-trigger:hover,
+  & .rate-trigger.active {
+    border-color: var(--ink);
+  }
+
+  & .rate-option.active {
+    background: var(--accent-soft-2);
+    color: var(--accent);
+  }
+
+  & .settings-submit {
+    background: var(--ink);
+    border-color: var(--ink);
+  }
+
+  & .settings-submit:hover:not(:disabled) {
+    background: var(--accent-strong);
+  }
+
+  & .settings-back,
+  & .settings-card,
+  & .settings-input,
+  & .settings-select-trigger,
+  & .settings-goal-input,
+  & .settings-row {
+    border-color: var(--ink-3);
+  }
+
+  & .settings-back:hover,
+  & .settings-input:hover,
+  & .settings-select-trigger:hover,
+  & .settings-row:hover {
+    border-color: var(--ink);
+  }
+
+  /* ── 状态动作：难点=红笔圈出、掌握=油墨落定 ───────────────── */
+  & .status-actions .pill {
+    border-color: var(--ink-3);
+    color: var(--ink-2);
+  }
+
+  & .status-actions .pill:hover {
+    border-color: var(--ink);
+    color: var(--ink);
+  }
+
+  & .status-actions .pill.active,
+  & .status-actions .pill.active:hover {
+    background: var(--warning-soft);
+    border-color: var(--warning);
+    color: var(--warning);
+    font-weight: 600;
+  }
+
+  & .status-actions .pill.success,
+  & .status-actions .pill.success:hover {
+    background: var(--ink);
+    border-color: var(--ink);
+    color: #f8f7f2;
+  }
+
+  /* ── 泛听：试卷阅读列；当前句红波浪下划线 ─────────────────── */
+  & .listen-visual {
+    background: var(--surface);
+    border-color: var(--line-strong);
+  }
+
+  & .media-progress-track.overlay .media-progress-fill {
+    background: var(--accent);
+  }
+
+  & .media-progress-track.overlay input[type='range']::-webkit-slider-thumb {
+    background: var(--accent);
+  }
+
+  & .media-progress-track.overlay input[type='range']::-moz-range-thumb {
+    background: var(--accent);
+  }
+
+  & .extensive-lyric {
+    color: var(--ink-3);
+  }
+
+  & .extensive-lyric:hover {
+    color: var(--ink-2);
+  }
+
+  & .extensive-lyric.active {
+    color: var(--ink);
+    font-weight: 700;
+    /* 红笔在正在播放的句子下画波浪线 */
+    text-decoration: underline wavy var(--accent);
+    text-decoration-thickness: 1.5px;
+    text-underline-offset: 6px;
+  }
+
+  & .extensive-lyric-translation {
+    color: var(--ink-3);
+  }
+
+  & .extensive-lyric.active .extensive-lyric-translation {
+    color: var(--ink-2);
+    text-decoration: none;
+  }
+
+  & .subtitle-chip {
+    border-color: var(--ink-3);
+    color: var(--ink-2);
+  }
+
+  & .subtitle-chip:hover {
+    border-color: var(--ink);
+    color: var(--ink);
+  }
+
+  & .subtitle-chip.on {
+    background: transparent;
+    border-color: var(--accent);
+    color: var(--accent);
+  }
+
+  & .listen-visual-waves {
+    background: repeating-linear-gradient(
+      90deg,
+      rgba(46, 49, 83, 0.08) 0 3px,
+      transparent 3px 9px,
+      rgba(46, 49, 83, 0.04) 9px 11px,
+      transparent 11px 17px
+    );
+  }
+
+  /* ── 句列表：横格本行线 + 红笔选中 ────────────────────────── */
+  & .transcript-panel {
+    border-left-color: var(--line-strong);
+  }
+
+  & .line-row {
+    border-bottom: 1px solid var(--line);
+  }
+
+  & .line-row.active {
+    background: var(--accent-soft-2);
+    border-left-color: var(--accent);
+  }
+
+  & .line-row.active .line-index {
+    color: var(--accent);
+  }
+
+  & .status-dot.success {
+    background: var(--ink);
+  }
+
+  & .status-dot.warning {
+    background: var(--warning);
+  }
+
+  & .answer-toggle {
+    color: var(--accent);
+    text-decoration: underline;
+    text-underline-offset: 3px;
+  }
+
+  & .answer-toggle:hover {
+    background: var(--accent-soft-2);
+  }
+
+  & .anchor-section-head button:hover {
+    background: var(--bg-sunken);
+  }
+
+  /* ── 波形：油墨波形 + 红笔进度 ────────────────────────────── */
+  & .waveform-surface {
+    background: var(--surface);
+    border-color: var(--line-strong);
+  }
+
+  /* ── 复习空态：虚线答题框 ─────────────────────────────────── */
+  & .review-empty-card {
+    border: 1px dashed var(--ink-3);
+    border-radius: 0;
+  }
+
+  /* ── 弹窗 ─────────────────────────────────────────────────── */
+  & .modal-backdrop {
+    background: rgba(46, 49, 83, 0.4);
+  }
+
+  & .series-dialog {
+    border: 1px solid var(--line-strong);
+  }
+
+  & .dialog-close {
+    border-color: var(--ink-3);
+  }
+
+  & .dialog-close:hover {
+    border-color: var(--accent);
+    color: var(--accent);
+  }
+
+  & .series-option {
+    border-color: var(--ink-3);
+  }
+
+  & .series-option:hover {
+    border-color: var(--ink);
+  }
+
+  & .series-option.active {
+    background: var(--accent-soft-2);
+    border-color: var(--accent);
+  }
+
+  /* ── 仪表盘：红笔批改进度 ─────────────────────────────────── */
+  & .dashboard-stat-strip {
+    border-top: 2px solid var(--ink);
+    border-bottom: 1px solid var(--line);
+  }
+
+  & .dashboard-card {
+    border-color: var(--line-strong);
+  }
+
+  & .dashboard-primary-button {
+    background: var(--ink);
+  }
+
+  & .dashboard-primary-button:hover {
+    background: var(--accent-strong);
+  }
+
+  & .dashboard-chart-line {
+    stroke: var(--ink);
+  }
+
+  & .dashboard-chart-area {
+    fill: rgba(46, 49, 83, 0.06);
+  }
+
+  & .dashboard-chart-dot {
+    stroke: var(--ink);
+  }
+
+  & .dashboard-goal-fill {
+    stroke: var(--accent);
+  }
+
+  & .dashboard-progress-fill {
+    background: var(--accent);
+  }
+
+  /* ── 滚动条：中性灰 ───────────────────────────────────────── */
+  & .exercise-list::-webkit-scrollbar-thumb,
+  & .study-pane::-webkit-scrollbar-thumb,
+  & .compact-panel::-webkit-scrollbar-thumb,
+  & .series-grid::-webkit-scrollbar-thumb {
+    background: var(--ink-4);
+  }
+
+  & .exercise-list::-webkit-scrollbar-thumb:hover,
+  & .study-pane::-webkit-scrollbar-thumb:hover,
+  & .compact-panel::-webkit-scrollbar-thumb:hover,
+  & .series-grid::-webkit-scrollbar-thumb:hover {
+    background: var(--ink-3);
+  }
+
+  /* ── 空态 / 提示 ─────────────────────────────────────────── */
+  & .empty-study-state .icon-wrapper {
+    border: 1px dashed var(--ink-3);
+    border-radius: 0;
+    color: var(--ink-3);
+  }
+
+  & .custom-tooltip {
+    background: var(--ink);
+    color: #f8f7f2;
+  }
+
+  & .custom-tooltip-arrow {
+    fill: var(--ink);
+  }
+}

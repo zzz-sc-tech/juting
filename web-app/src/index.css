@@ -176,3 +176,48 @@ textarea {
   --wave-region: rgba(24, 24, 27, 0.06);
   --wave-region-active: rgba(24, 24, 27, 0.22);
 }
+
+/* ══════════════════════════════════════════════════════════════
+   主题 D「油印试卷」（exam）：再生纸灰底 + 蜡纸蓝黑油墨 +
+   红笔批改点缀。英文内容打字机体、中文楷体——老式试卷的质感。
+   ══════════════════════════════════════════════════════════════ */
+:root[data-theme='exam'] {
+  --bg: #f2f1ea;
+  --bg-sunken: #e9e8e0;
+  --surface: #f8f7f2;
+  --line: #dcdad0;
+  --line-strong: #2e3153;
+
+  /* 红笔：链接/激活/答案/难点 */
+  --accent: #b03030;
+  --accent-strong: #8f2626;
+  --accent-soft: #f3e6e1;
+  --accent-soft-2: #f7ede9;
+  --accent-ink: #b03030;
+
+  /* 蜡纸蓝黑油墨 */
+  --ink: #2e3153;
+  --ink-2: #4c5178;
+  --ink-3: #8b8ea8;
+  --ink-4: #c3c5d4;
+
+  --success: #2e3153;
+  --success-soft: #e7e8f0;
+  --warning: #b03030;
+  --warning-soft: #f3e6e1;
+  --danger: #9c2828;
+  --danger-soft: #f5e4e0;
+
+  --radius-lg: 3px;
+  --radius-md: 2px;
+  --radius-sm: 2px;
+
+  --focus-ring: 0 0 0 2px #f2f1ea, 0 0 0 4px #b03030;
+
+  /* 内容字体：英文打字机体 + 中文楷体——老试卷的原装搭配 */
+  --font-serif: "Courier New", "KaiTi", "STKaiti", "SimSun", monospace;
+
+  /* 波形：油墨底 + 红笔播放进度 */
+  --wave-region: rgba(46, 49, 83, 0.08);
+  --wave-region-active: rgba(176, 48, 48, 0.22);
+}

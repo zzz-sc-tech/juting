@@ -1,11 +1,16 @@
-// 界面主题：paper=纸墨书房（默认） / gazette=黑白晨报 / minimal=极简白。
+// 界面主题：paper=纸墨书房（默认） / gazette=黑白晨报 / minimal=极简白 / exam=油印试卷。
 // 主题只改视觉令牌与装饰层，不碰任何行为；持久化在 localStorage。
-export type UiTheme = 'paper' | 'gazette' | 'minimal'
+export type UiTheme = 'paper' | 'gazette' | 'minimal' | 'exam'
 
 const THEME_KEY = 'juting.web.theme.v1'
 
 export function isUiTheme(value: unknown): value is UiTheme {
-  return value === 'paper' || value === 'gazette' || value === 'minimal'
+  return (
+    value === 'paper' ||
+    value === 'gazette' ||
+    value === 'minimal' ||
+    value === 'exam'
+  )
 }
 
 export function getStoredTheme(): UiTheme {

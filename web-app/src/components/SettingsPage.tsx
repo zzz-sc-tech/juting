@@ -97,6 +97,8 @@ export function SettingsPage() {
               options={[
                 { value: 'paper', label: t('settings.themePaper') },
                 { value: 'gazette', label: t('settings.themeGazette') },
+                { value: 'minimal', label: t('settings.themeMinimal') },
+                { value: 'exam', label: t('settings.themeExam') },
               ]}
               value={theme}
             />
