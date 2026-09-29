@@ -1,7 +1,7 @@
 {
  "preset": "cet6",
- "version": "20260929.9",
- "generatedAt": "2026-09-29T17:41:30.744Z",
+ "version": "20260929.10",
+ "generatedAt": "2026-09-29T18:15:12.599Z",
  "group": {
   "id": 8,
   "name": "英语六级真题",
@@ -65,550 +65,1570 @@
    },
    "transcript_json": [
     {
+     "id": "l1",
      "start": 0,
-     "end": 4,
-     "text": "College English Test, Band 6, Part 2, Listening Comprehension.",
-     "id": "l1"
+     "end": 6.45,
+     "text": "College English Test Band 6, Part 2, Listening Comprehension"
     },
     {
-     "start": 8.38,
-     "end": 9.88,
-     "text": "Section A",
-     "id": "l2"
+     "id": "l2",
+     "start": 7.3,
+     "end": 10.8,
+     "text": "Section A"
     },
     {
-     "start": 9.88,
-     "end": 30.34,
-     "text": "In this section, you will hear two long conversations. At the end of each conversation, you will hear four questions. Both the conversation and the questions will be spoken only once. After you hear a question, you must choose the best answer from the four choices marked A, B, C and D. Then mark the corresponding letter on answer sheet 1, with a single line",
-     "id": "l3"
+     "id": "l3",
+     "start": 11,
+     "end": 14.48,
+     "text": "In this section, you will hear two long conversations."
     },
     {
-     "start": 37.16,
-     "end": 38.16,
-     "text": "Through the centre.",
-     "id": "l4"
+     "id": "l4",
+     "start": 15.12,
+     "end": 18.91,
+     "text": "At the end of each conversation, you will hear four questions."
     },
     {
-     "start": 40.48,
-     "end": 41.98,
-     "text": "Conversation 1",
-     "id": "l5"
+     "id": "l5",
+     "start": 19.6,
+     "end": 23.88,
+     "text": "Both the conversation and the questions will be spoken only once."
     },
     {
-     "start": 41.98,
-     "end": 63.72,
-     "text": "Tonight we have a special guest from a local establishment, the Parisian Café. Welcome. Hi. Thanks for having me on your show. Thank you for joining us. So please tell us. Why did you decide to open a café? Well, we saw the opportunity to offer something a little special and different from other establishments.",
-     "id": "l6"
+     "id": "l6",
+     "start": 24.83,
+     "end": 31.91,
+     "text": "After you hear a question, you must choose the best answer from the four choices marked A, B, C, and D."
     },
     {
-     "start": 64.2,
-     "end": 87.56,
-     "text": "Cafés certainly are a very competitive market sector. There are more than plenty in our city, and we felt they are all rather similar to each other. Wouldn't you agree? Certainly, yes. So how is your establishment any different? Well, simply put, we have rabbits wandering freely around the place. Your customers come in and enjoy their food and drinks.",
-     "id": "l7"
+     "id": "l7",
+     "start": 32.47,
+     "end": 38.44,
+     "text": "Then mark the corresponding letter on answer sheet 1 with a single line through the centre."
     },
     {
-     "start": 90.44,
-     "end": 112.64,
-     "text": "While little rabbits play about and brush against their legs, there's no other place like it. That's amazing. How did you come up with the idea? We saw other cafés with cats in them, so we thought, why not rabbits? People love rabbits. They are very cute animals. But is it safe? Do the rabbits ever bite people, or do any customers ever hurt the rabbits?",
-     "id": "l8"
+     "id": "l8",
+     "start": 39,
+     "end": 41.95,
+     "text": "Conversation 1"
     },
     {
-     "start": 116.74,
-     "end": 135.56,
-     "text": "It's perfectly safe for both the rabbits and our customers. Rabbits are very peaceful and certainly do not bite. Furthermore, our rabbits are regularly cleaned and have all received the required shots, so there is no health risk whatsoever. Because for our customers they are all animal lovers, so they would never try to hurt the",
-     "id": "l9"
+     "id": "l9",
+     "start": 42,
+     "end": 49.85,
+     "text": "Welcome to Workplace, and in today's program we're looking at the results of two recently published surveys,"
     },
     {
-     "start": 141.92,
-     "end": 161.2,
-     "text": "Rabbits. Sometimes a young child may get over excited and be a little too rough, but it's never a serious matter. On the contrary, the Parisian café offers a great experience for children, a chance for them to learn about rabbits and how to take care of them. Well, it's certainly the first time I've heard of a café like that.",
-     "id": "l10"
+     "id": "l10",
+     "start": 50,
+     "end": 53.85,
+     "text": "Which both deal with the same topic, happiness at work."
     },
     {
-     "start": 165.86,
-     "end": 169.86,
-     "text": "Questions one to four are based on the conversation you have just heard.",
-     "id": "l11"
+     "id": "l11",
+     "start": 54,
+     "end": 56.89,
+     "text": "John, tell us about the first survey."
     },
     {
-     "start": 170.96,
-     "end": 174.96,
-     "text": "Question one, what do we learn about the woman?",
-     "id": "l12"
+     "id": "l12",
+     "start": 57.35,
+     "end": 61.85,
+     "text": "Well, this was done by a human resources consultancy"
     },
     {
-     "start": 186.68,
-     "end": 190.68,
-     "text": "Question two, what does the woman say about cafes in her city?",
-     "id": "l13"
+     "id": "l13",
+     "start": 62,
+     "end": 64.85,
+     "text": "Who interviewed more than 1,000 workers"
     },
     {
-     "start": 204.04,
-     "end": 211.2,
-     "text": "Question three, how does the Parisian café guarantee that its rabbits pose no health threat?",
-     "id": "l14"
+     "id": "l14",
+     "start": 65,
+     "end": 69.42,
+     "text": "And established a top 10 of the factors which make people happy at work."
     },
     {
-     "start": 223.28,
-     "end": 227.28,
-     "text": "Question four, what does the woman say about their customers?",
-     "id": "l15"
+     "id": "l15",
+     "start": 70,
+     "end": 73.85,
+     "text": "The most important factor for the majority of the people interviewed"
     },
     {
-     "start": 240.16,
-     "end": 244.16,
-     "text": "Question two, what do we learn about the children?",
-     "id": "l16"
+     "id": "l16",
+     "start": 74,
+     "end": 77.4,
+     "text": "Was having friendly, supportive colleagues."
     },
     {
-     "start": 269.96,
-     "end": 292.04,
-     "text": "What is it with kids these days and all that junk food they eat? I think it's all that advertising on TV, that's where they get it. Yes, it must be. My children see something on TV and they immediately want it. It's like they don't realise it's just an advertisement. Right. And practically everything that's advertised for children is unhealthy processed foods.",
-     "id": "l17"
+     "id": "l17",
+     "start": 78.02,
+     "end": 81.49,
+     "text": "In fact, 73% of people interviewed"
     },
     {
-     "start": 297.36,
-     "end": 320.12,
-     "text": "No surprise then, it becomes a battle for us parents to feed our children ordinary fruit and vegetables. That's just the thing. One never sees ordinary ingredients being advertised on TV. It's never a carrot or a peach, it's always some garbage like chocolate covered sweets. So unhealthy. Exactly, and these big food corporations have so much money to spend on clever tactics designed",
-     "id": "l18"
+     "id": "l18",
+     "start": 81.64,
+     "end": 83.53,
+     "text": "Put their relationship with colleagues"
     },
     {
-     "start": 326.56,
-     "end": 349.44,
-     "text": "To make young children want to buy their products. Children never stand a chance, it's really not fair. You are so right. When we were children, we barely had any junk food available, and we turned out just fine. Yes, my parents don't understand any of it, both the TV commercials and the supermarkets are alien to them.",
-     "id": "l19"
+     "id": "l19",
+     "start": 83.68,
+     "end": 86.85,
+     "text": "As the key factor contributing to happiness at work,"
     },
     {
-     "start": 350.44,
-     "end": 360.56,
-     "text": "Their world was so different back when they were young. I don't know what will happen to the next generation. The world is going crazy. You bet.",
-     "id": "l20"
+     "id": "l20",
+     "start": 87.38,
+     "end": 89.17,
+     "text": "Which is a very high percentage."
     },
     {
-     "start": 361.4,
-     "end": 365.4,
-     "text": "Questions 5 to 8 are based on the conversation you have just heard.",
-     "id": "l21"
+     "id": "l21",
+     "start": 89.8,
+     "end": 91.49,
+     "text": "The second most important factor"
     },
     {
-     "start": 366.92,
-     "end": 369.56,
-     "text": "Question 5. What do the speakers say about the food their children like?",
-     "id": "l22"
+     "id": "l22",
+     "start": 91.64,
+     "end": 93.61,
+     "text": "Was having work that is enjoyable."
     },
     {
-     "start": 384.2,
-     "end": 386.88,
-     "text": "Question 6. According to the speakers, what affects children's choice of food most?",
-     "id": "l23"
+     "id": "l23",
+     "start": 94.16,
+     "end": 96.37,
+     "text": "The two least important factors"
     },
     {
-     "start": 402.6,
-     "end": 405.04,
-     "text": "Question 7. What do the speakers believe big food corporations are doing?",
-     "id": "l24"
+     "id": "l24",
+     "start": 96.52,
+     "end": 98.77,
+     "text": "Were having one's achievements recognized"
     },
     {
-     "start": 413.96,
-     "end": 416.96,
-     "text": "Question 8. What do we know about the speakers when they were children?",
-     "id": "l25"
+     "id": "l25",
+     "start": 98.92,
+     "end": 103.65,
+     "text": "And, rather surprisingly, earning a competitive salary."
     },
     {
-     "start": 431.4,
-     "end": 432.9,
-     "text": "Section B",
-     "id": "l26"
+     "id": "l26",
+     "start": 103.8,
+     "end": 107.01,
+     "text": "- So, we're not mainly motivated by money?"
     },
     {
-     "start": 432.9,
-     "end": 451.72,
-     "text": "In this section, you will hear two passages. At the end of each section, you will hear two passages. At the end of each passage, you will hear three or four questions. Both the passage and the questions will be spoken only once. After you hear a question, you must choose the best answer from the four choices marked",
-     "id": "l27"
+     "id": "l27",
+     "start": 107.16,
+     "end": 108.51,
+     "text": "- Apparently not."
     },
     {
-     "start": 456.08,
-     "end": 479.28,
-     "text": "A, B, C and D. Then mark the corresponding letter on answer sheet one with a single line through the centre. At some 2,300 miles in length, the Mississippi is the longest river in the United States. At some 1,000 miles, the Mackenzie is the longest river in Canada. But these waterways seem minute, in comparison to the world's two lengthiest rivers, the",
-     "id": "l28"
+     "id": "l28",
+     "start": 108.66,
+     "end": 111.3,
+     "text": "- Any other interesting information in the survey?"
     },
     {
-     "start": 484.96,
-     "end": 504.36,
-     "text": "Nile and the Amazon. The Nile, which because of the length of the river, is the longest river in the United States. The Nile, which begins in central Africa and flows over 4,100 miles north into the Mediterranean, hosted one of the world's great ancient civilizations along its shores.",
-     "id": "l29"
+     "id": "l29",
+     "start": 111.76,
+     "end": 116.53,
+     "text": "- Yes, for example, 25% of the working people interviewed"
     },
     {
-     "start": 509,
-     "end": 526.62,
-     "text": "Calm and peaceful for most of the year, the Nile used to flood annually, thereby creating, irrigating, and carrying new topsoil to the nearby farmland on which ancient Egypt depended for livelihood. As a means of transportation, the river carried various vessels up and down its length.",
-     "id": "l30"
+     "id": "l30",
+     "start": 116.68,
+     "end": 120.03,
+     "text": "Described themselves as very happy at work."
     },
     {
-     "start": 532.08,
-     "end": 553.92,
-     "text": "A journey through the unobstructed part of this waterway today would pass by the splendid Valley of the Kings, where the tombs of many of these ancient monarchs have stood for over 3,000 years. Great civilizations and intensive settlement are hardly associated with the Amazon. Yet this 4,000-mile-long South American river carries about 20% of the world's fresh water,",
-     "id": "l31"
+     "id": "l31",
+     "start": 120.45,
+     "end": 124.53,
+     "text": "However, 20% of employees described themselves"
     },
     {
-     "start": 560.4,
-     "end": 582.08,
-     "text": "More than the Mississippi, Nile, and Yangtze combined. Other statistics are equally astonishing. The Amazon is so wide at some points that from its center, neither shore can be seen. Each second, the Amazon pours some 55 million gallons of water into the Atlantic. There, at its mouth, stands one island larger than Switzerland.",
-     "id": "l32"
+     "id": "l32",
+     "start": 124.68,
+     "end": 126.45,
+     "text": "As being unhappy."
     },
     {
-     "start": 586.92,
-     "end": 594,
-     "text": "Most important of all, the Amazon irrigates the largest tropical rainforest on Earth.",
-     "id": "l33"
+     "id": "l33",
+     "start": 126.6,
+     "end": 130.34,
+     "text": "- That's quite a lot of unhappy people at work every day."
     },
     {
-     "start": 594,
-     "end": 614.8,
-     "text": "Q9. What can be found in the valley of the kings?",
-     "id": "l34"
+     "id": "l34",
+     "start": 130.84,
+     "end": 131.91,
+     "text": "- It is, isn't it?"
     },
     {
-     "start": 614.84,
-     "end": 618.84,
-     "text": "Question 10. In what way is the Amazon different from other big rivers?",
-     "id": "l35"
+     "id": "l35",
+     "start": 132.44,
+     "end": 135.55,
+     "text": "And there were several more interesting conclusions"
     },
     {
-     "start": 630,
-     "end": 634,
-     "text": "Question 11. What does the speaker say about the Amazon?",
-     "id": "l36"
+     "id": "l36",
+     "start": 135.7,
+     "end": 137.2,
+     "text": "Revealed by the survey."
     },
     {
-     "start": 649.76,
-     "end": 651.26,
-     "text": "Passage 2",
-     "id": "l37"
+     "id": "l37",
+     "start": 137.74,
+     "end": 140,
+     "text": "First of all, small is beautiful."
     },
     {
-     "start": 651.26,
-     "end": 667.28,
-     "text": "It's an inevitable truth that all of us live a life in the fast lane, even though we know that being busy is not always particularly healthy. Growing up in New Zealand, everything was always calm and slow. People enjoyed the tranquility of a slower pace of life.",
-     "id": "l38"
+     "id": "l38",
+     "start": 140.35,
+     "end": 144.15,
+     "text": "People definitely prefer working for smaller organizations"
     },
     {
-     "start": 675.68,
-     "end": 691,
-     "text": "But after I moved to Tokyo and lived there for a number of years, I got used to having a pile of to-do lists, and my calendar always looked like a mess with loads of things to do written across it. I found myself filling my time up with endless work meetings and social events, rushing along as busy as a bee.",
-     "id": "l39"
+     "id": "l39",
+     "start": 144.3,
+     "end": 147.19,
+     "text": "Or companies with less than 100 staff."
     },
     {
-     "start": 698.8,
-     "end": 714.84,
-     "text": "Then, one day, I came across a book called \"In Praise of Slowness\", and realised that being busy is not only detrimental, but also has the danger of turning life into an endless race. So, I started practising the various practical steps mentioned by the author in the book, and began to revolt against the very idea of being too busy.",
-     "id": "l40"
+     "id": "l40",
+     "start": 147.34,
+     "end": 150.15,
+     "text": "We also find out that, generally speaking,"
     },
     {
-     "start": 725.88,
-     "end": 741.84,
-     "text": "It doesn't mean that my to-do lists no longer exist, but I've become more aware of the importance of slowing down, and making sure that I enjoy the daily activities as I carry them out. From now on, when someone asks you how your life is, try responding with words like \"exciting\" and \"fun\" instead of the cultural norm that says \"busy\". See if you experience the tranquility that follows.",
-     "id": "l41"
+     "id": "l41",
+     "start": 150.3,
+     "end": 153.43,
+     "text": "Women were happier in their work than men."
     },
     {
-     "start": 758.52,
-     "end": 762.52,
-     "text": "Questions 12 to 15 are based on the passage you have just heard.",
-     "id": "l42"
+     "id": "l42",
+     "start": 153.58,
+     "end": 155.47,
+     "text": "- Yes, we are, aren't we?"
     },
     {
-     "start": 764.2,
-     "end": 768.2,
-     "text": "Question 12. What does the speaker think is an inevitable truth?",
-     "id": "l43"
+     "id": "l43",
+     "start": 155.62,
+     "end": 157.99,
+     "text": "- And workers on part-time contracts,"
     },
     {
-     "start": 781.56,
-     "end": 785.56,
-     "text": "Question 13. What does the speaker say about her life in Tokyo?",
-     "id": "l44"
+     "id": "l44",
+     "start": 158.14,
+     "end": 160.59,
+     "text": "Who only work four or five hours a day,"
     },
     {
-     "start": 799.16,
-     "end": 803.16,
-     "text": "Question 14. What made the speaker change her lifestyle?",
-     "id": "l45"
+     "id": "l45",
+     "start": 161.23,
+     "end": 163.85,
+     "text": "Are happier than those who work full-time."
     },
     {
-     "start": 815.88,
-     "end": 819.88,
-     "text": "Question 15. What happened after the speaker changed her lifestyle?",
-     "id": "l46"
+     "id": "l46",
+     "start": 164,
+     "end": 169.35,
+     "text": "The researchers concluded that this is probably due to a better work-life balance."
     },
     {
-     "start": 833.08,
-     "end": 834.58,
-     "text": "Section C",
-     "id": "l47"
+     "id": "l47",
+     "start": 169.5,
+     "end": 172.23,
+     "text": "Are bosses happier than their employees?"
     },
     {
-     "start": 834.58,
-     "end": 848.48,
-     "text": "After you hear a question, you must choose the best answer from the four choices, marked A, B, C and D. Then, mark the corresponding letter on answer sheet one with a single line through the centre.",
-     "id": "l48"
+     "id": "l48",
+     "start": 172.38,
+     "end": 174.91,
+     "text": "Yes, perhaps not surprisingly."
     },
     {
-     "start": 863.08,
-     "end": 864.58,
-     "text": "Recording 1",
-     "id": "l49"
+     "id": "l49",
+     "start": 175.06,
+     "end": 177.88,
+     "text": "The higher people go in a company, the happier they are."
     },
     {
-     "start": 864.58,
-     "end": 882.24,
-     "text": "But a number of scientists question the assumption that the presence of alien species can never be acceptable in a natural ecosystem.",
-     "id": "l50"
+     "id": "l50",
+     "start": 178.46,
+     "end": 182.75,
+     "text": "So senior managers enjoy their jobs more than people working under them."
     },
     {
-     "start": 890.44,
-     "end": 911.52,
-     "text": "They say that portraying introduced species as inherently bad is an unscientific approach. Distinctions between exotic and native species are artificial, said Dr. Michael Rosensweig, a professor of evolutionary biology at the University of Arizona. Because they depend on picking a date and calling the plants and animals that show up after that date, exotic.",
-     "id": "l51"
+     "id": "l51",
+     "start": 183.9,
+     "end": 187.4,
+     "text": "Questions 1 to 4 are based on the conversation you have just heard."
     },
     {
-     "start": 917.72,
-     "end": 934.48,
-     "text": "Ecosystems free of species defined as exotic are, by default, considered the most natural. \"You can't roll back the clock and remove all exotics or fix habitats,\" Dr. Rosensweig said. \"Both native and exotic species can become invasive, and so they all have to be monitored and controlled when they begin to get out of hand.\"",
-     "id": "l52"
+     "id": "l52",
+     "start": 189.7,
+     "end": 196.77,
+     "text": "Question 1. What is the number 1 factor that made employees happy according to the survey?"
     },
     {
-     "start": 943.64,
-     "end": 964.08,
-     "text": "At its core, the debate is about how to manage the world's remaining natural ecosystems and about how and how much to restore other habitats. Species that invade a territory can harm ecosystems, agriculture, and human health. They can threaten some native species or even destroy and replace others.",
-     "id": "l53"
+     "id": "l53",
+     "start": 210,
+     "end": 216.82,
+     "text": "Question 2. What is the percentage of the people surveyed who felt unhappy at work?"
     },
     {
-     "start": 968.76,
-     "end": 991.52,
-     "text": "Next to habitat loss, these invasive species represent the greatest threat to biodiversity worldwide, many ecologists say. Ecologists generally define an alien species as one that people accidentally or deliberately carried to its new location. Across the American continents, exotic species are those introduced after the first European contact.",
-     "id": "l54"
+     "id": "l54",
+     "start": 230,
+     "end": 234.9,
+     "text": "Question 3. What kind of companies are popular with employees?"
     },
     {
-     "start": 998.84,
-     "end": 1018.24,
-     "text": "That date, rounded off to 1500 AD, represents what ecologists consider to have been a major shift in the spread of species, including crops and livestock, as they began to migrate with humans from continent to continent. \"Only a small percentage of alien species cause problems in their new habitats,\" said Don Smith, Professor of Ecology and Evolutionary Biology at the University of Tennessee.",
-     "id": "l55"
+     "id": "l55",
+     "start": 248.2,
+     "end": 254.85,
+     "text": "Question 4. What is the possible reason for people on part-time contracts to be happier?"
     },
     {
-     "start": 1030.84,
-     "end": 1052,
-     "text": "Of the 7,000 alien species in the United States, out of a total of 150,000 species, only about 10% are invasive, he pointed out. The other 90% have fit into their environments and are considered naturalized. Yet appearances can deceive ecologists' caution, and many of these exotics may be considered acceptable only because no one has documented their harmful effects.",
-     "id": "l56"
+     "id": "l56",
+     "start": 266.9,
+     "end": 270.4,
+     "text": "Conversation 2"
     },
     {
-     "start": 1063.4,
-     "end": 1067.4,
-     "text": "What is more, non-native species can appear harmless for decades, then turn invasive.",
-     "id": "l57"
+     "id": "l57",
+     "start": 271.68,
+     "end": 277.37,
+     "text": "Mr. DeKaiser, I am a great lover of your book, Moments Before the Flood. Can you tell us"
     },
     {
-     "start": 1071.64,
-     "end": 1075.64,
-     "text": "Questions 16 to 18 are based on the recording you have just heard.",
-     "id": "l58"
+     "id": "l58",
+     "start": 277.52,
+     "end": 280.79,
+     "text": "That's how you first became interested in this subject matter?"
     },
     {
-     "start": 1076.68,
-     "end": 1080.68,
-     "text": "Questions 16. What assumption about introduced species is challenged by a number of scientists?",
-     "id": "l59"
+     "id": "l59",
+     "start": 281.28,
+     "end": 287.09,
+     "text": "In 2006, when the Concert Hall of the City of Bruges asked me to take some pictures for"
     },
     {
-     "start": 1096.2,
-     "end": 1100.2,
-     "text": "Questions 17. What does Dr. Michael Rosensveeg think of exotic and native species?",
-     "id": "l60"
+     "id": "l60",
+     "start": 287.24,
+     "end": 293.17,
+     "text": "A catalogue for a new concert season around the theme of water, I found myself working"
     },
     {
-     "start": 1115.24,
-     "end": 1119.24,
-     "text": "Question 18. What does Professor Don Smith say about alien species?",
-     "id": "l61"
+     "id": "l61",
+     "start": 293.32,
+     "end": 295.19,
+     "text": "Along the Belgian coastline."
     },
     {
-     "start": 1126.44,
-     "end": 1130.44,
-     "text": "Questions 19. What does Dr. Michael Rosensveeg think of exotic and native species?",
-     "id": "l62"
+     "id": "l62",
+     "start": 295.96,
+     "end": 301.93,
+     "text": "As there had been numerous alarming articles in the press about a climate catastrophe waiting"
     },
     {
-     "start": 1133.88,
-     "end": 1135.38,
-     "text": "Recording 2",
-     "id": "l63"
+     "id": "l63",
+     "start": 302.08,
+     "end": 307.17,
+     "text": "To happen, I started looking at the sea and the beach very differently."
     },
     {
-     "start": 1135.38,
-     "end": 1156.4,
-     "text": "Today, we are going to look at intercultural awareness, that is, the fact that not everyone is British, not everyone speaks English, and not everyone does business in a British way.",
-     "id": "l64"
+     "id": "l64",
+     "start": 307.32,
+     "end": 311.23,
+     "text": "A place where I spent so many perfect days as a child."
     },
     {
-     "start": 1159,
-     "end": 1182,
-     "text": "And why should they? If overseas business people are selling to us, then they will make every effort to speak English and to respect our traditions and methods. It is only polite for us to do the same when we visit them. It is not only polite, it is essential if we want to sell British products overseas. First, a short quiz. Let's see how interculturally aware you are.",
-     "id": "l65"
+     "id": "l65",
+     "start": 311.38,
+     "end": 317.55,
+     "text": "This fear of a looming danger became the subject of a large-scale photoreject."
     },
     {
-     "start": 1187.08,
-     "end": 1191.08,
-     "text": "Question 1. Where must you not drink alcohol on the first and seventh of every month?",
-     "id": "l66"
+     "id": "l66",
+     "start": 317.7,
+     "end": 322.23,
+     "text": "You wrote in the book, \"I don't want to photograph the disaster."
     },
     {
-     "start": 1194.04,
-     "end": 1198.04,
-     "text": "Question 2. Where should you never admire your host's possessions?",
-     "id": "l67"
+     "id": "l67",
+     "start": 322.38,
+     "end": 326.23,
+     "text": "I want to photograph the disaster waiting to happen."
     },
     {
-     "start": 1200,
-     "end": 1201,
-     "text": "Questions 3. How should you attract the waiter during a business lunch in Bangkok?",
-     "id": "l68"
+     "id": "l68",
+     "start": 326.38,
+     "end": 327.79,
+     "text": "Can you talk a bit about that?\""
     },
     {
-     "start": 1201,
-     "end": 1218,
-     "text": "Question three, how should you attract the waiter during the day? And question 4. Where should you try to make all your appointments either before 2 or after 5.30pm? Ok, everyone had a chance to make some notes? Right, here are the answers.",
-     "id": "l69"
+     "id": "l69",
+     "start": 328.5,
+     "end": 334.55,
+     "text": "It is clear now that it's a matter of time before the entire European coastline disappears"
     },
     {
-     "start": 1224,
-     "end": 1246,
-     "text": "Although I am sure that the information could equally well apply to countries other than those I have chosen. So, number 1. You must not drink alcohol on the 1st and 7th of the month in India. In international hotels, you may find it served, but if you are having a meal with an Indian colleague, remember to avoid asking for a beer if your arrival coincides with one of those dates.",
-     "id": "l70"
+     "id": "l70",
+     "start": 334.7,
+     "end": 336.19,
+     "text": "On the water."
     },
     {
-     "start": 1252,
-     "end": 1275,
-     "text": "2. In Arab countries, the politeness and generosity of the people is without parallel. If you admire your colleagues' beautiful golden bowls, you may well find yourself being presented with them as a present. This is not a cheap way to do your shopping, however, as your host will, quite correctly, expect you to respond by presenting him with a gift of equal worth and beauty.",
-     "id": "l71"
+     "id": "l71",
+     "start": 336.34,
+     "end": 339.69,
+     "text": "The same goes for numerous big cities around the world."
     },
     {
-     "start": 1280,
-     "end": 1302,
-     "text": "3. In Thailand, clicking the fingers, clapping your hands, or just shouting 'waiter', will embarrass your hosts, fellow diners, the waiter himself and, most of all, you. Place your palm downward and make an inconspicuous waving gesture, which will produce instant and satisfying results.",
-     "id": "l72"
+     "id": "l72",
+     "start": 340.4,
+     "end": 347.17,
+     "text": "My idea was to photograph this beautiful and very unique coastline, rich in history, before"
     },
     {
-     "start": 1305,
-     "end": 1313,
-     "text": "And finally, in Spain, some businesses maintain the pattern of working until about 2 o'clock and then returning to the office from 5.30 to 8.00-9.00 or 10.00 in the evening.",
-     "id": "l73"
+     "id": "l73",
+     "start": 347.32,
+     "end": 348.89,
+     "text": "It's too late."
     },
     {
-     "start": 1320,
-     "end": 1324,
-     "text": "Questions 19-21 are based on the recording you have just heard.",
-     "id": "l74"
+     "id": "l74",
+     "start": 349.04,
+     "end": 351.05,
+     "text": "As a last witness."
     },
     {
-     "start": 1326,
-     "end": 1330,
-     "text": "Question 19- What should you do when doing business with foreigners?",
-     "id": "l75"
+     "id": "l75",
+     "start": 351.2,
+     "end": 355.05,
+     "text": "Can you talk a bit about how history plays a role in this project?"
     },
     {
-     "start": 1343,
-     "end": 1347,
-     "text": "Question 20- What must you avoid doing with your Indian colleague?",
-     "id": "l76"
+     "id": "l76",
+     "start": 355.84,
+     "end": 356.65,
+     "text": "Sure."
     },
     {
-     "start": 1360,
-     "end": 1364,
-     "text": "Question 21- What do we learn about some Spanish business people?",
-     "id": "l77"
+     "id": "l77",
+     "start": 356.8,
+     "end": 362.13,
+     "text": "The project is also about the history of Europe looking at the sea, and wondering when the"
     },
     {
-     "start": 1378,
-     "end": 1379.5,
-     "text": "Recording 3",
-     "id": "l78"
+     "id": "l78",
+     "start": 362.28,
+     "end": 364.33,
+     "text": "Next enemy would appear."
     },
     {
-     "start": 1379.5,
-     "end": 1394,
-     "text": "It was a symbolic act, indicating that under Groon's leadership, Readers Digest was going to be different.",
-     "id": "l79"
+     "id": "l79",
+     "start": 364.48,
+     "end": 371.34,
+     "text": "In the images, you see all kinds of possible defense constructions to hold back the Romans,"
     },
     {
-     "start": 1401,
-     "end": 1424,
-     "text": "True to his word, Groon has shaken up the culture here. To get an idea of the culture we're talking about, consider the boardroom Groon opened up. It has artworks that any museum in the world would want to collect, paintings by many world-famous artists like Monet and Picasso. Its headquarters houses some 3,000 works of art.",
-     "id": "l80"
+     "id": "l80",
+     "start": 371.84,
+     "end": 377,
+     "text": "Germans, Vikings, and now, nature as enemy number one."
     },
     {
-     "start": 1428,
-     "end": 1445,
-     "text": "The main building is topped with a Georgian tower with four sculptures of the mythical winged horse, the magazine's corporate logo. It sits on 127 acres of well-trimmed lawns. The editor's office used to be occupied by founder DeWitt Wallace, who, along with his wife, Leela Acheson Wallace, launched Readers Digest in 1922 with condensed articles from other publications.",
-     "id": "l81"
+     "id": "l81",
+     "start": 377.8,
+     "end": 383.89,
+     "text": "For example, there is the image of the bridge into the sea, taken at the Normandy D-Day landing"
     },
     {
-     "start": 1460,
-     "end": 1473,
-     "text": "It has become the world's most widely read magazine, selling 28 million copies each month in 17 languages and 41 different editions. The Wallises, both children of church ministers, had a clearly defined formula for their little magazine as Readers Digest was originally subtitled.",
-     "id": "l82"
+     "id": "l82",
+     "start": 384.04,
+     "end": 384.78,
+     "text": "Site."
     },
     {
-     "start": 1483,
-     "end": 1506,
-     "text": "Articles were to be short, readable, and uplifting. Subjects were picked to inspire or entertain. The Wallises didn't accept advertising in the U.S. edition until 1955, and even then they didn't allow any ads for cigarettes, liquor, or drugs. The Wallises also had a clear sense of the kind of workplace they wanted.",
-     "id": "l83"
+     "id": "l83",
+     "start": 385.15,
+     "end": 391.29,
+     "text": "Also, Venice, the city eternally threatened by the sea, where every morning wooden pathways"
     },
     {
-     "start": 1511,
-     "end": 1528,
-     "text": "It started as a mom-and-pop operation, and the childless Wallises always considered employees to be part of their family. Employees still tell stories of how the Wallises would take care of employees who had met with misfortunes, and they showered their employees with unusual benefits, like a turkey at Thanksgiving and Fridays off in May.",
-     "id": "l84"
+     "id": "l84",
+     "start": 391.44,
+     "end": 395.59,
+     "text": "Have to be set up to allow tourists to reach their hotels."
     },
     {
-     "start": 1535,
-     "end": 1554,
-     "text": "This cozy workplace no longer exists here. The Wallises both died in their 90s in the early 1980s. George Grun, a former ad salesman who joined Readers Digest in 1960, has his eye focused on the bottom line. In a few short years, he turned the magazine on its head. He laid off several hundred workers.",
-     "id": "l85"
+     "id": "l85",
+     "start": 395.74,
+     "end": 399.83,
+     "text": "Thank you, Mr. DeKaiser. It was a pleasure to have you with us today."
     },
     {
-     "start": 1560,
-     "end": 1564,
-     "text": "Especially hard hit were the blue and pink color departments, such as subscription fulfillment.",
-     "id": "l86"
+     "id": "l86",
+     "start": 400.8,
+     "end": 404.3,
+     "text": "Questions 5 to 8 are based on the conversation you have just heard."
     },
     {
-     "start": 1568,
-     "end": 1572,
-     "text": "Questions 22 to 25 are based on the recording you have just heard.",
-     "id": "l87"
+     "id": "l87",
+     "start": 405.9,
+     "end": 411.23,
+     "text": "Question 5. What does the man say about the book Moments Before the Flood?"
     },
     {
-     "start": 1573,
-     "end": 1577,
-     "text": "Question 22. What did George Grun do in 1984?",
-     "id": "l88"
+     "id": "l88",
+     "start": 424.4,
+     "end": 428.84,
+     "text": "Question 6. When did the man get his idea for the work?"
     },
     {
-     "start": 1591,
-     "end": 1595,
-     "text": "Question 23. How did the Wallises define the formula for Readers Digest?",
-     "id": "l89"
+     "id": "l89",
+     "start": 442,
+     "end": 447.06,
+     "text": "Question 7. What will happen when the climate catastrophe occurs?"
     },
     {
-     "start": 1610,
-     "end": 1614,
-     "text": "Question 24. What do we learn about the founder of Readers Digest, DeWitt Wallace?",
-     "id": "l90"
+     "id": "l90",
+     "start": 460.3,
+     "end": 463.71,
+     "text": "Question 8. What does the man say about Venice?"
     },
     {
-     "start": 1629,
-     "end": 1649,
-     "text": "Question 25. What change took place in Readers Digest after the Wallises' death? This is the end of listening comprehension.",
-     "id": "l91"
+     "id": "l91",
+     "start": 477.1,
+     "end": 478.65,
+     "text": "Section B"
+    },
+    {
+     "id": "l92",
+     "start": 478.7,
+     "end": 483.25,
+     "text": "In this section, you will hear two passages."
+    },
+    {
+     "id": "l93",
+     "start": 483.4,
+     "end": 488.85,
+     "text": "At the end of each passage, you will hear three or four questions. Both the passage"
+    },
+    {
+     "id": "l94",
+     "start": 489,
+     "end": 494.75,
+     "text": "And the questions will be spoken only once. After you hear a question, you must choose"
+    },
+    {
+     "id": "l95",
+     "start": 494.9,
+     "end": 502.53,
+     "text": "The best answer from the four choices marked A, B, C, and D. Then mark the corresponding"
+    },
+    {
+     "id": "l96",
+     "start": 502.68,
+     "end": 509.55,
+     "text": "Letter on answer sheet 1, with a single line through the center."
+    },
+    {
+     "id": "l97",
+     "start": 509.7,
+     "end": 511.25,
+     "text": "Passage 1"
+    },
+    {
+     "id": "l98",
+     "start": 511.3,
+     "end": 516.77,
+     "text": "When facing a new situation, some people tend to rehearse their defeat by spending too much"
+    },
+    {
+     "id": "l99",
+     "start": 516.92,
+     "end": 518.81,
+     "text": "Time anticipating the worst."
+    },
+    {
+     "id": "l100",
+     "start": 519.72,
+     "end": 525.43,
+     "text": "I remember talking with a young lawyer who was about to begin her first jury trial."
+    },
+    {
+     "id": "l101",
+     "start": 525.58,
+     "end": 526.73,
+     "text": "She was very nervous."
+    },
+    {
+     "id": "l102",
+     "start": 527.49,
+     "end": 530.83,
+     "text": "I asked what impression she wanted to make on the jury."
+    },
+    {
+     "id": "l103",
+     "start": 531.68,
+     "end": 537.87,
+     "text": "Replied, \"I don't want to look too inexperienced. I don't want them to suspect. This is my"
+    },
+    {
+     "id": "l104",
+     "start": 538.02,
+     "end": 544.87,
+     "text": "First trial.\" This lawyer had fallen victim to the \"Don'ts Syndrome\", a form of negative"
+    },
+    {
+     "id": "l105",
+     "start": 545.02,
+     "end": 552.19,
+     "text": "Goal-setting. The Don'ts can be self-fulfilling because your mind responds to pictures."
+    },
+    {
+     "id": "l106",
+     "start": 552.34,
+     "end": 557.35,
+     "text": "Research conducted at Stanford University shows a mental image fires the nervous system the"
+    },
+    {
+     "id": "l107",
+     "start": 557.5,
+     "end": 563.69,
+     "text": "Same way as actually doing something. That means when a golfer tells himself, \"Don't"
+    },
+    {
+     "id": "l108",
+     "start": 563.84,
+     "end": 570.16,
+     "text": "Hit the ball into the water.\" His mind sees the image of the ball flying into the water."
+    },
+    {
+     "id": "l109",
+     "start": 570.9,
+     "end": 576.49,
+     "text": "So guess where the ball will go. Consequently, before going into any stressful"
+    },
+    {
+     "id": "l110",
+     "start": 576.64,
+     "end": 583.55,
+     "text": "Situation, focus only on what you want to have happen. I asked the lawyer again how she wanted"
+    },
+    {
+     "id": "l111",
+     "start": 583.7,
+     "end": 589.47,
+     "text": "To appear at her first trial, and this time she said, \"I want to look professional and"
+    },
+    {
+     "id": "l112",
+     "start": 589.62,
+     "end": 590.61,
+     "text": "Self assured.\""
+    },
+    {
+     "id": "l113",
+     "start": 591.55,
+     "end": 595.8,
+     "text": "I told her to create a picture of what \"self assured\" would look like."
+    },
+    {
+     "id": "l114",
+     "start": 596.42,
+     "end": 602.47,
+     "text": "To her, it meant moving confidently around the courtroom, using convincing body language"
+    },
+    {
+     "id": "l115",
+     "start": 602.62,
+     "end": 604.85,
+     "text": "And projecting her voice so it could be heard."
+    },
+    {
+     "id": "l116",
+     "start": 605,
+     "end": 611.65,
+     "text": "Be heard from the judge's bench to the back door. She also imagined a skilful closing argument"
+    },
+    {
+     "id": "l117",
+     "start": 611.8,
+     "end": 618.66,
+     "text": "And a winning trial. A few weeks after this positive dress rehearsal, the young lawyer did win."
+    },
+    {
+     "id": "l118",
+     "start": 620.8,
+     "end": 624.3,
+     "text": "Questions 9 to 12 are based on the passage you have just heard."
+    },
+    {
+     "id": "l119",
+     "start": 626.2,
+     "end": 631.45,
+     "text": "Question 9. What do some people do when they face a new situation?"
+    },
+    {
+     "id": "l120",
+     "start": 644.7,
+     "end": 650.16,
+     "text": "Question 10. What does the research conducted at Stanford University show?"
+    },
+    {
+     "id": "l121",
+     "start": 663.4,
+     "end": 669.49,
+     "text": "Question 11. What advice does a speaker give to people in a stressful situation?"
+    },
+    {
+     "id": "l122",
+     "start": 682.7,
+     "end": 687.36,
+     "text": "Question 12. What do we learn about the lawyer in the court?"
+    },
+    {
+     "id": "l123",
+     "start": 700.6,
+     "end": 702.15,
+     "text": "Passage 2"
+    },
+    {
+     "id": "l124",
+     "start": 702.2,
+     "end": 708.33,
+     "text": "Most Americans don't eat enough fruits, vegetables, or whole grains. Research"
+    },
+    {
+     "id": "l125",
+     "start": 708.48,
+     "end": 716.07,
+     "text": "Now says adding fiber to the teen diet may help lower the risk of breast cancer. Conversations"
+    },
+    {
+     "id": "l126",
+     "start": 716.22,
+     "end": 722.3,
+     "text": "About the benefits of fiber are probably more common in nursing homes than high schools."
+    },
+    {
+     "id": "l127",
+     "start": 723.28,
+     "end": 729.99,
+     "text": "But along comes a new study that could change that. Christie King, a diet specialist at"
+    },
+    {
+     "id": "l128",
+     "start": 730.14,
+     "end": 735.77,
+     "text": "Texas Children's Hospital, finds it hard to get teenage patients' attention about"
+    },
+    {
+     "id": "l129",
+     "start": 735.92,
+     "end": 741.27,
+     "text": "Healthy eating, but telling them that eating lots of high fiber foods could reduce the"
+    },
+    {
+     "id": "l130",
+     "start": 741.42,
+     "end": 746.22,
+     "text": "Risk of breast cancer before middle age, that's a powerful message."
+    },
+    {
+     "id": "l131",
+     "start": 747.14,
+     "end": 753.41,
+     "text": "The new finding is based on a study of 44,000 women. They were surveyed about their diets"
+    },
+    {
+     "id": "l132",
+     "start": 753.56,
+     "end": 759.29,
+     "text": "During high school, and their eating habits were tracked for two decades. It turns out"
+    },
+    {
+     "id": "l133",
+     "start": 759.44,
+     "end": 764.89,
+     "text": "That those who consumed the highest levels of fiber during adolescence had a lower risk"
+    },
+    {
+     "id": "l134",
+     "start": 765.04,
+     "end": 770.57,
+     "text": "Of developing breast cancer compared to the women who ate the leased fiber."
+    },
+    {
+     "id": "l135",
+     "start": 770.72,
+     "end": 775.33,
+     "text": "This important study demonstrates that the more fiber you eat during your high school"
+    },
+    {
+     "id": "l136",
+     "start": 775.48,
+     "end": 781.25,
+     "text": "Years, the lower your risk is in developing breast cancer in later life."
+    },
+    {
+     "id": "l137",
+     "start": 781.4,
+     "end": 787.21,
+     "text": "The finding points to long-standing evidence that fiber may reduce circulating female hormone"
+    },
+    {
+     "id": "l138",
+     "start": 787.36,
+     "end": 790.59,
+     "text": "Levels, which could explain the reduced risk."
+    },
+    {
+     "id": "l139",
+     "start": 791.48,
+     "end": 797.01,
+     "text": "The bottom line here is the more fiber you eat, perhaps a lower level of hormone in your"
+    },
+    {
+     "id": "l140",
+     "start": 797.16,
+     "end": 802.97,
+     "text": "Body, and therefore a lower lifetime risk of developing breast cancer."
+    },
+    {
+     "id": "l141",
+     "start": 803.12,
+     "end": 809.11,
+     "text": "High fiber diets are also linked to a reduced risk of heart disease and diabetes."
+    },
+    {
+     "id": "l142",
+     "start": 809.26,
+     "end": 814.59,
+     "text": "That's why women are told to eat 25 grams of fiber a day, men even more."
+    },
+    {
+     "id": "l143",
+     "start": 815.5,
+     "end": 819,
+     "text": "Questions 13 to 15 are based on the passage you have just heard."
+    },
+    {
+     "id": "l144",
+     "start": 822.3,
+     "end": 826.8,
+     "text": "Question 13. What does the new study tell about adding fiber to the teen diet?"
+    },
+    {
+     "id": "l145",
+     "start": 840.4,
+     "end": 846,
+     "text": "Question 14. What do we learn about the survey of the 44,000 women?"
+    },
+    {
+     "id": "l146",
+     "start": 859.6,
+     "end": 865.64,
+     "text": "Question 15. What explanation does the speaker offer for the research finding?"
+    },
+    {
+     "id": "l147",
+     "start": 879.3,
+     "end": 880.85,
+     "text": "Section C"
+    },
+    {
+     "id": "l148",
+     "start": 880.9,
+     "end": 885.29,
+     "text": "In this section, you will hear three recordings"
+    },
+    {
+     "id": "l149",
+     "start": 885.44,
+     "end": 891.57,
+     "text": "Of lectures or talks followed by three or four questions. The recordings will be played"
+    },
+    {
+     "id": "l150",
+     "start": 891.72,
+     "end": 897.37,
+     "text": "Only once. After you hear a question, you must choose the best answer from the four"
+    },
+    {
+     "id": "l151",
+     "start": 897.52,
+     "end": 905.21,
+     "text": "Choices marked A, B, C and D. Then mark the corresponding letter on answer sheet one with"
+    },
+    {
+     "id": "l152",
+     "start": 905.36,
+     "end": 907.25,
+     "text": "A single line through the center."
+    },
+    {
+     "id": "l153",
+     "start": 908.8,
+     "end": 910.85,
+     "text": "Recording 1"
+    },
+    {
+     "id": "l154",
+     "start": 910.9,
+     "end": 914.55,
+     "text": "Well, my current research is really about consumer behavior."
+    },
+    {
+     "id": "l155",
+     "start": 914.7,
+     "end": 923.09,
+     "text": "So recently, I've looked at young people's drinking and it's obviously a major concern to government at the moment."
+    },
+    {
+     "id": "l156",
+     "start": 923.24,
+     "end": 929.25,
+     "text": "I've also looked at how older people are represented in the media. Again, it's of major current"
+    },
+    {
+     "id": "l157",
+     "start": 929.4,
+     "end": 936.36,
+     "text": "Interest with older people becoming a much larger proportion of UK and indeed world society."
+    },
+    {
+     "id": "l158",
+     "start": 937.52,
+     "end": 942.57,
+     "text": "I'm also interested in how consumers operate online and how that online behavior might"
+    },
+    {
+     "id": "l159",
+     "start": 942.72,
+     "end": 946.75,
+     "text": "Be different from how they operate offline when they go to the shops."
+    },
+    {
+     "id": "l160",
+     "start": 946.9,
+     "end": 952.69,
+     "text": "Well, I think that the important thing here is to actually understand what's happening"
+    },
+    {
+     "id": "l161",
+     "start": 952.84,
+     "end": 955.25,
+     "text": "From the consumer's perspective."
+    },
+    {
+     "id": "l162",
+     "start": 955.4,
+     "end": 960.57,
+     "text": "One of the things that businesses and indeed government organizations often fail to do"
+    },
+    {
+     "id": "l163",
+     "start": 960.72,
+     "end": 965.05,
+     "text": "Is to really see what is happening from the consumer's perspective."
+    },
+    {
+     "id": "l164",
+     "start": 965.2,
+     "end": 970.49,
+     "text": "For example, in the case of young people's drinking, one of the things that I've identified"
+    },
+    {
+     "id": "l165",
+     "start": 970.89,
+     "end": 977.53,
+     "text": "Is that drinking for people, say, between the ages of 18 and 24, is all about the social"
+    },
+    {
+     "id": "l166",
+     "start": 977.68,
+     "end": 978.52,
+     "text": "Activity."
+    },
+    {
+     "id": "l167",
+     "start": 979.1,
+     "end": 984.49,
+     "text": "A lot of the government advertising has been about individual responsibility, but actually"
+    },
+    {
+     "id": "l168",
+     "start": 984.64,
+     "end": 990.05,
+     "text": "Understanding that drinking is very much about the social activity and finding ways to help"
+    },
+    {
+     "id": "l169",
+     "start": 990.2,
+     "end": 995.65,
+     "text": "Young people get home safely and not end up in hospital is one of the things that we've"
+    },
+    {
+     "id": "l170",
+     "start": 995.8,
+     "end": 1001.97,
+     "text": "Tried to present there. The key thing about consumer behavior is that it's very much about"
+    },
+    {
+     "id": "l171",
+     "start": 1002.12,
+     "end": 1008.73,
+     "text": "How consumers change. Markets always change faster than marketing, so we have to look"
+    },
+    {
+     "id": "l172",
+     "start": 1008.88,
+     "end": 1015.85,
+     "text": "At what consumers are doing. Currently I teach consumer behavior to undergraduates in their"
+    },
+    {
+     "id": "l173",
+     "start": 1016,
+     "end": 1020.25,
+     "text": "Second year and we look at all kinds of things in consumer behavior and"
+    },
+    {
+     "id": "l174",
+     "start": 1020.4,
+     "end": 1025.77,
+     "text": "Particularly how consumers are presented in advertising. So they get"
+    },
+    {
+     "id": "l175",
+     "start": 1025.92,
+     "end": 1030.73,
+     "text": "Involved by looking at advertising and really critically assessing the"
+    },
+    {
+     "id": "l176",
+     "start": 1030.88,
+     "end": 1035.09,
+     "text": "Consumer behavior aspects of it and getting involved sometimes doing"
+    },
+    {
+     "id": "l177",
+     "start": 1035.24,
+     "end": 1041.33,
+     "text": "Primary research. For example last year my students spent a week looking at their"
+    },
+    {
+     "id": "l178",
+     "start": 1041.48,
+     "end": 1047.49,
+     "text": "Own purchasing and analyzed it in detail from shopping to the relationship that they have"
+    },
+    {
+     "id": "l179",
+     "start": 1047.64,
+     "end": 1053.81,
+     "text": "With their retail banks and their mobile phone providers. I think they found it very useful"
+    },
+    {
+     "id": "l180",
+     "start": 1053.96,
+     "end": 1060.85,
+     "text": "And it also helped them identify just what kind of budgets they had too. The fact of the matter is"
+    },
+    {
+     "id": "l181",
+     "start": 1061,
+     "end": 1066.64,
+     "text": "That there's a whole range of interesting research out there and I think as the years go on there's"
+    },
+    {
+     "id": "l182",
+     "start": 1067.24,
+     "end": 1071.97,
+     "text": "There's going to be much more for us to consider and certainly much more for students to become"
+    },
+    {
+     "id": "l183",
+     "start": 1072.12,
+     "end": 1074.85,
+     "text": "Involved in."
+    },
+    {
+     "id": "l184",
+     "start": 1075,
+     "end": 1078.5,
+     "text": "Questions 16 to 18 are based on the recording you have just heard."
+    },
+    {
+     "id": "l185",
+     "start": 1081,
+     "end": 1084.66,
+     "text": "Question 16. What is the speaker currently doing?"
+    },
+    {
+     "id": "l186",
+     "start": 1097.2,
+     "end": 1102.8,
+     "text": "Question 17. What has the speaker found about young people's drinking?"
+    },
+    {
+     "id": "l187",
+     "start": 1115.3,
+     "end": 1121.18,
+     "text": "Question 18. What does a speaker say that his students did last year?"
+    },
+    {
+     "id": "l188",
+     "start": 1134.6,
+     "end": 1136.15,
+     "text": "Recording 2"
+    },
+    {
+     "id": "l189",
+     "start": 1136.2,
+     "end": 1144.13,
+     "text": "Sweden was the first European country to print and use paper money, but it may soon do away with physical currencies."
+    },
+    {
+     "id": "l190",
+     "start": 1144.28,
+     "end": 1151.49,
+     "text": "Banks can save a lot of money and avoid regulatory headaches by moving to a cash-free system,"
+    },
+    {
+     "id": "l191",
+     "start": 1151.64,
+     "end": 1156.33,
+     "text": "And they can also avoid bank robberies, theft, and dirty money."
+    },
+    {
+     "id": "l192",
+     "start": 1156.48,
+     "end": 1162.13,
+     "text": "Claire Barrett, the editor of Financial Times Money, says the western world is headed toward"
+    },
+    {
+     "id": "l193",
+     "start": 1162.28,
+     "end": 1165.29,
+     "text": "A world without physical currency."
+    },
+    {
+     "id": "l194",
+     "start": 1165.44,
+     "end": 1171.57,
+     "text": "Andy Holder, the chief economist at the Bank of England, suggested that the UK move towards"
+    },
+    {
+     "id": "l195",
+     "start": 1171.72,
+     "end": 1178.69,
+     "text": "Government-backed digital currency. But does a cashless society really make good economic sense?"
+    },
+    {
+     "id": "l196",
+     "start": 1178.84,
+     "end": 1184.61,
+     "text": "The fact that cash is being drawn out of society is less a feature of our everyday lives"
+    },
+    {
+     "id": "l197",
+     "start": 1184.76,
+     "end": 1190.05,
+     "text": "And the ease of electronic payments. Is this actually making us spend more money without"
+    },
+    {
+     "id": "l198",
+     "start": 1190.2,
+     "end": 1196.37,
+     "text": "Realizing it? Barrett wanted to find out if the absence of physical currency does indeed"
+    },
+    {
+     "id": "l199",
+     "start": 1196.52,
+     "end": 1204.13,
+     "text": "Cause a person to spend more, so she decided to conduct an experiment a few months ago."
+    },
+    {
+     "id": "l200",
+     "start": 1204.28,
+     "end": 1209.85,
+     "text": "She decided that she was going to try to just use cash for two weeks to make all of"
+    },
+    {
+     "id": "l201",
+     "start": 1210,
+     "end": 1215.73,
+     "text": "Her essential purchases and see what that would do to her spending. She found she did"
+    },
+    {
+     "id": "l202",
+     "start": 1215.88,
+     "end": 1222.17,
+     "text": "Spend a lot less money because it is incredibly hard to predict how much cash one is going"
+    },
+    {
+     "id": "l203",
+     "start": 1222.32,
+     "end": 1228.37,
+     "text": "To need. She was forever drawing money out of cash points. Months later she was still"
+    },
+    {
+     "id": "l204",
+     "start": 1228.52,
+     "end": 1234.81,
+     "text": "Finding cash stuffed in her trouser pockets and the pockets of her handbags."
+    },
+    {
+     "id": "l205",
+     "start": 1234.96,
+     "end": 1240.53,
+     "text": "During the experiment, Barrett took a train ride. On the way, there was an announcement"
+    },
+    {
+     "id": "l206",
+     "start": 1240.68,
+     "end": 1245.69,
+     "text": "That the restaurant car was not currently accepting credit cards. The train cars were"
+    },
+    {
+     "id": "l207",
+     "start": 1245.84,
+     "end": 1252.15,
+     "text": "Filled with groans because many of the passengers were travelling without cash. It underlines"
+    },
+    {
+     "id": "l208",
+     "start": 1252.3,
+     "end": 1258.25,
+     "text": "Just how much things have changed in the last generation, Barrett says. My parents, when"
+    },
+    {
+     "id": "l209",
+     "start": 1258.4,
+     "end": 1264.21,
+     "text": "They were younger, used to budget by putting money into envelopes. They'd get paid and"
+    },
+    {
+     "id": "l210",
+     "start": 1264.36,
+     "end": 1267.89,
+     "text": "They'd immediately separate the cash into piles"
+    },
+    {
+     "id": "l211",
+     "start": 1268.04,
+     "end": 1271.13,
+     "text": "And put them in envelopes so they knew what they had"
+    },
+    {
+     "id": "l212",
+     "start": 1271.28,
+     "end": 1273.39,
+     "text": "To spend week by week."
+    },
+    {
+     "id": "l213",
+     "start": 1273.54,
+     "end": 1276.45,
+     "text": "It was a very effective way for them to keep track"
+    },
+    {
+     "id": "l214",
+     "start": 1276.6,
+     "end": 1277.85,
+     "text": "Of their spending."
+    },
+    {
+     "id": "l215",
+     "start": 1278,
+     "end": 1280.97,
+     "text": "Nowadays, we're all on credit cards."
+    },
+    {
+     "id": "l216",
+     "start": 1281.12,
+     "end": 1284.41,
+     "text": "We're doing online purchases and money is kind of"
+    },
+    {
+     "id": "l217",
+     "start": 1284.56,
+     "end": 1288.73,
+     "text": "Becoming a less physical and more imaginary type of thing"
+    },
+    {
+     "id": "l218",
+     "start": 1288.88,
+     "end": 1290.73,
+     "text": "That we can't get our hands around."
+    },
+    {
+     "id": "l219",
+     "start": 1292.8,
+     "end": 1296.3,
+     "text": "Questions 19 to 22 are based on the recording you have just heard."
+    },
+    {
+     "id": "l220",
+     "start": 1298.1,
+     "end": 1301.71,
+     "text": "Question 19. What do we learn about Sweden?"
+    },
+    {
+     "id": "l221",
+     "start": 1315.2,
+     "end": 1320.32,
+     "text": "Question 20. What did Claire Barrett want to find out with her experiment?"
+    },
+    {
+     "id": "l222",
+     "start": 1333.8,
+     "end": 1338.67,
+     "text": "Question 21. What did Claire Barrett find on her train ride?"
+    },
+    {
+     "id": "l223",
+     "start": 1352.1,
+     "end": 1358.32,
+     "text": "Question 22. How did people of the last generation budget their spending?"
+    },
+    {
+     "id": "l224",
+     "start": 1371,
+     "end": 1372.95,
+     "text": "Recording 3"
+    },
+    {
+     "id": "l225",
+     "start": 1373,
+     "end": 1378.85,
+     "text": "Question 23. Why should you consider taking a course in demography in college?"
+    },
+    {
+     "id": "l226",
+     "start": 1379,
+     "end": 1383.51,
+     "text": "You will be growing up in the generation where the baby boomers are going into retirement"
+    },
+    {
+     "id": "l227",
+     "start": 1383.66,
+     "end": 1385.19,
+     "text": "And dying."
+    },
+    {
+     "id": "l228",
+     "start": 1385.34,
+     "end": 1389.97,
+     "text": "You will face problems in the aging of the population that have never been faced before."
+    },
+    {
+     "id": "l229",
+     "start": 1390.9,
+     "end": 1395.87,
+     "text": "You will hear more and more about migration between countries and between rural areas"
+    },
+    {
+     "id": "l230",
+     "start": 1396.02,
+     "end": 1396.92,
+     "text": "And cities."
+    },
+    {
+     "id": "l231",
+     "start": 1397.82,
+     "end": 1403.83,
+     "text": "You need to understand as a citizen and as a taxpayer and as a voter what's really behind"
+    },
+    {
+     "id": "l232",
+     "start": 1403.98,
+     "end": 1404.97,
+     "text": "The arguments."
+    },
+    {
+     "id": "l233",
+     "start": 1405.66,
+     "end": 1411.01,
+     "text": "I want to tell you about the past, present and future of the human population, so let's"
+    },
+    {
+     "id": "l234",
+     "start": 1411.16,
+     "end": 1413.77,
+     "text": "Start with a few problems."
+    },
+    {
+     "id": "l235",
+     "start": 1413.92,
+     "end": 1417.59,
+     "text": "Right now, a billion people are chronically hungry."
+    },
+    {
+     "id": "l236",
+     "start": 1417.74,
+     "end": 1422.55,
+     "text": "That means they wake up hungry, they're hungry all day, and they go to sleep hungry."
+    },
+    {
+     "id": "l237",
+     "start": 1423.18,
+     "end": 1425.5,
+     "text": "A billion people are living in slums."
+    },
+    {
+     "id": "l238",
+     "start": 1426.04,
+     "end": 1430.19,
+     "text": "Not the same billion people, but there is some overlap."
+    },
+    {
+     "id": "l239",
+     "start": 1430.34,
+     "end": 1434.93,
+     "text": "Living in slums means they don't have infrastructure to take the garbage away."
+    },
+    {
+     "id": "l240",
+     "start": 1435.08,
+     "end": 1439.43,
+     "text": "They don't have secure water supplies to drink."
+    },
+    {
+     "id": "l241",
+     "start": 1439.58,
+     "end": 1442.29,
+     "text": "Nearly a billion people are illiterate."
+    },
+    {
+     "id": "l242",
+     "start": 1442.44,
+     "end": 1444.87,
+     "text": "Try to imagine your life being illiterate."
+    },
+    {
+     "id": "l243",
+     "start": 1445.66,
+     "end": 1450.62,
+     "text": "You can't read the labels on the bottles in the supermarket, if you can get to a supermarket."
+    },
+    {
+     "id": "l244",
+     "start": 1451.86,
+     "end": 1458.23,
+     "text": "Two-thirds of those people who are illiterate are women and about 200 to 215 million women"
+    },
+    {
+     "id": "l245",
+     "start": 1458.38,
+     "end": 1463.47,
+     "text": "Don't have access to birth control they want so that they can control their own fertility."
+    },
+    {
+     "id": "l246",
+     "start": 1464.6,
+     "end": 1470.09,
+     "text": "This is not only a problem in developing countries, about half of all pregnancies globally are"
+    },
+    {
+     "id": "l247",
+     "start": 1470.24,
+     "end": 1470.95,
+     "text": "Unintended."
+    },
+    {
+     "id": "l248",
+     "start": 1471.74,
+     "end": 1476.35,
+     "text": "So those are examples of population problems."
+    },
+    {
+     "id": "l249",
+     "start": 1476.5,
+     "end": 1480.55,
+     "text": "Demography gives you the tools to understand and to address these problems."
+    },
+    {
+     "id": "l250",
+     "start": 1480.7,
+     "end": 1486.45,
+     "text": "It's not only the study of human population, but the populations of non-human species,"
+    },
+    {
+     "id": "l251",
+     "start": 1486.6,
+     "end": 1492.71,
+     "text": "Including viruses like influenza, the bacteria in your gut, plants that you eat, animals that"
+    },
+    {
+     "id": "l252",
+     "start": 1492.86,
+     "end": 1499.47,
+     "text": "You enjoy or that provide you with meat. Demography also includes the study of non-living objects"
+    },
+    {
+     "id": "l253",
+     "start": 1499.62,
+     "end": 1506.21,
+     "text": "Like light bulbs and taxi cabs and buildings because these are also populations. It studies"
+    },
+    {
+     "id": "l254",
+     "start": 1506.36,
+     "end": 1512.29,
+     "text": "These populations in the past, present and future using quantitative data and mathematical"
+    },
+    {
+     "id": "l255",
+     "start": 1512.44,
+     "end": 1518.89,
+     "text": "Models as tools of analysis. I see demography as a central subject related"
+    },
+    {
+     "id": "l256",
+     "start": 1519.04,
+     "end": 1524.85,
+     "text": "To economics. It is the means to intervene more wisely and more effectively in the real"
+    },
+    {
+     "id": "l257",
+     "start": 1525,
+     "end": 1530.73,
+     "text": "World to improve the well-being not only of yourself important as that may be, but of"
+    },
+    {
+     "id": "l258",
+     "start": 1530.88,
+     "end": 1549.73,
+     "text": "Of people around you and of other species with whom we share the planet."
+    },
+    {
+     "id": "l259",
+     "start": 1564,
+     "end": 1569.06,
+     "text": "Question 24. What does the speaker say about pregnancies?"
+    },
+    {
+     "id": "l260",
+     "start": 1583.2,
+     "end": 1588.88,
+     "text": "Question 25. How does a speaker view the study of populations?"
+    },
+    {
+     "id": "l261",
+     "start": 1603.1,
+     "end": 1606.6,
+     "text": "This is the end of listening comprehension."
     }
    ],
    "status": "published",
