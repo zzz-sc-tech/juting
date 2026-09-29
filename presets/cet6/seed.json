@@ -1,7 +1,7 @@
 {
  "preset": "cet6",
- "version": "20260929.7",
- "generatedAt": "2026-09-29T16:50:09.734Z",
+ "version": "20260929.9",
+ "generatedAt": "2026-09-29T17:41:30.744Z",
  "group": {
   "id": 8,
   "name": "英语六级真题",
@@ -66,7 +66,7 @@
    "transcript_json": [
     {
      "start": 0,
-     "end": 1,
+     "end": 4,
      "text": "College English Test, Band 6, Part 2, Listening Comprehension.",
      "id": "l1"
     },
@@ -126,19 +126,19 @@
     },
     {
      "start": 165.86,
-     "end": 166.86,
+     "end": 169.86,
      "text": "Questions one to four are based on the conversation you have just heard.",
      "id": "l11"
     },
     {
      "start": 170.96,
-     "end": 171.96,
+     "end": 174.96,
      "text": "Question one, what do we learn about the woman?",
      "id": "l12"
     },
     {
      "start": 186.68,
-     "end": 187.68,
+     "end": 190.68,
      "text": "Question two, what does the woman say about cafes in her city?",
      "id": "l13"
     },
@@ -150,13 +150,13 @@
     },
     {
      "start": 223.28,
-     "end": 224.28,
+     "end": 227.28,
      "text": "Question four, what does the woman say about their customers?",
      "id": "l15"
     },
     {
      "start": 240.16,
-     "end": 241.16,
+     "end": 244.16,
      "text": "Question two, what do we learn about the children?",
      "id": "l16"
     },
@@ -186,7 +186,7 @@
     },
     {
      "start": 361.4,
-     "end": 362.4,
+     "end": 365.4,
      "text": "Questions 5 to 8 are based on the conversation you have just heard.",
      "id": "l21"
     },
@@ -263,20 +263,20 @@
      "id": "l33"
     },
     {
-     "id": "l34",
      "start": 594,
      "end": 614.8,
-     "text": "Q9. What can be found in the valley of the kings?"
+     "text": "Q9. What can be found in the valley of the kings?",
+     "id": "l34"
     },
     {
      "start": 614.84,
-     "end": 615.84,
+     "end": 618.84,
      "text": "Question 10. In what way is the Amazon different from other big rivers?",
      "id": "l35"
     },
     {
      "start": 630,
-     "end": 631,
+     "end": 634,
      "text": "Question 11. What does the speaker say about the Amazon?",
      "id": "l36"
     },
@@ -312,31 +312,31 @@
     },
     {
      "start": 758.52,
-     "end": 759.52,
+     "end": 762.52,
      "text": "Questions 12 to 15 are based on the passage you have just heard.",
      "id": "l42"
     },
     {
      "start": 764.2,
-     "end": 765.2,
+     "end": 768.2,
      "text": "Question 12. What does the speaker think is an inevitable truth?",
      "id": "l43"
     },
     {
      "start": 781.56,
-     "end": 782.56,
+     "end": 785.56,
      "text": "Question 13. What does the speaker say about her life in Tokyo?",
      "id": "l44"
     },
     {
      "start": 799.16,
-     "end": 800.16,
+     "end": 803.16,
      "text": "Question 14. What made the speaker change her lifestyle?",
      "id": "l45"
     },
     {
      "start": 815.88,
-     "end": 816.88,
+     "end": 819.88,
      "text": "Question 15. What happened after the speaker changed her lifestyle?",
      "id": "l46"
     },
@@ -402,37 +402,37 @@
     },
     {
      "start": 1063.4,
-     "end": 1064.4,
+     "end": 1067.4,
      "text": "What is more, non-native species can appear harmless for decades, then turn invasive.",
      "id": "l57"
     },
     {
      "start": 1071.64,
-     "end": 1072.64,
+     "end": 1075.64,
      "text": "Questions 16 to 18 are based on the recording you have just heard.",
      "id": "l58"
     },
     {
      "start": 1076.68,
-     "end": 1077.68,
+     "end": 1080.68,
      "text": "Questions 16. What assumption about introduced species is challenged by a number of scientists?",
      "id": "l59"
     },
     {
      "start": 1096.2,
-     "end": 1097.2,
+     "end": 1100.2,
      "text": "Questions 17. What does Dr. Michael Rosensveeg think of exotic and native species?",
      "id": "l60"
     },
     {
      "start": 1115.24,
-     "end": 1116.24,
+     "end": 1119.24,
      "text": "Question 18. What does Professor Don Smith say about alien species?",
      "id": "l61"
     },
     {
      "start": 1126.44,
-     "end": 1127.44,
+     "end": 1130.44,
      "text": "Questions 19. What does Dr. Michael Rosensveeg think of exotic and native species?",
      "id": "l62"
     },
@@ -456,13 +456,13 @@
     },
     {
      "start": 1187.08,
-     "end": 1188.08,
+     "end": 1191.08,
      "text": "Question 1. Where must you not drink alcohol on the first and seventh of every month?",
      "id": "l66"
     },
     {
      "start": 1194.04,
-     "end": 1195.04,
+     "end": 1198.04,
      "text": "Question 2. Where should you never admire your host's possessions?",
      "id": "l67"
     },
@@ -473,7 +473,7 @@
      "id": "l68"
     },
     {
-     "start": 1200.52,
+     "start": 1201,
      "end": 1218,
      "text": "Question three, how should you attract the waiter during the day? And question 4. Where should you try to make all your appointments either before 2 or after 5.30pm? Ok, everyone had a chance to make some notes? Right, here are the answers.",
      "id": "l69"
@@ -504,25 +504,25 @@
     },
     {
      "start": 1320,
-     "end": 1321,
+     "end": 1324,
      "text": "Questions 19-21 are based on the recording you have just heard.",
      "id": "l74"
     },
     {
      "start": 1326,
-     "end": 1327,
+     "end": 1330,
      "text": "Question 19- What should you do when doing business with foreigners?",
      "id": "l75"
     },
     {
      "start": 1343,
-     "end": 1344,
+     "end": 1347,
      "text": "Question 20- What must you avoid doing with your Indian colleague?",
      "id": "l76"
     },
     {
      "start": 1360,
-     "end": 1361,
+     "end": 1364,
      "text": "Question 21- What do we learn about some Spanish business people?",
      "id": "l77"
     },
@@ -576,31 +576,31 @@
     },
     {
      "start": 1560,
-     "end": 1561,
+     "end": 1564,
      "text": "Especially hard hit were the blue and pink color departments, such as subscription fulfillment.",
      "id": "l86"
     },
     {
      "start": 1568,
-     "end": 1569,
+     "end": 1572,
      "text": "Questions 22 to 25 are based on the recording you have just heard.",
      "id": "l87"
     },
     {
      "start": 1573,
-     "end": 1574,
+     "end": 1577,
      "text": "Question 22. What did George Grun do in 1984?",
      "id": "l88"
     },
     {
      "start": 1591,
-     "end": 1592,
+     "end": 1595,
      "text": "Question 23. How did the Wallises define the formula for Readers Digest?",
      "id": "l89"
     },
     {
      "start": 1610,
-     "end": 1611,
+     "end": 1614,
      "text": "Question 24. What do we learn about the founder of Readers Digest, DeWitt Wallace?",
      "id": "l90"
     },
@@ -7740,7 +7740,7 @@
     },
     {
      "id": "l27",
-     "end": 113.08,
+     "end": 113.91,
      "text": "W: That's another Spanish delicacy.",
      "start": 112.28,
      "answers": [],
@@ -9470,7 +9470,7 @@
     },
     {
      "id": "l200",
-     "end": 1256.22,
+     "end": 1257.42,
      "text": "A life force called qi circulates through the body.",
      "start": 1254.86,
      "answers": [],
@@ -14100,7 +14100,7 @@
     },
     {
      "id": "l202",
-     "end": 1614.867,
+     "end": 1618.47,
      "text": "Q25. What does the speaker say about older people in England?",
      "start": 1613.667,
      "answers": [],
@@ -19021,7 +19021,7 @@
     },
     {
      "id": "l63",
-     "end": 354.92,
+     "end": 357.92,
      "text": "M: Yes, we are putting it up on the website tomorrow morning, so staff can review the details themselves.",
      "start": 353.92,
      "answers": [],
@@ -46315,7 +46315,7 @@
     },
     {
      "id": "l216",
-     "end": 1639.2,
+     "end": 1642.8,
      "text": "Q25. What does the speaker suggest parents do when their children are reading?",
      "start": 1638,
      "answers": [],
@@ -52876,7 +52876,7 @@
     },
     {
      "id": "l224",
-     "end": 1576.394,
+     "end": 1580.82,
      "text": "Q25. What does the speaker advise travel writers to do when they first start out?",
      "start": 1574.92,
      "answers": [],
@@ -63037,7 +63037,7 @@
     },
     {
      "id": "l190",
-     "end": 1338.14,
+     "end": 1340.54,
      "text": "Q20. What do many scientists believe with regard to earth?",
      "start": 1337.34,
      "answers": [],
@@ -73436,7 +73436,7 @@
     },
     {
      "id": "l176",
-     "end": 1271.48,
+     "end": 1273.91,
      "text": "Questions 19 to 21 are based on the recording you have just heard.",
      "start": 1269.628,
      "answers": [],
