@@ -1,7 +1,7 @@
 {
  "preset": "cet6",
- "version": "20260929.3",
- "generatedAt": "2026-09-29T15:34:52.818Z",
+ "version": "20260929.7",
+ "generatedAt": "2026-09-29T16:50:09.734Z",
  "group": {
   "id": 8,
   "name": "英语六级真题",
@@ -65,1844 +65,550 @@
    },
    "transcript_json": [
     {
-     "id": "l1",
-     "end": 11.04,
-     "text": "Section A Directions",
-     "start": 7.24,
-     "answers": [],
-     "keywords": [],
-     "translation": "Section A Directions",
-     "translations": {}
+     "start": 0,
+     "end": 1,
+     "text": "College English Test, Band 6, Part 2, Listening Comprehension.",
+     "id": "l1"
     },
     {
-     "id": "l2",
-     "end": 17.84,
-     "text": "In this section you will hear two long conversations. At the end of each conversation you will hear",
-     "start": 11.04,
-     "answers": [],
-     "keywords": [],
-     "translation": "在本部分中，你将听到两段长对话。每段对话结束时，你将听到",
-     "translations": {}
+     "start": 8.38,
+     "end": 9.88,
+     "text": "Section A",
+     "id": "l2"
     },
     {
-     "id": "l3",
-     "end": 25.04,
-     "text": "four questions. Both the conversation and the questions will be spoken only once. After",
-     "start": 17.84,
-     "answers": [],
-     "keywords": [],
-     "translation": "四个问题。对话和问题都只念一遍。在听到",
-     "translations": {}
+     "start": 9.88,
+     "end": 30.34,
+     "text": "In this section, you will hear two long conversations. At the end of each conversation, you will hear four questions. Both the conversation and the questions will be spoken only once. After you hear a question, you must choose the best answer from the four choices marked A, B, C and D. Then mark the corresponding letter on answer sheet 1, with a single line",
+     "id": "l3"
     },
     {
-     "id": "l4",
-     "end": 31.08,
-     "text": "you hear a question, you must choose the best answer from the four choices marked A, B,",
-     "start": 25.04,
-     "answers": [],
-     "keywords": [],
-     "translation": "问题后，你必须从标注 A、B、C、D 的四个选项中选出最佳答案，然后",
-     "translations": {}
+     "start": 37.16,
+     "end": 38.16,
+     "text": "Through the centre.",
+     "id": "l4"
     },
     {
-     "id": "l5",
-     "end": 37.84,
-     "text": "C and D. Then mark the corresponding letter on answer sheet 1 with a single line through",
-     "start": 31.08,
-     "answers": [],
-     "keywords": [],
-     "translation": "用单横线在答题卡 1 上划出对应字母，横线要穿过",
-     "translations": {}
+     "start": 40.48,
+     "end": 41.98,
+     "text": "Conversation 1",
+     "id": "l5"
     },
     {
-     "id": "l6",
-     "end": 41.04,
-     "text": "the center.",
-     "start": 37.84,
-     "answers": [],
-     "keywords": [],
-     "translation": "字母中间。",
-     "translations": {}
+     "start": 41.98,
+     "end": 63.72,
+     "text": "Tonight we have a special guest from a local establishment, the Parisian Café. Welcome. Hi. Thanks for having me on your show. Thank you for joining us. So please tell us. Why did you decide to open a café? Well, we saw the opportunity to offer something a little special and different from other establishments.",
+     "id": "l6"
     },
     {
-     "id": "l7",
-     "end": 43.04,
-     "text": "CONVERSATION 1",
-     "start": 41.04,
-     "answers": [],
-     "keywords": [],
-     "translation": "CONVERSATION 1",
-     "translations": {}
+     "start": 64.2,
+     "end": 87.56,
+     "text": "Cafés certainly are a very competitive market sector. There are more than plenty in our city, and we felt they are all rather similar to each other. Wouldn't you agree? Certainly, yes. So how is your establishment any different? Well, simply put, we have rabbits wandering freely around the place. Your customers come in and enjoy their food and drinks.",
+     "id": "l7"
     },
     {
-     "id": "l8",
-     "end": 44.451,
-     "text": "W: Welcome to Work Place.",
-     "start": 43.04,
-     "answers": [],
-     "keywords": [],
-     "translation": "W: 欢迎收看《职场》节目。",
-     "translations": {}
+     "start": 90.44,
+     "end": 112.64,
+     "text": "While little rabbits play about and brush against their legs, there's no other place like it. That's amazing. How did you come up with the idea? We saw other cafés with cats in them, so we thought, why not rabbits? People love rabbits. They are very cute animals. But is it safe? Do the rabbits ever bite people, or do any customers ever hurt the rabbits?",
+     "id": "l8"
     },
     {
-     "id": "l9",
-     "end": 54.734,
-     "text": "And in today's program, we're looking at the results of two recently published surveys, which both deal with the same topic - happiness at work.",
-     "start": 44.451,
-     "answers": [],
-     "keywords": [],
-     "translation": "在今天的节目中，我们要来看两份最新发布的调查的结果，它们都围绕同一个主题——工作幸福感。",
-     "translations": {}
+     "start": 116.74,
+     "end": 135.56,
+     "text": "It's perfectly safe for both the rabbits and our customers. Rabbits are very peaceful and certainly do not bite. Furthermore, our rabbits are regularly cleaned and have all received the required shots, so there is no health risk whatsoever. Because for our customers they are all animal lovers, so they would never try to hurt the",
+     "id": "l9"
     },
     {
-     "id": "l10",
-     "end": 57.44,
-     "text": "John, tell us about the first survey.",
-     "start": 54.734,
-     "answers": [],
-     "keywords": [],
-     "translation": "约翰，给我们讲讲第一份调查吧。",
-     "translations": {}
+     "start": 141.92,
+     "end": 161.2,
+     "text": "Rabbits. Sometimes a young child may get over excited and be a little too rough, but it's never a serious matter. On the contrary, the Parisian café offers a great experience for children, a chance for them to learn about rabbits and how to take care of them. Well, it's certainly the first time I've heard of a café like that.",
+     "id": "l10"
     },
     {
-     "id": "l11",
-     "end": 69.661,
-     "text": "M: Well, this was done by a human resources consultancy, who interviewed more than 1,000 workers, and established a top ten of the factors, which make people happy at work.",
-     "start": 57.44,
-     "answers": [],
-     "keywords": [],
-     "translation": "M: 这项调查由一家人力资源咨询公司完成，他们采访了 1000 多名员工，列出了让人们在工作中感到快乐的十大因素。",
-     "translations": {}
-    },
-    {
-     "id": "l12",
-     "end": 78.08,
-     "text": "The most important factor for the majority of the people interviewed was having friendly, supportive colleagues.",
-     "start": 69.661,
-     "answers": [],
-     "keywords": [],
-     "translation": "对大多数受访者来说，最重要的因素是拥有友好、能互相支持的同事。",
-     "translations": {}
-    },
-    {
-     "id": "l13",
-     "end": 89.303,
-     "text": "In fact, 73% of people interviewed put their relationship with colleagues as the key factor contributing to happiness at work, which is a very high percentage.",
-     "start": 78.08,
-     "answers": [],
-     "keywords": [],
-     "translation": "事实上，73% 的受访者把与同事的关系列为工作幸福感的关键因素，这个比例非常高。",
-     "translations": {}
-    },
-    {
-     "id": "l14",
-     "end": 93.837,
-     "text": "The second most important factor was having work that is enjoyable.",
-     "start": 89.303,
-     "answers": [],
-     "keywords": [],
-     "translation": "第二重要的因素是工作本身令人愉快。",
-     "translations": {}
-    },
-    {
-     "id": "l15",
-     "end": 103.24,
-     "text": "The two least important factors were having one's achievements recognized, and rather surprisingly, earning a competitive salary.",
-     "start": 93.837,
-     "answers": [],
-     "keywords": [],
-     "translation": "最不重要的两个因素是让个人成就得到认可，以及——颇为出人意料——拿到有竞争力的薪水。",
-     "translations": {}
-    },
-    {
-     "id": "l16",
-     "end": 106.258,
-     "text": "W: So, we are not mainly motivated by money?",
-     "start": 103.24,
-     "answers": [],
-     "keywords": [],
-     "translation": "W: 所以，驱动我们的主要不是钱？",
-     "translations": {}
-    },
-    {
-     "id": "l17",
-     "end": 107.524,
-     "text": "M: Apparently not.",
-     "start": 106.258,
-     "answers": [],
-     "keywords": [],
-     "translation": "M: 显然不是。",
-     "translations": {}
-    },
-    {
-     "id": "l18",
-     "end": 111.64,
-     "text": "W: Any other interesting information in the survey?",
-     "start": 107.524,
-     "answers": [],
-     "keywords": [],
-     "translation": "W: 调查里还有其他有意思的信息吗？",
-     "translations": {}
-    },
-    {
-     "id": "l19",
-     "end": 112.14,
-     "text": "M: Yes.",
-     "start": 111.64,
-     "answers": [],
-     "keywords": [],
-     "translation": "M: 有。",
-     "translations": {}
-    },
-    {
-     "id": "l20",
-     "end": 120.089,
-     "text": "For example, 25% of the working people interviewed described themselves as 'very happy' at work.",
-     "start": 112.14,
-     "answers": [],
-     "keywords": [],
-     "translation": "例如，25% 的受访上班族称自己在工作中“非常快乐”。",
-     "translations": {}
-    },
-    {
-     "id": "l21",
-     "end": 126.88,
-     "text": "However, 20% of employees described themselves as being unhappy.",
-     "start": 120.089,
-     "answers": [],
-     "keywords": [],
-     "translation": "然而，20% 的员工称自己并不快乐。",
-     "translations": {}
-    },
-    {
-     "id": "l22",
-     "end": 130.92,
-     "text": "W: That's quite a lot of unhappy people at work every day.",
-     "start": 126.88,
-     "answers": [],
-     "keywords": [],
-     "translation": "W: 每天都有这么多人在工作中闷闷不乐，数量可真不少。",
-     "translations": {}
-    },
-    {
-     "id": "l23",
-     "end": 131.958,
-     "text": "M: It is, isn't it?",
-     "start": 130.92,
-     "answers": [],
-     "keywords": [],
-     "translation": "M: 是啊，可不是嘛？",
-     "translations": {}
-    },
-    {
-     "id": "l24",
-     "end": 138,
-     "text": "And there were several more interesting conclusions revealed by the survey.",
-     "start": 131.958,
-     "answers": [],
-     "keywords": [],
-     "translation": "调查还揭示了其他几个有趣的结论。",
-     "translations": {}
-    },
-    {
-     "id": "l25",
-     "end": 146.994,
-     "text": "First of all, small is beautiful: people definitely prefer working for smaller organizations or companies with less than 100 staff.",
-     "start": 138,
-     "answers": [],
-     "keywords": [],
-     "translation": "首先，小而美：人们显然更愿意为 100 人以下的小机构或小公司工作。",
-     "translations": {}
-    },
-    {
-     "id": "l26",
-     "end": 153.24,
-     "text": "We also find out that, generally speaking, women were happier in their work than men.",
-     "start": 146.994,
-     "answers": [],
-     "keywords": [],
-     "translation": "我们还发现，总体而言，女性在工作中比男性更快乐。",
-     "translations": {}
-    },
-    {
-     "id": "l27",
-     "end": 155.84,
-     "text": "W: Yes, we are, aren't we?",
-     "start": 153.24,
-     "answers": [],
-     "keywords": [],
-     "translation": "W: 没错，我们确实更快乐，不是吗？",
-     "translations": {}
-    },
-    {
-     "id": "l28",
-     "end": 163.58,
-     "text": "M: And workers on part-time contracts, who only work 4 or 5 hours a day, are happier than those who work full-time.",
-     "start": 155.84,
-     "answers": [],
-     "keywords": [],
-     "translation": "M: 而且签兼职合同、每天只工作四五小时的员工，比全职员工更快乐。",
-     "translations": {}
-    },
-    {
-     "id": "l29",
-     "end": 169.48,
-     "text": "The researchers concluded that this is probably due to a better work-life balance.",
-     "start": 163.58,
-     "answers": [],
-     "keywords": [],
-     "translation": "研究人员得出结论，这大概是因为他们的工作与生活平衡得更好。",
-     "translations": {}
-    },
-    {
-     "id": "l30",
-     "end": 172.28,
-     "text": "W: Are bosses happier than their employees?",
-     "start": 169.48,
-     "answers": [],
-     "keywords": [],
-     "translation": "W: 老板比员工更快乐吗？",
-     "translations": {}
-    },
-    {
-     "id": "l31",
-     "end": 178.44,
-     "text": "M: Yes, perhaps not surprisingly, the higher people go in a company, the happier they are.",
-     "start": 172.28,
-     "answers": [],
-     "keywords": [],
-     "translation": "M: 是的，也许并不意外，在公司里职位越高的人越快乐。",
-     "translations": {}
-    },
-    {
-     "id": "l32",
-     "end": 184.4,
-     "text": "So senior managers enjoy their jobs more than people working under them.",
-     "start": 178.44,
-     "answers": [],
-     "keywords": [],
-     "translation": "所以高级管理者比他们的下属更享受自己的工作。",
-     "translations": {}
-    },
-    {
-     "id": "l33",
-     "end": 190.12,
+     "start": 165.86,
+     "end": 166.86,
      "text": "Questions one to four are based on the conversation you have just heard.",
-     "start": 184.4,
-     "answers": [],
-     "keywords": [],
-     "translation": "问题 1 至 4 基于你刚听到的对话。",
-     "translations": {}
+     "id": "l11"
+    },
+    {
+     "start": 170.96,
+     "end": 171.96,
+     "text": "Question one, what do we learn about the woman?",
+     "id": "l12"
+    },
+    {
+     "start": 186.68,
+     "end": 187.68,
+     "text": "Question two, what does the woman say about cafes in her city?",
+     "id": "l13"
+    },
+    {
+     "start": 204.04,
+     "end": 211.2,
+     "text": "Question three, how does the Parisian café guarantee that its rabbits pose no health threat?",
+     "id": "l14"
+    },
+    {
+     "start": 223.28,
+     "end": 224.28,
+     "text": "Question four, what does the woman say about their customers?",
+     "id": "l15"
+    },
+    {
+     "start": 240.16,
+     "end": 241.16,
+     "text": "Question two, what do we learn about the children?",
+     "id": "l16"
+    },
+    {
+     "start": 269.96,
+     "end": 292.04,
+     "text": "What is it with kids these days and all that junk food they eat? I think it's all that advertising on TV, that's where they get it. Yes, it must be. My children see something on TV and they immediately want it. It's like they don't realise it's just an advertisement. Right. And practically everything that's advertised for children is unhealthy processed foods.",
+     "id": "l17"
+    },
+    {
+     "start": 297.36,
+     "end": 320.12,
+     "text": "No surprise then, it becomes a battle for us parents to feed our children ordinary fruit and vegetables. That's just the thing. One never sees ordinary ingredients being advertised on TV. It's never a carrot or a peach, it's always some garbage like chocolate covered sweets. So unhealthy. Exactly, and these big food corporations have so much money to spend on clever tactics designed",
+     "id": "l18"
+    },
+    {
+     "start": 326.56,
+     "end": 349.44,
+     "text": "To make young children want to buy their products. Children never stand a chance, it's really not fair. You are so right. When we were children, we barely had any junk food available, and we turned out just fine. Yes, my parents don't understand any of it, both the TV commercials and the supermarkets are alien to them.",
+     "id": "l19"
+    },
+    {
+     "start": 350.44,
+     "end": 360.56,
+     "text": "Their world was so different back when they were young. I don't know what will happen to the next generation. The world is going crazy. You bet.",
+     "id": "l20"
+    },
+    {
+     "start": 361.4,
+     "end": 362.4,
+     "text": "Questions 5 to 8 are based on the conversation you have just heard.",
+     "id": "l21"
+    },
+    {
+     "start": 366.92,
+     "end": 369.56,
+     "text": "Question 5. What do the speakers say about the food their children like?",
+     "id": "l22"
+    },
+    {
+     "start": 384.2,
+     "end": 386.88,
+     "text": "Question 6. According to the speakers, what affects children's choice of food most?",
+     "id": "l23"
+    },
+    {
+     "start": 402.6,
+     "end": 405.04,
+     "text": "Question 7. What do the speakers believe big food corporations are doing?",
+     "id": "l24"
+    },
+    {
+     "start": 413.96,
+     "end": 416.96,
+     "text": "Question 8. What do we know about the speakers when they were children?",
+     "id": "l25"
+    },
+    {
+     "start": 431.4,
+     "end": 432.9,
+     "text": "Section B",
+     "id": "l26"
+    },
+    {
+     "start": 432.9,
+     "end": 451.72,
+     "text": "In this section, you will hear two passages. At the end of each section, you will hear two passages. At the end of each passage, you will hear three or four questions. Both the passage and the questions will be spoken only once. After you hear a question, you must choose the best answer from the four choices marked",
+     "id": "l27"
+    },
+    {
+     "start": 456.08,
+     "end": 479.28,
+     "text": "A, B, C and D. Then mark the corresponding letter on answer sheet one with a single line through the centre. At some 2,300 miles in length, the Mississippi is the longest river in the United States. At some 1,000 miles, the Mackenzie is the longest river in Canada. But these waterways seem minute, in comparison to the world's two lengthiest rivers, the",
+     "id": "l28"
+    },
+    {
+     "start": 484.96,
+     "end": 504.36,
+     "text": "Nile and the Amazon. The Nile, which because of the length of the river, is the longest river in the United States. The Nile, which begins in central Africa and flows over 4,100 miles north into the Mediterranean, hosted one of the world's great ancient civilizations along its shores.",
+     "id": "l29"
+    },
+    {
+     "start": 509,
+     "end": 526.62,
+     "text": "Calm and peaceful for most of the year, the Nile used to flood annually, thereby creating, irrigating, and carrying new topsoil to the nearby farmland on which ancient Egypt depended for livelihood. As a means of transportation, the river carried various vessels up and down its length.",
+     "id": "l30"
+    },
+    {
+     "start": 532.08,
+     "end": 553.92,
+     "text": "A journey through the unobstructed part of this waterway today would pass by the splendid Valley of the Kings, where the tombs of many of these ancient monarchs have stood for over 3,000 years. Great civilizations and intensive settlement are hardly associated with the Amazon. Yet this 4,000-mile-long South American river carries about 20% of the world's fresh water,",
+     "id": "l31"
+    },
+    {
+     "start": 560.4,
+     "end": 582.08,
+     "text": "More than the Mississippi, Nile, and Yangtze combined. Other statistics are equally astonishing. The Amazon is so wide at some points that from its center, neither shore can be seen. Each second, the Amazon pours some 55 million gallons of water into the Atlantic. There, at its mouth, stands one island larger than Switzerland.",
+     "id": "l32"
+    },
+    {
+     "start": 586.92,
+     "end": 594,
+     "text": "Most important of all, the Amazon irrigates the largest tropical rainforest on Earth.",
+     "id": "l33"
     },
     {
      "id": "l34",
-     "end": 213.601,
-     "text": "Q1. What is the No.1 factor that made employees happy according to the survey?",
-     "start": 191.112,
-     "answers": [],
-     "keywords": [],
-     "translation": "Q1. 根据调查，让员工快乐的第一大因素是什么？",
-     "translations": {}
-    },
-    {
-     "id": "l35",
-     "end": 234.753,
-     "text": "Q2. What is the percentage of the people surveyed who felt unhappy at work?",
-     "start": 213.601,
-     "answers": [],
-     "keywords": [],
-     "translation": "Q2. 受访者中感到工作不快乐的人占多大比例？",
-     "translations": {}
-    },
-    {
-     "id": "l36",
-     "end": 252.251,
-     "text": "Q3. What kind of companies are popular with employees?",
-     "start": 234.753,
-     "answers": [],
-     "keywords": [],
-     "translation": "Q3. 哪类公司受员工欢迎？",
-     "translations": {}
-    },
-    {
-     "id": "l37",
-     "end": 271.32,
-     "text": "Q4. What is the possible reason for people on part-time contracts to be happier?",
-     "start": 252.251,
-     "answers": [],
-     "keywords": [],
-     "translation": "Q4. 签兼职合同的人更快乐，可能的原因是什么？",
-     "translations": {}
-    },
-    {
-     "id": "l38",
-     "end": 271.82,
-     "text": "CONVERSATION 2",
-     "start": 271.32,
-     "answers": [],
-     "keywords": [],
-     "translation": "CONVERSATION 2",
-     "translations": {}
-    },
-    {
-     "id": "l39",
-     "end": 276.425,
-     "text": "W: Mr. De Keyzer, I'm a great lover of your book Moments Before the Flood.",
-     "start": 271.82,
-     "answers": [],
-     "keywords": [],
-     "translation": "W: De Keyzer 先生，我特别喜欢您的书《洪水来临之前》。",
-     "translations": {}
-    },
-    {
-     "id": "l40",
-     "end": 281.12,
-     "text": "Can you tell us how you first became interested in this subject matter?",
-     "start": 276.425,
-     "answers": [],
-     "keywords": [],
-     "translation": "您能说说最初是怎么对这个题材产生兴趣的吗？",
-     "translations": {}
-    },
-    {
-     "id": "l41",
-     "end": 295.452,
-     "text": "M: In 2006, when the concert hall of the city of Bruges asked me to take some pictures for a catalogue for a new concert season around the theme of water, I found myself working along the Belgian coastline.",
-     "start": 281.12,
-     "answers": [],
-     "keywords": [],
-     "translation": "M: 2006 年，布鲁日的音乐厅请我以水为主题，为新一季音乐会的画册拍摄一组照片，于是我便沿着比利时海岸线进行拍摄。",
-     "translations": {}
-    },
-    {
-     "id": "l42",
-     "end": 311.207,
-     "text": "As there had been numerous alarming articles in the press about a climate catastrophe waiting to happen, I started looking at the sea and the beach very differently, a place where I spent so many perfect days as a child.",
-     "start": 295.452,
-     "answers": [],
-     "keywords": [],
-     "translation": "由于媒体上已有大量关于气候灾难一触即发的警示报道，我开始用完全不同的眼光看待大海和海滩——那可是我小时候度过许多美好时光的地方。",
-     "translations": {}
-    },
-    {
-     "id": "l43",
-     "end": 317.6,
-     "text": "This fear of a looming danger became the subject of a large-scale photo project.",
-     "start": 311.207,
-     "answers": [],
-     "keywords": [],
-     "translation": "这种对迫近危险的恐惧，成了一个大型摄影项目的主题。",
-     "translations": {}
-    },
-    {
-     "id": "l44",
-     "end": 328.48,
-     "text": "W: You wrote in the book: \"I don't want to photograph the disaster, I want to photograph the disaster waiting to happen.\" Can you talk a bit about that?",
-     "start": 317.6,
-     "answers": [],
-     "keywords": [],
-     "translation": "W: 您在书中写道：“我不想拍摄灾难本身，我想拍摄正在酝酿中的灾难。”能谈谈这一点吗？",
-     "translations": {}
-    },
-    {
-     "id": "l45",
-     "end": 335.629,
-     "text": "M: It is clear now that it is a matter of time before the entire European coastline disappears under water.",
-     "start": 328.48,
-     "answers": [],
-     "keywords": [],
-     "translation": "M: 现在已经很清楚，整个欧洲海岸线没入水下只是时间问题。",
-     "translations": {}
-    },
-    {
-     "id": "l46",
-     "end": 340.082,
-     "text": "The same goes for numerous big cities around the world.",
-     "start": 335.629,
-     "answers": [],
-     "keywords": [],
-     "translation": "世界各地的许多大城市也是如此。",
-     "translations": {}
-    },
-    {
-     "id": "l47",
-     "end": 351.16,
-     "text": "My idea was to photograph this beautiful and very unique coastline, rich in history, before it's too late-as a last witness.",
-     "start": 340.082,
-     "answers": [],
-     "keywords": [],
-     "translation": "我的想法是趁为时未晚，拍下这段美丽而独特、历史底蕴深厚的海岸线——作为最后的见证。",
-     "translations": {}
-    },
-    {
-     "id": "l48",
-     "end": 355.44,
-     "text": "W: Can you talk a bit about how history plays a role in this project?",
-     "start": 351.16,
-     "answers": [],
-     "keywords": [],
-     "translation": "W: 您能谈谈历史在这个项目中扮演的角色吗？",
-     "translations": {}
-    },
-    {
-     "id": "l49",
-     "end": 355.94,
-     "text": "M: Sure.",
-     "start": 355.44,
-     "answers": [],
-     "keywords": [],
-     "translation": "M: 当然可以。",
-     "translations": {}
-    },
-    {
-     "id": "l50",
-     "end": 364.289,
-     "text": "The project is also about the history of Europe looking at the sea and wondering when the next enemy would appear.",
-     "start": 355.94,
-     "answers": [],
-     "keywords": [],
-     "translation": "这个项目也关乎欧洲的历史——欧洲人凝望大海，猜测下一个敌人何时会出现。",
-     "translations": {}
-    },
-    {
-     "id": "l51",
-     "end": 377.654,
-     "text": "In the images, you see all kinds of possible defense constructions to hold back the Romans, Germans, Vikings, and now nature as enemy number one.",
-     "start": 364.289,
-     "answers": [],
-     "keywords": [],
-     "translation": "在照片中，你能看到各种用来抵御罗马人、德国人、维京人的防御工事，而如今，大自然成了头号敌人。",
-     "translations": {}
-    },
-    {
-     "id": "l52",
-     "end": 385.44,
-     "text": "For example, there is the image of the bridge into the sea taken at the Normandy D-Day landing site.",
-     "start": 377.654,
-     "answers": [],
-     "keywords": [],
-     "translation": "比如，有一张在诺曼底 D 日登陆点拍摄的通向大海的桥的照片。",
-     "translations": {}
-    },
-    {
-     "id": "l53",
-     "end": 395.64,
-     "text": "Also, Venice, the city eternally threatened by the sea, where every morning wooden pathways have to be set up to allow tourists to reach their hotels.",
-     "start": 385.44,
-     "answers": [],
-     "keywords": [],
-     "translation": "还有威尼斯，这座永远受大海威胁的城市，每天早晨都得搭起木栈道，好让游客走进各自的酒店。",
-     "translations": {}
-    },
-    {
-     "id": "l54",
-     "end": 397.648,
-     "text": "W: Thank you, Mr. De Keyzer.",
-     "start": 395.64,
-     "answers": [],
-     "keywords": [],
-     "translation": "W: 谢谢您，De Keyzer 先生。",
-     "translations": {}
-    },
-    {
-     "id": "l55",
-     "end": 401.44,
-     "text": "It was a pleasure to have you with us today.",
-     "start": 397.648,
-     "answers": [],
-     "keywords": [],
-     "translation": "今天很高兴有您来到我们的节目。",
-     "translations": {}
-    },
-    {
-     "id": "l56",
-     "end": 406.224,
-     "text": "Questions five to eight are based on the conversation you have just heard.",
-     "start": 401.44,
-     "answers": [],
-     "keywords": [],
-     "translation": "问题 5 至 8 基于你刚听到的对话。",
-     "translations": {}
-    },
-    {
-     "id": "l57",
-     "end": 429.3,
-     "text": "Q5. What does the man say about the book Moments Before the Flood?",
-     "start": 407.208,
-     "answers": [],
-     "keywords": [],
-     "translation": "Q5. 关于《洪水来临之前》这本书，男士说了什么？",
-     "translations": {}
-    },
-    {
-     "id": "l58",
-     "end": 446.528,
-     "text": "Q6. When did the man get his idea for the work?",
-     "start": 429.3,
-     "answers": [],
-     "keywords": [],
-     "translation": "Q6. 男士是什么时候产生这部作品的构思的？",
-     "translations": {}
-    },
-    {
-     "id": "l59",
-     "end": 466.026,
-     "text": "Q7. What will happen when the climate catastrophe occurs?",
-     "start": 446.528,
-     "answers": [],
-     "keywords": [],
-     "translation": "Q7. 气候灾难发生时会出现什么情况？",
-     "translations": {}
-    },
-    {
-     "id": "l60",
-     "end": 477.54,
-     "text": "Q8. What does the man say about Venice?",
-     "start": 466.026,
-     "answers": [],
-     "keywords": [],
-     "translation": "Q8. 关于威尼斯，男士说了什么？",
-     "translations": {}
-    },
-    {
-     "id": "l61",
-     "end": 479.20279069767446,
-     "text": "Section B, directions.",
-     "start": 477.54,
-     "answers": [],
-     "keywords": [],
-     "translation": "Section B, directions.",
-     "translations": {}
-    },
-    {
-     "id": "l62",
-     "end": 484.04,
-     "text": "In this section, you will hear two passages. At the end of each",
-     "start": 479.203,
-     "answers": [],
-     "keywords": [],
-     "translation": "在本部分中，你将听到两篇短文。每篇短文结束时，你将听到",
-     "translations": {}
-    },
-    {
-     "id": "l63",
-     "end": 490.16,
-     "text": "passage, you will hear three or four questions. Both the passage and the questions will be",
-     "start": 484.04,
-     "answers": [],
-     "keywords": [],
-     "translation": "三个或四个问题。短文和问题都",
-     "translations": {}
-    },
-    {
-     "id": "l64",
-     "end": 496.8,
-     "text": "spoken only once. After you hear a question, you must choose the best answer from the four",
-     "start": 490.16,
-     "answers": [],
-     "keywords": [],
-     "translation": "只念一遍。听完问题后，你必须从标注 A、B、C、D 的四个选项中选出最佳答案，然后",
-     "translations": {}
-    },
-    {
-     "id": "l65",
-     "end": 505.48,
-     "text": "choices marked A, B, C, and D. Then mark the corresponding letter on answer sheet one with",
-     "start": 496.8,
-     "answers": [],
-     "keywords": [],
-     "translation": "用单横线在答题卡 1 上划出对应字母，横线要穿过",
-     "translations": {}
-    },
-    {
-     "id": "l66",
-     "end": 509.68,
-     "text": "a single line through the center.",
-     "start": 505.48,
-     "answers": [],
-     "keywords": [],
-     "translation": "字母中心。",
-     "translations": {}
-    },
-    {
-     "id": "l67",
-     "end": 510.557,
-     "text": "PASSAGE 1",
-     "start": 509.68,
-     "answers": [],
-     "keywords": [],
-     "translation": "PASSAGE 1",
-     "translations": {}
-    },
-    {
-     "id": "l68",
-     "end": 519.147,
-     "text": "When facing a new situation, some people tend to rehearse their defeat by spending too much time anticipating the worst.",
-     "start": 510.557,
-     "answers": [],
-     "keywords": [],
-     "translation": "面对新情况时，有些人习惯在心里预演失败，花太多时间去想最坏的结果。",
-     "translations": {}
-    },
-    {
-     "id": "l69",
-     "end": 525.077,
-     "text": "I remember talking with a young lawyer who was about to begin her first jury trial.",
-     "start": 519.147,
-     "answers": [],
-     "keywords": [],
-     "translation": "我记得曾和一位年轻律师聊过，她当时正要开始人生第一次陪审团庭审。",
-     "translations": {}
-    },
-    {
-     "id": "l70",
-     "end": 526.712,
-     "text": "She was very nervous.",
-     "start": 525.077,
-     "answers": [],
-     "keywords": [],
-     "translation": "她非常紧张。",
-     "translations": {}
-    },
-    {
-     "id": "l71",
-     "end": 530.955,
-     "text": "I asked what impression she wanted to make on the jury.",
-     "start": 526.712,
-     "answers": [],
-     "keywords": [],
-     "translation": "我问她想给陪审团留下什么样的印象。",
-     "translations": {}
-    },
-    {
-     "id": "l72",
-     "end": 545.879,
-     "text": "She replied: \"I don't want to look too inexperienced, I don't want them to suspect this is my first trial.\" This lawyer had fallen victims to the don'ts syndrome-a form of negative goals setting.",
-     "start": 530.955,
-     "answers": [],
-     "keywords": [],
-     "translation": "她回答说：“我不想显得太没经验，我不想让他们怀疑这是我第一次出庭。”这位律师患上了“别做某事”综合症——一种消极的目标设定方式。",
-     "translations": {}
-    },
-    {
-     "id": "l73",
-     "end": 551.022,
-     "text": "The don'ts can be self-fulfilling because your mind response to pictures.",
-     "start": 545.879,
-     "answers": [],
-     "keywords": [],
-     "translation": "这类“别做某事”的暗示可能自我实现，因为你的大脑是对画面作出反应的。",
-     "translations": {}
-    },
-    {
-     "id": "l74",
-     "end": 560.472,
-     "text": "Research conducted at Stanford University shows a mental image fires the nerve system the same way as actually doing something.",
-     "start": 551.022,
-     "answers": [],
-     "keywords": [],
-     "translation": "斯坦福大学的研究表明，心理画面激发神经系统的方式和实际做某件事是一样的。",
-     "translations": {}
-    },
-    {
-     "id": "l75",
-     "end": 570.541,
-     "text": "That means when a golfer tells himself: \"Don't hit the ball into the water.\" His mind sees the image of the ball flying into the water.",
-     "start": 560.472,
-     "answers": [],
-     "keywords": [],
-     "translation": "也就是说，当一个高尔夫球手对自己说“别把球打进水里”时，他的脑海中浮现的是球飞进水里的画面。",
-     "translations": {}
-    },
-    {
-     "id": "l76",
-     "end": 573.069,
-     "text": "So guess where the ball will go?",
-     "start": 570.541,
-     "answers": [],
-     "keywords": [],
-     "translation": "那么猜猜球会飞到哪里去？",
-     "translations": {}
-    },
-    {
-     "id": "l77",
-     "end": 580.703,
-     "text": "Consequently, before going into any stressful situation, focus only on what you want to have happen.",
-     "start": 573.069,
-     "answers": [],
-     "keywords": [],
-     "translation": "因此，在进入任何有压力的情境之前，只把注意力放在你希望发生的事情上。",
-     "translations": {}
-    },
-    {
-     "id": "l78",
-     "end": 585.732,
-     "text": "I asked the lawyer again how she wanted to appear at her first trial.",
-     "start": 580.703,
-     "answers": [],
-     "keywords": [],
-     "translation": "我又问那位律师，她想在第一次庭审中呈现出怎样的形象。",
-     "translations": {}
-    },
-    {
-     "id": "l79",
-     "end": 596.093,
-     "text": "And this time she said: \"I want to look professional and self-assured.\" I told her to create a picture of what self-assured would look like.",
-     "start": 585.732,
-     "answers": [],
-     "keywords": [],
-     "translation": "这次她说：“我想显得专业而自信。”我让她在脑海中描绘出自信的样子。",
-     "translations": {}
-    },
-    {
-     "id": "l80",
-     "end": 607.87,
-     "text": "To her, it meant moving confidently around the court room, using convincing body language and projecting her voice, so it could be heard from the judge's bench to the back door.",
-     "start": 596.093,
-     "answers": [],
-     "keywords": [],
-     "translation": "对她来说，这意味着自信地在法庭上走动，运用有说服力的肢体语言，并且放开嗓音，让声音从法官席一直传到后门。",
-     "translations": {}
-    },
-    {
-     "id": "l81",
-     "end": 613.399,
-     "text": "She also imagined a skillful closing argument and a winning trial.",
-     "start": 607.87,
-     "answers": [],
-     "keywords": [],
-     "translation": "她还想象了一场出色的结案陈词和一场胜诉的庭审。",
-     "translations": {}
-    },
-    {
-     "id": "l82",
-     "end": 621.36,
-     "text": "A few weeks after this positive dress rehearsal, the young lawyer did win.",
-     "start": 613.399,
-     "answers": [],
-     "keywords": [],
-     "translation": "经过这次积极的“彩排”几周之后，这位年轻律师果然赢了。",
-     "translations": {}
-    },
-    {
-     "id": "l83",
-     "end": 626.72,
-     "text": "Questions 9 to 12 are based on the passage you have just heard.",
-     "start": 621.36,
-     "answers": [],
-     "keywords": [],
-     "translation": "问题 9 至 12 基于你刚听到的短文。",
-     "translations": {}
-    },
-    {
-     "id": "l84",
-     "end": 648.192,
-     "text": "Q9. What do some people do when they face a new situation?",
-     "start": 629.912,
-     "answers": [],
-     "keywords": [],
-     "translation": "Q9. 有些人在面对新情况时会怎么做？",
-     "translations": {}
-    },
-    {
-     "id": "l85",
-     "end": 666.832,
-     "text": "Q10. What does the research conducted at Stanford University show?",
-     "start": 648.192,
-     "answers": [],
-     "keywords": [],
-     "translation": "Q10. 斯坦福大学进行的研究表明了什么？",
-     "translations": {}
-    },
-    {
-     "id": "l86",
-     "end": 686.987,
-     "text": "Q11. What advice does the speaker give to people in a stressful situation?",
-     "start": 666.832,
-     "answers": [],
-     "keywords": [],
-     "translation": "Q11. 说话人给处于压力情境中的人提出了什么建议？",
-     "translations": {}
-    },
-    {
-     "id": "l87",
-     "end": 701,
-     "text": "Q12. What do we learn about the lawyer in the court?",
-     "start": 686.987,
-     "answers": [],
-     "keywords": [],
-     "translation": "Q12. 关于那位律师在法庭上的表现，我们了解到什么？",
-     "translations": {}
-    },
-    {
-     "id": "l88",
-     "end": 701.831,
-     "text": "PASSAGE 2",
-     "start": 701,
-     "answers": [],
-     "keywords": [],
-     "translation": "PASSAGE 2",
-     "translations": {}
-    },
-    {
-     "id": "l89",
-     "end": 707.649,
-     "text": "Most Americans don't eat enough fruits, vegetables or whole grains.",
-     "start": 701.831,
-     "answers": [],
-     "keywords": [],
-     "translation": "大多数美国人吃的水果、蔬菜和全谷物不够多。",
-     "translations": {}
-    },
-    {
-     "id": "l90",
-     "end": 714.897,
-     "text": "Researchers now say adding fiber to the teen diet may help lower the risk of breast cancer.",
-     "start": 707.649,
-     "answers": [],
-     "keywords": [],
-     "translation": "研究人员现在表示，在青少年饮食中增加纤维可能有助于降低患乳腺癌的风险。",
-     "translations": {}
-    },
-    {
-     "id": "l91",
-     "end": 723.28,
-     "text": "Conversations about the benefits of fiber are probably more common in nursing homes than high schools.",
-     "start": 714.897,
-     "answers": [],
-     "keywords": [],
-     "translation": "关于纤维好处的谈论，在养老院里可能比在高中里更常见。",
-     "translations": {}
-    },
-    {
-     "id": "l92",
-     "end": 728.068,
-     "text": "But along comes a new study that could change that.",
-     "start": 723.28,
-     "answers": [],
-     "keywords": [],
-     "translation": "但一项新研究的出现可能会改变这一点。",
-     "translations": {}
-    },
-    {
-     "id": "l93",
-     "end": 736.778,
-     "text": "Kristi King, a diet specialist at Texas Children's Hospital, finds it's hard to get teenage patients' attention about healthy eating.",
-     "start": 728.068,
-     "answers": [],
-     "keywords": [],
-     "translation": "得克萨斯儿童医院的营养专家克里斯蒂·金发现，很难让青少年病人关注健康饮食。",
-     "translations": {}
-    },
-    {
-     "id": "l94",
-     "end": 744.877,
-     "text": "But telling them that eating lots of high-fiber foods could reduce the risk of breast cancer before middle age.",
-     "start": 736.778,
-     "answers": [],
-     "keywords": [],
-     "translation": "但告诉她们，多吃高纤维食物可以降低中年之前患乳腺癌的风险。",
-     "translations": {}
-    },
-    {
-     "id": "l95",
-     "end": 747.12,
-     "text": "That's a powerful message.",
-     "start": 744.877,
-     "answers": [],
-     "keywords": [],
-     "translation": "这话就很有分量了。",
-     "translations": {}
-    },
-    {
-     "id": "l96",
-     "end": 750.726,
-     "text": "The new finding is based on a study of 44,000 women.",
-     "start": 747.12,
-     "answers": [],
-     "keywords": [],
-     "translation": "这项新发现基于一项针对 44000 名女性的研究。",
-     "translations": {}
-    },
-    {
-     "id": "l97",
-     "end": 758.594,
-     "text": "They were surveyed about their diets during high school, and their eating habits were tracked for two decades.",
-     "start": 750.726,
-     "answers": [],
-     "keywords": [],
-     "translation": "研究人员调查了她们高中时期的饮食，并对她们的饮食习惯跟踪了二十年。",
-     "translations": {}
-    },
-    {
-     "id": "l98",
-     "end": 770.147,
-     "text": "It turns out that those who consumed the highest levels of fiber during adolescence had a lower risk of developing breast cancer, compared to the women who ate the least fiber.",
-     "start": 758.594,
-     "answers": [],
-     "keywords": [],
-     "translation": "结果显示，与摄入纤维最少的女性相比，青春期摄入纤维最多的女性患乳腺癌的风险更低。",
-     "translations": {}
-    },
-    {
-     "id": "l99",
-     "end": 780.72,
-     "text": "This important study demonstrates that the more fiber you eat during your high school years, the lower your risk is in developing breast cancer in later life.",
-     "start": 770.147,
-     "answers": [],
-     "keywords": [],
-     "translation": "这项重要研究表明，高中时期摄入的纤维越多，日后患乳腺癌的风险就越低。",
-     "translations": {}
-    },
-    {
-     "id": "l100",
-     "end": 790.556,
-     "text": "The finding points to long-standing evidence that fiber may reduce circulating female hormone levels, which could explain the reduced risk.",
-     "start": 780.72,
-     "answers": [],
-     "keywords": [],
-     "translation": "这一发现印证了长期以来的证据：纤维可能降低体内循环的女性激素水平，这或许可以解释风险的降低。",
-     "translations": {}
-    },
-    {
-     "id": "l101",
-     "end": 803.08,
-     "text": "The bottom line here is the more fiber you eat, perhaps, a lower level of hormone in your body, and therefore, a lower lifetime risk of developing breast cancer.",
-     "start": 790.556,
-     "answers": [],
-     "keywords": [],
-     "translation": "关键在于：纤维吃得越多，体内激素水平或许就越低，因此一生中患乳腺癌的风险也就越低。",
-     "translations": {}
-    },
-    {
-     "id": "l102",
-     "end": 808.69,
-     "text": "High-fiber diets are also linked to a reduced risk of heart disease and diabetes.",
-     "start": 803.08,
-     "answers": [],
-     "keywords": [],
-     "translation": "高纤维饮食还与心脏病和糖尿病风险的降低有关。",
-     "translations": {}
-    },
-    {
-     "id": "l103",
-     "end": 816,
-     "text": "That's why women are told to eat 25 grams of fiber a day - men even more.",
-     "start": 808.69,
-     "answers": [],
-     "keywords": [],
-     "translation": "这就是为什么建议女性每天摄入 25 克纤维——男性还要更多。",
-     "translations": {}
-    },
-    {
-     "id": "l104",
-     "end": 821.12,
-     "text": "Questions 13 to 15 are based on the passage you have just heard.",
-     "start": 816,
-     "answers": [],
-     "keywords": [],
-     "translation": "问题 13 至 15 基于你刚听到的短文。",
-     "translations": {}
-    },
-    {
-     "id": "l105",
-     "end": 844.515,
-     "text": "Q13. What does the new study tell about adding fiber to the teen diet?",
-     "start": 824.294,
-     "answers": [],
-     "keywords": [],
-     "translation": "Q13. 关于在青少年饮食中增加纤维，新研究说明了什么？",
-     "translations": {}
-    },
-    {
-     "id": "l106",
-     "end": 863.154,
-     "text": "Q14. What do we learn about the survey of the 44,000 women?",
-     "start": 844.515,
-     "answers": [],
-     "keywords": [],
-     "translation": "Q14. 关于这项针对 44000 名女性的调查，我们了解到什么？",
-     "translations": {}
-    },
-    {
-     "id": "l107",
-     "end": 879.84,
-     "text": "Q15. What explanation does the speaker offer for the research finding?",
-     "start": 863.154,
-     "answers": [],
-     "keywords": [],
-     "translation": "Q15. 说话人对这一研究发现给出了什么解释？",
-     "translations": {}
-    },
-    {
-     "id": "l108",
-     "end": 880.649,
-     "text": "Section C.",
-     "start": 879.84,
-     "answers": [],
-     "keywords": [],
-     "translation": "Section C.",
-     "translations": {}
-    },
-    {
-     "id": "l109",
-     "end": 886.72,
-     "text": "Directions. In this section, you will hear three recordings of lectures or",
-     "start": 880.649,
-     "answers": [],
-     "keywords": [],
-     "translation": "指令。在本部分中，你将听到三段讲座或",
-     "translations": {}
-    },
-    {
-     "id": "l110",
-     "end": 893.56,
-     "text": "talks followed by three or four questions. The recordings will be played only once. After",
-     "start": 886.72,
-     "answers": [],
-     "keywords": [],
-     "translation": "讲话录音，之后有三或四个问题。录音只播放一遍。听完",
-     "translations": {}
-    },
-    {
-     "id": "l111",
-     "end": 900.2,
-     "text": "you hear a question, you must choose the best answer from the four choices marked A, B,",
-     "start": 893.56,
-     "answers": [],
-     "keywords": [],
-     "translation": "问题后，你必须从标注 A、B、C、D 的四个选项中选出最佳答案，然后",
-     "translations": {}
-    },
-    {
-     "id": "l112",
-     "end": 906.6,
-     "text": "C and D. Then mark the corresponding letter on answer sheet one with a single line through",
-     "start": 900.2,
-     "answers": [],
-     "keywords": [],
-     "translation": "问题后，从标注 A、B、C 和 D 的四个选项中选出最佳答案，然后用单横线在答题卡 1 上划出对应字母，横线穿过",
-     "translations": {}
-    },
-    {
-     "id": "l113",
-     "end": 909.28,
-     "text": "the center.",
-     "start": 906.6,
-     "answers": [],
-     "keywords": [],
-     "translation": "字母中间。",
-     "translations": {}
-    },
-    {
-     "id": "l114",
-     "end": 910.211,
-     "text": "RECORDING 1",
-     "start": 909.28,
-     "answers": [],
-     "keywords": [],
-     "translation": "RECORDING 1",
-     "translations": {}
-    },
-    {
-     "id": "l115",
-     "end": 914.869,
-     "text": "Well my current research is really about consumer behavior.",
-     "start": 910.211,
-     "answers": [],
-     "keywords": [],
-     "translation": "嗯，我目前的研究其实是关于消费者行为的。",
-     "translations": {}
-    },
-    {
-     "id": "l116",
-     "end": 922.527,
-     "text": "So recently I've looked at young people's drinking and it's obviously a major concern to Government at the moment.",
-     "start": 914.869,
-     "answers": [],
-     "keywords": [],
-     "translation": "所以最近我研究了年轻人的饮酒问题，这显然是政府目前非常关注的一个问题。",
-     "translations": {}
-    },
-    {
-     "id": "l117",
-     "end": 935.946,
-     "text": "I've also looked at how older people are represented in the media; again, it's of major current interest with older people becoming a much larger proportion of UK and indeed world society.",
-     "start": 922.527,
-     "answers": [],
-     "keywords": [],
-     "translation": "我还研究了老年人在媒体中是如何被呈现的；随着老年人在英国乃至全世界人口中所占比例越来越大，这同样也是当前备受关注的话题。",
-     "translations": {}
-    },
-    {
-     "id": "l118",
-     "end": 947.04,
-     "text": "I'm also interested in how consumers operate online, and how that online behavior might be different from how they operate offline when they go to the shops.",
-     "start": 935.946,
-     "answers": [],
-     "keywords": [],
-     "translation": "我还对消费者如何在网上消费感兴趣，以及这种线上行为与他们去实体店购物时的线下行为有何不同。",
-     "translations": {}
-    },
-    {
-     "id": "l119",
-     "end": 954.839,
-     "text": "Well, I think that the important thing here is to actually understand what's happening from the consumer's perspective.",
-     "start": 947.04,
-     "answers": [],
-     "keywords": [],
-     "translation": "我认为，关键在于真正从消费者的角度去理解正在发生的事情。",
-     "translations": {}
-    },
-    {
-     "id": "l120",
-     "end": 964.357,
-     "text": "One of the things that businesses and indeed Government organizations often fail to do is to really see what is happening from the consumer's perspective.",
-     "start": 954.839,
-     "answers": [],
-     "keywords": [],
-     "translation": "企业乃至政府机构常常做不到的一点，就是真正从消费者的视角看待正在发生的事情。",
-     "translations": {}
-    },
-    {
-     "id": "l121",
-     "end": 978.55,
-     "text": "For example, in the case of young people's drinking, one of the things that I've identified is that drinking for people say between the ages of 18 and 24 is all about the social activity.",
-     "start": 964.357,
-     "answers": [],
-     "keywords": [],
-     "translation": "例如，在年轻人饮酒的问题上，我的一点发现是：对 18 到 24 岁左右的人来说，喝酒完全是一种社交活动。",
-     "translations": {}
-    },
-    {
-     "id": "l122",
-     "end": 997.56,
-     "text": "A lot of the Government advertising has been about individual responsibility, but actually understanding that drinking is very much about the social activity and finding ways to help young people get home safely and not end up in hospital is one of the things that we've tried to present there.",
-     "start": 978.55,
-     "answers": [],
-     "keywords": [],
-     "translation": "政府的很多广告都在强调个人责任，但实际上要理解喝酒很大程度上是社交活动，并设法帮助年轻人安全回家、不至于进医院，这正是我们试图呈现的观点之一。",
-     "translations": {}
-    },
-    {
-     "id": "l123",
-     "end": 1003.994,
-     "text": "The key thing about consumer behavior is that it's very much about how consumers change.",
-     "start": 997.56,
-     "answers": [],
-     "keywords": [],
-     "translation": "消费者行为的关键在于，它在很大程度上关乎消费者如何变化。",
-     "translations": {}
-    },
-    {
-     "id": "l124",
-     "end": 1011.292,
-     "text": "Markets always change faster than marketing; so we have to look at what consumers are doing.",
-     "start": 1003.994,
-     "answers": [],
-     "keywords": [],
-     "translation": "市场的变化总是快于营销；所以我们必须观察消费者在做什么。",
-     "translations": {}
-    },
-    {
-     "id": "l125",
-     "end": 1024.682,
-     "text": "Currently I teach consumer behavior to undergraduates in their second year and we look at all kinds of things in consumer behavior and particularly how consumers are presented in advertising.",
-     "start": 1011.292,
-     "answers": [],
-     "keywords": [],
-     "translation": "目前我给大二本科生讲授消费者行为学，我们研究消费者行为的方方面面，尤其是消费者在广告中是如何被呈现的。",
-     "translations": {}
-    },
-    {
-     "id": "l126",
-     "end": 1037.245,
-     "text": "So they get involved by looking at advertising and really critically assessing the consumer behavior aspects of it and getting involved sometimes doing primary research.",
-     "start": 1024.682,
-     "answers": [],
-     "keywords": [],
-     "translation": "他们会通过研究广告参与进来，批判性地评估其中的消费者行为元素，有时还会亲自做一些一手调研。",
-     "translations": {}
-    },
-    {
-     "id": "l127",
-     "end": 1051.572,
-     "text": "For example, last year my students spent a week looking at their own purchasing and analyzed it in detail from shopping to the relationship that they have with their retail banks and their mobile phone providers.",
-     "start": 1037.245,
-     "answers": [],
-     "keywords": [],
-     "translation": "比如，去年我的学生花了一周时间观察自己的消费，并从购物到与零售银行、手机运营商的关系进行了详细分析。",
-     "translations": {}
-    },
-    {
-     "id": "l128",
-     "end": 1059.663,
-     "text": "I think they found it very useful and it also helped them identify just what kind of budgets they had too.",
-     "start": 1051.572,
-     "answers": [],
-     "keywords": [],
-     "translation": "我觉得他们觉得这很有用，这也有助于他们弄清楚自己手头有多少预算。",
-     "translations": {}
-    },
-    {
-     "id": "l129",
-     "end": 1074.3724444444445,
-     "text": "The fact of the matter is that there's a whole range of interesting research out there and I think as the years go on, there's going to be much more for us to consider and certainly much more for students to become involved in.",
-     "start": 1059.663,
-     "answers": [],
-     "keywords": [],
-     "translation": "事实是，外面有许多有趣的研究，而且我认为随着时间的推移，将有更多课题值得我们去思考，当然也有更多课题值得学生去参与。",
-     "translations": {}
-    },
-    {
-     "id": "l130",
-     "end": 1078.44,
-     "text": "Question 16 to 18 are based on the recording",
-     "start": 1074.3724444444445,
-     "answers": [],
-     "keywords": [],
-     "translation": "问题 16 至 18 基于你刚听到的录音。",
-     "translations": {}
-    },
-    {
-     "id": "l131",
-     "end": 1101.691,
-     "text": "Q16. What is the speaker currently doing?",
-     "start": 1087.781,
-     "answers": [],
-     "keywords": [],
-     "translation": "Q16. 说话人目前在做什么？",
-     "translations": {}
-    },
-    {
-     "id": "l132",
-     "end": 1119.955,
-     "text": "Q17. What has the speaker found about young people's drinking?",
-     "start": 1101.691,
-     "answers": [],
-     "keywords": [],
-     "translation": "Q17. 关于年轻人的饮酒，说话人发现了什么？",
-     "translations": {}
-    },
-    {
-     "id": "l133",
-     "end": 1135.16,
-     "text": "Q18. What does the speaker say that his students did last year?",
-     "start": 1119.955,
-     "answers": [],
-     "keywords": [],
-     "translation": "Q18. 说话人说他的学生去年做了什么？",
-     "translations": {}
-    },
-    {
-     "id": "l134",
-     "end": 1136.237,
-     "text": "RECORDING 2",
-     "start": 1135.16,
-     "answers": [],
-     "keywords": [],
-     "translation": "RECORDING 2",
-     "translations": {}
-    },
-    {
-     "id": "l135",
-     "end": 1144.656,
-     "text": "Sweden was the first European country to print and use paper money, but it may soon do away with physical currencies.",
-     "start": 1136.237,
-     "answers": [],
-     "keywords": [],
-     "translation": "瑞典是欧洲第一个印刷并使用纸币的国家，但它可能很快就会废除实体货币。",
-     "translations": {}
-    },
-    {
-     "id": "l136",
-     "end": 1156.271,
-     "text": "Banks can save a lot of money and avoid regulatory headaches by moving to a cash-free system, and they can also avoid bank robberies, theft, and dirty money.",
-     "start": 1144.656,
-     "answers": [],
-     "keywords": [],
-     "translation": "银行转向无现金系统可以节省大量资金、免去监管上的烦恼，还能避免银行抢劫、盗窃和赃款问题。",
-     "translations": {}
-    },
-    {
-     "id": "l137",
-     "end": 1165.202,
-     "text": "Claer Barrett, the editor of Financial Times Money, says the Western world is headed toward a world without physical currency.",
-     "start": 1156.271,
-     "answers": [],
-     "keywords": [],
-     "translation": "《金融时报》Money 栏目主编克莱尔·巴雷特说，西方世界正走向一个没有实体货币的世界。",
-     "translations": {}
-    },
-    {
-     "id": "l138",
-     "end": 1173.936,
-     "text": "\"Andy Holder - the chief economist at The Bank of England - suggested that the UK move towards a government-backed digital currency.",
-     "start": 1165.202,
-     "answers": [],
-     "keywords": [],
-     "translation": "“英格兰银行首席经济学家安迪·霍尔德曾建议英国转向政府支持的数字货币。",
-     "translations": {}
-    },
-    {
-     "id": "l139",
-     "end": 1178.539,
-     "text": "But does a cashless society really make good economic sense?",
-     "start": 1173.936,
-     "answers": [],
-     "keywords": [],
-     "translation": "但无现金社会在经济上真的合理吗？",
-     "translations": {}
-    },
-    {
-     "id": "l140",
-     "end": 1191.404,
-     "text": "\"The fact that cash is being drawn out of society, is less a feature of our everyday lives, and the ease of electronic payments - is this actually making us spend more money without realizing it?\"",
-     "start": 1178.539,
-     "answers": [],
-     "keywords": [],
-     "translation": "“现金正从社会中淡出、在日常生活中越来越少见，再加上电子支付如此便捷——这是否实际上正在让我们在不知不觉中花更多的钱？”",
-     "translations": {}
-    },
-    {
-     "id": "l141",
-     "end": 1203.721,
-     "text": "Barrett wanted to find out if the absence of physical currency does indeed cause a person to spend more, so she decided to conduct an experiment a few months ago.",
-     "start": 1191.404,
-     "answers": [],
-     "keywords": [],
-     "translation": "巴雷特想弄清楚，没有实体货币是否真的会让人花更多的钱，所以几个月前她决定做一个实验。",
-     "translations": {}
-    },
-    {
-     "id": "l142",
-     "end": 1214.477,
-     "text": "She decided that she was going to try to just use cash for two weeks to make all of her essential purchases and see what that would do to her spending.",
-     "start": 1203.721,
-     "answers": [],
-     "keywords": [],
-     "translation": "她决定试着在两周内只用现金支付所有必要开销，看看这对她的花销会有什么影响。",
-     "translations": {}
-    },
-    {
-     "id": "l143",
-     "end": 1226.302,
-     "text": "She found she did spend a lot less money because it is incredibly hard to predict how much cash one is going to need - she was forever drawing money out of cash points.",
-     "start": 1214.477,
-     "answers": [],
-     "keywords": [],
-     "translation": "她发现自己确实少花了很多钱，因为很难预测自己到底需要多少现金——她总是不停地在取款机上取钱。",
-     "translations": {}
-    },
-    {
-     "id": "l144",
-     "end": 1234.305,
-     "text": "Months later, she was still finding cash stuffed in her trouser pockets and the pockets of her handbags.",
-     "start": 1226.302,
-     "answers": [],
-     "keywords": [],
-     "translation": "几个月后，她还在裤兜和手提包里发现塞着的现金。",
-     "translations": {}
-    },
-    {
-     "id": "l145",
-     "end": 1238.281,
-     "text": "During the experiment, Barrett took a train ride.",
-     "start": 1234.305,
-     "answers": [],
-     "keywords": [],
-     "translation": "实验期间，巴雷特坐了一次火车。",
-     "translations": {}
-    },
-    {
-     "id": "l146",
-     "end": 1244.33,
-     "text": "On the way, there was an announcement that the restaurant car was not currently accepting credit cards.",
-     "start": 1238.281,
-     "answers": [],
-     "keywords": [],
-     "translation": "途中广播通知说，餐车暂时不接受信用卡。",
-     "translations": {}
-    },
-    {
-     "id": "l147",
-     "end": 1250.916,
-     "text": "The train cars were filled with groans because many of the passengers were traveling without cash.",
-     "start": 1244.33,
-     "answers": [],
-     "keywords": [],
-     "translation": "车厢里一片哀叹，因为很多乘客出门没带现金。",
-     "translations": {}
-    },
-    {
-     "id": "l148",
-     "end": 1256.981,
-     "text": "\"It underlines just how much things have changed in the last generation,\" Barrett says.",
-     "start": 1250.916,
-     "answers": [],
-     "keywords": [],
-     "translation": "“这恰恰凸显了上一代人以来世事变化之大，”巴雷特说。",
-     "translations": {}
-    },
-    {
-     "id": "l149",
-     "end": 1273.088,
-     "text": "\"My parents, when they were younger, used to budget by putting money into envelopes - they'd get paid and they'd immediately separate the cash into piles and put them in envelopes, so they knew what they had to spend week by week.",
-     "start": 1256.981,
-     "answers": [],
-     "keywords": [],
-     "translation": "“我父母年轻时靠把钱装进信封来做预算——他们一发工资就立刻把现金分成几沓放进信封，这样他们清楚每周能花多少钱。",
-     "translations": {}
-    },
-    {
-     "id": "l150",
-     "end": 1278.034,
-     "text": "It was a very effective way for them to keep track of their spending.",
-     "start": 1273.088,
-     "answers": [],
-     "keywords": [],
-     "translation": "对他们来说，这是掌握开支情况非常有效的方法。",
-     "translations": {}
-    },
-    {
-     "id": "l151",
-     "end": 1310.46,
-     "text": "Nowadays, we're all on credit cards, we're doing online purchases, and money is kind of becoming a less physical and more imaginary type of thing that we can't get our hands around.\"",
-     "start": 1278.034,
-     "answers": [],
-     "keywords": [],
-     "translation": "如今我们都用信用卡、都在网上购物，钱正变得不那么实体、越发虚幻，让我们摸不着了。”",
-     "translations": {}
-    },
-    {
-     "id": "l152",
-     "end": 1315.529,
-     "text": "Q19. What do we learn about Sweden?",
-     "start": 1315.029,
-     "answers": [],
-     "keywords": [],
-     "translation": "Q19. 关于瑞典，我们了解到什么？",
-     "translations": {}
-    },
-    {
-     "id": "l153",
-     "end": 1337.993,
-     "text": "Q20. What did Claer Barrett want to find out with her experiment?",
-     "start": 1315.529,
-     "answers": [],
-     "keywords": [],
-     "translation": "Q20. 克莱尔·巴雷特想通过实验弄清楚什么？",
-     "translations": {}
-    },
-    {
-     "id": "l154",
-     "end": 1355.867,
-     "text": "Q21. What did Claer Barrett find on her train ride?",
-     "start": 1337.993,
-     "answers": [],
-     "keywords": [],
-     "translation": "Q21. 克莱尔·巴雷特坐火车时发现了什么？",
-     "translations": {}
-    },
-    {
-     "id": "l155",
-     "end": 1372.4,
-     "text": "Q22. How did people of the last generation budget their spending?",
-     "start": 1355.867,
-     "answers": [],
-     "keywords": [],
-     "translation": "Q22. 上一代人如何为开支做预算？",
-     "translations": {}
-    },
-    {
-     "id": "l156",
-     "end": 1373.346,
-     "text": "RECORDING 3",
-     "start": 1372.4,
-     "answers": [],
-     "keywords": [],
-     "translation": "RECORDING 3",
-     "translations": {}
-    },
-    {
-     "id": "l157",
-     "end": 1379.12,
-     "text": "Why should you consider taking a course in demography in college?",
-     "start": 1373.346,
-     "answers": [],
-     "keywords": [],
-     "translation": "为什么你在大学里应该考虑修一门人口学课程？",
-     "translations": {}
-    },
-    {
-     "id": "l158",
-     "end": 1384.386,
-     "text": "You'll be growing up in a generation where the baby boomers are going into retirement and dying.",
-     "start": 1379.12,
-     "answers": [],
-     "keywords": [],
-     "translation": "你成长的这个时代，婴儿潮一代正在退休、离世。",
-     "translations": {}
-    },
-    {
-     "id": "l159",
-     "end": 1389.976,
-     "text": "You will face the problems in the aging of the population that have never been faced before.",
-     "start": 1384.386,
-     "answers": [],
-     "keywords": [],
-     "translation": "你将面临人口老龄化带来的前所未有的问题。",
-     "translations": {}
-    },
-    {
-     "id": "l160",
-     "end": 1396.978,
-     "text": "You will hear more and more about migration between countries and between rural areas and cities.",
-     "start": 1389.976,
-     "answers": [],
-     "keywords": [],
-     "translation": "你会越来越多地听到关于国家之间以及城乡之间人口迁移的话题。",
-     "translations": {}
-    },
-    {
-     "id": "l161",
-     "end": 1405.117,
-     "text": "You need to understand as a citizen and as a tax payer and as a voter what's really behind the arguments.",
-     "start": 1396.978,
-     "answers": [],
-     "keywords": [],
-     "translation": "作为公民、纳税人和选民，你需要理解这些争论背后真正的因素。",
-     "translations": {}
-    },
-    {
-     "id": "l162",
-     "end": 1410.617,
-     "text": "I want to tell you about the past, present and future of the human population.",
-     "start": 1405.117,
-     "answers": [],
-     "keywords": [],
-     "translation": "我想跟你们讲讲人类人口的过去、现在和未来。",
-     "translations": {}
-    },
-    {
-     "id": "l163",
-     "end": 1413.385,
-     "text": "So let's start with a few problems.",
-     "start": 1410.617,
-     "answers": [],
-     "keywords": [],
-     "translation": "先从几个问题说起。",
-     "translations": {}
-    },
-    {
-     "id": "l164",
-     "end": 1417.194,
-     "text": "Right now, a billion people are chronically hungry.",
-     "start": 1413.385,
-     "answers": [],
-     "keywords": [],
-     "translation": "眼下，有 10 亿人长期处于饥饿状态。",
-     "translations": {}
-    },
-    {
-     "id": "l165",
-     "end": 1422.746,
-     "text": "That means they wake up hungry, they are hungry all day, and they go to sleep hungry.",
-     "start": 1417.194,
-     "answers": [],
-     "keywords": [],
-     "translation": "这意味着他们饿着醒来，饿了一整天，又饿着入睡。",
-     "translations": {}
-    },
-    {
-     "id": "l166",
-     "end": 1429.38,
-     "text": "A billion people are living in slums, not the same billion people, but there is some overlap.",
-     "start": 1422.746,
-     "answers": [],
-     "keywords": [],
-     "translation": "有 10 亿人住在贫民窟——不是同一批 10 亿人，但有部分重叠。",
-     "translations": {}
-    },
-    {
-     "id": "l167",
-     "end": 1438.76,
-     "text": "Living in slums means they don't have infrastructure to take the garbage away, they don't have secure water supplies to drink.",
-     "start": 1429.38,
-     "answers": [],
-     "keywords": [],
-     "translation": "住在贫民窟意味着没有清运垃圾的基础设施，也没有安全的饮用水。",
-     "translations": {}
-    },
-    {
-     "id": "l168",
-     "end": 1441.884,
-     "text": "Nearly a billion people are illiterate.",
-     "start": 1438.76,
-     "answers": [],
-     "keywords": [],
-     "translation": "近 10 亿人是文盲。",
-     "translations": {}
-    },
-    {
-     "id": "l169",
-     "end": 1444.911,
-     "text": "Try to imagine your life being illiterate.",
-     "start": 1441.884,
-     "answers": [],
-     "keywords": [],
-     "translation": "试着想象一下你不识字的生活。",
-     "translations": {}
-    },
-    {
-     "id": "l170",
-     "end": 1451.137,
-     "text": "You can't read the labels on the bottles in the supermarket, if you can get to a supermarket.",
-     "start": 1444.911,
-     "answers": [],
-     "keywords": [],
-     "translation": "就算你能去超市，也看不懂瓶子上贴的标签。",
-     "translations": {}
-    },
-    {
-     "id": "l171",
-     "end": 1464.117,
-     "text": "Two-thirds of those people who are illiterate are women and about 200 to 215 million women don't have access to birth control they want, so that they can control their own fertility.",
-     "start": 1451.137,
-     "answers": [],
-     "keywords": [],
-     "translation": "文盲中有三分之二是女性，而且大约有 2 亿到 2.15 亿女性无法获得她们想要的节育措施，无法自主控制生育。",
-     "translations": {}
-    },
-    {
-     "id": "l172",
-     "end": 1467.611,
-     "text": "This is not only a problem in developing countries.",
-     "start": 1464.117,
-     "answers": [],
-     "keywords": [],
-     "translation": "这不仅是发展中国家的问题。",
-     "translations": {}
-    },
-    {
-     "id": "l173",
-     "end": 1471.49,
-     "text": "About half of all pregnancies globally are unintended.",
-     "start": 1467.611,
-     "answers": [],
-     "keywords": [],
-     "translation": "全球约一半的怀孕是计划外的。",
-     "translations": {}
-    },
-    {
-     "id": "l174",
-     "end": 1474.851,
-     "text": "So those are examples of population problems.",
-     "start": 1471.49,
-     "answers": [],
-     "keywords": [],
-     "translation": "这些就是人口问题的几个例子。",
-     "translations": {}
-    },
-    {
-     "id": "l175",
-     "end": 1480.314,
-     "text": "Demography gives you the tools to understand and to address these problems.",
-     "start": 1474.851,
-     "answers": [],
-     "keywords": [],
-     "translation": "人口学为你提供理解和应对这些问题的工具。",
-     "translations": {}
-    },
-    {
-     "id": "l176",
-     "end": 1495.866,
-     "text": "It's not only the study of human population, but the populations of non-human species, including viruses like influenza, the bacteria in your gut, plants that you eat, animals that you enjoy or that provide you with meat.",
-     "start": 1480.314,
-     "answers": [],
-     "keywords": [],
-     "translation": "它不仅研究人类人口，还研究非人物种的种群，包括流感之类的病毒、你肠道里的细菌、你吃的植物，以及你喜爱的或为你提供肉食的动物。",
-     "translations": {}
-    },
-    {
-     "id": "l177",
-     "end": 1505.082,
-     "text": "Demography also includes the study of non-living objects like light bulbs and taxi cabs, and buildings because these are also populations.",
-     "start": 1495.866,
-     "answers": [],
-     "keywords": [],
-     "translation": "人口学还包括研究灯泡、出租车和楼房等非生命物体，因为它们同样构成种群。",
-     "translations": {}
-    },
-    {
-     "id": "l178",
-     "end": 1515.625,
-     "text": "It studies these populations, in the past, present and future, using quantitative data and mathematical models as tools of analysis.",
-     "start": 1505.082,
-     "answers": [],
-     "keywords": [],
-     "translation": "它以定量数据和数学模型为分析工具，研究这些种群的过去、现在和未来。",
-     "translations": {}
-    },
-    {
-     "id": "l179",
-     "end": 1520.226,
-     "text": "I see demography as a central subject related to economics.",
-     "start": 1515.625,
-     "answers": [],
-     "keywords": [],
-     "translation": "我把人口学视为一门与经济学密切相关的核心学科。",
-     "translations": {}
-    },
-    {
-     "id": "l180",
-     "end": 1537.08,
-     "text": "It is the means to intervene more wisely, and more effectively in the real world, to improve the wellbeing, not only of yourself – important as that may be – but of people around you and of other species with whom we share the planet.",
-     "start": 1520.226,
-     "answers": [],
-     "keywords": [],
-     "translation": "它是更明智、更有效地干预现实世界的手段，不仅改善你自己的福祉——尽管这也很重要——也改善你身边的人以及与我们共享这个星球的其他物种的福祉。",
-     "translations": {}
-    },
-    {
-     "id": "l181",
-     "end": 1544.04,
-     "text": "Question 23 to 25 are based on the recording you have just heard.",
-     "start": 1537.08,
-     "answers": [],
-     "keywords": [],
-     "translation": "问题 23 至 25 基于你刚听到的录音。",
-     "translations": {}
-    },
-    {
-     "id": "l182",
-     "end": 1568.525,
-     "text": "Q23. What is one of the problems the speaker mentions in his talk?",
-     "start": 1547.498,
-     "answers": [],
-     "keywords": [],
-     "translation": "Q23. 说话人在讲话中提到的问题之一是什么？",
-     "translations": {}
-    },
-    {
-     "id": "l183",
-     "end": 1587.44,
-     "text": "Q24. What does the speaker say about pregnancies?",
-     "start": 1568.525,
-     "answers": [],
-     "keywords": [],
-     "translation": "Q24. 关于怀孕，说话人说了什么？",
-     "translations": {}
-    },
-    {
-     "id": "l184",
-     "end": 1595.817,
-     "text": "Q25. How does the speaker view the study of demography?",
-     "start": 1587.44,
-     "answers": [],
-     "keywords": [],
-     "translation": "Q25. 说话人如何看待人口学研究？",
-     "translations": {}
+     "start": 594,
+     "end": 614.8,
+     "text": "Q9. What can be found in the valley of the kings?"
+    },
+    {
+     "start": 614.84,
+     "end": 615.84,
+     "text": "Question 10. In what way is the Amazon different from other big rivers?",
+     "id": "l35"
+    },
+    {
+     "start": 630,
+     "end": 631,
+     "text": "Question 11. What does the speaker say about the Amazon?",
+     "id": "l36"
+    },
+    {
+     "start": 649.76,
+     "end": 651.26,
+     "text": "Passage 2",
+     "id": "l37"
+    },
+    {
+     "start": 651.26,
+     "end": 667.28,
+     "text": "It's an inevitable truth that all of us live a life in the fast lane, even though we know that being busy is not always particularly healthy. Growing up in New Zealand, everything was always calm and slow. People enjoyed the tranquility of a slower pace of life.",
+     "id": "l38"
+    },
+    {
+     "start": 675.68,
+     "end": 691,
+     "text": "But after I moved to Tokyo and lived there for a number of years, I got used to having a pile of to-do lists, and my calendar always looked like a mess with loads of things to do written across it. I found myself filling my time up with endless work meetings and social events, rushing along as busy as a bee.",
+     "id": "l39"
+    },
+    {
+     "start": 698.8,
+     "end": 714.84,
+     "text": "Then, one day, I came across a book called \"In Praise of Slowness\", and realised that being busy is not only detrimental, but also has the danger of turning life into an endless race. So, I started practising the various practical steps mentioned by the author in the book, and began to revolt against the very idea of being too busy.",
+     "id": "l40"
+    },
+    {
+     "start": 725.88,
+     "end": 741.84,
+     "text": "It doesn't mean that my to-do lists no longer exist, but I've become more aware of the importance of slowing down, and making sure that I enjoy the daily activities as I carry them out. From now on, when someone asks you how your life is, try responding with words like \"exciting\" and \"fun\" instead of the cultural norm that says \"busy\". See if you experience the tranquility that follows.",
+     "id": "l41"
+    },
+    {
+     "start": 758.52,
+     "end": 759.52,
+     "text": "Questions 12 to 15 are based on the passage you have just heard.",
+     "id": "l42"
+    },
+    {
+     "start": 764.2,
+     "end": 765.2,
+     "text": "Question 12. What does the speaker think is an inevitable truth?",
+     "id": "l43"
+    },
+    {
+     "start": 781.56,
+     "end": 782.56,
+     "text": "Question 13. What does the speaker say about her life in Tokyo?",
+     "id": "l44"
+    },
+    {
+     "start": 799.16,
+     "end": 800.16,
+     "text": "Question 14. What made the speaker change her lifestyle?",
+     "id": "l45"
+    },
+    {
+     "start": 815.88,
+     "end": 816.88,
+     "text": "Question 15. What happened after the speaker changed her lifestyle?",
+     "id": "l46"
+    },
+    {
+     "start": 833.08,
+     "end": 834.58,
+     "text": "Section C",
+     "id": "l47"
+    },
+    {
+     "start": 834.58,
+     "end": 848.48,
+     "text": "After you hear a question, you must choose the best answer from the four choices, marked A, B, C and D. Then, mark the corresponding letter on answer sheet one with a single line through the centre.",
+     "id": "l48"
+    },
+    {
+     "start": 863.08,
+     "end": 864.58,
+     "text": "Recording 1",
+     "id": "l49"
+    },
+    {
+     "start": 864.58,
+     "end": 882.24,
+     "text": "But a number of scientists question the assumption that the presence of alien species can never be acceptable in a natural ecosystem.",
+     "id": "l50"
+    },
+    {
+     "start": 890.44,
+     "end": 911.52,
+     "text": "They say that portraying introduced species as inherently bad is an unscientific approach. Distinctions between exotic and native species are artificial, said Dr. Michael Rosensweig, a professor of evolutionary biology at the University of Arizona. Because they depend on picking a date and calling the plants and animals that show up after that date, exotic.",
+     "id": "l51"
+    },
+    {
+     "start": 917.72,
+     "end": 934.48,
+     "text": "Ecosystems free of species defined as exotic are, by default, considered the most natural. \"You can't roll back the clock and remove all exotics or fix habitats,\" Dr. Rosensweig said. \"Both native and exotic species can become invasive, and so they all have to be monitored and controlled when they begin to get out of hand.\"",
+     "id": "l52"
+    },
+    {
+     "start": 943.64,
+     "end": 964.08,
+     "text": "At its core, the debate is about how to manage the world's remaining natural ecosystems and about how and how much to restore other habitats. Species that invade a territory can harm ecosystems, agriculture, and human health. They can threaten some native species or even destroy and replace others.",
+     "id": "l53"
+    },
+    {
+     "start": 968.76,
+     "end": 991.52,
+     "text": "Next to habitat loss, these invasive species represent the greatest threat to biodiversity worldwide, many ecologists say. Ecologists generally define an alien species as one that people accidentally or deliberately carried to its new location. Across the American continents, exotic species are those introduced after the first European contact.",
+     "id": "l54"
+    },
+    {
+     "start": 998.84,
+     "end": 1018.24,
+     "text": "That date, rounded off to 1500 AD, represents what ecologists consider to have been a major shift in the spread of species, including crops and livestock, as they began to migrate with humans from continent to continent. \"Only a small percentage of alien species cause problems in their new habitats,\" said Don Smith, Professor of Ecology and Evolutionary Biology at the University of Tennessee.",
+     "id": "l55"
+    },
+    {
+     "start": 1030.84,
+     "end": 1052,
+     "text": "Of the 7,000 alien species in the United States, out of a total of 150,000 species, only about 10% are invasive, he pointed out. The other 90% have fit into their environments and are considered naturalized. Yet appearances can deceive ecologists' caution, and many of these exotics may be considered acceptable only because no one has documented their harmful effects.",
+     "id": "l56"
+    },
+    {
+     "start": 1063.4,
+     "end": 1064.4,
+     "text": "What is more, non-native species can appear harmless for decades, then turn invasive.",
+     "id": "l57"
+    },
+    {
+     "start": 1071.64,
+     "end": 1072.64,
+     "text": "Questions 16 to 18 are based on the recording you have just heard.",
+     "id": "l58"
+    },
+    {
+     "start": 1076.68,
+     "end": 1077.68,
+     "text": "Questions 16. What assumption about introduced species is challenged by a number of scientists?",
+     "id": "l59"
+    },
+    {
+     "start": 1096.2,
+     "end": 1097.2,
+     "text": "Questions 17. What does Dr. Michael Rosensveeg think of exotic and native species?",
+     "id": "l60"
+    },
+    {
+     "start": 1115.24,
+     "end": 1116.24,
+     "text": "Question 18. What does Professor Don Smith say about alien species?",
+     "id": "l61"
+    },
+    {
+     "start": 1126.44,
+     "end": 1127.44,
+     "text": "Questions 19. What does Dr. Michael Rosensveeg think of exotic and native species?",
+     "id": "l62"
+    },
+    {
+     "start": 1133.88,
+     "end": 1135.38,
+     "text": "Recording 2",
+     "id": "l63"
+    },
+    {
+     "start": 1135.38,
+     "end": 1156.4,
+     "text": "Today, we are going to look at intercultural awareness, that is, the fact that not everyone is British, not everyone speaks English, and not everyone does business in a British way.",
+     "id": "l64"
+    },
+    {
+     "start": 1159,
+     "end": 1182,
+     "text": "And why should they? If overseas business people are selling to us, then they will make every effort to speak English and to respect our traditions and methods. It is only polite for us to do the same when we visit them. It is not only polite, it is essential if we want to sell British products overseas. First, a short quiz. Let's see how interculturally aware you are.",
+     "id": "l65"
+    },
+    {
+     "start": 1187.08,
+     "end": 1188.08,
+     "text": "Question 1. Where must you not drink alcohol on the first and seventh of every month?",
+     "id": "l66"
+    },
+    {
+     "start": 1194.04,
+     "end": 1195.04,
+     "text": "Question 2. Where should you never admire your host's possessions?",
+     "id": "l67"
+    },
+    {
+     "start": 1200,
+     "end": 1201,
+     "text": "Questions 3. How should you attract the waiter during a business lunch in Bangkok?",
+     "id": "l68"
+    },
+    {
+     "start": 1200.52,
+     "end": 1218,
+     "text": "Question three, how should you attract the waiter during the day? And question 4. Where should you try to make all your appointments either before 2 or after 5.30pm? Ok, everyone had a chance to make some notes? Right, here are the answers.",
+     "id": "l69"
+    },
+    {
+     "start": 1224,
+     "end": 1246,
+     "text": "Although I am sure that the information could equally well apply to countries other than those I have chosen. So, number 1. You must not drink alcohol on the 1st and 7th of the month in India. In international hotels, you may find it served, but if you are having a meal with an Indian colleague, remember to avoid asking for a beer if your arrival coincides with one of those dates.",
+     "id": "l70"
+    },
+    {
+     "start": 1252,
+     "end": 1275,
+     "text": "2. In Arab countries, the politeness and generosity of the people is without parallel. If you admire your colleagues' beautiful golden bowls, you may well find yourself being presented with them as a present. This is not a cheap way to do your shopping, however, as your host will, quite correctly, expect you to respond by presenting him with a gift of equal worth and beauty.",
+     "id": "l71"
+    },
+    {
+     "start": 1280,
+     "end": 1302,
+     "text": "3. In Thailand, clicking the fingers, clapping your hands, or just shouting 'waiter', will embarrass your hosts, fellow diners, the waiter himself and, most of all, you. Place your palm downward and make an inconspicuous waving gesture, which will produce instant and satisfying results.",
+     "id": "l72"
+    },
+    {
+     "start": 1305,
+     "end": 1313,
+     "text": "And finally, in Spain, some businesses maintain the pattern of working until about 2 o'clock and then returning to the office from 5.30 to 8.00-9.00 or 10.00 in the evening.",
+     "id": "l73"
+    },
+    {
+     "start": 1320,
+     "end": 1321,
+     "text": "Questions 19-21 are based on the recording you have just heard.",
+     "id": "l74"
+    },
+    {
+     "start": 1326,
+     "end": 1327,
+     "text": "Question 19- What should you do when doing business with foreigners?",
+     "id": "l75"
+    },
+    {
+     "start": 1343,
+     "end": 1344,
+     "text": "Question 20- What must you avoid doing with your Indian colleague?",
+     "id": "l76"
+    },
+    {
+     "start": 1360,
+     "end": 1361,
+     "text": "Question 21- What do we learn about some Spanish business people?",
+     "id": "l77"
+    },
+    {
+     "start": 1378,
+     "end": 1379.5,
+     "text": "Recording 3",
+     "id": "l78"
+    },
+    {
+     "start": 1379.5,
+     "end": 1394,
+     "text": "It was a symbolic act, indicating that under Groon's leadership, Readers Digest was going to be different.",
+     "id": "l79"
+    },
+    {
+     "start": 1401,
+     "end": 1424,
+     "text": "True to his word, Groon has shaken up the culture here. To get an idea of the culture we're talking about, consider the boardroom Groon opened up. It has artworks that any museum in the world would want to collect, paintings by many world-famous artists like Monet and Picasso. Its headquarters houses some 3,000 works of art.",
+     "id": "l80"
+    },
+    {
+     "start": 1428,
+     "end": 1445,
+     "text": "The main building is topped with a Georgian tower with four sculptures of the mythical winged horse, the magazine's corporate logo. It sits on 127 acres of well-trimmed lawns. The editor's office used to be occupied by founder DeWitt Wallace, who, along with his wife, Leela Acheson Wallace, launched Readers Digest in 1922 with condensed articles from other publications.",
+     "id": "l81"
+    },
+    {
+     "start": 1460,
+     "end": 1473,
+     "text": "It has become the world's most widely read magazine, selling 28 million copies each month in 17 languages and 41 different editions. The Wallises, both children of church ministers, had a clearly defined formula for their little magazine as Readers Digest was originally subtitled.",
+     "id": "l82"
+    },
+    {
+     "start": 1483,
+     "end": 1506,
+     "text": "Articles were to be short, readable, and uplifting. Subjects were picked to inspire or entertain. The Wallises didn't accept advertising in the U.S. edition until 1955, and even then they didn't allow any ads for cigarettes, liquor, or drugs. The Wallises also had a clear sense of the kind of workplace they wanted.",
+     "id": "l83"
+    },
+    {
+     "start": 1511,
+     "end": 1528,
+     "text": "It started as a mom-and-pop operation, and the childless Wallises always considered employees to be part of their family. Employees still tell stories of how the Wallises would take care of employees who had met with misfortunes, and they showered their employees with unusual benefits, like a turkey at Thanksgiving and Fridays off in May.",
+     "id": "l84"
+    },
+    {
+     "start": 1535,
+     "end": 1554,
+     "text": "This cozy workplace no longer exists here. The Wallises both died in their 90s in the early 1980s. George Grun, a former ad salesman who joined Readers Digest in 1960, has his eye focused on the bottom line. In a few short years, he turned the magazine on its head. He laid off several hundred workers.",
+     "id": "l85"
+    },
+    {
+     "start": 1560,
+     "end": 1561,
+     "text": "Especially hard hit were the blue and pink color departments, such as subscription fulfillment.",
+     "id": "l86"
+    },
+    {
+     "start": 1568,
+     "end": 1569,
+     "text": "Questions 22 to 25 are based on the recording you have just heard.",
+     "id": "l87"
+    },
+    {
+     "start": 1573,
+     "end": 1574,
+     "text": "Question 22. What did George Grun do in 1984?",
+     "id": "l88"
+    },
+    {
+     "start": 1591,
+     "end": 1592,
+     "text": "Question 23. How did the Wallises define the formula for Readers Digest?",
+     "id": "l89"
+    },
+    {
+     "start": 1610,
+     "end": 1611,
+     "text": "Question 24. What do we learn about the founder of Readers Digest, DeWitt Wallace?",
+     "id": "l90"
+    },
+    {
+     "start": 1629,
+     "end": 1649,
+     "text": "Question 25. What change took place in Readers Digest after the Wallises' death? This is the end of listening comprehension.",
+     "id": "l91"
     }
    ],
    "status": "published",

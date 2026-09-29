@@ -126,6 +126,19 @@ type InstructionMatch = {
    * 判断能否并入要看这个标记，而不是"标签是否为空"（标签可能是 'Directions'）。
    */
   mergeOnly?: boolean
+  /**
+   * 题干行（「Q19. What do we learn…」「Question 14. …」）：只向题组块贡献
+   * 题号（扩展标签），其字幕行**不消费**——题干是录音里真实播放的内容，
+   * 必须留在逐句学习池，否则点击题组锚点会整段跳过题目本身
+   * （用户实测：点 Q19–22 直接播了后面的内容，Q19 被跳过）。
+   */
+  stemOnly?: boolean
+  /**
+   * 区间公告（「Questions 22 to 25 are based on…」）：永远新起题组块。
+   * 相邻材料的区间公告若并入前块，会首尾相连链成巨块
+   * （重建后课程 13 实测 Q10–25 一块吞掉四段材料）。
+   */
+  rangeAnnounce?: boolean
 }
 
 const QUESTION_RANGE_PATTERN = new RegExp(
@@ -370,7 +383,7 @@ const matchInstruction = (rawText: string): InstructionMatch | null => {
     const last = enWordToNumber(enRangeMatch[2])
     if (first !== null && last !== null && last >= first) {
       const label = last > first ? `Q${first}–${last}` : `Q${first}`
-      return { kind: 'question-range', label, rank: 4 }
+      return { kind: 'question-range', label, rank: 4, rangeAnnounce: true }
     }
   }
 
@@ -378,7 +391,7 @@ const matchInstruction = (rawText: string): InstructionMatch | null => {
   if (enSingleMatch) {
     const number = enWordToNumber(enSingleMatch[1])
     if (number !== null) {
-      return { kind: 'question-range', label: `Q${number}`, rank: 3 }
+      return { kind: 'question-range', label: `Q${number}`, rank: 3, stemOnly: true }
     }
   }
 
@@ -388,7 +401,7 @@ const matchInstruction = (rawText: string): InstructionMatch | null => {
     const last = parseCjkOrdinal(rangeMatch[2])
     if (first !== null && last !== null && last >= first) {
       const label = last > first ? `第${first}–${last}题` : `第${first}题`
-      return { kind: 'question-range', label, rank: 4 }
+      return { kind: 'question-range', label, rank: 4, rangeAnnounce: true }
     }
   }
 
@@ -445,7 +458,7 @@ const matchInstruction = (rawText: string): InstructionMatch | null => {
   if (qLabelMatch) {
     const number = Number.parseInt(qLabelMatch[1], 10)
     if (Number.isInteger(number) && number > 0) {
-      return { kind: 'question-range', label: `Q${number}`, rank: 3 }
+      return { kind: 'question-range', label: `Q${number}`, rank: 3, stemOnly: true }
     }
   }
 
@@ -539,10 +552,39 @@ export const extractDialogueAnchors = (
   const drafts: Draft[] = []
   // 只有上一条字幕行也属于指令块时才允许合并；中间夹了正文就另起新锚点。
   let previousLineWasInstruction = false
+  // 上一条指令行是否为题干行：连续题干（Q19. Q20. Q21.）要链进同一个题组块
+  let previousLineWasStem = false
   for (const line of sorted) {
     const match = matchInstruction(line.text)
     if (!match) {
       previousLineWasInstruction = false
+      previousLineWasStem = false
+      continue
+    }
+
+    // ── 题干行（stemOnly）：只向题组块扩展题号标签，其字幕行不消费 ──
+    // 题干是录音里真实播放的内容，必须留在逐句学习池；若被消费，
+    // 点击题组锚点会整段跳过题目本身（用户实测 Q19 被跳过）。
+    if (match.stemOnly) {
+      const prev = drafts[drafts.length - 1]
+      const canBridge = prev !== undefined && line.start - prev.lastLine.end <= 30
+      if (prev && prev.kind === 'question-range' && (previousLineWasStem || previousLineWasInstruction || canBridge)) {
+        const extended = extendQuestionRangeLabel(prev.label, match.label)
+        if (extended) prev.label = extended
+        prev.lastLine = line
+      } else {
+        // 无题组块可并（如正文例题）：新起空块，随后由回退剔除逻辑清理
+        drafts.push({
+          kind: match.kind,
+          label: match.label,
+          rank: match.rank,
+          start: line.start,
+          lastLine: line,
+          lineIds: [],
+        })
+      }
+      previousLineWasStem = true
+      previousLineWasInstruction = true
       continue
     }
 
@@ -550,7 +592,11 @@ export const extractDialogueAnchors = (
     // 题号播报（question-range）跟在内容段尾部，并入前块；
     // 内容段报头（Section/Conversation/Passage/Recording 等）永远新起锚点——
     // 否则「Conversation two」会被上一题的题号块吞掉，用户就跳不到正文了。
-    const startsNewBlock = match.kind !== 'question-range'
+    // 区间公告（「Questions 22 to 25 are based on…」，非 stemOnly）也永远新起块：
+    // 每条区间公告开启自己的题组；否则相邻材料的区间公告会首尾相连
+    // 链成一个巨块（重建后课程 13 实测 Q10–25）。
+    const startsNewBlock =
+      match.kind !== 'question-range' || match.rangeAnnounce === true
     // 无标签的「仅合并候选」（说明段续行、阅读小题提示）还要能跨过 ASR 的换行碎片：
     // 音频里这段被切成 "section you will hear…"、"the centre."、"played only once…"
     // 这类片段，中间夹一条认不出来的碎片就会把 previousLineWasInstruction 打断，
@@ -587,6 +633,7 @@ export const extractDialogueAnchors = (
         lineIds: [line.id],
       })
     }
+    previousLineWasStem = false
     previousLineWasInstruction = true
   }
 
@@ -707,7 +754,12 @@ export const extractDialogueAnchors = (
 
     if (prev && prevRange) {
       const overlaps = range.first <= prevRange.last && prevRange.first <= range.last
-      const contiguous = range.first === prevRange.last + 1 || range.last + 1 === prevRange.first
+      // 时间相邻性：真被拆散的题干块之间只隔数十秒（题间朗读停顿）；
+      // 跨材料的题组块之间隔着几分钟正文，绝不合并。
+      const timeAdjacent = anchor.start - prev.end <= 30
+      const contiguous =
+        timeAdjacent &&
+        (range.first === prevRange.last + 1 || range.last + 1 === prevRange.first)
       if (overlaps || contiguous) {
         const first = Math.min(prevRange.first, range.first)
         const last = Math.max(prevRange.last, range.last)
