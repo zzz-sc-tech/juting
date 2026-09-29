@@ -177,11 +177,16 @@ const TEXT_HEAD_PATTERN =
 const LONG_SECTION_HEAD_PATTERN =
   /^\s*section\s+([a-d])\b[^.!?]{0,40}?(?:directions\b|in this section\b)/i
 
+/** 英文题号词：支持复合数词。老版本词表只到 twenty，"twenty-three" 里的
+ *  连字符会被当成区间分隔符，23 被误解析成 20（2017年6月第2套的
+ *  「Questions twenty-three to twenty-five」实测把题组块错扩成 Q20–25）。 */
+const EN_NUM_WORD = String.raw`(?:one|two|three|four|five|six|seven|eight|nine|ten|eleven|twelve|thirteen|fourteen|fifteen|sixteen|seventeen|eighteen|nineteen|twenty(?:[-\u2013\s]?(?:one|two|three|four|five|six|seven|eight|nine))?|[0-9]+)`
+
 /** 英文真题题干指令：「Questions one to four are based on ...」（六级原音频的官方播报形式）。 */
 const EN_QUESTIONS_RANGE_PATTERN =
-  /^[\s\-\u2013\u2014>*•]*questions?\s+(one|two|three|four|five|six|seven|eight|nine|ten|eleven|twelve|thirteen|fourteen|fifteen|sixteen|seventeen|eighteen|nineteen|twenty|[0-9]+)\s*(?:to|through|–|—|-)\s*(one|two|three|four|five|six|seven|eight|nine|ten|eleven|twelve|thirteen|fourteen|fifteen|sixteen|seventeen|eighteen|nineteen|twenty|[0-9]+)\b/i
+  new RegExp(`^[\\s\\-\\u2013\\u2014>*•]*questions?\\s+(${EN_NUM_WORD})\\s*(?:to|through|–|—|-)\\s*(${EN_NUM_WORD})\\b`, 'i')
 const EN_SINGLE_QUESTION_PATTERN =
-  /^[\s\-\u2013\u2014>*•]*questions?\s+(one|two|three|four|five|six|seven|eight|nine|ten|eleven|twelve|thirteen|fourteen|fifteen|sixteen|seventeen|eighteen|nineteen|twenty|[0-9]+)\b/i
+  new RegExp(`^[\\s\\-\\u2013\\u2014>*•]*questions?\\s+(${EN_NUM_WORD})\\b`, 'i')
 
 /** 原文 md 的题干写法：「Q1. What is the …」/「Q12: …」/「Q3。…」。 */
 const EN_Q_LABEL_PATTERN = /^[\s\-\u2013\u2014>*•]*q\s*([0-9]{1,2})\s*[.。:：,，)]\s*\S/i
@@ -214,7 +219,13 @@ const EN_DIRECTIONS_LINE_PATTERN = new RegExp(
 )
 
 const enWordToNumber = (raw: string): number | null => {
-  const value = raw.toLowerCase()
+  const value = raw.toLowerCase().replace(/[\u2013\u2014]/g, '-')
+  // 复合数词：twenty-one … twenty-nine（ nineteen 已在单词表，无需复合）
+  const compound = value.match(/^twenty[-\s]?(one|two|three|four|five|six|seven|eight|nine)$/)
+  if (compound) {
+    const ones = ENGLISH_WORD_NUMBERS[compound[1]]
+    return ones !== undefined ? 20 + ones : null
+  }
   if (ENGLISH_WORD_NUMBERS[value] !== undefined) {
     return ENGLISH_WORD_NUMBERS[value]
   }
@@ -301,24 +312,23 @@ const extendQuestionRangeLabel = (
   if (!previous) {
     return null
   }
-  const incoming = incomingLabel.match(/^Q(\d{1,2})$/) ?? incomingLabel.match(/^第(\d{1,2})题$/)
+  // incoming 可以是单题（Q19/第19题）也可以是区间（Q23–25/第23–25题）——
+  // 「Questions twenty-three to twenty-five」现在能正确解析成区间了，
+  // 它与前面题干扩出的 Q23–24 应当并成 Q23–25 而不是被拒之门外。
+  const incoming = parseQuestionRangeLabel(incomingLabel)
   if (!incoming) {
     return null
   }
-  const number = Number.parseInt(incoming[1], 10)
-  if (!Number.isInteger(number) || number < 1 || number > 99) {
-    return null
-  }
-  // 区间内的重复题干（题组播报后跟 Qn.）：吸收进块，标签不动
-  if (number >= previous.first && number <= previous.last) {
+  const first = Math.min(previous.first, incoming.first)
+  const last = Math.max(previous.last, incoming.last)
+  // 完全落在已有区间内：吸收进块，标签不动
+  if (first === previous.first && last === previous.last) {
     return previousLabel
   }
-  const first = Math.min(previous.first, number)
-  const last = Math.max(previous.last, number)
   if (first === last) {
     return previousLabel
   }
-  return previous.cjk ? `第${first}–${last}题` : `Q${first}–${last}`
+  return previous.cjk || incoming.cjk ? `第${first}–${last}题` : `Q${first}–${last}`
 }
 
 /** 判断单行字幕是否为指令行，命中则返回分类与标签候选。 */
@@ -487,10 +497,11 @@ export const extractDialogueAnchors = (
   // 15 are based on ...」）：按最后一个句界拆开，题干部分按文本长度近似起点，
   // 否则该题组锚点会整体丢失。
   const expanded: AnchorSourceLine[] = []
+  const midLineStemRe = new RegExp(
+    `^(.+[.!?]["')]?\\s+)((?:Questions?|questions?)\\s+${EN_NUM_WORD}[\\s\\S]*)$`,
+  )
   for (const line of sortByStart(lines)) {
-    const midMatch = line.text.match(
-      /^(.+[.!?]["')]?\s+)((?:Questions?|questions?)\s+(?:one|two|three|four|five|six|seven|eight|nine|ten|eleven|twelve|thirteen|fourteen|fifteen|sixteen|seventeen|eighteen|nineteen|twenty|[0-9]+)[\s\S]*)$/,
-    )
+    const midMatch = line.text.match(midLineStemRe)
     if (midMatch && midMatch[2].length >= 12) {
       const span = Math.max(0, line.end - line.start)
       const splitStart = line.start + span * (midMatch[1].length / line.text.length)
@@ -652,40 +663,74 @@ export const extractDialogueAnchors = (
     anchor.id = `da-${index + 1}`
   })
 
-  // 题号锚点的重叠合并：题干句链在内容行处断开后，会新起一个与前面区间
-  // 指令重叠的题号锚点（如「Q16–18」之后题干句又扩出同名块；#14/#24/#28 实测）。
-  // 保留先出现者（区间指令句在题组开头，点击跳转语义正确），后续重叠块的
-  // lineIds 并入它，标签取两者区间的并集（锚点覆盖完整性优先）。
+  // ── 题号锚点的顺序校验与合并 ──────────────────────────────
+  // 以「官方播报顺序」为唯一准绳逐个校验题号锚点（question-range）：
+  // 1) 与前一个题号块重叠 → 并入（题干句链断裂产出的重复块，#14/#28 实测）；
+  // 2) 与前一个题号块连续（next.first == prev.last + 1）且中间没有材料报头
+  //    （Recording/Passage/Conversation 等）→ 合并（#17 的 Q19–20 + Q21 → Q19–21；
+  //    材料报头在中间时绝不合并，那意味着进入了下一段材料）；
+  // 3) 题号回退（first ≤ 已覆盖最大题号）→ 整块剔除、字幕行回归逐句学习池。
+  //    这是正文里念到的例子问题（2018年6月第2套 Recording 2 的
+  //    「Question 1: Where must you not drink alcohol…」，实为礼仪讲座内容），
+  //    不是结构锚点，也不该被排除出学习句。
   const mergedRanges: DialogueAnchor[] = []
+  const isMaterialAnchor = (anchor: DialogueAnchor) =>
+    anchor.kind === 'dialogue' ||
+    anchor.kind === 'monologue' ||
+    anchor.kind === 'passage' ||
+    anchor.kind === 'section' ||
+    anchor.kind === 'text'
+  let coveredMax = 0
+  let lastQuestionIdx = -1
   for (const anchor of deduped) {
-    const previous = mergedRanges[mergedRanges.length - 1]
-    if (
-      anchor.kind === 'question-range' &&
-      previous?.kind === 'question-range'
-    ) {
-      const a = parseQuestionRangeLabel(previous.label)
-      const b = parseQuestionRangeLabel(anchor.label)
-      if (a && b && b.first <= a.last && a.first <= b.last) {
-        previous.lineIds = [...new Set([...previous.lineIds, ...anchor.lineIds])]
-          .sort(
-            (left, right) =>
-              (startById.get(left) ?? 0) - (startById.get(right) ?? 0),
-          )
-        previous.end = Math.max(previous.end, anchor.end)
-        const first = Math.min(a.first, b.first)
-        const last = Math.max(a.last, b.last)
-        previous.label =
+    const range = anchor.kind === 'question-range' ? parseQuestionRangeLabel(anchor.label) : null
+    if (!range) {
+      mergedRanges.push(anchor)
+      if (isMaterialAnchor(anchor)) {
+        // 材料报头切断题号连续性：下一段材料从新的题号区间开始
+        lastQuestionIdx = -1
+      }
+      continue
+    }
+
+    const prev = lastQuestionIdx >= 0 ? mergedRanges[lastQuestionIdx] : undefined
+    const prevRange =
+      prev && prev.kind === 'question-range' ? parseQuestionRangeLabel(prev.label) : null
+
+    // 回退：整块不带来任何新题号（last ≤ 已覆盖最大值）时剔除——那是正文里
+    // 念到的例子问题（2018年6月第2套 Recording 2 的 Question 1/2/3），不是
+    // 结构锚点。注意「Questions 22 to 25」这种重播公告（22 已被上一块覆盖、
+    // 但 25 是新的）必须保留，否则下一段材料的题组锚点会整块消失（#42 实测）。
+    if (range.last <= coveredMax) {
+      continue
+    }
+
+    if (prev && prevRange) {
+      const overlaps = range.first <= prevRange.last && prevRange.first <= range.last
+      const contiguous = range.first === prevRange.last + 1 || range.last + 1 === prevRange.first
+      if (overlaps || contiguous) {
+        const first = Math.min(prevRange.first, range.first)
+        const last = Math.max(prevRange.last, range.last)
+        prev.label =
           first === last
-            ? a.cjk || b.cjk
+            ? prevRange.cjk || range.cjk
               ? `第${first}题`
               : `Q${first}`
-            : a.cjk || b.cjk
+            : prevRange.cjk || range.cjk
               ? `第${first}–${last}题`
               : `Q${first}–${last}`
+        prev.lineIds = [...new Set([...prev.lineIds, ...anchor.lineIds])].sort(
+          (left, right) => (startById.get(left) ?? 0) - (startById.get(right) ?? 0),
+        )
+        prev.end = Math.max(prev.end, anchor.end)
+        coveredMax = Math.max(coveredMax, last)
         continue
       }
     }
+
     mergedRanges.push(anchor)
+    lastQuestionIdx = mergedRanges.length - 1
+    coveredMax = Math.max(coveredMax, range.last)
   }
 
   return mergedRanges.filter(
