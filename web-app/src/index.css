@@ -137,3 +137,42 @@ textarea {
   --wave-region: rgba(23, 21, 18, 0.07);
   --wave-region-active: rgba(23, 21, 18, 0.28);
 }
+
+/* ══════════════════════════════════════════════════════════════
+   主题 C「极简白」（minimal）：纯白 + 黑字 + 灰阶层次。
+   去掉边框、卡片、图标、装饰线；排版即界面。
+   ══════════════════════════════════════════════════════════════ */
+:root[data-theme='minimal'] {
+  --bg: #ffffff;
+  --bg-sunken: #f7f7f6;
+  --surface: #ffffff;
+  --line: #efefed;
+  --line-strong: #e4e4e1;
+
+  --accent: #18181b;
+  --accent-strong: #000000;
+  --accent-soft: #f4f4f5;
+  --accent-soft-2: #fafafa;
+  --accent-ink: #18181b;
+
+  --ink: #18181b;
+  --ink-2: #52525b;
+  --ink-3: #a1a1aa;
+  --ink-4: #d4d4d8;
+
+  --success: #18181b;
+  --success-soft: #f4f4f5;
+  --warning: #a16207;
+  --warning-soft: #faf7ee;
+  --danger: #b91c1c;
+  --danger-soft: #fef2f2;
+
+  --radius-lg: 8px;
+  --radius-md: 6px;
+  --radius-sm: 4px;
+
+  --focus-ring: 0 0 0 2px #ffffff, 0 0 0 4px #18181b;
+
+  --wave-region: rgba(24, 24, 27, 0.06);
+  --wave-region-active: rgba(24, 24, 27, 0.22);
+}
