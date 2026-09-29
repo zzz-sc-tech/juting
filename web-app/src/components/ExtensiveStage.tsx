@@ -1,7 +1,7 @@
 import { ChevronRight, Pause, Play } from 'lucide-react'
 import { memo, useEffect, useMemo, useRef, useState } from 'react'
 import type { RefObject } from 'react'
-import type { DialogueAnchor, ListeningExercise } from '@juting/shared'
+import type { ContentLocale, DialogueAnchor, ListeningExercise } from '@juting/shared'
 import { DialogueAnchorBar } from './DialogueAnchorBar'
 import { resolveApiUrl } from '../lib/apiClient'
 import { resolveLineTranslation } from '../lib/lineTranslation'
@@ -64,9 +64,6 @@ export function ExtensiveStage({
     }
     return current
   }, [exercise.lines, currentTime])
-  const activeTranslation = activeLine
-    ? resolveLineTranslation(activeLine, contentLocale)
-    : ''
 
   // 歌词式滚动字幕：当前句居中高亮，上下文句淡显可点（点击跳播到该句）。
   // 首帧定位用瞬时滚动，之后跟句用平滑滚动。
@@ -117,11 +114,12 @@ export function ExtensiveStage({
                   不再对 200+ 歌词按钮做 VDOM diff。 */}
               {captionsOn ? (
                 <ExtensiveLyrics
-                  activeTranslation={translationOn ? activeTranslation : ''}
                   activeId={activeLine?.id ?? ''}
+                  contentLocale={contentLocale}
                   lines={exercise.lines}
                   lyricsRef={lyricsRef}
                   onSeek={onSeek}
+                  translationsOn={translationOn}
                 />
               ) : (
                 <div aria-hidden="true" className="listen-visual-waves" />
@@ -201,13 +199,15 @@ export function ExtensiveStage({
 const ExtensiveLyrics = memo(function ExtensiveLyrics({
   lines,
   activeId,
-  activeTranslation,
+  contentLocale,
+  translationsOn,
   lyricsRef,
   onSeek,
 }: {
   lines: ListeningExercise['lines']
   activeId: string
-  activeTranslation: string
+  contentLocale: ContentLocale
+  translationsOn: boolean
   lyricsRef: RefObject<HTMLDivElement | null>
   onSeek: (time: number) => void
 }) {
@@ -215,6 +215,11 @@ const ExtensiveLyrics = memo(function ExtensiveLyrics({
     <div className="extensive-lyrics" ref={lyricsRef} aria-live="polite">
       {lines.map((line) => {
         const active = line.id === activeId
+        // 每行都挂译文（翻译开关统一控制）：开关一开一关整列都有反应，
+        // 不再只有当前句一行——用户曾反馈「翻译键像摆设」。
+        const translation = translationsOn
+          ? resolveLineTranslation(line, contentLocale)
+          : ''
         return (
           <button
             className={active ? 'extensive-lyric active' : 'extensive-lyric'}
@@ -224,8 +229,8 @@ const ExtensiveLyrics = memo(function ExtensiveLyrics({
             type="button"
           >
             <span className="extensive-lyric-text">{line.text}</span>
-            {active && activeTranslation && (
-              <span className="extensive-lyric-translation">{activeTranslation}</span>
+            {translation !== '' && (
+              <span className="extensive-lyric-translation">{translation}</span>
             )}
           </button>
         )

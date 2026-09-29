@@ -365,6 +365,12 @@
   color: var(--accent-ink);
 }
 
+/* 关态要一眼可辨：虚线框 + 灰字（曾有人点了「翻译」没察觉开关已翻转） */
+.subtitle-chip:not(.on) {
+  border-style: dashed;
+  color: var(--ink-4);
+}
+
 .subtitle-topline-right {
   align-items: center;
   display: inline-flex;

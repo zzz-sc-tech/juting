@@ -145,6 +145,13 @@
   text-align: center;
 }
 
+/* 空态独占整板时跨列并整体居中（不再缩在左列顶上） */
+.difficult-review-board:has(> .review-empty-card:only-child) {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
 .review-empty-card svg {
   color: var(--ink-4);
 }
