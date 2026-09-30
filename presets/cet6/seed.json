@@ -1,7 +1,7 @@
 {
  "preset": "cet6",
- "version": "20260930.w",
- "generatedAt": "2026-09-30T06:27:17.132Z",
+ "version": "20260930.12",
+ "generatedAt": "2026-09-30T14:02:30.897Z",
  "group": {
   "id": 8,
   "name": "英语六级真题",
@@ -198,19 +198,19 @@
     },
     {
      "id": "l23",
-     "start": 94.76,
+     "start": 94.2,
      "end": 96.2,
      "text": "The two least important factors"
     },
     {
      "id": "l24",
      "start": 96.48,
-     "end": 98.96,
+     "end": 98.87,
      "text": "Were having one's achievements recognized"
     },
     {
      "id": "l25",
-     "start": 99.68,
+     "start": 98.92,
      "end": 103.16,
      "text": "And, rather surprisingly, earning a competitive salary."
     },
@@ -366,7 +366,7 @@
     },
     {
      "id": "l51",
-     "start": 185.43,
+     "start": 184.03,
      "end": 188.79,
      "text": "Questions 1 to 4 are based on the conversation you have just heard."
     },
@@ -402,1215 +402,1215 @@
     },
     {
      "id": "l57",
-     "start": 271.68,
-     "end": 277.27,
-     "text": "Mr. DeKaiser, I am a great lover of your book, Moments Before the Flood. Can you tell us"
+     "start": 271.28,
+     "end": 280.84,
+     "text": "Mr. DeKaiser, I am a great lover of your book, Moments Before the Flood. Can you tell us how you first became interested in this subject matter?"
     },
     {
      "id": "l58",
-     "start": 277.32,
-     "end": 280.84,
-     "text": "That's how you first became interested in this subject matter?"
-    },
-    {
-     "id": "l59",
      "start": 281.32,
      "end": 287.36,
      "text": "In 2006, when the Concert Hall of the City of Bruges asked me to take some pictures for"
     },
     {
-     "id": "l60",
+     "id": "l59",
      "start": 287.48,
      "end": 293.49,
      "text": "A catalogue for a new concert season around the theme of water, I found myself working"
     },
     {
-     "id": "l61",
+     "id": "l60",
      "start": 293.49,
      "end": 295.25,
      "text": "Along the Belgian coastline."
     },
     {
-     "id": "l62",
+     "id": "l61",
      "start": 295.81,
      "end": 302.25,
      "text": "As there had been numerous alarming articles in the press about a climate catastrophe waiting"
     },
     {
-     "id": "l63",
+     "id": "l62",
      "start": 302.37,
      "end": 306.97,
      "text": "To happen, I started looking at the sea and the beach very differently."
     },
     {
-     "id": "l64",
+     "id": "l63",
      "start": 307.57,
      "end": 310.57,
      "text": "A place where I spent so many perfect days as a child."
     },
     {
-     "id": "l65",
+     "id": "l64",
      "start": 311.29,
      "end": 316.15,
      "text": "This fear of a looming danger became the subject of a large-scale photoreject."
     },
     {
-     "id": "l66",
+     "id": "l65",
      "start": 317.83,
      "end": 321.75,
      "text": "You wrote in the book, \"I don't want to photograph the disaster."
     },
     {
-     "id": "l67",
+     "id": "l66",
      "start": 322.67,
      "end": 325.63,
      "text": "I want to photograph the disaster waiting to happen."
     },
     {
-     "id": "l68",
+     "id": "l67",
      "start": 326.23,
      "end": 327.83,
      "text": "Can you talk a bit about that?\""
     },
     {
-     "id": "l69",
+     "id": "l68",
      "start": 328.51,
      "end": 334.71,
      "text": "It is clear now that it's a matter of time before the entire European coastline disappears"
     },
     {
-     "id": "l70",
+     "id": "l69",
      "start": 334.71,
      "end": 335.67,
      "text": "On the water."
     },
     {
-     "id": "l71",
+     "id": "l70",
      "start": 336.5,
      "end": 339.74,
      "text": "The same goes for numerous big cities around the world."
     },
     {
-     "id": "l72",
+     "id": "l71",
      "start": 340.42,
      "end": 347.33,
      "text": "My idea was to photograph this beautiful and very unique coastline, rich in history, before"
     },
     {
-     "id": "l73",
+     "id": "l72",
      "start": 347.38,
      "end": 348.22,
      "text": "It's too late."
     },
     {
-     "id": "l74",
+     "id": "l73",
      "start": 348.86,
      "end": 350.18,
      "text": "As a last witness."
     },
     {
-     "id": "l75",
+     "id": "l74",
      "start": 351.06,
      "end": 355.1,
      "text": "Can you talk a bit about how history plays a role in this project?"
     },
     {
-     "id": "l76",
+     "id": "l75",
      "start": 355.94,
      "end": 356.38,
      "text": "Sure."
     },
     {
-     "id": "l77",
+     "id": "l76",
      "start": 356.78,
      "end": 362.34,
      "text": "The project is also about the history of Europe looking at the sea, and wondering when the"
     },
     {
-     "id": "l78",
+     "id": "l77",
      "start": 362.46,
      "end": 363.94,
      "text": "Next enemy would appear."
     },
     {
-     "id": "l79",
+     "id": "l78",
      "start": 364.42,
      "end": 371.38,
      "text": "In the images, you see all kinds of possible defense constructions to hold back the Romans,"
     },
     {
-     "id": "l80",
+     "id": "l79",
      "start": 371.86,
      "end": 376.86,
      "text": "Germans, Vikings, and now, nature as enemy number one."
     },
     {
-     "id": "l81",
+     "id": "l80",
      "start": 377.71,
      "end": 384.18,
      "text": "For example, there is the image of the bridge into the sea, taken at the Normandy D-Day landing"
     },
     {
-     "id": "l82",
+     "id": "l81",
      "start": 384.23,
      "end": 384.59,
      "text": "Site."
     },
     {
-     "id": "l83",
+     "id": "l82",
      "start": 385.23,
      "end": 391.55,
      "text": "Also, Venice, the city eternally threatened by the sea, where every morning wooden pathways"
     },
     {
-     "id": "l84",
+     "id": "l83",
      "start": 391.59,
      "end": 395.23,
      "text": "Have to be set up to allow tourists to reach their hotels."
     },
     {
-     "id": "l85",
+     "id": "l84",
      "start": 395.99,
      "end": 399.91,
      "text": "Thank you, Mr. DeKaiser. It was a pleasure to have you with us today."
     },
     {
-     "id": "l86",
-     "start": 402.31,
+     "id": "l85",
+     "start": 401.03,
      "end": 405.47,
      "text": "Questions 5 to 8 are based on the conversation you have just heard."
     },
     {
-     "id": "l87",
+     "id": "l86",
      "start": 406.27,
      "end": 411.35,
      "text": "Question 5. What does the man say about the book Moments Before the Flood?"
     },
     {
-     "id": "l88",
+     "id": "l87",
      "start": 424.63,
      "end": 428.91,
      "text": "Question 6. When did the man get his idea for the work?"
     },
     {
-     "id": "l89",
+     "id": "l88",
      "start": 442.12,
      "end": 447.04,
      "text": "Question 7. What will happen when the climate catastrophe occurs?"
     },
     {
-     "id": "l90",
+     "id": "l89",
      "start": 460.38,
      "end": 463.74,
      "text": "Question 8. What does the man say about Venice?"
     },
     {
-     "id": "l91",
+     "id": "l90",
      "start": 477.21,
      "end": 477.73,
      "text": "Section B"
     },
     {
-     "id": "l92",
+     "id": "l91",
      "start": 479.97,
      "end": 482.69,
      "text": "In this section, you will hear two passages."
     },
     {
-     "id": "l93",
+     "id": "l92",
      "start": 483.25,
      "end": 489.05,
      "text": "At the end of each passage, you will hear three or four questions. Both the passage"
     },
     {
-     "id": "l94",
+     "id": "l93",
      "start": 489.45,
-     "end": 495.05,
+     "end": 494.92,
      "text": "And the questions will be spoken only once. After you hear a question, you must choose"
     },
     {
-     "id": "l95",
-     "start": 495.21,
-     "end": 498.4,
+     "id": "l94",
+     "start": 494.97,
+     "end": 502.5,
      "text": "The best answer from the four choices marked A, B, C, and D. Then mark the corresponding"
     },
     {
-     "id": "l96",
+     "id": "l95",
      "start": 502.84,
      "end": 507.52,
      "text": "Letter on answer sheet 1, with a single line through the center."
     },
     {
-     "id": "l97",
+     "id": "l96",
      "start": 509.32,
      "end": 509.84,
      "text": "Passage 1"
     },
     {
-     "id": "l98",
+     "id": "l97",
      "start": 510.96,
      "end": 517.03,
      "text": "When facing a new situation, some people tend to rehearse their defeat by spending too much"
     },
     {
-     "id": "l99",
+     "id": "l98",
      "start": 517.08,
      "end": 518.88,
      "text": "Time anticipating the worst."
     },
     {
-     "id": "l100",
+     "id": "l99",
      "start": 519.97,
      "end": 525.13,
      "text": "I remember talking with a young lawyer who was about to begin her first jury trial."
     },
     {
-     "id": "l101",
+     "id": "l100",
      "start": 525.45,
      "end": 526.81,
      "text": "She was very nervous."
     },
     {
-     "id": "l102",
+     "id": "l101",
      "start": 527.77,
      "end": 530.97,
      "text": "I asked what impression she wanted to make on the jury."
     },
     {
-     "id": "l103",
+     "id": "l102",
      "start": 531.89,
      "end": 538.24,
      "text": "Replied, \"I don't want to look too inexperienced. I don't want them to suspect. This is my"
     },
     {
-     "id": "l104",
+     "id": "l103",
      "start": 538.29,
      "end": 545.15,
      "text": "First trial.\" This lawyer had fallen victim to the \"Don'ts Syndrome\", a form of negative"
     },
     {
-     "id": "l105",
+     "id": "l104",
      "start": 545.19,
      "end": 550.95,
      "text": "Goal-setting. The Don'ts can be self-fulfilling because your mind responds to pictures."
     },
     {
-     "id": "l106",
+     "id": "l105",
      "start": 551.99,
      "end": 557.35,
      "text": "Research conducted at Stanford University shows a mental image fires the nervous system the"
     },
     {
-     "id": "l107",
+     "id": "l106",
      "start": 557.71,
      "end": 563.91,
      "text": "Same way as actually doing something. That means when a golfer tells himself, \"Don't"
     },
     {
-     "id": "l108",
+     "id": "l107",
      "start": 563.96,
      "end": 570.2,
      "text": "Hit the ball into the water.\" His mind sees the image of the ball flying into the water."
     },
     {
-     "id": "l109",
+     "id": "l108",
      "start": 570.76,
      "end": 576.79,
      "text": "So guess where the ball will go. Consequently, before going into any stressful"
     },
     {
-     "id": "l110",
+     "id": "l109",
      "start": 576.84,
      "end": 583.85,
      "text": "Situation, focus only on what you want to have happen. I asked the lawyer again how she wanted"
     },
     {
-     "id": "l111",
+     "id": "l110",
      "start": 584.05,
      "end": 589.21,
      "text": "To appear at her first trial, and this time she said, \"I want to look professional and"
     },
     {
-     "id": "l112",
+     "id": "l111",
      "start": 589.73,
      "end": 590.65,
      "text": "Self assured.\""
     },
     {
-     "id": "l113",
+     "id": "l112",
      "start": 591.73,
      "end": 595.89,
      "text": "I told her to create a picture of what \"self assured\" would look like."
     },
     {
-     "id": "l114",
+     "id": "l113",
      "start": 596.61,
      "end": 602.25,
      "text": "To her, it meant moving confidently around the courtroom, using convincing body language"
     },
     {
-     "id": "l115",
+     "id": "l114",
      "start": 603.05,
      "end": 605.12,
      "text": "And projecting her voice so it could be heard."
     },
     {
-     "id": "l116",
+     "id": "l115",
      "start": 605.17,
      "end": 611.69,
      "text": "Be heard from the judge's bench to the back door. She also imagined a skilful closing argument"
     },
     {
-     "id": "l117",
-     "start": 612.33,
+     "id": "l116",
+     "start": 611.81,
      "end": 618.73,
      "text": "And a winning trial. A few weeks after this positive dress rehearsal, the young lawyer did win."
     },
     {
-     "id": "l118",
+     "id": "l117",
      "start": 620.93,
      "end": 625.29,
      "text": "Questions 9 to 12 are based on the passage you have just heard."
     },
     {
-     "id": "l119",
+     "id": "l118",
      "start": 626.34,
      "end": 631.42,
      "text": "Question 9. What do some people do when they face a new situation?"
     },
     {
-     "id": "l120",
+     "id": "l119",
      "start": 644.87,
      "end": 650.19,
      "text": "Question 10. What does the research conducted at Stanford University show?"
     },
     {
-     "id": "l121",
+     "id": "l120",
      "start": 663.62,
      "end": 669.42,
      "text": "Question 11. What advice does a speaker give to people in a stressful situation?"
     },
     {
-     "id": "l122",
+     "id": "l121",
      "start": 682.89,
      "end": 687.37,
      "text": "Question 12. What do we learn about the lawyer in the court?"
     },
     {
-     "id": "l123",
+     "id": "l122",
      "start": 700.72,
      "end": 701.24,
      "text": "Passage 2"
     },
     {
-     "id": "l124",
+     "id": "l123",
      "start": 702.6,
      "end": 708.59,
      "text": "Most Americans don't eat enough fruits, vegetables, or whole grains. Research"
     },
     {
-     "id": "l125",
+     "id": "l124",
      "start": 708.64,
      "end": 716.08,
      "text": "Now says adding fiber to the teen diet may help lower the risk of breast cancer. Conversations"
     },
     {
-     "id": "l126",
+     "id": "l125",
      "start": 716.28,
      "end": 722.32,
      "text": "About the benefits of fiber are probably more common in nursing homes than high schools."
     },
     {
-     "id": "l127",
+     "id": "l126",
      "start": 723.08,
      "end": 730.16,
      "text": "But along comes a new study that could change that. Christie King, a diet specialist at"
     },
     {
-     "id": "l128",
+     "id": "l127",
      "start": 730.24,
      "end": 735.99,
      "text": "Texas Children's Hospital, finds it hard to get teenage patients' attention about"
     },
     {
-     "id": "l129",
+     "id": "l128",
      "start": 736.04,
      "end": 741.44,
      "text": "Healthy eating, but telling them that eating lots of high fiber foods could reduce the"
     },
     {
-     "id": "l130",
+     "id": "l129",
      "start": 741.6,
      "end": 746.25,
      "text": "Risk of breast cancer before middle age, that's a powerful message."
     },
     {
-     "id": "l131",
+     "id": "l130",
      "start": 747.29,
      "end": 753.69,
      "text": "The new finding is based on a study of 44,000 women. They were surveyed about their diets"
     },
     {
-     "id": "l132",
+     "id": "l131",
      "start": 753.73,
      "end": 759.37,
      "text": "During high school, and their eating habits were tracked for two decades. It turns out"
     },
     {
-     "id": "l133",
+     "id": "l132",
      "start": 759.41,
      "end": 765.05,
      "text": "That those who consumed the highest levels of fiber during adolescence had a lower risk"
     },
     {
-     "id": "l134",
+     "id": "l133",
      "start": 765.29,
      "end": 769.78,
      "text": "Of developing breast cancer compared to the women who ate the leased fiber."
     },
     {
-     "id": "l135",
+     "id": "l134",
      "start": 770.58,
      "end": 775.53,
      "text": "This important study demonstrates that the more fiber you eat during your high school"
     },
     {
-     "id": "l136",
+     "id": "l135",
      "start": 775.58,
      "end": 780.5,
      "text": "Years, the lower your risk is in developing breast cancer in later life."
     },
     {
-     "id": "l137",
+     "id": "l136",
      "start": 781.58,
      "end": 787.5,
      "text": "The finding points to long-standing evidence that fiber may reduce circulating female hormone"
     },
     {
-     "id": "l138",
+     "id": "l137",
      "start": 787.5,
      "end": 790.59,
      "text": "Levels, which could explain the reduced risk."
     },
     {
-     "id": "l139",
+     "id": "l138",
      "start": 791.63,
      "end": 797.27,
      "text": "The bottom line here is the more fiber you eat, perhaps a lower level of hormone in your"
     },
     {
-     "id": "l140",
+     "id": "l139",
      "start": 797.31,
      "end": 802.27,
      "text": "Body, and therefore a lower lifetime risk of developing breast cancer."
     },
     {
-     "id": "l141",
+     "id": "l140",
      "start": 803.07,
      "end": 808.39,
      "text": "High fiber diets are also linked to a reduced risk of heart disease and diabetes."
     },
     {
-     "id": "l142",
+     "id": "l141",
      "start": 809.01,
      "end": 814.65,
      "text": "That's why women are told to eat 25 grams of fiber a day, men even more."
     },
     {
-     "id": "l143",
+     "id": "l142",
      "start": 815.65,
      "end": 820.13,
      "text": "Questions 13 to 15 are based on the passage you have just heard."
     },
     {
-     "id": "l144",
+     "id": "l143",
      "start": 820.85,
      "end": 826.85,
      "text": "Question 13. What does the new study tell about adding fiber to the teen diet?"
     },
     {
-     "id": "l145",
+     "id": "l144",
      "start": 840.49,
      "end": 846.09,
      "text": "Question 14. What do we learn about the survey of the 44,000 women?"
     },
     {
-     "id": "l146",
+     "id": "l145",
      "start": 859.82,
      "end": 865.62,
      "text": "Question 15. What explanation does the speaker offer for the research finding?"
     },
     {
-     "id": "l147",
+     "id": "l146",
      "start": 879.47,
      "end": 879.99,
      "text": "Section C"
     },
     {
-     "id": "l148",
+     "id": "l147",
      "start": 882.43,
      "end": 885.39,
      "text": "In this section, you will hear three recordings"
     },
     {
-     "id": "l149",
+     "id": "l148",
      "start": 885.71,
      "end": 891.75,
      "text": "Of lectures or talks followed by three or four questions. The recordings will be played"
     },
     {
-     "id": "l150",
+     "id": "l149",
      "start": 891.75,
      "end": 897.27,
      "text": "Only once. After you hear a question, you must choose the best answer from the four"
     },
     {
-     "id": "l151",
-     "start": 901.47,
+     "id": "l150",
+     "start": 897.71,
      "end": 905.55,
      "text": "Choices marked A, B, C and D. Then mark the corresponding letter on answer sheet one with"
     },
     {
-     "id": "l152",
+     "id": "l151",
      "start": 905.71,
      "end": 907.31,
      "text": "A single line through the center."
     },
     {
-     "id": "l153",
+     "id": "l152",
      "start": 908.91,
      "end": 909.51,
      "text": "Recording 1"
     },
     {
-     "id": "l154",
+     "id": "l153",
      "start": 910.91,
      "end": 914.71,
      "text": "Well, my current research is really about consumer behavior."
     },
     {
-     "id": "l155",
+     "id": "l154",
      "start": 914.79,
      "end": 922.23,
      "text": "So recently, I've looked at young people's drinking and it's obviously a major concern to government at the moment."
     },
     {
-     "id": "l156",
+     "id": "l155",
      "start": 923.38,
      "end": 929.58,
      "text": "I've also looked at how older people are represented in the media. Again, it's of major current"
     },
     {
-     "id": "l157",
+     "id": "l156",
      "start": 929.58,
      "end": 936.38,
      "text": "Interest with older people becoming a much larger proportion of UK and indeed world society."
     },
     {
-     "id": "l158",
+     "id": "l157",
      "start": 937.59,
      "end": 942.82,
      "text": "I'm also interested in how consumers operate online and how that online behavior might"
     },
     {
-     "id": "l159",
+     "id": "l158",
      "start": 942.87,
      "end": 946.63,
      "text": "Be different from how they operate offline when they go to the shops."
     },
     {
-     "id": "l160",
+     "id": "l159",
      "start": 947.43,
      "end": 952.71,
      "text": "Well, I think that the important thing here is to actually understand what's happening"
     },
     {
-     "id": "l161",
+     "id": "l160",
      "start": 952.91,
      "end": 954.55,
      "text": "From the consumer's perspective."
     },
     {
-     "id": "l162",
+     "id": "l161",
      "start": 955.79,
      "end": 960.43,
      "text": "One of the things that businesses and indeed government organizations often fail to do"
     },
     {
-     "id": "l163",
+     "id": "l162",
      "start": 960.69,
      "end": 964.25,
      "text": "Is to really see what is happening from the consumer's perspective."
     },
     {
-     "id": "l164",
+     "id": "l163",
      "start": 965.09,
      "end": 968.13,
      "text": "For example, in the case of young people's drinking, one of the things that I've identified"
     },
     {
-     "id": "l165",
+     "id": "l164",
      "start": 970.85,
      "end": 977.89,
      "text": "Is that drinking for people, say, between the ages of 18 and 24, is all about the social"
     },
     {
-     "id": "l166",
+     "id": "l165",
      "start": 977.89,
      "end": 978.49,
      "text": "Activity."
     },
     {
-     "id": "l167",
+     "id": "l166",
      "start": 979.29,
      "end": 984.89,
      "text": "A lot of the government advertising has been about individual responsibility, but actually"
     },
     {
-     "id": "l168",
+     "id": "l167",
      "start": 984.93,
      "end": 990.32,
      "text": "Understanding that drinking is very much about the social activity and finding ways to help"
     },
     {
-     "id": "l169",
+     "id": "l168",
      "start": 990.37,
      "end": 994.61,
      "text": "Young people get home safely and not end up in hospital is one of the things that we've"
     },
     {
-     "id": "l170",
+     "id": "l169",
      "start": 995.97,
      "end": 1002.2,
      "text": "Tried to present there. The key thing about consumer behavior is that it's very much about"
     },
     {
-     "id": "l171",
+     "id": "l170",
      "start": 1002.25,
      "end": 1008.88,
      "text": "How consumers change. Markets always change faster than marketing, so we have to look"
     },
     {
-     "id": "l172",
+     "id": "l171",
      "start": 1008.93,
      "end": 1016.12,
      "text": "At what consumers are doing. Currently I teach consumer behavior to undergraduates in their"
     },
     {
-     "id": "l173",
+     "id": "l172",
      "start": 1016.17,
      "end": 1020.33,
      "text": "Second year and we look at all kinds of things in consumer behavior and"
     },
     {
-     "id": "l174",
+     "id": "l173",
      "start": 1020.93,
      "end": 1026.06,
      "text": "Particularly how consumers are presented in advertising. So they get"
     },
     {
-     "id": "l175",
+     "id": "l174",
      "start": 1026.11,
      "end": 1030.75,
      "text": "Involved by looking at advertising and really critically assessing the"
     },
     {
-     "id": "l176",
+     "id": "l175",
      "start": 1031.03,
      "end": 1035.35,
      "text": "Consumer behavior aspects of it and getting involved sometimes doing"
     },
     {
-     "id": "l177",
+     "id": "l176",
      "start": 1035.43,
      "end": 1041.5,
      "text": "Primary research. For example last year my students spent a week looking at their"
     },
     {
-     "id": "l178",
+     "id": "l177",
      "start": 1041.55,
      "end": 1047.43,
      "text": "Own purchasing and analyzed it in detail from shopping to the relationship that they have"
     },
     {
-     "id": "l179",
+     "id": "l178",
      "start": 1047.72,
      "end": 1053.88,
      "text": "With their retail banks and their mobile phone providers. I think they found it very useful"
     },
     {
-     "id": "l180",
+     "id": "l179",
      "start": 1054.28,
      "end": 1061.07,
      "text": "And it also helped them identify just what kind of budgets they had too. The fact of the matter is"
     },
     {
-     "id": "l181",
+     "id": "l180",
      "start": 1061.12,
      "end": 1067.11,
      "text": "That there's a whole range of interesting research out there and I think as the years go on there's"
     },
     {
-     "id": "l182",
+     "id": "l181",
      "start": 1067.16,
      "end": 1072.23,
      "text": "There's going to be much more for us to consider and certainly much more for students to become"
     },
     {
-     "id": "l183",
+     "id": "l182",
      "start": 1072.28,
      "end": 1073,
      "text": "Involved in."
     },
     {
-     "id": "l184",
+     "id": "l183",
      "start": 1074.58,
      "end": 1079.62,
      "text": "Questions 16 to 18 are based on the recording you have just heard."
     },
     {
-     "id": "l185",
+     "id": "l184",
      "start": 1080.62,
      "end": 1084.66,
      "text": "Question 16. What is the speaker currently doing?"
     },
     {
-     "id": "l186",
+     "id": "l185",
      "start": 1098.27,
      "end": 1102.83,
      "text": "Question 17. What has the speaker found about young people's drinking?"
     },
     {
-     "id": "l187",
+     "id": "l186",
      "start": 1116.36,
      "end": 1121.2,
      "text": "Question 18. What does a speaker say that his students did last year?"
     },
     {
-     "id": "l188",
+     "id": "l187",
      "start": 1134.82,
      "end": 1135.34,
      "text": "Recording 2"
     },
     {
-     "id": "l189",
+     "id": "l188",
      "start": 1136.58,
      "end": 1144.3,
      "text": "Sweden was the first European country to print and use paper money, but it may soon do away with physical currencies."
     },
     {
-     "id": "l190",
+     "id": "l189",
      "start": 1144.98,
      "end": 1151.14,
      "text": "Banks can save a lot of money and avoid regulatory headaches by moving to a cash-free system,"
     },
     {
-     "id": "l191",
+     "id": "l190",
      "start": 1151.74,
      "end": 1155.46,
      "text": "And they can also avoid bank robberies, theft, and dirty money."
     },
     {
-     "id": "l192",
+     "id": "l191",
      "start": 1156.39,
      "end": 1162.47,
      "text": "Claire Barrett, the editor of Financial Times Money, says the western world is headed toward"
     },
     {
-     "id": "l193",
+     "id": "l192",
      "start": 1162.63,
      "end": 1164.43,
      "text": "A world without physical currency."
     },
     {
-     "id": "l194",
+     "id": "l193",
      "start": 1165.27,
      "end": 1171.75,
      "text": "Andy Holder, the chief economist at the Bank of England, suggested that the UK move towards"
     },
     {
-     "id": "l195",
+     "id": "l194",
      "start": 1171.95,
      "end": 1178.19,
      "text": "Government-backed digital currency. But does a cashless society really make good economic sense?"
     },
     {
-     "id": "l196",
+     "id": "l195",
      "start": 1179.27,
      "end": 1184.55,
      "text": "The fact that cash is being drawn out of society is less a feature of our everyday lives"
     },
     {
-     "id": "l197",
+     "id": "l196",
      "start": 1185.27,
      "end": 1190.43,
      "text": "And the ease of electronic payments. Is this actually making us spend more money without"
     },
     {
-     "id": "l198",
+     "id": "l197",
      "start": 1190.43,
      "end": 1196.71,
      "text": "Realizing it? Barrett wanted to find out if the absence of physical currency does indeed"
     },
     {
-     "id": "l199",
+     "id": "l198",
      "start": 1196.71,
      "end": 1203.4,
      "text": "Cause a person to spend more, so she decided to conduct an experiment a few months ago."
     },
     {
-     "id": "l200",
+     "id": "l199",
      "start": 1204.21,
      "end": 1209.93,
      "text": "She decided that she was going to try to just use cash for two weeks to make all of"
     },
     {
-     "id": "l201",
+     "id": "l200",
      "start": 1210.01,
      "end": 1216,
      "text": "Her essential purchases and see what that would do to her spending. She found she did"
     },
     {
-     "id": "l202",
+     "id": "l201",
      "start": 1216.05,
      "end": 1222.53,
      "text": "Spend a lot less money because it is incredibly hard to predict how much cash one is going"
     },
     {
-     "id": "l203",
+     "id": "l202",
      "start": 1222.61,
      "end": 1228.64,
      "text": "To need. She was forever drawing money out of cash points. Months later she was still"
     },
     {
-     "id": "l204",
+     "id": "l203",
      "start": 1228.69,
      "end": 1233.69,
      "text": "Finding cash stuffed in her trouser pockets and the pockets of her handbags."
     },
     {
-     "id": "l205",
+     "id": "l204",
      "start": 1234.77,
      "end": 1240.61,
      "text": "During the experiment, Barrett took a train ride. On the way, there was an announcement"
     },
     {
-     "id": "l206",
+     "id": "l205",
      "start": 1240.65,
      "end": 1246.08,
      "text": "That the restaurant car was not currently accepting credit cards. The train cars were"
     },
     {
-     "id": "l207",
+     "id": "l206",
      "start": 1246.13,
      "end": 1252.47,
      "text": "Filled with groans because many of the passengers were travelling without cash. It underlines"
     },
     {
-     "id": "l208",
+     "id": "l207",
      "start": 1252.51,
      "end": 1258.3,
      "text": "Just how much things have changed in the last generation, Barrett says. My parents, when"
     },
     {
-     "id": "l209",
+     "id": "l208",
      "start": 1258.35,
      "end": 1264.15,
      "text": "They were younger, used to budget by putting money into envelopes. They'd get paid and"
     },
     {
-     "id": "l210",
+     "id": "l209",
      "start": 1264.39,
      "end": 1267.31,
      "text": "They'd immediately separate the cash into piles"
     },
     {
-     "id": "l211",
+     "id": "l210",
      "start": 1268.23,
      "end": 1271.38,
      "text": "And put them in envelopes so they knew what they had"
     },
     {
-     "id": "l212",
+     "id": "l211",
      "start": 1271.54,
      "end": 1272.9,
      "text": "To spend week by week."
     },
     {
-     "id": "l213",
+     "id": "l212",
      "start": 1273.5,
      "end": 1276.62,
      "text": "It was a very effective way for them to keep track"
     },
     {
-     "id": "l214",
+     "id": "l213",
      "start": 1276.7,
      "end": 1277.38,
      "text": "Of their spending."
     },
     {
-     "id": "l215",
+     "id": "l214",
      "start": 1278.14,
      "end": 1280.62,
      "text": "Nowadays, we're all on credit cards."
     },
     {
-     "id": "l216",
+     "id": "l215",
      "start": 1281.14,
      "end": 1284.38,
      "text": "We're doing online purchases and money is kind of"
     },
     {
-     "id": "l217",
+     "id": "l216",
      "start": 1284.66,
      "end": 1288.58,
      "text": "Becoming a less physical and more imaginary type of thing"
     },
     {
-     "id": "l218",
+     "id": "l217",
      "start": 1288.82,
      "end": 1290.74,
      "text": "That we can't get our hands around."
     },
     {
-     "id": "l219",
+     "id": "l218",
      "start": 1292.87,
      "end": 1297.27,
      "text": "Questions 19 to 22 are based on the recording you have just heard."
     },
     {
-     "id": "l220",
+     "id": "l219",
      "start": 1298.23,
      "end": 1301.75,
      "text": "Question 19. What do we learn about Sweden?"
     },
     {
-     "id": "l221",
+     "id": "l220",
      "start": 1315.36,
      "end": 1320.36,
      "text": "Question 20. What did Claire Barrett want to find out with her experiment?"
     },
     {
-     "id": "l222",
+     "id": "l221",
      "start": 1333.86,
      "end": 1338.74,
      "text": "Question 21. What did Claire Barrett find on her train ride?"
     },
     {
-     "id": "l223",
+     "id": "l222",
      "start": 1352.22,
      "end": 1358.42,
      "text": "Question 22. How did people of the last generation budget their spending?"
     },
     {
-     "id": "l224",
+     "id": "l223",
      "start": 1372,
      "end": 1372.6,
      "text": "Recording 3"
     },
     {
+     "id": "l224",
+     "start": 1373.92,
+     "end": 1378.6,
+     "text": "Why should you consider taking a course in demography in college?"
+    },
+    {
      "id": "l225",
-     "start": 1373,
-     "end": 1378.85,
-     "text": "Question 23. Why should you consider taking a course in demography in college?"
+     "start": 1379.08,
+     "end": 1384.5,
+     "text": "You will be growing up in the generation where the baby boomers are going into retirement and dying."
     },
     {
      "id": "l226",
-     "start": 1379.08,
-     "end": 1383.68,
-     "text": "You will be growing up in the generation where the baby boomers are going into retirement"
-    },
-    {
-     "id": "l227",
-     "start": 1383.96,
-     "end": 1384.4,
-     "text": "And dying."
-    },
-    {
-     "id": "l228",
      "start": 1385.4,
      "end": 1390.04,
      "text": "You will face problems in the aging of the population that have never been faced before."
     },
     {
-     "id": "l229",
+     "id": "l227",
      "start": 1390.96,
      "end": 1396.14,
      "text": "You will hear more and more about migration between countries and between rural areas"
     },
     {
-     "id": "l230",
+     "id": "l228",
      "start": 1396.38,
      "end": 1396.86,
      "text": "And cities."
     },
     {
-     "id": "l231",
+     "id": "l229",
      "start": 1397.9,
      "end": 1404.06,
      "text": "You need to understand as a citizen and as a taxpayer and as a voter what's really behind"
     },
     {
-     "id": "l232",
+     "id": "l230",
      "start": 1404.3,
      "end": 1404.86,
      "text": "The arguments."
     },
     {
-     "id": "l233",
+     "id": "l231",
      "start": 1405.9,
      "end": 1411.25,
      "text": "I want to tell you about the past, present and future of the human population, so let's"
     },
     {
-     "id": "l234",
+     "id": "l232",
      "start": 1411.3,
      "end": 1412.9,
      "text": "Start with a few problems."
     },
     {
-     "id": "l235",
+     "id": "l233",
      "start": 1413.74,
      "end": 1416.98,
      "text": "Right now, a billion people are chronically hungry."
     },
     {
-     "id": "l236",
+     "id": "l234",
      "start": 1417.59,
      "end": 1422.63,
      "text": "That means they wake up hungry, they're hungry all day, and they go to sleep hungry."
     },
     {
-     "id": "l237",
+     "id": "l235",
      "start": 1423.43,
      "end": 1425.51,
      "text": "A billion people are living in slums."
     },
     {
-     "id": "l238",
+     "id": "l236",
      "start": 1425.91,
      "end": 1429.39,
      "text": "Not the same billion people, but there is some overlap."
     },
     {
-     "id": "l239",
+     "id": "l237",
      "start": 1430.15,
      "end": 1434.79,
      "text": "Living in slums means they don't have infrastructure to take the garbage away."
     },
     {
-     "id": "l240",
+     "id": "l238",
      "start": 1435.07,
      "end": 1437.79,
      "text": "They don't have secure water supplies to drink."
     },
     {
-     "id": "l241",
+     "id": "l239",
      "start": 1439.38,
      "end": 1441.74,
      "text": "Nearly a billion people are illiterate."
     },
     {
-     "id": "l242",
+     "id": "l240",
      "start": 1442.34,
      "end": 1444.94,
      "text": "Try to imagine your life being illiterate."
     },
     {
-     "id": "l243",
+     "id": "l241",
      "start": 1445.76,
      "end": 1450.72,
      "text": "You can't read the labels on the bottles in the supermarket, if you can get to a supermarket."
     },
     {
-     "id": "l244",
+     "id": "l242",
      "start": 1452.12,
      "end": 1458.24,
      "text": "Two-thirds of those people who are illiterate are women and about 200 to 215 million women"
     },
     {
-     "id": "l245",
+     "id": "l243",
      "start": 1458.4,
      "end": 1463.48,
      "text": "Don't have access to birth control they want so that they can control their own fertility."
     },
     {
-     "id": "l246",
+     "id": "l244",
      "start": 1464.44,
      "end": 1470.19,
      "text": "This is not only a problem in developing countries, about half of all pregnancies globally are"
     },
     {
-     "id": "l247",
+     "id": "l245",
      "start": 1470.24,
      "end": 1471.04,
      "text": "Unintended."
     },
     {
-     "id": "l248",
+     "id": "l246",
      "start": 1471.56,
      "end": 1474.56,
      "text": "So those are examples of population problems."
     },
     {
-     "id": "l249",
+     "id": "l247",
      "start": 1475.96,
      "end": 1480.28,
      "text": "Demography gives you the tools to understand and to address these problems."
     },
     {
-     "id": "l250",
+     "id": "l248",
      "start": 1480.56,
      "end": 1485.84,
      "text": "It's not only the study of human population, but the populations of non-human species,"
     },
     {
-     "id": "l251",
+     "id": "l249",
      "start": 1486.32,
      "end": 1493.08,
      "text": "Including viruses like influenza, the bacteria in your gut, plants that you eat, animals that"
     },
     {
-     "id": "l252",
+     "id": "l250",
      "start": 1493.12,
      "end": 1499.72,
      "text": "You enjoy or that provide you with meat. Demography also includes the study of non-living objects"
     },
     {
-     "id": "l253",
+     "id": "l251",
      "start": 1499.72,
      "end": 1506.52,
      "text": "Like light bulbs and taxi cabs and buildings because these are also populations. It studies"
     },
     {
-     "id": "l254",
+     "id": "l252",
      "start": 1506.52,
      "end": 1512.56,
      "text": "These populations in the past, present and future using quantitative data and mathematical"
     },
     {
-     "id": "l255",
+     "id": "l253",
      "start": 1512.61,
      "end": 1519.17,
      "text": "Models as tools of analysis. I see demography as a central subject related"
     },
     {
-     "id": "l256",
+     "id": "l254",
      "start": 1519.33,
      "end": 1525.08,
      "text": "To economics. It is the means to intervene more wisely and more effectively in the real"
     },
     {
-     "id": "l257",
+     "id": "l255",
      "start": 1525.13,
      "end": 1530.85,
      "text": "World to improve the well-being not only of yourself important as that may be, but of"
     },
     {
-     "id": "l258",
+     "id": "l256",
      "start": 1530.88,
-     "end": 1549.73,
+     "end": 1535,
      "text": "Of people around you and of other species with whom we share the planet."
+    },
+    {
+     "id": "l257",
+     "start": 1536.74,
+     "end": 1542.3,
+     "text": "Questions 23 to 25 are based on the recording you have just heard."
+    },
+    {
+     "id": "l258",
+     "start": 1543.7,
+     "end": 1549.8,
+     "text": "Question 23. What is one of the problems the speaker mentions in his talk?"
     },
     {
      "id": "l259",
