@@ -1,6 +1,6 @@
 {
  "preset": "cet6",
- "version": "20260930.17",
+ "version": "20260930.18",
  "generatedAt": "2026-09-30T15:15:17.579Z",
  "group": {
   "id": 8,
@@ -12861,486 +12861,468 @@
     },
     {
      "id": "l110",
-     "start": 848.8,
-     "end": 848.82,
-     "text": "In this section you will hear three recordings"
+     "start": 845.64,
+     "end": 859.87,
+     "text": "Section C. Directions. In this section you will hear three recordings of lectures or talks, followed by three or four questions. The recordings will be played only once. After you hear a question, you must choose the best answer from the four choices marked A, B, C, and D."
     },
     {
      "id": "l111",
-     "start": 848.87,
-     "end": 849.27,
-     "text": "Directions."
-    },
-    {
-     "id": "l112",
-     "start": 849.32,
-     "end": 849.76,
-     "text": "Section C."
-    },
-    {
-     "id": "l113",
-     "start": 851.76,
-     "end": 858.88,
-     "text": "of lectures or talks, followed by three or four questions. The recordings will be played only once."
-    },
-    {
-     "id": "l114",
      "start": 859.92,
      "end": 864.96,
      "text": "After you hear a question, you must choose the best answer from the four choices marked A, B, C, and D."
     },
     {
-     "id": "l115",
+     "id": "l112",
      "start": 872.76,
      "end": 873.84,
      "text": "a single line through the centre."
     },
     {
-     "id": "l116",
+     "id": "l113",
      "start": 875.36,
      "end": 876,
      "text": "RECORDING 1"
     },
     {
-     "id": "l117",
+     "id": "l114",
      "start": 877.4,
      "end": 878.92,
      "text": "Good afternoon, class."
     },
     {
-     "id": "l118",
+     "id": "l115",
      "start": 879.28,
      "end": 884.2,
      "text": "Today I want to discuss with you a new approach to empirical research."
     },
     {
-     "id": "l119",
+     "id": "l116",
      "start": 885.12,
      "end": 885.42,
      "text": "In the past, scientists often worked"
     },
     {
-     "id": "l120",
+     "id": "l117",
      "start": 885.42,
      "end": 888.75,
      "text": "choices marked A, B, C, and D. Then mark the corresponding letter on answer sheet 1, with"
     },
     {
-     "id": "l121",
+     "id": "l118",
      "start": 888.96,
      "end": 893.12,
      "text": "were confined to the university or research center where they worked."
     },
     {
-     "id": "l122",
+     "id": "l119",
      "start": 893.84,
      "end": 907.04,
      "text": "Today, though, we are seeing mergers of some of the greatest scientific minds, regardless of their location. There has never been a better time for collaborations with foreign scientists."
     },
     {
-     "id": "l123",
+     "id": "l120",
      "start": 907.96,
      "end": 911.28,
      "text": "In fact, the European Union is taking the lead."
     },
     {
-     "id": "l124",
+     "id": "l121",
      "start": 911.96,
      "end": 924.8,
      "text": "Spurred on by funding policies, half of European research articles had international co-authors in 2007, this is more than twice the level of two decades ago."
     },
     {
-     "id": "l125",
+     "id": "l122",
      "start": 926.12,
      "end": 934.45,
      "text": "The European Union's level of international co-authorship is about twice that of the United States, Japan, and India."
     },
     {
-     "id": "l126",
+     "id": "l123",
      "start": 935.57,
      "end": 939.57,
      "text": "Even so, the levels in these countries are also rising."
     },
     {
-     "id": "l127",
+     "id": "l124",
      "start": 940.45,
      "end": 946.69,
      "text": "This is a sign of the continued allure of creating scientific coalitions across borders."
     },
     {
-     "id": "l128",
+     "id": "l125",
      "start": 948.94,
      "end": 954.78,
      "text": "Andrew Schubert, a researcher at the Institute for Science Policy Research, says that the rising collaboration is partly out of necessity."
     },
     {
-     "id": "l129",
+     "id": "l126",
      "start": 959.67,
      "end": 962.82,
      "text": "This necessity comes with the rise of big science."
     },
     {
-     "id": "l130",
+     "id": "l127",
      "start": 963.39,
      "end": 966.75,
      "text": "Many scientific endeavors have become more complicated."
     },
     {
-     "id": "l131",
+     "id": "l128",
      "start": 967.59,
      "end": 972.15,
      "text": "These new complications require the money and labor of many nations."
     },
     {
-     "id": "l132",
+     "id": "l129",
      "start": 972.91,
      "end": 984.67,
      "text": "But he says collaborations have also emerged because of increased possibilities: the Internet allows like-minded scientists to find each other."
     },
     {
-     "id": "l133",
+     "id": "l130",
      "start": 985.59,
      "end": 994.26,
      "text": "Simultaneously, dramatic drops in communication costs ease long-distance interactions, and there's a reward."
     },
     {
-     "id": "l134",
+     "id": "l131",
      "start": 995.38,
      "end": 1002.66,
      "text": "Studies of citation counts show that internationally co-authored papers have better visibility and are likely to be cited more often than papers written by a single researcher."
     },
     {
-     "id": "l135",
+     "id": "l132",
      "start": 1002.66,
      "end": 1084.61,
      "text": "However, there are challenges. For example, different countries have different regulations regarding intellectual property rights."
     },
     {
-     "id": "l136",
+     "id": "l133",
      "start": 1084.61,
      "end": 1091.66,
      "text": "Also, language barriers can sometimes make communication difficult."
     },
     {
-     "id": "l137",
+     "id": "l134",
      "start": 1091.66,
      "end": 1098.56,
      "text": "But despite these challenges, the trend towards international collaboration in science is clearly growing."
     },
     {
-     "id": "l138",
+     "id": "l135",
      "start": 1098.61,
      "end": 1103.45,
      "text": "Questions 16 to 18 are based on the recording you have just heard."
     },
     {
-     "id": "l139",
+     "id": "l136",
      "start": 1104.41,
      "end": 1104.71,
      "text": "Questions 16. What do"
     },
     {
-     "id": "l140",
+     "id": "l137",
      "start": 1104.71,
      "end": 1106.72,
      "text": "Q16. What do we learn about the European Union's scientific research?"
     },
     {
-     "id": "l141",
+     "id": "l138",
      "start": 1106.77,
      "end": 1110.81,
      "text": "we learn about the research funding policies in the European Union?"
     },
     {
-     "id": "l142",
+     "id": "l139",
      "start": 1124.04,
      "end": 1124.34,
      "text": "Questions 17. Why do researchers today favor international collaboration?"
     },
     {
-     "id": "l143",
+     "id": "l140",
      "start": 1124.34,
      "end": 1129.96,
      "text": "Q17. Why is international collaboration becoming increasingly common in science?"
     },
     {
-     "id": "l144",
+     "id": "l141",
      "start": 1143.18,
      "end": 1147.7,
      "text": "Q18. What is a challenge facing international scientific collaboration?"
     },
     {
-     "id": "l145",
+     "id": "l142",
      "start": 1161.03,
      "end": 1161.63,
      "text": "RECORDING 2"
     },
     {
-     "id": "l146",
+     "id": "l143",
      "start": 1162.75,
      "end": 1163.59,
      "text": "Good evening."
     },
     {
-     "id": "l147",
+     "id": "l144",
      "start": 1164.31,
      "end": 1166.64,
      "text": "In 1959, on the day that I was born, a headline in Life magazine proclaimed \"Target Venus: There May be Life There!"
     },
     {
-     "id": "l148",
+     "id": "l145",
      "start": 1176.11,
      "end": 1186.72,
      "text": "\" It told of how scientists rode a balloon to an altitude of 80,000 feet to make telescope observations of Venus's atmosphere, and how their discovery of water raised hopes that there could be living things there."
     },
     {
-     "id": "l149",
+     "id": "l146",
      "start": 1202.28,
      "end": 1207.72,
      "text": "For many of my generation, Venus was the ultimate symbol of romance."
     },
     {
-     "id": "l150",
+     "id": "l147",
      "start": 1207.72,
      "end": 1213.75,
      "text": "It was the brightest object in the night sky, except for the moon."
     },
     {
-     "id": "l151",
+     "id": "l148",
      "start": 1213.75,
      "end": 1226.57,
      "text": "And it was often called the Earth's twin because it's about the same size and mass as our planet."
     },
     {
-     "id": "l152",
+     "id": "l149",
      "start": 1226.57,
      "end": 1229.96,
      "text": "But as we've learned more about Venus, that romantic image has faded. Today, we know that Venus is a hellish place."
     },
     {
-     "id": "l153",
+     "id": "l150",
      "start": 1229.96,
      "end": 1235.12,
      "text": "Its surface temperature is hot enough to melt lead. Its atmosphere is 96% carbon dioxide, with clouds of sulfuric acid. The atmospheric pressure at the surface is 92 times that of Earth."
     },
     {
-     "id": "l154",
+     "id": "l151",
      "start": 1235.12,
      "end": 1238.41,
      "text": "But despite all this, there are still some scientists who believe that Venus could have been a habitable planet in the past. Recent studies suggest that Venus may have had a shallow ocean of liquid water on its surface for billions of years. It may have had a climate similar to Earth's, with temperatures that were comfortable for life."
     },
     {
-     "id": "l155",
+     "id": "l152",
      "start": 1238.41,
      "end": 1270.76,
      "text": "But something happened about 700 million years ago that caused a runaway greenhouse effect."
     },
     {
-     "id": "l156",
+     "id": "l153",
      "start": 1270.76,
      "end": 1279.49,
      "text": "The planet's surface temperature rose dramatically, and the oceans evaporated. Scientists are now planning new missions to Venus to learn more about its history."
     },
     {
-     "id": "l157",
+     "id": "l154",
      "start": 1279.49,
      "end": 1349.26,
      "text": "They want to find out if there really was life on Venus, and if so, what happened to it."
     },
     {
-     "id": "l158",
+     "id": "l155",
      "start": 1349.26,
      "end": 1357.74,
      "text": "These missions could also help us better understand the effects of climate change on our own planet."
     },
     {
-     "id": "l159",
+     "id": "l156",
      "start": 1357.79,
      "end": 1363.03,
      "text": "Q19. What did the Life magazine headline say about Venus in 1959?"
     },
     {
-     "id": "l160",
+     "id": "l157",
      "start": 1376.15,
      "end": 1376.45,
      "text": "Q20. Why was Venus once called the Earth's twin?"
     },
     {
-     "id": "l161",
+     "id": "l158",
      "start": 1376.45,
      "end": 1381.35,
      "text": "Question 20. What are scientists' findings about Venus?"
     },
     {
-     "id": "l162",
+     "id": "l159",
      "start": 1394.84,
      "end": 1395.14,
      "text": "Q21. What do some scientists believe about Venus?"
     },
     {
-     "id": "l163",
+     "id": "l160",
      "start": 1395.14,
      "end": 1402.84,
      "text": "Question 21. What information did Russian and American space probes provide about Venus?"
     },
     {
-     "id": "l164",
+     "id": "l161",
      "start": 1416.15,
      "end": 1416.79,
      "text": "RECORDING 3"
     },
     {
-     "id": "l165",
+     "id": "l162",
      "start": 1418.19,
      "end": 1422.27,
      "text": "I'm a psychology professor at the University of British Columbia."
     },
     {
-     "id": "l166",
+     "id": "l163",
      "start": 1423.07,
      "end": 1431.79,
      "text": "I specialize in cultural psychology, examining similarities and differences between East Asians and North Americans."
     },
     {
-     "id": "l167",
+     "id": "l164",
      "start": 1432.91,
      "end": 1446.95,
      "text": "Our research team has been looking at cultural differences in self-enhancing motivation, helping people have positive feelings towards not only themselves but things connected to themselves."
     },
     {
-     "id": "l168",
+     "id": "l165",
      "start": 1447.83,
      "end": 1454.43,
      "text": "For example, when you own something, you view it as more valuable than when you don't own it."
     },
     {
-     "id": "l169",
+     "id": "l166",
      "start": 1454.95,
      "end": 1457.43,
      "text": "It's called the endowment effect."
     },
     {
-     "id": "l170",
+     "id": "l167",
      "start": 1458.39,
      "end": 1464.01,
      "text": "The strength of that effect is stronger in Western cultures than in East Asian cultures."
     },
     {
-     "id": "l171",
+     "id": "l168",
      "start": 1464.77,
      "end": 1474.17,
      "text": "So we've been looking at other ways of seeing whether this motivation to view oneself positively is shaped by cultural experiences."
     },
     {
-     "id": "l172",
+     "id": "l169",
      "start": 1475.61,
      "end": 1479.17,
      "text": "We've also started to look at how culture shapes sleep."
     },
     {
-     "id": "l173",
+     "id": "l170",
      "start": 1479.65,
      "end": 1493.52,
      "text": "We are still in the exploratory stages of this project, although what's noteworthy is that East Asians on average sleep about an hour and a half less each night than North Americans do."
     },
     {
-     "id": "l174",
+     "id": "l171",
      "start": 1494.48,
      "end": 1501.2,
      "text": "And it's not a more efficient sleep, not like they're compressing relatively more value out of their hours."
     },
     {
-     "id": "l175",
+     "id": "l172",
      "start": 1502.6,
      "end": 1509.45,
      "text": "Studies have found that even infants in East Asia sleep about an hour less than European infants."
     },
     {
-     "id": "l176",
+     "id": "l173",
      "start": 1510.17,
      "end": 1514.57,
      "text": "So we're trying to figure out how culture shapes the way you sleep."
     },
     {
-     "id": "l177",
+     "id": "l174",
      "start": 1516.13,
      "end": 1519.81,
      "text": "Our experiment does not take place in a sleep lab."
     },
     {
-     "id": "l178",
+     "id": "l175",
      "start": 1520.53,
      "end": 1530.53,
      "text": "Instead, we lend people motion-detecting watches and they wear them for a week at a time, whenever they are not having a shower or swimming."
     },
     {
-     "id": "l179",
+     "id": "l176",
      "start": 1532.39,
      "end": 1538.23,
      "text": "These watches record movement, so we can determine when someone is asleep and when they're awake."
     },
     {
-     "id": "l180",
+     "id": "l177",
      "start": 1538.23,
      "end": 1549.18,
      "text": "We also ask people to keep sleep diaries, where they write down when they go to bed and when they wake up."
     },
     {
-     "id": "l181",
+     "id": "l178",
      "start": 1549.18,
      "end": 1558.78,
      "text": "So far, our results suggest that cultural differences in sleep are real."
     },
     {
-     "id": "l182",
+     "id": "l179",
      "start": 1558.78,
      "end": 1574.99,
      "text": "But we still don't know exactly why these differences exist."
     },
     {
-     "id": "l183",
+     "id": "l180",
      "start": 1574.99,
      "end": 1590.63,
      "text": "Is it because of differences in work schedules?"
     },
     {
-     "id": "l184",
+     "id": "l181",
      "start": 1590.68,
      "end": 1592.57,
      "text": "Questions 22 to 25 are based on the recording you have just heard."
     },
     {
-     "id": "l185",
+     "id": "l182",
      "start": 1592.62,
      "end": 1595.64,
      "text": "Or is it because of differences in family structures?"
     },
     {
-     "id": "l186",
+     "id": "l183",
      "start": 1596.36,
      "end": 1598.43,
      "text": "Q22. What is the speaker's area of specialization?"
     },
     {
-     "id": "l187",
+     "id": "l184",
      "start": 1598.48,
      "end": 1599.62,
      "text": "We hope to answer these questions in future studies."
     },
     {
-     "id": "l188",
+     "id": "l185",
      "start": 1613.8,
      "end": 1618.44,
      "text": "Q23. What do we learn about East Asians' sleep compared to North Americans'?"
     },
     {
-     "id": "l189",
+     "id": "l186",
      "start": 1631.87,
      "end": 1636.59,
      "text": "Question 24. How did the speaker conduct the sleep study?"
     },
     {
-     "id": "l190",
+     "id": "l187",
      "start": 1649.83,
      "end": 1654.63,
      "text": "Q25. What does the speaker say about their sleep research?"
