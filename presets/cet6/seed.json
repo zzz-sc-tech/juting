@@ -1,7 +1,7 @@
 {
  "preset": "cet6",
- "version": "20260930.12",
- "generatedAt": "2026-09-30T14:02:30.897Z",
+ "version": "20260930.15",
+ "generatedAt": "2026-09-30T14:52:13.862Z",
  "group": {
   "id": 8,
   "name": "英语六级真题",
@@ -1703,1284 +1703,1236 @@
     },
     {
      "id": "l5",
-     "start": 25.31,
+     "start": 25.19,
      "end": 30.77,
-     "text": "When you hear a question, you must choose the best answer from the four choices marked"
+     "text": "After you hear a question, you must choose the best answer from the four choices marked"
     },
     {
      "id": "l6",
-     "start": 30.82,
-     "end": 32.01,
-     "text": "A, B, C and D."
-    },
-    {
-     "id": "l7",
      "start": 33.07,
      "end": 38.23,
      "text": "Then mark the corresponding letter on answer sheet one with a single line"
     },
     {
-     "id": "l8",
+     "id": "l7",
      "start": 38.23,
      "end": 39.15,
      "text": "through the center."
     },
     {
-     "id": "l9",
+     "id": "l8",
      "start": 40.59,
      "end": 41.31,
      "text": "CONVERSATION 1"
     },
     {
-     "id": "l10",
+     "id": "l9",
      "start": 42.66,
-     "end": 43.14,
-     "text": "W: Mr."
-    },
-    {
-     "id": "l11",
-     "start": 43.2,
      "end": 49.38,
-     "text": "Ishiguro, have you ever found one of your books at a second-hand bookstore? M: Yes."
+     "text": "W: Mr. Ishiguro, have you ever found one of your books at a second-hand bookstore? M: Yes."
     },
     {
-     "id": "l12",
+     "id": "l10",
      "start": 49.74,
      "end": 51.54,
      "text": "That kind of thing is difficult."
     },
     {
-     "id": "l13",
+     "id": "l11",
      "start": 51.82,
      "end": 56.46,
      "text": "If they've got my book there, I think \"Well, this is an insult!"
     },
     {
-     "id": "l14",
+     "id": "l12",
      "start": 57.06,
      "end": 59.26,
      "text": "Somebody didn't want to keep my book."
     },
     {
-     "id": "l15",
+     "id": "l13",
      "start": 59.86,
      "end": 63.42,
      "text": "\" But if it's not there, I feel it's an insult too."
     },
     {
-     "id": "l16",
+     "id": "l14",
      "start": 63.83,
      "end": 67.07,
      "text": "I think, \"Why aren't people exchanging my book?"
     },
     {
-     "id": "l17",
+     "id": "l15",
      "start": 67.19,
      "end": 68.95,
      "text": "Why isn't it in this store? \""
     },
     {
-     "id": "l18",
+     "id": "l16",
      "start": 69.95,
      "end": 72.79,
      "text": "W: Does being a writer require a thick skin?"
     },
     {
-     "id": "l19",
+     "id": "l17",
      "start": 73.27,
      "end": 73.71,
      "text": "M: Yes."
     },
     {
-     "id": "l20",
+     "id": "l18",
      "start": 74.03,
      "end": 76.99,
      "text": "For example, my wife can be very harsh."
     },
     {
-     "id": "l21",
+     "id": "l19",
      "start": 77.83,
      "end": 87.5,
      "text": "I began working on my latest book, The Buried Giant, in 2004, but I stopped after I showed my wife a little section."
     },
     {
-     "id": "l22",
+     "id": "l20",
      "start": 87.94,
      "end": 89.5,
      "text": "She thought it was rubbish."
     },
     {
-     "id": "l23",
+     "id": "l21",
      "start": 90.26,
      "end": 92.58,
      "text": "W: Even after you won a Booker Prize?"
     },
     {
-     "id": "l24",
+     "id": "l22",
      "start": 93.02,
      "end": 101.94,
      "text": "M: She is not intimidated at all, and she criticises me in exactly the same way she did when I was first unpublished and I was starting."
     },
     {
-     "id": "l25",
+     "id": "l23",
      "start": 102.86,
      "end": 105.62,
      "text": "W: But you would never compromise on your vision?"
     },
     {
-     "id": "l26",
+     "id": "l24",
      "start": 105.93,
      "end": 106.41,
      "text": "M: No."
     },
     {
-     "id": "l27",
+     "id": "l25",
      "start": 106.65,
      "end": 111.17,
      "text": "I wouldn't ever compromise on the essential, the ideas, or the themes."
     },
     {
-     "id": "l28",
+     "id": "l26",
      "start": 112.05,
      "end": 115.77,
      "text": "This isn't really what my wife is trying to criticise me about."
     },
     {
-     "id": "l29",
+     "id": "l27",
      "start": 116.17,
      "end": 117.89,
      "text": "It's always about execution."
     },
     {
-     "id": "l30",
+     "id": "l28",
      "start": 118.97,
      "end": 123.65,
      "text": "W: So why did you put your book The Buried Giant aside for so long?"
     },
     {
-     "id": "l31",
+     "id": "l29",
      "start": 124.53,
      "end": 127.77,
      "text": "Apparently, you started working on it over ten years ago."
     },
     {
-     "id": "l32",
+     "id": "l30",
      "start": 128.58,
      "end": 132.62,
      "text": "M: I've often stopped writing the book and left it for a few years."
     },
     {
-     "id": "l33",
+     "id": "l31",
      "start": 133.14,
      "end": 136.62,
      "text": "And by the time I come back to it, it may have changed."
     },
     {
-     "id": "l34",
+     "id": "l32",
      "start": 137.38,
      "end": 144.86,
      "text": "Usually my imagination has moved on, and I can think of different contexts or a different way to do it."
     },
     {
-     "id": "l35",
+     "id": "l33",
      "start": 145.78,
      "end": 148.94,
      "text": "W: What does it feel like when you finally finish a book?"
     },
     {
-     "id": "l36",
+     "id": "l34",
      "start": 149.55,
      "end": 155.79,
      "text": "M: It's funny you ask that, because I never have this moment when I feel \"Ah, I've finished!"
     },
     {
-     "id": "l37",
+     "id": "l35",
      "start": 156.79,
      "end": 162.03,
      "text": "\" I watch footballers at the end of the match, you know; the whistle goes and they've won or lost."
     },
     {
-     "id": "l38",
+     "id": "l36",
      "start": 162.99,
      "end": 168.75,
      "text": "Until then, they've been giving everything they have, and at that moment they know it's over."
     },
     {
-     "id": "l39",
+     "id": "l37",
      "start": 169.47,
      "end": 171.15,
      "text": "It's funny for an author."
     },
     {
-     "id": "l40",
+     "id": "l38",
      "start": 171.63,
      "end": 173.55,
      "text": "There's never a finishing whistle."
     },
     {
-     "id": "l41",
+     "id": "l39",
      "start": 180.43,
      "end": 186.79,
      "text": "Q1. How would the man feel if he found his book in a second-hand bookstore?"
     },
     {
-     "id": "l42",
+     "id": "l40",
      "start": 199.93,
      "end": 204.05,
      "text": "Q2. What does the man's wife think of his books?"
     },
     {
-     "id": "l43",
+     "id": "l41",
      "start": 217.17,
      "end": 222.05,
      "text": "Q3. What does the man do when he engages in writing?"
     },
     {
-     "id": "l44",
+     "id": "l42",
      "start": 235.25,
      "end": 240.75,
      "text": "Q4. What does the man want to say by mentioning the football match?"
     },
     {
-     "id": "l45",
+     "id": "l43",
      "start": 253.97,
      "end": 254.73,
      "text": "CONVERSATION 2"
     },
     {
-     "id": "l46",
+     "id": "l44",
      "start": 256.85,
      "end": 265.61,
      "text": "W: According to a study of Race & Equity in Education, black athletes are dropping out of college across the country at alarming rates."
     },
     {
-     "id": "l47",
+     "id": "l45",
      "start": 266.21,
      "end": 272.28,
      "text": "With us to talk about the findings in the study is Washington Post columnist Kevin Blackstone."
     },
     {
-     "id": "l48",
+     "id": "l46",
      "start": 273.09,
      "end": 273.85,
      "text": "Good morning!"
     },
     {
-     "id": "l49",
+     "id": "l47",
      "start": 274.48,
      "end": 275.88,
      "text": "M: Good morning. How are you?"
     },
     {
-     "id": "l50",
+     "id": "l48",
      "start": 276.6,
      "end": 277.4,
      "text": "W: Fine, thank you."
     },
     {
-     "id": "l51",
+     "id": "l49",
      "start": 278.12,
      "end": 280.64,
      "text": "What is new that you found in this study?"
     },
     {
-     "id": "l52",
+     "id": "l50",
      "start": 281,
      "end": 283.52,
      "text": "M: Well, this is Shaun Harper's study."
     },
     {
-     "id": "l53",
+     "id": "l51",
      "start": 283.92,
      "end": 292.76,
      "text": "And he points out that on major college campuses across the country, black males make up less than 3 percent of undergraduate enrollments."
     },
     {
-     "id": "l54",
+     "id": "l52",
      "start": 293,
      "end": 302.61,
      "text": "Yet, when you look at their numbers or percentages on the revenue-generating sports teams of football and basketball, they make up well into 50-60 percent of those teams."
     },
     {
-     "id": "l55",
+     "id": "l53",
      "start": 305.69,
      "end": 321.41,
      "text": "So the idea is that they are really there to be part of the revenue-generating working class of athletes on campus, and not necessarily there to be part of the educating class as most students in other groups are."
     },
     {
-     "id": "l56",
+     "id": "l54",
      "start": 322.1,
      "end": 333.5,
      "text": "W: Compared with other groups, I think the numbers in this group at those 65 schools are something like just barely more than half of the black male athletes graduate at all."
     },
     {
-     "id": "l57",
+     "id": "l55",
      "start": 334.22,
      "end": 334.82,
      "text": "M: Exactly."
     },
     {
-     "id": "l58",
+     "id": "l56",
      "start": 335.42,
      "end": 344.57,
      "text": "And what's really bad about this is these athletes are supposedly promised at least one thing as reward for all their blood and sweat."
     },
     {
-     "id": "l59",
+     "id": "l57",
      "start": 345.01,
      "end": 353.09,
      "text": "And that is a college degree, which can be a transformative tool in our society when you talk about upward mobility."
     },
     {
-     "id": "l60",
+     "id": "l58",
      "start": 353.81,
      "end": 356.37,
      "text": "And that's really the troubling part about this."
     },
     {
-     "id": "l61",
+     "id": "l59",
      "start": 357.17,
      "end": 361.97,
      "text": "W: Well, this has been talked about so much, really, in recent years."
     },
     {
-     "id": "l62",
+     "id": "l60",
      "start": 362.5,
      "end": 363.74,
      "text": "Why hasn't changed?"
     },
     {
-     "id": "l63",
+     "id": "l61",
      "start": 364.1,
      "end": 369.22,
      "text": "M: Well, I think one of the reasons it hasn't changed is because there is really no economic pressure to change this."
     },
     {
-     "id": "l64",
+     "id": "l62",
      "start": 371.5,
      "end": 376.78,
      "text": "All of the incentive is really on winning and not losing on the field or on the court."
     },
     {
-     "id": "l65",
+     "id": "l63",
      "start": 377.42,
      "end": 380.86,
      "text": "Coaches do not necessarily have the incentive to graduate players."
     },
     {
-     "id": "l66",
-     "start": 383.9,
-     "end": 385.14,
+     "id": "l64",
+     "start": 382.78,
+     "end": 386.9,
      "text": "Questions 5 to 8 are based on the"
     },
     {
-     "id": "l67",
+     "id": "l65",
      "start": 388.06,
      "end": 391.86,
      "text": "Q5. What are the speakers talking about?"
     },
     {
-     "id": "l68",
+     "id": "l66",
      "start": 405.24,
      "end": 411.48,
      "text": "Q6. What is the new finding about black male athletes in the study?"
     },
     {
-     "id": "l69",
+     "id": "l67",
      "start": 424.71,
      "end": 429.79,
      "text": "Q7. What is the graduation rate of black male athletes?"
     },
     {
-     "id": "l70",
+     "id": "l68",
      "start": 443.29,
      "end": 450.41,
      "text": "Q8. What accounts for black athletes' failure to obtain a college degree according to the man?"
     },
     {
-     "id": "l71",
+     "id": "l69",
      "start": 464.53,
      "end": 465.01,
      "text": "Section B."
     },
     {
-     "id": "l72",
+     "id": "l70",
      "start": 467.33,
      "end": 470.05,
      "text": "In this section, you will hear two passages."
     },
     {
-     "id": "l73",
+     "id": "l71",
      "start": 470.65,
      "end": 474.85,
      "text": "At the end of each passage, you will hear three or four questions."
     },
     {
-     "id": "l74",
+     "id": "l72",
      "start": 475.49,
      "end": 479.13,
      "text": "Both the passage and the questions will be spoken only once."
     },
     {
-     "id": "l75",
-     "start": 479.97,
-     "end": 481.25,
-     "text": "Do you hear a question?"
+     "id": "l73",
+     "start": 479.85,
+     "end": 481.6,
+     "text": "After you hear a question, you must choose the best answer from the four choices marked A, B, C, and D."
     },
     {
-     "id": "l76",
+     "id": "l74",
      "start": 481.97,
      "end": 485.92,
      "text": "You must choose the best answer from the four choices marked A, B, C, and D."
     },
     {
-     "id": "l77",
+     "id": "l75",
      "start": 488.92,
      "end": 489.6,
      "text": "Then mark the"
     },
     {
-     "id": "l78",
+     "id": "l76",
      "start": 489.76,
      "end": 495.16,
      "text": "corresponding letter on answer sheet 1 with a single line through the center."
     },
     {
-     "id": "l79",
+     "id": "l77",
      "start": 497.13,
      "end": 497.69,
      "text": "PASSAGE 1"
     },
     {
-     "id": "l80",
+     "id": "l78",
      "start": 498.97,
      "end": 504.69,
      "text": "America's holiday shopping season starts on Black Friday, the day after Thanksgiving."
     },
     {
-     "id": "l81",
+     "id": "l79",
      "start": 505.05,
      "end": 507.69,
      "text": "It is the busiest shopping day of the year."
     },
     {
-     "id": "l82",
+     "id": "l80",
      "start": 508.41,
      "end": 514.37,
      "text": "Retailers make the most money this time of year, about 20 to 30 percent of annual revenue."
     },
     {
-     "id": "l83",
+     "id": "l81",
      "start": 515.09,
      "end": 520.29,
      "text": "About 136 million people will shop during the Thanksgiving holiday weekend."
     },
     {
-     "id": "l84",
+     "id": "l82",
      "start": 521.09,
      "end": 523.25,
      "text": "More and more will shop online."
     },
     {
-     "id": "l85",
+     "id": "l83",
      "start": 523.73,
-     "end": 532.52,
-     "text": "In an era of instant information, shoppers can use their mobile phones to find deals. About 183."
+     "end": 529.25,
+     "text": "In an era of instant information, shoppers can use their mobile phones to find deals."
     },
     {
-     "id": "l86",
-     "start": 532.57,
-     "end": 538.17,
-     "text": "8 million people will shop on Cyber Monday, the first Monday after Thanksgiving."
+     "id": "l84",
+     "start": 530.29,
+     "end": 537.53,
+     "text": "About 183.8 million people will shop on Cyber Monday, the first Monday after Thanksgiving."
     },
     {
-     "id": "l87",
+     "id": "l85",
      "start": 538.89,
      "end": 542.91,
      "text": "More than half of all holiday purchases will be made online."
     },
     {
-     "id": "l88",
+     "id": "l86",
      "start": 543.79,
      "end": 547.47,
      "text": "One in five Americans will use a tablet or smartphone."
     },
     {
-     "id": "l89",
+     "id": "l87",
      "start": 548.35,
-     "end": 553.19,
-     "text": "Online spending on Black Friday will rise 15 percent to hit 2."
-    },
-    {
-     "id": "l90",
-     "start": 553.84,
      "end": 556.02,
-     "text": "7 billion dollars this year."
+     "text": "Online spending on Black Friday will rise 15 percent to hit 2.7 billion dollars this year."
     },
     {
-     "id": "l91",
+     "id": "l88",
      "start": 556.07,
      "end": 558.79,
      "text": "Cyber Monday spending will increase 12 percent to 3 billion dollars."
     },
     {
-     "id": "l92",
+     "id": "l89",
      "start": 561.84,
      "end": 567.88,
      "text": "For many, shopping online was \"a more comfortable alternative\" than crowded malls."
     },
     {
-     "id": "l93",
+     "id": "l90",
      "start": 568.64,
      "end": 573.4,
      "text": "The shift to online shopping has had a big impact on traditional shopping malls."
     },
     {
-     "id": "l94",
+     "id": "l91",
      "start": 574.04,
      "end": 581.04,
      "text": "Since 2010, more than 24 shopping malls have closed and an additional 60 are struggling."
     },
     {
-     "id": "l95",
+     "id": "l92",
      "start": 581.84,
      "end": 585.88,
      "text": "However, Fortune says the weakest of the malls have closed."
     },
     {
-     "id": "l96",
+     "id": "l93",
      "start": 586.52,
      "end": 588.24,
      "text": "The sector is thriving again."
     },
     {
-     "id": "l97",
+     "id": "l94",
      "start": 589.2,
-     "end": 592.28,
-     "text": "The International Council of Shopping Centers said 94."
+     "end": 597.68,
+     "text": "The International Council of Shopping Centers said 94.2 percent of malls were full, or occupied with shops by the end of 2014."
     },
     {
-     "id": "l98",
-     "start": 593.56,
-     "end": 598.8,
-     "text": "2 percent of malls were full, or occupied with shops by the end of 2014."
-    },
-    {
-     "id": "l99",
-     "start": 599.12,
+     "id": "l95",
+     "start": 599.28,
      "end": 601.88,
      "text": "That is the highest level in 27 years."
     },
     {
-     "id": "l100",
-     "start": 603.32,
+     "id": "l96",
+     "start": 602.8,
      "end": 610.2,
      "text": "Economist, Gus Faucher, said lower unemployment and rising wages could give Americans more money to spend."
     },
     {
-     "id": "l101",
+     "id": "l97",
      "start": 611.16,
      "end": 616.28,
      "text": "The average American consumer will spend about 805 dollars on gifts."
     },
     {
-     "id": "l102",
+     "id": "l98",
      "start": 616.92,
-     "end": 618.4,
-     "text": "That's about 630."
-    },
-    {
-     "id": "l103",
-     "start": 618.45,
-     "end": 623.85,
-     "text": "5 billion dollars between November and December, an increase of 3."
-    },
-    {
-     "id": "l104",
-     "start": 625.04,
      "end": 626.36,
-     "text": "7 percent from last year."
+     "text": "That's about 630.5 billion dollars between November and December, an increase of 3.7 percent from last year."
     },
     {
-     "id": "l105",
+     "id": "l99",
      "start": 628.38,
      "end": 632.98,
      "text": "Questions 9 to 12 are based on the passage you have just heard."
     },
     {
-     "id": "l106",
+     "id": "l100",
      "start": 633.86,
      "end": 638.18,
      "text": "Q9. What is the speaker mainly talking about?"
     },
     {
-     "id": "l107",
+     "id": "l101",
      "start": 651.8,
      "end": 656.68,
      "text": "Q10. How many people will shop on Cyber Monday?"
     },
     {
-     "id": "l108",
+     "id": "l102",
      "start": 670.43,
      "end": 675.87,
      "text": "Q11. What does Fortune say about traditional shopping malls?"
     },
     {
-     "id": "l109",
+     "id": "l103",
      "start": 689.62,
      "end": 694.7,
      "text": "Q12. What is said to account for the increase number of shoppers?"
     },
     {
-     "id": "l110",
+     "id": "l104",
      "start": 708.15,
      "end": 708.67,
      "text": "PASSAGE 2"
     },
     {
-     "id": "l111",
+     "id": "l105",
      "start": 710.42,
      "end": 716.38,
      "text": "For years, many of us have relied on antibiotic use to treat various infections."
     },
     {
-     "id": "l112",
-     "start": 720.94,
+     "id": "l106",
+     "start": 717.18,
      "end": 726.76,
      "text": "And the reality is that antibiotics have been responsible for saving millions of lives since penicillin, one of the earliest antibiotics who's first used on a clinical basis 70 years ago."
     },
     {
-     "id": "l113",
-     "start": 730.94,
+     "id": "l107",
+     "start": 730.42,
      "end": 739.98,
      "text": "However, today is a new era in which taking antibiotics can cause some very dangerous and potentially life-threatening situations."
     },
     {
-     "id": "l114",
+     "id": "l108",
      "start": 740.86,
      "end": 751.27,
      "text": "In fact, you may have heard about the new \"superbugs\", which are antibiotic-resistant bacteria that have developed as a result of overprescribed antibiotics."
     },
     {
-     "id": "l115",
+     "id": "l109",
      "start": 753.52,
      "end": 767.8,
      "text": "In the past, health experts warned us that the day would come in which it would become very difficult to provide medical care for even common problems, such as lung infection or severe sore throat."
     },
     {
-     "id": "l116",
+     "id": "l110",
      "start": 768.84,
      "end": 778.91,
      "text": "And apparently that day has come, because seemingly routine operations such as knee replacements are now much more hazardous due to the looming threat of these infections."
     },
     {
-     "id": "l117",
+     "id": "l111",
      "start": 782.07,
      "end": 795.35,
      "text": "The problem has grown into such epidemic proportions that this severe strain of resistant bacteria is being blamed for nearly 700,000 deaths each year throughout the world."
     },
     {
-     "id": "l118",
+     "id": "l112",
      "start": 796.31,
      "end": 805.75,
      "text": "And unfortunately, health experts worry that the number will rise to 10 million or more on a yearly basis by 2050."
     },
     {
-     "id": "l119",
+     "id": "l113",
      "start": 806.15,
      "end": 811.07,
      "text": "With such a large life-threatening epidemic, it is sad to say that only 1."
     },
     {
-     "id": "l120",
+     "id": "l114",
      "start": 812.03,
      "end": 820.85,
      "text": "2 percent of budgetary money for the National Institutes of Health is currently being spent on research to tackle this problem."
     },
     {
-     "id": "l121",
+     "id": "l115",
      "start": 821.21,
      "end": 828.05,
      "text": "This is a far cry from the funds necessary for a problem of such magnitude."
     },
     {
-     "id": "l122",
+     "id": "l116",
      "start": 829.37,
      "end": 833.49,
      "text": "Questions 13 to 15 are based on the passage you have just heard."
     },
     {
-     "id": "l123",
+     "id": "l117",
      "start": 834.17,
      "end": 838.56,
      "text": "Q13. What do we learn about the \"superbugs\"?"
     },
     {
-     "id": "l124",
+     "id": "l118",
      "start": 852.15,
      "end": 857.43,
      "text": "Q14. What is the result of the overuse of antibiotics?"
     },
     {
-     "id": "l125",
+     "id": "l119",
      "start": 871.37,
      "end": 880.29,
      "text": "Q15. What is most urgently needed for tackling the large life-threatening epidemic, according to the speaker?"
     },
     {
-     "id": "l126",
+     "id": "l120",
      "start": 893.4,
      "end": 893.92,
      "text": "Section C."
     },
     {
-     "id": "l127",
+     "id": "l121",
      "start": 896.36,
      "end": 902.96,
      "text": "In this section you will hear three recordings of lectures or talks followed by three or"
     },
     {
-     "id": "l128",
+     "id": "l122",
      "start": 903.16,
      "end": 903.64,
      "text": "four questions."
     },
     {
-     "id": "l129",
+     "id": "l123",
      "start": 904.52,
      "end": 906.6,
      "text": "The recordings will be played only once."
     },
     {
-     "id": "l130",
+     "id": "l124",
      "start": 907.4,
-     "end": 912.67,
+     "end": 912.43,
      "text": "After you hear a question, you must choose the best answer from the four choices marked"
     },
     {
-     "id": "l131",
-     "start": 912.72,
-     "end": 914.01,
+     "id": "l125",
+     "start": 912.48,
+     "end": 914.8,
      "text": "A, B, C and D."
     },
     {
-     "id": "l132",
+     "id": "l126",
      "start": 915.73,
      "end": 920.65,
      "text": "Then mark the corresponding letter on answer sheet 1 with a single line"
     },
     {
-     "id": "l133",
+     "id": "l127",
      "start": 920.65,
      "end": 921.53,
      "text": "through the center."
     },
     {
-     "id": "l134",
+     "id": "l128",
      "start": 923.77,
      "end": 924.41,
      "text": "RECORDING 1"
     },
     {
-     "id": "l135",
+     "id": "l129",
      "start": 926.17,
      "end": 929.21,
      "text": "This is the reason you are here in a university."
     },
     {
-     "id": "l136",
+     "id": "l130",
      "start": 929.97,
      "end": 931.49,
      "text": "You are here to be educated."
     },
     {
-     "id": "l137",
+     "id": "l131",
      "start": 932.73,
      "end": 937.29,
      "text": "You are here to understand thinking better and to think better yourself."
     },
     {
-     "id": "l138",
+     "id": "l132",
      "start": 938.21,
      "end": 941.65,
      "text": "It's not a chance you are going to have throughout your lifetime."
     },
     {
-     "id": "l139",
+     "id": "l133",
      "start": 942.13,
      "end": 946.77,
      "text": "For the next few years, you have a chance to focus on thinking."
     },
     {
-     "id": "l140",
+     "id": "l134",
      "start": 948.77,
      "end": 953.89,
      "text": "I think about some of the students who took advantage of their opportunities in a university."
     },
     {
-     "id": "l141",
+     "id": "l135",
      "start": 955.4,
      "end": 965.04,
      "text": "One of the stories I always like to tell is about a freshman seminar that I had a chance to teach at Harvard when I was President of the university."
     },
     {
-     "id": "l142",
+     "id": "l136",
      "start": 966.48,
      "end": 972.23,
      "text": "I taught a seminar on globalization and I assigned a reading that I had written about global capital flows."
     },
     {
-     "id": "l143",
-     "start": 972.28,
+     "id": "l137",
+     "start": 975.01,
      "end": 982.56,
      "text": "And as I did each week, I asked one of the students to introduce the reading."
     },
     {
-     "id": "l144",
+     "id": "l138",
      "start": 982.61,
      "end": 988.37,
      "text": "And this younger man in October of his freshman year said something like the following."
     },
     {
-     "id": "l145",
+     "id": "l139",
      "start": 990.29,
      "end": 1001.15,
      "text": "\"The reading by President Simons on the flow of capital across countries, it was kind of interesting, but the data did not come close to supporting the conclusions. \" And I thought to myself, \"What a fantastic thing this was!"
     },
     {
-     "id": "l146",
+     "id": "l140",
      "start": 1001.2,
      "end": 1005.8,
      "text": "And it was a special moment."
     },
     {
-     "id": "l147",
+     "id": "l141",
      "start": 1005.85,
      "end": 1006.15,
      "text": "\" How could somebody who had been there for five weeks tell the person who had the title President that he didn't really know what he was talking about?"
     },
     {
-     "id": "l148",
+     "id": "l142",
      "start": 1018.08,
      "end": 1020.72,
      "text": "Now, I don't want to be misunderstood."
     },
     {
-     "id": "l149",
+     "id": "l143",
      "start": 1021.6,
      "end": 1028.24,
      "text": "I explained to my student that I actually thought he was rather more confused than I was, and I argued back."
     },
     {
-     "id": "l150",
+     "id": "l144",
      "start": 1029.04,
      "end": 1037.92,
      "text": "But what was really important about that was the universities stand out as places that really are about the authority of ideas."
     },
     {
-     "id": "l151",
+     "id": "l145",
      "start": 1039.03,
      "end": 1047.67,
      "text": "You see it in faculty members who are pleased when their students make a discovery that undermines a cherished theory that they had put forward."
     },
     {
-     "id": "l152",
+     "id": "l146",
      "start": 1048.95,
      "end": 1058.5,
      "text": "I think of another students I had who came to me one morning, one evening actually, walked into my office and said that I had written a pretty good paper, but that it had five important mistakes and that he wanted a job."
     },
     {
-     "id": "l153",
+     "id": "l147",
      "start": 1064.66,
      "end": 1071.5,
      "text": "You could debate whether they actually were mistakes, but you couldn't debate that young man's hunger to learn."
     },
     {
-     "id": "l154",
+     "id": "l148",
      "start": 1072.38,
      "end": 1085.72,
      "text": "You could not debate that that young man was someone who wanted to make a difference in economics and he is today a professor of economics and his works are more cited as an economist than any other economist in the world."
     },
     {
-     "id": "l155",
+     "id": "l149",
      "start": 1088.72,
      "end": 1090.4,
      "text": "question sixteen to eighteen"
     },
     {
-     "id": "l156",
+     "id": "l150",
      "start": 1090.64,
      "end": 1093.2,
      "text": "are based on the recording you have just heard"
     },
     {
-     "id": "l157",
+     "id": "l151",
      "start": 1094.04,
      "end": 1098.68,
      "text": "Q16. What does the speaker say about a university?"
     },
     {
-     "id": "l158",
+     "id": "l152",
      "start": 1112.22,
      "end": 1117.66,
      "text": "Q17. What do we learn from the speaker's stories about universities?"
     },
     {
-     "id": "l159",
+     "id": "l153",
      "start": 1131.09,
      "end": 1137.25,
      "text": "Q18. What does the speaker see in the young man who challenged his paper?"
     },
     {
-     "id": "l160",
+     "id": "l154",
      "start": 1151,
      "end": 1151.6,
      "text": "RECORDING 2"
     },
     {
-     "id": "l161",
+     "id": "l155",
      "start": 1153.08,
      "end": 1158.04,
      "text": "Psychological research shows we consistently underestimate our mental powers."
     },
     {
-     "id": "l162",
+     "id": "l156",
      "start": 1158.96,
      "end": 1165.36,
      "text": "If you think this does not apply to you, then here is a simple test to show you're wrong."
     },
     {
-     "id": "l163",
+     "id": "l157",
      "start": 1166.4,
      "end": 1170.12,
      "text": "Write down the names of all the American states you can remember."
     },
     {
-     "id": "l164",
+     "id": "l158",
      "start": 1170.96,
      "end": 1175.72,
      "text": "Put the list away, and then set yourself the same task a week later."
     },
     {
-     "id": "l165",
+     "id": "l159",
      "start": 1176.64,
      "end": 1182.68,
      "text": "Provided you have not cheated by consulting an atlas, you will notice something rather surprising."
     },
     {
-     "id": "l166",
-     "start": 1184.28,
+     "id": "l160",
+     "start": 1183.56,
      "end": 1189.6,
      "text": "The two lists will contain roughly the same number of states, but they will not be identical."
     },
     {
-     "id": "l167",
+     "id": "l161",
      "start": 1190.68,
      "end": 1195.36,
      "text": "Some names will have slipped away, but others will have replaced them."
     },
     {
-     "id": "l168",
+     "id": "l162",
      "start": 1196.28,
      "end": 1202.76,
      "text": "This suggests that somewhere in your mind you may well have a record of virtually every state."
     },
     {
-     "id": "l169",
+     "id": "l163",
      "start": 1203.93,
      "end": 1211.53,
      "text": "So it is not really your memory letting you down, just your ability to retrieve information from it."
     },
     {
-     "id": "l170",
+     "id": "l164",
      "start": 1212.37,
      "end": 1219.89,
      "text": "We would remember a lot more if we had more confidence in your memories and knew how to use them properly."
     },
     {
-     "id": "l171",
+     "id": "l165",
      "start": 1221.25,
      "end": 1230.91,
      "text": "One useful tip is that things are more likely to be remembered if you are in exactly the same state and place as you were when you learn them."
     },
     {
-     "id": "l172",
+     "id": "l166",
      "start": 1231.82,
      "end": 1241.22,
      "text": "So if you are a student who always reviews over black coffee, perhaps it would be sensible to prime yourself with a cup before the exam."
     },
     {
-     "id": "l173",
+     "id": "l167",
      "start": 1242.02,
      "end": 1248.66,
      "text": "If possible, you should also try to learn information in the room where it is going to be tested."
     },
     {
-     "id": "l174",
+     "id": "l168",
      "start": 1249.82,
      "end": 1252.06,
      "text": "When you learn is also important."
     },
     {
-     "id": "l175",
-     "start": 1260.6,
+     "id": "l169",
+     "start": 1252.78,
      "end": 1260.9,
      "text": "Lots of people swear they can absorb new information more efficiently at some times of the day than at others."
     },
     {
-     "id": "l176",
+     "id": "l170",
      "start": 1260.9,
      "end": 1263.46,
      "text": "Research shows this is not just imagination."
     },
     {
-     "id": "l177",
+     "id": "l171",
      "start": 1264.1,
      "end": 1270.08,
      "text": "There is a biological rhythm for learning, though it affects different people in different ways."
     },
     {
-     "id": "l178",
+     "id": "l172",
      "start": 1270.48,
      "end": 1279.96,
      "text": "For most of us, the best plan is to take in new information in the morning and then try to consolidate it into memory during the afternoon."
     },
     {
-     "id": "l179",
+     "id": "l173",
      "start": 1281.04,
      "end": 1287.12,
      "text": "But this does not apply to everyone, so it is essential to establish your own rhythm."
     },
     {
-     "id": "l180",
+     "id": "l174",
      "start": 1333.97,
      "end": 1337.97,
      "text": "Q19. What does psychological research show according to the speaker?"
     },
     {
-     "id": "l181",
+     "id": "l175",
      "start": 1351.34,
      "end": 1355.58,
      "text": "Q20. What do we find about the two lists of names of American states?"
     },
     {
-     "id": "l182",
+     "id": "l176",
      "start": 1391.06,
      "end": 1391.36,
      "text": "Q21. What is the useful tip the speaker gives?"
     },
     {
-     "id": "l183",
+     "id": "l177",
      "start": 1391.36,
      "end": 1396.5,
      "text": "Q22. What does the speaker advise us to do to improve our learning efficiency?"
     },
     {
-     "id": "l184",
+     "id": "l178",
      "start": 1410.52,
      "end": 1411.2,
      "text": "RECORDING 3"
     },
     {
-     "id": "l185",
+     "id": "l179",
      "start": 1413.36,
      "end": 1416.36,
      "text": "Hello, today I'm going to talk about poverty."
     },
     {
-     "id": "l186",
+     "id": "l180",
      "start": 1417.44,
      "end": 1420.76,
      "text": "Poverty has become a critical issue in today's world."
     },
     {
-     "id": "l187",
+     "id": "l181",
      "start": 1421.44,
      "end": 1429,
      "text": "It concerns not only us sociologists, but also economists, politicians and business people."
     },
     {
-     "id": "l188",
+     "id": "l182",
      "start": 1430.04,
      "end": 1433.24,
      "text": "Poverty has been understood in many different ways."
     },
     {
-     "id": "l189",
+     "id": "l183",
      "start": 1434.4,
      "end": 1444.15,
      "text": "One useful way is to distinguish between three degrees of poverty: extreme poverty, moderate poverty, and relative poverty."
     },
     {
-     "id": "l190",
+     "id": "l184",
      "start": 1445.51,
      "end": 1451.51,
      "text": "The first type of poverty is extreme poverty; it's also called absolute poverty."
     },
     {
-     "id": "l191",
+     "id": "l185",
      "start": 1451.91,
      "end": 1456.83,
      "text": "In extreme poverty, households cannot meet basic needs for survival."
     },
     {
-     "id": "l192",
+     "id": "l186",
      "start": 1457.67,
      "end": 1459.47,
      "text": "People are chronically hungry."
     },
     {
-     "id": "l193",
+     "id": "l187",
      "start": 1460.23,
      "end": 1465.47,
      "text": "They are unable to access safe drinking water, let alone health care."
     },
     {
-     "id": "l194",
+     "id": "l188",
      "start": 1466.15,
      "end": 1468.79,
      "text": "They cannot afford education for their children."
     },
     {
-     "id": "l195",
+     "id": "l189",
      "start": 1469.31,
      "end": 1478.95,
      "text": "In short, people who live in extreme poverty do not have even the minimum resources to support themselves and their families."
     },
     {
-     "id": "l196",
+     "id": "l190",
      "start": 1479.55,
      "end": 1481.75,
      "text": "Where does extreme poverty occur?"
     },
     {
-     "id": "l197",
+     "id": "l191",
      "start": 1482.47,
      "end": 1485.87,
      "text": "Well, you can find it only in developing countries."
     },
     {
-     "id": "l198",
+     "id": "l192",
      "start": 1486.55,
      "end": 1488.51,
      "text": "Well, what about moderate poverty?"
     },
     {
-     "id": "l199",
+     "id": "l193",
      "start": 1489.07,
      "end": 1499.07,
      "text": "Unlike extreme poverty, moderate poverty generally refers to conditions of life in which basic needs are met but barely."
     },
     {
-     "id": "l200",
+     "id": "l194",
      "start": 1499.67,
      "end": 1507.09,
      "text": "People living in moderate poverty have the resources to keep themselves alive, but only at a very basic level."
     },
     {
-     "id": "l201",
+     "id": "l195",
      "start": 1507.41,
      "end": 1514.25,
      "text": "For example, they may have access to drinking water, but not clean, safe drinking water."
     },
     {
-     "id": "l202",
+     "id": "l196",
      "start": 1514.85,
      "end": 1521.73,
      "text": "They may have a home to shelter themselves, but it does not have power supply, a telephone or plumbing."
     },
     {
-     "id": "l203",
+     "id": "l197",
      "start": 1522.57,
      "end": 1525.13,
      "text": "The third kind of poverty is relative poverty."
     },
     {
-     "id": "l204",
+     "id": "l198",
      "start": 1525.84,
      "end": 1534.96,
      "text": "Relative poverty is generally considered to be a household income level, which is below a given proportion of average family income."
     },
     {
-     "id": "l205",
+     "id": "l199",
      "start": 1535.92,
      "end": 1541.76,
      "text": "The relatively poor live in high-income countries, but they do not have a high income themselves."
     },
     {
-     "id": "l206",
+     "id": "l200",
      "start": 1542.8,
      "end": 1552.35,
      "text": "The method of calculating the poverty line is different from country to country, but we can say that basically a family living in relative poverty has less than a percentage of the average family income."
     },
     {
-     "id": "l207",
+     "id": "l201",
      "start": 1557.7,
      "end": 1565.74,
      "text": "For example, in the United States, a family can be considered poor if their income is less than 50% of the national average family income."
     },
     {
-     "id": "l208",
+     "id": "l202",
      "start": 1568.92,
      "end": 1577.28,
      "text": "They can meet their basic needs but they lack access to cultural goods, entertainment, and they cannot afford higher education."
     },
     {
-     "id": "l209",
+     "id": "l203",
      "start": 1585.2,
      "end": 1591.32,
      "text": "Well, I have briefly explained to you how poverty can be distinguished as extreme poverty,"
     },
     {
-     "id": "l210",
+     "id": "l204",
      "start": 1591.88,
      "end": 1594.68,
      "text": "moderate poverty, and relative poverty."
     },
     {
-     "id": "l211",
+     "id": "l205",
      "start": 1595.24,
      "end": 1600.4,
      "text": "We should keep these distinctions in mind when we research people's living conditions"
     },
     {
-     "id": "l212",
-     "start": 1607.33,
+     "id": "l206",
+     "start": 1606,
      "end": 1612.78,
      "text": "Questions twenty-three to twenty-five are based on the recording you have just heard."
     },
     {
-     "id": "l213",
+     "id": "l207",
      "start": 1612.83,
-     "end": 1613.13,
-     "text": "Q23. What is the speaker's profession?"
-    },
-    {
-     "id": "l214",
-     "start": 1613.13,
      "end": 1616.55,
-     "text": "Question twenty-three, what does the speaker do?"
+     "text": "Question 23. What does the speaker do?"
     },
     {
-     "id": "l215",
+     "id": "l208",
      "start": 1630.1,
-     "end": 1630.4,
-     "text": "Q24. Where does extreme poverty occur according to the speaker?"
-    },
-    {
-     "id": "l216",
-     "start": 1630.4,
      "end": 1636.22,
-     "text": "Question twenty-four, where does the speaker say we can find extreme poverty?"
+     "text": "Question 24. Where does the speaker say we can find extreme poverty?"
     },
     {
-     "id": "l217",
+     "id": "l209",
      "start": 1650.05,
      "end": 1656.65,
-     "text": "Q25. What does the speaker say about families living in relative poverty in the United States?"
+     "text": "Question 25. What do we learn about American people living in relative poverty?"
     },
     {
-     "id": "l218",
+     "id": "l210",
      "start": 1670.33,
      "end": 1672.81,
      "text": "This is the end of listening comprehension."
