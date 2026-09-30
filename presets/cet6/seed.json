@@ -1,7 +1,7 @@
 {
  "preset": "cet6",
- "version": "20260930.15",
- "generatedAt": "2026-09-30T14:52:13.862Z",
+ "version": "20260930.11",
+ "generatedAt": "2026-09-30T15:07:50.405Z",
  "group": {
   "id": 8,
   "name": "英语六级真题",
@@ -3136,8 +3136,8 @@
     },
     {
      "id": "l26",
-     "start": 155.74,
-     "end": 158.9,
+     "start": 154.74,
+     "end": 158.93,
      "text": "Questions one to four are based on the conversation you have just heard."
     },
     {
@@ -3358,8 +3358,8 @@
     },
     {
      "id": "l63",
-     "start": 338.93,
-     "end": 342.09,
+     "start": 338.01,
+     "end": 342.12,
      "text": "Questions 5 to 8 are based on the conversation you have just heard."
     },
     {
@@ -3550,8 +3550,8 @@
     },
     {
      "id": "l95",
-     "start": 614.16,
-     "end": 635,
+     "start": 615.82,
+     "end": 634.81,
      "text": "The earliest printed book we known today appeared in China in the year 868, and metal type was used in Korea at the beginning of the fifteen century, but it was in Germany around the year 1415, that the printing press used in movable metal type was invented."
     },
     {
@@ -3580,8 +3580,8 @@
     },
     {
      "id": "l100",
-     "start": 701,
-     "end": 723,
+     "start": 701.67,
+     "end": 723.31,
      "text": "The great culture impact of printing was facilitated the growth of national languages, most early books were printed in Latin, but the mark for Latin was limited, and it is pursuit of large markets, the book trade soon produced translation into the national languages, and merging at that time."
     },
     {
@@ -4078,8 +4078,8 @@
     },
     {
      "id": "l183",
-     "start": 1353.53,
-     "end": 1359.21,
+     "start": 1352.73,
+     "end": 1359.24,
      "text": "The Mediterranean diet is based upon the eating patterns of traditional cultures in the Mediterranean region."
     },
     {
@@ -4132,14 +4132,14 @@
     },
     {
      "id": "l192",
-     "start": 1434.78,
-     "end": 1446,
+     "start": 1435.91,
+     "end": 1445.82,
      "text": "When medical researchers started to link the currency of heart disease with diet, Doctor Ancel Keys performed the epidemiological analysis of diets around the world."
     },
     {
      "id": "l193",
-     "start": 1446,
-     "end": 1453.63,
+     "start": 1446.8,
+     "end": 1452.95,
      "text": "Entitled the Seven Countries Study, it is considered one of the greatest studies of its kind ever performed."
     },
     {
@@ -4539,8 +4539,8 @@
     },
     {
      "id": "l46",
-     "start": 163.85,
-     "end": 167.01,
+     "start": 163.05,
+     "end": 167.04,
      "text": "Questions one to four are based on the conversation you have just heard."
     },
     {
@@ -4899,8 +4899,8 @@
     },
     {
      "id": "l106",
-     "start": 364.19,
-     "end": 367.27,
+     "start": 363.39,
+     "end": 367.3,
      "text": "Questions five to eight are based on the conversation you have just heard."
     },
     {
@@ -4977,8 +4977,8 @@
     },
     {
      "id": "l119",
-     "start": 483.06,
-     "end": 496.22,
+     "start": 483.87,
+     "end": 496.38,
      "text": "In contrast, \"night owls\" who go to bed between 11 p. m. and 3 a. m. tend to consume more coffee, alcohol, refined sugars, and processed meats than early risers."
     },
     {
@@ -5001,8 +5001,8 @@
     },
     {
      "id": "l123",
-     "start": 523.4,
-     "end": 531.23,
+     "start": 522.92,
+     "end": 532.34,
      "text": "And a 2015 study from the University of California, Berkeley, found that teens who go to bed late are more likely to gain weight over a five-year period."
     },
     {
@@ -5427,8 +5427,8 @@
     },
     {
      "id": "l194",
-     "start": 1168.38,
-     "end": 1174.62,
+     "start": 1167.86,
+     "end": 1174.65,
      "text": "And if these sources don't give you an accurate depiction, your stereotype won't be accurate."
     },
     {
@@ -6200,8 +6200,8 @@
     },
     {
      "id": "l72",
-     "start": 348.09,
-     "end": 354.73,
+     "start": 347.17,
+     "end": 354.76,
      "text": "Alternatively, you may wish to try and surprise your boss with something less common, such as this Zinfandel."
     },
     {
@@ -6236,8 +6236,8 @@
     },
     {
      "id": "l78",
-     "start": 381.54,
-     "end": 384.7,
+     "start": 380.58,
+     "end": 384.73,
      "text": "Questions 5 to 8 are based on the conversation you have just heard."
     },
     {
@@ -6662,8 +6662,8 @@
     },
     {
      "id": "l149",
-     "start": 896.12,
-     "end": 901.72,
+     "start": 895.64,
+     "end": 901.75,
      "text": "The eight-mile road is at least 500 years older than any previously discovered road."
     },
     {
@@ -6795,13 +6795,13 @@
     {
      "id": "l171",
      "start": 1034.75,
-     "end": 1039.95,
+     "end": 1035.05,
      "text": "Harrell and Bowne believed that blocks were loaded onto barges during the dry season,"
     },
     {
      "id": "l172",
-     "start": 1040.42,
-     "end": 1046.22,
+     "start": 1034.75,
+     "end": 1047.34,
      "text": "Harrell and Bown believe that blocks were loaded onto barges during the dry season, then floated over to the Nile during the floods to be shipped off to the monument sites at Giza and Saqqara."
     },
     {
@@ -6831,13 +6831,13 @@
     {
      "id": "l177",
      "start": 1109.5,
-     "end": 1111.58,
+     "end": 1111.1,
      "text": "RECORDING 2"
     },
     {
      "id": "l178",
-     "start": 1111.63,
-     "end": 1121.91,
+     "start": 1111.15,
+     "end": 1121.94,
      "text": "The thin, extremely sharp needles didn't hurt at all going in. Dr. Gong pierced them into my left arm, around the elbow that had been bothering me."
     },
     {
@@ -6878,8 +6878,8 @@
     },
     {
      "id": "l185",
-     "start": 1160.71,
-     "end": 1167.15,
+     "start": 1160.23,
+     "end": 1167.18,
      "text": "\"Maybe you lean on your left arm too much,\" the doctor concluded, suggesting I see a bone doctor."
     },
     {
@@ -7077,13 +7077,13 @@
     {
      "id": "l218",
      "start": 1409.25,
-     "end": 1415.77,
+     "end": 1409.55,
      "text": "Match two onlys, and you have partners who subconsciously expect each other to continue"
     },
     {
      "id": "l219",
-     "start": 1415.82,
-     "end": 1422.8,
+     "start": 1409.25,
+     "end": 1421.88,
      "text": "Match two \"onlies\", and you have partners who subconsciously expect each other to continue fulfilling this expectation, while neither has much experience in the giving end."
     },
     {
@@ -7094,8 +7094,8 @@
     },
     {
      "id": "l221",
-     "start": 1433.18,
-     "end": 1440.62,
+     "start": 1432.5,
+     "end": 1440.65,
      "text": "The oldest tends to be self-assured, responsible, a high achiever, and relatively serious and reserved."
     },
     {
@@ -7136,8 +7136,8 @@
     },
     {
      "id": "l228",
-     "start": 1492.75,
-     "end": 1499.91,
+     "start": 1492.11,
+     "end": 1499.94,
      "text": "The youngest sister of brothers is best matched with an oldest brother of sisters who will happily indulge these traits."
     },
     {
@@ -7148,8 +7148,8 @@
     },
     {
      "id": "l230",
-     "start": 1513.62,
-     "end": 1524.26,
+     "start": 1513.1,
+     "end": 1524.29,
      "text": "\"Middles\" often successfully marry other \"middles\", since both are strong on tact, not so strong on aggressiveness, and tend to crave affection."
     },
     {
@@ -7297,7 +7297,7 @@
     },
     {
      "id": "l5",
-     "start": 32.81,
+     "start": 31.33,
      "end": 37.45,
      "text": "and D. Then mark the corresponding letter on answer sheet 1, with a single line through"
     },
@@ -7501,8 +7501,8 @@
     },
     {
      "id": "l39",
-     "start": 166.35,
-     "end": 169.63,
+     "start": 165.47,
+     "end": 169.66,
      "text": "Questions one to four are based on the conversation you have just heard."
     },
     {
@@ -7783,8 +7783,8 @@
     },
     {
      "id": "l86",
-     "start": 362.02,
-     "end": 365.34,
+     "start": 361.06,
+     "end": 365.37,
      "text": "Questions 5 to 8 are based on the conversation you have just heard."
     },
     {
@@ -7975,8 +7975,8 @@
     },
     {
      "id": "l118",
-     "start": 675.5,
-     "end": 689.3,
+     "start": 676.42,
+     "end": 689.77,
      "text": "After I moved to Tokyo and lived there for a number of years, I got used to having a pile of to-do lists, and my calendar always looked like a mess, with loads of things to do written across it."
     },
     {
@@ -8137,8 +8137,8 @@
     },
     {
      "id": "l145",
-     "start": 1030.3,
-     "end": 1042.33,
+     "start": 1031,
+     "end": 1042.99,
      "text": "\"Of the 7,000 alien species in the United States-out of a total of 150,000 species-only about 10 percent are invasive,\" he pointed out."
     },
     {
@@ -8269,8 +8269,8 @@
     },
     {
      "id": "l167",
-     "start": 1208.15,
-     "end": 1216.23,
+     "start": 1207.67,
+     "end": 1216.26,
      "text": "And Question 4: Where should you try to make all your appointments either before 2:00 or after 5:30 p.m.?"
     },
     {
@@ -8287,8 +8287,8 @@
     },
     {
      "id": "l170",
-     "start": 1220.63,
-     "end": 1231.3,
+     "start": 1221.71,
+     "end": 1230.74,
      "text": "Right, here are the answers-although I'm sure the information could equally well apply to countries other than those I have chosen."
     },
     {
@@ -8419,8 +8419,8 @@
     },
     {
      "id": "l192",
-     "start": 1445,
-     "end": 1459.88,
+     "start": 1444.52,
+     "end": 1459.91,
      "text": "The editor's office used to be occupied by founder Dewitt Wallace, who, along with his wife Lila Acheson Wallace, launched Reader's Digest in 1922 with condensed articles from other publications."
     },
     {
@@ -8604,8 +8604,8 @@
     },
     {
      "id": "l5",
-     "start": 30.65,
-     "end": 38.87,
+     "start": 36.92,
+     "end": 37.47,
      "text": "through the centre."
     },
     {
@@ -8736,8 +8736,8 @@
     },
     {
      "id": "l27",
-     "start": 159.67,
-     "end": 162.75,
+     "start": 158.51,
+     "end": 162.78,
      "text": "Questions one to four are based on the conversation you have just heard."
     },
     {
@@ -8940,8 +8940,8 @@
     },
     {
      "id": "l61",
-     "start": 344.03,
-     "end": 346.91,
+     "start": 343.03,
+     "end": 346.94,
      "text": "Questions five to eight are based on the conversation you have just heard."
     },
     {
@@ -9240,8 +9240,8 @@
     },
     {
      "id": "l111",
-     "start": 848.8,
-     "end": 857,
+     "start": 855.17,
+     "end": 855.76,
      "text": "through the centre."
     },
     {
@@ -11374,8 +11374,8 @@
     },
     {
      "id": "l41",
-     "start": 158.39,
-     "end": 161.63,
+     "start": 157.31,
+     "end": 161.66,
      "text": "Questions one to four are based on the conversation you have just heard."
     },
     {
@@ -11530,8 +11530,8 @@
     },
     {
      "id": "l67",
-     "start": 365.71,
-     "end": 368.99,
+     "start": 364.39,
+     "end": 369.02,
      "text": "Questions five to eight are based on the conversation you have just heard."
     },
     {
@@ -12196,8 +12196,8 @@
     },
     {
      "id": "l178",
-     "start": 1370.01,
-     "end": 1378.72,
+     "start": 1372.72,
+     "end": 1379.55,
      "text": "Skin may seem like a superficial human attribute, but it is the first thing we notice about anyone we meet."
     },
     {
@@ -12465,15 +12465,15 @@
     },
     {
      "id": "l8",
-     "start": 33.95,
-     "end": 35.32,
-     "text": "corresponding letter on answer sheet 1 with a single line through the centre."
+     "start": 32.83,
+     "end": 33.82,
+     "text": "Then mark the"
     },
     {
      "id": "l9",
-     "start": 35.37,
-     "end": 37.18,
-     "text": "Then mark the"
+     "start": 33.95,
+     "end": 35.32,
+     "text": "corresponding letter on answer sheet 1 with a single line through the centre."
     },
     {
      "id": "l10",
@@ -12627,8 +12627,8 @@
     },
     {
      "id": "l35",
-     "start": 167.78,
-     "end": 170.98,
+     "start": 166.9,
+     "end": 171.01,
      "text": "Questions one to four are based on the conversation you have just heard."
     },
     {
@@ -12669,8 +12669,8 @@
     },
     {
      "id": "l42",
-     "start": 252.46,
-     "end": 260.74,
+     "start": 254.51,
+     "end": 260.26,
      "text": "M: Fine, I am putting the finishing touches to it now, but we will have to be prepared for questions."
     },
     {
@@ -12802,13 +12802,13 @@
     {
      "id": "l64",
      "start": 363.06,
-     "end": 366.24,
+     "end": 365.52,
      "text": "I think that will answer most of their concerns."
     },
     {
      "id": "l65",
-     "start": 366.45,
-     "end": 369.77,
+     "start": 365.57,
+     "end": 369.8,
      "text": "Questions five to eight are based on the conversation you have just heard."
     },
     {
@@ -12837,8 +12837,8 @@
     },
     {
      "id": "l70",
-     "start": 441.45,
-     "end": 442.45,
+     "start": 440.57,
+     "end": 442.48,
      "text": "Section B, directions."
     },
     {
@@ -12939,8 +12939,8 @@
     },
     {
      "id": "l87",
-     "start": 553.23,
-     "end": 560.59,
+     "start": 552.75,
+     "end": 560.62,
      "text": "The passengers often say that seeing animals makes them feel much better and helps them to calm down before a flight."
     },
     {
@@ -12999,8 +12999,8 @@
     },
     {
      "id": "l97",
-     "start": 655.14,
-     "end": 662.85,
+     "start": 651.97,
+     "end": 662.92,
      "text": "Today I'm standing at a two-thousand-year-old Roman-era site. Here the brightly colored scenes that once decorated a mansion are being dug up."
     },
     {
@@ -13101,21 +13101,21 @@
     },
     {
      "id": "l114",
+     "start": 848.8,
+     "end": 849.1,
+     "text": "In this section you will hear three recordings"
+    },
+    {
+     "id": "l115",
      "start": 848.87,
      "end": 849.27,
      "text": "Directions."
     },
     {
-     "id": "l115",
+     "id": "l116",
      "start": 849.32,
      "end": 849.76,
      "text": "Section C."
-    },
-    {
-     "id": "l116",
-     "start": 849.95,
-     "end": 851.71,
-     "text": "In this section you will hear three recordings"
     },
     {
      "id": "l117",
@@ -13227,8 +13227,8 @@
     },
     {
      "id": "l135",
-     "start": 957.44,
-     "end": 962.79,
+     "start": 959.67,
+     "end": 962.82,
      "text": "This necessity comes with the rise of big science."
     },
     {
@@ -13251,8 +13251,8 @@
     },
     {
      "id": "l139",
-     "start": 986.59,
-     "end": 994.23,
+     "start": 985.59,
+     "end": 994.26,
      "text": "Simultaneously, dramatic drops in communication costs ease long-distance interactions, and there's a reward."
     },
     {
@@ -13521,8 +13521,8 @@
     },
     {
      "id": "l184",
-     "start": 1521.01,
-     "end": 1530.5,
+     "start": 1520.53,
+     "end": 1530.53,
      "text": "Instead, we lend people motion-detecting watches and they wear them for a week at a time, whenever they are not having a shower or swimming."
     },
     {
@@ -13832,8 +13832,8 @@
     },
     {
      "id": "l32",
-     "start": 178.65,
-     "end": 181.45,
+     "start": 177.69,
+     "end": 181.48,
      "text": "questions one to four are based on the conversation you have just"
     },
     {
@@ -13977,13 +13977,13 @@
     {
      "id": "l56",
      "start": 374.15,
-     "end": 377.85,
+     "end": 376.81,
      "text": "W: Well, then you should check it out. It's also very funny. It's about four male scientists and a female waitress. The men are very socially awkward but very bright. And this is contrasted by the lady's social skills and common sense. The show has been running for over ten years, and some of the actors are practically global super stars. Now that they are such famous celebrities."
     },
     {
      "id": "l57",
-     "start": 377.9,
-     "end": 379.06,
+     "start": 376.86,
+     "end": 379.25,
      "text": "questions five to eight are based on the"
     },
     {
@@ -14318,7 +14318,7 @@
     },
     {
      "id": "l113",
-     "start": 879.29,
+     "start": 878.65,
      "end": 884.6,
      "text": "of lectures or talks followed by three or four questions the recordings will be"
     },
@@ -14534,8 +14534,8 @@
     },
     {
      "id": "l149",
-     "start": 1172.73,
-     "end": 1178.72,
+     "start": 1173.36,
+     "end": 1179.11,
      "text": "In the first study, three-year-olds watch two videos shown side by side."
     },
     {
@@ -14576,8 +14576,8 @@
     },
     {
      "id": "l156",
-     "start": 1223.77,
-     "end": 1226.78,
+     "start": 1224.47,
+     "end": 1226.46,
      "text": "Our second study is about music."
     },
     {
@@ -14594,8 +14594,8 @@
     },
     {
      "id": "l159",
-     "start": 1247.23,
-     "end": 1260.58,
+     "start": 1247.82,
+     "end": 1260.78,
      "text": "This mood switch made no difference to the three-month-olds; but for the nine-month-olds, it was enough to renew their interest and they started looking again in the direction of the face."
     },
     {
@@ -14612,8 +14612,8 @@
     },
     {
      "id": "l162",
-     "start": 1275.15,
-     "end": 1282.39,
+     "start": 1275.63,
+     "end": 1282.38,
      "text": "In fact, it's one of the most famous pieces of research about infant emotion ever published."
     },
     {
