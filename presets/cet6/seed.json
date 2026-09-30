@@ -1,7 +1,7 @@
 {
  "preset": "cet6",
- "version": "20260930.18",
- "generatedAt": "2026-09-30T15:15:17.579Z",
+ "version": "20260930.19",
+ "generatedAt": "2026-09-30T15:19:39.591Z",
  "group": {
   "id": 8,
   "name": "英语六级真题",
@@ -3869,7 +3869,7 @@
     {
      "id": "l148",
      "start": 1076.34,
-     "end": 1077.4,
+     "end": 1085.4,
      "text": "Kwanzaa is a cultural festival, during which African-American celebrate and reflect upon their rich heritage as the products of the two worlds."
     },
     {
@@ -5751,7 +5751,7 @@
     {
      "id": "l9",
      "start": 46.1,
-     "end": 47.26,
+     "end": 47.9,
      "text": "W: No, I'm going to make a gazpacho."
     },
     {
@@ -7083,17 +7083,11 @@
     {
      "id": "l231",
      "start": 1629.35,
-     "end": 1629.65,
-     "text": "Q24. What does the speaker say about the oldest child in a family?"
+     "end": 1634.47,
+     "text": "Question 25. What does the speaker say about the only children?"
     },
     {
      "id": "l232",
-     "start": 1629.65,
-     "end": 1634.47,
-     "text": "Q25. What does the speaker say about the only children?"
-    },
-    {
-     "id": "l233",
      "start": 1646.85,
      "end": 1649.49,
      "text": "This is the end of listening comprehension."
@@ -8766,93 +8760,93 @@
     },
     {
      "id": "l62",
-     "start": 452.65,
-     "end": 460.01,
-     "text": "Q8. What does the professor say the man has to do?"
+     "start": 450.13,
+     "end": 450.9,
+     "text": "PASSAGE 1"
     },
     {
      "id": "l63",
+     "start": 452.09,
+     "end": 459.96,
+     "text": "During the arctic winter from October to March, the average temperature in the frozen north typically hovers around minus 20 degrees Celsius. But this year the Arctic is experiencing much higher temperatures. On February the 20th the temperature in Greenland climbed above freezing or zero degrees Celsius and it stayed there for over 24 hours."
+    },
+    {
+     "id": "l64",
      "start": 460.01,
      "end": 460.81,
      "text": "Section B, directions."
     },
     {
-     "id": "l64",
+     "id": "l65",
      "start": 460.81,
-     "end": 463.81,
+     "end": 461.11,
      "text": "In this section, you will hear two passages."
     },
     {
-     "id": "l65",
+     "id": "l66",
+     "start": 460.95,
+     "end": 463.76,
+     "text": "Then on February the 24th the temperature on Greenland's northern tip reached six degrees Celsius."
+    },
+    {
+     "id": "l67",
      "start": 463.81,
-     "end": 468.57,
+     "end": 468.2,
      "text": "At the end of each passage, you will hear three or four questions."
     },
     {
-     "id": "l66",
+     "id": "l68",
+     "start": 468.25,
+     "end": 468.55,
+     "text": "Climate scientists describe the phenomenon as stunning. Weather conditions that drive this bizarre temperature surge have visited the Arctic before. They typically appear about once in a decade. However, the last such increase in temperature took place two years ago. This is troubling as climbing arctic temperatures combined with rapid sea ice loss are creating a new type of climate feedback loop which could accelerate Arctic warming."
+    },
+    {
+     "id": "l69",
      "start": 468.57,
      "end": 473.33,
      "text": "Both the passage and the questions will be spoken only once."
     },
     {
-     "id": "l67",
+     "id": "l70",
      "start": 473.33,
-     "end": 479.79,
+     "end": 475.39,
      "text": "After you hear a question, you must choose the best answer from the four choices marked A, B, C and D."
     },
     {
-     "id": "l68",
-     "start": 479.79,
-     "end": 486.37,
-     "text": "Then mark the corresponding letter on answer sheet one with a single line"
-    },
-    {
-     "id": "l69",
-     "start": 486.37,
-     "end": 490.17,
-     "text": "through the centre. Each one."
-    },
-    {
-     "id": "l70",
-     "start": 490.17,
-     "end": 490.97,
-     "text": "PASSAGE 1"
-    },
-    {
      "id": "l71",
-     "start": 490.97,
-     "end": 498.95,
-     "text": "During the arctic winter from October to March, the average temperature in the frozen north typically hovers around minus 20 degrees Celsius. But this year the Arctic is experiencing much higher temperatures. On February the 20th the temperature in Greenland climbed above freezing or zero degrees Celsius and it stayed there for over 24 hours."
-    },
-    {
-     "id": "l72",
-     "start": 498.95,
-     "end": 506.25,
-     "text": "Then on February the 24th the temperature on Greenland's northern tip reached six degrees Celsius."
-    },
-    {
-     "id": "l73",
-     "start": 506.25,
-     "end": 513.2,
-     "text": "Climate scientists describe the phenomenon as stunning. Weather conditions that drive this bizarre temperature surge have visited the Arctic before. They typically appear about once in a decade. However, the last such increase in temperature took place two years ago. This is troubling as climbing arctic temperatures combined with rapid sea ice loss are creating a new type of climate feedback loop which could accelerate Arctic warming."
-    },
-    {
-     "id": "l74",
-     "start": 513.44,
-     "end": 517.64,
+     "start": 475.44,
+     "end": 479.64,
      "text": "Indeed, sea ice cover in the Arctic is melting faster than expected."
     },
     {
-     "id": "l75",
-     "start": 518.32,
-     "end": 526.2,
+     "id": "l72",
+     "start": 479.79,
+     "end": 480.27,
+     "text": "Then mark the corresponding letter on answer sheet one with a single line"
+    },
+    {
+     "id": "l73",
+     "start": 480.32,
+     "end": 486.32,
      "text": "Without those masses of cooling sea ice, warm air brought to the Arctic can penetrate further inland than it ever did before."
     },
     {
-     "id": "l76",
-     "start": 526.84,
-     "end": 543.76,
+     "id": "l74",
+     "start": 486.37,
+     "end": 488.79,
+     "text": "through the centre. Each one."
+    },
+    {
+     "id": "l75",
+     "start": 488.84,
+     "end": 499.45,
      "text": "The air can stay warmer longer too. This drives additional melting. Overall earth is warming at a rapid pace. 2014 through 2017 rank as the hottest years on record and the Arctic is warming twice as fast as any place else on earth."
+    },
+    {
+     "id": "l76",
+     "start": 499.5,
+     "end": 506.5,
+     "text": "Q8. What does the professor say the man has to do?"
     },
     {
      "id": "l77",
@@ -11999,7 +11993,7 @@
     {
      "id": "l179",
      "start": 1397.72,
-     "end": 1398.02,
+     "end": 1399,
      "text": "RECORDING 3"
     },
     {
