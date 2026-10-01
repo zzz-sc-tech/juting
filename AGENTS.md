@@ -2,6 +2,27 @@
 
 # AGENTS.md
 
+> **⚠️ 数据写入红线（本 fork 强制，2026-10-01 译文冲掉事故后立）**
+>
+> 1. **改 transcript_json 必须走契约通道** `scripts/audit/data-contract.mjs` 的
+>    `saveTranscript({dryRun, expect})`，先 dry 后写。禁止任何脚本手拼
+>    `UPDATE exercises SET transcript_json` 或白名单式重建行对象
+>    （`{id,start,end,text}` 重建 = 丢 translation 字段 = 事故原样复现）。
+>    行对象一律 `{...line, 要改的字段}` spread 透传。
+> 2. **每轮数据修复后必跑不变式门禁**
+>    `node scripts/audit/check-invariants.mjs`（查"不该变的有没有变"：译文覆盖/
+>    行数漂移/字段契约/id 连续/时间单调），连同既有三件套
+>    `temp/check-block-count.mjs`、`temp/deep-audit-courses.mjs`、
+>    `temp/layer2-line-checks.mjs`（查"修复目标达没达成"）。合法变更后
+>    `--rebuild-baseline` 重建基线。
+> 3. **批处理按门循环必须 try/catch + 汇总报告**，不许中途 throw 留半完成态；
+>    删除/重建一段用**时间区间**界定，禁止用数组下标范围（#21 误删整段教训）。
+> 4. **改 packages/domain（锚点提取器等运行时推导）= 全库数据变更**：
+>    必须 rebuild dist + 全部门禁回归。数据修复与代码改动分开提交。
+> 5. seed 每次落库写都必须升 version（`YYYYMMDD.N`），DB 与 seed 同事务式写入。
+> 6. 事实源仲裁顺序：**音频词图（temp/wordmap/）> 官方原文 > ASR 文本**；
+>    ASR 连读误听率可达 35%+，md 与词图冲突时先怀疑 ASR。
+
 > **Fork 注意**：本仓库是上游 [VeejaLiu/duolinting](https://github.com/VeejaLiu/duolinting) 的
 > 「本地优先单人备考」分支，有意做了以下偏离（详见 docs/upstream-differences.md）：
 > 学习端与管理端免登录（单会话互顶问题已用静默续登处理）、管理端侧栏精简、
