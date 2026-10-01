@@ -1,7 +1,7 @@
 {
  "preset": "cet6",
- "version": "20261001.8",
- "generatedAt": "2026-10-01T05:22:00.699Z",
+ "version": "20261001.9",
+ "generatedAt": "2026-10-01T05:50:30.566Z",
  "group": {
   "id": 8,
   "name": "英语六级真题",
@@ -48649,1379 +48649,1379 @@
    "transcript_json": [
     {
      "id": "l1",
+     "start": 0,
      "end": 23.8,
      "text": "College English Test - Band 6, Part 2 - Listening Comprehension Section A - Directions In this section, you will hear two long conversations. At the end of each conversation, you will hear four questions.",
-     "start": 0,
      "translation": "大学英语六级考试第二部分听力理解。A 节说明：在本节中，你将听到两段长对话。每段对话结束后，你将听到四个问题。"
     },
     {
      "id": "l2",
+     "start": 23.8,
      "end": 36.82,
      "text": "Both the conversation and the questions will be spoken only once.",
-     "start": 23.8,
      "translation": "对话和问题都只播一遍。"
     },
     {
      "id": "l3",
+     "start": 36.82,
      "end": 45.55,
      "text": "After you hear a question, you must choose the best answer from the four choices marked A, B, C, and D.",
-     "start": 36.82,
      "translation": "听到问题后，你必须从标有 A、B、C、D 的四个选项中选出最佳答案。"
     },
     {
      "id": "l4",
+     "start": 45.55,
      "end": 53.26,
      "text": "Then mark the corresponding letter on answer sheet 1 with a single line through the centre.",
-     "start": 45.55,
      "translation": "然后在答题卡1上把对应字母用一条横线居中划过标出。"
     },
     {
      "id": "l5",
+     "start": 53.26,
      "end": 54.62,
      "text": "Conversation 1 -",
-     "start": 53.26,
      "translation": "Conversation 1 -"
     },
     {
      "id": "l6",
+     "start": 54.62,
      "end": 55.6,
      "text": "Good morning! My name is Bob Fetteman. I'm the computer technician. - Didn't I call for you last week? - Maybe. I work for Alpha Maintenance.",
-     "start": 54.62,
      "translation": "早上好！我叫鲍勃·费特曼，是电脑技术员。- 我上周不是打电话报修过吗？- 可能吧。我是阿尔法维修公司的。"
     },
     {
      "id": "l7",
+     "start": 55.6,
      "end": 69.62,
      "text": "I imagined someone from your office called our central office, and I'm the engineer designated to your case.",
-     "start": 55.6,
      "translation": "我想应该是贵办公室的人给我们总部打过电话，我就是被指派来处理你这个工单的工程师。"
     },
     {
      "id": "l8",
+     "start": 69.62,
      "end": 85.22,
      "text": "- Yeah, I spoke to a lady there last Tuesday, which is now ten days ago. I made it clear it was an urgent matter, and please, send someone as soon as possible. Couldn't you or someone else have come sooner?",
-     "start": 69.62,
      "translation": "- 对，上周二，也就是十天前，我和你们总部的一位女士通过话。"
     },
     {
      "id": "l9",
+     "start": 85.22,
      "end": 89.22,
      "text": "- I'm sorry, but I'm not in charge of scheduling all logistics. I simply do not know.",
-     "start": 85.22,
      "translation": "——很抱歉，后勤排程不由我负责，我真的不知道。"
     },
     {
      "id": "l10",
+     "start": 89.22,
      "end": 93.48,
      "text": "All I can tell you is I got the call this week and came as soon as I could. - I see.",
-     "start": 89.22,
      "translation": "- 你或者别的同事不能早点来吗？- 很抱歉，调度安排不归我管，我真的不清楚。我只能说，我这周接到电话后就尽快赶来了。- 我明白了。"
     },
     {
      "id": "l11",
+     "start": 93.48,
      "end": 96.47,
      "text": "Well, I'll have you know my manager is rather indignant that it's taken you this long to come.",
-     "start": 93.48,
      "translation": "好吧，我可要告诉你，你们拖了这么久才来，我们经理相当恼火。"
     },
     {
      "id": "l12",
+     "start": 96.47,
      "end": 98.58,
      "text": "I understand it might not be your fault, but nevertheless, you should know",
-     "start": 96.47,
      "translation": "我明白这可能不是你的错，但你还是应该知道"
     },
     {
      "id": "l13",
+     "start": 98.58,
      "end": 105.94,
      "text": "what the feeling is around here.",
-     "start": 98.58,
      "translation": "我们这儿的情绪。"
     },
     {
      "id": "l14",
+     "start": 105.94,
      "end": 109.12,
      "text": "- I understand, and I'm sorry for any inconvenience.",
-     "start": 105.94,
      "translation": "- 我理解，对造成的不便我很抱歉。"
     },
     {
      "id": "l15",
+     "start": 109.12,
      "end": 113.89,
      "text": "I will try to resolve your computer problem as swiftly and optimally as I can.",
-     "start": 109.12,
      "translation": "我会尽量又快又好地解决你们的电脑问题。"
     },
     {
      "id": "l16",
+     "start": 113.89,
      "end": 117.2,
      "text": "What and where is the issue? - It's this machine right here. It was running slow for a while, I guess, and gradually got worse and worse. Last Tuesday, it just stopped working altogether. If you switch it on, you will see what I mean.",
-     "start": 113.89,
      "translation": "是什么问题？出在哪里？"
     },
     {
      "id": "l17",
+     "start": 117.2,
      "end": 119.38,
      "text": "- Okay.",
-     "start": 117.2,
      "translation": "好吗？"
     },
     {
      "id": "l18",
+     "start": 119.38,
      "end": 128.72,
      "text": "Do you know if it's backed up?",
-     "start": 119.38,
      "translation": "你知道里面的资料有没有备份吗？"
     },
     {
      "id": "l19",
+     "start": 128.72,
      "end": 132.46,
      "text": "- Backed up?",
-     "start": 128.72,
      "translation": "- 备份？"
     },
     {
      "id": "l20",
+     "start": 132.46,
      "end": 136.48,
      "text": "- I mean, do you know if its contents have been copied and saved somewhere else? - I don't know.",
-     "start": 132.46,
      "translation": "- 我是说，你知道里面的内容有没有复制保存到别的地方吗？- 我不知道。"
     },
     {
      "id": "l21",
+     "start": 136.48,
      "end": 149.94,
      "text": "- Well, depending on the ensuing operative scenario, if I need to wipe the system directories clean in order to reconfigure default protocols, then my first intervention should be to intricately",
-     "start": 136.48,
      "translation": "- 嗯，要看接下来具体怎么处理。如果我需要清空系统目录来重新配置默认协议，那我第一步就得设法"
     },
     {
      "id": "l22",
+     "start": 149.94,
      "end": 151.83,
      "text": "retrieve all inventories that I can.",
-     "start": 149.94,
      "translation": "尽我所能找回所有库存资料。"
     },
     {
      "id": "l23",
+     "start": 151.83,
      "end": 155.76,
      "text": "Otherwise, all data that was stored on its hard drive will be forever lost.",
-     "start": 151.83,
      "translation": "否则，硬盘里存的所有数据都将永远丢失。"
     },
     {
      "id": "l24",
+     "start": 155.76,
      "end": 158.01,
      "text": "- My manager would know.",
-     "start": 155.76,
      "translation": "- 我经理应该知道。我去叫他。"
     },
     {
      "id": "l25",
+     "start": 158.01,
      "end": 159.7,
      "text": "Let me go get him.",
-     "start": 158.01,
      "translation": "- 我经理应该知道。我去叫他。"
     },
     {
      "id": "l26",
+     "start": 159.7,
      "end": 164.9,
      "text": "- Questions one to four are based on the conversation you have just heard.",
-     "start": 159.7,
      "translation": "- 问题 1 到 4 基于你刚才听到的对话。"
     },
     {
      "id": "l27",
+     "start": 164.9,
      "end": 183.66,
      "text": "Q1. What did the woman do last Tuesday?",
-     "start": 164.9,
      "translation": "问题 1：女士上周二做了什么？"
     },
     {
      "id": "l28",
+     "start": 183.8,
      "end": 201.34,
      "text": "Q2. What does the man say he did when he got the call?",
-     "start": 183.8,
      "translation": "问题 2：男士说他接到电话后做了什么？"
     },
     {
      "id": "l29",
-     "end": 220.62,
-     "text": "Q3. What is the feeling about the problem around the woman's workplace?",
      "start": 201.4,
+     "end": 219.6,
+     "text": "Q3. What is the feeling about the problem around the woman's workplace?",
      "translation": "问题 3：对女士工作场所周围的那个问题，大家的感受是什么？"
     },
     {
      "id": "l30",
+     "start": 219.7,
      "end": 236.6,
      "text": "Q4. What does the woman say her manager would know?",
-     "start": 220.7,
      "translation": "问题 4：女士说她的经理会知道什么？"
     },
     {
      "id": "l31",
+     "start": 237,
      "end": 238.3,
-     "text": "CONVERSATION 2",
-     "start": 237
+     "text": "CONVERSATION 2"
     },
     {
      "id": "l32",
+     "start": 238.62,
      "end": 244.52,
      "text": "- Have you given more thought to studying law? - I've been thinking about it a lot, yes. In fact, this is why I wished to speak to you.",
-     "start": 238.62,
      "translation": "——你有没有进一步考虑学法律的事？——我确实一直在想这件事。其实，这正是我想找你聊聊的原因。"
     },
     {
      "id": "l33",
+     "start": 244.52,
      "end": 253.5,
      "text": "I wanted to hear more about what it's like. - A career in law is a beautiful thing in my opinion. Many people will say it's a boring field, but I disagree. The thing is, there are many different branches of law and many different jobs.",
-     "start": 244.52,
      "translation": "我想多听听这个行业的情况。——在我看来，法律职业是一件美好的事情。很多人会说这是个无聊的行业，但我不这么认为。关键在于，法律有很多不同的分支，也有很多不同的工作。"
     },
     {
      "id": "l34",
+     "start": 253.5,
      "end": 266.68,
      "text": "- You are involved with buildings and construction, right? - Correct. I'm a solicitor specializing in real estate. Most of my work involves mediating land disputes.",
-     "start": 253.5,
      "translation": "- 问题 4。女士说她的经理会知道什么？- 对话二。- 关于学法律这件事，你想得更清楚了吗？- 是的，我想了很多。其实这正是我想和你谈谈的原因。我想多了解一下这一行到底什么样。- 在我看来，从事法律职业是件很美好的事。很多人会说这是个枯燥的领域，但我不认同。问题在于，法律有很多不同的分支，也有很多不同的工作。- 你是做建筑和施工方面的，对吧？- 没错。我是一名专攻房地产的事务律师。我的大部分工作是调解土地纠纷。- 方便给我举个例子吗？- 当然。"
     },
     {
      "id": "l35",
+     "start": 266.68,
      "end": 275.64,
      "text": "- Do you mind giving me an example? - Sure.",
-     "start": 266.68,
      "translation": "- 问题 4。女士说她的经理会知道什么？- 对话二。- 关于学法律这件事，你想得更清楚了吗？- 是的，我想了很多。其实这正是我想和你谈谈的原因。我想多了解一下这一行到底什么样。- 在我看来，从事法律职业是件很美好的事。很多人会说这是个枯燥的领域，但我不认同。问题在于，法律有很多不同的分支，也有很多不同的工作。- 你是做建筑和施工方面的，对吧？- 没错。我是一名专攻房地产的事务律师。我的大部分工作是调解土地纠纷。- 方便给我举个例子吗？- 当然。"
     },
     {
      "id": "l36",
+     "start": 275.64,
      "end": 280.69,
      "text": "So, in many cases, I am employed to arbitrate between two clashing parties.",
-     "start": 275.64,
      "translation": "所以，很多情况下，我是受雇在两个冲突方之间进行仲裁。"
     },
     {
      "id": "l37",
+     "start": 280.69,
      "end": 288.5,
      "text": "Let's say, for example, there are two landowners who are in a thorny disagreement about something, like the borders of their adjacent plots.",
-     "start": 280.69,
      "translation": "比如说，有两个土地所有者为了某件事闹得不可开交，比如相邻地块的边界问题。"
     },
     {
      "id": "l38",
+     "start": 288.5,
      "end": 290.56,
      "text": "Someone may employ me to break the deadlock and resolve the dispute.",
-     "start": 288.5,
      "translation": "有人可能就会雇我来打破僵局、解决纠纷。"
     },
     {
      "id": "l39",
+     "start": 290.56,
      "end": 292.46,
      "text": "Often, my work involves negotiating agreements. Plain as simple.",
-     "start": 290.56,
      "translation": "我的工作常常就是谈判达成协议，就这么简单。"
     },
     {
      "id": "l40",
+     "start": 292.46,
      "end": 299.91,
      "text": "- So, you are saying that a lot of what you do is fix people's legal issues.",
-     "start": 292.46,
      "translation": "- 所以你是说，你做的很多事情就是解决人们的法律问题。"
     },
     {
      "id": "l41",
+     "start": 299.91,
      "end": 310.72,
      "text": "Like, you try to find a solution that benefits everyone and that prevents a problem from escalating. - Exactly. Well put.",
-     "start": 299.91,
      "translation": "也就是说，你尽量找到一个让各方都受益的方案，防止问题升级。- 完全正确。说得真好。"
     },
     {
      "id": "l42",
+     "start": 310.72,
      "end": 315.18,
      "text": "You need to remember that courts, like all bureaucracies really, can be very messy, frustrating and expensive. For this reason, it's usually better to resolve",
-     "start": 310.72,
      "translation": "你要记住，法院和所有官僚机构一样，可能非常拖沓、令人沮丧而且花费高昂。因此，通常更好的办法是"
     },
     {
      "id": "l43",
+     "start": 315.18,
      "end": 324.63,
      "text": "problems outside of court whenever possible. - I see.",
-     "start": 315.18,
      "translation": "尽可能在庭外解决问题。- 我明白了。"
     },
     {
      "id": "l44",
+     "start": 324.63,
      "end": 332.08,
      "text": "So, besides knowing the law inside out, you need good people skills, right? - Of course. Any job that involves people requires good interpersonal skills, and any law professional needs to be very eloquent at articulating their argument. - Right.",
-     "start": 324.63,
      "translation": "那么，除了精通法律，你还需要良好的人际技巧，对吧？——当然。任何与人打交道的工作都需要良好的人际能力，任何法律从业者都必须善于清晰有力地陈述论点。——没错。"
     },
     {
      "id": "l45",
+     "start": 332.08,
      "end": 340.02,
      "text": "So, I've been thinking about studying criminal law.",
-     "start": 332.08,
      "translation": "所以，我一直在考虑学刑法。"
     },
     {
      "id": "l46",
+     "start": 340.02,
      "end": 346.46,
      "text": "I think it sounds very interesting. - Hmm. Yes.",
-     "start": 340.02,
      "translation": "我觉得听起来非常有意思。- 嗯，是啊。"
     },
     {
      "id": "l47",
+     "start": 346.46,
      "end": 351.8,
      "text": "I'd say there's more money in property law, but the stakes are higher in criminal law.",
-     "start": 346.46,
      "translation": "要我说，做财产法赚的钱更多，但刑法牵涉的利害更大。"
     },
     {
      "id": "l48",
+     "start": 351.8,
      "end": 354.46,
      "text": "I can see how you would find it more interesting.",
-     "start": 351.8,
      "translation": "我能理解你为什么会觉得它更有意思。"
     },
     {
      "id": "l49",
+     "start": 354.46,
      "end": 359.46,
      "text": "Questions five to eight are based on the conversation you have just heard.",
-     "start": 354.46,
      "translation": "问题 5 到 8 基于你刚才听到的对话。"
     },
     {
      "id": "l50",
+     "start": 359.46,
      "end": 366.82,
      "text": "Question five. What will many people say about a career in law?",
-     "start": 359.46,
      "translation": "问题 5：许多人会怎么说法律职业？"
     },
     {
      "id": "l51",
+     "start": 373.64,
      "end": 385.44,
      "text": "Question six. What does the man say most of his work involves?",
-     "start": 373.64,
      "translation": "问题 6：男士说他大部分工作涉及什么？"
     },
     {
      "id": "l52",
+     "start": 385.44,
      "end": 416.4,
      "text": "Question 7. Why does the man say it's usually better to resolve problems outside of court?",
-     "start": 385.44,
      "translation": "问题 7：男士为什么说在法庭外解决问题通常更好？"
     },
     {
      "id": "l53",
+     "start": 416.4,
      "end": 421.76,
      "text": "Q8. What does the man think is required of any law professional?",
-     "start": 416.4,
      "translation": "问题 8：男士认为任何法律从业者都需要具备什么？"
     },
     {
      "id": "l54",
+     "start": 421.88,
      "end": 440.4,
      "text": "Section B.",
-     "start": 421.88,
      "translation": "Section B."
     },
     {
      "id": "l55",
+     "start": 440.4,
      "end": 440.95,
      "text": "Directions.",
-     "start": 440.4,
      "translation": "题目说明。"
     },
     {
      "id": "l56",
+     "start": 440.95,
      "end": 443.14,
      "text": "In this section, you will hear two passages.",
-     "start": 440.95,
      "translation": "在这一部分，你将听到两篇短文。"
     },
     {
      "id": "l57",
+     "start": 443.14,
      "end": 449.02,
-     "text": "At the end of each passage, you will hear three or four questions. Both the passage and the questions will be spoken only once.",
-     "start": 443.14
+     "text": "At the end of each passage, you will hear three or four questions. Both the passage and the questions will be spoken only once."
     },
     {
      "id": "l58",
+     "start": 449.02,
      "end": 452.16,
-     "text": "After you hear a question, you must choose the best answer from the four choices marked A, B, C, and D. Then mark the corresponding letter on answer sheet one with",
-     "start": 449.02
+     "text": "After you hear a question, you must choose the best answer from the four choices marked A, B, C, and D. Then mark the corresponding letter on answer sheet one with"
     },
     {
      "id": "l59",
+     "start": 460.04,
      "end": 470.5,
      "text": "a single line through the center. Page one.",
-     "start": 460.04,
      "translation": "用一条横线居中划过标出。第一页。"
     },
     {
      "id": "l60",
+     "start": 470.5,
      "end": 473.04,
      "text": "When a person tries to access a memory, their brains quickly examine everything stored in it to find the relevant information. But as we age, many of us have difficulty",
-     "start": 470.5,
      "translation": "当一个人试图提取一段记忆时，大脑会快速检索其中存储的一切，以找到相关信息。"
     },
     {
      "id": "l61",
+     "start": 473.04,
      "end": 475.52,
      "text": "retrieving memories.",
-     "start": 473.04,
      "translation": "提取记忆方面会有困难。"
     },
     {
      "id": "l62",
+     "start": 475.52,
      "end": 488.66,
      "text": "In a review published in the journal Trends in Cognitive Sciences on February 11th, researchers propose an explanation for why this might be happening.",
-     "start": 475.52,
      "translation": "在 2 月 11 日发表于《认知科学趋势》期刊的一篇综述中，研究人员对这一现象的成因提出了解释。老年人的"
     },
     {
      "id": "l63",
+     "start": 488.71,
      "end": 495.46,
      "text": "of older adults allocate more space to accumulated knowledge and have more material to navigate when attempting to access memories. The brains",
-     "start": 488.71,
      "translation": "老年人的大脑会把更多空间分配给积累的知识，在试图提取记忆时需要检索的内容也更多。"
     },
     {
      "id": "l64",
+     "start": 498.25,
      "end": 499.36,
      "text": "While this wealth of prior knowledge can make memory",
-     "start": 498.25,
      "translation": "虽然这种丰富的既有知识会让记忆"
     },
     {
      "id": "l65",
+     "start": 499.36,
      "end": 506.25,
      "text": "retrieval challenging, the researchers say it has its upsides.",
-     "start": 499.36,
      "translation": "提取变得困难，但研究人员说它也有好处。"
     },
     {
      "id": "l66",
+     "start": 506.25,
      "end": 513.47,
      "text": "This life experience can aid with creativity and decision-making.",
-     "start": 506.25,
      "translation": "这种人生阅历有助于创造力和决策。"
     },
     {
      "id": "l67",
+     "start": 513.47,
      "end": 518.36,
      "text": "Researchers Tariq Ammer, Jordana Nguyen, and",
-     "start": 513.47,
      "translation": "研究人员塔里克·阿梅尔、乔丹娜·阮以及"
     },
     {
      "id": "l68",
+     "start": 518.36,
      "end": 524.92,
      "text": "Lynn Hasher looked at several behavioral and brain-imaging studies, which show that older adults have difficulty suppressing information that is no longer relevant, and that when searching",
-     "start": 518.36,
      "translation": "琳恩·哈舍这几位研究人员查看了多项行为学和脑成像研究。这些研究表明，老年人难以抑制那些已不再相关的信息，而且在搜寻"
     },
     {
      "id": "l69",
+     "start": 524.92,
      "end": 538.5,
      "text": "for a specific memory, they often retrieve other, irrelevant memories along with it.",
-     "start": 524.92,
      "translation": "某段特定记忆时，常常会把其他不相关的记忆一并提取出来。"
     },
     {
      "id": "l70",
+     "start": 538.5,
      "end": 540.36,
      "text": "The studies also showed that when given a cognitive task, older adults rely more heavily on previous knowledge than younger adults do. While the researchers focus primarily on",
-     "start": 538.5,
      "translation": "这些研究还表明，在完成认知任务时，老年人比年轻人更依赖以往的知识。虽然研究人员主要关注"
     },
     {
      "id": "l71",
+     "start": 540.36,
      "end": 561.7,
      "text": "the difficulties that these disorderly crowded memories may pose, they also highlight a few situations in which these same memory patterns may be useful.",
-     "start": 540.36,
      "translation": "这些杂乱拥挤的记忆可能带来的困难，但他们也强调了这些记忆模式可能派上用场的几种情形。"
     },
     {
      "id": "l72",
+     "start": 561.7,
      "end": 565.6,
      "text": "Evidence suggests that older",
-     "start": 561.7,
      "translation": "有证据表明，年长的"
     },
     {
      "id": "l73",
+     "start": 565.6,
      "end": 568.65,
      "text": "adults show preserved and at times enhanced creativity as a function of enriched memories, other researchers write.",
-     "start": 565.6,
      "translation": "成年人因记忆更丰富而保持了创造力，有时甚至有所增强，其他研究人员写道。"
     },
     {
      "id": "l74",
+     "start": 568.65,
      "end": 570.5,
      "text": "They further hypothesize that older adults may be well served by their",
-     "start": 568.65,
      "translation": "他们进一步推测，老年人也许能得益于自己的"
     },
     {
      "id": "l75",
+     "start": 570.5,
      "end": 580.61,
      "text": "prior knowledge when it comes to decision-making, where they can pull on their accumulated wisdom.",
-     "start": 570.5,
      "translation": "老年人可以调动自己积累的智慧，既有知识会让他们大受裨益。"
     },
     {
      "id": "l76",
+     "start": 580.66,
      "end": 585.25,
      "text": "Questions 9 to 11 are based on the passage you have just heard.",
-     "start": 580.66,
      "translation": "问题 9 到 11 基于你刚才听到的短文。"
     },
     {
      "id": "l77",
+     "start": 585.3,
      "end": 602.66,
      "text": "Question 9. What did the researchers do in their review in the journal Trends in Cognitive Sciences?",
-     "start": 585.3,
      "translation": "问题 9：研究人员在《认知科学趋势》的综述里做了什么？"
     },
     {
      "id": "l78",
+     "start": 602.66,
      "end": 607.14,
      "text": "Question 10. What do several behavioral and brain-imaging studies show?",
-     "start": 602.66,
      "translation": "问题 10：多项行为学和脑成像研究表明了什么？"
     },
     {
      "id": "l79",
+     "start": 623,
      "end": 641.98,
      "text": "Question 11. What does evidence suggest regarding older adults?",
-     "start": 623,
      "translation": "问题 11：关于老年人，证据表明了什么？"
     },
     {
      "id": "l80",
+     "start": 641.98,
      "end": 644.1,
      "text": "Passage 2",
-     "start": 641.98,
      "translation": "Passage 2"
     },
     {
      "id": "l81",
+     "start": 644.1,
      "end": 650.02,
      "text": "There are at least four major problems with work in America today.",
-     "start": 644.1,
      "translation": "当今美国的工作至少存在四大问题。"
     },
     {
      "id": "l82",
+     "start": 650.02,
      "end": 652.71,
      "text": "First, work can be alienating.",
-     "start": 650.02,
      "translation": "第一，工作可能让人产生疏离感。"
     },
     {
      "id": "l83",
+     "start": 652.71,
      "end": 663.48,
      "text": "Workers are often not in control of how they work, when they work, what is done with the goods and services they produce",
-     "start": 652.71,
      "translation": "劳动者往往无法掌控自己怎样工作、何时工作、他们生产的商品和服务被如何处置，"
     },
     {
      "id": "l84",
+     "start": 663.48,
      "end": 665.35,
      "text": "and what is done with the profits made from their work.",
-     "start": 663.48,
      "translation": "以及他们工作创造的利润被如何处置。"
     },
     {
      "id": "l85",
+     "start": 665.35,
      "end": 667.37,
      "text": "Second, workers are not paid the full value of their labor.",
-     "start": 665.35,
      "translation": "第二，劳动者没有得到与其劳动全部价值相称的报酬。"
     },
     {
      "id": "l86",
+     "start": 667.37,
      "end": 669.58,
      "text": "Real wages have not kept pace with productivity, driving economic",
-     "start": 667.37,
      "translation": "实际工资未能与生产率同步增长，加剧了"
     },
     {
      "id": "l87",
+     "start": 669.58,
      "end": 676.12,
      "text": "inequality and a decline in labor's share of income.",
-     "start": 669.58,
      "translation": "经济不平等和劳动收入份额的下降。"
     },
     {
      "id": "l88",
+     "start": 676.12,
      "end": 685.26,
      "text": "Third, people are time poor.",
-     "start": 676.12,
      "translation": "第三，人们的时间很匮乏。"
     },
     {
      "id": "l89",
+     "start": 685.26,
      "end": 687.26,
      "text": "In the US, full-time employees work an average of 8.",
-     "start": 685.26,
      "translation": "在美国，尽管生产率提高了，全职员工平均每天仍工作 8."
     },
     {
      "id": "l90",
+     "start": 687.26,
      "end": 694.84,
      "text": "72 hours per day despite productivity increases. Long working hours contribute to the feeling of time poverty, which has an adverse effect on psychological well-being.",
-     "start": 687.26,
      "translation": "72 小时。"
     },
     {
      "id": "l91",
+     "start": 694.84,
      "end": 703.44,
      "text": "Fourth, automation puts jobs and wages at risk.",
-     "start": 694.84,
      "translation": "第四，自动化使工作岗位和工资面临风险。"
     },
     {
      "id": "l92",
+     "start": 703.44,
      "end": 707.82,
      "text": "Technological innovation could in theory liberate people from the 40-hour work week, but unless changes are made to the structure of work, automation will simply exert downward pressure",
-     "start": 703.44,
      "translation": "技术创新理论上可以把人从每周 40 小时的工作制中解放出来，但除非对工作结构做出变革，自动化只会对工资形成下行压力，"
     },
     {
      "id": "l93",
+     "start": 707.82,
      "end": 718.3,
      "text": "on wages and further diminish work opportunities.",
-     "start": 707.82,
      "translation": "并进一步削减就业机会。"
     },
     {
      "id": "l94",
+     "start": 718.3,
      "end": 720.09,
      "text": "So, what can be done to alleviate these problems?",
-     "start": 718.3,
      "translation": "那么，能做些什么来缓解这些问题呢？"
     },
     {
      "id": "l95",
+     "start": 720.09,
      "end": 722.58,
      "text": "There are competing visions of the best way to arrive at a solution.",
-     "start": 720.09,
      "translation": "对于最佳的解决之道，存在相互竞争的不同设想。"
     },
     {
      "id": "l96",
+     "start": 722.58,
      "end": 728.86,
      "text": "One vision is what's known as the post-work position.",
-     "start": 722.58,
      "translation": "其中一种设想就是所谓的“后工作”立场。"
     },
     {
      "id": "l97",
+     "start": 728.86,
      "end": 743.18,
      "text": "The post-work theorists believe that work should not hold a central position in our lives or take up so much of our time.",
-     "start": 728.86,
      "translation": "“后工作”理论家认为，工作不应在我们的生活中占据中心位置，也不应占用我们那么多时间。"
     },
     {
      "id": "l98",
+     "start": 743.18,
      "end": 744.82,
      "text": "They assert that, although doing some work might be necessary, meaning, purpose and social value reside in the communities and relationships built and sustained outside of the workplace.",
-     "start": 743.18,
      "translation": "他们主张，尽管干一些活可能是必要的，但意义、目标和社会价值存在于职场之外建立并维系的社区和关系之中。"
     },
     {
      "id": "l99",
+     "start": 744.82,
      "end": 754.86,
      "text": "Thus, life should be seen as an end in itself.",
-     "start": 744.82,
      "translation": "因此，生活本身就应该被看作目的。"
     },
     {
      "id": "l100",
+     "start": 754.9,
      "end": 761.2,
-     "text": "Questions 12 to 15 are based on the passage you have just heard.",
-     "start": 754.9
+     "text": "Questions 12 to 15 are based on the passage you have just heard."
     },
     {
      "id": "l101",
+     "start": 761.2,
      "end": 779.7,
      "text": "Question 12. What do we learn about American workers from the passage?",
-     "start": 761.2,
      "translation": "问题 12：从这篇短文中，我们对美国劳动者了解到什么？"
     },
     {
      "id": "l102",
+     "start": 779.7,
      "end": 784.9,
      "text": "Question 13. What does the passage say \"long working hours\" contribute to?",
-     "start": 779.7,
      "translation": "问题 13：短文说“长时间工作”造成了什么？"
     },
     {
      "id": "l103",
+     "start": 784.9,
      "end": 815.26,
      "text": "Question 14. What does automation do according to the passage?",
-     "start": 784.9,
      "translation": "问题 14：根据短文，自动化会带来什么？"
     },
     {
      "id": "l104",
+     "start": 815.26,
      "end": 821.7,
      "text": "Question 15. What do post-work theorists advocate?",
-     "start": 815.26,
      "translation": "问题 15：后工作理论家主张什么？"
     },
     {
      "id": "l105",
+     "start": 821.7,
      "end": 836.62,
      "text": "Section C",
-     "start": 821.7,
      "translation": "Section C"
     },
     {
      "id": "l106",
+     "start": 836.62,
      "end": 837.12,
      "text": "Directions.",
-     "start": 836.62,
      "translation": "题目说明。"
     },
     {
      "id": "l107",
+     "start": 837.12,
      "end": 841.86,
-     "text": "In this section, you will hear three recordings of lectures or talks followed by three or four questions. The recordings will be played only once. After you hear a question, you must choose the best answer from the four",
-     "start": 837.12
+     "text": "In this section, you will hear three recordings of lectures or talks followed by three or four questions. The recordings will be played only once. After you hear a question, you must choose the best answer from the four"
     },
     {
      "id": "l108",
+     "start": 841.86,
      "end": 860.22,
-     "text": "choices marked A, B, C, and D. Then mark the corresponding letter on answer sheet 1 with a single line through the centre.",
-     "start": 841.86
+     "text": "choices marked A, B, C, and D. Then mark the corresponding letter on answer sheet 1 with a single line through the centre."
     },
     {
      "id": "l109",
+     "start": 860.22,
      "end": 862.04,
      "text": "Recording 1.",
-     "start": 860.22,
      "translation": "Recording 1."
     },
     {
      "id": "l110",
+     "start": 862.04,
      "end": 867.66,
      "text": "Recent studies show that self-control and persistence increase academic outcomes independent of IQ.",
-     "start": 862.04,
      "translation": "最新研究表明，自控力和坚持能提高学业成绩，且与智商无关。"
     },
     {
      "id": "l111",
+     "start": 867.66,
      "end": 874.44,
      "text": "Even our personal beliefs about effort can affect academic outcomes.",
-     "start": 867.66,
      "translation": "甚至我们个人对努力的看法也会影响学业成绩。"
     },
     {
      "id": "l112",
+     "start": 874.44,
      "end": 882.08,
      "text": "Children who think effort leads to achievement outperform those who believe ability is a fixed trait. Given the link between persistence and academic success, decisions about effort are particularly important in childhood, yet relatively little",
-     "start": 874.44,
      "translation": "认为努力能带来成就的孩子，表现优于"
     },
     {
      "id": "l113",
+     "start": 882.08,
      "end": 896.48,
      "text": "research has explored how young children learn what's worth the effort.",
-     "start": 882.08,
      "translation": "如何习得什么值得努力的研究还相对很少。"
     },
     {
      "id": "l114",
+     "start": 896.48,
      "end": 902,
      "text": "We all know that infants are keen observers of the social world.",
-     "start": 896.48,
      "translation": "我们都知道，婴儿是社会世界的敏锐观察者。"
     },
     {
      "id": "l115",
+     "start": 902,
      "end": 905.02,
      "text": "But they're not just idly watching.",
-     "start": 902,
      "translation": "但它们不只是漫无目的地看。"
     },
     {
      "id": "l116",
+     "start": 905.02,
      "end": 907.78,
      "text": "They are tiny learning machines.",
-     "start": 905.02,
      "translation": "它们是小小的学习机器。"
     },
     {
      "id": "l117",
+     "start": 907.78,
      "end": 911.4,
      "text": "They can generalize such abstract concepts",
-     "start": 907.78,
      "translation": "它们能从区区几个例子中归纳出"
     },
     {
      "id": "l118",
+     "start": 911.4,
      "end": 913.68,
      "text": "as causal relationships and social roles from just a few examples.",
-     "start": 911.4,
      "translation": "因果关系、社会角色这类抽象概念。"
     },
     {
      "id": "l119",
+     "start": 913.68,
      "end": 916.38,
      "text": "Even a 15-month-old infant can outperform a high-level computer in such tasks.",
-     "start": 913.68,
      "translation": "就连 15 个月大的婴儿在这类任务上也能胜过高级计算机。"
     },
     {
      "id": "l120",
+     "start": 916.38,
      "end": 928.28,
      "text": "Could infants also make broad, generalizable inferences from a few examples when it comes to effort?",
-     "start": 916.38,
      "translation": "在努力这件事上，婴儿是否也能从几个例子中做出可广泛推广的推断呢？"
     },
     {
      "id": "l121",
+     "start": 928.28,
      "end": 935.54,
      "text": "If so, then maybe persistence isn't simply a character trait.",
-     "start": 928.28,
      "translation": "如果是这样，那么坚持也许不只是一种性格特质。"
     },
     {
      "id": "l122",
+     "start": 935.54,
      "end": 939.25,
      "text": "Maybe it's flexible and adaptable based on social context.",
-     "start": 935.54,
      "translation": "也许它会根据社交情境灵活调整。"
     },
     {
      "id": "l123",
+     "start": 939.25,
      "end": 944.4,
      "text": "To explore this question, we showed 15-month-old babies one of two things - an experimenter working hard to achieve two different goals",
-     "start": 939.25,
      "translation": "为了探究这个问题，我们给 15 个月大的婴儿看了两种情景之一——实验者努力达成两个不同的目标"
     },
     {
      "id": "l124",
+     "start": 944.4,
      "end": 953.8,
      "text": "or an experimenter who effortlessly reached each goal.",
-     "start": 944.4,
      "translation": "或者一位实验者轻松达成每个目标。"
     },
     {
      "id": "l125",
+     "start": 953.8,
      "end": 962.81,
      "text": "Then we introduced the baby to a novel music toy that seemed as if it could be activated by pushing a big button on top.",
-     "start": 953.8,
      "translation": "然后我们把一个新奇的音乐玩具拿给婴儿看，它看上去只要按下顶部的一个大按钮就能启动。"
     },
     {
      "id": "l126",
+     "start": 962.81,
      "end": 967.22,
      "text": "The button could be pressed down but didn't actually activate anything.",
-     "start": 962.81,
      "translation": "那个按钮按得下去，但其实什么也启动不了。"
     },
     {
      "id": "l127",
+     "start": 967.22,
      "end": 970.46,
      "text": "Out of sight of the babies, we turned on the music toy with a hidden button so that they heard the toy making music.",
-     "start": 967.22,
      "translation": "我们避开婴儿的视线，用隐藏按钮打开音乐玩具，让他们听到玩具在放音乐。"
     },
     {
      "id": "l128",
+     "start": 970.46,
      "end": 972.25,
      "text": "We gave the babies the music toy and left the room.",
-     "start": 970.46,
      "translation": "我们把音乐玩具交给婴儿，然后离开了房间。"
     },
     {
      "id": "l129",
+     "start": 972.25,
      "end": 992.46,
      "text": "Then analysts who didn't know which condition each baby was in watched videotapes of the experiment and counted how many times babies tried to activate the toy by pressing the button. Across one study and a pre-registered duplication, babies who had seen an adult persist and succeed pushed the button about twice as many times as those who saw an adult effortlessly succeed.",
-     "start": 972.25,
      "translation": "随后，不知晓每个婴儿所处实验条件的研究人员观看实验录像，统计婴儿按按钮试图启动玩具的次数。"
     },
     {
      "id": "l130",
+     "start": 992.46,
      "end": 1015.44,
      "text": "In other words, babies learned that effort was valuable after watching just two examples of an adult working hard and succeeding.",
-     "start": 992.46,
      "translation": "换句话说，宝宝们仅仅看了两例大人努力并获得成功的演示，就懂得了努力是有价值的。"
     },
     {
      "id": "l131",
+     "start": 1015.44,
      "end": 1017.9,
      "text": "Part of what's exciting about this finding is that the babies didn't just imitate the adult's actions.",
-     "start": 1015.44,
      "translation": "这一发现令人兴奋的一点在于，婴儿并不只是模仿大人的动作。"
     },
     {
      "id": "l132",
+     "start": 1017.9,
      "end": 1019.78,
      "text": "Instead, they generalised the value of effort to a novel task. The experimenter",
-     "start": 1017.9,
      "translation": "而是把努力的价值迁移到了新任务上。实验者"
     },
     {
      "id": "l133",
+     "start": 1019.78,
      "end": 1032.06,
      "text": "never demonstrated pushing a button or trying to make music.",
-     "start": 1019.78,
      "translation": "从未示范过按按钮或尝试让玩具发声。"
     },
     {
      "id": "l134",
+     "start": 1032.06,
      "end": 1036.68,
      "text": "Instead, the babies learned from different examples of effortful actions that the new toy probably also required persistence.",
-     "start": 1032.06,
      "translation": "婴儿是从不同的努力行为实例中学到，新玩具多半也需要坚持才能玩转。"
     },
     {
      "id": "l135",
+     "start": 1037.3,
      "end": 1044.8,
-     "text": "Questions 16 to 18 are based on the recording you have just heard.",
-     "start": 1037.3
+     "text": "Questions 16 to 18 are based on the recording you have just heard."
     },
     {
      "id": "l136",
+     "start": 1046.6,
      "end": 1059.8,
      "text": "Question 16. What does the speaker say even our personal beliefs about effort can do?",
-     "start": 1046.6,
      "translation": "问题 16：讲话者说，就连我们个人对努力的看法也能产生什么影响？"
     },
     {
      "id": "l137",
+     "start": 1059.8,
      "end": 1085.14,
      "text": "Question 17. How did the researchers turn on the music toy in their experiment?",
-     "start": 1059.8,
      "translation": "问题 17：研究人员在实验中是怎样打开音乐玩具的？"
     },
     {
      "id": "l138",
+     "start": 1085.14,
      "end": 1102.9,
      "text": "Question 18. What could the infants do in the experiment, according to the speaker?",
-     "start": 1085.14,
      "translation": "问题 18：根据讲话人，实验中的婴儿能做到什么？"
     },
     {
      "id": "l139",
+     "start": 1103.32,
      "end": 1105.5,
-     "text": "RECORDING 2",
-     "start": 1103.32
+     "text": "RECORDING 2"
     },
     {
      "id": "l140",
+     "start": 1105.8,
      "end": 1119,
      "text": "If chronic lateness has taken over your life and turned into a defining trait of who you are, it's likely that you're losing out on job offers, recreational opportunities, friendships and more.",
-     "start": 1105.8,
      "translation": "如果长期迟到已经主宰了你的生活，成为你这个人身上的一个标志性特点，那你很可能正在错失工作机会、娱乐活动、友谊等等。"
     },
     {
      "id": "l141",
+     "start": 1119.6,
      "end": 1129.31,
      "text": "If you are showing up late to your own life, get organised, prioritise punctuality, and address any underlying causes.",
-     "start": 1119.6,
      "translation": "如果你总是让自己的生活迟到，那就振作起来，把守时放在优先位置，并解决任何深层原因。"
     },
     {
      "id": "l142",
+     "start": 1129.31,
      "end": 1136.29,
      "text": "When you have to be somewhere, try to arrive fifteen to thirty minutes before you need to.",
-     "start": 1129.31,
      "translation": "当你要去某个地方时，尽量提前 15 到 30 分钟到场。"
     },
     {
      "id": "l143",
+     "start": 1136.29,
      "end": 1140.08,
      "text": "If you always run late, that means you must be failing to account for something you always do. Anticipate that by giving yourself extra",
-     "start": 1136.29,
      "translation": "如果你总是迟到，那说明你一定漏算了某些你每次都会做的事。针对这一点，多给自己留出"
     },
     {
      "id": "l144",
+     "start": 1140.08,
      "end": 1141.79,
      "text": "time to arrive.",
-     "start": 1140.08,
      "translation": "在途时间。"
     },
     {
      "id": "l145",
+     "start": 1141.79,
      "end": 1148.38,
      "text": "Keep track of whether or not you actually do arrive early.",
-     "start": 1141.79,
      "translation": "记录一下自己是否真的提前到了。"
     },
     {
      "id": "l146",
+     "start": 1148.38,
      "end": 1158.1,
      "text": "You might find that leaving early gets you to places exactly on time. Set two alarms. Set one alarm that lets you know it's time to drop what you're doing, and a second alarm that means you need to walk out the door. Obey the alarms. As soon",
-     "start": 1148.38,
      "translation": "你也许会发现，早出发反而让你分秒不差地到达。设两个闹钟：第一个提醒你该放下手头的事了，第二个意味着你必须出门了。听从闹钟。一听到"
     },
     {
      "id": "l147",
+     "start": 1158.1,
      "end": 1165.94,
      "text": "as the first alarm goes off, stop what you're doing.",
-     "start": 1158.1,
      "translation": "一响，就立刻停下手头的事。"
     },
     {
      "id": "l148",
+     "start": 1165.94,
      "end": 1184.48,
      "text": "If it's something you'll be coming back to, like a project for work, make a note to remind yourself where you left off. Grab",
-     "start": 1165.94,
      "translation": "如果那是你之后还要继续的事，比如一个工作项目，就做个笔记提醒自己进行到哪儿了。拿上"
     },
     {
      "id": "l149",
+     "start": 1184.48,
      "end": 1186.71,
      "text": "everything you need and make sure you know how to get where you're going.",
-     "start": 1184.48,
      "translation": "你需要的一切，并确保知道怎么去目的地。"
     },
     {
      "id": "l150",
+     "start": 1186.71,
      "end": 1189.76,
      "text": "Aim to be out the door and on your way before the second alarm rings. This will only work if you take",
-     "start": 1186.71,
      "translation": "力争在第二个闹钟响之前就出门上路。"
     },
     {
      "id": "l151",
+     "start": 1189.76,
      "end": 1199.76,
      "text": "the alarms seriously, so make sure you react as soon as you hear them.",
-     "start": 1189.76,
      "translation": "对待闹钟的前提下才管用，所以一听到闹钟就马上行动。"
     },
     {
      "id": "l152",
+     "start": 1199.76,
      "end": 1201.34,
      "text": "Remember for the day ahead.",
-     "start": 1199.76,
      "translation": "提前记住当天安排的情况下才会奏效。"
     },
     {
      "id": "l153",
+     "start": 1201.34,
      "end": 1210.12,
      "text": "Have all of your notes and materials organized well in advance of each event, so that all you have to do is grab them and go when it's the actual day.",
-     "start": 1201.34,
      "translation": "提前把每次活动所需的笔记和材料都整理好，这样到了当天你只需抓起就走。"
     },
     {
      "id": "l154",
+     "start": 1210.12,
      "end": 1212.77,
      "text": "If mornings are a struggle for you, do as much as you can to ready yourself the night before.",
-     "start": 1210.12,
      "translation": "如果早晨对你来说很煎熬，那就尽量在前一晚把一切准备好。"
     },
     {
      "id": "l155",
+     "start": 1212.77,
      "end": 1215,
      "text": "Before you go to bed, lay out your clothes and pack your bag for the next day.",
-     "start": 1212.77,
      "translation": "睡前把第二天的衣服摆好，把包收拾好。"
     },
     {
      "id": "l156",
+     "start": 1215,
      "end": 1221.3,
      "text": "Time to leave time in between tasks and meetings.",
-     "start": 1215,
      "translation": "记得在任务和会议之间留出时间。"
     },
     {
      "id": "l157",
+     "start": 1221.3,
      "end": 1233.26,
      "text": "It soon becomes unbearable to shift between one meeting and another without space in between.",
-     "start": 1221.3,
      "translation": "在会议之间连轴转、中间毫无喘息，很快就会让人难以忍受。"
     },
     {
      "id": "l158",
+     "start": 1233.26,
      "end": 1239.84,
      "text": "If you over-schedule yourself, however, you'll arrive late as soon as you hit a bump.",
-     "start": 1233.26,
      "translation": "不过，如果你把日程排得太满，"
     },
     {
      "id": "l159",
+     "start": 1239.84,
      "end": 1242.36,
      "text": "As well as giving you space, this time also acts as a buffer between events, which can be borrowed from, should you be held up in a prior meeting,",
-     "start": 1239.84,
      "translation": "这段时间除了给你留出空间，还能充当活动之间的缓冲，万一你在前一个会议上被拖住，"
     },
     {
      "id": "l160",
+     "start": 1242.36,
      "end": 1253.34,
      "text": "allowing you to still get to the next one on time.",
-     "start": 1242.36,
      "translation": "也可以借用它，让你仍然准点赶到下一场。"
     },
     {
      "id": "l161",
+     "start": 1253.34,
      "end": 1260.94,
      "text": "Calculate transit time between activities and then add 10 to 30 minutes for unexpected delays.",
-     "start": 1253.34,
      "translation": "算出活动之间的通勤时间，然后再加上 10 到 30 分钟，以应对意外延误。"
     },
     {
      "id": "l162",
+     "start": 1260.99,
      "end": 1265.9,
-     "text": "Questions 19 to 21 are based on the recording you have just heard.",
-     "start": 1260.99
+     "text": "Questions 19 to 21 are based on the recording you have just heard."
     },
     {
      "id": "l163",
+     "start": 1266.55,
      "end": 1284.2,
      "text": "Q19. What is the speaker's purpose of giving this talk?",
-     "start": 1266.55,
      "translation": "问题 19：讲话者做这次演讲的目的是什么？"
     },
     {
      "id": "l164",
+     "start": 1284.54,
      "end": 1301.9,
      "text": "Question 20. What should you do if mornings are a struggle for you?",
-     "start": 1284.54,
      "translation": "问题 20：如果早上对你来说很煎熬，你该怎么做？"
     },
     {
      "id": "l165",
+     "start": 1302.24,
      "end": 1309.9,
      "text": "Question 21. According to the speaker, what can we do to combat unexpected delays?",
-     "start": 1302.24,
      "translation": "问题 21：根据讲话人，我们可以做什么来应对意外耽搁？"
     },
     {
      "id": "l166",
+     "start": 1310.34,
      "end": 1312,
      "text": "RECORDING 3",
-     "start": 1310.34,
      "translation": "Recording 3"
     },
     {
      "id": "l167",
+     "start": 1324.5,
      "end": 1327.8,
      "text": "Do you think Bostonians put out the welcome mat?",
-     "start": 1324.5,
      "translation": "你觉得波士顿人热情好客吗？"
     },
     {
      "id": "l168",
+     "start": 1327.8,
      "end": 1331.58,
      "text": "Do you find other cities to be more or less polite?",
-     "start": 1327.8,
      "translation": "你觉得其他城市的人更有礼貌，还是更没礼貌？"
     },
     {
      "id": "l169",
+     "start": 1331.58,
      "end": 1335.08,
      "text": "Different cities have different feels for visitors.",
-     "start": 1331.58,
      "translation": "对游客来说，不同城市有不同的感觉。"
     },
     {
      "id": "l170",
+     "start": 1335.08,
      "end": 1337.18,
      "text": "Some are friendly and open.",
-     "start": 1335.08,
      "translation": "有的友好而开放。"
     },
     {
      "id": "l171",
+     "start": 1337.18,
      "end": 1340.3,
      "text": "Some are formal and distant.",
-     "start": 1337.18,
      "translation": "有的正式而疏远。"
     },
     {
      "id": "l172",
+     "start": 1344.3,
      "end": 1347.06,
      "text": "tends to seem hurried and sometimes a little rude. That's what some tourists have said.",
-     "start": 1344.3,
      "translation": "常常显得匆匆忙忙，有时还有点粗鲁。一些游客是这么说的。"
     },
     {
      "id": "l173",
+     "start": 1347.06,
      "end": 1352.1,
      "text": "One study found that people here are less willing to volunteer to help strangers than those residents of other US cities. Take a close look next time you're in Boston and",
-     "start": 1347.06,
      "translation": "一项研究发现，与其他美国城市的居民相比，这里的人更不愿主动帮助陌生人。下次去波士顿时仔细观察一下，"
     },
     {
      "id": "l174",
+     "start": 1352.1,
      "end": 1358.23,
      "text": "here are some of the things you'll probably see.",
-     "start": 1352.1,
      "translation": "你可能会看到下面这些情形。"
     },
     {
      "id": "l175",
+     "start": 1358.23,
      "end": 1368.71,
      "text": "People smoking in the subway stations despite the frequent reminders not to do so.",
-     "start": 1358.23,
      "translation": "尽管一再提醒不要吸烟，还是有人在地铁站里吞云吐雾。"
     },
     {
      "id": "l176",
+     "start": 1368.71,
      "end": 1375.3,
      "text": "Pedestrians walking when the crosswalk lights say not to do so, ignoring the cars.",
-     "start": 1368.71,
      "translation": "人行横道灯"
     },
     {
      "id": "l177",
+     "start": 1375.3,
      "end": 1378.74,
      "text": "Car drivers speeding, making a loud noise with the horn and occasionally cursing at each other. Drives who can't be bothered to find a place to park,",
-     "start": 1375.3,
      "translation": "汽车超速行驶，大声按喇叭，偶尔还互相咒骂。懒得找车位"
     },
     {
      "id": "l178",
+     "start": 1378.74,
      "end": 1389.46,
      "text": "but instead simply turn on their blinker and stop in the middle of the street.",
-     "start": 1378.74,
      "translation": "干脆打开转向灯就停在马路中间。"
     },
     {
      "id": "l179",
+     "start": 1389.46,
      "end": 1394.01,
      "text": "Sometimes Bostonians seem like they're just too busy to be polite.",
-     "start": 1389.46,
      "translation": "有时波士顿人看起来忙得顾不上讲礼貌。"
     },
     {
      "id": "l180",
+     "start": 1394.01,
      "end": 1396.08,
      "text": "Why is there a city like that?",
-     "start": 1394.01,
      "translation": "为什么会有这样一座城市呢？"
     },
     {
      "id": "l181",
+     "start": 1396.08,
      "end": 1401.46,
      "text": "Former US representative Chester Atkins says it's because the Puritan founding",
-     "start": 1396.08,
      "translation": "前美国国会议员切斯特·阿特金斯说，这是因为清教徒"
     },
     {
      "id": "l182",
+     "start": 1401.46,
      "end": 1403.77,
      "text": "fathers were themselves impatient and bad-tempered and had little time for courtesy.",
-     "start": 1401.46,
      "translation": "建国者们本身就没耐心、脾气坏，无暇顾及礼数。"
     },
     {
      "id": "l183",
+     "start": 1403.77,
      "end": 1406.58,
      "text": "That culture has carried down to the present day, he believes. Boston College professor Thomas O'Connor",
-     "start": 1403.77,
      "translation": "他认为这种文化一直延续至今。波士顿学院教授托马斯·奥康纳"
     },
     {
      "id": "l184",
+     "start": 1406.58,
      "end": 1423.96,
      "text": "thinks a contributing factor is Boston's history as a city where each new group of immigrants was treated with suspicion and exclusion.",
-     "start": 1406.58,
      "translation": "认为一个促成因素是波士顿的历史——在这座城市，每一批新移民都曾遭到猜疑和排斥。"
     },
     {
      "id": "l185",
+     "start": 1423.96,
      "end": 1428.96,
      "text": "That's given Boston a sense of clannishness and reserve, he thinks.",
-     "start": 1423.96,
      "translation": "他认为，这让波士顿有了一种抱团排外和内敛的气质。"
     },
     {
      "id": "l186",
+     "start": 1428.96,
      "end": 1433.24,
      "text": "The idea of a stranger greeting another stranger is simply not part of the local culture, he says. People will begin a conversation with",
-     "start": 1428.96,
      "translation": "他说，陌生人主动跟陌生人打招呼这种事，根本不在当地文化之列。人们会跟"
     },
     {
      "id": "l187",
+     "start": 1433.24,
      "end": 1437.68,
      "text": "someone they know, but not with a stranger.",
-     "start": 1433.24,
      "translation": "认识的人攀谈，但不会和陌生人搭话。"
     },
     {
      "id": "l188",
+     "start": 1437.68,
      "end": 1452.5,
      "text": "Ralph Whitehead, a professor of journalism at the University of Massachusetts at Amherst, thinks it's because Boston's upper class used manners to make class distinctions.",
-     "start": 1437.68,
      "translation": "马萨诸塞大学阿默斯特分校的新闻学教授拉尔夫·怀特黑德认为，原因在于波士顿的上流阶层曾把礼仪用作区分阶层的工具。"
     },
     {
      "id": "l189",
+     "start": 1452.5,
      "end": 1457.2,
      "text": "By being snobbish about manners, proper Bostonians made other people scornful of courtesy, he says. Some say that's just the way Boston",
-     "start": 1452.5,
      "translation": "他说，正牌波士顿人对礼仪的势利态度，让其他人对'彬彬有礼'反而心生轻蔑。有人说波士顿"
     },
     {
      "id": "l190",
+     "start": 1457.2,
      "end": 1460.72,
      "text": "is and that the city will never change.",
-     "start": 1457.2,
      "translation": "就是这么个地方，永远不会改变。"
     },
     {
      "id": "l191",
+     "start": 1460.72,
      "end": 1469.31,
      "text": "Still, other cities with reputations for worse rudeness are trying hard to change their images.",
-     "start": 1460.72,
      "translation": "不过，其他以粗鲁闻名的城市正努力改变自己的形象。"
     },
     {
      "id": "l192",
+     "start": 1469.31,
      "end": 1475.34,
      "text": "Paris is one example where people are trying to be friendly. New York City is another. There, the city is trying to persuade subway riders to be more considerate. If those cities can make the effort, maybe Boston should as well.",
-     "start": 1469.31,
      "translation": "巴黎就是一个例子，那里的人们正努力"
     },
     {
      "id": "l193",
+     "start": 1475.34,
      "end": 1491.34,
      "text": "There, the city is trying to persuade subway riders to be more considerate. If those cities can make the effort, maybe Boston should as well.",
-     "start": 1475.34,
      "translation": "在那里，市政府正努力劝说地铁乘客多为他人着想。如果那些城市都能努力，也许波士顿也应该努力。"
     },
     {
      "id": "l194",
+     "start": 1491.34,
      "end": 1496.34,
      "text": "Question 22. What do visitors find about the cities they've been to?",
-     "start": 1491.34,
      "translation": "问题 22：游客对到过的城市有什么发现？"
     },
     {
      "id": "l195",
+     "start": 1499.34,
      "end": 1514.74,
      "text": "Question 23. What did one city find about Bostonians compared with residents of other U.S. cities?",
-     "start": 1499.34,
      "translation": "问题 23：某座城市发现波士顿人与美国其他城市居民相比有什么不同？"
     },
     {
      "id": "l196",
+     "start": 1532.26,
      "end": 1549.1,
      "text": "Question 24. What does Thomas O'Connor say about the idea of strangers greeting one another?",
-     "start": 1532.26,
      "translation": "问题 24：关于陌生人互相打招呼这件事，托马斯·奥康纳说了什么？"
     },
     {
      "id": "l197",
+     "start": 1549.1,
      "end": 1567.98,
      "text": "Question 25. What does the speaker think Boston should do?",
-     "start": 1549.1,
      "translation": "问题 25：讲话人认为波士顿应该做什么？"
     },
     {
      "id": "l198",
+     "start": 1567.98,
      "end": 1570.26,
      "text": "That's the end of listening comprehension.",
-     "start": 1567.98,
      "translation": "听力理解到此结束。"
     }
    ],
