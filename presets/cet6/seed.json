@@ -1,6 +1,6 @@
 {
  "preset": "cet6",
- "version": "20260930.11",
+ "version": "20261001.5",
  "generatedAt": "2026-10-01T03:36:36.263Z",
  "group": {
   "id": 8,
@@ -5062,593 +5062,587 @@
     {
      "id": "l136",
      "start": 767.5,
-     "end": 769.14,
-     "text": "Questions 12 to 15"
+     "end": 771.6,
+     "text": "Questions 12 to 15 are based on the passage you have just heard."
     },
     {
      "id": "l137",
-     "start": 769.54,
-     "end": 773.01,
-     "text": "are based on the passage you have just heard. Question 12 why has the Oscars"
-    },
-    {
-     "id": "l138",
      "start": 773.06,
      "end": 777.62,
      "text": "Q12. Why has the Oscars ceremony been criticized?"
     },
     {
-     "id": "l139",
+     "id": "l138",
      "start": 791.2,
      "end": 795.08,
      "text": "Q13. What do we learn from the research?"
     },
     {
-     "id": "l140",
+     "id": "l139",
      "start": 808.78,
      "end": 815.3,
      "text": "Q14. Who are regarded as \"largely invisible\" on TV shows?"
     },
     {
-     "id": "l141",
+     "id": "l140",
      "start": 828.91,
      "end": 833.11,
      "text": "Q15. What does the speaker say about Hispanics?"
     },
     {
-     "id": "l142",
+     "id": "l141",
      "start": 846.44,
      "end": 848.16,
      "text": "Section C directions."
     },
     {
-     "id": "l143",
+     "id": "l142",
      "start": 849,
      "end": 852.36,
      "text": "In this section you will hear three recordings of lectures"
     },
     {
-     "id": "l144",
+     "id": "l143",
      "start": 852.36,
      "end": 858.2,
      "text": "or talks followed by three or four questions. The recordings will be played"
     },
     {
-     "id": "l145",
+     "id": "l144",
      "start": 858.2,
      "end": 863.44,
      "text": "only once. After you hear a question you must choose the best answer from the four"
     },
     {
-     "id": "l146",
+     "id": "l145",
      "start": 868.35,
      "end": 871.55,
      "text": "choices marked A, B, C and D. Then mark the corresponding letter on answer sheet"
     },
     {
-     "id": "l147",
+     "id": "l146",
      "start": 875.19,
      "end": 875.79,
      "text": "RECORDING 1"
     },
     {
-     "id": "l148",
+     "id": "l147",
      "start": 876.59,
      "end": 891.08,
      "text": "When purchasing life insurance, there are many important factors to consider: one should buy the policies that give the most protection at the least cost, insure the right family members, and consider the family's financial needs."
     },
     {
-     "id": "l149",
+     "id": "l148",
      "start": 892,
      "end": 899.56,
      "text": "It's important to buy the insurance from companies that are financially sound and that are represented by honest, well-trained agents."
     },
     {
-     "id": "l150",
+     "id": "l149",
      "start": 900.56,
      "end": 906.72,
      "text": "At various stages in a person's life, different kinds of life insurance are needed for particular situations."
     },
     {
-     "id": "l151",
+     "id": "l150",
      "start": 907.92,
      "end": 916.54,
      "text": "Jerry is single and has no dependents, probably the only life insurance he needs is enough to cover his debts and burial expenses."
     },
     {
-     "id": "l152",
+     "id": "l151",
      "start": 917.5,
      "end": 926.14,
      "text": "Insurance can be purchased at a lower rate during the young years, but by buying while young, the premiums are paid in for a longer period of time."
     },
     {
-     "id": "l153",
+     "id": "l152",
      "start": 926.82,
      "end": 930.02,
      "text": "In the end, the amount paid for premiums is about the same."
     },
     {
-     "id": "l154",
+     "id": "l153",
      "start": 931.05,
      "end": 934.25,
      "text": "A person shouldn't buy insurance protection that really isn't necessary."
     },
     {
-     "id": "l155",
+     "id": "l154",
      "start": 935.21,
      "end": 939.33,
      "text": "Suppose that Jerry marries Jeannette who is a college graduate and is working."
     },
     {
-     "id": "l156",
+     "id": "l155",
      "start": 940.01,
      "end": 944.33,
      "text": "Perhaps enough insurance would be needed to cover their debts and burial expenses."
     },
     {
-     "id": "l157",
+     "id": "l156",
      "start": 945.21,
      "end": 949.41,
      "text": "Now, Jeannette has quit work and their first child is on the way."
     },
     {
-     "id": "l158",
+     "id": "l157",
      "start": 950.01,
      "end": 952.61,
      "text": "They have purchased a home with a small down payment and a 30-year mortgage."
     },
     {
-     "id": "l159",
+     "id": "l158",
      "start": 955.15,
      "end": 957.99,
      "text": "The situation regarding life insurance takes on a different look."
     },
     {
-     "id": "l160",
+     "id": "l159",
      "start": 958.71,
      "end": 961.03,
      "text": "There are dependents who need financial protection."
     },
     {
-     "id": "l161",
+     "id": "l160",
      "start": 961.84,
      "end": 963.48,
      "text": "How much insurance is needed?"
     },
     {
-     "id": "l162",
+     "id": "l161",
      "start": 964.04,
      "end": 970.4,
      "text": "As the family increases in size, it is essential to add more insurance on the breadwinner to protect the dependents."
     },
     {
-     "id": "l163",
+     "id": "l162",
      "start": 971.64,
      "end": 982.2,
      "text": "When the children are young and depend upon the family for financial needs, families with modest incomes have difficulty providing enough life insurance to protect the mother and the children."
     },
     {
-     "id": "l164",
+     "id": "l163",
      "start": 983.41,
      "end": 988.29,
      "text": "Families with modest incomes should insure the breadwinner or breadwinners first."
     },
     {
-     "id": "l165",
+     "id": "l164",
      "start": 989.05,
      "end": 1000.93,
      "text": "When considering the amount of insurance for the mother with dependent children, substitute child care is a need that should be planned for until the children can care for themselves."
     },
     {
-     "id": "l166",
+     "id": "l165",
      "start": 1002.21,
      "end": 1006.75,
      "text": "The death of a small child would have no effect upon the income of the family."
     },
     {
-     "id": "l167",
+     "id": "l166",
      "start": 1007.59,
      "end": 1012.79,
      "text": "Perhaps a policy to meet funeral expenses would be sufficient for the young child."
     },
     {
-     "id": "l168",
+     "id": "l167",
      "start": 1013.31,
      "end": 1016.79,
      "text": "Although most people do not take out insurance on their young children."
     },
     {
-     "id": "l169",
+     "id": "l168",
      "start": 1017.95,
      "end": 1029.52,
      "text": "As the children become financially independent of the family, the emphasis on family financial security would shift from protection to saving for the retirement years."
     },
     {
-     "id": "l170",
+     "id": "l169",
      "start": 1030.56,
      "end": 1038.8,
      "text": "Every family situation is different, but it is important that each family give adequate thought to planning its financial future."
     },
     {
-     "id": "l171",
+     "id": "l170",
      "start": 1039.92,
      "end": 1043.8,
      "text": "Questions 16 to 18 are based on the recording you have just"
     },
     {
-     "id": "l172",
+     "id": "l171",
      "start": 1045.05,
      "end": 1051.77,
      "text": "Q16. What life insurance should a single person buy according to the speaker?"
     },
     {
-     "id": "l173",
+     "id": "l172",
      "start": 1064.64,
      "end": 1070.28,
      "text": "Q17. What should people do as their family increases in size?"
     },
     {
-     "id": "l174",
+     "id": "l173",
      "start": 1083.92,
      "end": 1088.56,
      "text": "Q18. When should one change their life insurance?"
     },
     {
-     "id": "l175",
+     "id": "l174",
      "start": 1102.05,
      "end": 1102.69,
      "text": "RECORDING 2"
     },
     {
-     "id": "l176",
+     "id": "l175",
      "start": 1103.97,
      "end": 1109.37,
      "text": "\"Stereotype\" may sound like a bad word, but there's nothing bad about it."
     },
     {
-     "id": "l177",
+     "id": "l176",
      "start": 1109.61,
      "end": 1113.13,
      "text": "For one thing, stereotypes are often accurate."
     },
     {
-     "id": "l178",
+     "id": "l177",
      "start": 1113.77,
      "end": 1119.41,
      "text": "When you ask people about their concept of stereotypes, they get it pretty much right."
     },
     {
-     "id": "l179",
+     "id": "l178",
      "start": 1120.33,
      "end": 1127.04,
      "text": "Also, stereotypes are often positive, particularly of groups that we ourselves belong to."
     },
     {
-     "id": "l180",
+     "id": "l179",
      "start": 1128,
      "end": 1142.2,
      "text": "Some of the statistical generalizations may be positive as some groups have reputations for being smart, for being loyal, for being brave, for all sorts of things that are not at all negative."
     },
     {
-     "id": "l181",
+     "id": "l180",
      "start": 1143.4,
      "end": 1147.2,
      "text": "And so there's nothing inherently wrong about stereotypes."
     },
     {
-     "id": "l182",
+     "id": "l181",
      "start": 1148.18,
      "end": 1150.74,
      "text": "But there are problems with stereotypes."
     },
     {
-     "id": "l183",
+     "id": "l182",
      "start": 1151.14,
      "end": 1156.86,
      "text": "For one thing, they're reliable insofar as they're based on unbiased samples."
     },
     {
-     "id": "l184",
+     "id": "l183",
      "start": 1158.18,
      "end": 1166.86,
      "text": "But a lot of the information we get about human groups is through biased sources like how they're represented in the media."
     },
     {
-     "id": "l185",
+     "id": "l184",
      "start": 1167.86,
      "end": 1174.65,
      "text": "And if these sources don't give you an accurate depiction, your stereotype won't be accurate."
     },
     {
-     "id": "l186",
+     "id": "l185",
      "start": 1175.34,
      "end": 1180.94,
      "text": "For example, many Jews have been troubled by Shakespeare's depiction of Shylock."
     },
     {
-     "id": "l187",
+     "id": "l186",
      "start": 1181.7,
      "end": 1187.1,
      "text": "If the only Jew you know is Shakespeare's Shylock, it's going to be a very bad impression."
     },
     {
-     "id": "l188",
+     "id": "l187",
      "start": 1188.12,
      "end": 1196.64,
      "text": "So one problem with stereotypes is while we are good at drawing conclusions from them, often our information isn't reliable."
     },
     {
-     "id": "l189",
+     "id": "l188",
      "start": 1198.09,
      "end": 1207.17,
      "text": "A second problem is that stereotypes, regardless of whether or not they're accurate, can have a negative effect on the people that they apply to."
     },
     {
-     "id": "l190",
+     "id": "l189",
      "start": 1208.45,
      "end": 1213.53,
      "text": "And this is what psychologist, Claude Steele, described as stereotype threat."
     },
     {
-     "id": "l191",
+     "id": "l190",
      "start": 1214.53,
      "end": 1216.73,
      "text": "He has a vivid example of this."
     },
     {
-     "id": "l192",
+     "id": "l191",
      "start": 1217.77,
      "end": 1222.01,
      "text": "Here's how to make African-Americans do worse on a math test."
     },
     {
-     "id": "l193",
+     "id": "l192",
      "start": 1223.01,
      "end": 1228.13,
      "text": "You have the test and you put on the test that they have to identify their race."
     },
     {
-     "id": "l194",
+     "id": "l193",
      "start": 1229.45,
      "end": 1243.14,
      "text": "The very act of acknowledging that they are African-American when given a test ignites in them thoughts of their own stereotype, which is negative regarding academics and that makes them do worse."
     },
     {
-     "id": "l195",
+     "id": "l194",
      "start": 1244.26,
      "end": 1247.82,
      "text": "Want to know how to make a woman do worse on a math test?"
     },
     {
-     "id": "l196",
+     "id": "l195",
      "start": 1248.42,
      "end": 1251.78,
      "text": "Same thing, get her to write down her sex."
     },
     {
-     "id": "l197",
+     "id": "l196",
      "start": 1253.02,
      "end": 1256.5,
      "text": "One recent study found a sort of clever twist on this."
     },
     {
-     "id": "l198",
+     "id": "l197",
      "start": 1257.22,
      "end": 1266.04,
      "text": "When Asian-American women are given a test and they're asked to mark down their race, they do better than they would otherwise do."
     },
     {
-     "id": "l199",
+     "id": "l198",
      "start": 1266.6,
      "end": 1270.64,
      "text": "They're reminded of a positive stereotype that boosts their morale."
     },
     {
-     "id": "l200",
+     "id": "l199",
      "start": 1271.68,
      "end": 1280.68,
      "text": "You ask them, on the other hand, to mark down their sex, they do worse because they're reminded of a negative stereotype."
     },
     {
-     "id": "l201",
+     "id": "l200",
      "start": 1281.44,
      "end": 1286.76,
      "text": "That's an example of how stereotypes have a potentially damaging effect on people."
     },
     {
-     "id": "l202",
+     "id": "l201",
      "start": 1289.4,
      "end": 1294.64,
      "text": "Questions 19 to 22 are based on the recording you have just heard."
     },
     {
-     "id": "l203",
+     "id": "l202",
      "start": 1296.04,
      "end": 1301.12,
      "text": "Q19. What does the speaker say about stereotypes?"
     },
     {
-     "id": "l204",
+     "id": "l203",
      "start": 1314.84,
      "end": 1319.64,
      "text": "Q20. What leads to the bias of stereotypes?"
     },
     {
-     "id": "l205",
+     "id": "l204",
      "start": 1333.42,
      "end": 1338.38,
      "text": "Q21. What does the speaker say is a problem with stereotypes?"
     },
     {
-     "id": "l206",
+     "id": "l205",
      "start": 1352.24,
      "end": 1357.76,
      "text": "Q22. What did one recent study find about stereotypes?"
     },
     {
-     "id": "l207",
+     "id": "l206",
      "start": 1372.12,
      "end": 1372.68,
      "text": "RECORDING 3"
     },
     {
-     "id": "l208",
+     "id": "l207",
      "start": 1374.6,
      "end": 1378.96,
      "text": "Sometimes when you take a common drug, you may have a side effect."
     },
     {
-     "id": "l209",
+     "id": "l208",
      "start": 1379.96,
      "end": 1384.68,
      "text": "That is, the drug may cause some effect other than its intended one."
     },
     {
-     "id": "l210",
+     "id": "l209",
      "start": 1385.68,
      "end": 1390,
      "text": "When these side effects occur, they are called \"adverse reactions\"."
     },
     {
-     "id": "l211",
+     "id": "l210",
      "start": 1391,
      "end": 1395.72,
      "text": "Whenever you have an adverse reaction, you should stop taking the drug right away."
     },
     {
-     "id": "l212",
+     "id": "l211",
      "start": 1396.68,
      "end": 1403.96,
      "text": "Ask your pharmacist whether he can suggest a drug that will relieve the symptoms but that will not cause the adverse reaction."
     },
     {
-     "id": "l213",
+     "id": "l212",
      "start": 1404.84,
      "end": 1410.48,
      "text": "If an adverse reaction to a drug is serious, consult your doctor for advice at once."
     },
     {
-     "id": "l214",
+     "id": "l213",
      "start": 1411.96,
      "end": 1417.66,
      "text": "Drugs that are safe in the dosage stated on the label may be very dangerous in large doses."
     },
     {
-     "id": "l215",
+     "id": "l214",
      "start": 1418.62,
      "end": 1434.54,
      "text": "For example, aspirin is seldom thought of as dangerous, but there are many reports of accidental poisoning of young children who take too many aspirin pills, as well as the possible development of Reye's syndrome in children with the flu."
     },
     {
-     "id": "l216",
+     "id": "l215",
      "start": 1435.83,
      "end": 1441.63,
      "text": "In adults, excessive use of some painkilling drugs may cause severe kidney damage."
     },
     {
-     "id": "l217",
+     "id": "l216",
      "start": 1442.79,
      "end": 1450.43,
      "text": "Some drugs for relief of stomach upsets, when taken in excess, can perhaps cause serious digestive problems."
     },
     {
-     "id": "l218",
+     "id": "l217",
      "start": 1451.47,
      "end": 1460.67,
      "text": "You should never use any over-the-counter drug on a regular, continued basis, or in large quantities, except on your doctor's advice."
     },
     {
-     "id": "l219",
+     "id": "l218",
      "start": 1461.91,
      "end": 1465.35,
      "text": "You could be suffering from a serious illness that needs a doctor's care."
     },
     {
-     "id": "l220",
+     "id": "l219",
      "start": 1467.1,
      "end": 1473.9,
      "text": "Each drug you take not only acts on the body but may also alter the effect of any other drug you are taking."
     },
     {
-     "id": "l221",
+     "id": "l220",
      "start": 1474.94,
      "end": 1478.98,
      "text": "Sometimes this can cause dangerous or even fatal reactions."
     },
     {
-     "id": "l222",
+     "id": "l221",
      "start": 1480.18,
      "end": 1487.7,
      "text": "For example, aspirin increases the blood-thinning effects of drugs given to patients with heart disease."
     },
     {
-     "id": "l223",
+     "id": "l222",
      "start": 1488.98,
      "end": 1497.02,
      "text": "Therefore, a patient who has been taking such a drug may risk bleeding if he or she uses aspirin for a headache."
     },
     {
-     "id": "l224",
+     "id": "l223",
      "start": 1498.26,
      "end": 1503.46,
      "text": "Before using several drugs together you should ask your doctor and follow his advice."
     },
     {
-     "id": "l225",
+     "id": "l224",
      "start": 1504.9,
      "end": 1508.82,
      "text": "Your pharmacist can tell you whether certain drugs can safely be taken together."
     },
     {
-     "id": "l226",
+     "id": "l225",
      "start": 1510.67,
      "end": 1519.27,
      "text": "Alcohol may increase the effect of a drug-sleeping pills combine with alcohol to produce a sleepy feeling."
     },
     {
-     "id": "l227",
+     "id": "l226",
      "start": 1520.15,
      "end": 1528.39,
      "text": "When taking any drug, you should ask your doctor whether drinking alcohol could be dangerous in combination with the medicine."
     },
     {
-     "id": "l228",
+     "id": "l227",
      "start": 1529.79,
      "end": 1537.85,
      "text": "Experts believe there is a relationship between adult abuse of legitimate medicines and the drug culture that has swept our country."
     },
     {
-     "id": "l229",
+     "id": "l228",
      "start": 1540.09,
      "end": 1548.69,
      "text": "You can do your share to reduce the chances that your children will become part of the drug culture by treating all medicines with respect."
     },
     {
-     "id": "l230",
+     "id": "l229",
      "start": 1549.81,
      "end": 1555.76,
      "text": "Always let your children know that medicines and drugs should not be used carelessly."
     },
     {
-     "id": "l231",
+     "id": "l230",
      "start": 1557,
      "end": 1561.28,
      "text": "Questions 23 to 25 are based on the recording you have"
     },
     {
-     "id": "l232",
+     "id": "l231",
      "start": 1562.92,
      "end": 1569.16,
      "text": "Q23. What does the speaker say you should do when you have an adverse reaction?"
     },
     {
-     "id": "l233",
+     "id": "l232",
      "start": 1581.89,
      "end": 1586.97,
      "text": "Q24. What does the speaker say about alcohol drinking?"
     },
     {
-     "id": "l234",
+     "id": "l233",
      "start": 1600.08,
      "end": 1606.52,
      "text": "Q25. What does the speaker call on parents to do at the end of the talk?"
