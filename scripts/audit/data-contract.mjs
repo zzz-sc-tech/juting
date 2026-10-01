@@ -81,14 +81,19 @@ export const translationGuard = (newLines, refTransMap, refLabel = '旧数据') 
 }
 
 // DB/某 seed 的全量 stats 与基线比对（check-invariants 的核心）
-export const checkAgainstBaseline = (cid, stats, baseline, lines) => {
+//   opts.minLines：本轮声明的行数下限（合法大合并时由 expect.lineDelta 推出）
+export const checkAgainstBaseline = (cid, stats, baseline, lines, opts = {}) => {
   const fails = []
   const warns = []
   const b = baseline[cid]
   if (!b) return { fails: [`T0 基线缺该课程`], warns }
-  if (stats.withTranslation < b.withTranslation) fails.push(`T1 译文覆盖下降: ${stats.withTranslation} → 基线 ${b.withTranslation}（译文事故！）`)
-  if (stats.withTranslation > b.withTranslation) warns.push(`T1 译文覆盖上升: ${b.withTranslation} → ${stats.withTranslation}（合法补译？记得 --rebuild-baseline）`)
-  if (stats.lines < Math.floor(b.lines * 0.9)) fails.push(`T2 行数骤降: ${stats.lines} < 基线 ${b.lines}×0.9`)
+  // T1 口径 = 无译文行数不得增加（合并两句译文行会使"带译文行数"合法下降，
+  // 绝对数对比会把正当合并误报成译文事故——2026-10-01 句合并实测教训）
+  const untranslated = stats.lines - stats.withTranslation
+  const baselineUntranslated = b.lines - b.withTranslation
+  if (untranslated > baselineUntranslated) fails.push(`T1 无译文行数增加: ${untranslated} > 基线 ${baselineUntranslated}（译文事故！）`)
+  if (stats.withTranslation > b.withTranslation && untranslated < baselineUntranslated) warns.push(`T1 译文覆盖上升: ${b.withTranslation} → ${stats.withTranslation}（补译？记得 --rebuild-baseline）`)
+  if (stats.lines < Math.floor(opts.minLines ?? b.lines * 0.9)) fails.push(`T2 行数骤降: ${stats.lines} < 下限 ${Math.floor(opts.minLines ?? b.lines * 0.9)}`)
   if (stats.lines > Math.ceil(b.lines * 1.15)) fails.push(`T2 行数暴涨: ${stats.lines} > 基线 ${b.lines}×1.15`)
   const newFields = stats.fields.filter((f) => !b.fields.includes(f))
   if (newFields.length) fails.push(`T3 出现契约外字段: ${newFields.join(',')}（先扩 CONTRACT_FIELDS 再写入）`)
@@ -130,7 +135,8 @@ export const saveTranscript = async ({ conn, cid, lines, version, expect = {}, d
   // 基线（若存在）
   if (fs.existsSync(BASELINE_PATH)) {
     const baseline = JSON.parse(fs.readFileSync(BASELINE_PATH, 'utf8'))
-    const { fails: bf, warns } = checkAgainstBaseline(cid, collectStats(lines), baseline, null)
+    const minLines = baseline[cid] ? baseline[cid].lines + lineDelta[0] - 1 : undefined
+    const { fails: bf, warns } = checkAgainstBaseline(cid, collectStats(lines), baseline, null, { minLines })
     fails.push(...bf)
     for (const w of warns) console.warn(`#${cid} ${w}`)
   }
