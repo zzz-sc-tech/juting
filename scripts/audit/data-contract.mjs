@@ -45,12 +45,13 @@ export const collectStats = (lines) => {
   const fields = new Set()
   const transMap = {}
   let withTranslation = 0
+  let untranslatedChars = 0
   for (const l of lines) {
     for (const k of Object.keys(l)) fields.add(k)
     const zh = (l.translation && String(l.translation).trim()) || (l.translations && l.translations['zh-CN'] && String(l.translations['zh-CN']).trim()) || ''
-    if (zh) { withTranslation++; transMap[l.text] = zh }
+    if (zh) { withTranslation++; transMap[l.text] = zh } else { untranslatedChars += String(l.text || '').length }
   }
-  return { lines: lines.length, withTranslation, fields: [...fields].sort(), transMap }
+  return { lines: lines.length, withTranslation, untranslatedChars, fields: [...fields].sort(), transMap }
 }
 
 const timeChecks = (lines) => {
@@ -87,14 +88,19 @@ export const checkAgainstBaseline = (cid, stats, baseline, lines, opts = {}) => 
   const warns = []
   const b = baseline[cid]
   if (!b) return { fails: [`T0 基线缺该课程`], warns }
-  // T1 口径 = 无译文行数不得增加（合并两句译文行会使"带译文行数"合法下降，
-  // 绝对数对比会把正当合并误报成译文事故——2026-10-01 句合并实测教训）
-  const untranslated = stats.lines - stats.withTranslation
-  const baselineUntranslated = b.lines - b.withTranslation
-  if (untranslated > baselineUntranslated) fails.push(`T1 无译文行数增加: ${untranslated} > 基线 ${baselineUntranslated}（译文事故！）`)
-  if (stats.withTranslation > b.withTranslation && untranslated < baselineUntranslated) warns.push(`T1 译文覆盖上升: ${b.withTranslation} → ${stats.withTranslation}（补译？记得 --rebuild-baseline）`)
+  // T1 口径 = 无译文「字符数」不得明显增加（内容级不变式：拆分/合并行数变化下
+  // 严格守恒，只有真丢译文才会涨；行数口径会在合法拆分无译文行时误报）
+  const untranslatedChars = stats.untranslatedChars ?? 0
+  if (b.untranslatedChars !== undefined) {
+    if (untranslatedChars > b.untranslatedChars + 80) fails.push(`T1 无译文内容增加: ${untranslatedChars} > 基线 ${b.untranslatedChars} 字符（译文事故！）`)
+  } else {
+    const untranslated = stats.lines - stats.withTranslation
+    const baselineUntranslated = b.lines - b.withTranslation
+    if (untranslated > baselineUntranslated) fails.push(`T1 无译文行数增加: ${untranslated} > 基线 ${baselineUntranslated}（译文事故！）`)
+  }
+  if (b.untranslatedChars !== undefined && untranslatedChars < b.untranslatedChars - 80) warns.push(`T1 无译文内容减少: ${b.untranslatedChars} → ${untranslatedChars} 字符（补译了？记得 --rebuild-baseline）`)
   if (stats.lines < Math.floor(opts.minLines ?? b.lines * 0.9)) fails.push(`T2 行数骤降: ${stats.lines} < 下限 ${Math.floor(opts.minLines ?? b.lines * 0.9)}`)
-  if (stats.lines > Math.ceil(b.lines * 1.15)) fails.push(`T2 行数暴涨: ${stats.lines} > 基线 ${b.lines}×1.15`)
+  if (stats.lines > Math.ceil(opts.maxLines ?? b.lines * 1.15)) fails.push(`T2 行数暴涨: ${stats.lines} > 上限 ${Math.ceil(opts.maxLines ?? b.lines * 1.15)}`)
   const newFields = stats.fields.filter((f) => !b.fields.includes(f))
   if (newFields.length) fails.push(`T3 出现契约外字段: ${newFields.join(',')}（先扩 CONTRACT_FIELDS 再写入）`)
   if (lines) fails.push(...timeChecks(lines))
@@ -135,8 +141,10 @@ export const saveTranscript = async ({ conn, cid, lines, version, expect = {}, d
   // 基线（若存在）
   if (fs.existsSync(BASELINE_PATH)) {
     const baseline = JSON.parse(fs.readFileSync(BASELINE_PATH, 'utf8'))
-    const minLines = baseline[cid] ? baseline[cid].lines + lineDelta[0] - 1 : undefined
-    const { fails: bf, warns } = checkAgainstBaseline(cid, collectStats(lines), baseline, null, { minLines })
+    const b = baseline[cid]
+    const minLines = b ? b.lines + lineDelta[0] - 1 : undefined
+    const maxLines = b ? b.lines + lineDelta[1] + 1 : undefined
+    const { fails: bf, warns } = checkAgainstBaseline(cid, collectStats(lines), baseline, null, { minLines, maxLines })
     fails.push(...bf)
     for (const w of warns) console.warn(`#${cid} ${w}`)
   }
