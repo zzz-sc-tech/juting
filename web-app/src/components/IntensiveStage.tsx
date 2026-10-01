@@ -113,7 +113,8 @@ export function IntensiveStage({
       if (ratePickerOpen) return
 
       // 焦点在按钮/输入框上时，空格与方向键应保留原生行为
-      const interactive = (event.target as HTMLElement | null)?.closest('button, a, input, textarea, select')
+      const target = event.target instanceof HTMLElement ? event.target : null
+      const interactive = target?.closest('button, a, input, textarea, select')
       if (interactive && (event.key === ' ' || event.key.startsWith('Arrow'))) return
       switch (event.key) {
         case 'ArrowLeft':

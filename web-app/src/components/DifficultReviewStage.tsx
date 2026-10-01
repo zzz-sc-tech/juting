@@ -67,7 +67,8 @@ export function DifficultReviewStage({
   const handleKeyDown = useCallback(
     (event: KeyboardEvent) => {
       if (!selectedLine) return
-      const interactive = (event.target as HTMLElement | null)?.closest('button, a, input, textarea, select')
+      const target = event.target instanceof HTMLElement ? event.target : null
+      const interactive = target?.closest('button, a, input, textarea, select')
       if (interactive && (event.key === ' ' || event.key.startsWith('Arrow'))) return
 
 

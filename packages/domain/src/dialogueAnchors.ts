@@ -227,6 +227,8 @@ const EN_DIRECTIONS_LINE_PATTERN = new RegExp(
     '|at the end of each (?:conversation|passage|recording|section)\\b' +
     '|after you hear a question\\b' +
     '|the cent(?:er|re)\\s*[.。]?$' +
+    // "Both the conversation and the questions will be spoken only once."（#31 实测泄漏进学习池）
+    '|both the (?:conversation|passage|recording|questions)\\b' +
     // 收尾播报「This/That's the end of listening comprehension」也是指令性内容：
     // 不认它就会作为学习句漏进最后一个题组块（#38/#45/#50 实测各多 1 行），
     // 学习者逐句精听也不需要练这句。低 rank 仅并入最近块，不影响标签。
