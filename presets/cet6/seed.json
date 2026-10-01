@@ -1,7 +1,7 @@
 {
  "preset": "cet6",
- "version": "20260930.17",
- "generatedAt": "2026-10-01T01:10:44.364Z",
+ "version": "20261001.1",
+ "generatedAt": "2026-10-01T02:27:11.024Z",
  "group": {
   "id": 8,
   "name": "英语六级真题",
@@ -415,12 +415,12 @@
     {
      "id": "l59",
      "start": 287.48,
-     "end": 293.49,
+     "end": 292.89,
      "text": "A catalogue for a new concert season around the theme of water, I found myself working"
     },
     {
      "id": "l60",
-     "start": 293.49,
+     "start": 292.94,
      "end": 295.25,
      "text": "Along the Belgian coastline."
     },
@@ -625,12 +625,12 @@
     {
      "id": "l94",
      "start": 494.97,
-     "end": 502.5,
+     "end": 502.24,
      "text": "The best answer from the four choices marked A, B, C, and D. Then mark the corresponding"
     },
     {
      "id": "l95",
-     "start": 502.84,
+     "start": 502.29,
      "end": 507.52,
      "text": "Letter on answer sheet 1, with a single line through the center."
     },
@@ -829,12 +829,12 @@
     {
      "id": "l128",
      "start": 736.04,
-     "end": 741.44,
+     "end": 741.25,
      "text": "Healthy eating, but telling them that eating lots of high fiber foods could reduce the"
     },
     {
      "id": "l129",
-     "start": 741.6,
+     "start": 741.3,
      "end": 746.25,
      "text": "Risk of breast cancer before middle age, that's a powerful message."
     },
@@ -1057,12 +1057,12 @@
     {
      "id": "l166",
      "start": 979.29,
-     "end": 984.89,
+     "end": 984.58,
      "text": "A lot of the government advertising has been about individual responsibility, but actually"
     },
     {
      "id": "l167",
-     "start": 984.93,
+     "start": 984.63,
      "end": 990.32,
      "text": "Understanding that drinking is very much about the social activity and finding ways to help"
     },
@@ -1297,12 +1297,12 @@
     {
      "id": "l206",
      "start": 1246.13,
-     "end": 1252.47,
+     "end": 1251.91,
      "text": "Filled with groans because many of the passengers were travelling without cash. It underlines"
     },
     {
      "id": "l207",
-     "start": 1252.51,
+     "start": 1251.96,
      "end": 1258.3,
      "text": "Just how much things have changed in the last generation, Barrett says. My parents, when"
     },
@@ -2400,12 +2400,12 @@
     {
      "id": "l121",
      "start": 896.36,
-     "end": 902.96,
+     "end": 902.41,
      "text": "In this section you will hear three recordings of lectures or talks followed by three or"
     },
     {
      "id": "l122",
-     "start": 903.16,
+     "start": 902.46,
      "end": 903.64,
      "text": "four questions."
     },
@@ -4281,7 +4281,7 @@
     },
     {
      "id": "l6",
-     "start": 35.18,
+     "start": 34.48,
      "end": 39.54,
      "text": "letter on answer sheet one with a single line through the center."
     },
@@ -7784,12 +7784,12 @@
     {
      "id": "l108",
      "start": 671.78,
-     "end": 675.38,
+     "end": 675.27,
      "text": "People enjoyed the tranquility of a slower pace of life."
     },
     {
      "id": "l109",
-     "start": 676.42,
+     "start": 675.32,
      "end": 689.77,
      "text": "After I moved to Tokyo and lived there for a number of years, I got used to having a pile of to-do lists, and my calendar always looked like a mess, with loads of things to do written across it."
     },
@@ -9007,12 +9007,12 @@
     {
      "id": "l103",
      "start": 829.82,
-     "end": 834.7,
+     "end": 834.15,
      "text": "Section C Directions In this section, you will hear three recordings"
     },
     {
      "id": "l104",
-     "start": 834.9,
+     "start": 834.2,
      "end": 838.3,
      "text": "of lectures or talks followed by three or four questions."
     },
@@ -12621,7 +12621,7 @@
     },
     {
      "id": "l71",
-     "start": 468.55,
+     "start": 468,
      "end": 469.51,
      "text": "a single line through the centre."
     },
@@ -12867,7 +12867,7 @@
     },
     {
      "id": "l112",
-     "start": 872.76,
+     "start": 872.06,
      "end": 873.84,
      "text": "a single line through the centre."
     },
@@ -12898,12 +12898,12 @@
     {
      "id": "l117",
      "start": 885.42,
-     "end": 888.75,
+     "end": 888.21,
      "text": "choices marked A, B, C, and D. Then mark the corresponding letter on answer sheet 1, with"
     },
     {
      "id": "l118",
-     "start": 888.96,
+     "start": 888.26,
      "end": 893.12,
      "text": "were confined to the university or research center where they worked."
     },
@@ -13018,12 +13018,12 @@
     {
      "id": "l137",
      "start": 1104.71,
-     "end": 1106.72,
+     "end": 1105.92,
      "text": "Q16. What do we learn about the European Union's scientific research?"
     },
     {
      "id": "l138",
-     "start": 1106.77,
+     "start": 1105.97,
      "end": 1110.81,
      "text": "we learn about the research funding policies in the European Union?"
     },
@@ -13084,12 +13084,12 @@
     {
      "id": "l148",
      "start": 1213.75,
-     "end": 1226.57,
+     "end": 1225.97,
      "text": "And it was often called the Earth's twin because it's about the same size and mass as our planet."
     },
     {
      "id": "l149",
-     "start": 1226.57,
+     "start": 1226.02,
      "end": 1229.96,
      "text": "But as we've learned more about Venus, that romantic image has faded. Today, we know that Venus is a hellish place."
     },
@@ -13227,7 +13227,7 @@
     },
     {
      "id": "l172",
-     "start": 1502.6,
+     "start": 1501.5,
      "end": 1509.45,
      "text": "Studies have found that even infants in East Asia sleep about an hour less than European infants."
     },
@@ -16501,12 +16501,12 @@
     {
      "id": "l78",
      "start": 470.18,
-     "end": 470.66,
+     "end": 470.48,
      "text": "PASSAGE 1"
     },
     {
      "id": "l79",
-     "start": 470.77,
+     "start": 470.22,
      "end": 486.38,
      "text": "Too many people view their jobs as a five-day prison, which they are paroled every Friday, says Joel Goodman, founder of the Humor Project, a humor consulting group in Saratoga Springs, New York."
     },
@@ -17448,12 +17448,12 @@
     {
      "id": "l24",
      "start": 114.63,
-     "end": 122.67,
+     "end": 122.54,
      "text": "Teaching at a high level can be very stimulating for anyone, no matter how much expertise they may already have in the field they are instructing."
     },
     {
      "id": "l25",
-     "start": 123.79,
+     "start": 122.59,
      "end": 127.63,
      "text": "M: Any scientific breakthroughs that you see on the near horizon?"
     },
@@ -18851,12 +18851,12 @@
     {
      "id": "l37",
      "start": 224.87,
-     "end": 226.9,
+     "end": 225.75,
      "text": "CONVERSATION 2"
     },
     {
      "id": "l38",
-     "start": 226.9,
+     "start": 225.8,
      "end": 232.09,
      "text": "W: How do you feel about the future of artificial intelligence?"
     },
@@ -19073,12 +19073,12 @@
     {
      "id": "l74",
      "start": 455.72,
-     "end": 465.75,
+     "end": 465.15,
      "text": "To achieve financial security, how much you save is always more important than the amount you earn or how shrewdly you invest."
     },
     {
      "id": "l75",
-     "start": 465.75,
+     "start": 465.2,
      "end": 473.82,
      "text": "If you're under 30 years old, your goal should be to save 20% of your monthly income after tax deductions."
     },
@@ -19421,12 +19421,12 @@
     {
      "id": "l132",
      "start": 890.29,
-     "end": 898.36,
+     "end": 898.11,
      "text": "By purchasing an apartment that was 40 square meters, instead of 60, I immediately saved $200,000."
     },
     {
      "id": "l133",
-     "start": 898.36,
+     "start": 898.16,
      "end": 905.48,
      "text": "Smaller space leads to reduced utility bills, and also a smaller carbon footprint."
     },
@@ -20668,12 +20668,12 @@
     {
      "id": "l120",
      "start": 848.05,
-     "end": 852.96,
+     "end": 852.26,
      "text": "Section C, directions, in this section you will hear 3 recordings of lectures or talks followed by 3 or 4 questions."
     },
     {
      "id": "l121",
-     "start": 853.01,
+     "start": 852.31,
      "end": 853.6,
      "text": "RECORDING 1"
     },
@@ -23252,12 +23252,12 @@
     {
      "id": "l107",
      "start": 884.42,
-     "end": 898.57,
+     "end": 898.27,
      "text": "In this section, you will hear three recordings"
     },
     {
      "id": "l108",
-     "start": 898.62,
+     "start": 898.32,
      "end": 899.25,
      "text": "RECORDING 1"
     },
@@ -25217,7 +25217,7 @@
     },
     {
      "id": "l3",
-     "start": 21.97,
+     "start": 21.42,
      "end": 22.68,
      "text": "CONVERSATION 1"
     },
@@ -25644,12 +25644,12 @@
     {
      "id": "l74",
      "start": 545.59,
-     "end": 551.31,
+     "end": 551.16,
      "text": "They actually rely on their daylight vision and cannot fly during the night with no moonlight."
     },
     {
      "id": "l75",
-     "start": 552.31,
+     "start": 551.21,
      "end": 557.86,
      "text": "The second group called micro bats are smaller in size and mostly eat insects."
     },
@@ -26693,12 +26693,12 @@
     {
      "id": "l42",
      "start": 316.07,
-     "end": 320.29,
+     "end": 320.21,
      "text": "W: Actually, I'm majoring in finance, but I've always loved clothes."
     },
     {
      "id": "l43",
-     "start": 321.21,
+     "start": 320.26,
      "end": 323.49,
      "text": "And I started making my own at 14."
     },
@@ -26962,7 +26962,7 @@
     },
     {
      "id": "l87",
-     "start": 599.43,
+     "start": 598.88,
      "end": 609.43,
      "text": "The searches also tend to only focus on a narrow spectrum of chemical compounds, but this is where artificial intelligence comes in."
     },
@@ -27754,12 +27754,12 @@
     {
      "id": "l3",
      "start": 14.24,
-     "end": 21.72,
+     "end": 19.37,
      "text": "each conversation you will hear four questions both the conversation and the"
     },
     {
      "id": "l4",
-     "start": 21.72,
+     "start": 19.42,
      "end": 25.48,
      "text": "questions will be spoken only once after you hear a question you must choose the"
     },
@@ -27814,12 +27814,12 @@
     {
      "id": "l13",
      "start": 59.53,
-     "end": 64.63,
+     "end": 64.03,
      "text": "What are some of the steps we can take to prevent this from happening?"
     },
     {
      "id": "l14",
-     "start": 64.63,
+     "start": 64.08,
      "end": 67.44,
      "text": "W: It's all about keeping track of your money."
     },
@@ -28054,12 +28054,12 @@
     {
      "id": "l53",
      "start": 299.19,
-     "end": 304.12,
+     "end": 303.52,
      "text": "Now, the big question, what about noise and the neighbors?"
     },
     {
      "id": "l54",
-     "start": 304.12,
+     "start": 303.57,
      "end": 307.74,
      "text": "W: All the neighbors are elderly, so no noisy kids."
     },
@@ -28096,12 +28096,12 @@
     {
      "id": "l60",
      "start": 327.98,
-     "end": 334.33,
+     "end": 333.73,
      "text": "As we only have one car, and my wife has to use it as she works nights at the hospital."
     },
     {
      "id": "l61",
-     "start": 334.33,
+     "start": 333.78,
      "end": 340.46,
      "text": "W: If you like the place, it's yours as soon as I get a contract drawn up with the solicitor."
     },
@@ -28234,12 +28234,12 @@
     {
      "id": "l83",
      "start": 513.47,
-     "end": 517.72,
+     "end": 517.52,
      "text": "Perhaps the most obvious is curtailing screen time."
     },
     {
      "id": "l84",
-     "start": 517.72,
+     "start": 517.57,
      "end": 523.6,
      "text": "Commercial content is there for a reason: to elicit purchasing behavior."
     },
@@ -28342,12 +28342,12 @@
     {
      "id": "l101",
      "start": 668.18,
-     "end": 673.47,
+     "end": 673.27,
      "text": "We should only punish the bad guys."
     },
     {
      "id": "l102",
-     "start": 673.47,
+     "start": 673.32,
      "end": 676.03,
      "text": "That's not what we always do."
     },
@@ -28384,12 +28384,12 @@
     {
      "id": "l108",
      "start": 705.43,
-     "end": 707.93,
+     "end": 707.73,
      "text": "It has been found in every society."
     },
     {
      "id": "l109",
-     "start": 707.93,
+     "start": 707.78,
      "end": 709.44,
      "text": "Why does this happen?"
     },
@@ -28720,12 +28720,12 @@
     {
      "id": "l164",
      "start": 1145.49,
-     "end": 1146.34,
+     "end": 1145.79,
      "text": "Good afternoon."
     },
     {
      "id": "l165",
-     "start": 1146.34,
+     "start": 1145.69,
      "end": 1155.3,
      "text": "Today's lecture, we'll be talking about how and when to disclose a disability when applying for a job."
     },
@@ -28834,12 +28834,12 @@
     {
      "id": "l183",
      "start": 1287.78,
-     "end": 1295.15,
+     "end": 1294.5,
      "text": "There is always the risk that the recruiter will research information that is inaccurate or irrelevant."
     },
     {
      "id": "l184",
-     "start": 1295.15,
+     "start": 1294.55,
      "end": 1309.85,
      "text": "If people don't think their disability will impact their ability to perform in the advertised position, then it's entirely their entitlement to choose when and whether to share this information."
     },
@@ -29066,7 +29066,7 @@
    "transcript_json": [
     {
      "id": "l1",
-     "start": 7.36,
+     "start": 6.56,
      "end": 8.28,
      "text": "Section A, Directions."
     },
@@ -29079,7 +29079,7 @@
     {
      "id": "l3",
      "start": 12.04,
-     "end": 15.31,
+     "end": 15.28,
      "text": "At the end of each conversation you will hear four questions."
     },
     {
@@ -29097,13 +29097,13 @@
     {
      "id": "l6",
      "start": 27.63,
-     "end": 33.06,
+     "end": 33.03,
      "text": "Then mark the corresponding letter on answer sheet 1 with a single line through the center."
     },
     {
      "id": "l7",
      "start": 34.43,
-     "end": 35.1,
+     "end": 35.07,
      "text": "CONVERSATION 1"
     },
     {
@@ -29139,12 +29139,12 @@
     {
      "id": "l13",
      "start": 56.7,
-     "end": 65.29,
+     "end": 65.26,
      "text": "W: Of course I've started it, but I can't get to the writing yet as I haven't found enough resources to use, so I'm still researching the topic. What is your topic?"
     },
     {
      "id": "l14",
-     "start": 66.14,
+     "start": 66.02,
      "end": 68.62,
      "text": "M: Maybe the problem is the way you're doing your research."
     },
@@ -29168,7 +29168,7 @@
     },
     {
      "id": "l18",
-     "start": 90.33,
+     "start": 90.25,
      "end": 93.45,
      "text": "I think the problem is that my topic isn't viable."
     },
@@ -29223,7 +29223,7 @@
     {
      "id": "l27",
      "start": 138.46,
-     "end": 139.65,
+     "end": 139.62,
      "text": "M: That's pretty narrow."
     },
     {
@@ -29253,7 +29253,7 @@
     {
      "id": "l32",
      "start": 156.1,
-     "end": 156.69,
+     "end": 156.66,
      "text": "CONVERSATION 2"
     },
     {
@@ -29276,7 +29276,7 @@
     },
     {
      "id": "l36",
-     "start": 210.96,
+     "start": 210.88,
      "end": 215.64,
      "text": "Q4. What do we learn the woman will do to complete her dissertation?"
     },
@@ -29294,7 +29294,7 @@
     },
     {
      "id": "l39",
-     "start": 250.26,
+     "start": 250.46,
      "end": 253.98,
      "text": "M: Thanks for having me, Rebecca, but I'm hardly a celebrity."
     },
@@ -29306,7 +29306,7 @@
     },
     {
      "id": "l41",
-     "start": 266.14,
+     "start": 266.26,
      "end": 268.94,
      "text": "What makes people so fascinated with your work?"
     },
@@ -29325,13 +29325,13 @@
     {
      "id": "l44",
      "start": 280.22,
-     "end": 283.17,
+     "end": 283.14,
      "text": "Basically, we all want to know how to fix things."
     },
     {
      "id": "l45",
      "start": 283.46,
-     "end": 284.21,
+     "end": 284.54,
      "text": "W: We certainly do."
     },
     {
@@ -29342,19 +29342,19 @@
     },
     {
      "id": "l47",
-     "start": 293.71,
+     "start": 293.79,
      "end": 295.39,
      "text": "That's no small achievement."
     },
     {
      "id": "l48",
      "start": 296.11,
-     "end": 302.64,
+     "end": 305.99,
      "text": "M: I'm glad to hear you find my work accessible, because I was worried when I wrote it that discussing the science might make the book more suited for a specialist audience."
     },
     {
      "id": "l49",
-     "start": 306.9,
+     "start": 307.06,
      "end": 310.26,
      "text": "My last book was written primarily for the medical community."
     },
@@ -29366,8 +29366,8 @@
     },
     {
      "id": "l51",
-     "start": 317.3,
-     "end": 317.73,
+     "start": 316.78,
+     "end": 318.38,
      "text": "W: And how do you suggest they do that?"
     },
     {
@@ -29384,7 +29384,7 @@
     },
     {
      "id": "l54",
-     "start": 331.75,
+     "start": 331.87,
      "end": 333.87,
      "text": "I don't advocate one single diet."
     },
@@ -29397,7 +29397,7 @@
     {
      "id": "l56",
      "start": 337.91,
-     "end": 340.74,
+     "end": 340.71,
      "text": "And different people need different amounts of protein and fat."
     },
     {
@@ -29408,19 +29408,19 @@
     },
     {
      "id": "l58",
-     "start": 350.04,
+     "start": 350.08,
      "end": 356.92,
      "text": "We'll talk about those recommendations next, but now we need to take a short break for a message from our sponsor."
     },
     {
      "id": "l59",
-     "start": 362.56,
+     "start": 362.52,
      "end": 367.08,
      "text": "Q5. What does the woman say about the man in her introduction?"
     },
     {
      "id": "l60",
-     "start": 380.71,
+     "start": 380.55,
      "end": 384.83,
      "text": "Q6. What has motivated the man to write his books?"
     },
@@ -29439,31 +29439,31 @@
     {
      "id": "l63",
      "start": 434.23,
-     "end": 434.74,
+     "end": 434.71,
      "text": "Section B."
     },
     {
      "id": "l64",
      "start": 435.39,
-     "end": 435.94,
+     "end": 435.91,
      "text": "Directions."
     },
     {
      "id": "l65",
-     "start": 436.27,
-     "end": 439.53,
+     "start": 436.43,
+     "end": 439.98,
      "text": "In this section, you will hear two passages. At the end of each"
     },
     {
      "id": "l66",
-     "start": 440.67,
+     "start": 440.03,
      "end": 442.83,
      "text": "passage, you will hear three or four questions."
     },
     {
      "id": "l67",
      "start": 443.35,
-     "end": 446.98,
+     "end": 446.95,
      "text": "Both the passage and the questions will be spoken only once."
     },
     {
@@ -29480,14 +29480,14 @@
     },
     {
      "id": "l70",
-     "start": 456.49,
+     "start": 455.94,
      "end": 460.49,
      "text": "letter on answer sheet 1 with a single line through the center."
     },
     {
      "id": "l71",
      "start": 461.77,
-     "end": 462.32,
+     "end": 462.29,
      "text": "PASSAGE 1"
     },
     {
@@ -29498,7 +29498,7 @@
     },
     {
      "id": "l73",
-     "start": 474.17,
+     "start": 473.57,
      "end": 475.69,
      "text": "First, the benefits for the brain."
     },
@@ -29516,7 +29516,7 @@
     },
     {
      "id": "l76",
-     "start": 492.4,
+     "start": 492.44,
      "end": 496.04,
      "text": "The rats also did better on a memory test later on."
     },
@@ -29528,14 +29528,14 @@
     },
     {
      "id": "l78",
-     "start": 503.04,
-     "end": 504.51,
+     "start": 501.76,
+     "end": 504.48,
      "text": "But how does stress improve memory?"
     },
     {
      "id": "l79",
-     "start": 505.54,
-     "end": 508.37,
+     "start": 505.26,
+     "end": 510.18,
      "text": "It's simple. When your brain cells multiply, your memory can improve."
     },
     {
@@ -29546,20 +29546,20 @@
     },
     {
      "id": "l81",
-     "start": 521.58,
-     "end": 522.73,
+     "start": 521.3,
+     "end": 526.73,
      "text": "If an animal encounters a predator and escapes, for example, it's important to remember where and when that encounter happened."
     },
     {
      "id": "l82",
-     "start": 531.16,
+     "start": 531,
      "end": 534.32,
      "text": "Experts assert that the same principle applies to humans."
     },
     {
      "id": "l83",
      "start": 535.28,
-     "end": 536.67,
+     "end": 538.96,
      "text": "Now, let's turn to how stress benefits the body."
     },
     {
@@ -29570,7 +29570,7 @@
     },
     {
      "id": "l85",
-     "start": 542.8,
+     "start": 542.72,
      "end": 546.72,
      "text": "But experts say that stress can keep you from getting sick."
     },
@@ -29588,7 +29588,7 @@
     },
     {
      "id": "l88",
-     "start": 564,
+     "start": 564.04,
      "end": 574.12,
      "text": "One study shows that rats that experienced brief stress had a surge of immune cell response, which makes the immune system better prepared to fight illness."
     },
@@ -29606,31 +29606,31 @@
     },
     {
      "id": "l91",
-     "start": 585.08,
-     "end": 585.59,
+     "start": 585.34,
+     "end": 585.64,
      "text": "Question 9."
     },
     {
      "id": "l92",
      "start": 587.44,
-     "end": 587.95,
+     "end": 587.92,
      "text": "PASSAGE 2"
     },
     {
      "id": "l93",
-     "start": 590.17,
+     "start": 589.87,
      "end": 596.67,
      "text": "Q9. What did researchers discover about rats placed briefly in a stressful situation?"
     },
     {
      "id": "l94",
-     "start": 610.4,
+     "start": 610.32,
      "end": 616.76,
      "text": "Q10. Why do people tend to have clear memories of dangerous situations they have encountered?"
     },
     {
      "id": "l95",
-     "start": 630.21,
+     "start": 630.17,
      "end": 634.97,
      "text": "Q11. What do scientists believe chronic stress can do?"
     },
@@ -29642,13 +29642,13 @@
     },
     {
      "id": "l97",
-     "start": 657.26,
-     "end": 672,
+     "start": 657.34,
+     "end": 671.44,
      "text": "It's likely the unpredictable, uncontrollable and ongoing nature of day-to-day email in terms of volume, importance and urgency contributes to their levels of anxiety and to diminished leadership skills."
     },
     {
      "id": "l98",
-     "start": 673.28,
+     "start": 673.36,
      "end": 680.04,
      "text": "That's because it's not unusual for many leaders to prioritize email management over people management."
     },
@@ -29661,12 +29661,12 @@
     {
      "id": "l100",
      "start": 687.12,
-     "end": 698.14,
+     "end": 699.95,
      "text": "As a result, they ignore the issues that might only be mild problems at first, until unfortunately, they inevitably transform into a major problem or crisis by virtue of neglect."
     },
     {
      "id": "l101",
-     "start": 701.43,
+     "start": 701.47,
      "end": 720.35,
      "text": "As leaders, they are expected to motivate and inspire their team in pursuit of longer term strategic goals and also, less ambitiously but more practically, to monitor their daily output, to set clear expectations, and to give regular feedback."
     },
@@ -29679,7 +29679,7 @@
     {
      "id": "l103",
      "start": 730.34,
-     "end": 731.73,
+     "end": 734.5,
      "text": "Daily email demands have a negative impact on their goal progress."
     },
     {
@@ -29690,14 +29690,14 @@
     },
     {
      "id": "l105",
-     "start": 744.45,
+     "start": 744.37,
      "end": 752.77,
      "text": "The solution is cultivating self-control which is like a muscle-it can be strengthened or improved over time through exercise."
     },
     {
      "id": "l106",
      "start": 753.97,
-     "end": 772.8,
+     "end": 772.77,
      "text": "Some suggestions include making space in your diary for the only periods during which you'll be checking emails, setting a timer for yourself so you don't become distracted by your inbox for too long, turning off email alerts so you're not interrupted by them."
     },
     {
@@ -29726,32 +29726,32 @@
     },
     {
      "id": "l111",
-     "start": 856.16,
+     "start": 856.36,
      "end": 866.8,
      "text": "In this section, you will hear three recordings of lectures or talks, followed by three or four questions. The recordings will be played only once. After you hear a question, you"
     },
     {
      "id": "l112",
-     "start": 867,
-     "end": 870.63,
+     "start": 867.12,
+     "end": 870.6,
      "text": "must choose the best answer from the four choices marked A, B, C, and D. Then mark the"
     },
     {
      "id": "l113",
-     "start": 874.12,
-     "end": 875.21,
+     "start": 873.92,
+     "end": 878.44,
      "text": "corresponding letter on answer sheet 1 with a single line through the center."
     },
     {
      "id": "l114",
      "start": 879.89,
-     "end": 880.48,
+     "end": 880.45,
      "text": "RECORDING 1"
     },
     {
      "id": "l115",
-     "start": 882.17,
-     "end": 891.32,
+     "start": 881.89,
+     "end": 891.29,
      "text": "In last week's lecture, we talked about the problems caused by poor eating habits, focusing on how medical professionals are trying to solve these problems."
     },
     {
@@ -29768,32 +29768,32 @@
     },
     {
      "id": "l118",
-     "start": 904.92,
+     "start": 904.68,
      "end": 913.04,
      "text": "Well, a team of marketing professors has studied the importance of the visual aspect of food and how that influences food choices."
     },
     {
      "id": "l119",
      "start": 914.24,
-     "end": 923.72,
+     "end": 924.12,
      "text": "Those marketing experts assert that the impact of the appearance of food is greater than we might presume, and might hold the key to encouraging better eating."
     },
     {
      "id": "l120",
-     "start": 925.76,
+     "start": 925.24,
      "end": 928.64,
      "text": "So how important is the appearance of food?"
     },
     {
      "id": "l121",
      "start": 929.8,
-     "end": 939.1,
+     "end": 941.6,
      "text": "Research shows that just seeing an appealing photograph of a hamburger in an advertisement, for example, can cause individuals to imagine the taste or smell of that hamburger."
     },
     {
      "id": "l122",
-     "start": 942.82,
-     "end": 945.57,
+     "start": 942.3,
+     "end": 945.86,
      "text": "This can make them more likely to purchase and consume it."
     },
     {
@@ -29811,36 +29811,36 @@
     {
      "id": "l125",
      "start": 952.83,
-     "end": 962.14,
+     "end": 966.14,
      "text": "Well, the marketing professors argue that this is actually a problem, because the combination of pleasing aesthetics of and easy access to unhealthy foods, such as hamburgers and pizza, may be contributing to a worldwide health crisis."
     },
     {
      "id": "l126",
-     "start": 969.35,
+     "start": 969.51,
      "end": 979.24,
      "text": "In fact, statistics show that 39% of all adults in the world weigh too much and another 13% are obese."
     },
     {
      "id": "l127",
      "start": 980.52,
-     "end": 991.16,
+     "end": 995.16,
      "text": "Now, as we discussed last time, medical professionals have tried to fight the obesity epidemic by focusing on the nutrients found in different foods, emphasizing things like carbohydrate, fat, sugar and calorie content."
     },
     {
      "id": "l128",
-     "start": 996.49,
+     "start": 996.61,
      "end": 998.37,
      "text": "But they've had limited success."
     },
     {
      "id": "l129",
      "start": 999.81,
-     "end": 1008.64,
+     "end": 1010.97,
      "text": "The marketing professors believe that the real solution to obesity is making food look appealing and focusing on the pleasure of both looking at and eating that food."
     },
     {
      "id": "l130",
-     "start": 1012.05,
+     "start": 1012.13,
      "end": 1016.25,
      "text": "That pleasure can be used as a tool to promote healthy food choices."
     },
@@ -29858,8 +29858,8 @@
     },
     {
      "id": "l133",
-     "start": 1039.49,
-     "end": 1039.96,
+     "start": 1038.37,
+     "end": 1039.93,
      "text": "But are they right?"
     },
     {
@@ -29870,7 +29870,7 @@
     },
     {
      "id": "l135",
-     "start": 1047.77,
+     "start": 1047.69,
      "end": 1056.17,
      "text": "The campaign didn't emphasize the carrots' healthy qualities, but embrace their beauty and the pleasure derived from eating them."
     },
@@ -29888,7 +29888,7 @@
     },
     {
      "id": "l138",
-     "start": 1071.24,
+     "start": 1071.04,
      "end": 1081.44,
      "text": "The researchers believe that other companies could bolster sales of healthy foods with similar ads, depicting their products as attractive and a source of pleasure."
     },
@@ -29900,19 +29900,19 @@
     },
     {
      "id": "l140",
-     "start": 1083,
-     "end": 1084.03,
+     "start": 1083.3,
+     "end": 1084,
      "text": "Question 16."
     },
     {
      "id": "l141",
      "start": 1085.68,
-     "end": 1086.19,
+     "end": 1086.16,
      "text": "RECORDING 2"
     },
     {
      "id": "l142",
-     "start": 1088.46,
+     "start": 1088.16,
      "end": 1094.04,
      "text": "Q16. What does the speaker say a team of marketing professors has studied?"
     },
@@ -29924,49 +29924,49 @@
     },
     {
      "id": "l144",
-     "start": 1126.08,
+     "start": 1126.04,
      "end": 1132.32,
      "text": "Q18. What can other companies learn from the example of the carrot promotion campaign?"
     },
     {
      "id": "l145",
      "start": 1148.37,
-     "end": 1153.6,
+     "end": 1153.57,
      "text": "The household cleaning products industry really began to take off in the 1950s."
     },
     {
      "id": "l146",
      "start": 1154.49,
-     "end": 1164.2,
+     "end": 1165.77,
      "text": "Prior to that resourceful housewives, who had grown up in a less prosperous era, relied on substances that they used in their kitchens such as vinegar used to clean windows."
     },
     {
      "id": "l147",
-     "start": 1167.7,
+     "start": 1167.1,
      "end": 1175.02,
      "text": "Today, the household cleaning products industry is worth billions of dollars a year and is dominated by large global companies."
     },
     {
      "id": "l148",
-     "start": 1176.62,
-     "end": 1189.1,
+     "start": 1176.3,
+     "end": 1189.07,
      "text": "In recent years, however, many countries have witnessed a surge in the number of small businesses and companies offering more environment-friendly cleaning products, and they're doing good business, too."
     },
     {
      "id": "l149",
-     "start": 1190.67,
+     "start": 1190.79,
      "end": 1196.63,
      "text": "One reason for this is that consumers are becoming more aware of environment and sustainability issues."
     },
     {
      "id": "l150",
-     "start": 1197.5,
+     "start": 1197.62,
      "end": 1202.42,
      "text": "They also want to make their home a safe place, free from toxic chemicals."
     },
     {
      "id": "l151",
-     "start": 1203.9,
+     "start": 1204.02,
      "end": 1209.98,
      "text": "The third reason is people's awareness of a knowledge about technology has never been greater."
     },
@@ -29979,7 +29979,7 @@
     {
      "id": "l153",
      "start": 1226.51,
-     "end": 1233.04,
+     "end": 1237.04,
      "text": "There is perhaps no better example of this than a patented cloth sold by one company, which remarkably uses only water rather than traditional cleaning products."
     },
     {
@@ -29996,7 +29996,7 @@
     },
     {
      "id": "l156",
-     "start": 1254.68,
+     "start": 1254.44,
      "end": 1261.44,
      "text": "Many of the people behind these companies began testing the viability of their products by selling them at local markets."
     },
@@ -30020,8 +30020,8 @@
     },
     {
      "id": "l160",
-     "start": 1293.27,
-     "end": 1294.66,
+     "start": 1292.75,
+     "end": 1294.63,
      "text": "And there are social media celebrities."
     },
     {
@@ -30033,7 +30033,7 @@
     {
      "id": "l162",
      "start": 1306.23,
-     "end": 1306.7,
+     "end": 1306.67,
      "text": "RECORDING 3"
     },
     {
@@ -30057,18 +30057,18 @@
     {
      "id": "l166",
      "start": 1367.31,
-     "end": 1375.5,
+     "end": 1375.47,
      "text": "Throwing spare change into a fountain is a time-honored ritual, throw a penny into the water, and your wish might come true."
     },
     {
      "id": "l167",
-     "start": 1376.11,
+     "start": 1376.23,
      "end": 1378.39,
      "text": "But all that money has to go somewhere."
     },
     {
      "id": "l168",
-     "start": 1379.47,
+     "start": 1378.91,
      "end": 1384.75,
      "text": "Otherwise, the growing piles of pennies, quarters and euros could clog up the fountain's works."
     },
@@ -30087,13 +30087,13 @@
     {
      "id": "l171",
      "start": 1398.27,
-     "end": 1408.48,
+     "end": 1411.67,
      "text": "In New York City, for example, coins collected from fountains in public parks often go towards the fountains' maintenance itself, though entrepreneurs who don't mind getting their hands wet often get to it first."
     },
     {
      "id": "l172",
-     "start": 1413.23,
-     "end": 1417.82,
+     "start": 1412.71,
+     "end": 1417.79,
      "text": "There are over 50 beautiful, decorative display fountains in New York City parks."
     },
     {
@@ -30122,8 +30122,8 @@
     },
     {
      "id": "l177",
-     "start": 1449.17,
-     "end": 1461.4,
+     "start": 1448.93,
+     "end": 1461.37,
      "text": "So many tourists toss in coins that Roman officials have the fountain cleaned every night, reportedly getting as much as $4,000 in loose change from around the world each day."
     },
     {
@@ -30158,25 +30158,25 @@
     },
     {
      "id": "l183",
-     "start": 1504.37,
-     "end": 1510.64,
+     "start": 1503.97,
+     "end": 1510.61,
      "text": "For the most part, money collected from privately-owned fountains in the United States also goes to charity."
     },
     {
      "id": "l184",
-     "start": 1512.01,
+     "start": 1512.05,
      "end": 1523.25,
      "text": "The fountain in New York City's Bryant Park is owned and operated by a not-for-profit corporation, which puts the cash collected by cleaners towards the fountain's own maintenance."
     },
     {
      "id": "l185",
      "start": 1524.63,
-     "end": 1534.64,
+     "end": 1536.91,
      "text": "Tens of thousands of dollars in coins removed from wishing wells, fountains and ponds in Florida's Walt Disney World are donated each year to support foster children living in the state."
     },
     {
      "id": "l186",
-     "start": 1537.71,
+     "start": 1537.83,
      "end": 1547.19,
      "text": "Whether or not your wish comes true after tossing a coin into a fountain, you can rest assured knowing that the change is likely going to someone who needs it."
     },
@@ -30188,7 +30188,7 @@
     },
     {
      "id": "l188",
-     "start": 1574.26,
+     "start": 1574.18,
      "end": 1581.3,
      "text": "Q23. What does the speaker say about the coins collected from New York City's park fountains?"
     },
@@ -32521,12 +32521,12 @@
     {
      "id": "l152",
      "start": 998.89,
-     "end": 1004.75,
+     "end": 1004.2,
      "text": "In both groups, the researchers found the closer a town's average annual temperature was to 22 degrees, the more its population exhibited those personality characteristics."
     },
     {
      "id": "l153",
-     "start": 1004.8,
+     "start": 1004.25,
      "end": 1011.34,
      "text": "degrees, the Mord's population exhibited those personality characteristics. However,"
     },
@@ -33557,7 +33557,7 @@
     },
     {
      "id": "l98",
-     "start": 655.94,
+     "start": 655.39,
      "end": 659.62,
      "text": "Before Colorado became a state, it already had post offices."
     },
@@ -35405,24 +35405,24 @@
     {
      "id": "l181",
      "start": 1571.13,
-     "end": 1592.59,
+     "end": 1590.24,
      "text": "Q22. What do we learn about modern humans according to the hypothesis commonly accepted in the 1990s?"
     },
     {
      "id": "l182",
-     "start": 1592.59,
+     "start": 1590.29,
      "end": 1608.91,
      "text": "Q23. What has called into question the \"Out of Africa\" model?"
     },
     {
      "id": "l183",
      "start": 1608.91,
-     "end": 1632.27,
+     "end": 1631.67,
      "text": "Q24. What does the speaker want to show with the example of some monkeys in Africa?"
     },
     {
      "id": "l184",
-     "start": 1632.27,
+     "start": 1631.72,
      "end": 1639.68,
      "text": "Q25. What question does the speaker raise close to the end of the talk?"
     }
@@ -36981,12 +36981,12 @@
     {
      "id": "l50",
      "start": 241.88,
-     "end": 246.36,
+     "end": 245.76,
      "text": "You've been late to work several times these past few weeks, which is very uncharacteristic of you."
     },
     {
      "id": "l51",
-     "start": 246.36,
+     "start": 245.81,
      "end": 252.64,
      "text": "But what really concerns me is your curtailed output."
     },
@@ -37077,12 +37077,12 @@
     {
      "id": "l66",
      "start": 298.6,
-     "end": 306.6,
+     "end": 303.8,
      "text": "M: Look, you've been with us almost five years and I personally really value your proficiency at your job. It makes my job far easier."
     },
     {
      "id": "l67",
-     "start": 306.6,
+     "start": 303.85,
      "end": 310.76,
      "text": "In addition, I can assure you that management as a whole also holds you in high regard. W: Thank you."
     },
@@ -37161,12 +37161,12 @@
     {
      "id": "l80",
      "start": 404.28,
-     "end": 421.5,
+     "end": 420.9,
      "text": "Q7. What does the man value about the woman?"
     },
     {
      "id": "l81",
-     "start": 421.5,
+     "start": 420.95,
      "end": 422.3,
      "text": "Q8. What agreement have the speakers reached by the end of the conversation?"
     },
@@ -37293,12 +37293,12 @@
     {
      "id": "l102",
      "start": 508.4,
-     "end": 515.4,
+     "end": 515.15,
      "text": "These include things like higher levels of emotional intelligence, particular skills or knowledge, or more money."
     },
     {
      "id": "l103",
-     "start": 515.4,
+     "start": 515.2,
      "end": 521.4,
      "text": "The researchers concede that an individual's own level of education is clearly important for their health, but they assert that individuals also can reap the benefits of their partner's education."
     },
@@ -37641,12 +37641,12 @@
     {
      "id": "l160",
      "start": 1068.84,
-     "end": 1081.4,
+     "end": 1080.8,
      "text": "While an increasing number of people are trying to eat less meat, a market research team has found in its latest fashion and sustainability report that the trend is now spreading from kitchen to closet."
     },
     {
      "id": "l161",
-     "start": 1081.4,
+     "start": 1080.85,
      "end": 1091.4,
      "text": "It found animal welfare came top of a list of issues that people considered before buying clothes, with 42% saying it was important to them."
     },
@@ -39169,12 +39169,12 @@
     {
      "id": "l12",
      "start": 49.7,
-     "end": 51.74,
+     "end": 51.54,
      "text": "This one is state of the art."
     },
     {
      "id": "l13",
-     "start": 51.74,
+     "start": 51.59,
      "end": 57.65,
      "text": "I've been meaning to buy one for a while and I did thorough research on which specific model to get."
     },
@@ -39205,12 +39205,12 @@
     {
      "id": "l18",
      "start": 70.06,
-     "end": 72.83,
+     "end": 72.58,
      "text": "M: Well, basically, it's just a very good one."
     },
     {
      "id": "l19",
-     "start": 72.83,
+     "start": 72.63,
      "end": 75.75,
      "text": "It feels heavy and sturdy and well-made."
     },
@@ -39498,7 +39498,7 @@
     },
     {
      "id": "l67",
-     "start": 353.18,
+     "start": 351.78,
      "end": 360.05,
      "text": "Q5. What is the question the woman asked Mr."
     },
@@ -39547,12 +39547,12 @@
     {
      "id": "l75",
      "start": 446.14,
-     "end": 453.7,
+     "end": 453.1,
      "text": "best answer from the four choices marked a b c and d then mark the corresponding"
     },
     {
      "id": "l76",
-     "start": 453.7,
+     "start": 453.15,
      "end": 460.26,
      "text": "letter on answer sheet one with a single line through the center passage one"
     },
@@ -43108,12 +43108,12 @@
     {
      "id": "l66",
      "start": 475.52,
-     "end": 489.21,
+     "end": 488.66,
      "text": "In a review published in the journal Trends in Cognitive Sciences on February 11th, researchers propose an explanation for why this might be happening."
     },
     {
      "id": "l67",
-     "start": 489.26,
+     "start": 488.71,
      "end": 495.46,
      "text": "of older adults allocate more space to accumulated knowledge and have more material to navigate when attempting to access memories. The brains"
     },
@@ -45272,12 +45272,12 @@
     {
      "id": "l9",
      "start": 47,
-     "end": 52,
+     "end": 51.8,
      "text": "W: Our audience will be most interested in learning about a career in the foreign service."
     },
     {
      "id": "l10",
-     "start": 52,
+     "start": 51.85,
      "end": 63,
      "text": "However, before we talk about that, I'd like to ask you about the current developments hitting the news today regarding the Republic of Winopia. What can you tell us?"
     },
@@ -45554,12 +45554,12 @@
     {
      "id": "l56",
      "start": 322,
-     "end": 325.14,
+     "end": 324.89,
      "text": "W: Oh, Jeff, you're too preoccupied and cynical."
     },
     {
      "id": "l57",
-     "start": 325.14,
+     "start": 324.94,
      "end": 327.58,
      "text": "It won't be anywhere as bad as that."
     },
@@ -45650,12 +45650,12 @@
     {
      "id": "l72",
      "start": 473,
-     "end": 484,
+     "end": 483.4,
      "text": "It happened years ago, and it's a measure of the forgettable nature of the conflict that I no longer even recall what the dispute was about, but I definitely recall the resolution."
     },
     {
      "id": "l73",
-     "start": 484,
+     "start": 483.45,
      "end": 494.06,
      "text": "Two talented young executives, one of whom I was managing, had vastly different accounts of the same event, and it seemed likely we'd never get to the truth."
     },
@@ -46004,12 +46004,12 @@
     {
      "id": "l131",
      "start": 973.04,
-     "end": 981,
+     "end": 980.4,
      "text": "Once that happens, the bags are donated to charity, sold at auction, or purchased by a company which sells them to the public."
     },
     {
      "id": "l132",
-     "start": 981,
+     "start": 980.45,
      "end": 985.4,
      "text": "So never pack anything of real value in your checked baggage."
     },
@@ -46268,12 +46268,12 @@
     {
      "id": "l175",
      "start": 1362.77,
-     "end": 1373,
+     "end": 1372.4,
      "text": "The tradition dates back to colonial times when inns were few and far between, and the weary traveler had to depend on the kindness of strangers for a meal and a bed."
     },
     {
      "id": "l176",
-     "start": 1373,
+     "start": 1372.45,
      "end": 1379,
      "text": "But the revival of B&Bs as desirable accommodations is a fairly recent phenomenon."
     },
@@ -46639,12 +46639,12 @@
     {
      "id": "l40",
      "start": 146.73,
-     "end": 149.38,
+     "end": 148.33,
      "text": "I've used my laptop there once or twice."
     },
     {
      "id": "l41",
-     "start": 149.38,
+     "start": 148.38,
      "end": 154,
      "text": "And there's always a group project or meeting going on at the far end."
     },
