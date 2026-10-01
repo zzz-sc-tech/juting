@@ -1,6 +1,6 @@
 {
  "preset": "cet6",
- "version": "20261001.1",
+ "version": "20261001.3",
  "generatedAt": "2026-10-01T02:27:11.024Z",
  "group": {
   "id": 8,
@@ -13568,141 +13568,141 @@
     },
     {
      "id": "l34",
-     "start": 265.46,
-     "end": 266.64,
+     "start": 210,
+     "end": 212,
      "text": "Q2. What is one of the woman's main responsibilities?"
     },
     {
      "id": "l35",
-     "start": 266.64,
-     "end": 284.5,
+     "start": 222,
+     "end": 234,
      "text": "Q3. What do many people think about the woman's job?"
     },
     {
      "id": "l36",
-     "start": 284.5,
-     "end": 285.3,
+     "start": 234.71,
+     "end": 239.5,
      "text": "Q4. What helped the woman to get her current position?"
     },
     {
      "id": "l37",
-     "start": 285.3,
-     "end": 286.1,
+     "start": 252.63,
+     "end": 253.9,
      "text": "CONVERSATION 2"
     },
     {
      "id": "l38",
-     "start": 286.1,
-     "end": 286.9,
+     "start": 254.83,
+     "end": 257.5,
      "text": "W: Are you watching any good shows these days?"
     },
     {
      "id": "l39",
-     "start": 286.9,
-     "end": 289.03,
-     "text": "M: Actually, yes."
+     "start": 258.11,
+     "end": 264,
+     "text": "M: Actually, yes. I'm watching a great satire called Frankie. I think you'd like it."
     },
     {
      "id": "l40",
-     "start": 289.03,
-     "end": 293.25,
-     "text": "I'm watching a great satire called Frankie. I think you'd like it."
-    },
-    {
-     "id": "l41",
-     "start": 293.25,
-     "end": 295.31,
+     "start": 264.51,
+     "end": 266.5,
      "text": "W: Really? What's it about?"
     },
     {
-     "id": "l42",
-     "start": 295.31,
-     "end": 299.21,
-     "text": "M: It's about a real guy named Frankie. He is a famous comedian in New York and shows a mixture of comedy and drama loosely depicting his life."
+     "id": "l41",
+     "start": 267.11,
+     "end": 277.8,
+     "text": "M: It's about a real guy named Frankie. He's a famous comedian in New York. And the show is a mixture of comedy and drama loosely depicting his life."
     },
     {
-     "id": "l43",
-     "start": 299.21,
-     "end": 307.05,
+     "id": "l42",
+     "start": 278.51,
+     "end": 283.9,
      "text": "W: I'm sorry, do you mean to say, it's a real-life series about a real person?"
     },
     {
-     "id": "l44",
-     "start": 326.61,
-     "end": 330.07,
+     "id": "l43",
+     "start": 284.43,
+     "end": 288.8,
      "text": "It's non-fiction, isn't it? M: No ... Not really, no."
     },
     {
-     "id": "l45",
-     "start": 330.07,
-     "end": 334.71,
+     "id": "l44",
+     "start": 288.99,
+     "end": 293.2,
      "text": "It's fiction, as what happens in every episode is made up."
     },
     {
-     "id": "l46",
-     "start": 334.71,
-     "end": 340.49,
+     "id": "l45",
+     "start": 293.67,
+     "end": 298.6,
      "text": "However the lead role is a comedian by the name of Frankie, and he plays himself."
     },
     {
-     "id": "l47",
-     "start": 340.49,
-     "end": 350.88,
+     "id": "l46",
+     "start": 299.05,
+     "end": 308.8,
      "text": "So Frankie in both real life and in the TV show lives in New York City, is a comic, is divorced, and has two little daughters."
     },
     {
-     "id": "l48",
-     "start": 350.88,
-     "end": 358.69,
+     "id": "l47",
+     "start": 309.45,
+     "end": 320.3,
      "text": "All those things are true, but aside from him, all his friends and family are played by actors. And the plots and the events that take place are also invented."
     },
     {
-     "id": "l49",
-     "start": 358.69,
-     "end": 361.14,
+     "id": "l48",
+     "start": 321.13,
+     "end": 325.9,
      "text": "W: Oh, I think I see now. That sounds like a very original concept."
     },
     {
-     "id": "l50",
-     "start": 361.14,
-     "end": 362.74,
-     "text": "M: Yes, it is. In fact, the whole show is written, directed, edited and produced by him, and is very funny and has won many awards."
+     "id": "l49",
+     "start": 326.81,
+     "end": 336.4,
+     "text": "M: Yes, it is. In fact, the whole show is written, directed, edited and produced by him. And it's very funny and has won many awards."
     },
     {
-     "id": "l51",
-     "start": 362.74,
-     "end": 364.34,
+     "id": "l50",
+     "start": 337.33,
+     "end": 340,
      "text": "W: That's cool. I will try to download it."
     },
     {
+     "id": "l51",
+     "start": 340.41,
+     "end": 343.2,
+     "text": "M: I'm watching a comedy called The Big Bang Theory."
+    },
+    {
      "id": "l52",
-     "start": 364.34,
-     "end": 368.29,
-     "text": "I'm watching a comedy called The Big Bang Theory."
+     "start": 343.64,
+     "end": 345.6,
+     "text": "W: It's a huge hit around the world."
     },
     {
      "id": "l53",
-     "start": 368.29,
-     "end": 371.22,
-     "text": "It's a huge hit around the world. M: Oh yes."
+     "start": 346,
+     "end": 349.2,
+     "text": "M: Oh yes. I've heard of it, but never actually watched it."
     },
     {
      "id": "l54",
-     "start": 371.22,
-     "end": 374.15,
-     "text": "I've heard of it, but never actually watched it."
+     "start": 349.64,
+     "end": 353.6,
+     "text": "W: Well, then you should check it out. It's also very funny."
     },
     {
      "id": "l55",
-     "start": 374.15,
-     "end": 376.81,
-     "text": "W: Well, then you should check it out. It's also very funny. It's about four male scientists and a female waitress. The men are very socially awkward but very bright. And this is contrasted by the lady's social skills and common sense. The show has been running for over ten years, and some of the actors are practically global super stars. Now that they are such famous celebrities."
+     "start": 354.04,
+     "end": 366.6,
+     "text": "It's about four male scientists and a female waitress. The men are very socially awkward but very bright. And this is contrasted by the lady's social skills and common sense."
     },
     {
      "id": "l56",
-     "start": 376.86,
-     "end": 379.25,
-     "text": "questions five to eight are based on the"
+     "start": 367.18,
+     "end": 375.5,
+     "text": "The show has been running for over ten years, and some of the actors are practically global superstars. Now that they are such famous celebrities."
     },
     {
      "id": "l57",
