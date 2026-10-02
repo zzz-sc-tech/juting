@@ -189,7 +189,9 @@ if (only === 'all' || only === 'lite') {
 if (only === 'all' || only === 'full') {
     log('复制六级预设与 whisper…');
     copyInto('presets/cet6');
-    copyInto('temp/asr');
+    // temp/asr 只带引擎与模型；duolinting-asr-* 是 ASR 任务的临时工作目录
+    // （运行时会重新生成），打进去会把当次的音频碎片一起发出去（v0.4.2 首版踩过）。
+    copyInto('temp/asr', (rel) => !rel.startsWith('duolinting-asr-'));
     log('压缩完整版…');
     artifacts.push(compress(`juting-v${version}-win-full.7z`, stage));
 }
