@@ -1,7 +1,7 @@
 {
  "preset": "cet6",
- "version": "20261001.23",
- "generatedAt": "2026-10-02T10:41:04.909Z",
+ "version": "20261001.25",
+ "generatedAt": "2026-10-02T11:25:20.505Z",
  "group": {
   "id": 8,
   "name": "英语六级真题",
@@ -2563,243 +2563,292 @@
     },
     {
      "id": "l163",
-     "start": 1333.97,
-     "end": 1337.97,
-     "text": "Q19. What does psychological research show according to the speaker?",
-     "translation": "问题 19：据讲话人说，心理学研究显示了什么？"
+     "start": 1287.45,
+     "end": 1296.35,
+     "text": "You can do this by learning a set number of lines of poetry at different times of the day and seeing when most lines stick.",
+     "translation": "你可以这样做：在一天中不同的时段背诵固定行数的诗歌，看看哪些时段记得最牢。"
     },
     {
      "id": "l164",
-     "start": 1351.34,
-     "end": 1355.58,
-     "text": "Q20. What do we find about the two lists of names of American states?",
-     "translation": "问题 20：关于两份美国州名清单，我们有什么发现？"
+     "start": 1296.85,
+     "end": 1306.45,
+     "text": "When you have done this, try to organize your life so that the time set aside for learning coincides with the time when your memory is at its best.",
+     "translation": "做完之后，试着安排好自己的生活，让专门用于学习的时间与你记忆状态最佳的时间重合。"
     },
     {
      "id": "l165",
-     "start": 1370.15,
-     "end": 1377.75,
-     "text": "Q21. What is the useful tip the speaker gives?",
-     "translation": "问题 21：讲话人给出的有用窍门是什么？"
+     "start": 1307.65,
+     "end": 1308.85,
+     "text": "Avoid learning marathons.",
+     "translation": "要避免马拉松式的长时间学习。"
     },
     {
      "id": "l166",
-     "start": 1391.36,
-     "end": 1396.5,
-     "text": "Q22. What does the speaker advise us to do to improve our learning efficiency?",
-     "translation": "问题 22：讲话人建议我们做什么来提高学习效率？"
+     "start": 1309.75,
+     "end": 1312.05,
+     "text": "They do not make the best use of your mind.",
+     "translation": "那样的学习方式并不能最充分地发挥你的头脑。"
     },
     {
      "id": "l167",
+     "start": 1312.95,
+     "end": 1316.55,
+     "text": "Take plenty of breaks because they offer a double bonus.",
+     "translation": "要多安排休息，因为休息能带来双重好处。"
+    },
+    {
+     "id": "l168",
+     "start": 1317.25,
+     "end": 1325.85,
+     "text": "The time off gives your mind a chance to do some preliminary consolidation and it also gives a memory boost to the learning.",
+     "translation": "休息时间让大脑有机会对所学内容进行初步巩固，同时也能增强学习记忆。"
+    },
+    {
+     "id": "l169",
+     "start": 1328.05,
+     "end": 1332.85,
+     "text": "Questions 19 to 22 are based on the recording you have just heard.",
+     "translation": "问题 19 至 22 基于你刚才听到的录音。"
+    },
+    {
+     "id": "l170",
+     "start": 1333.97,
+     "end": 1337.97,
+     "text": "Q19. What does the simple test suggest?",
+     "translation": "问题 19：这个简单的测试表明了什么？"
+    },
+    {
+     "id": "l171",
+     "start": 1351.34,
+     "end": 1355.58,
+     "text": "Q20. What do we learn about the two lists in the test?",
+     "translation": "问题 20：关于测试中的那两份清单，我们了解到什么？"
+    },
+    {
+     "id": "l172",
+     "start": 1370.15,
+     "end": 1377.75,
+     "text": "Q21. What does the speaker suggest about preparing for and taking an exam?",
+     "translation": "问题 21：关于备考和参加考试，讲话人提出了什么建议？"
+    },
+    {
+     "id": "l173",
+     "start": 1391.36,
+     "end": 1396.5,
+     "text": "Q22. What tip does the speaker give on learning?",
+     "translation": "问题 22：关于学习，讲话人给出了什么窍门？"
+    },
+    {
+     "id": "l174",
      "start": 1410.52,
      "end": 1411.2,
      "text": "RECORDING 3",
      "translation": "RECORDING 3"
     },
     {
-     "id": "l168",
+     "id": "l175",
      "start": 1413.36,
      "end": 1416.36,
      "text": "Hello, today I'm going to talk about poverty.",
      "translation": "大家好，今天我要谈谈贫困问题。"
     },
     {
-     "id": "l169",
+     "id": "l176",
      "start": 1417.44,
      "end": 1420.76,
      "text": "Poverty has become a critical issue in today's world.",
      "translation": "贫困已成为当今世界的一个重大议题。"
     },
     {
-     "id": "l170",
+     "id": "l177",
      "start": 1421.44,
      "end": 1429,
      "text": "It concerns not only us sociologists, but also economists, politicians and business people.",
      "translation": "它不仅关乎我们社会学家，也关乎经济学家、政治家和商界人士。"
     },
     {
-     "id": "l171",
+     "id": "l178",
      "start": 1430.04,
      "end": 1433.24,
      "text": "Poverty has been understood in many different ways.",
      "translation": "人们对贫困有着多种不同的理解。"
     },
     {
-     "id": "l172",
+     "id": "l179",
      "start": 1434.4,
      "end": 1444.15,
      "text": "One useful way is to distinguish between three degrees of poverty: extreme poverty, moderate poverty, and relative poverty.",
      "translation": "一个有用的方法，是区分贫困的三个程度：极端贫困、中度贫困和相对贫困。"
     },
     {
-     "id": "l173",
+     "id": "l180",
      "start": 1445.51,
      "end": 1451.51,
      "text": "The first type of poverty is extreme poverty; it's also called absolute poverty.",
      "translation": "第一类贫困是极端贫困，也叫绝对贫困。"
     },
     {
-     "id": "l174",
+     "id": "l181",
      "start": 1451.91,
      "end": 1456.83,
      "text": "In extreme poverty, households cannot meet basic needs for survival.",
      "translation": "处于极端贫困的家庭连基本的生存需要都无法满足。"
     },
     {
-     "id": "l175",
+     "id": "l182",
      "start": 1457.67,
      "end": 1459.47,
      "text": "People are chronically hungry.",
      "translation": "人们长期处于饥饿之中。"
     },
     {
-     "id": "l176",
+     "id": "l183",
      "start": 1460.23,
      "end": 1465.47,
      "text": "They are unable to access safe drinking water, let alone health care.",
      "translation": "他们连安全饮用水都得不到，更别说医疗了。"
     },
     {
-     "id": "l177",
+     "id": "l184",
      "start": 1466.15,
      "end": 1468.79,
      "text": "They cannot afford education for their children.",
      "translation": "他们负担不起孩子的教育。"
     },
     {
-     "id": "l178",
+     "id": "l185",
      "start": 1469.31,
      "end": 1478.95,
      "text": "In short, people who live in extreme poverty do not have even the minimum resources to support themselves and their families.",
      "translation": "简言之，生活在极端贫困中的人连养活自己和家人的最低资源都没有。"
     },
     {
-     "id": "l179",
+     "id": "l186",
      "start": 1479.55,
      "end": 1481.75,
      "text": "Where does extreme poverty occur?",
      "translation": "极端贫困发生在哪里？"
     },
     {
-     "id": "l180",
+     "id": "l187",
      "start": 1482.47,
      "end": 1485.87,
      "text": "Well, you can find it only in developing countries.",
      "translation": "嗯，它只出现在发展中国家。"
     },
     {
-     "id": "l181",
+     "id": "l188",
      "start": 1486.55,
      "end": 1488.51,
      "text": "Well, what about moderate poverty?",
      "translation": "那中度贫困呢？"
     },
     {
-     "id": "l182",
+     "id": "l189",
      "start": 1489.07,
      "end": 1499.07,
      "text": "Unlike extreme poverty, moderate poverty generally refers to conditions of life in which basic needs are met but barely.",
      "translation": "与极端贫困不同，中度贫困一般指基本需要勉强得到满足的生活状况。"
     },
     {
-     "id": "l183",
+     "id": "l190",
      "start": 1499.67,
      "end": 1507.09,
      "text": "People living in moderate poverty have the resources to keep themselves alive, but only at a very basic level.",
      "translation": "生活在中度贫困中的人有资源维持生存，但只是非常基本的水平。"
     },
     {
-     "id": "l184",
+     "id": "l191",
      "start": 1507.41,
      "end": 1514.25,
      "text": "For example, they may have access to drinking water, but not clean, safe drinking water.",
      "translation": "比如，他们也许有水喝，但没有干净、安全的饮用水。"
     },
     {
-     "id": "l185",
+     "id": "l192",
      "start": 1514.85,
      "end": 1521.73,
      "text": "They may have a home to shelter themselves, but it does not have power supply, a telephone or plumbing.",
      "translation": "他们也许有栖身之所，但家里没有供电、没有电话，也没有上下水管道。"
     },
     {
-     "id": "l186",
+     "id": "l193",
      "start": 1522.57,
      "end": 1525.13,
      "text": "The third kind of poverty is relative poverty.",
      "translation": "第三类贫困是相对贫困。"
     },
     {
-     "id": "l187",
+     "id": "l194",
      "start": 1525.84,
      "end": 1534.96,
      "text": "Relative poverty is generally considered to be a household income level, which is below a given proportion of average family income.",
      "translation": "相对贫困一般指家庭收入水平低于平均家庭收入的某一既定比例。"
     },
     {
-     "id": "l188",
+     "id": "l195",
      "start": 1535.92,
      "end": 1541.76,
      "text": "The relatively poor live in high-income countries, but they do not have a high income themselves.",
      "translation": "相对贫困者生活在高收入国家，但他们自己的收入并不高。"
     },
     {
-     "id": "l189",
+     "id": "l196",
      "start": 1542.8,
      "end": 1552.35,
      "text": "The method of calculating the poverty line is different from country to country, but we can say that basically a family living in relative poverty has less than a percentage of the average family income.",
      "translation": "贫困线的计算方法各国不同，但可以说，生活在相对贫困中的家庭，其收入基本上低于平均家庭收入的某个百分比。"
     },
     {
-     "id": "l190",
+     "id": "l197",
      "start": 1557.7,
      "end": 1565.74,
      "text": "For example, in the United States, a family can be considered poor if their income is less than 50% of the national average family income.",
      "translation": "例如在美国，一个家庭的收入若低于全国平均家庭收入的 50%，就可以被视为贫困。"
     },
     {
-     "id": "l191",
+     "id": "l198",
      "start": 1568.92,
      "end": 1577.28,
      "text": "They can meet their basic needs but they lack access to cultural goods, entertainment, and they cannot afford higher education.",
      "translation": "他们能满足基本需要，但享受不到文化产品、娱乐，也负担不起高等教育。"
     },
     {
-     "id": "l192",
+     "id": "l199",
      "start": 1585.2,
      "end": 1594.68,
      "text": "Well, I have briefly explained to you how poverty can be distinguished as extreme poverty, moderate poverty, and relative poverty.",
      "translation": "好了，我已经向大家简要讲解了贫困如何区分为极端贫困、中度贫困和相对贫困。"
     },
     {
-     "id": "l193",
+     "id": "l200",
      "start": 1595.24,
      "end": 1600.4,
      "text": "We should keep these distinctions in mind when we research people's living conditions",
      "translation": "在研究人们的生活状况时，我们应当牢记这些区分。"
     },
     {
-     "id": "l194",
+     "id": "l201",
      "start": 1606,
      "end": 1612.78,
      "text": "Questions twenty-three to twenty-five are based on the recording you have just heard. This is the end of listening comprehension."
     },
     {
-     "id": "l195",
+     "id": "l202",
      "start": 1612.83,
      "end": 1616.55,
      "text": "Question 23. What does the speaker do?",
      "translation": "问题 23：讲话者是做什么工作的？"
     },
     {
-     "id": "l196",
+     "id": "l203",
      "start": 1630.1,
      "end": 1636.22,
      "text": "Question 24. Where does the speaker say we can find extreme poverty?",
      "translation": "问题 24：讲话者说我们在哪里能看到极度贫困？"
     },
     {
-     "id": "l197",
+     "id": "l204",
      "start": 1650.05,
      "end": 1656.65,
      "text": "Question 25. What do we learn about American people living in relative poverty?",
@@ -15895,7 +15944,7 @@
      "id": "l169",
      "start": 1407.05,
      "end": 1410.65,
-     "text": "Being a good team player is a central skill in our modern workplace.",
+     "text": "Being a good team player is an essential skill in our modern workplace.",
      "translation": "做一名好的团队合作者是现代职场的核心技能。"
     },
     {
@@ -36740,76 +36789,69 @@
     },
     {
      "id": "l192",
-     "start": 1462.3,
-     "end": 1465.4,
-     "text": "My advice would be to find a niche and focus on that. For example, if you love adventure travel, focus on that. If you love food, focus on food travel.",
-     "translation": "比如，如果你热爱探险旅行，就专注于探险；如果你热爱美食，就专注于美食之旅。"
+     "start": 1458.85,
+     "end": 1461.95,
+     "text": "Which is really why we started We Are Travel Girls.",
+     "translation": "这也正是我们创办 We Are Travel Girls 的原因。"
     },
     {
      "id": "l193",
-     "start": 1465.4,
-     "end": 1468.63,
-     "text": "The more specific you are, the easier it will be to build an audience.",
-     "translation": "定位越具体，就越容易积累读者。"
+     "start": 1462.75,
+     "end": 1473.25,
+     "text": "Be prepared to work hard if you want to turn it into a full-time business and try not to rush to selling advertising spaces before you have created a dedicated audience.",
+     "translation": "如果你想把它做成全职生意，要做好努力工作的准备；在积累起忠实受众之前，不要急着出售广告位。"
     },
     {
      "id": "l194",
-     "start": 1468.63,
-     "end": 1471.16,
-     "text": "Another thing I would suggest is to avoid too much advertising early on.",
-     "translation": "另外我建议，前期不要投放太多广告。"
+     "start": 1474.55,
+     "end": 1480.25,
+     "text": "The size of your audience doesn’t necessarily need to be huge, but you want them to be engaged.",
+     "translation": "你的受众规模不一定非得很大，但你要让他们保持活跃。"
     },
     {
      "id": "l195",
-     "start": 1471.16,
-     "end": 1480.71,
-     "text": "When you first start out, your audience is there for your content, not to be sold to.",
-     "translation": "刚起步时，读者是冲着你的内容来的，不是来被推销的。"
+     "start": 1480.85,
+     "end": 1485.25,
+     "text": "If you post too many promotions early on, you will turn many people off.",
+     "translation": "如果一开始就发布太多推广内容，你会让很多人失去兴趣。"
     },
     {
      "id": "l196",
-     "start": 1480.71,
-     "end": 1485,
-     "text": "If you start bombarding them with ads too early, they will lose interest.",
-     "translation": "如果太早开始用广告轰炸他们，他们会失去兴趣。"
-    },
-    {
-     "id": "l197",
      "start": 1486.6,
      "end": 1491.4,
      "text": "Questions 22 to 25 are based on the recording.",
      "translation": "问题 22 至 25 基于这段录音。"
     },
     {
-     "id": "l198",
+     "id": "l197",
      "start": 1492.19,
      "end": 1499.23,
-     "text": "Q22. What do we learn about the speaker before she started We Are Travel Girls?",
-     "translation": "Q22. 关于说话人创办 We Are Travel Girls 之前的情况，我们了解到什么？"
+     "text": "Q22. What do we learn about the speaker before she created the community?",
+     "translation": "Q22. 关于说话人在创办这个社区之前的经历，我们了解到什么？"
+    },
+    {
+     "id": "l198",
+     "start": 1512.81,
+     "end": 1518.33,
+     "text": "Q23. What did the speaker’s friend suggest they do in 2015?",
+     "translation": "Q23. 2015 年，说话人的朋友建议他们做什么？"
     },
     {
      "id": "l199",
-     "start": 1512.81,
-     "end": 1518.33,
-     "text": "Q23. What did the speaker's friend Vanessa suggest she do in 2015?",
-     "translation": "Q23. 2015 年，说话人的朋友瓦妮莎建议她做什么？"
-    },
-    {
-     "id": "l200",
      "start": 1532.04,
      "end": 1538.72,
      "text": "Question 24. What does the speaker advise people to do if they want to become travel writers?",
      "translation": "问题 24：如果想成为旅行作家，讲话者建议人们怎么做？"
     },
     {
-     "id": "l201",
+     "id": "l200",
      "start": 1552.57,
      "end": 1557.85,
      "text": "Question 25. What is the speaker's advice on winning a loyal audience?",
      "translation": "问题 25：关于赢得忠实受众，讲话者给出了什么建议？"
     },
     {
-     "id": "l202",
+     "id": "l201",
      "start": 1571.51,
      "end": 1573.79,
      "text": "That's the end of listening comprehension."
