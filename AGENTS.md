@@ -13,8 +13,12 @@
 >    `node scripts/audit/check-invariants.mjs`（查"不该变的有没有变"：译文覆盖/
 >    行数漂移/字段契约/id 连续/时间单调），连同既有三件套
 >    `temp/check-block-count.mjs`、`temp/deep-audit-courses.mjs`、
->    `temp/layer2-line-checks.mjs`（查"修复目标达没达成"）。合法变更后
->    `--rebuild-baseline` 重建基线。
+>    `temp/layer2-line-checks.mjs`（查"修复目标达没达成"），以及
+>    `node scripts/audit/check-duration-sanity.mjs`（时长健全性硬门禁：每行
+>    预期时长=有效词数×0.28s，实际<预期×0.35 判 FAIL——2026-10-02 时长压缩伤
+>    清零后立；此前该类伤以 B-rate「警告」存在两轮被整类放过，制度教训：
+>    **警告必须逐条闭环成「修复/确认为真误报」，禁止整类 dismiss**）。
+>    合法变更后 `--rebuild-baseline` 重建基线。
 > 3. **批处理按门循环必须 try/catch + 汇总报告**，不许中途 throw 留半完成态；
 >    删除/重建一段用**时间区间**界定，禁止用数组下标范围（#21 误删整段教训）。
 > 4. **改 packages/domain（锚点提取器等运行时推导）= 全库数据变更**：
