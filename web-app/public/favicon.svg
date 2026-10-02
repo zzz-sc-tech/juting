@@ -1,11 +1,9 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 128 128">
-  <rect width="128" height="128" rx="28" fill="#24584a"/>
-  <g fill="#fff" stroke="none">
-    <rect x="28" y="44" width="8" height="40" rx="4" opacity="0.45"/>
-    <rect x="42" y="32" width="8" height="64" rx="4" opacity="0.6"/>
-    <rect x="56" y="22" width="8" height="84" rx="4" opacity="0.9"/>
-    <rect x="70" y="36" width="8" height="56" rx="4" opacity="0.65"/>
-    <rect x="84" y="28" width="8" height="72" rx="4" opacity="0.5"/>
-    <rect x="98" y="48" width="8" height="32" rx="4" opacity="0.4"/>
+  <g fill="#24584a">
+    <rect x="4" y="42" width="16" height="44" rx="8"/>
+    <rect x="30" y="28" width="16" height="72" rx="8"/>
+    <rect x="56" y="14" width="16" height="100" rx="8"/>
+    <rect x="82" y="28" width="16" height="72" rx="8"/>
+    <rect x="108" y="42" width="16" height="44" rx="8"/>
   </g>
 </svg>
