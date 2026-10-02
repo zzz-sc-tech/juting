@@ -125,7 +125,7 @@ for (const pkg of fs.readdirSync(path.join(repositoryRoot, 'packages'))) {
 for (const f of ['package.json', 'package-lock.json', '.env.example', '.npmrc', '.gitignore',
     'README.md', 'LICENSE', 'NOTICE', '使用说明.md', 'AGENTS.md',
     '启动句听.bat', '停止句听.bat',
-    'backend/tsconfig.json', 'backend/Dockerfile',
+    'backend/package.json', 'backend/tsconfig.json', 'backend/Dockerfile',
     'web-app/tsconfig.json', 'web-app/vite.config.ts', 'web-app/index.html', 'web-app/Dockerfile',
     'admin/tsconfig.json', 'admin/vite.config.ts', 'admin/index.html', 'admin/Dockerfile']) {
     copyFile(f);
