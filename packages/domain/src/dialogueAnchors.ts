@@ -229,6 +229,12 @@ const EN_DIRECTIONS_LINE_PATTERN = new RegExp(
     '|the cent(?:er|re)\\s*[.。]?$' +
     // "Both the conversation and the questions will be spoken only once."（#31 实测泄漏进学习池）
     '|both the (?:conversation|passage|recording|questions)\\b' +
+    // 方向句碎片第三类开头（#13 Section B 实测泄漏进学习池：用户报告）——
+    // mergeOnly 限定只并入 30s 内的锚点，不会误吞正文
+    '|and the questions?\\b' +
+    '|the best answer (?:from|is)\\b' +
+    '|then mark\\b' +
+    '|letter on answer sheet\\b' +
     // 收尾播报「This/That's the end of listening comprehension」也是指令性内容：
     // 不认它就会作为学习句漏进最后一个题组块（#38/#45/#50 实测各多 1 行），
     // 学习者逐句精听也不需要练这句。低 rank 仅并入最近块，不影响标签。
