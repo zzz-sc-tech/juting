@@ -28,7 +28,7 @@
 
 | 包 | 内容 | 适合 |
 | --- | --- | --- |
-| `juting-vX-win-full.7z` | 程序 + 38 套六级真题（音频/原文/锚点）+ whisper 本地识别 | 备考六级、开箱即练 |
+| `juting-vX-win-full.7z` | 程序 + 38 套六级真题（音频/原文/锚点/译文/答案） | 备考六级、开箱即练 |
 | `juting-vX-win-lite.7z` | 仅程序本体 | 自己导课、体积敏感 |
 | `juting-vX-cet6-pack.7z` | 六级真题包 | 简洁版事后补真题 |
 
@@ -46,7 +46,7 @@ npm run dev          # backend 读 backend/.env，首次参考 AGENTS.md 的初�
 
 Windows 本机全栈也可双击 `启动句听.bat`（自动拉起 MySQL、后端、学习端、管理端，无需 Docker）。
 
-自动切分（ASR）：完整版随包自带 whisper.cpp；简洁版在制课台点「一键准备」自动下载引擎与模型。开发机手动部署见 [ASR 配置与排障](docs/asr-auto-segmentation.md)。
+自动切分（ASR）：安装包不随带识别引擎（制课属低频操作，且切分后仍需人工校准），在制课台点「一键准备」按硬件自动下载安装引擎与模型。开发机手动部署见 [ASR 配置与排障](docs/asr-auto-segmentation.md)。开发机手动部署见 [ASR 配置与排障](docs/asr-auto-segmentation.md)。
 
 ## 预设课程机制
 

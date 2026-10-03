@@ -3,8 +3,9 @@
  *
  *   juting-v<版本>-win-lite.7z   简洁版：程序本体 + 便携 Node + 便携 MySQL（裁剪），
  *                                空课程开箱，双击 bat 即用，不内置任何运行环境依赖；
- *   juting-v<版本>-win-full.7z   完整版：= 简洁版 + 六级预设（38 套真题音频与原文）
- *                                + whisper 本地识别引擎与模型，离线全功能；
+ *   juting-v<版本>-win-full.7z   完整版：= 简洁版 + 六级预设（38 套真题音频与原文）。
+ *                                不含本地识别引擎（2026-10-02 起移除：ASR 需大量校准，
+ *                                单机学习用户用不到；需要时管理后台一键在线安装）。
  *   juting-v<版本>-cet6-pack.7z  六级课程包：仅 presets/cet6 目录。简洁版用户下载后
  *                                解压到安装目录根，下次启动自动导入（对齐完整版内容）。
  *
@@ -43,10 +44,6 @@ const rootPackage = JSON.parse(fs.readFileSync(path.join(repositoryRoot, 'packag
 const version = argOf('--version') || rootPackage.version || '0.0.0';
 const skipBuild = process.argv.includes('--skip-build');
 const only = argOf('--only') || 'all';
-// --no-asr：完整版剔除本地识别引擎与模型（temp/asr），产出 -win-full-noasr.7z。
-// 制课需要 ASR 时管理台可一键在线安装引擎（backend 的安装器），纯学习的用户省 ~200MB。
-// 该开关只影响完整版分支，且跳过 cet6-pack 重建（数据相同，避免无谓的重传）。
-const noAsr = process.argv.includes('--no-asr');
 
 // ── 7z 可执行文件定位（环境变量 JUTING_7Z 优先，其次 PATH）────
 const locate7z = () => {
@@ -192,19 +189,17 @@ if (only === 'all' || only === 'lite') {
     artifacts.push(compress(`juting-v${version}-win-lite.7z`, stage));
 }
 
-// ── 4. 完整版 = 简洁版 + 六级预设 + whisper 引擎与模型 ──────
+// ── 4. 完整版 = 简洁版 + 六级预设 ────────────────────────────
+// 2026-10-02 用户裁定：完整版不再随包本地识别引擎与模型（temp/asr）——ASR 切分后
+// 仍需大量人工校准，单机学习用户用不到；需要制课 ASR 时管理后台可一键在线安装
+// 引擎（backend 安装器）。历史带引擎的打包方式见 git（v0.4.2 之前）。
 if (only === 'all' || only === 'full') {
-    log('复制六级预设与 whisper…');
+    log('复制六级预设…');
     copyInto('presets/cet6');
-    // temp/asr 只带引擎与模型；过滤约定见 copyDirFiltered 注释（true=排除）：
-    // duolinting-asr-* 是 ASR 任务的临时工作目录（运行时会重新生成），打进去会把
-    // 当次的音频碎片一起发出去（v0.4.2 首版踩过）。--no-asr 时整个目录都不带。
-    if (!noAsr) copyInto('temp/asr', (rel) => rel.startsWith('duolinting-asr-'));
-    const archiveName = noAsr ? `juting-v${version}-win-full-noasr.7z` : `juting-v${version}-win-full.7z`;
-    log(noAsr ? '压缩完整版（无本地识别）…' : '压缩完整版…');
-    artifacts.push(compress(archiveName, stage));
+    log('压缩完整版…');
+    artifacts.push(compress(`juting-v${version}-win-full.7z`, stage));
 }
-if (!noAsr && (only === 'all' || only === 'cet6' || only === 'full')) {
+if (only === 'all' || only === 'cet6' || only === 'full') {
     // 六级课程包：独立暂存，压缩目录名必须是 presets，
     // 这样用户解压到句听安装目录根正好落成 presets/cet6（自动导入的前提）。
     const cet6Stage = path.join(stageRoot, 'presets');
