@@ -19,7 +19,7 @@
  *   - node_modules 裁掉 .cache 与已移除的 mobile-app 工作区残留依赖（Expo/React Native 系）；
  *   - 打包前必须先 node scripts/local/stop-all.mjs 关掉 MySQL，否则数据文件被锁。
  *
- * 用法：node scripts/local/package-release.mjs [--version 1.0.0] [--skip-build] [--only lite|full|cet6|all]
+ * 用法：node scripts/local/package-release.mjs [--version 1.0.0] [--skip-build] [--only lite|full|cet6|all] [--no-asr]
  */
 import fs from 'node:fs';
 import path from 'node:path';
@@ -43,6 +43,10 @@ const rootPackage = JSON.parse(fs.readFileSync(path.join(repositoryRoot, 'packag
 const version = argOf('--version') || rootPackage.version || '0.0.0';
 const skipBuild = process.argv.includes('--skip-build');
 const only = argOf('--only') || 'all';
+// --no-asr：完整版剔除本地识别引擎与模型（temp/asr），产出 -win-full-noasr.7z。
+// 制课需要 ASR 时管理台可一键在线安装引擎（backend 的安装器），纯学习的用户省 ~200MB。
+// 该开关只影响完整版分支，且跳过 cet6-pack 重建（数据相同，避免无谓的重传）。
+const noAsr = process.argv.includes('--no-asr');
 
 // ── 7z 可执行文件定位（环境变量 JUTING_7Z 优先，其次 PATH）────
 const locate7z = () => {
@@ -87,6 +91,9 @@ const stage = path.join(stageRoot, 'juting');
 fs.mkdirSync(stage, { recursive: true });
 
 // ── 2. 复制文件 ─────────────────────────────────────────────
+// ── 复制目录。⚠️ filter 语义 =「返回 true 即排除（跳过）」——copyDirFiltered 内部
+// 对 filter 结果取反（历史调用 docs/HANDOFF 即此约定），写「保留」语义的过滤器
+// 会静默把要的东西全排掉（v0.4.2 重打包把 whisper 引擎全过滤掉的事故即此因）。
 const copyDirFiltered = (src, dest, filter) => {
     if (!fs.existsSync(src)) return;
     fs.cpSync(src, dest, {
@@ -189,13 +196,15 @@ if (only === 'all' || only === 'lite') {
 if (only === 'all' || only === 'full') {
     log('复制六级预设与 whisper…');
     copyInto('presets/cet6');
-    // temp/asr 只带引擎与模型；duolinting-asr-* 是 ASR 任务的临时工作目录
-    // （运行时会重新生成），打进去会把当次的音频碎片一起发出去（v0.4.2 首版踩过）。
-    copyInto('temp/asr', (rel) => !rel.startsWith('duolinting-asr-'));
-    log('压缩完整版…');
-    artifacts.push(compress(`juting-v${version}-win-full.7z`, stage));
+    // temp/asr 只带引擎与模型；过滤约定见 copyDirFiltered 注释（true=排除）：
+    // duolinting-asr-* 是 ASR 任务的临时工作目录（运行时会重新生成），打进去会把
+    // 当次的音频碎片一起发出去（v0.4.2 首版踩过）。--no-asr 时整个目录都不带。
+    if (!noAsr) copyInto('temp/asr', (rel) => rel.startsWith('duolinting-asr-'));
+    const archiveName = noAsr ? `juting-v${version}-win-full-noasr.7z` : `juting-v${version}-win-full.7z`;
+    log(noAsr ? '压缩完整版（无本地识别）…' : '压缩完整版…');
+    artifacts.push(compress(archiveName, stage));
 }
-if (only === 'all' || only === 'cet6' || only === 'full') {
+if (!noAsr && (only === 'all' || only === 'cet6' || only === 'full')) {
     // 六级课程包：独立暂存，压缩目录名必须是 presets，
     // 这样用户解压到句听安装目录根正好落成 presets/cet6（自动导入的前提）。
     const cet6Stage = path.join(stageRoot, 'presets');
