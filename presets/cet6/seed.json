@@ -1,7 +1,7 @@
 {
  "preset": "cet6",
- "version": "20261008.33",
- "generatedAt": "2026-10-08T23:44:29.000Z",
+ "version": "20261009.34",
+ "generatedAt": "2026-10-09T15:29:01.000Z",
  "group": {
   "id": 8,
   "name": "英语六级真题",
@@ -330,7 +330,7 @@
      "id": "l39",
      "start": 270.71,
      "end": 276.06,
-     "text": "Mr. DeKaiser, I am a great lover of your book, Moments before the Flood.",
+     "text": "Mr. De Keyzer, I'm a great lover of your book, Moments before the Flood.",
      "translation": "德凯泽先生，我非常喜欢您的书《洪水来临前》。"
     },
     {
@@ -365,7 +365,7 @@
      "id": "l44",
      "start": 310.49,
      "end": 315.91,
-     "text": "This fear of a looming danger became the subject of a large-scale photoreject.",
+     "text": "This fear of a looming danger became the subject of a large-scale photo project.",
      "translation": "这种对迫近危险的恐惧成了一个大型摄影项目的主题。"
     },
     {
@@ -393,7 +393,7 @@
      "id": "l48",
      "start": 327.76,
      "end": 334.93,
-     "text": "It is clear now that it's a matter of time before the entire European coastline disappears on the water.",
+     "text": "It is clear now that it's a matter of time before the entire European coastline disappears underwater.",
      "translation": "现在已经很清楚，整条欧洲海岸线被海水吞没只是时间问题。"
     },
     {
@@ -746,7 +746,7 @@
      "id": "l99",
      "start": 722.65,
      "end": 746.28,
-     "text": "But along comes a new study that could change that. Christie King, a diet specialist at Texas Children's Hospital, finds it hard to get teenage patients' attention about Healthy eating, but telling them that eating lots of high fiber foods could reduce the Risk of breast cancer before middle age, that's a powerful message.",
+     "text": "But along comes a new study that could change that. Kristi King, a diet specialist at Texas Children's Hospital, finds it hard to get teenage patients' attention about healthy eating, but telling them that eating lots of high fiber foods could reduce the risk of breast cancer before middle age, that's a powerful message.",
      "translation": "但一项新研究的到来可能改变这一点。克里斯蒂·金是得克萨斯儿童医院的饮食专家，她发现很难让青少年病人关注健康饮食；但只要告诉她们，多吃高纤维食物能降低中年之前患乳腺癌的风险，这句话就很有分量了。"
     },
     {
@@ -767,7 +767,7 @@
      "id": "l102",
      "start": 757.82,
      "end": 769.76,
-     "text": "It turns out that those who consumed the highest levels of fiber during adolescence had a lower risk Of developing breast cancer compared to the women who ate the leased fiber.",
+     "text": "It turns out that those who consumed the highest levels of fiber during adolescence had a lower risk of developing breast cancer compared to the women who ate the least fiber.",
      "translation": "结果发现，青春期摄入膳食纤维最多的人，患乳腺癌的风险低于吃得最少的那些女性。"
     },
     {
@@ -1024,7 +1024,7 @@
      "id": "l139",
      "start": 1155.73,
      "end": 1164.63,
-     "text": "Claire Barrett, the editor of Financial Times Money, says the western world is headed toward a world without physical currency.",
+     "text": "Claer Barrett, the editor of Financial Times Money, says the western world is headed toward a world without physical currency.",
      "translation": "《金融时报·理财》杂志编辑克莱尔·巴雷特说，西方世界正走向一个没有实体货币的世界。"
     },
     {
@@ -1163,14 +1163,14 @@
      "id": "l159",
      "start": 1314.67,
      "end": 1320.49,
-     "text": "Question 20. What did Claire Barrett want to find out with her experiment?",
+     "text": "Question 20. What did Claer Barrett want to find out with her experiment?",
      "translation": "问题 20：克莱尔·巴雷特想通过实验弄清什么？"
     },
     {
      "id": "l160",
      "start": 1332.99,
      "end": 1338.97,
-     "text": "Question 21. What did Claire Barrett find on her train ride?",
+     "text": "Question 21. What did Claer Barrett find on her train ride?",
      "translation": "问题 21：克莱尔·巴雷特在乘火车时发现了什么？"
     },
     {
@@ -3605,14 +3605,14 @@
      "id": "l100",
      "start": 779.21,
      "end": 784.13,
-     "text": "Q14. What is the immediate affect of the printing?",
+     "text": "Q14. What was the immediate effect of printing?",
      "translation": "Q14. 印刷术的直接影响是什么？"
     },
     {
      "id": "l101",
      "start": 796.45,
      "end": 802.01,
-     "text": "Q15. What was the great culture impact the printing?",
+     "text": "Q15. What was the great cultural impact of printing?",
      "translation": "Q15. 印刷术带来的重大文化影响是什么？"
     },
     {
@@ -5294,16 +5294,16 @@
     },
     {
      "id": "l134",
-     "start": 849.0,
-     "end": 858.2,
-     "text": "In this section you will hear three recordings of lectures only once. After you hear a question you must choose the best answer from the four or talks followed by three or four questions. The recordings will be played",
+     "start": 848.7,
+     "end": 864.2,
+     "text": "In this section, you will hear three recordings of lectures or talks, followed by three or four questions. The recordings will be played only once. After you hear a question, you must choose the best answer from the four",
      "translation": "或讲话录音，之后有三或四个问题。录音只播放"
     },
     {
      "id": "l135",
-     "start": 863.41,
-     "end": 871.67,
-     "text": "choices marked A, B, C and D. Then mark the corresponding letter on answer sheet",
+     "start": 864.2,
+     "end": 874.3,
+     "text": "choices marked A, B, C and D. Then mark the corresponding letter on answer sheet 1 with a single line through the centre.",
      "translation": "A、B、C、D 的四个选项中选出最佳答案，然后在答题卡上用单横线划出对应字母，横线穿过字母中间。"
     },
     {
@@ -6940,13 +6940,6 @@
      "end": 941.8,
      "text": "\" The researchers also made a discovery in the stone pit at the northern end of the road: the first evidence that the Egyptians used rock saws.",
      "translation": "”研究人员还在公路北端的采石场有了另一个发现：这是埃及人使用岩石锯的首个证据。"
-    },
-    {
-     "id": "l140",
-     "start": 941.82,
-     "end": 944.74,
-     "text": "first evidence that the Egyptians used rock sores.",
-     "translation": "埃及人使用岩芯的首个证据。"
     },
     {
      "id": "l141",
@@ -8697,7 +8690,7 @@
      "id": "l163",
      "start": 1267.73,
      "end": 1280.11,
-     "text": "This is not a cheap way, however, as your host will find the equal worth and beauty.",
+     "text": "This is not a cheap way to do your shopping, however, as your host will, quite correctly, expect you to respond by presenting him with a gift of equal worth and beauty.",
      "translation": "然而这可不是省钱的办法，因为主人会找来价值与美感相当的东西回赠给你。"
     },
     {
@@ -13917,7 +13910,7 @@
      "id": "l89",
      "start": 611.87,
      "end": 629.15,
-     "text": "Q10. What are the therapy animals at the airport trained to do?",
+     "text": "Q10. What are the trained animals probably capable of doing in an airport?",
      "translation": "问题 10：机场的治疗动物接受了什么训练？"
     },
     {
@@ -22711,13 +22704,6 @@
      "translation": "在本部分，你将听到两篇短文。"
     },
     {
-     "id": "l68",
-     "start": 453.73,
-     "end": 454.32,
-     "text": "PASSAGE 1",
-     "translation": "PASSAGE 1"
-    },
-    {
      "id": "l69",
      "start": 454.34,
      "end": 463.26,
@@ -22728,6 +22714,13 @@
      "start": 463.26,
      "end": 476.71,
      "text": "After you hear a question, you must choose the best answer from the four choices marked A, B, C and D. Then mark the corresponding letter on answer sheet one with a single line through the centre."
+    },
+    {
+     "id": "l68",
+     "start": 477.4,
+     "end": 478.99,
+     "text": "PASSAGE 1",
+     "translation": "PASSAGE 1"
     },
     {
      "id": "l71",
@@ -36195,17 +36188,10 @@
      "translation": "她的伴娘劝她遵守预算，说她对宾客要求太多，但苏珊没听。"
     },
     {
-     "id": "l107",
-     "start": 707.29,
-     "end": 710.33,
-     "text": "guest, but Susan ignored her.",
-     "translation": "客人，但苏珊没有理会她。"
-    },
-    {
      "id": "l108",
      "start": 710.36,
      "end": 726.08,
-     "text": "Not surprisingly, only eight people responded positively to the wedding invitations and Realizing they would not be able to afford their dream wedding, Susan's future husband suggested getting married in Las Vegas.",
+     "text": "Not surprisingly, only eight people responded positively to the wedding invitations and money requests. Realizing they would not be able to afford their dream wedding, Susan's future husband suggested getting married in Las Vegas.",
      "translation": "毫不意外，只有八个人积极回应了这场婚礼。意识到他们办不起梦幻婚礼后，苏珊的未婚夫提议去拉斯维加斯结婚。"
     },
     {
@@ -36825,8 +36811,8 @@
     {
      "id": "l197",
      "start": 1491.47,
-     "end": 1497.95,
-     "text": "Q22. What do we learn about the speaker before she created the community?",
+     "end": 1498.9,
+     "text": "Q22. What do we learn about the speaker before she created the community We Are Travel Girls?",
      "translation": "Q22. 关于说话人在创办这个社区之前的经历，我们了解到什么？"
     },
     {
@@ -38450,8 +38436,8 @@
     {
      "id": "l2",
      "start": 7.67,
-     "end": 26.07,
-     "text": "In this section you will hear two long conversations. Both the conversation and the questions will be spoken only once. At the end of each conversation, you will after you hear a question, you must choose the best answer from the four choices marked hear four questions.",
+     "end": 27.75,
+     "text": "In this section you will hear two long conversations. At the end of each conversation, you will hear four questions. Both the conversation and the questions will be spoken only once. After you hear a question, you must choose the best answer from the four choices marked A, B, C and D.",
      "translation": "在本部分，你将听到两段长对话。每段对话结束后，你将听到四个问题。"
     },
     {
@@ -38469,22 +38455,15 @@
      "translation": "从中间划一条横线。"
     },
     {
-     "id": "l5",
-     "start": 34.98,
-     "end": 37.05,
-     "text": "A, B, C and D.",
-     "translation": "A、B、C、D 的四个选项中选出最佳答案。"
-    },
-    {
      "id": "l6",
-     "start": 37.07,
-     "end": 37.37,
+     "start": 34.95,
+     "end": 36.45,
      "text": "CONVERSATION 1",
      "translation": "CONVERSATION 1"
     },
     {
      "id": "l7",
-     "start": 37.39,
+     "start": 36.5,
      "end": 39.22,
      "text": "M: Have you decided what you wish to study?",
      "translation": "M: 你决定好想学什么了吗？"
@@ -38933,8 +38912,8 @@
     {
      "id": "l71",
      "start": 429.98,
-     "end": 440.25,
-     "text": "In this section you will hear two passages. At the end of each both the passage and the questions will be passage you will hear three or four questions.",
+     "end": 441.1,
+     "text": "In this section you will hear two passages. At the end of each passage, you will hear three or four questions. Both the passage and the questions will be spoken only once.",
      "translation": "短文结束后，你将听到三到四个问题。"
     },
     {
@@ -38952,22 +38931,15 @@
      "translation": "把对应字母从中间划一条横线。"
     },
     {
-     "id": "l74",
-     "start": 454.99,
-     "end": 456.77,
-     "text": "spoken only once.",
-     "translation": "只播放一遍。"
-    },
-    {
      "id": "l75",
-     "start": 456.79,
-     "end": 457.09,
+     "start": 454.4,
+     "end": 456.15,
      "text": "PASSAGE 1",
      "translation": "PASSAGE 1"
     },
     {
      "id": "l76",
-     "start": 457.11,
+     "start": 456.15,
      "end": 462.62,
      "text": "Adventure sports are undeniably attractive to many energetic and thrill-seeking kids.",
      "translation": "不可否认，探险运动对许多精力充沛、追求刺激的孩子很有吸引力。"
@@ -40701,9 +40673,9 @@
     },
     {
      "id": "l119",
-     "start": 746.95,
-     "end": 752.33,
-     "text": "Q12. What does the speaker say about adaptability as a workplace skill? Question 12. Why does",
+     "start": 746.6,
+     "end": 753.6,
+     "text": "Q12. Why does the speaker say adaptability is an important skill to exercise in the workplace?",
      "translation": "问题 12：关于适应力这种职场技能，讲话者说了什么？"
     },
     {
@@ -40955,7 +40927,7 @@
      "id": "l155",
      "start": 1054.83,
      "end": 1060.45,
-     "text": "Q17. What does the speaker say about innovation?",
+     "text": "Q17. What does the speaker believe about innovation?",
      "translation": "Q17. 关于创新，说话人说了什么？"
     },
     {
@@ -41109,7 +41081,7 @@
      "id": "l177",
      "start": 1255.89,
      "end": 1263.89,
-     "text": "Q19. What do researchers who study dog cognition confirm?",
+     "text": "Q19. What view of many dog owners wins support from researchers studying dog cognition?",
      "translation": "Q19. 研究犬类认知的研究人员证实了什么？"
     },
     {
@@ -43337,7 +43309,7 @@
      "id": "l75",
      "start": 495.43,
      "end": 525.89,
-     "text": "The authors, Carlos Monteiro of the University of São Paulo and Arne Astrup of Novo Nordisk Foundation will discuss the issue in a live virtual debate August 14, during NUTRITION 2024 LIVE ONLINE. The debate centers around a system developed by Montiero and colleagues that classifies the debate centers around a system developed by Monteiro and colleagues that classifies foods by their degree of industrial processing, ranging from unprocessed to ultra-processed.",
+     "text": "The authors, Carlos Monteiro of the University of São Paulo and Arne Astrup of Novo Nordisk Foundation, will discuss the issue in a live virtual debate August 14, during NUTRITION 2024 LIVE ONLINE. The debate centers around a system developed by Monteiro and colleagues that classifies foods by their degree of industrial processing, ranging from unprocessed to ultra-processed.",
      "translation": "圣保罗大学的卡洛斯·蒙特罗和诺和诺德基金会的阿尔内·阿斯特鲁普将在 8 月 14 日'2024 营养学线上大会'期间的一场线上直播辩论中讨论这一问题。辩论围绕蒙特罗及其同事开发的一套分类体系展开，该体系将辩论围绕蒙泰罗及其同事开发的一套体系展开，该体系按工业化加工程度对食品分类，从未加工到超加工不等。"
     },
     {
@@ -43848,14 +43820,14 @@
      "id": "l148",
      "start": 1130.8,
      "end": 1146.69,
-     "text": "Scientists hope that cracking the genetic code of plants and animals could help uncover new treatments for infectious diseases, slow aging, improve crops in agriculture and create new bio-materials. new biomaterials.",
+     "text": "Scientists hope that cracking the genetic code of plants and animals could help uncover new treatments for infectious diseases, slow aging, improve crops in agriculture and create new biomaterials.",
      "translation": "科学家希望，破译动植物的遗传密码有助于发现治疗传染病的新疗法、延缓衰老、改良农作物并创造新型生物材料。"
     },
     {
      "id": "l149",
      "start": 1146.93,
      "end": 1169.31,
-     "text": "In Britain, organisations including the Natural History Museum, the Royal Botanic Gardens at Kew and the Welcome Sanger Institute have joined forces to sequence Britain's 66,000 Dubbed the Darwin Tree of Life Project, it is expected to take 10 years and cost 100 million pounds.",
+     "text": "In Britain, organisations including the Natural History Museum, the Royal Botanic Gardens at Kew and the Wellcome Sanger Institute have joined forces to sequence Britain's 66,000 species of animals and plants. Dubbed the Darwin Tree of Life Project, it is expected to take 10 years and cost 100 million pounds.",
      "translation": "在英国，包括自然历史博物馆、皇家植物园（邱园）和韦尔科姆桑格研究所在内的机构已联手这项名为“达尔文生命之树计划”的工程预计耗时 10 年，耗资 1 亿英镑。"
     },
     {
@@ -47727,7 +47699,7 @@
      "id": "l109",
      "start": 791.27,
      "end": 796.51,
-     "text": "Question 12. And enjoy all that life has to offer. Questions to 15 are based on the",
+     "text": "Question 12. What is the dark side of our inborn drive to acquire?",
      "translation": "问题 12：去享受生活赐予的一切吧。（问题 12 至 15 基于刚才听到的短文。）"
     },
     {
@@ -48941,8 +48913,8 @@
     {
      "id": "l77",
      "start": 394.93,
-     "end": 401.89,
-     "text": "Question 7. Why does the man say it's usually better to resolve problems outside of court?",
+     "end": 402.3,
+     "text": "Question 7. Why does the man say it's usually better to resolve problems outside of court whenever possible?",
      "translation": "问题 7：男士为什么说只要有可能通常最好在庭外解决问题？"
     },
     {
@@ -49543,7 +49515,7 @@
      "id": "l163",
      "start": 1222.09,
      "end": 1225.12,
-     "text": "Time to leave time in between tasks and meetings.",
+     "text": "Learn to leave time in between tasks and meetings.",
      "translation": "记得在任务和会议之间留出时间。"
     },
     {
@@ -49646,9 +49618,9 @@
     },
     {
      "id": "l178",
-     "start": 1339.99,
-     "end": 1345.99,
-     "text": "tends to seem hurried and sometimes a little rude. That's what some tourists have said.",
+     "start": 1339.4,
+     "end": 1346.1,
+     "text": "Boston tends to seem hurried and sometimes a little rude. That's what some tourists have said.",
      "translation": "常常显得匆匆忙忙，有时还有点粗鲁。一些游客是这么说的。"
     },
     {
@@ -54711,16 +54683,9 @@
     },
     {
      "id": "l70",
-     "end": 414.38,
-     "text": "In this section, you will hear two passages. At the end both the passage and the questions will be spoken only once.",
+     "end": 421.6,
+     "text": "In this section, you will hear two passages. At the end of each passage, you will hear three or four questions. Both the passage and the questions will be spoken only once.",
      "start": 410.53
-    },
-    {
-     "id": "l71",
-     "end": 418.0,
-     "text": "of each passage, you will hear three or four questions.",
-     "start": 414.4,
-     "translation": "的结尾，你将听到三至四个问题。"
     },
     {
      "id": "l72",
