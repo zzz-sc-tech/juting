@@ -107,6 +107,9 @@ export type ListeningExercise = {
 
 export type CatalogExerciseSummary = Omit<ListeningExercise, 'lines'> & {
   lineCount: number
+  /** 学习端掌握率的分母：过滤指令行（锚点 lineIds）后的可见句数。
+   * lineCount 仍是全量行数（管理端字幕计数口径）；无指令行的课程两者相等。 */
+  contentLineCount?: number
   /** 仅管理后台列表使用，用来提示已发布课程仍有新的字幕稿等待审核。 */
   pendingSubtitleDraftCount?: number
   /** 仅管理后台返回：课程当前处于协作管线的哪一步以及相关负责人。 */

@@ -14,6 +14,7 @@
     "typecheck": "tsc -p tsconfig.json --noEmit"
   },
   "dependencies": {
+    "@juting/domain": "0.1.0",
     "@juting/shared": "0.1.0",
     "async-lock": "^1.4.1",
     "bcryptjs": "^3.0.2",

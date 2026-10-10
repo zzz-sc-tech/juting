@@ -1,4 +1,4 @@
-import { BookOpen, Check, ChevronDown, Layers3, X } from 'lucide-react'
+import { BookOpen, Check, CheckCheck, ChevronDown, Layers3, MoreVertical, RotateCcw, X } from 'lucide-react'
 import { Fragment, useEffect, useMemo, useState, type CSSProperties } from 'react'
 import type {
   CatalogExerciseSummary,
@@ -29,6 +29,10 @@ type CourseMapProps = {
   seriesProgressByCategory: Record<string, SeriesProgressSummary>
   onSeriesSelect: (seriesId: number) => void
   onExerciseSelect: (exercise: CatalogExerciseSummary) => void
+  /** 章节卡 ⋯ 菜单：把该课全部可见句标为已掌握（完成后自动进「已完成」组）。 */
+  onMarkExerciseDone: (exercise: CatalogExerciseSummary) => Promise<void> | void
+  /** 章节卡 ⋯ 菜单：清除该课的全部本地进度（回到「未开始」）。 */
+  onResetExerciseProgress: (exercise: CatalogExerciseSummary) => void
 }
 
 export function CourseMap({
@@ -40,6 +44,8 @@ export function CourseMap({
   seriesProgressByCategory,
   onSeriesSelect,
   onExerciseSelect,
+  onMarkExerciseDone,
+  onResetExerciseProgress,
 }: CourseMapProps) {
   const { t } = useLanguage()
   // 章节按学习状态三分类：进行中 → 未开始 → 已完成（组内保持时间顺序）。
@@ -68,6 +74,27 @@ export function CourseMap({
     ]
   }, [seriesExercises, chapterProgressByExercise])
   const [seriesDialogOpen, setSeriesDialogOpen] = useState(false)
+  // 章节卡 ⋯ 菜单：menuForId 当前展开的章节；confirmResetId 二次确认重置；
+  // busyId 标完成请求进行中（防重复点击）。
+  const [menuForId, setMenuForId] = useState<number | null>(null)
+  const [confirmResetId, setConfirmResetId] = useState<number | null>(null)
+  const [busyId, setBusyId] = useState<number | null>(null)
+
+  const closeChapterMenu = () => {
+    setMenuForId(null)
+    setConfirmResetId(null)
+  }
+
+  const handleMarkDoneClick = async (exercise: CatalogExerciseSummary) => {
+    setMenuForId(null)
+    setConfirmResetId(null)
+    setBusyId(exercise.id)
+    try {
+      await onMarkExerciseDone(exercise)
+    } finally {
+      setBusyId(null)
+    }
+  }
 
   const visibleCategories = catalog.categories
 
@@ -153,33 +180,99 @@ export function CourseMap({
                   ? t('courseMap.chapterCompletedAria')
                   : t('courseMap.chapterProgressAria', { percent: progress.percent })
               return (
-                <button
+                <div
                   className={
                     exercise.id === activeExerciseId
-                      ? 'exercise-item quest-node active'
-                      : 'exercise-item quest-node'
+                      ? 'chapter-row active'
+                      : 'chapter-row'
                   }
                   key={exercise.id}
-                  onClick={() => onExerciseSelect(exercise)}
-                  type="button"
                 >
-                  <span className="quest-badge">{index + 1}</span>
-                  <span className="exercise-main">
-                    <span className="exercise-title">{exercise.title}</span>
-                  </span>
-                  <span
-                    aria-label={statusAria}
-                    className={`chapter-status-box ${status}`}
-                    role="img"
+                  <button
+                    className={
+                      exercise.id === activeExerciseId
+                        ? 'exercise-item quest-node active'
+                        : 'exercise-item quest-node'
+                    }
+                    onClick={() => onExerciseSelect(exercise)}
+                    type="button"
                   >
-                    {status === 'done' && <Check size={15} strokeWidth={3.5} aria-hidden="true" />}
-                  </span>
-                </button>
+                    <span className="quest-badge">{index + 1}</span>
+                    <span className="exercise-main">
+                      <span className="exercise-title">{exercise.title}</span>
+                    </span>
+                    <span
+                      aria-label={statusAria}
+                      className={`chapter-status-box ${status}`}
+                      role="img"
+                    >
+                      {status === 'done' && <Check size={15} strokeWidth={3.5} aria-hidden="true" />}
+                    </span>
+                  </button>
+                  <button
+                    aria-expanded={menuForId === exercise.id}
+                    aria-haspopup="menu"
+                    aria-label={t('courseMap.chapterMenuAria')}
+                    className="chapter-kebab"
+                    disabled={busyId === exercise.id}
+                    onClick={() => {
+                      setConfirmResetId(null)
+                      setMenuForId((current) => (current === exercise.id ? null : exercise.id))
+                    }}
+                    type="button"
+                  >
+                    <MoreVertical size={14} aria-hidden="true" />
+                  </button>
+                  {menuForId === exercise.id && (
+                    <div className="chapter-menu" role="menu">
+                      <button
+                        disabled={busyId === exercise.id}
+                        onClick={() => void handleMarkDoneClick(exercise)}
+                        role="menuitem"
+                        type="button"
+                      >
+                        <CheckCheck size={14} aria-hidden="true" />
+                        {t('courseMap.markDone')}
+                      </button>
+                      {confirmResetId === exercise.id ? (
+                        <button
+                          className="danger"
+                          onClick={() => {
+                            onResetExerciseProgress(exercise)
+                            closeChapterMenu()
+                          }}
+                          role="menuitem"
+                          type="button"
+                        >
+                          <RotateCcw size={14} aria-hidden="true" />
+                          {t('courseMap.resetConfirm')}
+                        </button>
+                      ) : (
+                        <button
+                          onClick={() => setConfirmResetId(exercise.id)}
+                          role="menuitem"
+                          type="button"
+                        >
+                          <RotateCcw size={14} aria-hidden="true" />
+                          {t('courseMap.resetProgress')}
+                        </button>
+                      )}
+                    </div>
+                  )}
+                </div>
               )
             })}
           </Fragment>
         ))}
       </div>
+
+      {menuForId !== null && (
+        <div
+          className="chapter-menu-backdrop"
+          onClick={closeChapterMenu}
+          role="presentation"
+        />
+      )}
 
       {seriesDialogOpen && (
         <div

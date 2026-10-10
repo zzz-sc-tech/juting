@@ -1,5 +1,6 @@
 import { useMemo } from 'react'
 import { BookOpenText } from 'lucide-react'
+import { countContentLines } from '@juting/domain'
 import { useLanguage } from '../../i18n/LanguageProvider'
 import { calculateChapterProgress } from '../../lib/progressStore'
 import { useStudySession } from './StudySessionContext'
@@ -29,12 +30,14 @@ export function StudyBanner() {
     const index = seriesExercises.findIndex((exercise) => exercise.id === activeExercise.id)
     return index >= 0 ? index + 1 : 0
   }, [activeExercise, seriesExercises])
+  // 兜底分母也用可见句数：详情行集含指令行，直接 lines.length 会让
+  // 掌握率封顶在 85% 上下（指令行无法标掌握）。
   const activeChapterProgress = activeExercise
     ? chapterProgressByExercise[activeExercise.id] ??
       calculateChapterProgress(
         {
           id: activeExercise.id,
-          lineCount: activeExercise.lines.length,
+          lineCount: countContentLines(activeExercise.lines),
         },
         store,
       )

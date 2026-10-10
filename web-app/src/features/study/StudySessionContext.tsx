@@ -71,6 +71,7 @@ export type StudySessionContextValue = {
   studySections: StudySection[]
   // 学习进度
   store: StudyStore
+  setStore: React.Dispatch<React.SetStateAction<StudyStore>>
   setActiveExerciseId: (exerciseId: number) => void
   progress: ExerciseProgress | undefined
   selectedLine: TranscriptLine | undefined
@@ -302,6 +303,7 @@ export function StudySessionProvider({ children }: { children: ReactNode }) {
       loadExercises,
       seriesProgressByCategory,
       chapterProgressByExercise,
+      setStore,
       studyStage,
       setStudyStage,
       setStageParam,

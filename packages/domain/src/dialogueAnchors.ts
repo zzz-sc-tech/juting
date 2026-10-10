@@ -811,3 +811,17 @@ export const findDialogueAnchorAtTime = (
   time: number,
 ): DialogueAnchor | null =>
   anchors.find((anchor) => time >= anchor.start && time < anchor.end) ?? null
+
+/**
+ * 学习端可见句数：总行数减去被锚点消费的指令行（"Section A directions"、
+ * "Questions 1 to 4..." 等）。掌握率/完成度一律以此为分母——指令行在
+ * 学习端被隐藏，永远无法标掌握，用全量行数当分母会让完成态不可达。
+ */
+export const countContentLines = (
+  lines: readonly AnchorSourceLine[],
+): number => {
+  const instructionIds = new Set(
+    extractDialogueAnchors(lines).flatMap((anchor) => anchor.lineIds),
+  )
+  return lines.filter((line) => !instructionIds.has(line.id)).length
+}

@@ -108,10 +108,16 @@ export const createEmptyChapterProgress = (
 })
 
 export const calculateChapterProgress = (
-  exercise: Pick<CatalogExerciseSummary, 'id' | 'lineCount'>,
+  exercise: Pick<
+    CatalogExerciseSummary,
+    'id' | 'lineCount' | 'contentLineCount'
+  >,
   store: StudyStore,
 ): ChapterProgressSummary => {
-  const totalLineCount = Math.max(0, exercise.lineCount)
+  // 分母口径：优先用过滤指令行后的可见句数（contentLineCount）。
+  // 指令行在学习端被锚点隐藏、永远无法标掌握；用全量 lineCount 当分母时
+  // 掌握率数学上封顶在 85% 上下，「已完成」态永远不可达。
+  const totalLineCount = Math.max(0, exercise.contentLineCount ?? exercise.lineCount)
   const progress = store.progressByExercise[exercise.id]
 
   if (!progress || totalLineCount === 0) {
@@ -120,24 +126,28 @@ export const calculateChapterProgress = (
 
   /**
    * 进度口径：
-   * - lineCount 始终使用服务端给出的章节总句数作为分母。
+   * - 分母用服务端给出的可见句数（无 contentLineCount 时退化为 lineCount）。
    * - mastered 只统计用户显式确认“已掌握”的句子。
-   * 这样可以避免只按本地已有记录的句子数量计算，导致完成度被高估。
+   * - 历史进度可能残留指令行孤儿条目（mastered=true），mastered 可能把
+   *   分母顶穿，因此按分母封顶、百分比夹到 100。
    */
-  const masteredLineCount = Object.values(progress.lines).filter(
+  const masteredAll = Object.values(progress.lines).filter(
     (line) => line.mastered,
   ).length
+  const masteredLineCount = Math.min(masteredAll, totalLineCount)
 
   return {
     exerciseId: exercise.id,
     masteredLineCount,
-    percent: Math.round((masteredLineCount / totalLineCount) * 100),
+    percent: Math.min(100, Math.round((masteredLineCount / totalLineCount) * 100)),
     totalLineCount,
   }
 }
 
 export const calculateSeriesProgress = (
-  exercises: Array<Pick<CatalogExerciseSummary, 'id' | 'lineCount'>>,
+  exercises: Array<
+    Pick<CatalogExerciseSummary, 'id' | 'lineCount' | 'contentLineCount'>
+  >,
   store: StudyStore,
 ): SeriesProgressSummary => {
   const summary = exercises.reduce(

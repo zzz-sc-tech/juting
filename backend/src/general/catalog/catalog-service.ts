@@ -400,10 +400,54 @@ const toDeliveryMediaUrl = (value: string | null | undefined) => {
     return objectName ? buildPublicMediaUrl(objectName) : rawValue;
 };
 
+// 学习端掌握率需要「过滤指令行后的可见句数」作为分母。锚点逻辑只存在于
+// ESM 的 @juting/domain（CJS 后端不能 type-import ESM，按仓库惯例在此只
+// 声明用到的最小本地接口）；运行时用原生动态 import() 加载（TS module=
+// Node16 在 CJS 文件里保留原生形式）。加载失败时 contentLineCount 退化
+// 为 undefined，学习端再退化为 lineCount。
+type DomainAnchorModule = {
+    countContentLines: (
+        lines: ReadonlyArray<{
+            id: string
+            start: number
+            end: number
+            text: string
+        }>,
+    ) => number
+}
+let domainModulePromise: Promise<DomainAnchorModule | null> | null = null
+const loadDomainModule = () => {
+    domainModulePromise ??= import('@juting/domain')
+        .then((mod) => mod as unknown as DomainAnchorModule)
+        .catch((error) => {
+            console.warn(
+                '[catalog] @juting/domain 加载失败，contentLineCount 将退化为 lineCount：',
+                error,
+            )
+            return null
+        })
+    return domainModulePromise
+}
+
+const countContentLinesSafe = async (
+    lines: TranscriptLine[],
+): Promise<number | undefined> => {
+    const mod = await loadDomainModule();
+    if (!mod) {
+        return undefined;
+    }
+    try {
+        return mod.countContentLines(lines);
+    } catch {
+        return undefined;
+    }
+};
+
 const buildExerciseSummary = (
     row: ExerciseRow,
     lineCount: number,
     contentLocale?: ContentLocale,
+    contentLineCount?: number,
 ): CatalogExerciseSummary => {
     // 优先以个人字幕稿判断协作节点：已发布课程也可能有新的投稿待审，
     // 所以不能仅依赖 exercises.status 来判断它正卡在哪一步。
@@ -482,6 +526,7 @@ const buildExerciseSummary = (
     status: row.status,
     sortOrder: Number(row.sort_order ?? 0),
     lineCount,
+    ...(contentLineCount !== undefined ? { contentLineCount } : {}),
     pendingSubtitleDraftCount: Number(row.pending_subtitle_draft_count ?? 0),
     workflow,
     localizations: normalizeExerciseLocalizations(row.localizations_json),
@@ -868,10 +913,17 @@ export async function listCategoryExercises(
             params: [categoryId],
         });
 
-        return (exerciseRows as ExerciseRow[]).map((row) => {
-            const lines = parseTranscriptJson(row.transcript_json);
-            return buildExerciseSummary(row, lines.length, contentLocale);
-        });
+        return Promise.all(
+            (exerciseRows as ExerciseRow[]).map(async (row) => {
+                const lines = parseTranscriptJson(row.transcript_json, contentLocale);
+                return buildExerciseSummary(
+                    row,
+                    lines.length,
+                    contentLocale,
+                    await countContentLinesSafe(lines),
+                );
+            }),
+        );
     } catch (error) {
         const message = error instanceof Error ? error.message : String(error);
         if (!message.includes('transcript_json')) {
