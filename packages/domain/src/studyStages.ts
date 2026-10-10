@@ -1,4 +1,4 @@
-export type StudyStage = 'extensive' | 'intensive' | 'waveform' | 'review'
+export type StudyStage = 'extensive' | 'intensive' | 'waveform' | 'review' | 'exam'
 
 export type StudyStageDescriptor = {
   eyebrow: string
@@ -28,6 +28,12 @@ export const stageCopy: Record<StudyStage, StudyStageDescriptor> = {
     eyebrow: 'Level 3',
     title: '难点复习',
     metric: '只练难点句',
+  },
+  // 模拟实战是「整卷考试」而非过关关卡：eyebrow 用「实战」与 Level 序列区分。
+  exam: {
+    eyebrow: '实战',
+    title: '模拟实战',
+    metric: '整卷连播作答',
   },
 }
 

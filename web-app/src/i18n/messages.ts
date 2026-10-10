@@ -4,6 +4,7 @@ import { coreMessages } from './messages/core'
 import { courseMapMessages } from './messages/courseMap'
 import { dashboardMessages } from './messages/dashboard'
 import { difficultReviewMessages } from './messages/difficultReview'
+import { examStageMessages } from './messages/examStage'
 import { dialogueAnchorMessages } from './messages/dialogueAnchors'
 import { extensiveStageMessages } from './messages/extensiveStage'
 import { intensiveStageMessages } from './messages/intensiveStage'
@@ -20,6 +21,7 @@ const modules: Record<UiLocale, Record<string, string>>[] = [
   courseMapMessages,
   dashboardMessages,
   difficultReviewMessages,
+  examStageMessages,
   dialogueAnchorMessages,
   extensiveStageMessages,
   intensiveStageMessages,

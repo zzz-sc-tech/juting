@@ -1,4 +1,4 @@
-import { AudioWaveform, Brain, CircleHelp, Headphones } from 'lucide-react'
+import { AudioWaveform, Brain, CircleHelp, ClipboardCheck, Headphones } from 'lucide-react'
 import type { StageRailItem } from '../components/StageRail'
 import {
   isDictationAccepted,
@@ -28,6 +28,10 @@ export const stageCopy: Record<
   review: {
     ...sharedStageCopy.review,
     Icon: CircleHelp,
+  },
+  exam: {
+    ...sharedStageCopy.exam,
+    Icon: ClipboardCheck,
   },
 }
 

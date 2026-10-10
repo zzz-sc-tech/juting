@@ -6,11 +6,12 @@ import {
 } from '../../components/StudyStates'
 import { TopBar } from '../../components/TopBar'
 import { useLanguage } from '../../i18n/LanguageProvider'
+import { CourseMapContainer } from './CourseMapContainer'
+import { ExamContainer } from './containers/ExamContainer'
 import { ExtensiveContainer } from './containers/ExtensiveContainer'
 import { IntensiveContainer } from './containers/IntensiveContainer'
 import { ReviewContainer } from './containers/ReviewContainer'
 import { WaveformContainer } from './containers/WaveformContainer'
-import { CourseMapContainer } from './CourseMapContainer'
 import { MediaPlaybackProvider } from './MediaPlaybackContext'
 import { StageRailContainer } from './StageRailContainer'
 import { StudyBanner } from './StudyBanner'
@@ -76,6 +77,7 @@ function StudyLayout() {
               {studyStage === 'intensive' && <IntensiveContainer />}
               {studyStage === 'waveform' && <WaveformContainer />}
               {studyStage === 'review' && <ReviewContainer />}
+              {studyStage === 'exam' && <ExamContainer />}
             </>
           )}
         </section>

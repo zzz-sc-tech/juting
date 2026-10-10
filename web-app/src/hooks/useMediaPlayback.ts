@@ -9,7 +9,6 @@ export function useMediaPlayback({
   mediaRef,
   playbackRate,
 }: UseMediaPlaybackOptions) {
-  const mediaElement = mediaRef.current
   const [isPlaying, setIsPlaying] = useState(false)
   const isPlayingRef = useRef(false)
   const [currentTime, setCurrentTime] = useState(0)
@@ -19,37 +18,52 @@ export function useMediaPlayback({
   const rangeCleanupRef = useRef<(() => void) | null>(null)
 
   useEffect(() => {
-    const media = mediaRef.current
-    if (!media) {
-      return
+    // 舞台组件挂载媒体元素发生在本 effect 之后（ref 绑定不触发重渲），
+    // 若只按渲染时的 mediaRef.current 快照接线，直进某舞台时监听器会漏挂
+    // （currentTime/isPlaying 永不更新）。这里低频轮询 ref 变化自动补接线。
+    let attached: HTMLMediaElement | null = null
+    let detach: (() => void) | null = null
+
+    const attach = () => {
+      const media = mediaRef.current
+      if (!media || media === attached) {
+        return
+      }
+      detach?.()
+      attached = media
+
+      const syncPlaybackState = () => {
+        const playing = !media.paused && !media.ended
+        isPlayingRef.current = playing
+        setIsPlaying(playing)
+        setCurrentTime(Number.isFinite(media.currentTime) ? media.currentTime : 0)
+        setDuration(Number.isFinite(media.duration) ? media.duration : 0)
+      }
+
+      syncPlaybackState()
+      media.addEventListener('play', syncPlaybackState)
+      media.addEventListener('pause', syncPlaybackState)
+      media.addEventListener('ended', syncPlaybackState)
+      media.addEventListener('timeupdate', syncPlaybackState)
+      media.addEventListener('loadedmetadata', syncPlaybackState)
+      media.addEventListener('durationchange', syncPlaybackState)
+      detach = () => {
+        media.removeEventListener('play', syncPlaybackState)
+        media.removeEventListener('pause', syncPlaybackState)
+        media.removeEventListener('ended', syncPlaybackState)
+        media.removeEventListener('timeupdate', syncPlaybackState)
+        media.removeEventListener('loadedmetadata', syncPlaybackState)
+        media.removeEventListener('durationchange', syncPlaybackState)
+      }
     }
 
-    const syncPlaybackState = () => {
-      const playing = !media.paused && !media.ended
-      isPlayingRef.current = playing
-      setIsPlaying(playing)
-      setCurrentTime(Number.isFinite(media.currentTime) ? media.currentTime : 0)
-      setDuration(Number.isFinite(media.duration) ? media.duration : 0)
-    }
-
-    syncPlaybackState()
-
-    media.addEventListener('play', syncPlaybackState)
-    media.addEventListener('pause', syncPlaybackState)
-    media.addEventListener('ended', syncPlaybackState)
-    media.addEventListener('timeupdate', syncPlaybackState)
-    media.addEventListener('loadedmetadata', syncPlaybackState)
-    media.addEventListener('durationchange', syncPlaybackState)
-
+    attach()
+    const timer = window.setInterval(attach, 250)
     return () => {
-      media.removeEventListener('play', syncPlaybackState)
-      media.removeEventListener('pause', syncPlaybackState)
-      media.removeEventListener('ended', syncPlaybackState)
-      media.removeEventListener('timeupdate', syncPlaybackState)
-      media.removeEventListener('loadedmetadata', syncPlaybackState)
-      media.removeEventListener('durationchange', syncPlaybackState)
+      window.clearInterval(timer)
+      detach?.()
     }
-  }, [mediaElement, mediaRef, playbackRate])
+  }, [mediaRef])
 
   useEffect(
     () => () => {

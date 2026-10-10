@@ -73,6 +73,13 @@ export type TranscriptLine = {
   keywords: string[]
 }
 
+/** 模拟实战单题：题号 1-25、题干行（转写中该题题干所在行，用于高亮与跳转）、四个选项文本。 */
+export type ExamQuestion = {
+  n: number
+  stemLineId?: string | null
+  options: Record<'A' | 'B' | 'C' | 'D', string>
+}
+
 export type ListeningExercise = {
   id: number
   categoryId: number
@@ -94,6 +101,8 @@ export type ListeningExercise = {
   localizations?: Partial<Record<ContentLocale, LocalizedExerciseContent>>
   /** 真题答案钥匙：题号(字符串)→选项字母，如 {"1":"A"}；缺省/null=未导入。 */
   answerKey?: Record<string, string> | null
+  /** 模拟实战选择题（真题听力）：按题号排序；答案字母以 answerKey 为权威，不在此重复。 */
+  questions?: ExamQuestion[] | null
   /** 课程页只公开贡献者的展示名称与已完成环节，绝不返回后台登录名或邮箱。 */
   contributors?: CourseContributor[]
   /**

@@ -11,6 +11,7 @@ import type {
     CreateCategoryRequest,
     CreateExerciseRequest,
     CreateTranscriptLineRequest,
+    ExamQuestion,
     ExerciseCategory,
     ListeningExercise,
     MaterialCategory,
@@ -62,6 +63,7 @@ type ExerciseRow = {
     summary: string;
     localizations_json?: unknown;
     answer_key_json?: unknown | null;
+    questions_json?: unknown | null;
     transcript_json?: unknown;
     status: ListeningExercise['status'];
     sort_order?: number | string | null;
@@ -385,6 +387,48 @@ const parseAnswerKey = (raw: unknown): Record<string, string> | null => {
     return Object.keys(result).length > 0 ? result : null;
 };
 
+/**
+ * 解析模拟实战选择题列：[{n, stemLineId, options:{A,B,C,D}}]。容忍脏数据：
+ * 非数组、题号不在 1-25、选项缺字/非字符串/超长（>240 字符）、stemLineId
+ * 非 l 前缀行 id——该题整条丢弃，保证到达学习端的 questions 一定可渲染。
+ */
+const parseQuestions = (raw: unknown): ExamQuestion[] | null => {
+    if (!Array.isArray(raw)) {
+        return null;
+    }
+    const result: ExamQuestion[] = [];
+    const seen = new Set<number>();
+    for (const item of raw) {
+        if (!item || typeof item !== 'object' || Array.isArray(item)) continue;
+        const row = item as Record<string, unknown>;
+        const n = typeof row.n === 'number' ? row.n : Number(row.n);
+        if (!Number.isInteger(n) || n < 1 || n > 25 || seen.has(n)) continue;
+        const rawOptions = row.options;
+        if (!rawOptions || typeof rawOptions !== 'object' || Array.isArray(rawOptions)) continue;
+        const options: Partial<Record<'A' | 'B' | 'C' | 'D', string>> = {};
+        let complete = true;
+        for (const letter of ['A', 'B', 'C', 'D'] as const) {
+            const value = (rawOptions as Record<string, unknown>)[letter];
+            if (typeof value !== 'string' || !value.trim() || value.length > 240) {
+                complete = false;
+                break;
+            }
+            options[letter] = value.trim();
+        }
+        if (!complete) continue;
+        const stemRaw = row.stemLineId;
+        const stemLineId =
+            typeof stemRaw === 'string' && /^l\d{1,5}$/.test(stemRaw) ? stemRaw : null;
+        seen.add(n);
+        result.push({ n, stemLineId, options: options as ExamQuestion['options'] });
+    }
+    if (result.length === 0) {
+        return null;
+    }
+    result.sort((a, b) => a.n - b.n);
+    return result;
+};
+
 // 外部来源链接不属于 MinIO 托管媒体。写入前统一去除两端空格，
 // 空字符串转为 NULL，避免接口返回看似存在但无法打开的空链接。
 const normalizeSourceUrl = (value: string | null | undefined) => {
@@ -531,6 +575,7 @@ const buildExerciseSummary = (
     workflow,
     localizations: normalizeExerciseLocalizations(row.localizations_json),
     answerKey: parseAnswerKey(row.answer_key_json),
+    questions: parseQuestions(row.questions_json),
     };
 };
 
@@ -688,6 +733,7 @@ const buildExerciseDetail = (
     lines,
     localizations: normalizeExerciseLocalizations(row.localizations_json),
     answerKey: parseAnswerKey(row.answer_key_json),
+    questions: parseQuestions(row.questions_json),
     contributors,
     workflowCredits,
     subtitleDrafts,
@@ -901,6 +947,7 @@ export async function listCategoryExercises(
                   summary,
                   localizations_json,
                   answer_key_json,
+                  questions_json,
                   transcript_json,
                   status,
                   sort_order,
@@ -946,6 +993,7 @@ export async function listCategoryExercises(
                   summary,
                   localizations_json,
                   answer_key_json,
+                  questions_json,
                   status,
                   sort_order,
                   created_at
@@ -982,6 +1030,7 @@ export async function listAllExercises(): Promise<CatalogExerciseSummary[]> {
               summary,
               localizations_json,
               answer_key_json,
+              questions_json,
               transcript_json,
               status,
               sort_order,
@@ -1098,6 +1147,7 @@ export async function getExercise(
               summary,
               localizations_json,
               answer_key_json,
+              questions_json,
               transcript_json,
               status,
               sort_order,

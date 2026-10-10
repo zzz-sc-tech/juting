@@ -105,7 +105,8 @@ export function useCourseRouting({
       stageParam === 'intensive' ||
       stageParam === 'extensive' ||
       stageParam === 'waveform' ||
-      stageParam === 'review'
+      stageParam === 'review' ||
+      stageParam === 'exam'
     ) {
       setStudyStage((current) => (current === stageParam ? current : stageParam))
       return

@@ -1,0 +1,461 @@
+/* 模拟实战舞台：整卷连播 + 停顿窗口作答 + 交卷评分。纸面卡片风格与泛听舞台同族。 */
+
+.exam-board {
+  display: grid;
+  gap: 20px;
+  grid-template-columns: minmax(0, 1.35fr) minmax(220px, 0.65fr);
+  grid-template-rows: auto 1fr;
+}
+
+.exam-empty {
+  align-items: center;
+  border: 1px dashed var(--line-strong);
+  border-radius: var(--radius-lg);
+  color: var(--ink-3);
+  display: flex;
+  font-size: 14px;
+  grid-column: 1 / -1;
+  justify-content: center;
+  min-height: 200px;
+  padding: 32px;
+}
+
+/* 顶栏：状态 + 已答进度 + 交卷 */
+.exam-head {
+  align-items: center;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  grid-column: 1 / -1;
+  justify-content: space-between;
+}
+
+.exam-head-status {
+  align-items: center;
+  color: var(--ink-2);
+  display: flex;
+  font-size: 13px;
+  gap: 8px;
+}
+
+.exam-dot {
+  border-radius: 50%;
+  height: 8px;
+  width: 8px;
+}
+
+.exam-dot.live {
+  background: var(--warning);
+}
+
+.exam-dot.done {
+  background: var(--success);
+}
+
+.exam-head-progress {
+  color: var(--ink-3);
+  font-size: 13px;
+  font-variant-numeric: tabular-nums;
+}
+
+.exam-submit {
+  align-items: center;
+  background: var(--ink);
+  border: none;
+  border-radius: var(--radius-pill);
+  color: var(--bg);
+  cursor: pointer;
+  display: inline-flex;
+  font-size: 13px;
+  gap: 6px;
+  padding: 8px 16px;
+}
+
+.exam-submit:hover {
+  background: var(--accent);
+}
+
+/* 题卡（左列） */
+.exam-body {
+  display: grid;
+  gap: 20px;
+  grid-column: 1;
+  grid-row: 2;
+  min-height: 0;
+}
+
+.exam-question-card {
+  background: var(--surface);
+  border: 1px solid var(--line);
+  border-radius: var(--radius-lg);
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+  min-height: 0;
+  padding: 22px 24px;
+}
+
+.exam-q-head {
+  align-items: center;
+  display: flex;
+  gap: 12px;
+  justify-content: space-between;
+}
+
+.exam-q-no {
+  font-size: 15px;
+  font-weight: 600;
+}
+
+.exam-window {
+  align-items: center;
+  border-radius: var(--radius-pill);
+  display: inline-flex;
+  font-size: 12px;
+  gap: 8px;
+  padding: 4px 10px;
+}
+
+.exam-window.on {
+  background: var(--accent-soft);
+  color: var(--accent-ink);
+}
+
+.exam-window.reading {
+  background: var(--warning-soft);
+  color: var(--warning);
+}
+
+.exam-window.locked {
+  background: var(--bg-sunken);
+  color: var(--ink-3);
+}
+
+.exam-window-bar {
+  background: var(--line);
+  border-radius: var(--radius-pill);
+  display: inline-block;
+  height: 4px;
+  overflow: hidden;
+  width: 72px;
+}
+
+.exam-window-fill {
+  background: var(--accent);
+  display: block;
+  height: 100%;
+}
+
+/* 选项行：答题卡式，选中态用主色描边 + 软底 */
+.exam-options {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.exam-option {
+  align-items: flex-start;
+  background: var(--bg);
+  border: 1px solid var(--line);
+  border-radius: var(--radius-md);
+  color: var(--ink);
+  cursor: pointer;
+  display: grid;
+  font-size: 14px;
+  gap: 2px 12px;
+  grid-template-columns: auto 1fr auto;
+  line-height: 1.55;
+  padding: 12px 14px;
+  text-align: left;
+}
+
+.exam-option:hover:not(.inert) {
+  border-color: var(--accent);
+}
+
+.exam-option.inert {
+  cursor: default;
+  opacity: 0.62;
+}
+
+.exam-option.selected {
+  background: var(--accent-soft-2);
+  border-color: var(--accent);
+}
+
+.exam-option-letter {
+  border: 1px solid var(--line-strong);
+  border-radius: var(--radius-sm);
+  font-weight: 600;
+  min-width: 26px;
+  padding: 1px 6px;
+  text-align: center;
+}
+
+.exam-option.selected .exam-option-letter {
+  background: var(--accent);
+  border-color: var(--accent);
+  color: var(--bg);
+}
+
+.exam-option-check {
+  color: var(--accent);
+  grid-row: span 1;
+  margin-top: 3px;
+}
+
+/* 题卡底部：极简播放控制（无拖动条——考试不能回听） */
+.exam-q-audio {
+  align-items: center;
+  border-top: 1px solid var(--line);
+  display: flex;
+  gap: 14px;
+  margin-top: auto;
+  padding-top: 14px;
+}
+
+.exam-play {
+  align-items: center;
+  background: var(--accent-soft);
+  border: none;
+  border-radius: var(--radius-pill);
+  color: var(--accent-ink);
+  cursor: pointer;
+  display: inline-flex;
+  font-size: 13px;
+  gap: 6px;
+  padding: 7px 16px;
+}
+
+.exam-play:hover {
+  background: var(--accent);
+  color: var(--bg);
+}
+
+.exam-clock {
+  color: var(--ink-3);
+  font-size: 13px;
+  font-variant-numeric: tabular-nums;
+}
+
+/* 题号导航（右列） */
+.exam-navigator {
+  background: var(--surface);
+  border: 1px solid var(--line);
+  border-radius: var(--radius-lg);
+  display: grid;
+  gap: 8px;
+  grid-column: 2;
+  grid-row: 2;
+  grid-template-columns: repeat(5, 1fr);
+  padding: 16px;
+  align-content: start;
+}
+
+.exam-nav-cell {
+  align-items: center;
+  aspect-ratio: 1;
+  background: var(--bg);
+  border: 1px solid var(--line);
+  border-radius: var(--radius-sm);
+  color: var(--ink-2);
+  cursor: pointer;
+  display: flex;
+  font-size: 13px;
+  font-variant-numeric: tabular-nums;
+  justify-content: center;
+}
+
+.exam-nav-cell:hover {
+  border-color: var(--accent);
+}
+
+.exam-nav-cell.answered {
+  background: var(--accent-soft-2);
+  border-color: var(--accent);
+  color: var(--accent-ink);
+  font-weight: 600;
+}
+
+.exam-nav-cell.past {
+  opacity: 0.55;
+}
+
+.exam-nav-cell.current {
+  border-color: var(--accent);
+  box-shadow: var(--focus-ring);
+}
+
+/* 结果页 */
+.exam-result-body {
+  grid-column: 1 / -1;
+  grid-row: 2;
+}
+
+.exam-score-card {
+  align-items: center;
+  background: var(--surface);
+  border: 1px solid var(--line);
+  border-radius: var(--radius-lg);
+  display: flex;
+  flex-wrap: wrap;
+  gap: 24px;
+  justify-content: space-between;
+  padding: 22px 24px;
+}
+
+.exam-score-ring {
+  align-items: baseline;
+  background: var(--accent-soft);
+  border-radius: 50%;
+  color: var(--accent-ink);
+  display: flex;
+  gap: 4px;
+  height: 108px;
+  justify-content: center;
+  padding-top: 30px;
+  width: 108px;
+}
+
+.exam-score-value {
+  font-size: 40px;
+  font-weight: 700;
+  line-height: 1;
+}
+
+.exam-score-total {
+  color: var(--accent-ink);
+  font-size: 15px;
+}
+
+.exam-score-side {
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  gap: 8px;
+  min-width: 220px;
+}
+
+.exam-score-line {
+  font-size: 16px;
+  font-weight: 600;
+  margin: 0;
+}
+
+.exam-score-sub {
+  color: var(--ink-3);
+  font-size: 13px;
+  margin: 0;
+}
+
+.exam-retake {
+  align-items: center;
+  align-self: flex-start;
+  background: var(--ink);
+  border: none;
+  border-radius: var(--radius-pill);
+  color: var(--bg);
+  cursor: pointer;
+  display: inline-flex;
+  font-size: 13px;
+  gap: 6px;
+  margin-top: 6px;
+  padding: 8px 16px;
+}
+
+.exam-retake:hover {
+  background: var(--accent);
+}
+
+/* 逐题对账列表 */
+.exam-review-list {
+  background: var(--surface);
+  border: 1px solid var(--line);
+  border-radius: var(--radius-lg);
+  display: flex;
+  flex-direction: column;
+  list-style: none;
+  margin: 0;
+  max-height: 46vh;
+  overflow-y: auto;
+  padding: 6px 0;
+}
+
+.exam-review-row {
+  align-items: center;
+  border-bottom: 1px solid var(--line);
+  display: grid;
+  gap: 10px;
+  grid-template-columns: auto auto auto minmax(0, 1fr) auto;
+  padding: 10px 18px;
+}
+
+.exam-review-row:last-child {
+  border-bottom: none;
+}
+
+.exam-review-row.miss .exam-review-no {
+  color: var(--danger);
+  font-weight: 700;
+}
+
+.exam-review-no {
+  color: var(--ink-3);
+  font-size: 13px;
+  font-variant-numeric: tabular-nums;
+  min-width: 22px;
+  text-align: right;
+}
+
+.exam-review-mark {
+  display: inline-flex;
+}
+
+.exam-review-mark.ok {
+  color: var(--success);
+}
+
+.exam-review-mark.bad {
+  color: var(--danger);
+}
+
+.exam-review-letters {
+  display: flex;
+  flex-direction: column;
+  font-size: 12px;
+  gap: 2px;
+  white-space: nowrap;
+}
+
+.exam-review-mine {
+  color: var(--ink-2);
+}
+
+.exam-review-correct {
+  color: var(--success);
+  font-weight: 600;
+}
+
+.exam-review-text {
+  color: var(--ink-3);
+  font-size: 12px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.exam-review-jump {
+  background: none;
+  border: 1px solid var(--accent);
+  border-radius: var(--radius-pill);
+  color: var(--accent);
+  cursor: pointer;
+  font-size: 12px;
+  padding: 4px 12px;
+  white-space: nowrap;
+}
+
+.exam-review-jump:hover {
+  background: var(--accent);
+  color: var(--bg);
+}

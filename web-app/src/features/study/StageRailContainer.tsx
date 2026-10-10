@@ -15,7 +15,8 @@ export function StageRailContainer() {
       ...stageCopy[stage],
       // 文案走 i18n：stageCopy 的中文仅作 t() 缺 key 时的兜底
       title: t(`stage.${stage}.title`),
-      tool: stage === 'waveform',
+      // 波形/模拟实战都是「随时可用」的能力，不占学习步骤序号
+      tool: stage === 'waveform' || stage === 'exam',
     }),
   )
 

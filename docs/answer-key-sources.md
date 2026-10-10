@@ -44,3 +44,18 @@
 | 2025年12月 第1套 | ✅ 已导入 | single | https://www.wehuster.com/static/cet6/cet6_2025_12_1_ans.pdf | wehuster PDF pages 2-9. This book edition states answers in 解析 prose (e.g. 'A项与对话内容相符'/'故为正确答案') rather than bold '答案为X'; each of 25 questions' 解析 explicitly names its correct option letter, all extracted. Second-source cross-check pending. |
 | 2025年12月 第2套 | ✅ 已导入 | single | https://www.wehuster.com/static/cet6/cet6_2025_12_2_ans.pdf | wehuster PDF pages 2-10 (book pages 20-27). 解析 prose explicitly names the correct option letter for each of the 25 questions; all extracted. Second-source cross-check pending. |
 | 2026年6月 第1套 | ✅ 已导入 | single | https://www.wehuster.com/static/cet6/cet6_2026_06_1_ans.pdf | wehuster PDF pages 2-10, each question has explicit 答案为X; all 25 extracted cleanly. Second-source cross-check pending. |
+
+## 2026-10-11 模拟实战工程答案键修订（六课，三方证据仲裁）
+
+> 背景：为「模拟实战」模式全量提取 38 课听力选项时，语义判卷（转写×选项×键）+ wehuster 解析册重读（字母+原文引文）+ 引文-转写机械比对三方交叉，修订如下。引文命中转写的机械验证脚本：temp/exam-mode/verify-arb-quotes.py。
+
+| 课程 | 修订 | 依据 |
+| --- | --- | --- |
+| 2019年12月 第1套 | 整键换为 DCBAADDBCAABACDDCCDABBCAB | 两课音频与键交叉：书(一)引文在课21转写 0/25、在课22转写 25/25；书(二)引文在课21转写 25/25。原键实为书(一)字母，配错音频 |
+| 2019年12月 第2套 | 整键换为 ABACDBCBCDDABCADABDACCBDC | 同上（互换的另一半） |
+| 2020年12月 第1套 | 整键按内容重键为 CADABCBDBACBACDADACCBDADB（24 题改动） | repo 卷为机构重排版：选项系统性避开书册字母位（重键后与书册字母 0/25 相同，随机期望≈6）。书册 25 条原文引文全部逐字命中转写；每题重键附转写行号（temp/exam-mode/rekey/26.json）。原键即书册字母照搬 |
+| 2022年12月 第2套 | Q23 A→D | l190 "friendships that I thought would last a lifetime" 逐字支持 D；题干问 once think（后来 drifted apart） |
+| 2025年12月 第1套 | Q12 C→A | 书册解析完整引文：爱做饭美国人比例下降、外出就餐者成大多数 → A |
+| 2025年12月 第2套 | Q14 B→C（选项序映射差异）、Q18 C→D | Q14：书册 B=室内、本卷 C=室内，l103 "spend even more time indoors" 逐字；Q18：书册+判卷一致，l132 "raise more questions than answers" 逐字 |
+
+另：判卷代理对 2019年6月第1套/2020年12月第2套/2021年6月第2套/2022年6月第1套 的疑似错配经书册引文机械比对全部驳回（引文 25/25 命中各自转写，现键与书册逐题一致），维持原键。2021年6月两套 Q1/Q12/Q16/Q20 受损选项文本经 GitHub 双源逐字修复（temp/exam-mode/repairs.json）。

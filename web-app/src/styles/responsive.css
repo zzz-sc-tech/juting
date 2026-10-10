@@ -64,3 +64,16 @@
     justify-content: flex-start;
   }
 }
+
+/* 模拟实战：窄屏单列堆叠，题号导航横向自适应铺满 */
+@media (max-width: 1120px) {
+  .exam-board {
+    grid-template-columns: 1fr;
+  }
+
+  .exam-navigator {
+    grid-column: 1;
+    grid-row: auto;
+    grid-template-columns: repeat(auto-fill, minmax(44px, 1fr));
+  }
+}

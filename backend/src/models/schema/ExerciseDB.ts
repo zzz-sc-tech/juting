@@ -61,6 +61,11 @@ const ExerciseSchema: ModelAttributes = {
         type: Sequelize.JSON,
         allowNull: true,
     },
+    // 模拟实战选择题：[{n, stemLineId, options:{A,B,C,D}}]；答案字母以 answer_key_json 为权威
+    questions_json: {
+        type: Sequelize.JSON,
+        allowNull: true,
+    },
     transcript_json: {
         type: Sequelize.JSON,
         allowNull: false,
@@ -98,6 +103,7 @@ export interface ExerciseDb {
     summary: string;
     localizations_json: unknown;
     answer_key_json?: unknown | null;
+    questions_json?: unknown | null;
     transcript_json: unknown;
     status: 'draft' | 'proofread' | 'published' | 'archived';
     sort_order: number;
@@ -117,6 +123,7 @@ export class ExerciseModel extends Model<ExerciseDb> {
     declare summary: string;
     declare localizations_json: unknown;
     declare answer_key_json: unknown | null;
+    declare questions_json: unknown | null;
     declare transcript_json: unknown;
     declare status: 'draft' | 'proofread' | 'published' | 'archived';
     declare sort_order: number;
