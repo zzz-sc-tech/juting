@@ -179,43 +179,46 @@ export function CourseMap({
                 status === 'done'
                   ? t('courseMap.chapterCompletedAria')
                   : t('courseMap.chapterProgressAria', { percent: progress.percent })
+              // 行本体用 div role=button（与原 button 同类名同布局），
+              // ⋯ 菜单作为真实子元素挂在行内（button 不能嵌 button，
+              // 且外层包 wrapper 会破坏 .exercise-list 网格项布局）。
               return (
                 <div
+                  aria-label={`${index + 1} ${exercise.title}, ${statusAria}`}
                   className={
                     exercise.id === activeExerciseId
-                      ? 'chapter-row active'
-                      : 'chapter-row'
+                      ? 'exercise-item quest-node active'
+                      : 'exercise-item quest-node'
                   }
                   key={exercise.id}
-                >
-                  <button
-                    className={
-                      exercise.id === activeExerciseId
-                        ? 'exercise-item quest-node active'
-                        : 'exercise-item quest-node'
+                  onClick={() => onExerciseSelect(exercise)}
+                  onKeyDown={(event) => {
+                    if (event.key === 'Enter' || event.key === ' ') {
+                      event.preventDefault()
+                      onExerciseSelect(exercise)
                     }
-                    onClick={() => onExerciseSelect(exercise)}
-                    type="button"
+                  }}
+                  role="button"
+                  tabIndex={0}
+                >
+                  <span className="quest-badge">{index + 1}</span>
+                  <span className="exercise-main">
+                    <span className="exercise-title">{exercise.title}</span>
+                  </span>
+                  <span
+                    aria-hidden="true"
+                    className={`chapter-status-box ${status}`}
                   >
-                    <span className="quest-badge">{index + 1}</span>
-                    <span className="exercise-main">
-                      <span className="exercise-title">{exercise.title}</span>
-                    </span>
-                    <span
-                      aria-label={statusAria}
-                      className={`chapter-status-box ${status}`}
-                      role="img"
-                    >
-                      {status === 'done' && <Check size={15} strokeWidth={3.5} aria-hidden="true" />}
-                    </span>
-                  </button>
+                    {status === 'done' && <Check size={15} strokeWidth={3.5} aria-hidden="true" />}
+                  </span>
                   <button
                     aria-expanded={menuForId === exercise.id}
                     aria-haspopup="menu"
                     aria-label={t('courseMap.chapterMenuAria')}
                     className="chapter-kebab"
                     disabled={busyId === exercise.id}
-                    onClick={() => {
+                    onClick={(event) => {
+                      event.stopPropagation()
                       setConfirmResetId(null)
                       setMenuForId((current) => (current === exercise.id ? null : exercise.id))
                     }}
@@ -227,7 +230,10 @@ export function CourseMap({
                     <div className="chapter-menu" role="menu">
                       <button
                         disabled={busyId === exercise.id}
-                        onClick={() => void handleMarkDoneClick(exercise)}
+                        onClick={(event) => {
+                          event.stopPropagation()
+                          void handleMarkDoneClick(exercise)
+                        }}
                         role="menuitem"
                         type="button"
                       >
@@ -237,7 +243,8 @@ export function CourseMap({
                       {confirmResetId === exercise.id ? (
                         <button
                           className="danger"
-                          onClick={() => {
+                          onClick={(event) => {
+                            event.stopPropagation()
                             onResetExerciseProgress(exercise)
                             closeChapterMenu()
                           }}
@@ -249,7 +256,10 @@ export function CourseMap({
                         </button>
                       ) : (
                         <button
-                          onClick={() => setConfirmResetId(exercise.id)}
+                          onClick={(event) => {
+                            event.stopPropagation()
+                            setConfirmResetId(exercise.id)
+                          }}
                           role="menuitem"
                           type="button"
                         >

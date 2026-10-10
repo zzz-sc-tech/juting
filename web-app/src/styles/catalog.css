@@ -469,11 +469,8 @@
 }
 
 /* ===== 章节卡 ⋯ 菜单（标为已完成 / 重置进度）===== */
-/* 行包一层定位容器；kebab 悬停/聚焦时才出现，避免列表常驻噪音 */
-.chapter-row {
-  position: relative;
-}
-
+/* 行本体 .quest-node 已是 position:relative，kebab 直接挂在行内；
+   悬停/聚焦时才出现，避免列表常驻噪音 */
 .chapter-kebab {
   align-items: center;
   background: transparent;
@@ -493,8 +490,8 @@
   width: 24px;
 }
 
-.chapter-row:hover .chapter-kebab,
-.chapter-row:focus-within .chapter-kebab {
+.quest-node:hover .chapter-kebab,
+.quest-node:focus-within .chapter-kebab {
   opacity: 1;
 }
 
