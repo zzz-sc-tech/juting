@@ -12,4 +12,11 @@ export const extensiveStageMessages = {
     'transcript.panelTitle': '章节句子',
     'transcript.hiddenLineChallenge': '遮罩模式',
     'transcript.selectedLineHint': '字幕在上方',
+    'extensive.back15': '后退 15 秒',
+    'extensive.forward15': '前进 15 秒',
+    'extensive.rate': '倍速',
+    'extensive.markUnclear': '标记难点',
+    'extensive.unmarkUnclear': '取消难点',
+    'extensive.takeExam': '考一遍',
+    'extensive.passes': '已泛听 {{count}} 遍',
 }

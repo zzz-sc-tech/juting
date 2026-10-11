@@ -1,6 +1,5 @@
-import { ChevronRight, Pause, Play } from 'lucide-react'
-import { memo, useEffect, useMemo, useRef, useState } from 'react'
-import type { RefObject } from 'react'
+import { ChevronRight, FastForward, Flag, Pause, Play, Rewind } from 'lucide-react'
+import { memo, useEffect, useMemo, useRef, useState, type KeyboardEvent, type RefObject } from 'react'
 import type { ContentLocale, DialogueAnchor, ListeningExercise } from '@juting/shared'
 import { DialogueAnchorBar } from './DialogueAnchorBar'
 import { resolveApiUrl } from '../lib/apiClient'
@@ -20,10 +19,20 @@ type ExtensiveStageProps = {
   onSeek: (time: number) => void
   onTogglePlayback: () => void
   onNextStage: () => void
+  /** 歌词行即时标难点（切换）：泛听中遇到没听懂的句子随手插旗，不打断播放 */
+  onToggleUnclear: (lineId: string) => void
+  unclearLineIds: ReadonlySet<string>
+  /** 倍速循环切换与 ±15s 步进（容器接 MediaPlaybackContext / 课程进度） */
+  playbackRate: number
+  onCycleRate: () => void
+  onSkip: (delta: number) => void
+  /** 泛听遍数（持久）；onGoExam 存在时右栏多一个「考一遍」入口 */
+  extensivePasses: number
+  onGoExam?: () => void
 }
 
 const formatTime = (seconds: number) => {
-  if (!Number.isFinite(seconds) || seconds <= 0) {
+  if (!Number.isFinite(seconds) || seconds < 0) {
     return '00:00'
   }
 
@@ -45,6 +54,13 @@ export function ExtensiveStage({
   onSeek,
   onTogglePlayback,
   onNextStage,
+  onToggleUnclear,
+  unclearLineIds,
+  playbackRate,
+  onCycleRate,
+  onSkip,
+  extensivePasses,
+  onGoExam,
 }: ExtensiveStageProps) {
   const { t, contentLocale } = useLanguage()
   const progressPercent =
@@ -67,7 +83,7 @@ export function ExtensiveStage({
     return current
   }, [exercise.lines, currentTime])
 
-  // 歌词式滚动字幕：当前句居中高亮，上下文句淡显可点（点击跳播到该句）。
+  // 歌词式滚动字幕：当前句居中高亮，上下文句淡显可点（点击跳播到那句）。
   // 首帧定位用瞬时滚动，之后跟句用平滑滚动。
   const lyricsRef = useRef<HTMLDivElement | null>(null)
   const scrolledOnceRef = useRef(false)
@@ -113,9 +129,9 @@ export function ExtensiveStage({
                 src={resolveApiUrl(exercise.audioUrl)}
                 preload="metadata"
               />
-              {/* 歌词式滚动字幕填满波形区：当前句高亮居中，任意句可点跳播。
-                  列表抽成 memo 子组件——currentTime 4Hz 变化只重渲染进度条，
-                  不再对 200+ 歌词按钮做 VDOM diff。 */}
+              {/* 歌词式滚动字幕填满波形区：当前句高亮居中，任意句可点跳播，
+                  悬停可插难点旗（不打断播放）。列表抽成 memo 子组件——
+                  currentTime 4Hz 变化只重渲染进度条，不对 200+ 歌词行做 VDOM diff。 */}
               {captionsOn ? (
                 <ExtensiveLyrics
                   activeId={activeLine?.id ?? ''}
@@ -123,18 +139,47 @@ export function ExtensiveStage({
                   lines={exercise.lines}
                   lyricsRef={lyricsRef}
                   onSeek={onSeek}
+                  onToggleUnclear={onToggleUnclear}
                   translationsOn={translationOn}
+                  unclearLineIds={unclearLineIds}
                 />
               ) : (
                 <div aria-hidden="true" className="listen-visual-waves" />
               )}
             </>
           )}
-          {/* 浮动控制栏：视频/音频底部叠加进度条和播放按钮 */}
+          {/* 浮动控制栏：播放/步进/倍速 + 字幕译文开关 + 进度条 */}
           <div className="listen-visual-controls">
             <button className="media-play-btn" onClick={onTogglePlayback} type="button">
               {isPlaying ? <Pause size={16} aria-hidden="true" /> : <Play size={16} aria-hidden="true" />}
               <span>{isPlaying ? t('extensive.pause') : t('extensive.play')}</span>
+            </button>
+            <button
+              aria-label={t('extensive.back15')}
+              className="media-skip-btn"
+              onClick={() => onSkip(-15)}
+              type="button"
+            >
+              <Rewind size={15} aria-hidden="true" />
+              <span className="skip-label">15</span>
+            </button>
+            <button
+              aria-label={t('extensive.forward15')}
+              className="media-skip-btn"
+              onClick={() => onSkip(15)}
+              type="button"
+            >
+              <FastForward size={15} aria-hidden="true" />
+              <span className="skip-label">15</span>
+            </button>
+            <button
+              aria-label={t('extensive.rate')}
+              className="rate-chip"
+              onClick={onCycleRate}
+              title={t('extensive.rate')}
+              type="button"
+            >
+              {playbackRate}x
             </button>
             <button
               className={captionsOn ? 'subtitle-chip on' : 'subtitle-chip'}
@@ -187,6 +232,9 @@ export function ExtensiveStage({
             {duration > 0 ? Math.round(progressPercent) : 0}%
           </span>
         </div>
+        {extensivePasses > 0 && (
+          <p className="listen-passes">{t('extensive.passes', { count: extensivePasses })}</p>
+        )}
         <button
           className="command-button primary large listen-progress-cta"
           onClick={onNextStage}
@@ -195,6 +243,15 @@ export function ExtensiveStage({
           <ChevronRight size={22} aria-hidden="true" />
           {t('extensive.skipToSentenceStudy')}
         </button>
+        {onGoExam && (
+          <button
+            className="command-button large listen-progress-cta ghost"
+            onClick={onGoExam}
+            type="button"
+          >
+            {t('extensive.takeExam')}
+          </button>
+        )}
       </aside>
     </section>
   )
@@ -207,6 +264,8 @@ const ExtensiveLyrics = memo(function ExtensiveLyrics({
   translationsOn,
   lyricsRef,
   onSeek,
+  onToggleUnclear,
+  unclearLineIds,
 }: {
   lines: ListeningExercise['lines']
   activeId: string
@@ -214,29 +273,54 @@ const ExtensiveLyrics = memo(function ExtensiveLyrics({
   translationsOn: boolean
   lyricsRef: RefObject<HTMLDivElement | null>
   onSeek: (time: number) => void
+  onToggleUnclear: (lineId: string) => void
+  unclearLineIds: ReadonlySet<string>
 }) {
+  const handleRowKeyDown = (event: KeyboardEvent<HTMLDivElement>, time: number) => {
+    if (event.key === 'Enter' || event.key === ' ') {
+      event.preventDefault()
+      onSeek(time)
+    }
+  }
+
   return (
     <div className="extensive-lyrics" ref={lyricsRef} aria-live="polite">
       {lines.map((line) => {
         const active = line.id === activeId
+        const flagged = unclearLineIds.has(line.id)
         // 每行都挂译文（翻译开关统一控制）：开关一开一关整列都有反应，
         // 不再只有当前句一行——用户曾反馈「翻译键像摆设」。
         const translation = translationsOn
           ? resolveLineTranslation(line, contentLocale)
           : ''
         return (
-          <button
+          <div
             className={active ? 'extensive-lyric active' : 'extensive-lyric'}
             data-active={active || undefined}
+            data-line-id={line.id}
             key={line.id}
             onClick={() => onSeek(line.start)}
-            type="button"
+            onKeyDown={(event) => handleRowKeyDown(event, line.start)}
+            role="button"
+            tabIndex={0}
           >
             <span className="extensive-lyric-text">{line.text}</span>
             {translation !== '' && (
               <span className="extensive-lyric-translation">{translation}</span>
             )}
-          </button>
+            <button
+              aria-pressed={flagged}
+              className={flagged ? 'extensive-lyric-flag flagged' : 'extensive-lyric-flag'}
+              onClick={(event) => {
+                event.stopPropagation()
+                onToggleUnclear(line.id)
+              }}
+              title={flagged ? '取消难点' : '标记难点'}
+              type="button"
+            >
+              <Flag size={13} aria-hidden="true" />
+            </button>
+          </div>
         )
       })}
     </div>

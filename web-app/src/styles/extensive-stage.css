@@ -382,3 +382,109 @@
   padding: 0 9px;
   font-size: 11px;
 }
+
+/* ── 泛听控制栏扩展：±15s 步进 + 倍速循环；窄时允许换行 ── */
+.listen-visual-controls {
+  flex-wrap: wrap;
+  row-gap: 6px;
+}
+
+.media-skip-btn {
+  align-items: center;
+  background: var(--bg);
+  border: 1px solid var(--line);
+  border-radius: var(--radius-pill);
+  color: var(--ink-2);
+  cursor: pointer;
+  display: inline-flex;
+  font-size: 11px;
+  font-variant-numeric: tabular-nums;
+  gap: 3px;
+  min-height: 30px;
+  padding: 0 10px;
+}
+
+.media-skip-btn:hover {
+  border-color: var(--accent);
+  color: var(--accent-ink);
+}
+
+.rate-chip {
+  background: var(--accent-soft);
+  border: none;
+  border-radius: var(--radius-pill);
+  color: var(--accent-ink);
+  cursor: pointer;
+  font-size: 12px;
+  font-variant-numeric: tabular-nums;
+  font-weight: 600;
+  min-height: 30px;
+  min-width: 46px;
+  padding: 0 10px;
+}
+
+.rate-chip:hover {
+  background: var(--accent);
+  color: var(--bg);
+}
+
+/* 歌词行难点旗：悬停浮现，已标记常驻暖色 */
+.extensive-lyric {
+  position: relative;
+}
+
+.extensive-lyric-flag {
+  align-items: center;
+  background: var(--surface);
+  border: 1px solid var(--line);
+  border-radius: 50%;
+  color: var(--ink-4);
+  cursor: pointer;
+  display: inline-flex;
+  height: 24px;
+  justify-content: center;
+  opacity: 0;
+  padding: 0;
+  position: absolute;
+  right: 6px;
+  top: 6px;
+  transition: opacity 0.15s ease, color 0.15s ease, border-color 0.15s ease;
+  width: 24px;
+}
+
+.extensive-lyric:hover .extensive-lyric-flag,
+.extensive-lyric-flag:focus-visible {
+  opacity: 1;
+}
+
+.extensive-lyric-flag:hover {
+  border-color: var(--accent);
+  color: var(--accent);
+}
+
+.extensive-lyric-flag.flagged {
+  border-color: var(--warning);
+  color: var(--warning);
+  opacity: 1;
+}
+
+/* 右栏：泛听遍数 + 幽灵版次按钮 */
+.listen-passes {
+  color: var(--ink-3);
+  font-size: 13px;
+  margin: 2px 0 10px;
+  text-align: center;
+}
+
+.command-button.ghost {
+  background: transparent;
+  border: 1px solid var(--line-strong);
+  color: var(--ink-2);
+  margin-top: 10px;
+}
+
+.command-button.ghost:hover {
+  background: var(--accent-soft-2);
+  border-color: var(--accent);
+  color: var(--accent-ink);
+}

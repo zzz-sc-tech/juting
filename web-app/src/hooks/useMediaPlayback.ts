@@ -84,6 +84,12 @@ export function useMediaPlayback({
     }
   }, [mediaRef, playbackRate])
 
+  // 速率变化即时生效（暂停中也生效）——否则要等下一次起播才应用，
+  // chip 显示与实际速率会短暂不一致
+  useEffect(() => {
+    applyPlaybackRate()
+  }, [applyPlaybackRate])
+
   const seekMediaTo = useCallback((media: HTMLMediaElement, targetTime: number) =>
     new Promise<void>((resolve) => {
       const finish = () => {

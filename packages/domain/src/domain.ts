@@ -408,6 +408,8 @@ export type ExerciseProgress = {
   showTranslation: boolean
   hideTranscript: boolean
   playbackRate?: number
+  /** 泛听遍数：每次完整听完一遍累加（复训计划的依据）。 */
+  extensivePasses?: number
   updatedAt: string
   lines: Record<string, LineProgress>
   vocabulary: Record<string, string>
