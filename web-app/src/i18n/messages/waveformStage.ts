@@ -12,4 +12,9 @@ export const waveformStageMessages = {
     'waveform.fit': '适应宽度',
     'waveform.sentenceCount': '共 {{count}} 句',
     'waveform.viewSlider': '拖动查看波形',
+    'waveform.rate': '倍速',
+    'waveform.markA': '标 A',
+    'waveform.markB': '标 B',
+    'waveform.loopClear': '清除循环',
+    'waveform.goIntensive': '本句去精听',
 }

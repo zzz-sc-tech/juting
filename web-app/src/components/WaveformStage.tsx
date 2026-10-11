@@ -1,16 +1,23 @@
-import { Maximize2, Pause, Play, ZoomIn, ZoomOut } from 'lucide-react'
+import { Flag, Maximize2, Pause, Play, Repeat, ZoomIn, ZoomOut } from 'lucide-react'
 import { useCallback, useEffect, useMemo, useRef, useState, type RefObject } from 'react'
 import WaveSurfer from 'wavesurfer.js'
 import RegionsPlugin from 'wavesurfer.js/dist/plugins/regions.esm.js'
 import type { Region } from 'wavesurfer.js/dist/plugins/regions.esm.js'
-import type { DialogueAnchor, ListeningExercise, TranscriptLine } from '@juting/shared'
+import type {
+  DialogueAnchor,
+  ListeningExercise,
+  TranscriptLine,
+} from '@juting/shared'
 import { DialogueAnchorBar } from './DialogueAnchorBar'
 import { resolveApiUrl } from '../lib/apiClient'
+import { resolveLineTranslation } from '../lib/lineTranslation'
+import { loadUserPrefs } from '../lib/userPrefs'
 import { useLanguage } from '../i18n/LanguageProvider'
 
 /**
  * 波形自由听：把整段音频画成波形，用户拖动/点击波形即可从该位置播放，
  * 并用区域标记标出每一句的范围 —— 播放时当前句高亮，点区域可直接跳到该句。
+ * 难句攻坚台：A-B 段落循环反复听、倍速循环、当前句译文、一键把当前句送进精听。
  *
  * 关键约束：波形必须挂在 App 共享的那一个 <audio> 元素上（通过 mediaRef），
  * 否则播放状态、进度与其余阶段会分裂成两套。
@@ -27,6 +34,10 @@ type WaveformStageProps = {
   /** 从指定时间开始播放（拖到哪就从哪播）。 */
   onPlayFrom: (time: number) => void
   onTogglePlayback: () => void
+  /** 倍速循环（与精听/泛听共用课程倍速存储）与本句送进精听 */
+  playbackRate: number
+  onCycleRate: () => void
+  onGoIntensive: (line: TranscriptLine) => void
 }
 
 type WaveStatus =
@@ -34,12 +45,17 @@ type WaveStatus =
   | { kind: 'ready'; duration: number }
   | { kind: 'error'; message: string }
 
+type AbLoopState = 'off' | 'a' | 'loop'
+
+const AB_LOOP_REGION_ID = '__ab-loop'
+const AB_MIN_SECONDS = 0.4
+
 const formatTime = (seconds: number) => {
-  if (!Number.isFinite(seconds) || seconds <= 0) {
+  if (!Number.isFinite(seconds) || seconds < 0) {
     return '00:00'
   }
-  const total = Math.floor(seconds)
-  return `${String(Math.floor(total / 60)).padStart(2, '0')}:${String(total % 60).padStart(2, '0')}`
+  const totalSeconds = Math.floor(seconds)
+  return `${String(Math.floor(totalSeconds / 60)).padStart(2, '0')}:${String(totalSeconds % 60).padStart(2, '0')}`
 }
 
 /** 找出某一时刻所在的句子（含首尾，避免相邻句之间出现“没有字幕”的空窗）。 */
@@ -73,8 +89,23 @@ function readWavePalette() {
     region: token('--wave-region', 'rgba(36, 88, 74, 0.10)'),
     regionActive: token('--wave-region-active', 'rgba(36, 88, 74, 0.32)'),
     wave: token('--ink-4', '#c6c1b4'),
+    loop: token('--warning', '#b4531f'),
   }
 }
+
+/** #rrggbb → rgba(...)；循环区从主题 warning 令牌取色（与句区域区分开）。 */
+function hexToRgba(hex: string, alpha: number): string {
+  const m = hex.match(/^#?([0-9a-f]{6})$/i)
+  if (!m) return `rgba(180, 83, 31, ${alpha})`
+  const n = parseInt(m[1], 16)
+  return `rgba(${(n >> 16) & 255}, ${(n >> 8) & 255}, ${n & 255}, ${alpha})`
+}
+
+/**
+ * 波形峰值缓存（模块级，跨阶段切换存活）：切去精听再回来时免去整段
+ * 重新解码（26 分钟卷要好几秒），直接用导出的 peaks 复绘。
+ */
+const peaksCache = new Map<string, number[][]>()
 
 export function WaveformStage({
   exercise,
@@ -87,8 +118,11 @@ export function WaveformStage({
   onJumpToAnchor,
   onPlayFrom,
   onTogglePlayback,
+  playbackRate,
+  onCycleRate,
+  onGoIntensive,
 }: WaveformStageProps) {
-  const { t } = useLanguage()
+  const { t, contentLocale } = useLanguage()
   const containerRef = useRef<HTMLDivElement | null>(null)
   const surfaceRef = useRef<HTMLDivElement | null>(null)
   const wsRef = useRef<WaveSurfer | null>(null)
@@ -101,17 +135,108 @@ export function WaveformStage({
   const [status, setStatus] = useState<WaveStatus>({ kind: 'loading', percent: 0 })
   const [zoomPx, setZoomPx] = useState(0) // 0 = 适应宽度
   const [reloadKey, setReloadKey] = useState(0)
+
+  // 当前句译文：初始状态跟「设置 → 译文默认显示」
+  const [translationOn, setTranslationOn] = useState(() => loadUserPrefs().translationDefault)
+
+  // A-B 循环：标 A → 标 B → 循环中（再点清除）；用户点击波形/句区即退出循环
+  const [abState, setAbState] = useState<AbLoopState>('off')
+  const abARef = useRef(0)
+  const abBRef = useRef(0)
+  const abRegionRef = useRef<Region | null>(null)
+  const clearAbLoop = useCallback(() => {
+    abRegionRef.current?.remove()
+    abRegionRef.current = null
+    setAbState('off')
+  }, [])
+  const clearAbLoopRef = useRef(clearAbLoop)
+  clearAbLoopRef.current = clearAbLoop
+
+  const handleAbButtonClick = () => {
+    if (abState === 'off') {
+      abARef.current = currentTime
+      setAbState('a')
+      return
+    }
+    if (abState === 'a') {
+      const a = abARef.current
+      const b = Math.max(currentTime, a + AB_MIN_SECONDS)
+      abARef.current = a
+      abBRef.current = b
+      const regions = regionsRef.current
+      const ws = wsRef.current
+      if (regions && ws) {
+        abRegionRef.current?.remove()
+        abRegionRef.current = regions.addRegion({
+          id: AB_LOOP_REGION_ID,
+          start: a,
+          end: b,
+          color: hexToRgba(readWavePalette().loop, 0.26),
+          drag: false,
+          resize: false,
+        })
+      }
+      setAbState('loop')
+      return
+    }
+    clearAbLoop()
+  }
+
+  // 循环执行：rAF 监听共享 audio，越过 B 点即拉回 A（仅在播放中）
+  useEffect(() => {
+    if (abState !== 'loop') {
+      return
+    }
+    const media = mediaRef.current
+    if (!media) {
+      return
+    }
+    let raf = 0
+    const tick = () => {
+      if (!media.paused && media.currentTime >= abBRef.current) {
+        media.currentTime = abARef.current
+      }
+      raf = requestAnimationFrame(tick)
+    }
+    raf = requestAnimationFrame(tick)
+    return () => cancelAnimationFrame(raf)
+  }, [abState, mediaRef])
+
   // 视图平移滑动条：max = 可滚动宽度，pos = 当前滚动位置；max 为 0（未放大）时隐藏。
   // 注意：v7 缩放后实际滚动发生在 shadow DOM 内部的 scrollContainer 上，
   // 外层 .waveform-surface 的 scrollWidth 量不出缩放宽度。
   const [pan, setPan] = useState({ max: 0, pos: 0 })
   const scrollElRef = useRef<HTMLElement | null>(null)
+  // 跟随播放：放大且播放中把光标保持在视口 40% 处；用户手动平移后 4 秒内不抢
+  const userScrollAtRef = useRef(0)
+  const programmaticScrollUntilRef = useRef(0)
   const updatePan = useCallback(() => {
     const el = scrollElRef.current ?? surfaceRef.current
     if (!el) return
     const max = Math.max(0, el.scrollWidth - el.clientWidth)
     setPan({ max, pos: Math.min(el.scrollLeft, max) })
   }, [])
+  const handleScroll = useCallback(() => {
+    if (Date.now() > programmaticScrollUntilRef.current) {
+      userScrollAtRef.current = Date.now()
+    }
+    updatePan()
+  }, [updatePan])
+
+  useEffect(() => {
+    if (!isPlaying || zoomPx <= 0) {
+      return
+    }
+    if (Date.now() - userScrollAtRef.current < 4000) {
+      return
+    }
+    const el = scrollElRef.current
+    if (!el) {
+      return
+    }
+    programmaticScrollUntilRef.current = Date.now() + 150
+    el.scrollLeft = Math.max(0, currentTime * zoomPx - el.clientWidth * 0.4)
+  }, [currentTime, isPlaying, zoomPx])
 
   // 回调走「最新引用」：App 传入的函数每次渲染都是新引用，
   // 若直接进依赖，wavesurfer 会在每次渲染时被销毁重建（波形一闪就没）。
@@ -122,6 +247,10 @@ export function WaveformStage({
   const currentLine = useMemo(
     () => findLineAtTime(exercise.lines, currentTime),
     [exercise.lines, currentTime],
+  )
+  const currentTranslation = useMemo(
+    () => (translationOn && currentLine ? resolveLineTranslation(currentLine, contentLocale) : ''),
+    [contentLocale, currentLine, translationOn],
   )
 
   // 句子区间：一次性建立，之后只在时间推进时改高亮，避免每帧重建 200 个区域
@@ -138,6 +267,8 @@ export function WaveformStage({
     const palette = readWavePalette()
 
     const regions = RegionsPlugin.create()
+    const peaksKey = `${exercise.id}|${sourceUrl}`
+    const cachedPeaks = peaksCache.get(peaksKey)
     const wavesurfer = WaveSurfer.create({
       autoCenter: false,
       autoScroll: false,
@@ -156,6 +287,8 @@ export function WaveformStage({
       interact: true,
       normalize: true,
       plugins: [regions],
+      // 有缓存峰值时直接复绘，跳过整段解码（切阶段往返的秒级等待）
+      ...(cachedPeaks ? { peaks: cachedPeaks } : {}),
       progressColor: palette.progress,
       // 与校波台一致：8k 采样率足够画波形，兼容性也更好（部分设备不支持 4k）
       sampleRate: 8000,
@@ -167,7 +300,7 @@ export function WaveformStage({
     const scrollEl: HTMLElement | null =
       (wavesurfer as unknown as { renderer?: { scrollContainer?: HTMLElement } }).renderer?.scrollContainer ?? null
     scrollElRef.current = scrollEl
-    if (scrollEl) scrollEl.addEventListener('scroll', updatePan)
+    if (scrollEl) scrollEl.addEventListener('scroll', handleScroll)
     updatePan()
     regionsRef.current = regions
     regionByLineIdRef.current = {}
@@ -179,6 +312,14 @@ export function WaveformStage({
     const onReady = (readyDuration: number) => {
       if (disposed) return
       setStatus({ kind: 'ready', duration: readyDuration })
+      try {
+        const exported = wavesurfer.exportPeaks()
+        if (exported?.length) {
+          peaksCache.set(peaksKey, exported as number[][])
+        }
+      } catch {
+        // 导出失败不影响使用，只是下次还得重新解码
+      }
       // 解码完成后句子区间才有时基意义
       const map: Record<string, Region> = {}
       for (const line of exercise.lines) {
@@ -202,15 +343,20 @@ export function WaveformStage({
     const onError = (error: Error) => {
       if (!disposed) setStatus({ kind: 'error', message: error.message || 'unknown error' })
     }
-    // 点击/拖动波形：没在播就从该处起播；在播则由 dragToSeek 负责跟随
+    // 点击/拖动波形：没在播就从该处起播；在播则由 dragToSeek 负责跟随。
+    // 任何波形交互都意味着用户要离开循环段——顺手退出 A-B 循环
     const onInteraction = (newTime: number) => {
       if (disposed || !Number.isFinite(newTime)) return
+      clearAbLoopRef.current()
       if (!isPlayingRef.current) {
         onPlayFromRef.current(newTime)
       }
     }
     const onRegionClick = (region: Region) => {
       if (disposed) return
+      if (region.id !== AB_LOOP_REGION_ID) {
+        clearAbLoopRef.current()
+      }
       const line = exercise.lines.find((item) => item.id === region.id)
       const target = Number.isFinite(region.start) ? region.start : line?.start
       if (target !== undefined) {
@@ -231,15 +377,16 @@ export function WaveformStage({
       wavesurfer.un('error', onError)
       wavesurfer.un('interaction', onInteraction)
       regions.un('region-clicked', onRegionClick)
-      if (scrollEl) scrollEl.removeEventListener('scroll', updatePan)
+      if (scrollEl) scrollEl.removeEventListener('scroll', handleScroll)
       scrollElRef.current = null
       regionByLineIdRef.current = {}
+      abRegionRef.current = null
       wavesurfer.destroy()
       wsRef.current = null
       regionsRef.current = null
     }
     // 换课程/换音源时重建；播放状态用 ref 读取，不进依赖
-  }, [exercise.id, sourceUrl, reloadKey, exercise.lines, mediaRef, updatePan])
+  }, [exercise.id, sourceUrl, reloadKey, exercise.lines, mediaRef, updatePan, handleScroll])
 
   // 当前句高亮：只改受影响的两个区域，不做全量重绘
   useEffect(() => {
@@ -264,6 +411,8 @@ export function WaveformStage({
   // 两个都调；zoom 还会内部 reRender，保证至少一条路径生效。
   const applyZoom = useCallback((next: number) => {
     setZoomPx(next)
+    // 缩放重渲染会触发滚动事件——标记为程序性，避免被当成用户平移而暂停跟随
+    programmaticScrollUntilRef.current = Date.now() + 300
     const wavesurfer = wsRef.current
     if (!wavesurfer) return
     if (next <= 0) {
@@ -314,6 +463,12 @@ export function WaveformStage({
     return () => observer.disconnect()
   }, [updatePan, status.kind])
 
+  // 切课时复位循环状态（区域随 wavesurfer 销毁，状态也要归零）
+  useEffect(() => {
+    setAbState('off')
+    abRegionRef.current = null
+  }, [exercise.id])
+
   return (
     <section className="stage-board waveform-board">
       <DialogueAnchorBar
@@ -355,6 +510,37 @@ export function WaveformStage({
               <Maximize2 size={18} aria-hidden="true" />
             </button>
             <button
+              aria-label={t('waveform.rate')}
+              className="rate-chip"
+              onClick={onCycleRate}
+              title={t('waveform.rate')}
+              type="button"
+            >
+              {playbackRate}x
+            </button>
+            <button
+              aria-pressed={abState === 'loop'}
+              className={
+                abState === 'loop'
+                  ? 'waveform-loop-btn on'
+                  : abState === 'a'
+                    ? 'waveform-loop-btn armed'
+                    : 'waveform-loop-btn'
+              }
+              onClick={handleAbButtonClick}
+              title={abState === 'off' ? t('waveform.markA') : abState === 'a' ? t('waveform.markB') : t('waveform.loopClear')}
+              type="button"
+            >
+              <Repeat size={14} aria-hidden="true" />
+              <span>
+                {abState === 'off'
+                  ? `${t('waveform.markA')}·${t('waveform.markB')}`
+                  : abState === 'a'
+                    ? t('waveform.markB')
+                    : `${formatTime(abBRef.current - abARef.current)}`}
+              </span>
+            </button>
+            <button
               className="icon-button primary wide"
               onClick={onTogglePlayback}
               type="button"
@@ -368,7 +554,7 @@ export function WaveformStage({
           </div>
         </header>
 
-        <div className="waveform-surface" ref={surfaceRef} onScroll={updatePan}>
+        <div className="waveform-surface" ref={surfaceRef} onScroll={handleScroll}>
           {/* 与其余阶段共用同一个媒体元素，保证播放状态一致 */}
           <audio ref={mediaRef as RefObject<HTMLAudioElement | null>} src={sourceUrl} preload="auto" />
           <div className="waveform-canvas" ref={containerRef} />
@@ -406,10 +592,34 @@ export function WaveformStage({
         )}
 
         <footer className="waveform-subtitle">
-          <span className="waveform-subtitle-label">{t('waveform.currentSentence')}</span>
+          <div className="waveform-subtitle-head">
+            <span className="waveform-subtitle-label">{t('waveform.currentSentence')}</span>
+            <div className="waveform-subtitle-actions">
+              <button
+                className={translationOn ? 'subtitle-chip on' : 'subtitle-chip'}
+                onClick={() => setTranslationOn((current) => !current)}
+                type="button"
+                aria-pressed={translationOn}
+              >
+                {t('extensive.translation')}
+              </button>
+              <button
+                className="waveform-go-intensive"
+                disabled={!currentLine}
+                onClick={() => currentLine && onGoIntensive(currentLine)}
+                type="button"
+              >
+                <Flag size={13} aria-hidden="true" />
+                {t('waveform.goIntensive')}
+              </button>
+            </div>
+          </div>
           <p className="waveform-subtitle-text">
             {currentLine?.text?.trim() ? currentLine.text : t('waveform.noSentence')}
           </p>
+          {currentTranslation !== '' && (
+            <p className="waveform-subtitle-translation">{currentTranslation}</p>
+          )}
         </footer>
       </div>
     </section>

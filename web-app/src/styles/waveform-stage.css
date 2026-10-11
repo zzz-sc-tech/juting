@@ -128,3 +128,91 @@
   margin: 0;
   min-width: 0;
 }
+
+/* ── A-B 循环按钮：三态（未标 → 已标A → 循环中）── */
+.waveform-loop-btn {
+  align-items: center;
+  background: var(--bg);
+  border: 1px solid var(--line);
+  border-radius: var(--radius-pill);
+  color: var(--ink-2);
+  cursor: pointer;
+  display: inline-flex;
+  font-size: 11.5px;
+  gap: 5px;
+  min-height: 30px;
+  padding: 0 10px;
+}
+
+.waveform-loop-btn:hover {
+  border-color: var(--accent);
+  color: var(--accent-ink);
+}
+
+.waveform-loop-btn.armed {
+  background: var(--warning-soft);
+  border-color: var(--warning);
+  color: var(--warning);
+}
+
+.waveform-loop-btn.on {
+  background: var(--warning);
+  border-color: var(--warning);
+  color: #ffffff;
+  font-variant-numeric: tabular-nums;
+}
+
+/* ── 底部字幕条：译文行 + 操作区 ── */
+.waveform-subtitle-head {
+  align-items: center;
+  display: flex;
+  gap: 10px;
+  justify-content: space-between;
+  margin-bottom: 6px;
+}
+
+.waveform-subtitle-head .waveform-subtitle-label {
+  margin-bottom: 0;
+}
+
+.waveform-subtitle-actions {
+  align-items: center;
+  display: flex;
+  gap: 8px;
+}
+
+.waveform-subtitle-translation {
+  border-top: 1px dashed var(--line);
+  color: var(--ink-2);
+  font-family:
+    "Segoe UI", ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont,
+    "Microsoft YaHei UI", "PingFang SC", sans-serif;
+  font-size: 13px;
+  margin: 8px 0 0;
+  padding-top: 8px;
+}
+
+.waveform-go-intensive {
+  align-items: center;
+  background: none;
+  border: 1px solid var(--line-strong);
+  border-radius: var(--radius-pill);
+  color: var(--ink-2);
+  cursor: pointer;
+  display: inline-flex;
+  font-size: 12px;
+  gap: 5px;
+  min-height: 26px;
+  padding: 0 11px;
+}
+
+.waveform-go-intensive:hover:not(:disabled) {
+  background: var(--accent-soft-2);
+  border-color: var(--accent);
+  color: var(--accent-ink);
+}
+
+.waveform-go-intensive:disabled {
+  cursor: default;
+  opacity: 0.45;
+}
