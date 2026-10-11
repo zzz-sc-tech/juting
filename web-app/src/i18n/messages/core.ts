@@ -1,9 +1,6 @@
-import type { UiLocale } from '@juting/domain'
-
 // 通用/外壳文案：品牌、语言设置、顶栏、阶段栏、快捷键提示。
 // key 规则：全局通用词用单词 key，组件级文案用 `模块.语义` 前缀。
-export const coreMessages: Record<UiLocale, Record<string, string>> = {
-  'zh-CN': {
+export const coreMessages = {
     brand: '句听',
     courseLabel: '听力课程',
     login: '登录',
@@ -15,66 +12,4 @@ export const coreMessages: Record<UiLocale, Record<string, string>> = {
     'topbar.openSource': 'GitHub 开源',
     'stageRail.label': '学习阶段',
     'tooltip.shortcut': '快捷键：{{shortcut}}',
-  },
-  'en-US': {
-    brand: 'JuTing',
-    courseLabel: 'Listening courses',
-    login: 'Log in',
-    language: 'Language',
-    interfaceLanguage: 'Interface language',
-    contentLanguage: 'Learning content language',
-    preferences: 'Language preferences',
-    'topbar.learningOverview': 'Learning overview',
-    'topbar.openSource': 'Open source',
-    'stageRail.label': 'Learning stages',
-    'tooltip.shortcut': 'Shortcut: {{shortcut}}',
-  },
-  'th-TH': {
-    brand: 'JuTing',
-    courseLabel: 'คอร์สฝึกฟัง',
-    login: 'เข้าสู่ระบบ',
-    language: 'ภาษา',
-    interfaceLanguage: 'ภาษาของหน้าจอ',
-    contentLanguage: 'ภาษาของเนื้อหาการเรียน',
-    preferences: 'การตั้งค่าภาษา',
-    'topbar.learningOverview': 'ภาพรวมการเรียน',
-    'topbar.openSource': 'โอเพนซอร์ส',
-    'stageRail.label': 'ขั้นตอนการเรียน',
-    'tooltip.shortcut': 'ปุ่มลัด: {{shortcut}}',
-  },
-  'ja-JP': {
-    brand: 'JuTing',
-    courseLabel: 'リスニングコース',
-    login: 'ログイン',
-    language: '言語',
-    interfaceLanguage: '表示言語',
-    contentLanguage: '学習コンテンツの言語',
-    preferences: '言語設定',
-    'topbar.learningOverview': '学習概要',
-    'topbar.openSource': 'オープンソース',
-    'stageRail.label': '学習ステージ',
-    'tooltip.shortcut': 'ショートカット：{{shortcut}}',
-  },
-  "fr-FR": {
-    "brand": "JuTing",
-    "courseLabel": "Cours d’écoute",
-    "login": "Se connecter",
-    "language": "Langue",
-    "preferences": "Préférences linguistiques",
-    "topbar.learningOverview": "Vue d’ensemble",
-    "topbar.openSource": "Code source ouvert",
-    "stageRail.label": "Étapes d’apprentissage",
-    "tooltip.shortcut": "Raccourci : {{shortcut}}"
-},
-  "es-ES": {
-    "brand": "JuTing",
-    "courseLabel": "Cursos de comprensión auditiva",
-    "login": "Iniciar sesión",
-    "language": "Idioma",
-    "preferences": "Preferencias de idioma",
-    "topbar.learningOverview": "Resumen del aprendizaje",
-    "topbar.openSource": "Código abierto",
-    "stageRail.label": "Etapas de aprendizaje",
-    "tooltip.shortcut": "Atajo: {{shortcut}}"
-},
 }

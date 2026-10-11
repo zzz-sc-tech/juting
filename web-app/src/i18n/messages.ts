@@ -1,11 +1,10 @@
-import type { UiLocale } from '@juting/domain'
 import { appMessages } from './messages/app'
 import { coreMessages } from './messages/core'
 import { courseMapMessages } from './messages/courseMap'
 import { dashboardMessages } from './messages/dashboard'
 import { difficultReviewMessages } from './messages/difficultReview'
-import { examStageMessages } from './messages/examStage'
 import { dialogueAnchorMessages } from './messages/dialogueAnchors'
+import { examStageMessages } from './messages/examStage'
 import { extensiveStageMessages } from './messages/extensiveStage'
 import { intensiveStageMessages } from './messages/intensiveStage'
 import { settingsMessages } from './messages/settings'
@@ -13,34 +12,24 @@ import { stageMessages } from './messages/studyStages'
 import { studyStatesMessages } from './messages/studyStates'
 import { waveformStageMessages } from './messages/waveformStage'
 
-// 各模块维护自己的消息表（web-app/src/i18n/messages/*.ts），这里按语言合并成
-// 一张扁平表供 useLanguage().t(key) 查询。key 以模块名做前缀避免冲突。
-const modules: Record<UiLocale, Record<string, string>>[] = [
-  appMessages,
-  coreMessages,
-  courseMapMessages,
-  dashboardMessages,
-  difficultReviewMessages,
-  examStageMessages,
-  dialogueAnchorMessages,
-  extensiveStageMessages,
-  intensiveStageMessages,
-  settingsMessages,
-  stageMessages,
-  studyStatesMessages,
-  waveformStageMessages,
-]
-
-const mergeLocale = (locale: UiLocale): Record<string, string> =>
-  Object.assign({}, ...modules.map((table) => table[locale]))
-
-export const messages: Record<UiLocale, Record<string, string>> = {
-  'zh-CN': mergeLocale('zh-CN'),
-  'en-US': mergeLocale('en-US'),
-  'th-TH': mergeLocale('th-TH'),
-  'ja-JP': mergeLocale('ja-JP'),
-  'fr-FR': mergeLocale('fr-FR'),
-  'es-ES': mergeLocale('es-ES'),
+// 单语（简体中文）文案表：各模块维护在 messages/ 下（每模块一张扁平键表，
+// key 以模块名做前缀），这里合并成一张总表供 useLanguage().t(key) 查询。
+const messages = {
+  ...appMessages,
+  ...coreMessages,
+  ...courseMapMessages,
+  ...dashboardMessages,
+  ...difficultReviewMessages,
+  ...dialogueAnchorMessages,
+  ...examStageMessages,
+  ...extensiveStageMessages,
+  ...intensiveStageMessages,
+  ...settingsMessages,
+  ...stageMessages,
+  ...studyStatesMessages,
+  ...waveformStageMessages,
 }
 
-export type MessageKey = string
+export type MessageKey = keyof typeof messages
+
+export { messages }
