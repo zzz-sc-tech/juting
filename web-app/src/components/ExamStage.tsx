@@ -1,4 +1,4 @@
-import { useEffect, useMemo, useRef, useState, type RefObject } from 'react'
+import { useCallback, useEffect, useMemo, useRef, useState, type RefObject } from 'react'
 import {
   Check,
   CircleMinus,
@@ -124,6 +124,13 @@ export function ExamStage({
     }
     // key=exercise.id 保证换课重挂，这里只看挂载时
   }, [exercise.id])
+
+  // 恢复层与交卷确认层互斥：恢复层解决（继续/重开）时顺带关确认层，
+  // 防止两层叠开（对账层共享按钮类名，叠开会有点击歧义）
+  const resolveResume = useCallback((pick: { answers: Record<number, Letter>; currentTime: number } | null) => {
+    setResumeAsk(pick)
+    setConfirmOpen(false)
+  }, [])
 
   // 每题的时序锚：题干行（首选）或覆盖该题号的锚点块（兜底）。
   const timing = useMemo(() => {
@@ -437,7 +444,7 @@ export function ExamStage({
           answered: answeredCount,
           total: questions.length,
         })}</div>
-        {!submitted && (
+        {!submitted && !resumeAsk && (
           <button className="exam-submit" onClick={() => setConfirmOpen(true)} type="button">
             <Send size={14} aria-hidden="true" />
             <span>{t('exam.submit')}</span>
@@ -553,7 +560,7 @@ export function ExamStage({
                           media.currentTime = resumeAsk.currentTime
                         }
                       }, 250)
-                      setResumeAsk(null)
+                      resolveResume(null)
                     }}
                     type="button"
                   >
@@ -563,7 +570,7 @@ export function ExamStage({
                     className="exam-confirm-secondary"
                     onClick={() => {
                       clearInprogress(exercise.id)
-                      setResumeAsk(null)
+                      resolveResume(null)
                     }}
                     type="button"
                   >
