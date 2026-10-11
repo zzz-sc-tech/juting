@@ -553,10 +553,10 @@ export function WaveformStage({
               <Repeat size={14} aria-hidden="true" />
               <span>
                 {abState === 'off'
-                  ? `${t('waveform.markA')}·${t('waveform.markB')}`
+                  ? `${t('waveform.markA')} · ${t('waveform.markB')}`
                   : abState === 'a'
-                    ? t('waveform.markB')
-                    : `${formatTime(abBRef.current - abARef.current)}`}
+                    ? `A ${formatTime(abARef.current)} · ${t('waveform.markB')}`
+                    : `${t('waveform.loopClear')} (${formatTime(abBRef.current - abARef.current)})`}
               </span>
             </button>
             <button

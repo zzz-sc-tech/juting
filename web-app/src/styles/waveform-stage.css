@@ -108,9 +108,11 @@
 
 /* 当前句字幕 */
 .waveform-subtitle {
-  align-items: baseline;
+  /* 纵向栈：头（标签+操作）/ 英文 / 译文 各占一行。
+     原为横排 flex（label+文本同行），加入操作区与译文后同行基线对齐会互相压叠 */
   display: flex;
-  gap: 10px;
+  flex-direction: column;
+  gap: 8px;
   min-width: 0;
 }
 
@@ -189,7 +191,7 @@
     "Segoe UI", ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont,
     "Microsoft YaHei UI", "PingFang SC", sans-serif;
   font-size: 13px;
-  margin: 8px 0 0;
+  margin: 0;
   padding-top: 8px;
 }
 
