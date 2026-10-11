@@ -69,9 +69,11 @@ export function ExtensiveStage({
   // 首帧定位用瞬时滚动，之后跟句用平滑滚动。
   const lyricsRef = useRef<HTMLDivElement | null>(null)
   const scrolledOnceRef = useRef(false)
+  // 只在「激活句切换」时重定位：依赖句 id 而非句对象，避免 4Hz 播放时钟整拍重跑
+  const activeLineId = activeLine?.id
   useEffect(() => {
     const container = lyricsRef.current
-    if (!container || !activeLine) {
+    if (!container || activeLineId == null) {
       return
     }
     const active = container.querySelector<HTMLElement>('[data-active="true"]')
@@ -84,7 +86,7 @@ export function ExtensiveStage({
     })
     scrolledOnceRef.current = true
     // captionsOn 关→开时容器重新挂载，需要重跑定位
-  }, [activeLine?.id, captionsOn])
+  }, [activeLineId, captionsOn])
 
   return (
     <section className="stage-board extensive-board">

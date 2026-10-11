@@ -62,7 +62,7 @@ export function TranscriptPanel({
       setCollapsedResetKey(exercise.id)
       setCollapsedIds(new Set(sections.map((section) => section.id)))
     }
-  }, [exercise.id, sections])
+  }, [collapsedResetKey, exercise.id, sections])
 
   /** 题组锚点标签（Q1–4 / Q19 / 第8–11题 / 第8题）→ 题号区间；非题组返回 null。 */
   const questionRangeOf = (label: string): [number, number] | null => {

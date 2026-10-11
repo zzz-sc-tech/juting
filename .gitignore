@@ -45,3 +45,5 @@ output/
 
 # 授权往来邮件截图含私人信息，仅本机保留
 docs/images/youzack-authorization-email.png
+
+/.video_agent/
