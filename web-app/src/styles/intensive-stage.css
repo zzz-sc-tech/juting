@@ -451,3 +451,17 @@
   font-variant-numeric: tabular-nums;
   white-space: nowrap;
 }
+
+/* 复习句列表行内的已听遍数徽标（最弱优先排序的依据可视化） */
+.line-repeat-count {
+  align-items: center;
+  border: 1px solid var(--line);
+  border-radius: var(--radius-pill);
+  color: var(--ink-3);
+  display: inline-flex;
+  font-size: 10.5px;
+  font-variant-numeric: tabular-nums;
+  min-width: 18px;
+  padding: 0 5px;
+  justify-content: center;
+}

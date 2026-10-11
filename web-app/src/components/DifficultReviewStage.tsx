@@ -3,8 +3,11 @@ import {
   ChevronLeft,
   ChevronRight,
   CircleHelp,
+  Eye,
   Pause,
   Play,
+  Repeat,
+  RotateCcw,
 } from 'lucide-react'
 import { useCallback, useEffect, type RefObject } from 'react'
 import type {
@@ -18,6 +21,8 @@ import { createLineProgress } from '../lib/progressStore'
 import { resolveApiUrl } from '../lib/apiClient'
 import { Tooltip } from './Tooltip'
 
+type ReviewOrder = 'original' | 'weakest' | 'random'
+
 type DifficultReviewStageProps = {
   exercise: ListeningExercise
   mediaRef: RefObject<HTMLMediaElement | null>
@@ -25,13 +30,24 @@ type DifficultReviewStageProps = {
   reviewLines: TranscriptLine[]
   selectedLine: TranscriptLine | null
   isPlaying: boolean
+  /** 先听后看：揭晓前原文与译文都遮住（复习检验的是耳朵不是眼睛） */
+  revealed: boolean
+  onReveal: () => void
   onBackToIntensive: () => void
   onLineSelect: (lineId: string) => void
-  onMarkMastered: (lineId: string) => void
-  onMarkUnclear: (lineId: string) => void
+  /** D：仅移出难点池（不标掌握） */
+  onRemoveFromPool: (lineId: string) => void
+  /** F：攻克 = 标掌握并移出难点池 */
+  onConquer: (lineId: string) => void
   onMoveReviewLine: (offset: number) => void
   onPlayLine: (line: TranscriptLine) => void
   onTogglePlayback: () => void
+  /** 连播 / 顺序切换 / 本句送波形 A-B */
+  autoAdvance: boolean
+  onToggleAutoAdvance: () => void
+  orderMode: ReviewOrder
+  onCycleOrder: () => void
+  onGoWaveLoop: (line: TranscriptLine) => void
 }
 
 export function DifficultReviewStage({
@@ -41,13 +57,20 @@ export function DifficultReviewStage({
   reviewLines,
   selectedLine,
   isPlaying,
+  revealed,
+  onReveal,
   onBackToIntensive,
   onLineSelect,
-  onMarkMastered,
-  onMarkUnclear,
+  onRemoveFromPool,
+  onConquer,
   onMoveReviewLine,
   onPlayLine,
   onTogglePlayback,
+  autoAdvance,
+  onToggleAutoAdvance,
+  orderMode,
+  onCycleOrder,
+  onGoWaveLoop,
 }: DifficultReviewStageProps) {
   const { t, contentLocale } = useLanguage()
   // 译文权威字段是 translations[contentLocale]（line.translation 对新数据为空），
@@ -62,15 +85,21 @@ export function DifficultReviewStage({
   const selectedProgress = selectedLine
     ? progress.lines[selectedLine.id] ?? createLineProgress()
     : createLineProgress()
+  const orderLabel = orderMode === 'weakest'
+    ? t('review.orderWeakest')
+    : orderMode === 'random'
+      ? t('review.orderRandom')
+      : t('review.orderOriginal')
 
   // 键盘快捷键
   const handleKeyDown = useCallback(
     (event: KeyboardEvent) => {
       if (!selectedLine) return
       const target = event.target instanceof HTMLElement ? event.target : null
-      const interactive = target?.closest('button, a, input, textarea, select')
-      if (interactive && (event.key === ' ' || event.key.startsWith('Arrow'))) return
-
+      // 输入类控件聚焦时字母属于打字、空格/方向属于原生行为，快捷键一概让位
+      if (target?.closest('input, textarea, select, [contenteditable="true"]')) return
+      const onActivatable = target?.closest('button, a')
+      if (onActivatable && (event.key === ' ' || event.key.startsWith('Arrow'))) return
 
       switch (event.key) {
         case 'ArrowLeft':
@@ -89,15 +118,25 @@ export function DifficultReviewStage({
             onPlayLine(selectedLine)
           }
           break
+        case 'q':
+        case 'Q':
+          event.preventDefault()
+          onPlayLine(selectedLine)
+          break
+        case 'r':
+        case 'R':
+          event.preventDefault()
+          onReveal()
+          break
         case 'd':
         case 'D':
           event.preventDefault()
-          onMarkUnclear(selectedLine.id)
+          onRemoveFromPool(selectedLine.id)
           break
         case 'f':
         case 'F':
           event.preventDefault()
-          onMarkMastered(selectedLine.id)
+          onConquer(selectedLine.id)
           break
       }
     },
@@ -107,8 +146,9 @@ export function DifficultReviewStage({
       onMoveReviewLine,
       onTogglePlayback,
       onPlayLine,
-      onMarkUnclear,
-      onMarkMastered,
+      onReveal,
+      onRemoveFromPool,
+      onConquer,
     ],
   )
 
@@ -155,11 +195,35 @@ export function DifficultReviewStage({
           <div className="media-subtitle-overlay review-subtitle-overlay">
             <div className="subtitle-topline">
               <span>{String(selectedIndex + 1).padStart(2, '0')} / {reviewLines.length}</span>
-              <span>{t('review.title')}</span>
+              <span className="subtitle-topline-right">
+                <button
+                  className={autoAdvance ? 'subtitle-chip on' : 'subtitle-chip'}
+                  onClick={onToggleAutoAdvance}
+                  type="button"
+                  aria-pressed={autoAdvance}
+                >
+                  {t('intensive.autoAdvance')}
+                </button>
+                <button
+                  className="subtitle-chip"
+                  onClick={onCycleOrder}
+                  title={t('review.orderLabel')}
+                  type="button"
+                >
+                  {orderLabel}
+                </button>
+                <span className="subtitle-repeat-count">
+                  {selectedProgress.repeatCount
+                    ? t('intensive.repeatCount', { count: selectedProgress.repeatCount })
+                    : ''}
+                </span>
+              </span>
             </div>
-            <p className="subtitle-text revealed">{selectedLine.text}</p>
-            <p className="subtitle-translation revealed">
-              {translationVisible ? translation : ' '}
+            <p className={revealed ? 'subtitle-text revealed' : 'subtitle-text'}>
+              {revealed ? selectedLine.text : ''}
+            </p>
+            <p className={revealed && translationVisible ? 'subtitle-translation revealed' : 'subtitle-translation hidden'}>
+              {revealed && translationVisible ? translation : ' '}
             </p>
           </div>
 
@@ -188,6 +252,26 @@ export function DifficultReviewStage({
                   <span>{isPlaying ? t('review.pause') : t('review.play')}</span>
                 </button>
               </Tooltip>
+              <Tooltip label={t('intensive.replaySentence')} shortcut="Q">
+                <button
+                  className="icon-button"
+                  onClick={() => onPlayLine(selectedLine)}
+                  type="button"
+                >
+                  <RotateCcw size={18} aria-hidden="true" />
+                  <span>{t('intensive.replayShort')}</span>
+                </button>
+              </Tooltip>
+              <Tooltip label={t('intensive.showTranscript')} shortcut="R">
+                <button
+                  className="icon-button reveal"
+                  onClick={onReveal}
+                  type="button"
+                >
+                  <Eye size={18} aria-hidden="true" />
+                  <span>{t('intensive.transcript')}</span>
+                </button>
+              </Tooltip>
               <Tooltip label={t('review.nextTooltip')} shortcut="→">
                 <button
                   className="icon-button"
@@ -207,21 +291,31 @@ export function DifficultReviewStage({
           <Tooltip label={t('review.removeDifficult')} shortcut="D">
             <button
               className="pill active"
-              onClick={() => onMarkUnclear(selectedLine.id)}
+              onClick={() => onRemoveFromPool(selectedLine.id)}
               type="button"
             >
               <CircleHelp size={18} aria-hidden="true" />
               {t('review.removeDifficult')}
             </button>
           </Tooltip>
-          <Tooltip label={selectedProgress.mastered ? t('review.unmarkMastered') : t('review.mastered')} shortcut="F">
+          <Tooltip label={t('review.conquer')} shortcut="F">
             <button
-              className={selectedProgress.mastered ? 'pill success' : 'pill'}
-              onClick={() => onMarkMastered(selectedLine.id)}
+              className={selectedProgress.mastered ? 'pill success' : 'pill primary'}
+              onClick={() => onConquer(selectedLine.id)}
               type="button"
             >
               <CheckCircle2 size={18} aria-hidden="true" />
-              {selectedProgress.mastered ? t('review.unmarkMastered') : t('review.mastered')}
+              {t('review.conquer')}
+            </button>
+          </Tooltip>
+          <Tooltip label={t('intensive.goWaveLoop')}>
+            <button
+              className="pill"
+              onClick={() => onGoWaveLoop(selectedLine)}
+              type="button"
+            >
+              <Repeat size={18} aria-hidden="true" />
+              {t('intensive.goWaveLoop')}
             </button>
           </Tooltip>
         </div>
@@ -257,6 +351,11 @@ export function DifficultReviewStage({
                   <span className="line-copy">{line.text}</span>
                 </button>
                 <div className="line-actions">
+                  {item.repeatCount > 0 && (
+                    <span className="line-repeat-count" title={t('intensive.repeatCount', { count: item.repeatCount })}>
+                      {item.repeatCount}
+                    </span>
+                  )}
                   {item.mastered && <span className="status-dot success" />}
                   <span className="status-dot warning" />
                 </div>

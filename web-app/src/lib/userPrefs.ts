@@ -12,6 +12,10 @@ export type UserPrefs = {
   defaultPlaybackRate: number
   /** 精听连播：本句自然播完自动进下一句 */
   intensiveAutoAdvance: boolean
+  /** 复习连播：本难句自然播完自动进下一句 */
+  reviewAutoAdvance: boolean
+  /** 复习顺序：最弱优先（按已听遍数降序）/ 原序 / 随机 */
+  reviewOrder: 'original' | 'weakest' | 'random'
 }
 
 const USER_PREFS_KEY = 'juting.web.prefs.v1'
@@ -21,6 +25,8 @@ const DEFAULT_PREFS: UserPrefs = {
   translationDefault: true,
   defaultPlaybackRate: 1,
   intensiveAutoAdvance: false,
+  reviewAutoAdvance: false,
+  reviewOrder: 'weakest',
 }
 
 export const loadUserPrefs = (): UserPrefs => {
@@ -37,6 +43,12 @@ export const loadUserPrefs = (): UserPrefs => {
         : DEFAULT_PREFS.defaultPlaybackRate,
       intensiveAutoAdvance:
         typeof parsed.intensiveAutoAdvance === 'boolean' ? parsed.intensiveAutoAdvance : DEFAULT_PREFS.intensiveAutoAdvance,
+      reviewAutoAdvance:
+        typeof parsed.reviewAutoAdvance === 'boolean' ? parsed.reviewAutoAdvance : DEFAULT_PREFS.reviewAutoAdvance,
+      reviewOrder:
+        parsed.reviewOrder === 'original' || parsed.reviewOrder === 'random' || parsed.reviewOrder === 'weakest'
+          ? parsed.reviewOrder
+          : DEFAULT_PREFS.reviewOrder,
     }
   } catch {
     return { ...DEFAULT_PREFS }

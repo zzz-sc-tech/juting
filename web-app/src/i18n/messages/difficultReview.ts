@@ -18,4 +18,9 @@ export const difficultReviewMessages = {
     'review.mastered': '已掌握',
     'review.unmarkMastered': '取消掌握',
     'review.sentenceListTitle': '难点句子',
+    'review.conquer': '攻克出池',
+    'review.orderLabel': '复习顺序',
+    'review.orderWeakest': '最弱优先',
+    'review.orderOriginal': '原序',
+    'review.orderRandom': '随机',
 }
