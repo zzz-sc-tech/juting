@@ -34,4 +34,5 @@ export const examStageMessages = {
     'exam.drillDone': '重练完成：{{correct}}/{{total}}',
     'exam.drillNext': '下一题',
     'exam.drillFinish': '完成',
+    'exam.partNotStarted': '该部分尚未开始',
 } as const

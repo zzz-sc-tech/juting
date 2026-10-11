@@ -178,6 +178,7 @@
 .waveform-subtitle-actions {
   align-items: center;
   display: flex;
+  flex-shrink: 0;
   gap: 8px;
 }
 
@@ -195,6 +196,7 @@
 .waveform-go-intensive {
   align-items: center;
   background: none;
+  white-space: nowrap;
   border: 1px solid var(--line-strong);
   border-radius: var(--radius-pill);
   color: var(--ink-2);

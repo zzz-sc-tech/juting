@@ -472,6 +472,10 @@ export function ExamStage({
                   <Lock size={12} aria-hidden="true" />
                   {t('exam.sectionLocked')}
                 </span>
+              ) : viewPartIdx > activePartIdx ? (
+                <span className="exam-window reading">
+                  {t('exam.partNotStarted')}
+                </span>
               ) : null}
             </div>
             <div className="exam-options">

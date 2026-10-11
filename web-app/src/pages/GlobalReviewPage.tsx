@@ -125,6 +125,14 @@ export function GlobalReviewPage() {
     [drill?.id, store.progressByExercise, studyLines],
   )
 
+  // 当前课已清空（全部攻克/移出）→ 自动落下一课；队列走完回落空态。
+  // 不做这个会出现「详情已加载但列表为空」假 loading 卡死。
+  useEffect(() => {
+    if (!loading && drill && reviewLines.length === 0) {
+      setCourseIdx((current) => current + 1)
+    }
+  }, [drill, loading, reviewLines.length])
+
   // 选中句：第一句未攻克难点（池内变化自动落位）
   const selectedLine = reviewLines[0] ?? null
 

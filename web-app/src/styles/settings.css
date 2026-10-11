@@ -294,6 +294,9 @@
   display: flex;
   flex-direction: column;
   gap: 16px;
+  /* 复习台是双列宽幅布局，沿用设置页窄容器会把句卡挤成竖排 */
+  max-width: 1240px;
+  width: 100%;
 }
 
 .global-review-total {
