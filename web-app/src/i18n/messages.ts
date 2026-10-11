@@ -6,10 +6,12 @@ import { difficultReviewMessages } from './messages/difficultReview'
 import { dialogueAnchorMessages } from './messages/dialogueAnchors'
 import { examStageMessages } from './messages/examStage'
 import { extensiveStageMessages } from './messages/extensiveStage'
+import { globalReviewMessages } from './messages/globalReview'
 import { intensiveStageMessages } from './messages/intensiveStage'
 import { settingsMessages } from './messages/settings'
 import { stageMessages } from './messages/studyStages'
 import { studyStatesMessages } from './messages/studyStates'
+import { vocabMessages } from './messages/vocab'
 import { waveformStageMessages } from './messages/waveformStage'
 
 // 单语（简体中文）文案表：各模块维护在 messages/ 下（每模块一张扁平键表，
@@ -23,10 +25,12 @@ const messages = {
   ...dialogueAnchorMessages,
   ...examStageMessages,
   ...extensiveStageMessages,
+  ...globalReviewMessages,
   ...intensiveStageMessages,
   ...settingsMessages,
   ...stageMessages,
   ...studyStatesMessages,
+  ...vocabMessages,
   ...waveformStageMessages,
 }
 

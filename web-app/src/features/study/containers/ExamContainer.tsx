@@ -63,6 +63,7 @@ export function ExamContainer() {
       onRestart={() => void toggleMediaPlayback({ restartAt: 0 })}
       onComplete={() => setStageCompleted('exam', true)}
       onGoIntensive={handleGoIntensive}
+      onPlayRange={(start, end) => void playMediaRange(start, end)}
     />
   )
 }

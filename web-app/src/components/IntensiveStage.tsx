@@ -55,6 +55,8 @@ type IntensiveStageProps = {
   onToggleAutoAdvance: () => void
   /** 本句送波形 A-B 循环 */
   onGoWaveLoop: (line: TranscriptLine) => void
+  /** 收藏生词（多个词用空白/逗号分隔），存入本课 vocabulary */
+  onAddVocabulary: (words: string[]) => void
 }
 
 const playbackRates = RATE_OPTIONS
@@ -91,8 +93,13 @@ export function IntensiveStage({
   autoAdvance,
   onToggleAutoAdvance,
   onGoWaveLoop,
+  onAddVocabulary,
 }: IntensiveStageProps) {
   const [ratePickerOpen, setRatePickerOpen] = useState(false)
+  // 生词收藏 popover
+  const [vocabOpen, setVocabOpen] = useState(false)
+  const [vocabInput, setVocabInput] = useState('')
+  const [vocabSaved, setVocabSaved] = useState(false)
   // 译文开关：默认开（保持既有行为），做题时不想看可以关掉
   const [translationOn, setTranslationOn] = useState(() => loadUserPrefs().translationDefault)
   const { t, contentLocale } = useLanguage()
@@ -109,6 +116,12 @@ export function IntensiveStage({
     }
     onMarkMastered(selectedLine.id)
   }, [sentenceVisible, onRevealLine, onMarkMastered, selectedLine.id])
+
+  useEffect(() => {
+    setVocabOpen(false)
+    setVocabInput('')
+    setVocabSaved(false)
+  }, [selectedLine.id])
 
   // 键盘快捷键
   const handleKeyDown = useCallback(
@@ -365,6 +378,61 @@ export function IntensiveStage({
               {t('intensive.goWaveLoop')}
             </button>
           </Tooltip>
+          <div className="vocab-anchor">
+            <button
+              className="pill"
+              onClick={() => setVocabOpen((current) => !current)}
+              type="button"
+            >
+              {t('intensive.addVocab')}
+            </button>
+            {vocabOpen && (
+              <div className="vocab-popover" role="dialog">
+                <p className="vocab-popover-context">{selectedLine.text}</p>
+                <input
+                  autoFocus
+                  className="vocab-popover-input"
+                  onChange={(event) => {
+                    setVocabInput(event.target.value)
+                    setVocabSaved(false)
+                  }}
+                  onKeyDown={(event) => {
+                    if (event.key === 'Enter') {
+                      const words = vocabInput.split(/[\s,，;；、]+/).map((w) => w.trim()).filter(Boolean)
+                      if (words.length) {
+                        onAddVocabulary(words)
+                        setVocabInput('')
+                        setVocabSaved(true)
+                      }
+                    }
+                  }}
+                  placeholder={t('vocab.placeholder')}
+                  type="text"
+                  value={vocabInput}
+                />
+                <div className="vocab-popover-actions">
+                  <button
+                    className="command-button"
+                    disabled={!vocabInput.trim()}
+                    onClick={() => {
+                      const words = vocabInput.split(/[\s,，;；、]+/).map((w) => w.trim()).filter(Boolean)
+                      if (words.length) {
+                        onAddVocabulary(words)
+                        setVocabInput('')
+                        setVocabSaved(true)
+                      }
+                    }}
+                    type="button"
+                  >
+                    {vocabSaved ? t('intensive.vocabSaved') : t('vocab.save')}
+                  </button>
+                  <button className="exam-confirm-secondary" onClick={() => setVocabOpen(false)} type="button">
+                    {t('vocab.cancel')}
+                  </button>
+                </div>
+              </div>
+            )}
+          </div>
           <Tooltip label={lineProgress.mastered ? t('intensive.undoMastered') : t('intensive.mastered')} shortcut="F">
             <button
               className={lineProgress.mastered ? 'pill success' : 'pill'}

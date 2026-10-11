@@ -554,3 +554,41 @@
   font-weight: 600;
   margin: 0;
 }
+
+/* ── 错题重练 mini 卷 ── */
+.exam-drill {
+  background: var(--surface);
+  border: 1px solid var(--line);
+  border-radius: var(--radius-lg);
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  grid-column: 1 / -1;
+  padding: 20px 24px;
+}
+
+.exam-drill-head {
+  align-items: center;
+  display: flex;
+  gap: 12px;
+  justify-content: space-between;
+}
+
+.exam-drill-nav {
+  display: flex;
+  gap: 10px;
+  justify-content: flex-end;
+}
+
+.exam-drill-summary {
+  align-items: center;
+  display: flex;
+  gap: 16px;
+  justify-content: space-between;
+}
+
+.exam-drill-summary p {
+  font-size: 15px;
+  font-weight: 600;
+  margin: 0;
+}

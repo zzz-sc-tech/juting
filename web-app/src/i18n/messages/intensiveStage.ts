@@ -23,4 +23,6 @@ export const intensiveStageMessages = {
     'intensive.autoAdvance': '连播',
     'intensive.repeatCount': '已听 {{count}} 次',
     'intensive.goWaveLoop': '去波形循环',
+    'intensive.addVocab': '+生词',
+    'intensive.vocabSaved': '已收藏',
 }

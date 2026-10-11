@@ -4,7 +4,7 @@ import { useLanguage } from '../i18n/LanguageProvider'
 
 type TopBarProps = {
   /** 当前所在导航：首页（仪表盘）或学习页；设置页不高亮任何一项。 */
-  active?: 'home' | 'study'
+  active?: 'home' | 'study' | 'review' | 'vocabulary'
 }
 
 // 本地免登录模式：顶栏 = 品牌入口 + 首页/学习切换 + 设置；语言切换在设置页。
@@ -39,6 +39,20 @@ export function TopBar({ active }: TopBarProps) {
           type="button"
         >
           {t('dashboard.nav.study')}
+        </button>
+        <button
+          className={active === 'review' ? 'topbar-nav-item active' : 'topbar-nav-item'}
+          onClick={() => navigate('/review')}
+          type="button"
+        >
+          {t('topbar.review')}
+        </button>
+        <button
+          className={active === 'vocabulary' ? 'topbar-nav-item active' : 'topbar-nav-item'}
+          onClick={() => navigate('/vocabulary')}
+          type="button"
+        >
+          {t('topbar.vocabulary')}
         </button>
       </nav>
       <div className="topbar-actions">

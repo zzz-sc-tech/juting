@@ -10,8 +10,10 @@ import {
 } from 'lucide-react'
 import type { DialogueAnchor, ExamQuestion, ListeningExercise } from '@juting/shared'
 import { useLanguage } from '../i18n/LanguageProvider'
+import type { MessageKey } from '../i18n/messages'
 import { resolveApiUrl } from '../lib/apiClient'
 import {
+  getAttempts,
   recordAttempt,
   type ExamLetter,
 } from '../lib/examHistory'
@@ -81,6 +83,8 @@ type ExamStageProps = {
   onRestart: () => void
   onComplete: () => void
   onGoIntensive: (stemLineId: string | null, fallbackStart: number | null) => void
+  /** 重练模式播放该题所属部分区间 */
+  onPlayRange: (start: number, end: number) => void
 }
 
 export function ExamStage({
@@ -94,6 +98,7 @@ export function ExamStage({
   onRestart,
   onComplete,
   onGoIntensive,
+  onPlayRange,
 }: ExamStageProps) {
   const { t } = useLanguage()
   const questions = useMemo(() => exercise.questions ?? [], [exercise.questions])
@@ -106,6 +111,10 @@ export function ExamStage({
   const [resumeAsk, setResumeAsk] = useState<{ answers: Record<number, Letter>; currentTime: number } | null>(null)
   // 最近一场成绩（交卷后展示折算分与历史对照）
   const [lastAttempt, setLastAttempt] = useState<{ score: number; total: number } | null>(null)
+  // 错题重练（mini 卷）：历次错题并集乱序，逐题开放作答
+  const [drillQueue, setDrillQueue] = useState<number[] | null>(null)
+  const [drillIdx, setDrillIdx] = useState(0)
+  const [drillAnswers, setDrillAnswers] = useState<Record<number, Letter>>({})
 
   // 中断恢复询问：仅当本课有「已作答未交卷」的暂存时弹一次
   useEffect(() => {
@@ -266,6 +275,15 @@ export function ExamStage({
       completeRef.current = false
     }
   }, [answers, exercise.answerKey, exercise.id, onComplete, questions, submitted])
+
+  const wrongUnion = useMemo(() => {
+    if (!submitted) return []
+    const seen = new Set<number>()
+    for (const attempt of getAttempts(exercise.id)) {
+      for (const n of attempt.wrong) seen.add(n)
+    }
+    return [...seen].sort((a, b) => a - b)
+  }, [exercise.id, submitted])
 
   const answeredCount = Object.keys(answers).length
   const answerKey = useMemo(() => exercise.answerKey ?? {}, [exercise.answerKey])
@@ -591,12 +609,51 @@ export function ExamStage({
                   score: Math.round((lastAttempt.score / lastAttempt.total) * SCALED_FULL * 10) / 10,
                 })}</p>
               )}
+              {wrongUnion.length > 0 && (
+                <button
+                  className="exam-retake"
+                  onClick={() => {
+                    // Fisher-Yates 乱序
+                    const queue = [...wrongUnion]
+                    for (let i = queue.length - 1; i > 0; i -= 1) {
+                      const j = Math.floor(Math.random() * (i + 1))
+                      ;[queue[i], queue[j]] = [queue[j]!, queue[i]!]
+                    }
+                    setDrillQueue(queue)
+                    setDrillIdx(0)
+                    setDrillAnswers({})
+                  }}
+                  type="button"
+                >
+                  {t('exam.wrongDrill', { count: wrongUnion.length })}
+                </button>
+              )}
               <button className="exam-retake" onClick={retake} type="button">
                 <RotateCcw size={14} aria-hidden="true" />
                 <span>{t('exam.retake')}</span>
               </button>
             </div>
           </div>
+          {drillQueue && <ExamDrill
+            answerKey={answerKey as Record<string, ExamLetter>}
+            answers={drillAnswers}
+            duration={duration}
+            drillIdx={drillIdx}
+            onAnswer={(n, letter) => {
+              setDrillAnswers((current) => ({ ...current, [n]: letter }))
+              // 末题作答后直接进小结（下一题按钮在末题禁用，没有别的前进路径）
+              if (drillQueue && drillIdx === drillQueue.length - 1) {
+                setDrillIdx(drillQueue.length)
+              }
+            }}
+            onDone={() => setDrillQueue(null)}
+            onIdxChange={setDrillIdx}
+            onPlayRange={onPlayRange}
+            parts={parts}
+            questions={questions}
+            queue={drillQueue}
+            t={t}
+          />}
           <ol className="exam-review-list">
             {timing.map((item) => {
               const mine = answers[item.question.n]
@@ -646,5 +703,117 @@ export function ExamStage({
         </>
       )}
     </section>
+  )
+}
+
+
+/** 错题重练 mini 卷：逐题开放作答，播放该题所属部分；全部答完出小结。 */
+function ExamDrill({
+  queue,
+  drillIdx,
+  answers,
+  onAnswer,
+  onIdxChange,
+  onDone,
+  onPlayRange,
+  parts,
+  questions,
+  answerKey,
+  duration,
+  t,
+}: {
+  queue: number[]
+  drillIdx: number
+  answers: Record<number, Letter>
+  onAnswer: (n: number, letter: Letter) => void
+  onIdxChange: (idx: number) => void
+  onDone: () => void
+  onPlayRange: (start: number, end: number) => void
+  parts: ExamPart[]
+  questions: ExamQuestion[]
+  answerKey: Record<string, ExamLetter>
+  duration: number
+  t: (key: MessageKey, values?: Record<string, string | number>) => string
+}) {
+  const finished = drillIdx >= queue.length
+  const correctCount = queue.filter((qn) => answers[qn] && answers[qn] === answerKey[String(qn)]).length
+  const n = finished ? queue[queue.length - 1]! : queue[drillIdx]!
+  const question = questions.find((q) => q.n === n)
+  if (!question) {
+    return null
+  }
+  const playThis = () => {
+    // 该题所属部分区间；无部分信息的课退化为整段
+    const partIdx = parts.findIndex((p) => p.items.some((idx) => questions[idx]?.n === n))
+    if (partIdx >= 0) {
+      const partEnd = parts[partIdx + 1]?.start ?? duration
+      onPlayRange(parts[partIdx]!.start, partEnd)
+    } else {
+      onPlayRange(0, duration)
+    }
+  }
+  return (
+    <div className="exam-drill">
+      <div className="exam-drill-head">
+        <strong>{t('exam.wrongDrill', { count: queue.length })}</strong>
+        <span>{finished ? '' : `${drillIdx + 1} / ${queue.length}`}</span>
+        <button className="exam-confirm-secondary" onClick={onDone} type="button">
+          {t('exam.drillQuit')}
+        </button>
+      </div>
+      {finished ? (
+        <div className="exam-drill-summary">
+          <p>{t('exam.drillDone', { correct: correctCount, total: queue.length })}</p>
+          <button className="exam-confirm-primary" onClick={onDone} type="button">
+            {t('exam.drillFinish')}
+          </button>
+        </div>
+      ) : (
+        <>
+          <div className="exam-q-audio">
+            <button className="exam-play" onClick={playThis} type="button">
+              <Play size={15} aria-hidden="true" />
+              <span>{t('exam.play')}</span>
+            </button>
+            <span className="exam-clock">Q{n}</span>
+          </div>
+          <div className="exam-options">
+            {LETTERS.map((letter) => {
+              const selected = answers[n] === letter
+              return (
+                <button
+                  className={'exam-option' + (selected ? ' selected' : '')}
+                  key={letter}
+                  onClick={() => onAnswer(n, letter)}
+                  type="button"
+                >
+                  <span className="exam-option-letter">{letter}</span>
+                  <span className="exam-option-text">{question.options[letter]}</span>
+                  {selected && <Check className="exam-option-check" size={15} aria-hidden="true" />}
+                </button>
+              )
+            })}
+          </div>
+          <div className="exam-drill-nav">
+            <button
+              className="exam-confirm-secondary"
+              disabled={drillIdx === 0}
+              onClick={() => onIdxChange(drillIdx - 1)}
+              type="button"
+            >
+              ←
+            </button>
+            <button
+              className="exam-confirm-primary"
+              disabled={drillIdx >= queue.length - 1}
+              onClick={() => onIdxChange(drillIdx + 1)}
+              type="button"
+            >
+              {t('exam.drillNext')}
+            </button>
+          </div>
+        </>
+      )}
+    </div>
   )
 }

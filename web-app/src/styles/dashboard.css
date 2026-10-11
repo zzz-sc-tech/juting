@@ -356,3 +356,26 @@
   font-variant-numeric: tabular-nums;
   white-space: nowrap;
 }
+
+/* 全局难点复习入口卡 */
+.dashboard-review-cta {
+  align-items: center;
+  background: var(--accent-soft);
+  border: none;
+  border-radius: var(--radius-md);
+  color: var(--accent-ink);
+  cursor: pointer;
+  display: flex;
+  font: inherit;
+  font-size: 13.5px;
+  font-weight: 600;
+  justify-content: space-between;
+  min-height: 42px;
+  padding: 0 14px;
+  width: 100%;
+}
+
+.dashboard-review-cta:hover {
+  background: var(--accent);
+  color: var(--bg);
+}

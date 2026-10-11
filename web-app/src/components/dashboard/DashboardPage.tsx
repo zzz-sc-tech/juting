@@ -1,4 +1,4 @@
-import { Play } from 'lucide-react'
+import { Play, ChevronRight } from 'lucide-react'
 import { useEffect, useMemo, useState } from 'react'
 import { useNavigate } from 'react-router-dom'
 import { useLanguage } from '../../i18n/LanguageProvider'
@@ -268,6 +268,16 @@ export function DashboardPage() {
               ) : (
                 <p className="dashboard-empty">{t('dashboard.examEmpty')}</p>
               )}
+            </section>
+
+            <section className="dashboard-card dashboard-review-card" aria-label={t('topbar.review')}>
+              <div className="dashboard-card-head">
+                <h2>{t('topbar.review')}</h2>
+              </div>
+              <button className="dashboard-review-cta" onClick={() => navigate('/review')} type="button">
+                {t('globalReview.reviewHere')}
+                <ChevronRight size={16} aria-hidden="true" />
+              </button>
             </section>
 
             <section className="dashboard-card dashboard-goal-card">

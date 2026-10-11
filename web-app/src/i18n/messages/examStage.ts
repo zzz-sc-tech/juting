@@ -29,4 +29,9 @@ export const examStageMessages = {
     'exam.resumeGo': '继续考试',
     'exam.resumeDrop': '重新开考',
     'exam.scaledScore': '折算约 {{score}} / 248.5 分',
+    'exam.wrongDrill': '只练错题（{{count}} 题）',
+    'exam.drillQuit': '退出重练',
+    'exam.drillDone': '重练完成：{{correct}}/{{total}}',
+    'exam.drillNext': '下一题',
+    'exam.drillFinish': '完成',
 } as const

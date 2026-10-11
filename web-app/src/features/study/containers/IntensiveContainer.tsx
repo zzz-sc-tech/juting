@@ -148,6 +148,16 @@ export function IntensiveContainer() {
       autoAdvance={autoAdvance}
       onToggleAutoAdvance={toggleAutoAdvance}
       onGoWaveLoop={goWaveLoop}
+      onAddVocabulary={(words) => {
+        if (!selectedLine) return
+        updateActiveProgress((current) => {
+          const vocabulary = { ...current.vocabulary }
+          for (const word of words) {
+            vocabulary[word] = selectedLine.text
+          }
+          return { ...current, vocabulary }
+        })
+      }}
     />
   )
 }
