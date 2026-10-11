@@ -172,7 +172,7 @@ const MATERIAL_PATTERN = new RegExp(
 )
 
 const TEXT_PATTERN =
-  /^[\s\-\u2013\u2014>*•]*(text|conversation|passage|recording|lecture|talk|section)\s+(one|two|three|four|five|six|seven|eight|nine|ten|eleven|twelve|thirteen|fourteen|fifteen|sixteen|seventeen|eighteen|nineteen|twenty|[0-9]+|[a-d])\b\s*[.:,]?\s*$/i
+  /^[\s\-\u2013\u2014>*•]*(text|conversation|passage|recording|lecture|talk|section|news report)\s+(one|two|three|four|five|six|seven|eight|nine|ten|eleven|twelve|thirteen|fourteen|fifteen|sixteen|seventeen|eighteen|nineteen|twenty|[0-9]+|[a-d])\b\s*[.:,]?\s*$/i
 
 /**
  * 指令头前缀：「Section A - Directions」「Section A (Directions)」「Section A)」「Conversation 1 - Welcome ...」——只认头部，限长防误报。
@@ -180,7 +180,7 @@ const TEXT_PATTERN =
  * （2025年6月第1套实测整批「- Conversation two.」「- Questions one to four …」）。
  */
 const TEXT_HEAD_PATTERN =
-  /^[\s\-\u2013\u2014>*•]*(text|conversation|passage|recording|lecture|talk|section)\s+(one|two|three|four|five|six|seven|eight|nine|ten|eleven|twelve|thirteen|fourteen|fifteen|sixteen|seventeen|eighteen|nineteen|twenty|[0-9]+|[a-d])\b(?:\s*[-\u2013\u2014:,)（(]\s*|\s+directions\b|\s*$)/i
+  /^[\s\-\u2013\u2014>*•]*(text|conversation|passage|recording|lecture|talk|section|news report)\s+(one|two|three|four|five|six|seven|eight|nine|ten|eleven|twelve|thirteen|fourteen|fifteen|sixteen|seventeen|eighteen|nineteen|twenty|[0-9]+|[a-d])\b(?:\s*[-\u2013\u2014:,)（(]\s*|\s+directions\b|\s*$)/i
 
 /**
  * 报头与说明段被 whisper 塞进同一行、行长超过上面限长门槛的那种：
@@ -540,7 +540,7 @@ export const extractDialogueAnchors = (
     // （「Question eight. What does …? Section B.」）——不拆开，Section B 锚点就丢了。
     // 与上面的句中 Questions 拆分同一手法：报头独立成行，时间按文本比例切分。
     const tailHeaderMatch = line.text.match(
-      /^(.+[.!?]["')]?\s+)((?:Section|Conversation|Passage|Recording|Talk|Part)\s+(?:one|two|three|four|five|[0-9]+|[a-d])\b)\s*[.,!?:\-–—]*$/i,
+      /^(.+[.!?]["')]?\s+)((?:Section|Conversation|Passage|Recording|Talk|News Report|Part)\s+(?:one|two|three|four|five|[0-9]+|[a-d])\b)\s*[.,!?:\-–—]*$/i,
     )
     if (tailHeaderMatch && tailHeaderMatch[1].trim().length >= 10) {
       const span = Math.max(0, line.end - line.start)

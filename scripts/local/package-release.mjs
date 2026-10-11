@@ -194,20 +194,14 @@ if (only === 'all' || only === 'lite') {
 // 仍需大量人工校准，单机学习用户用不到；需要制课 ASR 时管理后台可一键在线安装
 // 引擎（backend 安装器）。历史带引擎的打包方式见 git（v0.4.2 之前）。
 if (only === 'all' || only === 'full') {
-    log('复制六级预设…');
+    log('复制预设（六级 + 四级）…');
     copyInto('presets/cet6');
+    if (fs.existsSync(path.join(repositoryRoot, 'presets/cet4/seed.json'))) {
+        copyInto('presets/cet4');
+    }
     log('压缩完整版…');
     artifacts.push(compress(`juting-v${version}-win-full.7z`, stage));
 }
-if (only === 'all' || only === 'cet6' || only === 'full') {
-    // 六级课程包：独立暂存，压缩目录名必须是 presets，
-    // 这样用户解压到句听安装目录根正好落成 presets/cet6（自动导入的前提）。
-    const cet6Stage = path.join(stageRoot, 'presets');
-    copyDirFiltered(path.join(repositoryRoot, 'presets'), cet6Stage);
-    log('压缩六级课程包…');
-    artifacts.push(compress(`juting-v${version}-cet6-pack.7z`, cet6Stage));
-}
-
 // ── 5. 校验和（与已有文件按包名合并，支持分次 --only 打包不丢账）──
 const sumsPath = path.join(outDir, 'SHA256SUMS.txt');
 const existingSums = {};
