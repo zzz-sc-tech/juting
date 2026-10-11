@@ -183,6 +183,7 @@
 
 .icon-button {
   align-items: center;
+  white-space: nowrap;
   background: transparent;
   border: 1px solid var(--line-strong);
   border-radius: var(--radius-md);

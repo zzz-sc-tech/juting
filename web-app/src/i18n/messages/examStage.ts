@@ -15,7 +15,7 @@ export const examStageMessages = {
     'exam.pause': '暂停',
     'exam.navigator': '题号导航',
     'exam.scoreLine': '得分 {{score}}/{{total}}',
-    'exam.scoreSub': '错 {{wrong}} 题 · 未答 {{unanswered}} 题',
+    'exam.scoreSub': '答错 {{wrong}} 题 · 未答 {{unanswered}} 题',
     'exam.yourAnswer': '你的答案 {{answer}}',
     'exam.correctAnswer': '正确答案 {{answer}}',
     'exam.goListen': '去句听',

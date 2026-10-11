@@ -612,7 +612,7 @@ export function ExamStage({
             <div className="exam-score-side">
               <p className="exam-score-line">{t('exam.scoreLine', { score, total: questions.length })}</p>
               <p className="exam-score-sub">{t('exam.scoreSub', {
-                wrong: questions.length - score,
+                wrong: answeredCount - score,
                 unanswered: questions.length - answeredCount,
               })}</p>
               {lastAttempt && (
