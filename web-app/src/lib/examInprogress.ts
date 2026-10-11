@@ -17,7 +17,15 @@ export const getInprogress = (exerciseId: number): ExamInprogress | null => {
     const raw = localStorage.getItem(KEY)
     const all = raw ? (JSON.parse(raw) as Record<string, ExamInprogress>) : {}
     const state = all[String(exerciseId)]
-    return state && state.answers && typeof state.currentTime === 'number' && Object.keys(state.answers).length > 0
+    // answers 必须是纯对象且值为合法字母——字符串等畸形形态会让恢复层
+    // 把垃圾数据灌进作答状态
+    const answersOk =
+      state &&
+      typeof state.answers === 'object' &&
+      !Array.isArray(state.answers) &&
+      Object.values(state.answers).every((v) => v === 'A' || v === 'B' || v === 'C' || v === 'D') &&
+      Object.keys(state.answers).length > 0
+    return answersOk && typeof state.currentTime === 'number' && Number.isFinite(state.currentTime)
       ? state
       : null
   } catch {

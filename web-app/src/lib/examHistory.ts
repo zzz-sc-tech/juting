@@ -26,7 +26,18 @@ const loadAll = (): Record<string, ExamAttempt[]> => {
   try {
     const raw = localStorage.getItem(KEY)
     const parsed = raw ? (JSON.parse(raw) as Record<string, ExamAttempt[]>) : {}
-    return parsed && typeof parsed === 'object' ? parsed : {}
+    if (!parsed || typeof parsed !== 'object') {
+      return {}
+    }
+    // 逐条校验：畸形条目（对象/字符串等非数组形态）一律视为空，
+    // 否则 getAttempts 的 for...of 会在结果页抛 not-iterable 白屏
+    const safe: Record<string, ExamAttempt[]> = {}
+    for (const [exerciseId, attempts] of Object.entries(parsed)) {
+      if (Array.isArray(attempts)) {
+        safe[exerciseId] = attempts
+      }
+    }
+    return safe
   } catch {
     return {}
   }
