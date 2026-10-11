@@ -1,7 +1,7 @@
 {
  "preset": "cet6",
  "version": "20261011.2",
- "generatedAt": "2026-10-11T01:40:41.005Z",
+ "generatedAt": "2026-10-11T02:02:17.561Z",
  "group": {
   "id": 8,
   "name": "英语六级真题",
@@ -57104,14 +57104,14 @@
      "id": "l42",
      "start": 238.51,
      "end": 241.25,
-     "text": "W: Have you given more thought to studying law?",
+     "text": "M: Have you given more thought to studying law?",
      "translation": "- 你学法律的事考虑得更进一步了吗？"
     },
     {
      "id": "l43",
      "start": 241.25,
      "end": 243.5,
-     "text": "M: I've been thinking about it a lot.",
+     "text": "W: I've been thinking about it a lot.",
      "translation": "- 我一直在想这件事。"
     },
     {
