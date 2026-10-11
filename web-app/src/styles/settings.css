@@ -290,11 +290,12 @@
 }
 
 /* ── 全局难点复习页 ── */
-.global-review-container {
+/* 双类选择器：压过任何对 .settings-container 的单类覆盖（含主题文件） */
+.settings-container.global-review-container {
   display: flex;
   flex-direction: column;
   gap: 16px;
-  /* 复习台是双列宽幅布局，沿用设置页窄容器会把句卡挤成竖排 */
+  /* 复习台是双列宽幅布局，沿用设置页 560px 窄容器会把句卡挤成竖排 */
   max-width: 1240px;
   width: 100%;
 }
