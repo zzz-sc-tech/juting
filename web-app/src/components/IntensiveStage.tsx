@@ -14,6 +14,7 @@ import {
 } from 'lucide-react'
 import { useCallback, useEffect, useState, type RefObject } from 'react'
 import { Tooltip } from './Tooltip'
+import { DictationPanel } from './DictationPanel'
 import { DialogueAnchorBar } from './DialogueAnchorBar'
 import type {
   DialogueAnchor,
@@ -96,6 +97,8 @@ export function IntensiveStage({
   onAddVocabulary,
 }: IntensiveStageProps) {
   const [ratePickerOpen, setRatePickerOpen] = useState(false)
+  // 听写模式：开启后字幕区被听写面板取代（强制用耳朵），跨句保持
+  const [dictationOn, setDictationOn] = useState(false)
   // 生词收藏 popover
   const [vocabOpen, setVocabOpen] = useState(false)
   const [vocabInput, setVocabInput] = useState('')
@@ -236,6 +239,14 @@ export function IntensiveStage({
                 >
                   {t('intensive.translationToggle')}
                 </button>
+                <button
+                  className={dictationOn ? 'subtitle-chip on' : 'subtitle-chip'}
+                  onClick={() => setDictationOn((current) => !current)}
+                  type="button"
+                  aria-pressed={dictationOn}
+                >
+                  {t('intensive.dictation')}
+                </button>
                 <span className="subtitle-repeat-count">
                   {lineProgress.repeatCount
                     ? t('intensive.repeatCount', { count: lineProgress.repeatCount })
@@ -244,12 +255,24 @@ export function IntensiveStage({
                 <span>{formatLineDuration(selectedLine.start, selectedLine.end)}</span>
               </span>
             </div>
-            <p className={sentenceVisible ? 'subtitle-text revealed' : 'subtitle-text'}>
-              {sentenceVisible ? selectedLine.text : ''}
-            </p>
-            <p className={sentenceVisible ? 'subtitle-translation revealed' : 'subtitle-translation hidden'}>
-              {translationVisible ? resolvedTranslation : ' '}
-            </p>
+            {!dictationOn && (
+              <p className={sentenceVisible ? 'subtitle-text revealed' : 'subtitle-text'}>
+                {sentenceVisible ? selectedLine.text : ''}
+              </p>
+            )}
+            {dictationOn ? (
+              <DictationPanel
+                key={selectedLine.id}
+                line={selectedLine}
+                onPlayLine={onPlayLine}
+                onAddVocabulary={onAddVocabulary}
+                onMarkUnclear={onMarkUnclear}
+              />
+            ) : (
+              <p className={sentenceVisible ? 'subtitle-translation revealed' : 'subtitle-translation hidden'}>
+                {translationVisible ? resolvedTranslation : ' '}
+              </p>
+            )}
           </div>
 
           <div className="media-overlay-controls" aria-label={t('intensive.controlsLabel')}>
