@@ -24,4 +24,5 @@ export const courseMapMessages = {
     'courseMap.resetProgress': '重置进度',
     'courseMap.resetConfirm': '确认重置？',
     'courseMap.markDoneFailed': '获取课程数据失败，请稍后重试。',
+    'courseMap.examLastScore': '最近 {{score}}/25',
 }

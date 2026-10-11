@@ -2,6 +2,7 @@ import { Play } from 'lucide-react'
 import { useEffect, useMemo, useState } from 'react'
 import { useNavigate } from 'react-router-dom'
 import { useLanguage } from '../../i18n/LanguageProvider'
+import { getLatestByCourse } from '../../lib/examHistory'
 import { useCatalog } from '../../hooks/useCatalog'
 import { useCategoryExercises } from '../../hooks/useCategoryExercises'
 import {
@@ -118,6 +119,23 @@ export function DashboardPage() {
     return courseProgressList.find((entry) => entry.exercise.id === store.activeExerciseId) ?? null
   }, [courseProgressList, store.activeExerciseId])
 
+  // 模拟实战成绩档案：近 10 场平均 / 累计场数 / 最近一场
+  const examStats = useMemo(() => {
+    const latestByCourse = getLatestByCourse()
+    const entries = Object.entries(latestByCourse)
+      .map(([exerciseId, attempt]) => {
+        const exercise = allExercises.find((item) => item.id === Number(exerciseId))
+        return exercise ? { exerciseId: Number(exerciseId), title: exercise.title, attempt } : null
+      })
+      .filter((entry): entry is NonNullable<typeof entry> => entry !== null)
+      .sort((left, right) => right.attempt.date.localeCompare(left.attempt.date))
+    const recent = entries.slice(0, 10)
+    const avg = recent.length
+      ? Math.round((recent.reduce((sum, entry) => sum + entry.attempt.score, 0) / recent.length) * 10) / 10
+      : 0
+    return { entries, avg, count: entries.length, last: entries[0] ?? null }
+  }, [allExercises])
+
   const chart = useMemo(() => {
     const dayMs = 24 * 60 * 60 * 1000
     const today = new Date()
@@ -218,6 +236,40 @@ export function DashboardPage() {
           </div>
 
           <aside className="dashboard-side">
+            <section className="dashboard-card dashboard-exam-card" aria-label={t('dashboard.examCardTitle')}>
+              <div className="dashboard-card-head">
+                <h2>{t('dashboard.examCardTitle')}</h2>
+                {examStats.count > 0 && (
+                  <span className="dashboard-card-subtitle">
+                    {t('dashboard.examAvg', { avg: examStats.avg })} · {t('dashboard.examCount', { count: examStats.count })}
+                  </span>
+                )}
+              </div>
+              {examStats.entries.length > 0 ? (
+                <ul className="dashboard-exam-list">
+                  {examStats.entries.slice(0, 5).map((entry) => (
+                    <li key={entry.exerciseId}>
+                      <button
+                        onClick={() => navigate(`/courses/1/chapters/${entry.exerciseId}?stage=exam`)}
+                        type="button"
+                      >
+                        <span className="dashboard-course-title">{entry.title}</span>
+                        <span className="dashboard-exam-bar">
+                          <span
+                            className="dashboard-exam-bar-fill"
+                            style={{ width: `${Math.round((entry.attempt.score / entry.attempt.total) * 100)}%` }}
+                          />
+                        </span>
+                        <span className="dashboard-exam-score">{entry.attempt.score}/{entry.attempt.total}</span>
+                      </button>
+                    </li>
+                  ))}
+                </ul>
+              ) : (
+                <p className="dashboard-empty">{t('dashboard.examEmpty')}</p>
+              )}
+            </section>
+
             <section className="dashboard-card dashboard-goal-card">
               <div className="dashboard-card-head">
                 <h2>{t('dashboard.goal.title')}</h2>

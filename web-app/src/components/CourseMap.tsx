@@ -5,6 +5,7 @@ import type {
   ExerciseCategory,
   MaterialCategory,
 } from '@juting/shared'
+import { getLatestByCourse } from '../lib/examHistory'
 import { useLanguage } from '../i18n/LanguageProvider'
 import type {
   ChapterProgressSummary,
@@ -47,6 +48,8 @@ export function CourseMap({
   onMarkExerciseDone,
   onResetExerciseProgress,
 }: CourseMapProps) {
+  // 模拟实战最近分角标（每行一条，读取 localStorage 是廉价同步操作）
+  const latestExamScores = getLatestByCourse()
   const { t } = useLanguage()
   // 章节按学习状态三分类：进行中 → 未开始 → 已完成（组内保持时间顺序）。
   // 做一半的排最前方便续学；完成态沉底归档。
@@ -204,6 +207,13 @@ export function CourseMap({
                   <span className="quest-badge">{index + 1}</span>
                   <span className="exercise-main">
                     <span className="exercise-title">{exercise.title}</span>
+                    {latestExamScores[exercise.id] && (
+                      <span className="exercise-exam-badge">
+                        {t('courseMap.examLastScore', {
+                          score: latestExamScores[exercise.id]!.score,
+                        })}
+                      </span>
+                    )}
                   </span>
                   <span
                     aria-hidden="true"

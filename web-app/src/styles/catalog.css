@@ -549,3 +549,16 @@
 .chapter-menu button.danger {
   color: var(--danger);
 }
+
+/* 章节行「最近 X/25」模拟实战角标 */
+.exercise-exam-badge {
+  border: 1px solid var(--line-strong);
+  border-radius: var(--radius-pill);
+  color: var(--ink-3);
+  display: inline-block;
+  font-size: 10.5px;
+  font-variant-numeric: tabular-nums;
+  margin-left: 8px;
+  padding: 0 7px;
+  white-space: nowrap;
+}

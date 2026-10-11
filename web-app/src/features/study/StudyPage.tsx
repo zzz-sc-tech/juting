@@ -29,9 +29,14 @@ export function StudyPage() {
 }
 
 function StudyPlaybackScope() {
-  const { progress } = useStudySession()
+  const { progress, studyStage } = useStudySession()
   return (
-    <MediaPlaybackProvider playbackRate={progress?.playbackRate ?? loadUserPrefs().defaultPlaybackRate}>
+    <MediaPlaybackProvider
+      playbackRate={
+        // 考试阶段强制原速：课程倍速是练习偏好，真题语速是硬约束
+        studyStage === 'exam' ? 1 : progress?.playbackRate ?? loadUserPrefs().defaultPlaybackRate
+      }
+    >
       <StudyLayout />
     </MediaPlaybackProvider>
   )

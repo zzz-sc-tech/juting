@@ -474,3 +474,83 @@
   background: var(--accent);
   color: var(--bg);
 }
+
+/* ── 交卷确认 / 中断恢复询问层 ── */
+.exam-confirm-backdrop {
+  align-items: center;
+  background: rgba(29, 27, 22, 0.32);
+  display: flex;
+  inset: 0;
+  justify-content: center;
+  position: fixed;
+  z-index: 80;
+}
+
+.exam-confirm-card {
+  background: var(--surface);
+  border: 1px solid var(--line);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-float);
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  max-width: 340px;
+  padding: 22px 24px;
+  width: calc(100% - 48px);
+}
+
+.exam-confirm-card strong {
+  font-size: 15px;
+}
+
+.exam-confirm-card p {
+  color: var(--ink-2);
+  font-size: 13px;
+  line-height: 1.6;
+  margin: 0;
+}
+
+.exam-confirm-actions {
+  display: flex;
+  gap: 10px;
+  margin-top: 4px;
+}
+
+.exam-confirm-primary {
+  background: var(--ink);
+  border: none;
+  border-radius: var(--radius-pill);
+  color: var(--bg);
+  cursor: pointer;
+  flex: 1;
+  font-size: 13px;
+  min-height: 38px;
+}
+
+.exam-confirm-primary:hover {
+  background: var(--accent);
+}
+
+.exam-confirm-secondary {
+  background: none;
+  border: 1px solid var(--line-strong);
+  border-radius: var(--radius-pill);
+  color: var(--ink-2);
+  cursor: pointer;
+  flex: 1;
+  font-size: 13px;
+  min-height: 38px;
+}
+
+.exam-confirm-secondary:hover {
+  border-color: var(--accent);
+  color: var(--accent-ink);
+}
+
+/* 折算分 */
+.exam-scaled {
+  color: var(--accent-ink);
+  font-size: 13px;
+  font-weight: 600;
+  margin: 0;
+}

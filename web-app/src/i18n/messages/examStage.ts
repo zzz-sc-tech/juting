@@ -20,4 +20,13 @@ export const examStageMessages = {
     'exam.correctAnswer': '正确答案 {{answer}}',
     'exam.goListen': '去句听',
     'exam.retake': '再考一次',
+    'exam.confirmTitle': '交卷',
+    'exam.confirmBody': '已答 {{answered}} / {{total}} 题，未答 {{unanswered}} 题。',
+    'exam.confirmOk': '确定交卷',
+    'exam.confirmCancel': '继续作答',
+    'exam.resumeTitle': '有一场进行中的考试',
+    'exam.resumeHint': '已答 {{count}} 题 · 停在 {{time}}',
+    'exam.resumeGo': '继续考试',
+    'exam.resumeDrop': '重新开考',
+    'exam.scaledScore': '折算约 {{score}} / 248.5 分',
 } as const

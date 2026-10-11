@@ -306,3 +306,53 @@
     flex-direction: column;
   }
 }
+
+/* 模拟实战成绩卡 */
+.dashboard-exam-list {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.dashboard-exam-list button {
+  align-items: center;
+  background: none;
+  border: 0;
+  cursor: pointer;
+  display: grid;
+  font: inherit;
+  gap: 4px 10px;
+  grid-template-columns: minmax(0, 1fr) 72px auto;
+  padding: 4px 6px;
+  text-align: left;
+  width: 100%;
+}
+
+.dashboard-exam-list button:hover .dashboard-course-title {
+  color: var(--accent);
+}
+
+.dashboard-exam-bar {
+  background: var(--bg-sunken);
+  border-radius: var(--radius-pill);
+  display: block;
+  height: 5px;
+  overflow: hidden;
+}
+
+.dashboard-exam-bar-fill {
+  background: var(--accent);
+  border-radius: var(--radius-pill);
+  display: block;
+  height: 100%;
+}
+
+.dashboard-exam-score {
+  color: var(--ink-2);
+  font-size: 12.5px;
+  font-variant-numeric: tabular-nums;
+  white-space: nowrap;
+}

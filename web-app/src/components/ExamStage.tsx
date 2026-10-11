@@ -11,10 +11,21 @@ import {
 import type { DialogueAnchor, ExamQuestion, ListeningExercise } from '@juting/shared'
 import { useLanguage } from '../i18n/LanguageProvider'
 import { resolveApiUrl } from '../lib/apiClient'
+import {
+  recordAttempt,
+  type ExamLetter,
+} from '../lib/examHistory'
+import {
+  clearInprogress,
+  getInprogress,
+  saveInprogress,
+} from '../lib/examInprogress'
 
 // 模拟实战舞台：整卷听力连播，按「听力部分」开窗作答，交卷评分，
 // 错题一键跳回句听。状态全部组件本地——离开本舞台（切阶段/换课）即视为
 // 放弃本场考试，回来重新开始（容器用 key=exercise.id 保证换课重置）。
+// 例外：已作答且未交卷的进度会按课程暂存（防手滑毁掉 25 分钟），回到
+// 考试页时询问「继续 / 重新开考」。
 //
 // 作答窗口模型（部分粒度，2026-10-11 用户裁定）：
 // - 听力部分 = Conversation/Passage/Recording N（锚点 kind=text）；
@@ -26,6 +37,9 @@ import { resolveApiUrl } from '../lib/apiClient'
 
 const LETTERS = ['A', 'B', 'C', 'D'] as const
 type Letter = (typeof LETTERS)[number]
+
+// 六级听力卷面折算：25 题 / 满分 248.5（线性近似，展示用）
+const SCALED_FULL = 248.5
 
 // 锚点标签「Q1–4 / Q19 / 第8–11题」→ 题号区间（题干行缺失时的兜底定位）
 const questionRangeOfLabel = (label: string): [number, number] | null => {
@@ -86,6 +100,21 @@ export function ExamStage({
   const [answers, setAnswers] = useState<Record<number, Letter>>({})
   const [submitted, setSubmitted] = useState(false)
   const [viewIdx, setViewIdx] = useState(0)
+  // 交卷确认层（显示未答数，防手滑毁掉整场）
+  const [confirmOpen, setConfirmOpen] = useState(false)
+  // 中断恢复询问层
+  const [resumeAsk, setResumeAsk] = useState<{ answers: Record<number, Letter>; currentTime: number } | null>(null)
+  // 最近一场成绩（交卷后展示折算分与历史对照）
+  const [lastAttempt, setLastAttempt] = useState<{ score: number; total: number } | null>(null)
+
+  // 中断恢复询问：仅当本课有「已作答未交卷」的暂存时弹一次
+  useEffect(() => {
+    const saved = getInprogress(exercise.id)
+    if (saved) {
+      setResumeAsk({ answers: saved.answers as Record<number, Letter>, currentTime: saved.currentTime })
+    }
+    // key=exercise.id 保证换课重挂，这里只看挂载时
+  }, [exercise.id])
 
   // 每题的时序锚：题干行（首选）或覆盖该题号的锚点块（兜底）。
   const timing = useMemo(() => {
@@ -143,7 +172,7 @@ export function ExamStage({
     return [...byStart.values()].sort((a, b) => a.start - b.start)
   }, [dialogueAnchors, timing])
 
-  // 当前音频所处的部分；正被播报题干的题（矩阵上的“正在读”标记）
+  // 当前音频所处的部分；正被播报题干的题（矩阵上的「正在读」标记）
   const activePartIdx = useMemo(() => {
     let idx = -1
     for (let i = 0; i < parts.length; i += 1) {
@@ -184,17 +213,59 @@ export function ExamStage({
     }
   }, [currentTime, duration, isPlaying, submitted])
 
-  // 交卷（含播完自然收卷）只通知一次
+  // 进行中作答暂存（800ms 防抖）：答案 + 播放位置；交卷即清
+  useEffect(() => {
+    if (submitted || Object.keys(answers).length === 0) {
+      return
+    }
+    const timer = window.setTimeout(() => {
+      saveInprogress(exercise.id, { answers, currentTime, savedAt: Date.now() })
+    }, 800)
+    return () => window.clearTimeout(timer)
+  }, [answers, currentTime, exercise.id, submitted])
+
+  // 交卷后自动滚到第一条错题（无错题则滚回顶部）
+  useEffect(() => {
+    if (!submitted) return
+    const timer = window.setTimeout(() => {
+      const firstMiss = document.querySelector('.exam-review-row.miss')
+      ;(firstMiss ?? document.querySelector('.exam-score-card'))?.scrollIntoView({ block: 'start' })
+    }, 120)
+    return () => window.clearTimeout(timer)
+  }, [submitted])
+
+  // 交卷（含播完自然收卷）只通知一次 + 记入成绩档案 + 清暂存
   const completeRef = useRef(false)
   useEffect(() => {
     if (submitted && !completeRef.current) {
       completeRef.current = true
+      clearInprogress(exercise.id)
+      const answerKey = exercise.answerKey ?? {}
+      const wrong: number[] = []
+      let unanswered = 0
+      for (const q of questions) {
+        const mine = answers[q.n]
+        const correct = answerKey[String(q.n)] as ExamLetter | undefined
+        if (!mine) {
+          unanswered += 1
+          wrong.push(q.n)
+        } else if (mine !== correct) {
+          wrong.push(q.n)
+        }
+      }
+      const attempt = recordAttempt(exercise.id, {
+        score: questions.length - wrong.length,
+        total: questions.length,
+        wrong,
+        unanswered,
+      })
+      setLastAttempt({ score: attempt.score, total: attempt.total })
       onComplete()
     }
     if (!submitted) {
       completeRef.current = false
     }
-  }, [onComplete, submitted])
+  }, [answers, exercise.answerKey, exercise.id, onComplete, questions, submitted])
 
   const answeredCount = Object.keys(answers).length
   const answerKey = useMemo(() => exercise.answerKey ?? {}, [exercise.answerKey])
@@ -205,6 +276,64 @@ export function ExamStage({
       ).length,
     [answerKey, answers],
   )
+  // 历史场数在仪表盘分数曲线展示；本页只展示本场折算分
+
+  // 键盘作答：A-D/1-4 选当前题、←/→ 移动视图、回车走确认。
+  // 可作答判定经 answerableRef 读取最新值——若放进 effect 依赖，parts/
+  // activePartIdx 每次更新都会重挂监听器；闭包过期则会出现「界面显示
+  // 可作答但按键无效」的死键（本地实测踩过）。
+  const timingRef = useRef(timing)
+  timingRef.current = timing
+  const keyboardStateRef = useRef({ viewIdx, answers, submitted, resumeAsk, activePartIdx })
+  keyboardStateRef.current = { viewIdx, answers, submitted, resumeAsk, activePartIdx }
+  const answerableForRef = (idx: number) => {
+    const state = keyboardStateRef.current
+    if (state.submitted || state.resumeAsk) return false
+    if (parts.length === 0) return true
+    const partIdx = parts.findIndex((part) => part.items.includes(idx))
+    return partIdx === state.activePartIdx && state.activePartIdx >= 0
+  }
+  useEffect(() => {
+    if (submitted || resumeAsk) {
+      return
+    }
+    const onKeyDown = (event: KeyboardEvent) => {
+      const target = event.target instanceof HTMLElement ? event.target : null
+      if (target?.closest('input, textarea, select, [contenteditable="true"]')) return
+      const letterByValue: Record<string, Letter> = { a: 'A', b: 'B', c: 'C', d: 'D' }
+      const key = event.key.toLowerCase()
+      let letter: Letter | null = letterByValue[key] ?? null
+      if (!letter && ['1', '2', '3', '4'].includes(key)) {
+        letter = LETTERS[Number(key) - 1]
+      }
+      const state = keyboardStateRef.current
+      const currentTiming = timingRef.current
+      if (letter) {
+        const question = currentTiming[state.viewIdx]?.question
+        if (question && answerableForRef(state.viewIdx)) {
+          event.preventDefault()
+          setAnswers((current) => ({ ...current, [question.n]: letter! }))
+        }
+        return
+      }
+      if (event.key === 'ArrowLeft' || event.key === 'ArrowRight') {
+        const delta = event.key === 'ArrowLeft' ? -1 : 1
+        const next = Math.min(Math.max(state.viewIdx + delta, 0), currentTiming.length - 1)
+        if (next !== state.viewIdx) {
+          event.preventDefault()
+          setViewIdx(next)
+        }
+        return
+      }
+      if (event.key === 'Enter' && Object.keys(state.answers).length > 0) {
+        event.preventDefault()
+        setConfirmOpen(true)
+      }
+    }
+    window.addEventListener('keydown', onKeyDown)
+    return () => window.removeEventListener('keydown', onKeyDown)
+    // submitted/resumeAsk 变化时重挂（暂停/恢复键盘）；其余状态走 ref 读取
+  }, [submitted, resumeAsk, timing, parts])
 
   if (questions.length === 0) {
     return (
@@ -220,7 +349,7 @@ export function ExamStage({
   // 无部分锚点的课程退化为整卷开放。
   const inOpenPart =
     parts.length === 0 ? true : viewPartIdx === activePartIdx && activePartIdx >= 0
-  const answerable = !submitted && inOpenPart
+  const answerable = !submitted && !resumeAsk && inOpenPart
   const locked = (idx: number) => {
     if (submitted) return true
     if (parts.length === 0) return false
@@ -258,7 +387,13 @@ export function ExamStage({
     setAnswers({})
     setSubmitted(false)
     setViewIdx(0)
+    setLastAttempt(null)
     onRestart()
+  }
+
+  const submitExam = () => {
+    setConfirmOpen(false)
+    setSubmitted(true)
   }
 
   return (
@@ -285,7 +420,7 @@ export function ExamStage({
           total: questions.length,
         })}</div>
         {!submitted && (
-          <button className="exam-submit" onClick={() => setSubmitted(true)} type="button">
+          <button className="exam-submit" onClick={() => setConfirmOpen(true)} type="button">
             <Send size={14} aria-hidden="true" />
             <span>{t('exam.submit')}</span>
           </button>
@@ -375,9 +510,71 @@ export function ExamStage({
               )
             })}
           </nav>
+
+          {resumeAsk && (
+            <div className="exam-confirm-backdrop" role="dialog" aria-modal="true">
+              <div className="exam-confirm-card">
+                <strong>{t('exam.resumeTitle')}</strong>
+                <p>{t('exam.resumeHint', {
+                  count: Object.keys(resumeAsk.answers).length,
+                  time: formatClock(resumeAsk.currentTime),
+                })}</p>
+                <div className="exam-confirm-actions">
+                  <button
+                    className="exam-confirm-primary"
+                    onClick={() => {
+                      setAnswers(resumeAsk.answers)
+                      // 恢复播放位置：媒体元素挂载后 seek
+                      window.setTimeout(() => {
+                        const media = mediaRef.current
+                        if (media && Number.isFinite(resumeAsk.currentTime)) {
+                          media.currentTime = resumeAsk.currentTime
+                        }
+                      }, 250)
+                      setResumeAsk(null)
+                    }}
+                    type="button"
+                  >
+                    {t('exam.resumeGo')}
+                  </button>
+                  <button
+                    className="exam-confirm-secondary"
+                    onClick={() => {
+                      clearInprogress(exercise.id)
+                      setResumeAsk(null)
+                    }}
+                    type="button"
+                  >
+                    {t('exam.resumeDrop')}
+                  </button>
+                </div>
+              </div>
+            </div>
+          )}
+
+          {confirmOpen && (
+            <div className="exam-confirm-backdrop" role="dialog" aria-modal="true">
+              <div className="exam-confirm-card">
+                <strong>{t('exam.confirmTitle')}</strong>
+                <p>{t('exam.confirmBody', {
+                  answered: answeredCount,
+                  total: questions.length,
+                  unanswered: questions.length - answeredCount,
+                })}</p>
+                <div className="exam-confirm-actions">
+                  <button className="exam-confirm-primary" onClick={submitExam} type="button">
+                    {t('exam.confirmOk')}
+                  </button>
+                  <button className="exam-confirm-secondary" onClick={() => setConfirmOpen(false)} type="button">
+                    {t('exam.confirmCancel')}
+                  </button>
+                </div>
+              </div>
+            </div>
+          )}
         </>
       ) : (
-        <div className="exam-body exam-result-body">
+        <>
           <div className="exam-score-card">
             <div className="exam-score-ring">
               <span className="exam-score-value">{score}</span>
@@ -389,6 +586,11 @@ export function ExamStage({
                 wrong: questions.length - score,
                 unanswered: questions.length - answeredCount,
               })}</p>
+              {lastAttempt && (
+                <p className="exam-scaled">{t('exam.scaledScore', {
+                  score: Math.round((lastAttempt.score / lastAttempt.total) * SCALED_FULL * 10) / 10,
+                })}</p>
+              )}
               <button className="exam-retake" onClick={retake} type="button">
                 <RotateCcw size={14} aria-hidden="true" />
                 <span>{t('exam.retake')}</span>
@@ -441,7 +643,7 @@ export function ExamStage({
               )
             })}
           </ol>
-        </div>
+        </>
       )}
     </section>
   )
