@@ -9,6 +9,7 @@ import {
   Gauge,
   Pause,
   Play,
+  Repeat,
   RotateCcw,
 } from 'lucide-react'
 import { useCallback, useEffect, useState, type RefObject } from 'react'
@@ -49,6 +50,11 @@ type IntensiveStageProps = {
   onMarkUnclear: (lineId: string) => void
   onMarkMastered: (lineId: string) => void
   onLineSelect: (lineId: string) => void
+  /** 连播：本句自然播完自动进下一句 */
+  autoAdvance: boolean
+  onToggleAutoAdvance: () => void
+  /** 本句送波形 A-B 循环 */
+  onGoWaveLoop: (line: TranscriptLine) => void
 }
 
 const playbackRates = RATE_OPTIONS
@@ -82,6 +88,9 @@ export function IntensiveStage({
   onMarkUnclear,
   onMarkMastered,
   onLineSelect,
+  autoAdvance,
+  onToggleAutoAdvance,
+  onGoWaveLoop,
 }: IntensiveStageProps) {
   const [ratePickerOpen, setRatePickerOpen] = useState(false)
   // 译文开关：默认开（保持既有行为），做题时不想看可以关掉
@@ -107,10 +116,12 @@ export function IntensiveStage({
       // 如果 Popover 打开，不响应快捷键
       if (ratePickerOpen) return
 
-      // 焦点在按钮/输入框上时，空格与方向键应保留原生行为
       const target = event.target instanceof HTMLElement ? event.target : null
-      const interactive = target?.closest('button, a, input, textarea, select')
-      if (interactive && (event.key === ' ' || event.key.startsWith('Arrow'))) return
+      // 输入类控件聚焦时字母属于打字、空格/方向属于原生行为，快捷键一概让位
+      if (target?.closest('input, textarea, select, [contenteditable="true"]')) return
+      // 按钮/链接聚焦时只保留空格与方向键的原生激活行为，字母快捷键照常
+      const onActivatable = target?.closest('button, a')
+      if (onActivatable && (event.key === ' ' || event.key.startsWith('Arrow'))) return
       switch (event.key) {
         case 'ArrowLeft':
           event.preventDefault()
@@ -197,6 +208,14 @@ export function IntensiveStage({
               <span>{String(selectedLineIndex + 1).padStart(2, '0')} / {exercise.lines.length}</span>
               <span className="subtitle-topline-right">
                 <button
+                  className={autoAdvance ? 'subtitle-chip on' : 'subtitle-chip'}
+                  onClick={onToggleAutoAdvance}
+                  type="button"
+                  aria-pressed={autoAdvance}
+                >
+                  {t('intensive.autoAdvance')}
+                </button>
+                <button
                   className={translationOn ? 'subtitle-chip on' : 'subtitle-chip'}
                   onClick={() => setTranslationOn((current) => !current)}
                   type="button"
@@ -204,6 +223,11 @@ export function IntensiveStage({
                 >
                   {t('intensive.translationToggle')}
                 </button>
+                <span className="subtitle-repeat-count">
+                  {lineProgress.repeatCount
+                    ? t('intensive.repeatCount', { count: lineProgress.repeatCount })
+                    : ''}
+                </span>
                 <span>{formatLineDuration(selectedLine.start, selectedLine.end)}</span>
               </span>
             </div>
@@ -329,6 +353,16 @@ export function IntensiveStage({
             >
               <CircleHelp size={18} aria-hidden="true" />
               {t('intensive.markDifficult')}
+            </button>
+          </Tooltip>
+          <Tooltip label={t('intensive.goWaveLoop')}>
+            <button
+              className="pill"
+              onClick={() => onGoWaveLoop(selectedLine)}
+              type="button"
+            >
+              <Repeat size={18} aria-hidden="true" />
+              {t('intensive.goWaveLoop')}
             </button>
           </Tooltip>
           <Tooltip label={lineProgress.mastered ? t('intensive.undoMastered') : t('intensive.mastered')} shortcut="F">

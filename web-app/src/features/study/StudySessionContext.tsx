@@ -77,6 +77,7 @@ export type StudySessionContextValue = {
   selectedLine: TranscriptLine | undefined
   selectedLineIndex: number
   lineProgress: LineProgress
+  countLineRepeat: (lineId: string) => void
   masteryPercent: number
   selectLine: (lineId: string) => void
   markLineUnclear: (lineId: string) => void
@@ -216,6 +217,7 @@ export function StudySessionProvider({ children }: { children: ReactNode }) {
 
   const {
     lineProgress,
+    countLineRepeat,
     markLineMastered,
     markLineUnclear,
     masteryPercent,
@@ -324,6 +326,7 @@ export function StudySessionProvider({ children }: { children: ReactNode }) {
       selectedLine,
       selectedLineIndex,
       lineProgress,
+      countLineRepeat,
       masteryPercent,
       selectLine,
       markLineUnclear,
@@ -365,6 +368,7 @@ export function StudySessionProvider({ children }: { children: ReactNode }) {
       selectedLine,
       selectedLineIndex,
       lineProgress,
+      countLineRepeat,
       masteryPercent,
       selectLine,
       markLineUnclear,

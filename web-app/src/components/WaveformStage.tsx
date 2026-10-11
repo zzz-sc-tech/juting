@@ -12,6 +12,7 @@ import { DialogueAnchorBar } from './DialogueAnchorBar'
 import { resolveApiUrl } from '../lib/apiClient'
 import { resolveLineTranslation } from '../lib/lineTranslation'
 import { loadUserPrefs } from '../lib/userPrefs'
+import { takePendingWaveLoop } from '../lib/waveHandoff'
 import { useLanguage } from '../i18n/LanguageProvider'
 
 /**
@@ -338,6 +339,24 @@ export function WaveformStage({
       const activeId = activeLineIdRef.current
       if (activeId && map[activeId]) {
         map[activeId].setOptions({ color: palette.regionActive })
+      }
+      // 精听「去波形循环」交接：就绪即把 A-B 循环预置到指定句
+      const handoff = takePendingWaveLoop()
+      if (handoff && handoff.exerciseId === exercise.id && handoff.end > handoff.start) {
+        abARef.current = handoff.start
+        abBRef.current = handoff.end
+        abRegionRef.current?.remove()
+        abRegionRef.current = regions.addRegion({
+          id: AB_LOOP_REGION_ID,
+          start: handoff.start,
+          end: handoff.end,
+          color: hexToRgba(readWavePalette().loop, 0.26),
+          drag: false,
+          resize: false,
+        })
+        setAbState('loop')
+      } else if (handoff) {
+        // 交接目标不是本课（切课竞态）：丢弃，不生效
       }
     }
     const onError = (error: Error) => {

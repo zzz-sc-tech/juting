@@ -443,3 +443,11 @@
   position: relative;
   right: auto;
 }
+
+/* 句卡顶栏「已听 N 次」小字 */
+.subtitle-repeat-count {
+  color: var(--ink-3);
+  font-size: 12px;
+  font-variant-numeric: tabular-nums;
+  white-space: nowrap;
+}

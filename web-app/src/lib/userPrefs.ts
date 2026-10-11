@@ -10,6 +10,8 @@ export type UserPrefs = {
   lyricsDefault: boolean
   translationDefault: boolean
   defaultPlaybackRate: number
+  /** 精听连播：本句自然播完自动进下一句 */
+  intensiveAutoAdvance: boolean
 }
 
 const USER_PREFS_KEY = 'juting.web.prefs.v1'
@@ -18,6 +20,7 @@ const DEFAULT_PREFS: UserPrefs = {
   lyricsDefault: true,
   translationDefault: true,
   defaultPlaybackRate: 1,
+  intensiveAutoAdvance: false,
 }
 
 export const loadUserPrefs = (): UserPrefs => {
@@ -32,6 +35,8 @@ export const loadUserPrefs = (): UserPrefs => {
       defaultPlaybackRate: RATE_OPTIONS.includes(parsed.defaultPlaybackRate as (typeof RATE_OPTIONS)[number])
         ? (parsed.defaultPlaybackRate as number)
         : DEFAULT_PREFS.defaultPlaybackRate,
+      intensiveAutoAdvance:
+        typeof parsed.intensiveAutoAdvance === 'boolean' ? parsed.intensiveAutoAdvance : DEFAULT_PREFS.intensiveAutoAdvance,
     }
   } catch {
     return { ...DEFAULT_PREFS }

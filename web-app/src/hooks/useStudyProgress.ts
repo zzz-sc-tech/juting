@@ -129,10 +129,22 @@ export function useStudyProgress({
     [updateLineProgress],
   )
 
+  // 已听遍数：每次起播一句 +1（老数据无字段时从 0 起算）
+  const countLineRepeat = useCallback(
+    (lineId: string) => {
+      updateLineProgress(lineId, (current) => ({
+        ...current,
+        repeatCount: (current.repeatCount ?? 0) + 1,
+      }))
+    },
+    [updateLineProgress],
+  )
+
   return {
     lineProgress,
     markLineMastered,
     markLineUnclear,
+    countLineRepeat,
     masteryPercent,
     progress,
     selectedLine,

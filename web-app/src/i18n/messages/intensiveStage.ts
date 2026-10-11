@@ -20,4 +20,7 @@ export const intensiveStageMessages = {
     'intensive.markDifficult': '标记难点',
     'intensive.mastered': '我已掌握',
     'intensive.undoMastered': '取消掌握',
+    'intensive.autoAdvance': '连播',
+    'intensive.repeatCount': '已听 {{count}} 次',
+    'intensive.goWaveLoop': '去波形循环',
 }
