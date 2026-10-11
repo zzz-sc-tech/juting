@@ -577,10 +577,12 @@ export const extractDialogueAnchors = (
     // ── 题干行（stemOnly）：只向题组块扩展题号标签，其字幕行不消费 ──
     // 题干是录音里真实播放的内容，必须留在逐句学习池；若被消费，
     // 点击题组锚点会整段跳过题目本身（用户实测 Q19 被跳过）。
+    // 桥接必须时间相邻（≤30s）：材料段整体缺失时（四级库实测），相邻两组的
+    // 题干行在字幕里紧挨着，无时间约束会把跨节题干链成一个 Q3–21 巨块。
     if (match.stemOnly) {
       const prev = drafts[drafts.length - 1]
       const canBridge = prev !== undefined && line.start - prev.lastLine.end <= 30
-      if (prev && prev.kind === 'question-range' && (previousLineWasStem || previousLineWasInstruction || canBridge)) {
+      if (prev && prev.kind === 'question-range' && canBridge && (previousLineWasStem || previousLineWasInstruction)) {
         const extended = extendQuestionRangeLabel(prev.label, match.label)
         if (extended) prev.label = extended
         prev.lastLine = line
@@ -687,10 +689,6 @@ export const extractDialogueAnchors = (
     }
   })
 
-  for (let index = 0; index < anchors.length - 1; index += 1) {
-    anchors[index].end = Math.max(anchors[index].end, anchors[index + 1].start)
-  }
-
   // 同名节次锚点去重：有些音频开头会先念一遍节名总览
   // （"In this part, there are three sections. You will hear two long conversations
   //  in section A, two passages in section B, and three lectures or talks in Section C."），
@@ -795,6 +793,16 @@ export const extractDialogueAnchors = (
     mergedRanges.push(anchor)
     lastQuestionIdx = mergedRanges.length - 1
     coveredMax = Math.max(coveredMax, range.last)
+  }
+
+  // end 统一改为「下一个锚点开始」（展示口径）。必须在题号合并之后做：
+  // 合并里的时间相邻性判断要用原始行末，改写会让它恒等于 0（四级库实测
+  // 材料缺失时 Q3–21 跨节巨块就是这么来的）。
+  for (let index = 0; index < mergedRanges.length - 1; index += 1) {
+    mergedRanges[index].end = Math.max(
+      mergedRanges[index].end,
+      mergedRanges[index + 1].start,
+    )
   }
 
   return mergedRanges.filter(
