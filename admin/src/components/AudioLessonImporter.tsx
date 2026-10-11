@@ -10,7 +10,6 @@ import type {
   AdminRole,
 } from '@juting/shared'
 import type { AdminNoticeTone } from './admin/AdminFeedback'
-import { AsrAutoSegment } from './admin/AsrAutoSegment'
 import { MediaCourseForm } from './admin/MediaCourseForm'
 import { MediaWaveform } from './admin/MediaWaveform'
 import { MediaWaveformErrorBoundary } from './admin/MediaWaveformErrorBoundary'
@@ -795,23 +794,6 @@ export function AudioLessonImporter({
     onStatusChange(`已导入 ${parsed.length} 句字幕草稿`, 'success')
   }
 
-  // 自动切分结果复用与手动导入完全相同的解析管线（parseSubtitleDraft → 历史事务），
-  // 波形、撤销和保存路径不需要任何特判。
-  const importAsrSrt = (srtText: string) => {
-    const parsed = parseSubtitleDraft(srtText, 'single')
-    if (parsed.length === 0) {
-      onStatusChange('识别结果为空，请检查音频或更换模型后重试', 'error')
-      return
-    }
-    editSubtitles('导入识别字幕', () => ({ lines: parsed, activeLineIndex: 0, batchOffset: 0 }))
-    onStatusChange(`已导入 ${parsed.length} 句识别字幕，可在波形上继续校准`, 'success')
-  }
-
-  // 填入草稿框：让创作者先检查/微调 SRT（或修改时间偏移）再手动导入。
-  const fillAsrSrtDraft = (srtText: string) => {
-    handleSubtitleDraftChange(srtText)
-  }
-
   const importSubtitleFile = async (file: File) => {
     try {
       const text = await file.text()
@@ -1168,14 +1150,8 @@ export function AudioLessonImporter({
           }
           subtitleImporter={
             <>
-              <AsrAutoSegment
-                adminToken={adminToken}
-                exerciseId={courseForm.id}
-                disabled={isSubmittedSubtitleDraft || isApprovedSubtitleDraft}
-                onNotify={onStatusChange}
-                onFillDraft={fillAsrSrtDraft}
-                onImportSrt={importAsrSrt}
-              />
+              {/* ASR 自动切分面板已随「ASR 制课线」下线（2026-10-11，B 方案）：
+                  内容侧统一走官方原文/字幕导入线；后端 ASR 管线代码保留未删。 */}
               <SubtitleImporter
                 analysis={subtitleAnalysis}
                 importMode={subtitleImportMode}

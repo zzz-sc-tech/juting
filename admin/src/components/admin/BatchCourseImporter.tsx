@@ -139,13 +139,6 @@ const formatFileSize = (bytes: number) => {
 const SUBTITLE_EXTENSIONS = new Set(['srt', 'vtt', 'ass', 'lrc', 'txt'])
 
 // 文件夹导入模式只收音频文件（视频与字幕走既有混选模式）。
-const AUDIO_EXTENSIONS = new Set(['mp3', 'wav', 'm4a', 'aac', 'flac', 'ogg', 'oga', 'opus', 'webm'])
-
-const isAudioFile = (file: File) => {
-  const extension = file.name.split('.').pop()?.toLowerCase() ?? ''
-  return AUDIO_EXTENSIONS.has(extension) || file.type.startsWith('audio/')
-}
-
 const isSubtitleFile = (file: File) => {
   const extension = file.name.split('.').pop()?.toLowerCase() ?? ''
   return SUBTITLE_EXTENSIONS.has(extension) || file.type.startsWith('text/')
@@ -289,7 +282,6 @@ export function BatchCourseImporter({
   const [subtitleFiles, setSubtitleFiles] = useState<SubtitleFile[]>([])
   const [isUploading, setIsUploading] = useState(false)
   const fileInputRef = useRef<HTMLInputElement | null>(null)
-  const folderInputRef = useRef<HTMLInputElement | null>(null)
   const idSeqRef = useRef(0)
   const renderedStatusRef = useRef(new Map<string, BatchItemStatus>())
 
@@ -1027,35 +1019,6 @@ export function BatchCourseImporter({
               type="primary"
             >
               {t('选择媒体与字幕文件（可多选）')}
-            </Button>
-            <input
-              hidden
-              multiple
-              ref={(element) => {
-                folderInputRef.current = element
-                if (element) {
-                  element.setAttribute('webkitdirectory', '')
-                  element.setAttribute('directory', '')
-                }
-              }}
-              type="file"
-              onChange={(event) => {
-                const files = event.target.files ? Array.from(event.target.files) : []
-                const audioFiles = files.filter((file) => isAudioFile(file))
-                const skipped = files.length - audioFiles.length
-                if (audioFiles.length > 0) void addFiles(audioFiles, { autoAsr: true })
-                if (skipped > 0) {
-                  onNotify(t('已跳过文件夹内 {{count}} 个非音频文件（音频自动切分模式只导入音频）', { count: skipped }), 'info')
-                }
-                event.target.value = ''
-              }}
-            />
-            <Button
-              disabled={isUploading}
-              icon={<Layers size={15} />}
-              onClick={() => folderInputRef.current?.click()}
-            >
-              {t('选择文件夹（音频自动建课并切分）')}
             </Button>
             <Typography.Text type="secondary">
               {t('媒体 {{media}} · 字幕 {{subtitles}} · 已匹配 {{matched}} · 未匹配 {{unmatched}}', { media: mediaItems.length, subtitles: subtitleFiles.length, matched: matchedCount, unmatched: unmatchedCount })}

@@ -12,8 +12,6 @@
 
 - **三阶段精听**：泛听热身 → 逐句学习（按句播放/变速/标记难点）→ 难点复习
 - **六级真题内置**：2017—2026 共 38 套真题，音频 + 官方原文 + 句级锚点 + 全量中文译文 + 25 题选择题与答案钥匙，完整版开箱即练
-- **真题批量建课**：音频文件夹 + 官方听力原文，自动建课并发布，已实测 38 门连续处理
-- **本地 ASR 转写**：whisper.cpp 离线识别，自动断句，硬件探测 + 一键准备
 - **真题锚点**：Section / Conversation / Passage / Recording / 题组标签，点击跳转
 - **波形自由听**：整段音频波形，拖到哪播到哪
 - **全量中文译文**：泛听歌词式滚动字幕、逐句精听卡均带译文（可随时关闭）
@@ -47,7 +45,6 @@ npm run dev          # backend 读 backend/.env，首次参考 AGENTS.md 的初�
 
 Windows 本机全栈也可双击 `启动句听.bat`（自动拉起 MySQL、后端、学习端、管理端，无需 Docker）。
 
-自动切分（ASR）：安装包不随带识别引擎（制课属低频操作，且切分后仍需人工校准），在制课台点「一键准备」按硬件自动下载安装引擎与模型。开发机手动部署见 [ASR 配置与排障](docs/asr-auto-segmentation.md)。开发机手动部署见 [ASR 配置与排障](docs/asr-auto-segmentation.md)。
 
 ## 预设课程机制
 
@@ -58,13 +55,8 @@ Windows 本机全栈也可双击 `启动句听.bat`（自动拉起 MySQL、后�
 
 ## 批量建课
 
-```bash
-# 1) 后台 课程管理 → 批量上传 → 选择音频文件夹
-# 2) 排队本地 ASR 自动切分
-node scripts/content/batch-asr-publish.mjs
-# 3) 用官方原文校对升级（文本 100% 准确）
-node scripts/content/yuanwen-apply.mjs
-```
+后台「课程管理 → 批量上传」支持音频与字幕文件（srt 等）按文件名自动配对建课；
+文字稿质量的内容推荐用官方原文/字幕导入，不依赖语音识别。
 
 ## 项目结构
 
@@ -81,14 +73,13 @@ node scripts/content/yuanwen-apply.mjs
 ## 文档
 
 - [使用说明](使用说明.md)
-- [ASR 配置与排障](docs/asr-auto-segmentation.md)
 - [与上游的差异](docs/upstream-differences.md)
 
 ## 致谢
 
 - [多邻听 DuolinTing](https://github.com/VeejaLiu/duolinting) —— 本项目基于其早期版本构建
 - [YouZack](https://www.youzack.com/) —— 灵感来源
-- [whisper.cpp](https://github.com/ggml-org/whisper.cpp) —— 离线语音识别引擎
+- [whisper.cpp](https://github.com/ggml-org/whisper.cpp) —— 离线语音识别引擎（内容管线内部依赖）
 
 ## 许可
 
