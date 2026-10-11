@@ -16,6 +16,7 @@ import { MediaPlaybackProvider } from './MediaPlaybackContext'
 import { StageRailContainer } from './StageRailContainer'
 import { StudyBanner } from './StudyBanner'
 import { StudySessionProvider, useStudySession } from './StudySessionContext'
+import { loadUserPrefs } from '../../lib/userPrefs'
 
 // 学习页（/courses…）编排：数据在 StudySessionContext，播放在 MediaPlaybackContext
 // （4Hz currentTime 被隔离在泛听/波形子树），舞台逻辑在 containers/。
@@ -30,7 +31,7 @@ export function StudyPage() {
 function StudyPlaybackScope() {
   const { progress } = useStudySession()
   return (
-    <MediaPlaybackProvider playbackRate={progress?.playbackRate ?? 1}>
+    <MediaPlaybackProvider playbackRate={progress?.playbackRate ?? loadUserPrefs().defaultPlaybackRate}>
       <StudyLayout />
     </MediaPlaybackProvider>
   )

@@ -21,7 +21,7 @@ export const createExerciseProgress = (
   lastLineId: exercise.lines[0]?.id ?? '',
   showTranslation: true,
   hideTranscript: false,
-  playbackRate: 1,
+  // playbackRate 不写死：未手动调速的课程跟随「设置 → 默认播放速率」
   updatedAt: new Date().toISOString(),
   lines: Object.fromEntries(
     exercise.lines.map((line) => [line.id, createLineProgress()]),

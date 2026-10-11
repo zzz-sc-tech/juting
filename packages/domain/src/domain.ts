@@ -407,7 +407,7 @@ export type ExerciseProgress = {
   lastLineId: string
   showTranslation: boolean
   hideTranscript: boolean
-  playbackRate: number
+  playbackRate?: number
   updatedAt: string
   lines: Record<string, LineProgress>
   vocabulary: Record<string, string>

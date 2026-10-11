@@ -1,87 +1,46 @@
-import { createContext, useContext, useEffect, useMemo, useState, type ReactNode } from 'react'
-import type { ContentLocale, UiLocale } from '@juting/domain'
+import { createContext, useContext, useMemo, type ReactNode } from 'react'
 import { messages, type MessageKey } from './messages'
 
-const UI_LOCALE_KEY = 'duolinting.web.ui-locale.v1'
-const CONTENT_LOCALE_KEY = 'duolinting.web.content-locale.v1'
-
-export const uiLocaleLabels: Record<UiLocale, string> = {
-  'en-US': 'English',
-  'zh-CN': '简体中文',
-  'th-TH': 'ไทย',
-  'ja-JP': '日本語',
-  'fr-FR': 'Français',
-  'es-ES': 'Español',
-}
-
-export const contentLocaleLabels: Record<ContentLocale, string> = {
-  'en-US': 'English',
-  'zh-CN': '中文',
-  'th-TH': 'ไทย',
-  'ja-JP': '日本語',
-  'fr-FR': 'Français',
-  'es-ES': 'Español',
-}
+// 单语产品：界面与学习内容语言固定简体中文（六级备考工具，受众即中文用户）。
+// 译文按 zh-CN 恒定回填，不再有「内容语言设成英文导致译文不显示」的坑；
+// t() 消息表机制保留，历史多语言文案仍在 messages/ 里，未再接切换入口。
+const UI_LOCALE = 'zh-CN' as const
+const CONTENT_LOCALE = 'zh-CN' as const
 
 type LanguageContextValue = {
-  uiLocale: UiLocale
-  contentLocale: ContentLocale
-  setUiLocale: (locale: UiLocale) => void
-  setContentLocale: (locale: ContentLocale) => void
   t: (key: MessageKey, values?: Record<string, string | number>) => string
+  uiLocale: typeof UI_LOCALE
+  contentLocale: typeof CONTENT_LOCALE
 }
 
 const LanguageContext = createContext<LanguageContextValue | null>(null)
 
-const getInitialUiLocale = (): UiLocale => {
-  const stored = localStorage.getItem(UI_LOCALE_KEY)
-  if (stored === 'zh-CN' || stored === 'en-US' || stored === 'th-TH' || stored === 'ja-JP' || stored === 'fr-FR' || stored === 'es-ES') return stored
-  // 默认简体中文；其他语言（含英文模式）可在设置页切换，选择会被记住。
-  return 'zh-CN'
-}
-
-const getInitialContentLocale = (): ContentLocale => {
-  const stored = localStorage.getItem(CONTENT_LOCALE_KEY)
-  return stored === 'zh-CN' || stored === 'en-US' || stored === 'th-TH' || stored === 'ja-JP' || stored === 'fr-FR' || stored === 'es-ES'
-    ? stored
-    : 'zh-CN'
-}
-
 export function LanguageProvider({ children }: { children: ReactNode }) {
-  const [uiLocale, setUiLocaleState] = useState<UiLocale>(getInitialUiLocale)
-  const [contentLocale, setContentLocaleState] = useState<ContentLocale>(getInitialContentLocale)
-
-  useEffect(() => {
-    localStorage.setItem(UI_LOCALE_KEY, uiLocale)
-    document.documentElement.lang = uiLocale
-  }, [uiLocale])
-
-  useEffect(() => {
-    localStorage.setItem(CONTENT_LOCALE_KEY, contentLocale)
-  }, [contentLocale])
-
-  const value = useMemo<LanguageContextValue>(() => ({
-    uiLocale,
-    contentLocale,
-    setUiLocale: setUiLocaleState,
-    setContentLocale: setContentLocaleState,
-    t: (key, values) => {
-      // 语义 key 查消息表；查不到说明有组件漏配 key，原样返回 key 便于排查。
-      let message = messages[uiLocale][key] ?? messages['en-US'][key] ?? key
-      if (values) {
-        for (const [name, value] of Object.entries(values)) {
-          message = message.replaceAll(`{{${name}}}`, String(value))
+  const value = useMemo<LanguageContextValue>(
+    () => ({
+      uiLocale: UI_LOCALE,
+      contentLocale: CONTENT_LOCALE,
+      t: (key, values) => {
+        // 语义 key 查消息表；查不到说明有组件漏配 key，原样返回 key 便于排查。
+        let message = messages[UI_LOCALE][key] ?? messages['en-US'][key] ?? key
+        if (values) {
+          for (const [name, value2] of Object.entries(values)) {
+            message = message.replaceAll(`{{${name}}}`, String(value2))
+          }
         }
-      }
-      return message
-    },
-  }), [contentLocale, uiLocale])
+        return message
+      },
+    }),
+    [],
+  )
 
   return <LanguageContext.Provider value={value}>{children}</LanguageContext.Provider>
 }
 
 export function useLanguage() {
-  const value = useContext(LanguageContext)
-  if (!value) throw new Error('useLanguage must be used inside LanguageProvider')
-  return value
+  const context = useContext(LanguageContext)
+  if (!context) {
+    throw new Error('useLanguage must be used inside LanguageProvider')
+  }
+  return context
 }

@@ -26,6 +26,7 @@ import { TranscriptPanel } from './TranscriptPanel'
 import { useLanguage } from '../i18n/LanguageProvider'
 import { resolveApiUrl } from '../lib/apiClient'
 import { resolveLineTranslation } from '../lib/lineTranslation'
+import { loadUserPrefs, RATE_OPTIONS } from '../lib/userPrefs'
 
 type IntensiveStageProps = {
   exercise: ListeningExercise
@@ -50,13 +51,7 @@ type IntensiveStageProps = {
   onLineSelect: (lineId: string) => void
 }
 
-const playbackRates = [
-  0.75,
-  0.9,
-  1,
-  1.15,
-  1.3,
-]
+const playbackRates = RATE_OPTIONS
 
 const formatLineDuration = (start: number, end: number) => {
   const durationSeconds = Math.max(0, end - start)
@@ -90,7 +85,7 @@ export function IntensiveStage({
 }: IntensiveStageProps) {
   const [ratePickerOpen, setRatePickerOpen] = useState(false)
   // 译文开关：默认开（保持既有行为），做题时不想看可以关掉
-  const [translationOn, setTranslationOn] = useState(true)
+  const [translationOn, setTranslationOn] = useState(() => loadUserPrefs().translationDefault)
   const { t, contentLocale } = useLanguage()
   const sentenceVisible = Boolean(revealedLineIds[selectedLine.id])
   // 译文行只在「真的有译文且与原文不同」时显示：接口若把原文回填进译文，
@@ -286,7 +281,7 @@ export function IntensiveStage({
                     className={ratePickerOpen ? 'rate-trigger active' : 'rate-trigger'}
                     type="button"
                   >
-                    <span className="rate-value">{progress.playbackRate}x</span>
+                    <span className="rate-value">{progress.playbackRate ?? loadUserPrefs().defaultPlaybackRate}x</span>
                     <ChevronDown size={24} strokeWidth={3} aria-hidden="true" />
                   </button>
                 </Popover.Trigger>
@@ -301,9 +296,9 @@ export function IntensiveStage({
                   <div role="radiogroup">
                     {playbackRates.map((rate) => (
                       <button
-                        aria-checked={progress.playbackRate === rate}
+                        aria-checked={(progress.playbackRate ?? loadUserPrefs().defaultPlaybackRate) === rate}
                         className={
-                          progress.playbackRate === rate
+                          (progress.playbackRate ?? loadUserPrefs().defaultPlaybackRate) === rate
                             ? 'rate-option active'
                             : 'rate-option'
                         }

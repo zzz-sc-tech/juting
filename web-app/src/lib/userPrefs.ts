@@ -1,0 +1,47 @@
+/**
+ * 学习偏好（本机 localStorage，键 juting.web.prefs.v1）：
+ * - lyricsDefault / translationDefault：泛听字幕与译文的初始显示状态
+ *   （控制条上的开关仍可随时切，这里只管「打开课程时的默认值」）
+ * - defaultPlaybackRate：未手动调速课程的播放速率（手动调过即按课程记忆）
+ */
+export const RATE_OPTIONS = [0.75, 0.9, 1, 1.15, 1.3] as const
+
+export type UserPrefs = {
+  lyricsDefault: boolean
+  translationDefault: boolean
+  defaultPlaybackRate: number
+}
+
+const USER_PREFS_KEY = 'juting.web.prefs.v1'
+
+const DEFAULT_PREFS: UserPrefs = {
+  lyricsDefault: true,
+  translationDefault: true,
+  defaultPlaybackRate: 1,
+}
+
+export const loadUserPrefs = (): UserPrefs => {
+  try {
+    const raw = localStorage.getItem(USER_PREFS_KEY)
+    if (!raw) return { ...DEFAULT_PREFS }
+    const parsed = JSON.parse(raw) as Partial<UserPrefs>
+    return {
+      lyricsDefault: typeof parsed.lyricsDefault === 'boolean' ? parsed.lyricsDefault : DEFAULT_PREFS.lyricsDefault,
+      translationDefault:
+        typeof parsed.translationDefault === 'boolean' ? parsed.translationDefault : DEFAULT_PREFS.translationDefault,
+      defaultPlaybackRate: RATE_OPTIONS.includes(parsed.defaultPlaybackRate as (typeof RATE_OPTIONS)[number])
+        ? (parsed.defaultPlaybackRate as number)
+        : DEFAULT_PREFS.defaultPlaybackRate,
+    }
+  } catch {
+    return { ...DEFAULT_PREFS }
+  }
+}
+
+export const persistUserPrefs = (prefs: UserPrefs): void => {
+  try {
+    localStorage.setItem(USER_PREFS_KEY, JSON.stringify(prefs))
+  } catch {
+    // 存储被禁用/写满时静默失败：偏好只是默认值，不值得打断学习
+  }
+}

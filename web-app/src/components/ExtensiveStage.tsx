@@ -5,6 +5,7 @@ import type { ContentLocale, DialogueAnchor, ListeningExercise } from '@juting/s
 import { DialogueAnchorBar } from './DialogueAnchorBar'
 import { resolveApiUrl } from '../lib/apiClient'
 import { resolveLineTranslation } from '../lib/lineTranslation'
+import { loadUserPrefs } from '../lib/userPrefs'
 import { useLanguage } from '../i18n/LanguageProvider'
 
 type ExtensiveStageProps = {
@@ -51,8 +52,9 @@ export function ExtensiveStage({
 
   // 实时字幕：按播放进度取"最后一句已开始的台词"（含指令句——泛听听的就是全篇）；
   // 句间空档沿用上一句，避免字幕闪烁消失。
-  const [captionsOn, setCaptionsOn] = useState(true)
-  const [translationOn, setTranslationOn] = useState(true)
+  // 初始显示状态走「设置 → 播放与字幕」的本机偏好
+  const [captionsOn, setCaptionsOn] = useState(() => loadUserPrefs().lyricsDefault)
+  const [translationOn, setTranslationOn] = useState(() => loadUserPrefs().translationDefault)
   const activeLine = useMemo(() => {
     let current: ListeningExercise['lines'][number] | null = null
     for (const line of exercise.lines) {

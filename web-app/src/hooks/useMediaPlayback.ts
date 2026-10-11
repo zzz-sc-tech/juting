@@ -13,6 +13,9 @@ export function useMediaPlayback({
   const isPlayingRef = useRef(false)
   const [currentTime, setCurrentTime] = useState(0)
   const [duration, setDuration] = useState(0)
+  // 速率最新值：轮询接线新挂载的媒体元素时要立即应用
+  const playbackRateRef = useRef(playbackRate)
+  playbackRateRef.current = playbackRate
   const stopPlaybackRef = useRef(false)
   const playbackTokenRef = useRef(0)
   const rangeCleanupRef = useRef<(() => void) | null>(null)
@@ -41,6 +44,9 @@ export function useMediaPlayback({
       }
 
       syncPlaybackState()
+      // 元素后挂载时把当前速率立即放上去（applyPlaybackRate 的 effect 只在
+      // 速率变化时重跑，首挂载那一刻它早已跑过、当时 ref 还是空的）
+      media.playbackRate = playbackRateRef.current
       media.addEventListener('play', syncPlaybackState)
       media.addEventListener('pause', syncPlaybackState)
       media.addEventListener('ended', syncPlaybackState)
