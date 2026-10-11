@@ -49,6 +49,24 @@ type WaveStatus =
 type AbLoopState = 'off' | 'a' | 'loop'
 
 const AB_LOOP_REGION_ID = '__ab-loop'
+const AB_A_MARKER_ID = '__ab-a'
+
+/** 波形上叠加的字标（A/B）：regions 渲染在 shadow DOM 里，样式必须内联。 */
+const abTag = (text: string, side: 'left' | 'right') => {
+  const el = document.createElement('div')
+  el.textContent = text
+  el.style.cssText = `position:absolute;top:2px;${side}:3px;font:700 11px/1 ui-sans-serif,system-ui,sans-serif;color:#fff;text-shadow:0 0 3px rgba(0,0,0,.6);pointer-events:none;`
+  return el
+}
+
+/** 循环块内容：两端 A / B 字标。 */
+const abLoopContent = () => {
+  const wrap = document.createElement('div')
+  wrap.style.cssText = 'position:absolute;inset:0;pointer-events:none;'
+  wrap.appendChild(abTag('A', 'left'))
+  wrap.appendChild(abTag('B', 'right'))
+  return wrap
+}
 const AB_MIN_SECONDS = 0.4
 
 const formatTime = (seconds: number) => {
@@ -148,6 +166,8 @@ export function WaveformStage({
   const clearAbLoop = useCallback(() => {
     abRegionRef.current?.remove()
     abRegionRef.current = null
+    const regions = regionsRef.current
+    regions?.getRegions().find((r) => r.id === AB_A_MARKER_ID)?.remove()
     setAbState('off')
   }, [])
   const clearAbLoopRef = useRef(clearAbLoop)
@@ -156,6 +176,20 @@ export function WaveformStage({
   const handleAbButtonClick = () => {
     if (abState === 'off') {
       abARef.current = currentTime
+      // A 点竖线标记：标 B 之前让用户看到 A 落在哪
+      const regions = regionsRef.current
+      if (regions) {
+        regions.getRegions().find((r) => r.id === AB_A_MARKER_ID)?.remove()
+        regions.addRegion({
+          id: AB_A_MARKER_ID,
+          start: currentTime,
+          end: currentTime + 0.12,
+          color: hexToRgba(readWavePalette().loop, 0.85),
+          content: abTag('A', 'left'),
+          drag: false,
+          resize: false,
+        })
+      }
       setAbState('a')
       return
     }
@@ -165,14 +199,15 @@ export function WaveformStage({
       abARef.current = a
       abBRef.current = b
       const regions = regionsRef.current
-      const ws = wsRef.current
-      if (regions && ws) {
+      if (regions) {
+        regions.getRegions().find((r) => r.id === AB_A_MARKER_ID)?.remove()
         abRegionRef.current?.remove()
         abRegionRef.current = regions.addRegion({
           id: AB_LOOP_REGION_ID,
           start: a,
           end: b,
           color: hexToRgba(readWavePalette().loop, 0.26),
+          content: abLoopContent(),
           drag: false,
           resize: false,
         })
@@ -351,6 +386,7 @@ export function WaveformStage({
           start: handoff.start,
           end: handoff.end,
           color: hexToRgba(readWavePalette().loop, 0.26),
+          content: abLoopContent(),
           drag: false,
           resize: false,
         })
@@ -373,7 +409,7 @@ export function WaveformStage({
     }
     const onRegionClick = (region: Region) => {
       if (disposed) return
-      if (region.id !== AB_LOOP_REGION_ID) {
+      if (region.id !== AB_LOOP_REGION_ID && region.id !== AB_A_MARKER_ID) {
         clearAbLoopRef.current()
       }
       const line = exercise.lines.find((item) => item.id === region.id)
