@@ -75,15 +75,8 @@
   background: var(--accent);
 }
 
-/* 题卡（左列） */
-.exam-body {
-  display: grid;
-  gap: 20px;
-  grid-column: 1;
-  grid-row: 2;
-  min-height: 0;
-}
-
+/* 题卡（看板左列，与矩阵同为看板直接子项——此前两者被包在内层 .exam-body
+   网格里，矩阵落到内层第 2 行第 2 列，左侧/上方各留一个空单元格） */
 .exam-question-card {
   background: var(--surface);
   border: 1px solid var(--line);
@@ -91,6 +84,8 @@
   display: flex;
   flex-direction: column;
   gap: 18px;
+  grid-column: 1;
+  grid-row: 2;
   min-height: 0;
   padding: 22px 24px;
 }
@@ -114,6 +109,15 @@
   font-size: 12px;
   gap: 8px;
   padding: 4px 10px;
+}
+
+/* 题头右侧的两枚状态 chip（播放阶段 + 部分开窗） */
+.exam-window-group {
+  align-items: center;
+  display: inline-flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  justify-content: flex-end;
 }
 
 .exam-window.on {
@@ -238,8 +242,10 @@
   font-variant-numeric: tabular-nums;
 }
 
-/* 题号导航（右列） */
+/* 题号导航（右列）：固定 5×5 规格、收贴内容——不随左侧题卡高度拉伸
+   （此前整卡被拉到与题卡等高，题干长短变化时矩阵卡片跟着变、盒内留大片空白） */
 .exam-navigator {
+  align-self: start;
   background: var(--surface);
   border: 1px solid var(--line);
   border-radius: var(--radius-lg);
@@ -247,9 +253,9 @@
   gap: 8px;
   grid-column: 2;
   grid-row: 2;
-  grid-template-columns: repeat(5, 1fr);
+  grid-template-columns: repeat(5, 46px);
+  justify-content: center;
   padding: 16px;
-  align-content: start;
 }
 
 .exam-nav-cell {
@@ -286,8 +292,17 @@
   box-shadow: var(--focus-ring);
 }
 
-/* 结果页 */
+/* 正在播报题干的那一题：暖色轻提示（区别于“正在看”的主色描边） */
+.exam-nav-cell.live {
+  background: var(--warning-soft);
+  border-color: var(--warning);
+}
+
+/* 结果页（跨两列的纵向流） */
 .exam-result-body {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
   grid-column: 1 / -1;
   grid-row: 2;
 }
