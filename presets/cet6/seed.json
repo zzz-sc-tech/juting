@@ -1,7 +1,7 @@
 {
  "preset": "cet6",
- "version": "20261011.2",
- "generatedAt": "2026-10-11T02:08:00.823Z",
+ "version": "20261012.4",
+ "generatedAt": "2026-10-12T14:26:20.259Z",
  "group": {
   "id": 8,
   "name": "英语六级真题",
@@ -593,14 +593,14 @@
      "start": 539.75,
      "end": 545.83,
      "text": "This lawyer had fallen victim to the \"Don'ts Syndrome\", a form of negative Goal-setting.",
-     "translation": "'不"
+     "translation": "这位律师患上了“别做某事”综合症——一种消极的目标设定方式。"
     },
     {
      "id": "l78",
      "start": 545.83,
      "end": 551.11,
      "text": "The Don'ts can be self-fulfilling because your mind responds to pictures.",
-     "translation": "要'往往会自我应验，因为大脑会对画面做出反应。"
+     "translation": "这类“别做某事”的暗示可能自我实现，因为你的大脑是对画面作出反应的。"
     },
     {
      "id": "l79",
@@ -614,35 +614,35 @@
      "start": 560.14,
      "end": 565.86,
      "text": "That means when a golfer tells himself: \"Don't hit the ball into the water.\"",
-     "translation": "也就"
+     "translation": "也就是说，当一个高尔夫球手对自己说“别把球打进水里”时，他的脑海中浮现的是球飞进水里的画面。"
     },
     {
      "id": "l81",
      "start": 565.86,
      "end": 570.17,
      "text": "His mind sees the image of the ball flying into the water.",
-     "translation": "是说，当高尔夫球手告诉自己'别把球打进水里'时，他脑子里看到的恰是球飞进水里的画面。"
+     "translation": "他的脑海中浮现的是球飞进水里的画面。"
     },
     {
      "id": "l82",
      "start": 570.17,
      "end": 572.93,
      "text": "So guess where the ball will go?",
-     "translation": "所以猜猜球最后会打到哪儿。因此，在进入任何令人紧张的场合之前，只专注于你希望发生的事情。"
+     "translation": "那么猜猜球会飞到哪里去？"
     },
     {
      "id": "l83",
      "start": 573.27,
      "end": 580.49,
      "text": "Consequently, before going into any stressful situation, focus only on what you want to have happen.",
-     "translation": "我又问了一次那位律师，她希望第一次出庭时呈现什么形象。"
+     "translation": "因此，在进入任何有压力的情境之前，只把注意力放在你希望发生的事情上。"
     },
     {
      "id": "l84",
      "start": 580.49,
      "end": 590.42,
      "text": "I asked the lawyer again how she wanted to appear at her first trial, and this time she said, \"I want to look professional and Self assured.\"",
-     "translation": "这一次她说：'我想显得专业而且自信。'"
+     "translation": "我又问了一次那位律师，她希望第一次出庭时呈现什么形象。这一次她说：“我想显得专业而且自信。”"
     },
     {
      "id": "l85",
@@ -1039,14 +1039,14 @@
      "start": 1178.45,
      "end": 1186.91,
      "text": "The fact that cash is being drawn out of society is less a feature of our everyday lives and the ease of electronic payments.",
-     "translation": "现金日渐退出社会生活，与其说是电子支付便利使然，不如问一句：这是不是正让我们在不知不觉中花掉更多的钱？"
+     "translation": "现金正从社会中淡出、在日常生活中越来越少见，再加上电子支付如此便捷——"
     },
     {
      "id": "l142",
      "start": 1186.91,
      "end": 1191.31,
      "text": "Is this actually making us spend more money without Realizing it?",
-     "translation": "巴雷"
+     "translation": "这是否实际上正在让我们在不知不觉中花更多的钱？"
     },
     {
      "id": "l143",
@@ -3613,7 +3613,7 @@
      "start": 234.11,
      "end": 238.14,
      "text": "M: Thank you for calling the South Avenue Department Store.",
-     "translation": "M: 感谢"
+     "translation": "M: 感谢您致电南大道百货商店。"
     },
     {
      "id": "l30",
@@ -3627,7 +3627,7 @@
      "start": 240.88,
      "end": 241.71,
      "text": "W: Hello.",
-     "translation": "您致电南大道"
+     "translation": "W: 你好。"
     },
     {
      "id": "l32",
@@ -3732,7 +3732,7 @@
      "start": 291.58,
      "end": 292.5,
      "text": "Thank you.",
-     "translation": "百货商店。"
+     "translation": "谢谢。"
     },
     {
      "id": "l47",
@@ -7045,7 +7045,7 @@
      "start": 49.53,
      "end": 54.33,
      "text": "W: Gazpacho is a cold soup from Spain. It's mostly vegetables.",
-     "translation": "W: 西班牙冻汤是西班牙的一种冷汤。"
+     "translation": "W: 西班牙冻汤是西班牙的一种冷汤。主要成分是蔬菜。"
     },
     {
      "id": "l11",
@@ -7290,14 +7290,14 @@
      "start": 256.24,
      "end": 259.74,
      "text": "W: Hi, yes. What kind of wine would you like?",
-     "translation": "您想要什么样的葡萄酒？"
+     "translation": "您好，您想要什么样的葡萄酒？"
     },
     {
      "id": "l46",
      "start": 259.74,
      "end": 263.54,
      "text": "M: I don't know, sorry. I don't know much about wine.",
-     "translation": "M: 不好意思，我不知道。"
+     "translation": "M: 不好意思，我不知道。我对酒不太了解。"
     },
     {
      "id": "l47",
@@ -7360,7 +7360,7 @@
      "start": 292.9,
      "end": 296.9,
      "text": "They are not very special. And I would not suggest them as a gift.",
-     "translation": "不怎么特别。"
+     "translation": "不怎么特别。我不会建议拿它们当礼物。"
     },
     {
      "id": "l56",
@@ -8332,7 +8332,7 @@
      "start": 1369.2,
      "end": 1385.41,
      "text": "Ronald and Lois, married for two decades, considered themselves a happy couple. But in the early years of their marriage, both were disturbed by persistent arguments that seemed to fade away without ever being truly resolved.",
-     "translation": "罗纳德和洛伊丝结婚 20 年了，自认为是幸福的一对。"
+     "translation": "罗纳德和洛伊丝结婚 20 年了，自认为是幸福的一对。但在婚姻初期，两人都为那些争吵不休、似乎不了了之、从未真正解决的矛盾所困扰。"
     },
     {
      "id": "l195",
@@ -9664,7 +9664,7 @@
      "start": 897.28,
      "end": 917.39,
      "text": "\"Distinctions between exotic and native species are artificial,\" said Dr. Michael Rosenzweig, a professor of evolutionary biology at the University of Arizona, \"because they depend on picking a date and calling the plants and animals that show up after that date ‘exotic'.\"",
-     "translation": "“外来物种与本地物种的区别是人为的，”亚利桑那大学进化生物学教授迈克尔·罗森茨维格博士说，“因为这种区别取决于选定一个日期，然后把在那之后出现的动植物称为‘外来’。"
+     "translation": "“外来物种与本地物种的区别是人为的，”亚利桑那大学进化生物学教授迈克尔·罗森茨维格博士说，“因为这种区别取决于选定一个日期，然后把在那之后出现的动植物称为‘外来’。”"
     },
     {
      "id": "l123",
@@ -10976,14 +10976,14 @@
      "start": 461.67,
      "end": 466.19,
      "text": "But this year the Arctic is experiencing much higher temperatures.",
-     "translation": "但今"
+     "translation": "但今年北极正经历高得多的气温。"
     },
     {
      "id": "l70",
      "start": 466.25,
      "end": 476.33,
      "text": "On February the 20th the temperature in Greenland climbed above freezing or zero degrees Celsius and it stayed there for over 24 hours.",
-     "translation": "年北极正经历高得多的气温。"
+     "translation": "2 月 20 日，格陵兰的气温升到冰点即零摄氏度以上，并持续了 24 个多小时。"
     },
     {
      "id": "l71",
@@ -11018,14 +11018,14 @@
      "start": 526.17,
      "end": 529.18,
      "text": "The air can stay warmer longer too.",
-     "translation": "空气也可以保持温暖更久。这会驱动更多融化。"
+     "translation": "空气也可以保持温暖更久。"
     },
     {
      "id": "l76",
      "start": 529.18,
      "end": 531.59,
      "text": "This drives additional melting.",
-     "translation": "总体而言，地球正以很快的速度变暖。"
+     "translation": "这又引发更多融化。"
     },
     {
      "id": "l77",
@@ -15752,14 +15752,14 @@
      "start": 145,
      "end": 150.17,
      "text": "Her family received international aid during the war when she was growing up.",
-     "translation": "在她成长期间，她的家庭在"
+     "translation": "在她成长期间，她的家庭在战争中也接受过国际援助。"
     },
     {
      "id": "l29",
      "start": 150.17,
      "end": 153.18,
      "text": "I think that left a big impression on her.",
-     "translation": "战争中也接受过国际援助。"
+     "translation": "我想这给她留下了深刻的印象。"
     },
     {
      "id": "l30",
@@ -15871,7 +15871,7 @@
      "start": 279.27,
      "end": 286.14,
      "text": "I think we need to address that while there will be some job changes, there won't be anyone getting dismissed.",
-     "translation": "我想我们要强调的是，虽然会有一些岗位调整，"
+     "translation": "我觉得我们需要说明这一点：虽然有些岗位会调整，但不会有人被解雇。"
     },
     {
      "id": "l46",
@@ -16179,7 +16179,7 @@
      "start": 611.87,
      "end": 629.15,
      "text": "Q10. What are the trained animals probably capable of doing in an airport?",
-     "translation": "问题 10：机场的治疗动物接受了什么训练？"
+     "translation": "问题 10：训练过的动物在机场大概能做什么？"
     },
     {
      "id": "l90",
@@ -16459,7 +16459,7 @@
      "start": 995.06,
      "end": 1001.72,
      "text": "Studies of citation counts show that internationally co-authored papers have better visibility.",
-     "translation": "引用量研究表明，国际合著论文的曝光度更高。"
+     "translation": "引用量研究表明，国际合著论文的曝光度更高，比单一作者写的论文更容易被引用。"
     },
     {
      "id": "l130",
@@ -16473,7 +16473,7 @@
      "start": 1010.09,
      "end": 1021,
      "text": "Caroline Wagner, a research scientist at George Washington University, notes that international collaborations offer additional flexibility,",
-     "translation": "乔治·华盛顿大学的研究科学家卡罗琳·瓦格纳指出，国际合作具有额外的灵活性，"
+     "translation": "乔治·华盛顿大学的研究科学家卡罗琳·瓦格纳指出，国际合作提供了额外的灵活性；本地合作有时过了实效期仍会延续，而国际合作较少受社会或学术义务的羁绊，可以更自由地建立或终止。"
     },
     {
      "id": "l132",
@@ -16487,7 +16487,7 @@
      "start": 1030.5,
      "end": 1035.5,
      "text": "International ones can be cultivated and dropped more freely.",
-     "translation": "国际合作则可以更自由地建立和终止。"
+     "translation": "乔治·华盛顿大学的研究科学家卡罗琳·瓦格纳指出，国际合作提供了额外的灵活性；本地合作有时过了实效期仍会延续，而国际合作较少受社会或学术义务的羁绊，可以更自由地建立或终止。"
     },
     {
      "id": "l134",
@@ -16774,7 +16774,7 @@
      "start": 1393.91,
      "end": 1402.93,
      "text": "Question 21. What information did Russian and American space probes provide about Venus?",
-     "translation": "问题 19 到 21 基于你刚才听到的录音。"
+     "translation": "问题 21：俄罗斯和美国的太空探测器提供了关于金星的什么信息？"
     },
     {
      "id": "l175",
@@ -17535,14 +17535,14 @@
      "start": 266.31,
      "end": 269.34,
      "text": "M: It's about a real guy named Frankie.",
-     "translation": "M: 它讲的是一个真名叫弗兰基的人，他是纽约一位有名的喜剧演员。"
+     "translation": "M: 它讲的是一个真名叫弗兰基的人。"
     },
     {
      "id": "l38",
      "start": 269.34,
      "end": 272.15,
      "text": "He's a famous comedian in New York.",
-     "translation": "这部"
+     "translation": "他是纽约一位有名的喜剧演员。"
     },
     {
      "id": "l39",
@@ -17591,7 +17591,7 @@
      "start": 308.69,
      "end": 320.44,
      "text": "All those things are true, but aside from him, all his friends and family are played by actors. And the plots and the events that take place are also invented.",
-     "translation": "M: 不……还真不是。它是虚构的，因为每集里发生的事都是编出来的。不过，主角是位名叫弗兰基的喜剧演员，他演的是他自己。所以，无论在现实中还是在剧里，弗兰基都住在纽约，是个喜剧演员，离了婚，还有两个小女儿。这些都是真的，但除了他以外，他所有的朋友和家人都由演员扮演，剧情和发生的事件也都是虚构的。"
+     "translation": "这些都是真的，但除了他以外，他所有的朋友和家人都由演员扮演，剧情和发生的事件也都是虚构的。"
     },
     {
      "id": "l46",
@@ -17668,14 +17668,14 @@
      "start": 357.67,
      "end": 361.5,
      "text": "The men are very socially awkward but very bright.",
-     "translation": "男人"
+     "translation": "那几位男士在社交上非常笨拙，但非常聪明。"
     },
     {
      "id": "l57",
      "start": 361.5,
      "end": 366.54,
      "text": "And this is contrasted by the lady’s social skills and common sense.",
-     "translation": "们很不擅社交但绝顶聪明，与这位女士的社交能力和常识形成了鲜明对比。"
+     "translation": "与这位女士的社交能力和常识形成了鲜明对比。"
     },
     {
      "id": "l58",
@@ -24292,14 +24292,14 @@
      "start": 39.59,
      "end": 41.15,
      "text": "M: Good morning.",
-     "translation": "M: 早上好，这里"
+     "translation": "M: 早上好。"
     },
     {
      "id": "l9",
      "start": 41.26,
      "end": 42.29,
      "text": "Safe House Insurance.",
-     "translation": "是安全屋保险公司。"
+     "translation": "这里是安全屋保险公司。"
     },
     {
      "id": "l10",
@@ -24313,14 +24313,14 @@
      "start": 43.64,
      "end": 45.55,
      "text": "How can I help you today?",
-     "translation": "今天有什么可以帮您？W: 早。"
+     "translation": "今天有什么可以帮您？"
     },
     {
      "id": "l12",
      "start": 45.77,
      "end": 46.55,
      "text": "W: Morning.",
-     "translation": "今天有什么可以帮您？W: 早。"
+     "translation": "W: 早。"
     },
     {
      "id": "l13",
@@ -24495,14 +24495,14 @@
      "start": 231.79,
      "end": 235.09,
      "text": "Personally, I feel quite optimistic about it.",
-     "translation": "我个人对此相当乐观。M: 人工智能吗？"
+     "translation": "我个人对此相当乐观。"
     },
     {
      "id": "l38",
      "start": 235.17,
      "end": 236.01,
      "text": "M: AI?",
-     "translation": "我个人对此相当乐观。M: 人工智能吗？"
+     "translation": "M: 人工智能吗？"
     },
     {
      "id": "l39",
@@ -24537,14 +24537,14 @@
      "start": 250.72,
      "end": 257.06,
      "text": "M: Well, one thing is for sure: Technology is evolving faster than our ability to understand it.",
-     "translation": "而且，当我们对自己有了更深的了解，就能改进这个世界。M: 嗯，有一点是肯定的："
+     "translation": "M: 嗯，有一点是肯定的：技术演进的速度超过了我们理解它的能力。"
     },
     {
      "id": "l44",
      "start": 257.06,
      "end": 260.71,
      "text": "And in the future, AI will make jobs kind of pointless.",
-     "translation": "技术演进的速度超过了我们理解它的能力。将来，人工智能会让工作变得没什么意义。"
+     "translation": "将来，人工智能会让工作变得没什么意义。"
     },
     {
      "id": "l45",
@@ -24565,63 +24565,63 @@
      "start": 272.49,
      "end": 276.58,
      "text": "Probably the last job that we will remain will be writing AI software.",
-     "translation": "我们保住"
+     "translation": "恐怕我们能保住的最后一份工作就是编写AI软件。"
     },
     {
      "id": "l48",
      "start": 276.58,
      "end": 280.66,
      "text": "And then eventually, AI will just write its own software.",
-     "translation": "的最后一"
+     "translation": "而最终，AI会自己给自己写软件。"
     },
     {
      "id": "l49",
      "start": 280.66,
      "end": 290.75,
      "text": "W: At that time, we are going to have a lot of jobs which nobody will want to do, so we will need artificial intelligence for the robots to take care of the old guys, like us.",
-     "translation": "份工作，大"
+     "translation": "W: 到那时，会有许多没人愿意做的工作，所以我们需要人工智能，让机器人来照顾像你我这样的老家伙。"
     },
     {
      "id": "l50",
      "start": 290.75,
      "end": 292.01,
      "text": "M: I don't know.",
-     "translation": "概就是编"
+     "translation": "M: 这我可说不好。"
     },
     {
      "id": "l51",
      "start": 292.01,
      "end": 297.63,
      "text": "There's a risk that human civilization could be replaced by a superior type of digital life.",
-     "translation": "写人工智"
+     "translation": "存在一种风险：人类文明可能被某种更高级的数字生命所取代。"
     },
     {
      "id": "l52",
      "start": 297.63,
      "end": 302.65,
      "text": "AI will be able to completely simulate a person in every way possible.",
-     "translation": "能软件。"
+     "translation": "人工智能将能在一切可能的方面完全模拟一个人。"
     },
     {
      "id": "l53",
      "start": 302.65,
      "end": 306.67,
      "text": "In fact, some people think we're in the simulation, right now.",
-     "translation": "事实上，有些人认为我"
+     "translation": "事实上，有些人认为我们此刻就身处模拟世界中。"
     },
     {
      "id": "l54",
      "start": 306.67,
      "end": 308.03,
      "text": "W: That's impossible.",
-     "translation": "们此刻就身处模拟世界"
+     "translation": "W: 那不可能。"
     },
     {
      "id": "l55",
      "start": 308.03,
      "end": 310.49,
      "text": "Humans can't even make a mosquito.",
-     "translation": "中。W: 那不可能。"
+     "translation": "人类连一只蚊子都造不出来。"
     },
     {
      "id": "l56",
@@ -25006,7 +25006,7 @@
      "start": 681.53,
      "end": 697.81,
      "text": "Overall, when it comes to work, you have to ask yourself: “Will looking smarter enhance my ability to do my job?” For some, this question may not be an issue at all, especially if you work remotely and rarely see your colleagues or clients face to face.",
-     "translation": "所以，我是这么做的：我给自己打造了一套“制服”。为此，我挑了一套合适的穿搭，再把同一款式的单品按不同色调各买了几件。现在，我早上再也不用为穿什么发愁了，尽管一直穿这几件经典款确实有点腻。总的来说，说到上班，你得问问自己：“穿得更体面能提升我的工作能力吗？”对有些人来说，这个问题可能根本不成问题，尤其是远程办公、很少与同事或客户面对面打交道的人。但如果你的工作需要与人打交道，答案往往是肯定的。所以，与其和这套规则较劲，不如就做一切有助于实现工作目标的事。所以，我是这么做的：我给自己打造了一套“制服”。为此，我挑了一套合适的穿搭，再把同一款式的单品按不同色调各买了几件。现在，我早上再也不用为穿什么发愁了，尽管一直穿这几件经典款确实有点腻。总的来说，说到上班，你得问问自己：“穿得更体面能提升我的工作能力吗？”对有些人来说，这个问题可能根本不成问题，尤其是远程办公、很少与同事或客户面对面打交道的人。但如果你的工作需要与人打交道，答案往往是肯定的。所以，与其和这套规则较劲，不如就做一切有助于实现工作目标的事。"
+     "translation": "总的来说，说到上班，你得问问自己：“穿得更体面能提升我的工作能力吗？”"
     },
     {
      "id": "l111",
@@ -25020,21 +25020,21 @@
      "start": 704.31,
      "end": 710.94,
      "text": "So rather than fighting the system, I think we should just do whatever helps us to achieve our goals at work.",
-     "translation": "所以与其对抗规则，我"
+     "translation": "所以，与其和这套规则较劲，不如就做一切有助于实现工作目标的事。"
     },
     {
      "id": "l113",
      "start": 710.94,
      "end": 715.1,
      "text": "If that means playing it safe with your image, then let's face it.",
-     "translation": "认为不如做任何有助"
+     "translation": "如果这意味着在形象上求稳，那就面对现实吧。"
     },
     {
      "id": "l114",
      "start": 715.1,
      "end": 716.93,
      "text": "It's probably worth it.",
-     "translation": "于实现工作目标的事。"
+     "translation": "这多半是值得的。"
     },
     {
      "id": "l115",
@@ -25531,21 +25531,21 @@
      "start": 1290.97,
      "end": 1301.66,
      "text": "As I've grown older, I often hear people my age say things like “They just don't make good music like they used to.” Why does this happen?",
-     "translation": "随着年纪渐长，我常听到同龄人这样说：“现在的歌再也不像从前那样好听了。"
+     "translation": "随着年纪渐长，我常听到同龄人这样说：“现在的歌再也不像从前那样好听了。”为什么会这样？"
     },
     {
      "id": "l186",
      "start": 1301.66,
      "end": 1306.29,
      "text": "Luckily, psychology can give us some insights into this puzzle.",
-     "translation": "”为什么会这样？幸运的是，心理学能帮我们洞悉这"
+     "translation": "幸运的是，心理学能帮我们洞悉这个谜题。"
     },
     {
      "id": "l187",
      "start": 1306.41,
      "end": 1311.87,
      "text": "Musical tastes begin to crystallize as early as age 13 or 14.",
-     "translation": "个谜题。音乐品味最早在十三四岁时就开始定型。"
+     "translation": "音乐品味最早在十三四岁时就开始定型。"
     },
     {
      "id": "l188",
@@ -36600,21 +36600,21 @@
      "start": 250.11,
      "end": 251.11,
      "text": "W: Hi Mark.",
-     "translation": "聊过。W: 你"
+     "translation": "W: 你好，马克。"
     },
     {
      "id": "l40",
      "start": 251.11,
      "end": 252.05,
      "text": "Come on up.",
-     "translation": "好，马克。上来吧"
+     "translation": "上来吧。"
     },
     {
      "id": "l41",
      "start": 252.05,
      "end": 253.37,
      "text": "I'll buzz you in.",
-     "translation": "，我给你开门。"
+     "translation": "我给你开门。"
     },
     {
      "id": "l42",
@@ -36635,14 +36635,14 @@
      "start": 260.53,
      "end": 263.82,
      "text": "I spoke to all your references and they all checked out.",
-     "translation": "你所有的推荐人都联系过了，情况都核实无误。好吗？"
+     "translation": "你所有的推荐人都联系过了，情况都核实无误。"
     },
     {
      "id": "l45",
      "start": 263.82,
      "end": 264.34,
      "text": "Okay?",
-     "translation": "，反馈都没问题。好了"
+     "translation": "好吗？"
     },
     {
      "id": "l46",
@@ -36677,14 +36677,14 @@
      "start": 281.18,
      "end": 283.46,
      "text": "I think it's a winner for us.",
-     "translation": "我觉得这对我们来说是个绝佳的选择。W: 是。"
+     "translation": "我觉得这对我们来说是个绝佳的选择。"
     },
     {
      "id": "l51",
      "start": 283.46,
      "end": 284.38,
      "text": "W: Yes.",
-     "translation": "再合适不过了。 W: 是"
+     "translation": "W: 是。"
     },
     {
      "id": "l52",
@@ -36866,7 +36866,7 @@
      "start": 486.48,
      "end": 487.82,
      "text": "Why?",
-     "translation": "一项新研究发现，孩子看电视时间的长短与父母的压力水平呈正相关。为什么会这样？"
+     "translation": "为什么会这样？"
     },
     {
      "id": "l78",
@@ -36964,14 +36964,14 @@
      "start": 556.19,
      "end": 563.42,
      "text": "This type of communication, the researchers assert, can lead to children making fewer purchasing demands.",
-     "translation": "”研究人员断言，这种沟通方式能让孩子提出更"
+     "translation": "研究人员断言，这种沟通方式能让孩子提出更少的购买要求，"
     },
     {
      "id": "l92",
      "start": 563.42,
      "end": 566.37,
      "text": "That means less parents' stress.",
-     "translation": "少的购买要求，也就意味着父母的压力更小。"
+     "translation": "也就意味着父母的压力更小。"
     },
     {
      "id": "l93",
@@ -41645,7 +41645,7 @@
      "start": 81.81,
      "end": 88.21,
      "text": "Even when I was younger, we never had meat during meals. And I never really had a craving to try it.",
-     "translation": "从小到大，我们吃饭从来就没有肉。"
+     "translation": "从小到大，我们吃饭从来就没有肉。我也从来没真正馋过想尝尝。"
     },
     {
      "id": "l24",
@@ -42881,7 +42881,8 @@
      "id": "l200",
      "start": 1570.69,
      "end": 1573.67,
-     "text": "That's the end of listening comprehension."
+     "text": "That's the end of listening comprehension.",
+     "translation": "听力理解部分到此结束。"
     }
    ],
    "status": "published",
@@ -44997,7 +44998,7 @@
      "start": 32.72,
      "end": 33.57,
      "text": "through the centre.",
-     "translation": "从中间划一条横线。"
+     "translation": "从中间划过。"
     },
     {
      "id": "l5",
@@ -45081,7 +45082,7 @@
      "start": 68.29,
      "end": 69.13,
      "text": "W: No.",
-     "translation": "你不再觉得这方面会太难吗？"
+     "translation": "W: 不担心。"
     },
     {
      "id": "l17",
@@ -45116,7 +45117,7 @@
      "start": 85.47,
      "end": 93.35,
      "text": "Due to its material nature, architecture is one field where you will be able to clearly witness the contribution you make to a city.",
-     "translation": "M: 我相信确实如此。由于其物质属性，建筑是一个你能清楚见证自己对城"
+     "translation": "由于其物质属性，建筑是一个你能清楚见证自己对城市所作贡献的领域。"
     },
     {
      "id": "l22",
@@ -45137,28 +45138,28 @@
      "start": 100.48,
      "end": 105.32,
      "text": "So what subjects do you think I should start brushing up on in preparation?",
-     "translation": "那您觉得我"
+     "translation": "那么，您觉得我该开始复习哪些科目来做准备呢？"
     },
     {
      "id": "l25",
      "start": 105.32,
      "end": 107.01,
      "text": "I have the whole summer.",
-     "translation": "该开始复习"
+     "translation": "我有一整个暑假。"
     },
     {
      "id": "l26",
      "start": 107.01,
      "end": 112.02,
      "text": "M: These days, architecture is a very diverse and dynamic degree.",
-     "translation": "哪些科目"
+     "translation": "M: 如今，建筑学是一个非常多面且充满活力的学位。"
     },
     {
      "id": "l27",
      "start": 112.02,
      "end": 119.97,
      "text": "Most universities will encourage you to learn different things from fields as wide-ranging as philosophy and economics.",
-     "translation": "来做准备？"
+     "translation": "大多数大学会鼓励你学习不同领域的东西，范围从哲学到经济学都有。"
     },
     {
      "id": "l28",
@@ -45319,7 +45320,7 @@
      "start": 288.05,
      "end": 288.91,
      "text": "M: Thanks.",
-     "translation": "我告诉你这些，是免得你对这份工作能给你什么抱有错误的期待。"
+     "translation": "M: 谢谢。"
     },
     {
      "id": "l51",
@@ -45361,21 +45362,21 @@
      "start": 308.86,
      "end": 310.56,
      "text": "You sound very energetic.",
-     "translation": "你听起"
+     "translation": "你听起来精力充沛。"
     },
     {
      "id": "l57",
      "start": 310.56,
      "end": 314.56,
      "text": "Tell me why do you think you are well suited for this job?",
-     "translation": "来精力"
+     "translation": "告诉我，你为什么认为自己很适合这份工作？"
     },
     {
      "id": "l58",
      "start": 314.56,
      "end": 316.87,
      "text": "M: Well, firstly, I love football.",
-     "translation": "充沛。"
+     "translation": "M: 嗯，首先，我热爱足球。"
     },
     {
      "id": "l59",
@@ -45977,28 +45978,28 @@
      "start": 1138.84,
      "end": 1149.95,
      "text": "When Julius Morton moved to Nebraska City in 1854, he faced a problem shared by many settlers in the territory: It was a treeless plain.",
-     "translation": "1854 年，朱利叶斯·莫顿搬到内布拉斯"
+     "translation": "1854 年，朱利叶斯·莫顿搬到内布拉斯加州城时，他面临着一个当地许多定居者共有的难题：那是一片寸树不生的平原。"
     },
     {
      "id": "l145",
      "start": 1149.95,
      "end": 1155.07,
      "text": "That meant no trees for building materials, or for fuel.",
-     "translation": "加州城时，他面临着一个当地许多定居者共有"
+     "translation": "这意味着既没有树用作建筑材料，也没有树可当燃料。"
     },
     {
      "id": "l146",
      "start": 1155.07,
      "end": 1165.98,
      "text": "But Morton was one of the world's first conservationists, stating, \"For prosperity, we ought to plant as many forests as we have exhausted and consumed\".",
-     "translation": "的难题：那是一片寸树不生的平原。这意味着"
+     "translation": "但莫顿是世界上最早的环保主义者之一，他说过：\"为了繁荣，我们消耗了多少森林，就该种回多少森林。\""
     },
     {
      "id": "l147",
      "start": 1165.98,
      "end": 1169.98,
      "text": "So he started planting trees, beginning with his own land.",
-     "translation": "既没有树用作建筑材料，也没有树可当燃料。"
+     "translation": "于是他开始种树，从自家土地种起。"
     },
     {
      "id": "l148",
@@ -46033,14 +46034,14 @@
      "start": 1197.24,
      "end": 1204.68,
      "text": "He also organized the Nebraska State Gardening Society and served on the Nebraska State Board of Agriculture.",
-     "translation": "这在很大程度上是因为莫顿创办了该州第一份报纸《内布拉斯加州城新闻报》，并经常在上面发表社论，宣扬植树在实用和美观上的好"
+     "translation": "他还组建了内布拉斯加州园艺协会，并在州农业委员会任职。"
     },
     {
      "id": "l153",
      "start": 1204.86,
      "end": 1211.92,
      "text": "While serving on the Board, Morton came up with an idea to spread his belief in tree planting statewide.",
-     "translation": "处。他还组建了内布拉斯加州园艺协会，并在州农业委员会任职。在委员会任职期间，莫顿想出了一个把植树理念推广到全州的点子。"
+     "translation": "在委员会任职期间，莫顿想出了一个把植树理念推广到全州的点子。"
     },
     {
      "id": "l154",
@@ -46166,21 +46167,21 @@
      "start": 1384.79,
      "end": 1390.63,
      "text": "Modern humans arose in Africa about 200,000 years ago.",
-     "translation": "现代人大约 20 万年前起源"
+     "translation": "现代人大约 20 万年前起源于非洲，"
     },
     {
      "id": "l172",
      "start": 1390.63,
      "end": 1396.53,
      "text": "They then spread across Europe and Asia sometime after 60,000 years ago.",
-     "translation": "于非洲，随后在 6 万年前"
+     "translation": "随后在 6 万年前的某个时候扩散到欧洲和亚洲。"
     },
     {
      "id": "l173",
      "start": 1396.53,
      "end": 1401.16,
      "text": "This is the \"Out of Africa\" model, as it's commonly known.",
-     "translation": "的某个时候扩散到欧洲和亚洲。"
+     "translation": "这就是人们通常所说的\"走出非洲\"模型。"
     },
     {
      "id": "l174",
@@ -46703,21 +46704,21 @@
      "start": 43.11,
      "end": 46.18,
      "text": "I have your test results here, and it's good news.",
-     "translation": "你的检查结"
+     "translation": "你的检查结果在这里，是个好消息。"
     },
     {
      "id": "l10",
      "start": 46.18,
      "end": 48.21,
      "text": "The blood test came back clear.",
-     "translation": "果在这儿，是"
+     "translation": "验血结果没有问题。"
     },
     {
      "id": "l11",
      "start": 48.21,
      "end": 51.36,
      "text": "There is no indication of any digestive issues.",
-     "translation": "个好消息。"
+     "translation": "没有任何消化系统问题的迹象。"
     },
     {
      "id": "l12",
@@ -47116,7 +47117,7 @@
      "start": 313.82,
      "end": 314.87,
      "text": "Why?",
-     "translation": "你创立了一个基金会，致力于让更多孩子参加团队运动。为什么呢？"
+     "translation": "为什么呢？"
     },
     {
      "id": "l69",
@@ -47151,14 +47152,14 @@
      "start": 339.73,
      "end": 343.56,
      "text": "M: Actually, we support teams for secondary school students, too.",
-     "translation": "M: 其实，我们也资助中学生的"
+     "translation": "M: 其实，我们也资助中学生的运动队，"
     },
     {
      "id": "l74",
      "start": 343.56,
      "end": 346.43,
      "text": "And also have some public funding.",
-     "translation": "运动队，另外还有一些公共拨款。"
+     "translation": "另外还有一些公共拨款。"
     },
     {
      "id": "l75",
@@ -47522,7 +47523,7 @@
      "start": 853.98,
      "end": 857.92,
      "text": "What makes humans different from other species?",
-     "translation": "然后在答题卡1上把对应字母用一条横线"
+     "translation": "是什么让人类不同于其他物种？"
     },
     {
      "id": "l127",
@@ -47697,7 +47698,7 @@
      "start": 1016.27,
      "end": 1017.29,
      "text": "No.",
-     "translation": "创造者是凭空造物的天才吗？不是。"
+     "translation": "不是。"
     },
     {
      "id": "l152",
@@ -47816,21 +47817,21 @@
      "start": 1188.09,
      "end": 1193.87,
      "text": "What's not understood quite so well is what dogs understand about these changes.",
-     "translation": "还不太清楚的是"
+     "translation": "而狗对这些变化到底理解多少，人们还不太清楚。"
     },
     {
      "id": "l169",
      "start": 1193.93,
      "end": 1200.68,
      "text": "Humans send out lots of cues, but whether dogs know some of these cues mean \"illness\" isn't clear.",
-     "translation": "，狗对这些变化理"
+     "translation": "人类会发出大量信号，但狗是否知道其中某些信号意味着“生病了”，尚不清楚。"
     },
     {
      "id": "l170",
      "start": 1200.68,
      "end": 1214.18,
      "text": "What we perceive as concern on a dog's part might be more like increased curiosity or suspicion that something is wrong with us, and sticking close by is a great way to gather more information about the situation.",
-     "translation": "解到什么程度。"
+     "translation": "在我们看来像是狗在关心，其实更可能是好奇心增强，或者怀疑我们出了什么问题，而贴身守着正是收集更多情况信息的好办法。"
     },
     {
      "id": "l171",
@@ -47879,7 +47880,7 @@
      "start": 1255.89,
      "end": 1263.89,
      "text": "Q19. What view of many dog owners wins support from researchers studying dog cognition?",
-     "translation": "Q19. 研究犬类认知的研究人员证实了什么？"
+     "translation": "Q19. 许多狗主人的哪种观点得到了研究犬类认知的研究人员的支持？"
     },
     {
      "id": "l178",
@@ -48395,14 +48396,14 @@
      "start": 39.56,
      "end": 48.85,
      "text": "W: So, I've been thinking, this summer, instead of our usual holiday rental, I'd like to try renting a camper van and exploring a bit more.",
-     "translation": "W: 我一直在想，今年夏天，不去我们常租的度"
+     "translation": "W: 我一直在想，今年夏天，不去我们常租的度假屋了，我想试试租一辆房车，多探索一些地方。"
     },
     {
      "id": "l8",
      "start": 48.85,
      "end": 50.32,
      "text": "M: A camper van?",
-     "translation": "假屋了，我想试试租一辆房车，多探索一些地方。"
+     "translation": "M: 房车？"
     },
     {
      "id": "l9",
@@ -48416,7 +48417,7 @@
      "start": 53.1,
      "end": 54.99,
      "text": "W: Yes, a camper van.",
-     "translation": "一辆房车。"
+     "translation": "W: 对，一辆房车。"
     },
     {
      "id": "l11",
@@ -48521,14 +48522,14 @@
      "start": 108.17,
      "end": 110.28,
      "text": "M: I'm warming up to the idea.",
-     "translation": "M: 我开始"
+     "translation": "M: 我开始有点动心了。"
     },
     {
      "id": "l26",
      "start": 110.28,
      "end": 111.61,
      "text": "Keep talking.",
-     "translation": "有点动心了。"
+     "translation": "继续说。"
     },
     {
      "id": "l27",
@@ -48605,21 +48606,21 @@
      "start": 145.52,
      "end": 147.61,
      "text": "We wouldn't want to leave him behind.",
-     "translation": "我们可不想把"
+     "translation": "我们可不想把它落下。"
     },
     {
      "id": "l38",
      "start": 147.61,
      "end": 148.68,
      "text": "W: Slow down.",
-     "translation": "它落下。W"
+     "translation": "W: 慢慢说。"
     },
     {
      "id": "l39",
      "start": 148.68,
      "end": 150.37,
      "text": "Glad you're excited about it.",
-     "translation": ": 慢慢说。"
+     "translation": "很高兴你兴奋起来了。"
     },
     {
      "id": "l40",
@@ -48710,21 +48711,21 @@
      "start": 250.46,
      "end": 253.77,
      "text": "Lately, you seem to be constantly one step behind.",
-     "translation": "最近你"
+     "translation": "最近你好像总是慢一步。"
     },
     {
      "id": "l53",
      "start": 253.77,
      "end": 255.07,
      "text": "What's going on?",
-     "translation": "好像总"
+     "translation": "出什么事了？"
     },
     {
      "id": "l54",
      "start": 255.07,
      "end": 255.94,
      "text": "W: I'm sorry.",
-     "translation": "是慢"
+     "translation": "W: 很抱歉。"
     },
     {
      "id": "l55",
@@ -48780,7 +48781,7 @@
      "start": 280.34,
      "end": 281.16,
      "text": "M: Sure thing.",
-     "translation": "话都说到这儿了……M: 没问题。不过既然你需要休假，为什么不早点提呢？"
+     "translation": "M: 没问题。"
     },
     {
      "id": "l63",
@@ -48836,28 +48837,28 @@
      "start": 295.53,
      "end": 301.96,
      "text": "M: Look, you've been with us almost five years and I personally really value your proficiency at your job.",
-     "translation": "M: 听着，你在我们这儿快五年了"
+     "translation": "M: 听着，你在我们这儿快五年了，我个人非常看重你业务上的娴熟。"
     },
     {
      "id": "l71",
      "start": 301.96,
      "end": 304.02,
      "text": "It makes my job far easier.",
-     "translation": "，我个人非常看重你业务上的娴熟。"
+     "translation": "这让我省心多了。"
     },
     {
      "id": "l72",
      "start": 304.02,
      "end": 309.43,
      "text": "In addition, I can assure you that management as a whole also holds you in high regard.",
-     "translation": "这让我省心多了。另外，我可以向你保证，管理层整体上对你评价也"
+     "translation": "另外，我可以向你保证，管理层整体上对你评价也很高。"
     },
     {
      "id": "l73",
      "start": 309.43,
      "end": 310.34,
      "text": "W: Thank you.",
-     "translation": "很高。W: 谢谢。M: 我需要的是你恢复到百分之百的状态。"
+     "translation": "W: 谢谢。"
     },
     {
      "id": "l74",
@@ -48920,14 +48921,14 @@
      "start": 331.52,
      "end": 332.6,
      "text": "W: Sounds good.",
-     "translation": "您的体"
+     "translation": "W: 听起来不错。"
     },
     {
      "id": "l83",
      "start": 332.6,
      "end": 334.37,
      "text": "Thank you for your understanding.",
-     "translation": "谅。"
+     "translation": "谢谢您的体谅。"
     },
     {
      "id": "l84",
@@ -49172,7 +49173,7 @@
      "start": 620.51,
      "end": 626.01,
      "text": "Climate scientists predict that many parts of the world will be increasingly prone to floods.",
-     "translation": "这对人的生命和财产构成严重威胁。因"
+     "translation": "气候科学家预测，世界许多地区将越来越容易发生洪灾。"
     },
     {
      "id": "l119",
@@ -49186,7 +49187,7 @@
      "start": 629.67,
      "end": 636.63,
      "text": "So understanding and accurately forecasting flood risks is a key challenge for vulnerable cities around the globe.",
-     "translation": "球各易受灾城市面临的一项关键挑战。"
+     "translation": "因此，理解并准确预测洪水风险，是全球各易受灾城市面临的一项关键挑战。"
     },
     {
      "id": "l121",
@@ -51388,7 +51389,7 @@
      "start": 1455.96,
      "end": 1462.38,
      "text": "This is the illusion I seek to tackle. We are intimately connected to the world around us.",
-     "translation": "我们与周围的世界紧密相连。"
+     "translation": "这正是我要破除的幻觉。我们与周围的世界紧密相连。"
     },
     {
      "id": "l177",
@@ -51820,14 +51821,14 @@
      "start": 46.36,
      "end": 48.42,
      "text": "The electric kitchen appliance.",
-     "translation": "就是那种厨房电器。M: 正是。"
+     "translation": "就是那种厨房电器。"
     },
     {
      "id": "l9",
      "start": 48.42,
      "end": 49.34,
      "text": "M: Exactly.",
-     "translation": "就是那种厨房电器。M: 正是。"
+     "translation": "M: 正是。"
     },
     {
      "id": "l10",
@@ -51855,14 +51856,14 @@
      "start": 61.09,
      "end": 62.88,
      "text": "Anyway, it's amazing.",
-     "translation": "总之，它太棒了。W: 是吗？"
+     "translation": "总之，它太棒了。"
     },
     {
      "id": "l14",
      "start": 62.88,
      "end": 63.55,
      "text": "W: Really?",
-     "translation": "它能有什么特别的？"
+     "translation": "W: 真的吗？"
     },
     {
      "id": "l15",
@@ -51918,14 +51919,14 @@
      "start": 85.57,
      "end": 87.94,
      "text": "I've never thought of getting one myself.",
-     "translation": "W: 嗯，明白了。我自己从没想过要买一台"
+     "translation": "我自己从没想过要买一台。"
     },
     {
      "id": "l23",
      "start": 87.94,
      "end": 92.71,
      "text": "It sounds like the kind of thing that, for me personally, I would rarely use.",
-     "translation": "。听起来这东西对我个人来说很少会用得上。"
+     "translation": "听起来这东西对我个人来说很少会用得上。"
     },
     {
      "id": "l24",
@@ -51981,28 +51982,28 @@
      "start": 121.66,
      "end": 123.24,
      "text": "M: It's so much healthier.",
-     "translation": "M: 自己榨的健康太"
+     "translation": "M: 自己榨的健康太多了，"
     },
     {
      "id": "l32",
      "start": 123.24,
      "end": 124.86,
      "text": "It's not even close.",
-     "translation": "多了，根本没法比。"
+     "translation": "根本没法比。"
     },
     {
      "id": "l33",
      "start": 124.86,
      "end": 128.91,
      "text": "Did you know that store-bought juice is like 10% sugar?",
-     "translation": "你知道市售果汁的含糖量约有 10% 吗？W: 是啊。"
+     "translation": "你知道市售果汁的含糖量约有 10% 吗？"
     },
     {
      "id": "l34",
      "start": 128.91,
      "end": 129.72,
      "text": "W: Right.",
-     "translation": "你知道市售果汁的含糖量约有 10% 吗？W: 是啊。"
+     "translation": "W: 是啊。"
     },
     {
      "id": "l35",
@@ -52093,7 +52094,7 @@
      "start": 239.97,
      "end": 242.42,
      "text": "Mr. Grimm, thank you for being here.",
-     "translation": "先生，感谢您赏光。M: 谢谢你们的邀请。W: 我想先从显而易见的事情说起。"
+     "translation": "格里姆先生，感谢您赏光。"
     },
     {
      "id": "l48",
@@ -52324,7 +52325,7 @@
      "start": 467.96,
      "end": 477.62,
      "text": "In research published in the journal Science Robotics, a team at Northwestern University said the crab-like robot is 0.5 millimeters wide.",
-     "translation": "在发表于《科学·机器人学》期刊的研究中，西北大学的一个团队表示，这种蟹形机器人的宽度只有 0."
+     "translation": "在发表于《科学·机器人学》期刊的研究中，西北大学的一个团队表示，这种蟹形机器人的宽度只有 0.5 毫米。"
     },
     {
      "id": "l81",
@@ -52583,14 +52584,14 @@
      "start": 853.8,
      "end": 870.15,
      "text": "And yet a new paper in The Quarterly Journal of Experimental Psychology suggests that we actually have very poor “awareness” of our own belief change, meaning that we will tend to underestimate how much we've been swayed by a convincing article.",
-     "translation": "如果你读到一篇关于争议话题的文章，你觉得你能察觉它是否改变了你的看法吗？没有人比你更了解自己的想法——如果你的看法变了，你似乎理所当然会知道。然而，《实验心理学季刊》上的一篇新论文表明，我们对自"
+     "translation": "然而，《实验心理学季刊》上的一篇新论文表明，我们对自己看法变化的“觉察力”其实非常差，也就是说，我们往往会低估自己被一篇有说服力的文章改变了多少。"
     },
     {
      "id": "l118",
      "start": 870.15,
      "end": 881.55,
      "text": "The researchers recruited over 200 undergraduates across two studies and focused on their beliefs about whether physical punishment of kids is an effective form of discipline.",
-     "translation": "己看法变化的“觉察力”其实非常差，也就是说，我们往往会低估自己被一篇有说服力的文章改变了多少。研究人员在两项研究中招募了 200 多名本科生，聚焦他们对“体罚孩子是否是有效的管教方式”的看法。"
+     "translation": "研究人员在两项研究中招募了 200 多名本科生，聚焦他们对“体罚孩子是否是有效的管教方式”的看法。"
     },
     {
      "id": "l119",
@@ -52611,14 +52612,14 @@
      "start": 899.05,
      "end": 907.03,
      "text": "Each was several pages long, and either presented the arguments and data in favor of physical punishment or against it.",
-     "translation": "学生们以 1 分（完全不相信）到 9 分（完全相信）的量表，报告了自己对“体罚是否是管教孩子的有效方式”的最初看法。几周后，他们分别拿到两篇"
+     "translation": "每篇文章都有好几页，分别陈述支持或反对体罚的论点和数据。"
     },
     {
      "id": "l122",
      "start": 907.03,
      "end": 913.63,
      "text": "After this, the students answered some questions to test their comprehension and memory of the text.",
-     "translation": "基于研究的文章之一来读。每篇文章都有好几页，分别陈述支持或反对体罚的论点和数据。读完之后，学生们回答一些问题，以测试他们对文章的理解和记忆。"
+     "translation": "读完之后，学生们回答一些问题，以测试他们对文章的理解和记忆。"
     },
     {
      "id": "l123",
@@ -52667,14 +52668,14 @@
      "start": 968.75,
      "end": 975.17,
      "text": "The researchers conceded that this research was about changes to mostly moderate beliefs.",
-     "translation": "这种记忆偏差与他们理解或回忆文章的好坏无关，说明这些因素对最初看法的记忆或对看法改变的觉察并没有影响。研究人"
+     "translation": "研究人员承认，这项研究针对的主要是温和看法的改变。"
     },
     {
      "id": "l130",
      "start": 975.17,
      "end": 982.04,
      "text": "It's likely the findings would be different in the context of changes to extreme or deeply held beliefs.",
-     "translation": "员承认，这项研究针对的主要是温和看法的改变。在极端或根深蒂固的看法发生改变的情况下，研究结果可能会有所不同。"
+     "translation": "在极端或根深蒂固的看法发生改变的情况下，研究结果可能会有所不同。"
     },
     {
      "id": "l131",
@@ -53393,56 +53394,56 @@
      "start": 132.13,
      "end": 136.71,
      "text": "M: OK then, this here is your yearly performance review.",
-     "translation": "M: 好了，这是你"
+     "translation": "M: 好了，这是你的年度绩效评估。"
     },
     {
      "id": "l13",
      "start": 136.71,
      "end": 142.38,
      "text": "You've been with the company for 3 years and under my direct supervision for the past 12 months.",
-     "translation": "的年度绩效评估。"
+     "translation": "你在公司工作三年了，过去 12 个月由我直接管理。"
     },
     {
      "id": "l14",
      "start": 142.38,
      "end": 144.95,
      "text": "Your report is mostly good.",
-     "translation": "你的评估报告"
+     "translation": "你的评估报告总体不错。"
     },
     {
      "id": "l15",
      "start": 144.95,
      "end": 147.85,
      "text": "But there are a couple of issues we must discuss.",
-     "translation": "总体不错。"
+     "translation": "但有几个问题我们必须谈一谈。"
     },
     {
      "id": "l16",
      "start": 147.85,
      "end": 150.42,
      "text": "The report is yours to take with you.",
-     "translation": "这份报告你"
+     "translation": "这份报告你可以带走。"
     },
     {
      "id": "l17",
      "start": 150.42,
      "end": 153.63,
      "text": "We'll go through the main points together now.",
-     "translation": "可以带走。"
+     "translation": "我们现在一起过一遍要点。"
     },
     {
      "id": "l18",
      "start": 153.63,
      "end": 156.93,
      "text": "And you can come through it in greater detail later.",
-     "translation": "开始之前你还有"
+     "translation": "之后你可以再仔细看细节。"
     },
     {
      "id": "l19",
      "start": 156.93,
      "end": 159.79,
      "text": "Do you have any questions before we start?",
-     "translation": "什么问题吗？W:"
+     "translation": "开始之前你还有什么问题吗？"
     },
     {
      "id": "l20",
@@ -53470,14 +53471,14 @@
      "start": 166.55,
      "end": 169.57,
      "text": "You are punctual and industrious.",
-     "translation": "你守时又"
+     "translation": "你守时又勤勉。"
     },
     {
      "id": "l24",
      "start": 169.57,
      "end": 174.38,
      "text": "Furthermore, you have strong analytical skills and attention to detail.",
-     "translation": "勤奋。"
+     "translation": "此外，你有很强的分析能力，注重细节。"
     },
     {
      "id": "l25",
@@ -53491,56 +53492,56 @@
      "start": 180.24,
      "end": 181.38,
      "text": "W: Thank you.",
-     "translation": "这评"
+     "translation": "W: 谢谢。"
     },
     {
      "id": "l27",
      "start": 181.38,
      "end": 183.12,
      "text": "I appreciate the recognition.",
-     "translation": "我很感激这"
+     "translation": "我很感激这份认可。"
     },
     {
      "id": "l28",
      "start": 183.12,
      "end": 187.25,
      "text": "M: Do you agree, then, with this depiction so far?",
-     "translation": "份认可。"
+     "translation": "M: 那么，到目前为止的这些评价你同意吗？"
     },
     {
      "id": "l29",
      "start": 187.25,
      "end": 190.57,
      "text": "W: Yeah, it's a little simplistic perhaps.",
-     "translation": "W: 同意，也许"
+     "translation": "W: 同意，也许有点过于简单。"
     },
     {
      "id": "l30",
      "start": 190.57,
      "end": 193.83,
      "text": "But that's to be expected from this kind of evaluation.",
-     "translation": "有点过于简单。"
+     "translation": "不过，这种评估里说这些也在意料之中。"
     },
     {
      "id": "l31",
      "start": 193.83,
      "end": 195.05,
      "text": "M: Sure.",
-     "translation": "价已"
+     "translation": "M: 当然。"
     },
     {
      "id": "l32",
      "start": 195.09,
      "end": 197.36,
      "text": "Would you want to add anything?",
-     "translation": "你想补充"
+     "translation": "你想补充什么吗？"
     },
     {
      "id": "l33",
      "start": 197.36,
      "end": 201.73,
      "text": "Your comments can be added to the report if you wish.",
-     "translation": "什么吗？"
+     "translation": "如果你愿意，可以把你的看法写进报告。"
     },
     {
      "id": "l34",
@@ -53554,21 +53555,21 @@
      "start": 203.3,
      "end": 205.45,
      "text": "It's a flattering portrayal really.",
-     "translation": "经够夸"
+     "translation": "这评价已经够夸我的了。"
     },
     {
      "id": "l36",
      "start": 205.45,
      "end": 206.55,
      "text": "Thank you, though.",
-     "translation": "我的"
+     "translation": "不过还是谢谢你。"
     },
     {
      "id": "l37",
      "start": 206.99,
      "end": 208.16,
      "text": "M: OK.",
-     "translation": "这评价已经够夸我的了。"
+     "translation": "M: 好。"
     },
     {
      "id": "l38",
@@ -53589,14 +53590,14 @@
      "start": 219.35,
      "end": 220.47,
      "text": "W: I see.",
-     "translation": "给你发个有条件录取没问题，但"
+     "translation": "W: 我明白。"
     },
     {
      "id": "l41",
      "start": 220.59,
      "end": 221.66,
      "text": "M: Yes.",
-     "translation": "先给你提个醒：我们的入学考试"
+     "translation": "M: 是的。"
     },
     {
      "id": "l42",
@@ -53750,14 +53751,14 @@
      "start": 375.2,
      "end": 377.48,
      "text": "They always pushed me to study hard.",
-     "translation": "他们总是督促"
+     "translation": "他们总是督促我努力学习。"
     },
     {
      "id": "l64",
      "start": 377.48,
      "end": 380.59,
      "text": "And I certainly wouldn't be here without their support.",
-     "translation": "我努力学习。"
+     "translation": "没有他们的支持，我肯定不会有今天。"
     },
     {
      "id": "l65",
@@ -53834,7 +53835,7 @@
      "start": 417.47,
      "end": 421.18,
      "text": "Now I'd like to address your academic history and projected grades.",
-     "translation": "估分数。"
+     "translation": "现在我想谈谈你的学业成绩和预估分数。"
     },
     {
      "id": "l76",
@@ -53855,14 +53856,14 @@
      "start": 436.54,
      "end": 438.71,
      "text": "Do you think you can attain this?",
-     "translation": "你觉得自己"
+     "translation": "你觉得自己能达到吗？"
     },
     {
      "id": "l79",
      "start": 438.71,
      "end": 440.16,
      "text": "W: I think so.",
-     "translation": "能达到吗？"
+     "translation": "W: 我想是的。"
     },
     {
      "id": "l80",
@@ -53876,35 +53877,35 @@
      "start": 440.78,
      "end": 444.61,
      "text": "M: I'm looking at your school grades now and I'll be honest.",
-     "translation": "M: 我现在正在看你"
+     "translation": "M: 我现在正在看你的在校成绩，说实话，"
     },
     {
      "id": "l82",
      "start": 444.61,
      "end": 447.04,
      "text": "It's a bit of a mixed bag.",
-     "translation": "的在校成绩，说实话，"
+     "translation": "有点参差不齐。"
     },
     {
      "id": "l83",
      "start": 447.04,
      "end": 451.43,
      "text": "You do get top grades here and there, but you are not very...",
-     "translation": "你有些科目确实拿了"
+     "translation": "你有些科目确实拿了高分，但你不太……"
     },
     {
      "id": "l84",
      "start": 451.43,
      "end": 453.56,
      "text": "Shall we say \"consistent\"?",
-     "translation": "高分，但你不太……"
+     "translation": "怎么说呢，不太“稳定”？"
     },
     {
      "id": "l85",
      "start": 453.56,
      "end": 464.55,
      "text": "I see no problem in making you a conditional offer, but consider yourself warned, our entrance exam is, to use your own words, no picnic.",
-     "translation": "，借用你自己的话，可不轻松。"
+     "translation": "给你发个有条件录取没问题，但先给你提个醒：我们的入学考试，借用你自己的话，可不轻松。"
     },
     {
      "id": "l86",
@@ -53988,35 +53989,35 @@
      "start": 609.41,
      "end": 615.37,
      "text": "It's no small wonder most of us forget our passwords more often than our keys.",
-     "translation": "难怪我们大多"
+     "translation": "难怪我们大多数人忘密码比忘钥匙还频繁。"
     },
     {
      "id": "l98",
      "start": 615.97,
      "end": 629.59,
      "text": "Now a new peer-reviewed study by researchers at Aalto University in Finland is attempting to figure out why we forget our passwords in order to help put an end to this frustrating phenomenon.",
-     "translation": "数人忘密码比忘"
+     "translation": "现在，芬兰阿尔托大学的研究人员开展了一项新的同行评审研究，试图弄清我们为什么忘记密码，以帮助终结这种令人恼火的现象。"
     },
     {
      "id": "l99",
      "start": 630.01,
      "end": 642.24,
      "text": "Their findings suggest that how likely you are to remember your password has less to do with the intricacy of the password itself and more to do with how often you anticipate using it.",
-     "translation": "钥匙还频繁。"
+     "translation": "他们的发现表明，你能否记住密码，与其说取决于密码本身的复杂程度，不如说更多取决于你预计使用它的频率。"
     },
     {
      "id": "l100",
      "start": 642.24,
      "end": 658.35,
      "text": "Which is to say: you are far more likely to remember a complicated password if you know you'll frequently be using it to log into an account than you are to remember a simple password for an account that you don't expect to log into very often.",
-     "translation": "也就是说：如果你知道某个复杂密码会经常用来登录账户，你记"
+     "translation": "也就是说：如果你知道某个复杂密码会经常用来登录账户，你记住它的可能性，要远远大于记住一个不常登录账户的简单密码。"
     },
     {
      "id": "l101",
      "start": 658.69,
      "end": 669.65,
      "text": "The researchers advise websites to include more of an incentive for users to log in more often in order to help them remember their secret codes.",
-     "translation": "住它的可能性，要远远大于记住一个不常登录账户的简单密码。"
+     "translation": "研究人员建议网站给用户增加更多登录激励，让用户更频繁地登录，从而帮助他们记住密码。"
     },
     {
      "id": "l102",
@@ -54205,14 +54206,14 @@
      "start": 857.4,
      "end": 860.42,
      "text": "This can safeguard against injuries.",
-     "translation": "这可以防"
+     "translation": "这可以防止受伤。"
     },
     {
      "id": "l129",
      "start": 860.42,
      "end": 865.19,
      "text": "An app cannot perceive such subtleties.",
-     "translation": "止受伤。"
+     "translation": "应用无法察觉这些细微之处。"
     },
     {
      "id": "l130",
@@ -54317,14 +54318,14 @@
      "start": 1014.83,
      "end": 1029.18,
      "text": "Those universal rules are: help your family, help your group, return favours, be brave, defer to superiors, divide resources fairly and respect the property of others.",
-     "translation": "这些普世规则是：帮助家人、帮助群体、知恩图报、勇"
+     "translation": "这些普世规则是：帮助家人、帮助群体、知恩图报、勇敢无畏、服从上级、公平分配资源、尊重他人财产。"
     },
     {
      "id": "l145",
      "start": 1029.18,
      "end": 1044.3,
      "text": "The character traits held for every kind of community, be they traditional hunter-gatherers or advanced civilizations, helping to uphold civilized society and foster social cooperation, researchers found.",
-     "translation": "敢无畏、服从上级、公平分配资源、尊重他人财产。"
+     "translation": "研究人员发现，这些品格特质存在于每一种社群中，无论是传统的狩猎采集部落还是先进文明，它们有助于维护文明社会、促进社会合作。"
     },
     {
      "id": "l146",
@@ -54345,14 +54346,14 @@
      "start": 1064.39,
      "end": 1077.61,
      "text": "Even if some of these traits look right-wing or conservative, for example, deferring to authority, left-wing people will still have a group loyalty and deference to someone or something.\"",
-     "translation": "即使其中有些特质看起来偏右翼或保守，比如服从权威，左翼"
+     "translation": "即使其中一些特质看起来像右翼或保守立场，比如服从权威，左翼人士也仍会有群体忠诚，"
     },
     {
      "id": "l149",
      "start": 1083.15,
      "end": 1094.01,
      "text": "The study, published in Current Anthropology, is the largest and most comprehensive cross-cultural survey of morality ever conducted.",
-     "translation": "人士也仍然会对某个群体忠诚，并服从某人或某种事物。”"
+     "translation": "这项研究发表在《当代人类学》上，是有史以来规模最大、最全面的道德跨文化调查。"
     },
     {
      "id": "l150",
@@ -54660,14 +54661,14 @@
      "start": 1477.1,
      "end": 1484.07,
      "text": "A new study looks at the relationship between meaning and happiness in the context of financial resources.",
-     "translation": "一项新研究在经济资源的背景下"
+     "translation": "一项新研究在经济资源的背景下考察意义与幸福之间的关系。"
     },
     {
      "id": "l194",
      "start": 1485.65,
      "end": 1501.34,
      "text": "Rhia Catapano from the University of Toronto and colleagues find meaning is a far weaker predictor of happiness for rich people than poorer people, suggesting economic resources can impact how we experience meaning.",
-     "translation": "考察意义与幸福之间的关系。"
+     "translation": "多伦多大学的莉亚·卡塔帕诺及其同事发现，对富人而言，意义对幸福的预测力远弱于穷人，这表明经济资源会影响我们体验意义的方式。"
     },
     {
      "id": "l195",
@@ -55519,14 +55520,14 @@
      "start": 314.5,
      "end": 315.44,
      "text": "That's cool.",
-     "translation": "真不"
+     "translation": "挺酷的。"
     },
     {
      "id": "l58",
      "start": 315.44,
      "end": 316.86,
      "text": "I could see that working.",
-     "translation": "错，我觉得这能成。"
+     "translation": "我觉得这能成。"
     },
     {
      "id": "l59",
@@ -55883,7 +55884,7 @@
      "start": 791.27,
      "end": 796.51,
      "text": "Question 12. What is the dark side of our inborn drive to acquire?",
-     "translation": "问题 12：去享受生活赐予的一切吧。（问题 12 至 15 基于刚才听到的短文。）"
+     "translation": "问题 12：我们天生的获取欲有什么阴暗面？"
     },
     {
      "id": "l110",
@@ -56847,21 +56848,21 @@
      "start": 53.81,
      "end": 55.09,
      "text": "M: Good morning.",
-     "translation": "早上好！我叫鲍勃·"
+     "translation": "M: 早上好！"
     },
     {
      "id": "l6",
      "start": 55.09,
      "end": 56.93,
      "text": "My name is Bob Fetterman.",
-     "translation": "费特曼，是电脑技"
+     "translation": "我叫鲍勃·费特曼。"
     },
     {
      "id": "l7",
      "start": 56.93,
      "end": 58.58,
      "text": "I'm the computer technician.",
-     "translation": "术员。- 我上周不"
+     "translation": "我是电脑维修技术员。"
     },
     {
      "id": "l8",
@@ -56875,7 +56876,7 @@
      "start": 61.06,
      "end": 61.87,
      "text": "M: Maybe.",
-     "translation": "- 可能吧。我是"
+     "translation": "M: 也许吧。"
     },
     {
      "id": "l10",
@@ -56896,14 +56897,14 @@
      "start": 69.67,
      "end": 74.52,
      "text": "W: Yeah, I spoke to a lady there last Tuesday, which is now ten days ago.",
-     "translation": "- 对，上周二，也就"
+     "translation": "- 对，上周二，也就是十天前，我和你们总部的一位女士通过话。"
     },
     {
      "id": "l13",
      "start": 74.52,
      "end": 80.13,
      "text": "I made it clear it was an urgent matter, and please send someone as soon as possible.",
-     "translation": "是十天前，我和你们总"
+     "translation": "我明确说了事情很紧急，请尽快派人过来。"
     },
     {
      "id": "l14",
@@ -56973,7 +56974,7 @@
      "start": 113.23,
      "end": 115.17,
      "text": "What and where is the issue?",
-     "translation": "问题出在哪里？"
+     "translation": "是什么问题？出在哪里？"
     },
     {
      "id": "l24",
@@ -57119,21 +57120,21 @@
      "start": 243.5,
      "end": 244.04,
      "text": "Yes.",
-     "translation": "- 是的。"
+     "translation": "- 嗯，是啊。"
     },
     {
      "id": "l45",
      "start": 244.04,
      "end": 246.94,
      "text": "In fact, this is why I wished to speak to you.",
-     "translation": "- 其实，这正是我想和你谈谈的原因。"
+     "translation": "其实这正是我想和你谈谈的原因。"
     },
     {
      "id": "l46",
      "start": 246.94,
      "end": 249.59,
      "text": "I wanted to hear more about what it's like.",
-     "translation": "- 我想多了解一下这一行到底什么样。"
+     "translation": "我想多了解一下这一行到底什么样。"
     },
     {
      "id": "l47",
@@ -57154,7 +57155,7 @@
      "start": 256.5,
      "end": 261.53,
      "text": "The thing is, there are many different branches of law and many different jobs.",
-     "translation": "- 问题在于，法律有很多不同的分支，也有很多不同的工作。"
+     "translation": "问题在于，法律有很多不同的分支，也有很多不同的工作。"
     },
     {
      "id": "l50",
@@ -57175,14 +57176,14 @@
      "start": 266.09,
      "end": 269.33,
      "text": "I'm a solicitor specializing in real estate.",
-     "translation": "- 我是一名专攻房地产的事务律师。"
+     "translation": "我是一名专攻房地产的事务律师。"
     },
     {
      "id": "l53",
      "start": 269.33,
      "end": 272.37,
      "text": "Most of my work involves mediating land disputes.",
-     "translation": "- 我的大部分工作是调解土地纠纷。"
+     "translation": "我的大部分工作是调解土地纠纷。"
     },
     {
      "id": "l54",
@@ -57231,21 +57232,21 @@
      "start": 298.01,
      "end": 309.39,
      "text": "W: So you are saying that a lot of what you do is fix people's legal issues, like you try to find a solution that benefits everyone and that prevents a problem from escalating.",
-     "translation": "- 所以你是说，你做的很多事情就是解决人们的法律问题。"
+     "translation": "- 所以你是说，你做的很多事情就是解决人们的法律问题，比如尽量找到一个各方都能受益、能防止问题升级的解决方案。"
     },
     {
      "id": "l61",
      "start": 309.49,
      "end": 310.21,
      "text": "M: Exactly.",
-     "translation": "也就是说，你尽量找到一个让各方都受益的方案，防止问题升级。- 完全正确。说得真好。"
+     "translation": "- 完全正确。"
     },
     {
      "id": "l62",
      "start": 310.21,
      "end": 311.18,
      "text": "Well put.",
-     "translation": "也就是说，你尽量找到一个让各方都受益的方案，防止问题升级。- 完全正确。说得真好。"
+     "translation": "说得真好。"
     },
     {
      "id": "l63",
@@ -57259,7 +57260,7 @@
      "start": 318.21,
      "end": 323.73,
      "text": "For this reason, it's usually better to resolve problems outside of court whenever possible.",
-     "translation": "通常更好的办法是尽可能在庭"
+     "translation": "因此，通常更好的办法是尽可能在庭外解决问题。"
     },
     {
      "id": "l65",
@@ -57280,14 +57281,14 @@
      "start": 329.53,
      "end": 339.46,
      "text": "M: Of course, any job that involves people requires good interpersonal skills, and any law professional needs to be very eloquent at articulating their argument.",
-     "translation": "- 当然。"
+     "translation": "- 当然，任何涉及人的工作都需要良好的人际交往能力，而且任何法律专业人士都需要能非常雄辩地阐述自己的论点。"
     },
     {
      "id": "l68",
      "start": 339.46,
      "end": 340.29,
      "text": "W: Right.",
-     "translation": "我觉得听起来非常有意思。- 嗯，是啊。"
+     "translation": "- 嗯，是啊。"
     },
     {
      "id": "l69",
@@ -57322,7 +57323,7 @@
      "start": 351.75,
      "end": 354.43,
      "text": "I can see how you would find it more interesting.",
-     "translation": "有意思。"
+     "translation": "我能理解你为什么会觉得它更有意思。"
     },
     {
      "id": "l74",
@@ -57420,7 +57421,7 @@
      "start": 472.84,
      "end": 477.51,
      "text": "But as we age, many of us have difficulty retrieving memories.",
-     "translation": "提取记忆方面会有困难。"
+     "translation": "但随着年龄增长，我们很多人在提取记忆方面会有困难。"
     },
     {
      "id": "l88",
@@ -57448,7 +57449,7 @@
      "start": 534.4,
      "end": 543.41,
      "text": "The studies also showed that when given a cognitive task, older adults rely more heavily on previous knowledge than younger adults do.",
-     "translation": "这些研究还表明，在完成认知任务时，老年人比年轻人更依赖以往的知识。虽然研究人员主要关注"
+     "translation": "这些研究还表明，在面对认知任务时，老年人比年轻人更依赖以往的知识。"
     },
     {
      "id": "l92",
@@ -57560,7 +57561,7 @@
      "start": 688.06,
      "end": 696.69,
      "text": "Long working hours contribute to the feeling of time poverty, which has an adverse effect on psychological well-being.",
-     "translation": "72 小时。"
+     "translation": "长时间工作会加重时间匮乏感，对心理健康产生不利影响。"
     },
     {
      "id": "l108",
@@ -57805,7 +57806,7 @@
      "start": 977.3,
      "end": 1004.48,
      "text": "Then analysts who didn't know which condition each baby was in watched videotapes of the experiment and counted how many times babies tried to activate the toy by pressing the button. Across one study and a pre-registered duplication, babies who had seen an adult persist and succeed pushed the button about twice as many times as those who saw an adult effortlessly succeed.",
-     "translation": "随后，不知晓每个婴儿所处实验条件的研究人员观看实验录像，统计婴儿按按钮试图启动玩具的次数。"
+     "translation": "随后，不知晓每个婴儿所处实验条件的研究人员观看实验录像，统计婴儿按按钮试图启动玩具的次数。在最初研究以及一项预注册的重复实验中，看到大人坚持并成功的宝宝，按按钮的次数约为看到大人轻松成功的宝宝的两倍。"
     },
     {
      "id": "l143",
@@ -57923,14 +57924,14 @@
      "start": 1183.75,
      "end": 1196.51,
      "text": "Aim to be out the door and on your way before the second alarm rings. This will only work if you take the alarms seriously, so make sure you react as soon as you hear them.",
-     "translation": "力争在第二个闹钟响之前就出门上路。对待闹钟的前提下才管用，所以一听到闹钟就马上行动。"
+     "translation": "力争在第二个闹钟响之前就出门上路。这招只有在你认真对待闹钟的前提下才管用，所以一听到闹钟就马上行动。"
     },
     {
      "id": "l160",
      "start": 1197.59,
      "end": 1198.88,
      "text": "Remember for the day ahead.",
-     "translation": "提前记住当天安排的情况下才会奏效。"
+     "translation": "提前记住当天的安排。"
     },
     {
      "id": "l161",
@@ -57972,7 +57973,7 @@
      "start": 1232.63,
      "end": 1238.21,
      "text": "If you over-schedule yourself, however, you'll arrive late as soon as you hit a bump.",
-     "translation": "不过，如果你把日程排得太满，"
+     "translation": "不过，如果你把日程排得太满，一旦遇到点波折就会迟到。"
     },
     {
      "id": "l167",
@@ -58084,7 +58085,7 @@
      "start": 1367.27,
      "end": 1372.89,
      "text": "Pedestrians walking when the crosswalk lights say not to do so, ignoring the cars.",
-     "translation": "人行横道灯"
+     "translation": "人行横道灯明明不让通行，行人却照走不误，无视车辆。"
     },
     {
      "id": "l183",
@@ -58586,21 +58587,21 @@
      "start": 78.69,
      "end": 79.81,
      "text": "What do you think?",
-     "translation": "你觉得呢？M:"
+     "translation": "你觉得呢？"
     },
     {
      "id": "l13",
      "start": 79.81,
      "end": 80.96,
      "text": "M: I would agree.",
-     "translation": "我同意。是的。"
+     "translation": "M: 我同意。"
     },
     {
      "id": "l14",
      "start": 80.96,
      "end": 81.38,
      "text": "Yes.",
-     "translation": "你觉得呢？M: 我同意。是的。"
+     "translation": "是的。"
     },
     {
      "id": "l15",
@@ -58642,14 +58643,14 @@
      "start": 98.48,
      "end": 101.28,
      "text": "I thought she came across as bright and alert.",
-     "translation": "我觉得她给人的印象是聪明机敏。M: 是。"
+     "translation": "我觉得她给人的印象是聪明机敏。"
     },
     {
      "id": "l21",
      "start": 101.28,
      "end": 102.03,
      "text": "M: Yes.",
-     "translation": "我觉得她给人的印象是聪明机敏。M: 是。"
+     "translation": "M: 是。"
     },
     {
      "id": "l22",
@@ -58698,14 +58699,14 @@
      "start": 118.87,
      "end": 122.28,
      "text": "Calm and poised; very mature for his age.",
-     "translation": "沉着从容，以他的年龄来说非常成熟。M: 正是。"
+     "translation": "沉着从容，以他的年龄来说非常成熟。"
     },
     {
      "id": "l29",
      "start": 122.28,
      "end": 123.35,
      "text": "M: Exactly.",
-     "translation": "沉着从容，以他的年龄来说非常成熟。M: 正是。"
+     "translation": "M: 正是。"
     },
     {
      "id": "l30",
@@ -58719,14 +58720,14 @@
      "start": 128.05,
      "end": 131.19,
      "text": "I think he definitely looked more mature than Rachel.",
-     "translation": "我觉得他看起来确实比蕾切尔更成熟。W: 有意思。"
+     "translation": "我觉得他看起来确实比蕾切尔更成熟。"
     },
     {
      "id": "l32",
      "start": 131.29,
      "end": 132.36,
      "text": "W: Interesting.",
-     "translation": "我觉得他看起来确实比蕾切尔更成熟。W: 有意思。"
+     "translation": "W: 有意思。"
     },
     {
      "id": "l33",
@@ -58747,14 +58748,14 @@
      "start": 148.8,
      "end": 151.44,
      "text": "Maybe it was something about their body language.",
-     "translation": "也许是他们的肢体语言有什么不同。W: 可能吧。"
+     "translation": "也许是他们的肢体语言有什么不同。"
     },
     {
      "id": "l36",
      "start": 151.44,
      "end": 152.37,
      "text": "W: Sure.",
-     "translation": "也许是他们的肢体语言有什么不同。W: 可能吧。"
+     "translation": "W: 可能吧。"
     },
     {
      "id": "l37",
@@ -58768,7 +58769,7 @@
      "start": 154.5,
      "end": 155.53,
      "text": "M: Maybe.",
-     "translation": "紧张。 M: 也"
+     "translation": "M: 也许吧。"
     },
     {
      "id": "l39",
@@ -58782,21 +58783,21 @@
      "start": 156.32,
      "end": 159.4,
      "text": "To be honest, I think I like Rachel better.",
-     "translation": "W: 嗯，"
+     "translation": "说实话，我更中意蕾切尔。"
     },
     {
      "id": "l41",
      "start": 159.4,
      "end": 160.93,
      "text": "W: Hmm, really?",
-     "translation": "是吗？我更"
+     "translation": "W: 嗯，是吗？"
     },
     {
      "id": "l42",
      "start": 160.93,
      "end": 162.38,
      "text": "I think I like Peter.",
-     "translation": "中意彼得。"
+     "translation": "我更中意彼得。"
     },
     {
      "id": "l43",
@@ -59258,7 +59259,7 @@
      "start": 671.44,
      "end": 672.69,
      "text": "Not so!",
-     "translation": "冰箱上部不如底部冷，所以留给"
+     "translation": "并非如此！"
     },
     {
      "id": "l109",
@@ -59279,7 +59280,7 @@
      "start": 688.23,
      "end": 698.81,
      "text": "The whole purpose of the modern refrigerator is to slow the growth of bacteria, which thrive in temperatures from 4.4 to 60 °C.",
-     "translation": "现代冰箱的全部意义就在于减缓细菌繁殖，而细菌在 4.4 到 60 摄氏度之间大量滋生。 现代冰箱的全部意义就在于减缓细菌繁殖，而细菌在 4.4 到 60 摄氏度之间大量滋生。"
+     "translation": "现代冰箱的全部意义就在于减缓细菌繁殖，而细菌在 4.4 到 60 摄氏度之间大量滋生。"
     },
     {
      "id": "l112",
@@ -59307,7 +59308,7 @@
      "start": 732.65,
      "end": 740.91,
      "text": "The top area is not as cold as the bottom of the fridge, so save it for the foods that don't need extra-chilly temperatures.",
-     "translation": "那些不需要特别低温的食物。"
+     "translation": "冰箱上部不如底部冷，所以留给那些不需要特别低温的食物。"
     },
     {
      "id": "l116",
@@ -59398,14 +59399,14 @@
      "start": 886.99,
      "end": 893.69,
      "text": "My current research is mainly looking at factors like stress and how would it affect our immune system.",
-     "translation": "我目前的研究主要关注压力之类的因素，"
+     "translation": "我目前的研究主要关注压力之类的因素，以及它们会如何影响我们的免疫系统。"
     },
     {
      "id": "l129",
      "start": 893.69,
      "end": 901.07,
      "text": "So the current projects that I am quite excited about are looking at older people and factors that are important to them.",
-     "translation": "以及它们会如何影响我们的免疫系统。"
+     "translation": "我现在非常兴奋的几个项目，研究的是老年人以及对老年人重要的因素。"
     },
     {
      "id": "l130",
@@ -59594,28 +59595,28 @@
      "start": 1106.25,
      "end": 1111.09,
      "text": "But could we learn something more from them than recipes and techniques?",
-     "translation": "但除了菜谱和厨"
+     "translation": "但除了菜谱和技巧，我们还能从他们身上学到更多东西吗？"
     },
     {
      "id": "l157",
      "start": 1111.19,
      "end": 1120.78,
      "text": "According to Marketdata Enterprises, Americans spend nearly $10 billion a year on self-help and personal organization products.",
-     "translation": "艺技巧，我们还"
+     "translation": "据 Marketdata Enterprises 公司统计，美国人每年在自助和个人条理整理类产品上花费近 100 亿美元。"
     },
     {
      "id": "l158",
      "start": 1120.78,
      "end": 1128.13,
      "text": "The market is huge, partly because most colleges and graduate schools don't teach basic organization.",
-     "translation": "能从他们身上学"
+     "translation": "这个市场巨大，部分原因是大多数大学和研究生院都不教授基本的整理条理能力。"
     },
     {
      "id": "l159",
      "start": 1128.13,
      "end": 1131.99,
      "text": "But cooking schools and professional kitchens do.",
-     "translation": "到别的东西吗？"
+     "translation": "但烹饪学校和后厨教这个。"
     },
     {
      "id": "l160",
@@ -59776,7 +59777,7 @@
      "start": 1259.81,
      "end": 1261.26,
      "text": "Use them wisely.",
-     "translation": "你的自尊和他人的尊重都弥足珍贵。要明智地使用它"
+     "translation": "要明智地使用它们。"
     },
     {
      "id": "l183",
@@ -60355,7 +60356,7 @@
      "start": 44.38,
      "end": 45.18,
      "text": "Welcome!",
-     "translation": "W: 今天的特别嘉宾是布莱克维尔勋爵，他是我们国家经验最丰富、最负盛名的职业外交官之一。欢迎您！"
+     "translation": "欢迎您！"
     },
     {
      "id": "l8",
@@ -60558,21 +60559,21 @@
      "start": 240.75,
      "end": 244.25,
      "text": "I think we should call it a day and meet again tomorrow morning.",
-     "translation": "我看今天到此为止吧，明天早"
+     "translation": "我看今天到此为止吧，明天早上再继续。"
     },
     {
      "id": "l37",
      "start": 244.25,
      "end": 245.49,
      "text": "W: Oh, come on, Jeff.",
-     "translation": "上再继续。W: 哦，别这样，"
+     "translation": "W: 哦，别这样，杰夫，"
     },
     {
      "id": "l38",
      "start": 245.49,
      "end": 246.74,
      "text": "We are so close!",
-     "translation": "杰夫，我们就快大功告成了！"
+     "translation": "我们就快大功告成了！"
     },
     {
      "id": "l39",
@@ -60607,7 +60608,7 @@
      "start": 254.73,
      "end": 261.35,
      "text": "I think we are making good progress, and that with a few more amendments, we will be all done.",
-     "translation": "我觉得进展很顺利，再修"
+     "translation": "我觉得进展很顺利，再修改几处就能全部完成。"
     },
     {
      "id": "l44",
@@ -60621,7 +60622,7 @@
      "start": 263.28,
      "end": 265.33,
      "text": "I'm so tired of this project.",
-     "translation": "M: 那我可太期待了。"
+     "translation": "这个项目我都做烦了。"
     },
     {
      "id": "l46",
@@ -60635,14 +60636,14 @@
      "start": 266.63,
      "end": 273.45,
      "text": "It's a great professional opportunity for me and a milestone for the company, but it's just been so long.",
-     "translation": "对我来说这是绝佳的职业机会，对公司也是个里程碑，只是这一等实在太久了。W: 是啊。"
+     "translation": "对我来说这是绝佳的职业机会，对公司也是个里程碑，只是这一等实在太久了。"
     },
     {
      "id": "l48",
      "start": 273.45,
      "end": 274.37,
      "text": "W: Yeah.",
-     "translation": "两个月光是围着同一份合同转，是有点难熬。"
+     "translation": "W: 是啊。"
     },
     {
      "id": "l49",
