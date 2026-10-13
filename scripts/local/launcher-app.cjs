@@ -651,10 +651,29 @@ const extractZip = (zipPath, destDir, { onProgress, skip } = {}) => {
         fs.readSync(fd, tail, 0, tailLen, total - tailLen);
         const eocd = tail.lastIndexOf(Buffer.from([0x50, 0x4b, 0x05, 0x06]));
         if (eocd < 0) throw new Error('不是有效的 ZIP（未找到 EOCD）');
-        const entryCount = tail.readUInt16LE(eocd + 10);
-        if (entryCount === 0xffff) throw new Error('ZIP64 不受支持');
-        const cdSize = tail.readUInt32LE(eocd + 12);
-        const cdOffset = tail.readUInt32LE(eocd + 16);
+        let entryCount = tail.readUInt16LE(eocd + 10);
+        let cdSize = tail.readUInt32LE(eocd + 12);
+        let cdOffset = tail.readUInt32LE(eocd + 16);
+
+        // Zip64：计数/大小/偏移任一为哨兵值 → 读 Zip64 EOCD（经定位器定位）。
+        // 大包（条目数 > 65535）必然走这条路径；标准包不受影响。
+        if (entryCount === 0xffff || cdSize === 0xffffffff || cdOffset === 0xffffffff) {
+            // 定位器固定在 EOCD 前 20 字节
+            const locPos = total - tailLen + eocd - 20;
+            if (locPos < 0) throw new Error('ZIP64 定位器缺失');
+            const loc = Buffer.alloc(20);
+            fs.readSync(fd, loc, 0, 20, locPos);
+            if (loc.readUInt32LE(0) !== 0x07064b50) throw new Error('ZIP64 定位器损坏');
+            const eocd64Off = Number(loc.readBigUInt64LE(8));
+            const eocd64 = Buffer.alloc(56);
+            fs.readSync(fd, eocd64, 0, 56, eocd64Off);
+            if (eocd64.readUInt32LE(0) !== 0x06064b50) throw new Error('ZIP64 EOCD 损坏');
+            entryCount = Number(eocd64.readBigUInt64LE(32));   // 条目总数
+            cdSize = Number(eocd64.readBigUInt64LE(40));
+            cdOffset = Number(eocd64.readBigUInt64LE(48));
+            log(`ZIP64 归档：${entryCount} 个条目，中央目录 ${(cdSize / 1048576).toFixed(1)} MB`);
+        }
+
         const cd = Buffer.alloc(cdSize);
         fs.readSync(fd, cd, 0, cdSize, cdOffset);
 
@@ -666,12 +685,35 @@ const extractZip = (zipPath, destDir, { onProgress, skip } = {}) => {
             const flags = cd.readUInt16LE(cursor + 8);
             const method = cd.readUInt16LE(cursor + 10);
             const crc = cd.readUInt32LE(cursor + 16);
-            const compSize = cd.readUInt32LE(cursor + 20);
+            let compSize = cd.readUInt32LE(cursor + 20);
+            let uncompSize = cd.readUInt32LE(cursor + 24);
             const nameLen = cd.readUInt16LE(cursor + 28);
             const extraLen = cd.readUInt16LE(cursor + 30);
             const commentLen = cd.readUInt16LE(cursor + 32);
-            const localOffset = cd.readUInt32LE(cursor + 42);
+            let localOffset = cd.readUInt32LE(cursor + 42);
             const rawName = cd.subarray(cursor + 46, cursor + 46 + nameLen);
+
+            // 条目级 Zip64：固定字段是哨兵时，从 extra 字段（ID 0x0001）取真实值。
+            // 顺序固定：uncompSize → compSize → localOffset，只出现超限的那些。
+            if (compSize === 0xffffffff || uncompSize === 0xffffffff || localOffset === 0xffffffff) {
+                const extra = cd.subarray(cursor + 46 + nameLen, cursor + 46 + nameLen + extraLen);
+                let p = 0;
+                while (p + 4 <= extra.length) {
+                    const id = extra.readUInt16LE(p);
+                    const len = extra.readUInt16LE(p + 2);
+                    if (id === 0x0001) {
+                        let q = p + 4;
+                        if (uncompSize === 0xffffffff && q + 8 <= p + 4 + len) { uncompSize = Number(extra.readBigUInt64LE(q)); q += 8; }
+                        if (compSize === 0xffffffff && q + 8 <= p + 4 + len) { compSize = Number(extra.readBigUInt64LE(q)); q += 8; }
+                        if (localOffset === 0xffffffff && q + 8 <= p + 4 + len) { localOffset = Number(extra.readBigUInt64LE(q)); q += 8; }
+                        break;
+                    }
+                    p += 4 + len;
+                }
+                if (compSize === 0xffffffff || localOffset === 0xffffffff) {
+                    throw new Error(`ZIP64 extra 缺失或损坏：${rawName.toString('utf8')}`);
+                }
+            }
             // bit 11 = UTF-8 文件名；否则按 CP437/GBK 兜底
             const name = (flags & 0x800) ? rawName.toString('utf8') : rawName.toString('latin1');
             cursor += 46 + nameLen + extraLen + commentLen;
