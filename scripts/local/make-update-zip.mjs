@@ -14,9 +14,14 @@
  *     temp/runtime/launcher-*.json、temp/runtime/update*，以及 .git 与 *.log；
  *     仅保留包根的 句听.exe（构建产物），其他位置的 句听.exe 一律跳过。
  *
- * 结构：本地文件头（30B + 名称）+ 数据 + 中央目录（46B + 名称）+ EOCD（22B）。
- * 限制：本实现为标准 ZIP（非 Zip64），单条目/总大小须 < 4 GiB、条目数须 < 65535；
- *       超出即报错中止，绝不产出损坏的归档（避免用户下载到打不开的更新包）。
+ * 结构：本地文件头（30B + 名称 + extra）+ 数据 + 中央目录（46B + 名称 + extra）
+ *       + EOCD（22B）；超出标准 ZIP 上限时自动补 Zip64 段：
+ *         - 条目数 > 65535 → 追加 Zip64 EOCD（56B）+ 定位器（20B），标准 EOCD 的
+ *           计数/大小/偏移写 0xFFFF/0xFFFFFFFF 哨兵指向 EOCD64；
+ *         - 单条目压缩后/原始大小或本地头偏移 > 4 GiB → 该条目固定字段写哨兵，
+ *           真实 64 位值放 extra 字段（ID 0x0001，顺序 uncompSize→compSize→offset）。
+ *       两条路径都覆盖，不再因大包中止。7-Zip / Info-ZIP / Windows 资源管理器
+ *       均可正常解压；启动器的 Node 原生解压同样支持（lib/解压实现按哨兵查 extra）。
  *
  * 用法（CLI，供独立测试）：node scripts/local/make-update-zip.mjs <srcDir> <zipPath>
  * 编程调用：import { makeUpdateZip } from './make-update-zip.mjs'
@@ -56,12 +61,17 @@ const crc32 = typeof zlib.crc32 === 'function'
 const SIG_LOCAL = 0x04034b50;
 const SIG_CENTRAL = 0x02014b50;
 const SIG_EOCD = 0x06054b50;
+const SIG_EOCD64 = 0x06064b50;      // Zip64 中央目录结束记录
+const SIG_EOCD64_LOCATOR = 0x07064b50; // Zip64 EOCD 定位器
 const FLAG_UTF8 = 0x0800;           // general purpose flag bit 11：文件名 UTF-8
 const METHOD_STORED = 0;
 const METHOD_DEFLATE = 8;
 const VERSION_NEEDED = 20;          // 2.0：支持 deflate 与目录
+const VERSION_NEEDED_ZIP64 = 45;    // 4.5：Zip64
 const MAX_UINT32 = 0xFFFFFFFF;
-const MAX_ENTRIES = 0xFFFF;         // 标准 EOCD 计数上限
+const MAX_UINT16 = 0xFFFF;
+const MAX_ENTRIES = MAX_UINT16;     // 标准 EOCD 计数上限
+const ZIP64_EXTRA_ID = 0x0001;      // Zip64 扩展字段头 ID
 
 // 已压缩的格式直接用 stored 存，省 CPU 且不会更小。
 const STORED_EXTENSIONS = new Set([
@@ -154,9 +164,9 @@ export function makeUpdateZip(srcDir, zipPath, options = {}) {
     }
 
     const entries = collectEntries(rootAbs, skip);
-    if (entries.length > MAX_ENTRIES) {
-        throw new Error(`条目数 ${entries.length} 超过标准 ZIP 上限 ${MAX_ENTRIES}，需要 Zip64（本实现未支持）`);
-    }
+    // 条目数超 65535 → 走 Zip64（写 Zip64 EOCD + 定位器）。单文件/偏移超 4 GiB
+    // 也走 Zip64（条目级 extra 字段），本函数两条路径都覆盖。
+    const needsZip64Eocd = entries.length > MAX_ENTRIES;
 
     const progress = onProgress || ((info) => {
         console.log(`[zip] 已处理 ${info.files} 个文件…`);
@@ -203,49 +213,63 @@ export function makeUpdateZip(srcDir, zipPath, options = {}) {
             }
 
             const compSize = payload.length;
-            if (compSize > MAX_UINT32 || uncompSize > MAX_UINT32) {
-                throw new Error(`文件过大（${entry.rel}，${compSize} 字节），超出标准 ZIP 4 GiB 限制，需要 Zip64`);
-            }
-            if (offset > MAX_UINT32) {
-                throw new Error(`归档偏移已超过 4 GiB，需要 Zip64（本实现未支持）`);
-            }
-
             const localOffset = offset;
+            // 条目级 Zip64：压缩后大小、原始大小、本地头偏移任一超 4 GiB 时，
+            // 固定字段写 0xFFFFFFFF 哨兵，真实 64 位值放 extra 字段（顺序固定：
+            // uncompSize → compSize → localOffset，只放超限的那些）。
+            const zip64Size = compSize > MAX_UINT32 || uncompSize > MAX_UINT32;
+            const zip64Offset = localOffset > MAX_UINT32;
+            const needZip64Extra = zip64Size || zip64Offset;
+            let extra = Buffer.alloc(0);
+            if (needZip64Extra) {
+                const vals = [];
+                if (zip64Size) { vals.push(uncompSize, compSize); }
+                if (zip64Offset) { vals.push(localOffset); }
+                const extraData = Buffer.alloc(4 + vals.length * 8);
+                extraData.writeUInt16LE(ZIP64_EXTRA_ID, 0);
+                extraData.writeUInt16LE(vals.length * 8, 2);
+                vals.forEach((v, i) => extraData.writeBigUInt64LE(BigInt(v), 4 + i * 8));
+                extra = extraData;
+            }
+            const versionNeeded = needZip64Extra ? VERSION_NEEDED_ZIP64 : VERSION_NEEDED;
+
             const localHead = Buffer.alloc(30);
             localHead.writeUInt32LE(SIG_LOCAL, 0);
-            localHead.writeUInt16LE(VERSION_NEEDED, 4);
+            localHead.writeUInt16LE(versionNeeded, 4);
             localHead.writeUInt16LE(FLAG_UTF8, 6);
             localHead.writeUInt16LE(method, 8);
             localHead.writeUInt16LE(dosTime, 10);
             localHead.writeUInt16LE(dosDate, 12);
             localHead.writeUInt32LE(crc, 14);
-            localHead.writeUInt32LE(compSize, 18);
-            localHead.writeUInt32LE(uncompSize, 22);
+            // 本地头的大小字段：Zip64 时同样写哨兵 + extra（7-Zip/Info-ZIP 均接受）
+            localHead.writeUInt32LE(zip64Size ? MAX_UINT32 : compSize, 18);
+            localHead.writeUInt32LE(zip64Size ? MAX_UINT32 : uncompSize, 22);
             localHead.writeUInt16LE(nameBuf.length, 26);
-            localHead.writeUInt16LE(0, 28);
+            localHead.writeUInt16LE(extra.length, 28);
             write(localHead);
             write(nameBuf);
+            write(extra);
             write(payload);
 
             const centralHead = Buffer.alloc(46);
             centralHead.writeUInt32LE(SIG_CENTRAL, 0);
-            centralHead.writeUInt16LE(VERSION_NEEDED, 4);      // version made by
-            centralHead.writeUInt16LE(VERSION_NEEDED, 6);      // version needed
+            centralHead.writeUInt16LE(versionNeeded, 4);       // version made by
+            centralHead.writeUInt16LE(versionNeeded, 6);       // version needed
             centralHead.writeUInt16LE(FLAG_UTF8, 8);
             centralHead.writeUInt16LE(method, 10);
             centralHead.writeUInt16LE(dosTime, 12);
             centralHead.writeUInt16LE(dosDate, 14);
             centralHead.writeUInt32LE(crc, 16);
-            centralHead.writeUInt32LE(compSize, 20);
-            centralHead.writeUInt32LE(uncompSize, 24);
+            centralHead.writeUInt32LE(zip64Size ? MAX_UINT32 : compSize, 20);
+            centralHead.writeUInt32LE(zip64Size ? MAX_UINT32 : uncompSize, 24);
             centralHead.writeUInt16LE(nameBuf.length, 28);
-            centralHead.writeUInt16LE(0, 30);                  // extra len
+            centralHead.writeUInt16LE(extra.length, 30);       // extra len
             centralHead.writeUInt16LE(0, 32);                  // comment len
             centralHead.writeUInt16LE(0, 34);                  // disk start
             centralHead.writeUInt16LE(0, 36);                  // internal attrs
             centralHead.writeUInt32LE(entry.isDir ? 0x10 : 0, 38); // external attrs（目录置 DOS 目录位）
-            centralHead.writeUInt32LE(localOffset, 42);
-            central.push(Buffer.concat([centralHead, nameBuf]));
+            centralHead.writeUInt32LE(zip64Offset ? MAX_UINT32 : localOffset, 42);
+            central.push(Buffer.concat([centralHead, nameBuf, extra]));
 
             if (!entry.isDir) {
                 fileCount += 1;
@@ -262,21 +286,58 @@ export function makeUpdateZip(srcDir, zipPath, options = {}) {
             write(record);
         }
         const cdSize = offset - cdStart;
-        if (cdStart > MAX_UINT32 || cdSize > MAX_UINT32) {
-            throw new Error('中央目录超出 4 GiB，需要 Zip64（本实现未支持）');
-        }
+        // 中央目录本身超 4 GiB 也必须走 Zip64（本实现用 64 位值写入 EOCD64）
+        const needsZip64 = needsZip64Eocd || cdStart > MAX_UINT32 || cdSize > MAX_UINT32
+            || central.length > MAX_ENTRIES;
 
-        // 中央目录结束记录（EOCD）
-        const eocd = Buffer.alloc(22);
-        eocd.writeUInt32LE(SIG_EOCD, 0);
-        eocd.writeUInt16LE(0, 4);                 // 本磁盘号
-        eocd.writeUInt16LE(0, 6);                 // 中央目录起始磁盘号
-        eocd.writeUInt16LE(central.length, 8);    // 本磁盘条目数
-        eocd.writeUInt16LE(central.length, 10);   // 条目总数
-        eocd.writeUInt32LE(cdSize, 12);
-        eocd.writeUInt32LE(cdStart, 16);
-        eocd.writeUInt16LE(0, 20);                // 注释长度
-        write(eocd);
+        if (needsZip64) {
+            // Zip64 中央目录结束记录（EOCD64，固定 56 字节，无注释）
+            const eocd64Offset = offset;
+            const eocd64 = Buffer.alloc(56);
+            eocd64.writeUInt32LE(SIG_EOCD64, 0);
+            eocd64.writeBigUInt64LE(44n, 4);              // 本记录大小（56 - 12）
+            eocd64.writeUInt16LE(VERSION_NEEDED_ZIP64, 12); // version made by
+            eocd64.writeUInt16LE(VERSION_NEEDED_ZIP64, 14); // version needed
+            eocd64.writeUInt32LE(0, 16);                  // 本磁盘号
+            eocd64.writeUInt32LE(0, 20);                  // 中央目录起始磁盘号
+            eocd64.writeBigUInt64LE(BigInt(central.length), 24); // 本磁盘条目数
+            eocd64.writeBigUInt64LE(BigInt(central.length), 32); // 条目总数
+            eocd64.writeBigUInt64LE(BigInt(cdSize), 40);
+            eocd64.writeBigUInt64LE(BigInt(cdStart), 48);
+            write(eocd64);
+
+            // Zip64 EOCD 定位器（20 字节）
+            const locator = Buffer.alloc(20);
+            locator.writeUInt32LE(SIG_EOCD64_LOCATOR, 0);
+            locator.writeUInt32LE(0, 4);                  // EOCD64 所在磁盘号
+            locator.writeBigUInt64LE(BigInt(eocd64Offset), 8);
+            locator.writeUInt32LE(1, 16);                 // 磁盘总数
+            write(locator);
+
+            // 标准 EOCD（22 字节）：超限字段写哨兵，让老工具知道去看 EOCD64
+            const eocd = Buffer.alloc(22);
+            eocd.writeUInt32LE(SIG_EOCD, 0);
+            eocd.writeUInt16LE(0, 4);
+            eocd.writeUInt16LE(0, 6);
+            eocd.writeUInt16LE(Math.min(central.length, MAX_ENTRIES), 8);
+            eocd.writeUInt16LE(Math.min(central.length, MAX_ENTRIES), 10);
+            eocd.writeUInt32LE(cdSize > MAX_UINT32 ? MAX_UINT32 : cdSize, 12);
+            eocd.writeUInt32LE(cdStart > MAX_UINT32 ? MAX_UINT32 : cdStart, 16);
+            eocd.writeUInt16LE(0, 20);
+            write(eocd);
+        } else {
+            // 标准 ZIP 路径（条目数与大小都在 16/32 位范围内）
+            const eocd = Buffer.alloc(22);
+            eocd.writeUInt32LE(SIG_EOCD, 0);
+            eocd.writeUInt16LE(0, 4);                 // 本磁盘号
+            eocd.writeUInt16LE(0, 6);                 // 中央目录起始磁盘号
+            eocd.writeUInt16LE(central.length, 8);    // 本磁盘条目数
+            eocd.writeUInt16LE(central.length, 10);   // 条目总数
+            eocd.writeUInt32LE(cdSize, 12);
+            eocd.writeUInt32LE(cdStart, 16);
+            eocd.writeUInt16LE(0, 20);                // 注释长度
+            write(eocd);
+        }
 
         progress({ files: fileCount, bytes: totalBytes, rel: '' });
         return { files: fileCount, bytes: totalBytes, zipPath };
