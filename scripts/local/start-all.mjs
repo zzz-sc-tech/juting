@@ -98,7 +98,7 @@ const spawned = new Map();
 const killProcessTree = (pid) => {
     if (!pid) return;
     try {
-        execSync(`taskkill /PID ${pid} /T /F`, { stdio: 'ignore', timeout: 10000 });
+        execSync(`taskkill /PID ${pid} /T /F`, { stdio: 'ignore', windowsHide: true, timeout: 10000 });
     } catch {
         // 已退出则忽略
     }
@@ -111,7 +111,7 @@ const cleanup = async (exitCode) => {
     log('正在停止所有服务...');
     // mysqld 尽量走 mysqladmin 优雅关停（保数据页干净）。
     try {
-        execSync(`"${path.join(mysqlBinDir, 'mysqladmin.exe')}" --port=${MYSQL_PORT} --user=root shutdown`, { stdio: 'ignore', timeout: 15000 });
+        execSync(`"${path.join(mysqlBinDir, 'mysqladmin.exe')}" --port=${MYSQL_PORT} --user=root shutdown`, { stdio: 'ignore', windowsHide: true, timeout: 15000 });
     } catch {
         // 已停止或未启动则忽略
     }
@@ -346,7 +346,7 @@ await waitForPort(ADMIN_PORT, 60000, '管理后台');
 // 无默认浏览器 / 远程桌面 / 被策略拦截时 start 会失败——绝不能因此把
 // 已经起来的服务一起带走，这里吞掉异常；启动器（托盘）侧另有兜底入口。
 try {
-    execSync('start "" "http://127.0.0.1:8101"', { shell: 'cmd.exe', stdio: 'ignore' });
+    execSync('start "" "http://127.0.0.1:8101"', { shell: 'cmd.exe', stdio: 'ignore', windowsHide: true });
 } catch {
     log('⚠ 未能自动打开浏览器，请手动访问 http://127.0.0.1:8101');
 }

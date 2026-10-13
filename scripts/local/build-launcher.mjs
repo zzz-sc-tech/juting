@@ -114,7 +114,32 @@ try {
     throw new Error(`注入失败：${error && error.message ? error.message : error}`);
 }
 
-// ── 4. 自检 ─────────────────────────────────────────────────
+// ── 4. PE 子系统 Console → GUI（双击 exe 不弹黑窗）──────────
+// Node 底座是控制台程序（子系统=3），双击会闪一个 cmd 窗口。
+// 改成 GUI（子系统=2）后：exe 本体不再弹窗，stdout/stderr 仍可被
+// spawn 重定向（编排器/更新器不受影响），但进程不再持有可见控制台。
+{
+    const fd = fs.openSync(exePath, 'r+');
+    const peOffBuf = Buffer.alloc(4);
+    fs.readSync(fd, peOffBuf, 0, 4, 0x3C);
+    const peOff = peOffBuf.readUInt32LE(0);
+    const subOff = peOff + 0x5C;  // COFF(20)+PE sig(4) 之后的 OptionalHeader 里 offset 68
+    const subBuf = Buffer.alloc(2);
+    fs.readSync(fd, subBuf, 0, 2, subOff);
+    const cur = subBuf.readUInt16LE(0);
+    if (cur === 3) {
+        subBuf.writeUInt16LE(2, 0);  // 3=Console → 2=GUI
+        fs.writeSync(fd, subBuf, 0, 2, subOff);
+        log(`PE 子系统：Console(3) → GUI(2)（offset ${subOff.toString(16)}h）`);
+    } else if (cur === 2) {
+        log('PE 子系统已是 GUI(2)，跳过');
+    } else {
+        log(`⚠ PE 子系统值异常（${cur}），不修改`);
+    }
+    fs.closeSync(fd);
+}
+
+// ── 5. 自检 ─────────────────────────────────────────────────
 log('自检（运行 --selfcheck）…');
 const check = spawnSync(exePath, ['--selfcheck'], { encoding: 'utf8', timeout: 30000, windowsHide: true });
 const output = `${check.stdout || ''}${check.stderr || ''}`.trim();

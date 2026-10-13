@@ -26,6 +26,7 @@ const path = require('node:path');
 const net = require('node:net');
 const http = require('node:http');
 const https = require('node:https');
+const tls = require('node:tls');
 const zlib = require('node:zlib');
 const crypto = require('node:crypto');
 const { spawn, spawnSync } = require('node:child_process');
@@ -504,9 +505,63 @@ const updatePatch = (patch) => {
 };
 
 // ── HTTP：GET（自动跟随跳转）与下载（带进度/哈希）────────────
+// 代理支持：Node 的 https 不走系统代理，国内直连 GitHub CDN 只有 ~20 KB/s。
+// 读 HTTPS_PROXY / HTTP_PROXY / ALL_PROXY 环境变量，用 HTTP CONNECT 隧道。
+const proxyUrl = process.env.HTTPS_PROXY || process.env.HTTP_PROXY || process.env.ALL_PROXY || '';
+if (proxyUrl) log(`HTTP 代理：${proxyUrl}（来自环境变量）`);
+
+const proxyAgent = proxyUrl ? new https.Agent({
+    // 标准 Node 代理方式：Agent.createConnection 里先 CONNECT 再 TLS
+    createConnection: (options, callback) => {
+        const proxy = new URL(proxyUrl);
+        const connectReq = http.request({
+            host: proxy.hostname,
+            port: Number(proxy.port) || 80,
+            method: 'CONNECT',
+            path: `${options.host}:${options.port || 443}`,
+            headers: proxy.username
+                ? { 'Proxy-Authorization': 'Basic ' + Buffer.from(`${decodeURIComponent(proxy.username)}:${decodeURIComponent(proxy.password || '')}`).toString('base64') }
+                : {},
+            timeout: 10000,
+        });
+        connectReq.on('connect', (res, socket) => {
+            if (res.statusCode !== 200) {
+                callback(new Error(`代理 CONNECT 失败：HTTP ${res.statusCode}`));
+                return;
+            }
+            const tlsSock = tls.connect({
+                socket,
+                servername: options.host,
+            }, () => callback(null, tlsSock));
+            tlsSock.on('error', callback);
+        });
+        connectReq.on('error', (err) => {
+            log(`代理隧道失败（${err.message}），回退直连`);
+            callback(err);
+        });
+        connectReq.on('timeout', () => {
+            connectReq.destroy(new Error('代理连接超时'));
+            callback(new Error('代理连接超时'));
+        });
+        connectReq.end();
+    },
+}) : null;
+
 const httpGet = (url, { headers = {}, onResponse, timeout = 30000 } = {}) => new Promise((resolve, reject) => {
-    const lib = /^http:/.test(url) ? http : https;
-    const request = lib.get(url, { headers: { 'User-Agent': 'juting-launcher', Accept: 'application/vnd.github+json', ...headers }, timeout }, (res) => {
+    const u = new URL(url);
+    const lib = u.protocol === 'http:' ? http : https;
+    const opts = {
+        hostname: u.hostname,
+        port: Number(u.port) || (u.protocol === 'http:' ? 80 : 443),
+        path: u.pathname + u.search,
+        method: 'GET',
+        headers: { 'User-Agent': 'juting-launcher', Accept: 'application/vnd.github+json', ...headers },
+        timeout,
+    };
+    if (proxyAgent && u.protocol === 'https:') {
+        opts.agent = proxyAgent;
+    }
+    const request = lib.get(opts, (res) => {
         if ([301, 302, 303, 307, 308].includes(res.statusCode) && res.headers.location) {
             res.resume();
             const next = new URL(res.headers.location, url).toString();
