@@ -1,7 +1,7 @@
 {
  "preset": "cet6",
- "version": "20261012.4",
- "generatedAt": "2026-10-12T14:26:20.259Z",
+ "version": "20261012.5",
+ "generatedAt": "2026-10-13T08:20:45.995Z",
  "group": {
   "id": 8,
   "name": "英语六级真题",
@@ -16473,7 +16473,7 @@
      "start": 1010.09,
      "end": 1021,
      "text": "Caroline Wagner, a research scientist at George Washington University, notes that international collaborations offer additional flexibility,",
-     "translation": "乔治·华盛顿大学的研究科学家卡罗琳·瓦格纳指出，国际合作提供了额外的灵活性；本地合作有时过了实效期仍会延续，而国际合作较少受社会或学术义务的羁绊，可以更自由地建立或终止。"
+     "translation": "乔治·华盛顿大学的研究科学家卡罗琳·瓦格纳指出，国际合作提供了额外的灵活性；"
     },
     {
      "id": "l132",
@@ -16487,7 +16487,7 @@
      "start": 1030.5,
      "end": 1035.5,
      "text": "International ones can be cultivated and dropped more freely.",
-     "translation": "乔治·华盛顿大学的研究科学家卡罗琳·瓦格纳指出，国际合作提供了额外的灵活性；本地合作有时过了实效期仍会延续，而国际合作较少受社会或学术义务的羁绊，可以更自由地建立或终止。"
+     "translation": "国际合作则可以更自由地建立和终止。"
     },
     {
      "id": "l134",
