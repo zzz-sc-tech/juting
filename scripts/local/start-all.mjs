@@ -124,7 +124,57 @@ process.on('SIGINT', () => void cleanup(0));
 process.on('SIGHUP', () => void cleanup(0));
 process.on('SIGBREAK', () => void cleanup(0));
 
+// ── 与启动器（托盘 supervisor）的 IPC 协同 ─────────────────────
+// 启动器以 IPC 方式派生本编排器时：
+//   - progress 消息把阶段进度报给启动器（写进 launcher-status.json，托盘可见）；
+//   - 收到 shutdown 消息或 IPC 断开（启动器退出/崩溃）时自动走 cleanup，
+//     不再依赖「关闭控制台窗口」这种不可靠的停止路径。
+// bat 直跑（无 IPC）时行为不变：控制台保活，Ctrl+C / 关窗停止。
+const TOTAL_STEPS = 6;
+const emitProgress = (step, message) => {
+    if (!process.send) return;
+    try {
+        process.send({ type: 'progress', step, total: TOTAL_STEPS, message });
+    } catch {
+        // IPC 已断开：启动器没了，忽略
+    }
+};
+if (process.send) {
+    process.on('message', (msg) => {
+        if (msg && msg.cmd === 'shutdown') {
+            log('收到启动器停止指令，正在关闭服务...');
+            void cleanup(0);
+        }
+    });
+    // 启动器退出（含被任务管理器结束）时 IPC 断开：服务不能孤儿化，跟着清理。
+    process.on('disconnect', () => {
+        log('启动器已断开连接，正在关闭服务...');
+        void cleanup(0);
+    });
+    // Windows 实测：父进程被强杀时子进程不一定会收到 disconnect（命名管道不立即 EOF），
+    // 因此再加一道 ppid 存活看门狗兜底——父进程消失即自行清理，杜绝服务孤儿化。
+    const parentPid = process.ppid;
+    const parentWatchdog = setInterval(() => {
+        if (stopping) {
+            clearInterval(parentWatchdog);
+            return;
+        }
+        let alive = true;
+        try {
+            process.kill(parentPid, 0);
+        } catch (error) {
+            alive = error.code === 'EPERM'; // 存在但不属于当前用户
+        }
+        if (!alive) {
+            clearInterval(parentWatchdog);
+            log('启动器进程已消失，正在关闭服务...');
+            void cleanup(0);
+        }
+    }, 3000);
+}
+
 // ── 0. 前置检查 ──────────────────────────────────────────────
+emitProgress(1, '检查运行环境…');
 mkdirSync(logDir, { recursive: true });
 if (!existsSync(path.join(mysqlBinDir, 'mysqld.exe'))) {
     throw new Error('未找到便携版 MySQL：请先解压 mysql.zip 到 temp/runtime/mysql（bin 目录需存在）');
@@ -229,6 +279,7 @@ writeFileSync(
 
 // ── 2. 启动 MySQL ───────────────────────────────────────────
 log('启动 MySQL（端口 3307）...');
+emitProgress(2, '启动 MySQL（端口 3307）…');
 await spawnLogged('mysql.log', path.join(mysqlBinDir, 'mysqld.exe'), [
     `--defaults-file=${path.join(runtimeDir, 'my.ini')}`,
     ...mysqlBaseArgs,
@@ -239,6 +290,7 @@ await waitForPort(MYSQL_PORT, 60000, 'MySQL');
 log('MySQL 已就绪。');
 
 // ── 3. 建库建用户（幂等）────────────────────────────────────
+emitProgress(3, '初始化数据库与账号…');
 {
     const mysql2 = require('mysql2/promise');
     const root = await mysql2.createConnection({ host: '127.0.0.1', port: MYSQL_PORT, user: 'root', password: '' });
@@ -255,6 +307,7 @@ log('MySQL 已就绪。');
 // ── 4. 迁移 + 首个超管 + 预设课程（幂等）─────────────────────
 // 子脚本统一用 process.execPath（bat 可能用的是包内便携 Node，
 // 机器上未必装了系统 node，裸写 "node" 会在目标机器上失败）。
+emitProgress(4, '应用迁移、创建管理员、导入课程…');
 log('应用数据库迁移...');
 execFileSync(process.execPath, ['scripts/local/migrate-local.mjs', '--env-file', portableEnvFile], { cwd: repositoryRoot, stdio: 'inherit' });
 log('确保本地超级管理员存在...');
@@ -264,6 +317,7 @@ execFileSync(process.execPath, ['scripts/local/import-preset.mjs', '--env-file',
 
 // ── 5. 启动后端 ─────────────────────────────────────────────
 log('启动后端（端口 8100）...');
+emitProgress(5, '启动后端（端口 8100）…');
 // 环境变量优先级高于 backend/.env（dotenv 不覆盖已存在的进程变量），
 // 便携包里即使残留了开发机的 .env 也不会把端口/媒体目录带偏。
 await spawnLogged('backend.log', process.execPath, ['dist/app.js'], {
@@ -282,13 +336,20 @@ await waitForPort(BACKEND_PORT, 60000, '后端');
 
 // ── 6. 启动两个前端（生产构建 preview）───────────────────────
 log('启动学习端与管理后台（生产构建）...');
+emitProgress(6, '启动学习端与管理后台（生产构建）…');
 await spawnLogged('web-app.log', process.execPath, [path.join(repositoryRoot, 'node_modules', 'vite', 'bin', 'vite.js'), 'preview'], { cwd: path.join(repositoryRoot, 'web-app') });
 await spawnLogged('admin.log', process.execPath, [path.join(repositoryRoot, 'node_modules', 'vite', 'bin', 'vite.js'), 'preview'], { cwd: path.join(repositoryRoot, 'admin') });
 await waitForPort(WEB_PORT, 60000, '学习端');
 await waitForPort(ADMIN_PORT, 60000, '管理后台');
 
 // ── 7. 打开浏览器 ───────────────────────────────────────────
-execSync('start "" "http://127.0.0.1:8101"', { shell: 'cmd.exe', stdio: 'ignore' });
+// 无默认浏览器 / 远程桌面 / 被策略拦截时 start 会失败——绝不能因此把
+// 已经起来的服务一起带走，这里吞掉异常；启动器（托盘）侧另有兜底入口。
+try {
+    execSync('start "" "http://127.0.0.1:8101"', { shell: 'cmd.exe', stdio: 'ignore' });
+} catch {
+    log('⚠ 未能自动打开浏览器，请手动访问 http://127.0.0.1:8101');
+}
 
 log('──────────────────────────────────────────────');
 log('句听已全部启动：');
@@ -304,6 +365,16 @@ if (portableEnv.ASR_ENABLED === 'true') {
 log('停止：按 Ctrl+C 或直接关闭本窗口。');
 log('──────────────────────────────────────────────');
 
-// 保活：编排器退出（窗口关闭/Ctrl+C）时统一清理。
+// 就绪上报：启动器据此把状态切到 running 并弹「句听已启动」气泡。
+if (process.send) {
+    try {
+        process.send({ type: 'ready', ports: { mysql: MYSQL_PORT, backend: BACKEND_PORT, web: WEB_PORT, admin: ADMIN_PORT } });
+    } catch {
+        // 启动器已不在，忽略
+    }
+}
+
+// 保活：有 IPC 时通道本身维持事件循环（启动器断开即自动清理）；
+// 无 IPC（bat 直跑）时保持原来的控制台保活，Ctrl+C / 关窗停止。
 setInterval(() => undefined, 1 << 30);
 void cleanup;

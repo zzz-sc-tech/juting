@@ -47,3 +47,7 @@ output/
 docs/images/youzack-authorization-email.png
 
 /.video_agent/
+
+# 启动器构建产物（随发布包分发，不入库）
+/句听.exe
+/juting.ico

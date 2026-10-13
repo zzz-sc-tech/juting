@@ -2,7 +2,8 @@
  * 句听发布打包脚本：产出三个可独立分发的 7z 包（默认输出到 ../juting-release/）。
  *
  *   juting-v<版本>-win-lite.7z   简洁版：程序本体 + 便携 Node + 便携 MySQL（裁剪），
- *                                空课程开箱，双击 bat 即用，不内置任何运行环境依赖；
+ *                                空课程开箱，双击 句听.exe 即用（托盘常驻；bat 保留作
+ *                                开发者与排障备用），不内置任何运行环境依赖；
  *   juting-v<版本>-win-full.7z   完整版：= 简洁版 + 六级预设（38 套真题音频与原文）。
  *                                不含本地识别引擎（2026-10-02 起移除：ASR 需大量校准，
  *                                单机学习用户用不到；需要时管理后台一键在线安装）。
@@ -20,11 +21,14 @@
  *   - node_modules 裁掉 .cache 与已移除的 mobile-app 工作区残留依赖（Expo/React Native 系）；
  *   - 打包前必须先 node scripts/local/stop-all.mjs 关掉 MySQL，否则数据文件被锁。
  *
- * 用法：node scripts/local/package-release.mjs [--version 1.0.0] [--skip-build] [--only lite|full|cet6|all] [--no-asr]
+ *   - 启动器 句听.exe 由 scripts/local/build-launcher.mjs 构建（Node SEA 单文件），
+ *     打包前自动构建；传 --skip-launcher 时要求产物已存在；
+ *
+ * 用法：node scripts/local/package-release.mjs [--version 1.0.0] [--skip-build] [--skip-launcher] [--only lite|full|cet6|all] [--no-asr]
  */
 import fs from 'node:fs';
 import path from 'node:path';
-import { execSync } from 'node:child_process';
+import { execSync, execFileSync } from 'node:child_process';
 import { createHash } from 'node:crypto';
 import { fileURLToPath } from 'node:url';
 
@@ -43,6 +47,7 @@ const argOf = (name) => {
 const rootPackage = JSON.parse(fs.readFileSync(path.join(repositoryRoot, 'package.json'), 'utf8'));
 const version = argOf('--version') || rootPackage.version || '0.0.0';
 const skipBuild = process.argv.includes('--skip-build');
+const skipLauncher = process.argv.includes('--skip-launcher');
 const only = argOf('--only') || 'all';
 
 // ── 7z 可执行文件定位（环境变量 JUTING_7Z 优先，其次 PATH）────
@@ -81,13 +86,23 @@ if (!skipBuild) {
     }
 }
 
-// ── 1. 清理旧暂存 ───────────────────────────────────────────
+// ── 1. 构建启动器 exe（复制文件前先出产物，供「复制文件」段落落到包根）────
+const launcherExe = path.join(repositoryRoot, 'temp', 'launcher-build', '句听.exe');
+if (!skipLauncher) {
+    log('构建启动器 句听.exe…');
+    execFileSync(process.execPath, ['scripts/local/build-launcher.mjs'], { cwd: repositoryRoot, stdio: 'inherit' });
+}
+if (!fs.existsSync(launcherExe)) {
+    throw new Error(`未找到启动器产物 ${launcherExe}；请先执行 node scripts/local/build-launcher.mjs（或去掉 --skip-launcher 让打包脚本自动构建）`);
+}
+
+// ── 2. 清理旧暂存 ───────────────────────────────────────────
 fs.rmSync(stageRoot, { recursive: true, force: true });
 fs.mkdirSync(outDir, { recursive: true });
 const stage = path.join(stageRoot, 'juting');
 fs.mkdirSync(stage, { recursive: true });
 
-// ── 2. 复制文件 ─────────────────────────────────────────────
+// ── 3. 复制文件 ─────────────────────────────────────────────
 // ── 复制目录。⚠️ filter 语义 =「返回 true 即排除（跳过）」——copyDirFiltered 内部
 // 对 filter 结果取反（历史调用 docs/HANDOFF 即此约定），写「保留」语义的过滤器
 // 会静默把要的东西全排掉（v0.4.2 重打包把 whisper 引擎全过滤掉的事故即此因）。
@@ -106,6 +121,16 @@ const copyDirFiltered = (src, dest, filter) => {
     });
 };
 const copyInto = (rel, filter) => copyDirFiltered(path.join(repositoryRoot, rel), path.join(stage, rel), filter);
+// 源在仓库相对布局之外（如 temp 构建产物）或目标要落到包根时使用；
+// 与 copyFile 的静默跳过不同，源缺失直接报错中止，避免漏文件打进包。
+const copyFileFrom = (src, destRel) => {
+    if (!fs.existsSync(src)) {
+        throw new Error(`打包文件不存在：${src}（目标 ${destRel}）`);
+    }
+    const dest = path.join(stage, destRel);
+    fs.mkdirSync(path.dirname(dest), { recursive: true });
+    fs.copyFileSync(src, dest);
+};
 const copyFile = (rel) => {
     const src = path.join(repositoryRoot, rel);
     if (fs.existsSync(src)) {
@@ -134,6 +159,10 @@ for (const f of ['package.json', 'package-lock.json', '.env.example', '.npmrc', 
     'admin/tsconfig.json', 'admin/vite.config.ts', 'admin/index.html', 'admin/Dockerfile']) {
     copyFile(f);
 }
+// 启动器与托盘图标落到包根：源分别在 temp/launcher-build 与 docs/images 下。
+// 简洁版/完整版都带（cet6-pack 是独立暂存目录，天然不带）。
+copyFileFrom(launcherExe, '句听.exe');
+copyFileFrom(path.join(repositoryRoot, 'docs/images/juting.ico'), 'juting.ico');
 
 log('复制构建产物…');
 copyInto('backend/dist');
@@ -182,14 +211,14 @@ copyFile('temp/runtime/node/node.exe');
 // 占位：让解压后的包带上空的运行时目录骨架（数据目录由启动器创建）。
 fs.mkdirSync(path.join(stage, 'temp/runtime/logs'), { recursive: true });
 
-// ── 3. 简洁版 ───────────────────────────────────────────────
+// ── 4. 简洁版 ───────────────────────────────────────────────
 const artifacts = [];
 if (only === 'all' || only === 'lite') {
     log('压缩简洁版…');
     artifacts.push(compress(`juting-v${version}-win-lite.7z`, stage));
 }
 
-// ── 4. 完整版 = 简洁版 + 六级预设 ────────────────────────────
+// ── 5. 完整版 = 简洁版 + 六级预设 ────────────────────────────
 // 2026-10-02 用户裁定：完整版不再随包本地识别引擎与模型（temp/asr）——ASR 切分后
 // 仍需大量人工校准，单机学习用户用不到；需要制课 ASR 时管理后台可一键在线安装
 // 引擎（backend 安装器）。历史带引擎的打包方式见 git（v0.4.2 之前）。
@@ -202,7 +231,7 @@ if (only === 'all' || only === 'full') {
     log('压缩完整版…');
     artifacts.push(compress(`juting-v${version}-win-full.7z`, stage));
 }
-// ── 5. 校验和（与已有文件按包名合并，支持分次 --only 打包不丢账）──
+// ── 6. 校验和（与已有文件按包名合并，支持分次 --only 打包不丢账）──
 const sumsPath = path.join(outDir, 'SHA256SUMS.txt');
 const existingSums = {};
 if (fs.existsSync(sumsPath)) {
