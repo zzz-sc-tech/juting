@@ -24,6 +24,10 @@
 const fs = require('node:fs');
 const path = require('node:path');
 const net = require('node:net');
+const http = require('node:http');
+const https = require('node:https');
+const zlib = require('node:zlib');
+const crypto = require('node:crypto');
 const { spawn, spawnSync } = require('node:child_process');
 
 const STATUS_FILE_NAME = 'launcher-status.json';
@@ -320,6 +324,13 @@ const spawnOrchestrator = () => {
             balloon('句听已启动', '学习端已在浏览器打开；左键单击托盘图标可随时回来。');
             log('编排器就绪（running）');
             if (!prefs.shortcutCreated) setTimeout(() => ensureDesktopShortcut(), 1500);
+            // 启动后台静默查更新（24 小时内查过就跳过），不阻塞任何流程
+            const lastCheck = Number(prefs.lastUpdateCheck || 0);
+            if (Date.now() - lastCheck > UPDATE_CACHE_MS) {
+                setTimeout(() => { void checkForUpdate({ silent: true }); }, 6000);
+            } else {
+                log(`跳过更新检查（${Math.round((Date.now() - lastCheck) / 3600000)} 小时前查过）`);
+            }
         }
     });
     orchestrator.on('exit', (code, signal) => {
@@ -361,12 +372,12 @@ const runStopScript = async () => {
     }
 };
 let stopping = false;
-const stopEverything = async (reason) => {
+const stopEverything = async (reason, options = {}) => {
     if (stopping) return;
     stopping = true;
     stopRequested = true;
     log(`开始停止（${reason}）`);
-    setStatus({ state: 'stopping', tooltip: '句听 · 正在停止…', message: '正在安全关停数据库与后台服务' });
+    setStatus({ state: 'stopping', tooltip: options.tooltip || '句听 · 正在停止…', message: '正在安全关停数据库与后台服务' });
     if (orchestrator) {
         try { orchestrator.send({ cmd: 'shutdown' }); } catch { /* 已断开 */ }
         const exited = await waitOrchestratorExit(35000);
@@ -374,7 +385,15 @@ const stopEverything = async (reason) => {
     }
     // 编排器已退出时 stop-all 是幂等的端口级清扫；接管模式下它是唯一停止手段。
     await runStopScript();
-    setStatus({ state: 'stopped', tooltip: '句听 · 已停止', message: '可以安全关闭或从托盘重新启动', balloon: { id: `b${++balloonSeq}`, title: '句听已停止', text: '数据库已安全关停，数据未丢失。' } });
+    const finalBalloon = options.balloon
+        ? { id: `b${++balloonSeq}`, ...options.balloon }
+        : { id: `b${++balloonSeq}`, title: '句听已停止', text: '数据库已安全关停，数据未丢失。' };
+    setStatus({
+        state: 'stopped',
+        tooltip: options.tooltip || '句听 · 已停止',
+        message: options.balloon ? '正在安装更新，句听会自动重新打开' : '可以安全关闭或从托盘重新启动',
+        balloon: finalBalloon,
+    });
     log('已停止');
     await sleep(1500); // 给托盘读取 stopped 并自行退出的时间
     if (trayProcess) { try { trayProcess.kill(); } catch { /* 忽略 */ } }
@@ -418,6 +437,12 @@ const consumeCommand = async () => {
         case 'shortcut':
             ensureDesktopShortcut();
             break;
+        case 'check-update':
+            await checkForUpdate();
+            break;
+        case 'update':
+            await startUpdate();
+            break;
         case 'focus':
             balloon('句听已在运行', '左键单击托盘图标即可打开学习端。');
             break;
@@ -435,13 +460,480 @@ const consumeCommand = async () => {
     }
 };
 
+// ════════════════════════════════════════════════════════════
+// 更新检测与一键覆盖安装
+//
+// 流程：查 GitHub Release（可用 JUTING_UPDATE_API 覆盖为测试源）
+//   → 比对版本 → 托盘菜单出现「更新到 vX.Y.Z」
+//   → 下载（优先 *-update.zip，Node 原生解压；回退 .7z 需本机 7-Zip）
+//   → 校验（SHA256SUMS.txt / 体积）+ 解压到 temp/runtime/update/staging
+//   → 复制自身为「更新器」并以 --apply-update 派生（detached）
+//   → 停止服务并退出；更新器等本进程消失后覆盖安装目录（跳过 temp 用户数据）→ 重新启动句听
+// ════════════════════════════════════════════════════════════
+const UPDATE_API = process.env.JUTING_UPDATE_API || 'https://api.github.com/repos/zzz-sc-tech/juting/releases/latest';
+const UPDATE_REPO_URL = 'https://github.com/zzz-sc-tech/juting/releases';
+const UPDATE_CACHE_MS = 24 * 60 * 60 * 1000;
+const UPDATE_DIR = path.join(runtimeDir, 'update');
+const UPDATE_STAGING = path.join(UPDATE_DIR, 'staging');
+// 覆盖安装时永不触碰的路径（用户数据与运行时现场）
+const UPDATE_PROTECTED = ['temp'];
+// 应用更新时必须存在于新包里的锚点文件（防止下载残缺包把程序打坏）
+const UPDATE_ANCHORS = ['package.json', '句听.exe', path.join('scripts', 'local', 'start-all.mjs')];
+
+const currentVersion = () => {
+    try {
+        return JSON.parse(fs.readFileSync(path.join(repoRoot, 'package.json'), 'utf8')).version || '0.0.0';
+    } catch {
+        return '0.0.0';
+    }
+};
+const parseVersion = (value) => String(value || '').replace(/^v/i, '').split(/[.\-+]/).map((part) => parseInt(part, 10) || 0);
+const isNewerVersion = (remote, local) => {
+    const a = parseVersion(remote);
+    const b = parseVersion(local);
+    for (let i = 0; i < Math.max(a.length, b.length); i += 1) {
+        if ((a[i] || 0) > (b[i] || 0)) return true;
+        if ((a[i] || 0) < (b[i] || 0)) return false;
+    }
+    return false;
+};
+const updatePatch = (patch) => {
+    const next = { ...(status.update || {}), ...patch };
+    setStatus({ update: next });
+    return next;
+};
+
+// ── HTTP：GET（自动跟随跳转）与下载（带进度/哈希）────────────
+const httpGet = (url, { headers = {}, onResponse, timeout = 30000 } = {}) => new Promise((resolve, reject) => {
+    const lib = /^http:/.test(url) ? http : https;
+    const request = lib.get(url, { headers: { 'User-Agent': 'juting-launcher', Accept: 'application/vnd.github+json', ...headers }, timeout }, (res) => {
+        if ([301, 302, 303, 307, 308].includes(res.statusCode) && res.headers.location) {
+            res.resume();
+            const next = new URL(res.headers.location, url).toString();
+            resolve(httpGet(next, { headers, onResponse, timeout }));
+            return;
+        }
+        if (res.statusCode !== 200) {
+            res.resume();
+            reject(new Error(`HTTP ${res.statusCode}`));
+            return;
+        }
+        if (onResponse) {
+            log(`收到响应 ${res.statusCode} ← ${url}（content-length=${res.headers['content-length'] || '未知'}）`);
+            // 把响应流交给调用方消费（下载场景需要流式落盘），本 promise 就此结束。
+            // 注意：必须真的调用 onResponse——只 resolve 流的话监听器永远挂不上，
+            // 响应会一直悬着（socket 暂停、进程空等），表现为下载 0% 卡死。
+            try {
+                onResponse(res);
+                resolve();
+            } catch (error) {
+                reject(error);
+            }
+            return;
+        }
+        let body = '';
+        res.setEncoding('utf8');
+        res.on('data', (chunk) => { body += chunk; });
+        res.on('end', () => resolve(body));
+    });
+    request.on('timeout', () => {
+        log(`请求超时（${timeout}ms）：${url}`);
+        request.destroy(new Error('请求超时'));
+    });
+    request.on('error', reject);
+});
+const downloadToFile = (url, dest, { onProgress, timeout = 120000 } = {}) => new Promise((resolve, reject) => {
+    const tmp = `${dest}.part`;
+    fs.mkdirSync(path.dirname(dest), { recursive: true });
+    const hash = crypto.createHash('sha256');
+    const out = fs.createWriteStream(tmp);
+    let received = 0;
+    let failed = false;
+    const fail = (error) => {
+        if (failed) return;
+        failed = true;
+        try { out.destroy(); } catch { /* 忽略 */ }
+        try { fs.rmSync(tmp, { force: true }); } catch { /* 忽略 */ }
+        reject(error);
+    };
+    httpGet(url, {
+        timeout,
+        onResponse: (res) => {
+            const total = Number(res.headers['content-length']) || 0;
+            res.once('data', () => log('下载已开始，收到首个数据块'));
+            res.on('data', (chunk) => {
+                received += chunk.length;
+                hash.update(chunk);
+                if (!out.write(chunk)) res.pause();
+                if (onProgress) onProgress(received, total);
+            });
+            out.on('drain', () => res.resume());
+            res.on('end', () => {
+                log(`下载响应结束，累计 ${(received / 1048576).toFixed(1)} MB`);
+                out.end(() => {
+                    if (failed) return;
+                    try {
+                        fs.renameSync(tmp, dest);
+                        resolve({ bytes: received, sha256: hash.digest('hex'), total });
+                    } catch (error) {
+                        fail(error);
+                    }
+                });
+            });
+            res.on('error', fail);
+        },
+    }).catch(fail);
+    out.on('error', fail);
+});
+
+// ── ZIP 解压（纯 Node：中央目录 + inflateRaw，无需外部工具）──
+const extractZip = (zipPath, destDir, { onProgress, skip } = {}) => {
+    const fd = fs.openSync(zipPath, 'r');
+    try {
+        const total = fs.fstatSync(fd).size;
+        const tailLen = Math.min(total, 66_000);
+        const tail = Buffer.alloc(tailLen);
+        fs.readSync(fd, tail, 0, tailLen, total - tailLen);
+        const eocd = tail.lastIndexOf(Buffer.from([0x50, 0x4b, 0x05, 0x06]));
+        if (eocd < 0) throw new Error('不是有效的 ZIP（未找到 EOCD）');
+        const entryCount = tail.readUInt16LE(eocd + 10);
+        if (entryCount === 0xffff) throw new Error('ZIP64 不受支持');
+        const cdSize = tail.readUInt32LE(eocd + 12);
+        const cdOffset = tail.readUInt32LE(eocd + 16);
+        const cd = Buffer.alloc(cdSize);
+        fs.readSync(fd, cd, 0, cdSize, cdOffset);
+
+        let cursor = 0;
+        let written = 0;
+        const useCrc = typeof zlib.crc32 === 'function';
+        for (let index = 0; index < entryCount; index += 1) {
+            if (cd.readUInt32LE(cursor) !== 0x02014b50) throw new Error(`中央目录损坏（第 ${index + 1} 项）`);
+            const flags = cd.readUInt16LE(cursor + 8);
+            const method = cd.readUInt16LE(cursor + 10);
+            const crc = cd.readUInt32LE(cursor + 16);
+            const compSize = cd.readUInt32LE(cursor + 20);
+            const nameLen = cd.readUInt16LE(cursor + 28);
+            const extraLen = cd.readUInt16LE(cursor + 30);
+            const commentLen = cd.readUInt16LE(cursor + 32);
+            const localOffset = cd.readUInt32LE(cursor + 42);
+            const rawName = cd.subarray(cursor + 46, cursor + 46 + nameLen);
+            // bit 11 = UTF-8 文件名；否则按 CP437/GBK 兜底
+            const name = (flags & 0x800) ? rawName.toString('utf8') : rawName.toString('latin1');
+            cursor += 46 + nameLen + extraLen + commentLen;
+
+            const normalized = name.replace(/\\/g, '/');
+            if (!normalized || normalized.startsWith('__MACOSX')) continue;
+            if (skip && skip(normalized)) continue;
+            const target = path.join(destDir, normalized);
+            if (!target.startsWith(path.resolve(destDir))) continue; // 防目录穿越
+            if (normalized.endsWith('/')) {
+                fs.mkdirSync(target, { recursive: true });
+                continue;
+            }
+            // 本地头：取数据区真实起点（extra 长度可能与中央目录不同）
+            const head = Buffer.alloc(30);
+            fs.readSync(fd, head, 0, 30, localOffset);
+            if (head.readUInt32LE(0) !== 0x04034b50) throw new Error(`本地头损坏：${normalized}`);
+            const dataStart = localOffset + 30 + head.readUInt16LE(26) + head.readUInt16LE(28);
+            const compressed = Buffer.alloc(compSize);
+            if (compSize > 0) fs.readSync(fd, compressed, 0, compSize, dataStart);
+            let data;
+            if (method === 0) data = compressed;
+            else if (method === 8) data = zlib.inflateRawSync(compressed);
+            else throw new Error(`不支持的压缩方式 ${method}（${normalized}）`);
+            if (useCrc && crc !== 0 && zlib.crc32(data) !== crc) throw new Error(`CRC 校验失败：${normalized}`);
+            fs.mkdirSync(path.dirname(target), { recursive: true });
+            fs.writeFileSync(target, data);
+            written += 1;
+            if (onProgress && written % 500 === 0) onProgress(written, entryCount);
+        }
+        if (onProgress) onProgress(written, entryCount);
+        return { files: written, entries: entryCount };
+    } finally {
+        fs.closeSync(fd);
+    }
+};
+
+// ── 检查更新 ────────────────────────────────────────────────
+let updateBusy = false;
+const checkForUpdate = async () => {
+    if (updateBusy) return;
+    updateBusy = true;
+    updatePatch({ phase: 'checking', message: '正在检查更新…', error: null });
+    log(`检查更新：${UPDATE_API}`);
+    try {
+        const body = await httpGet(UPDATE_API);
+        const release = JSON.parse(body);
+        const local = currentVersion();
+        const remote = String(release.tag_name || release.name || '').trim();
+        const assets = Array.isArray(release.assets) ? release.assets : [];
+        const edition = fs.existsSync(path.join(repoRoot, 'presets', 'cet6', 'seed.json')) ? 'full' : 'lite';
+        const pick = assets.find((a) => /-update\.zip$/i.test(a.name) && a.name.includes(edition))
+            || assets.find((a) => /\.zip$/i.test(a.name) && a.name.includes(edition))
+            || assets.find((a) => /-update\.zip$/i.test(a.name))
+            || assets.find((a) => /\.7z$/i.test(a.name) && a.name.includes(edition))
+            || assets.find((a) => /\.(zip|7z)$/i.test(a.name));
+        const available = Boolean(pick) && isNewerVersion(remote, local);
+        const sizeMb = pick ? Math.round(pick.size / 1048576) : 0;
+        updatePatch({
+            available,
+            version: String(remote).replace(/^v/i, ''),
+            current: local,
+            assetName: pick ? pick.name : '',
+            assetUrl: pick ? pick.browser_download_url : '',
+            assetSize: pick ? pick.size : 0,
+            needs7z: Boolean(pick && /\.7z$/i.test(pick.name)),
+            sizeMb,
+            releaseUrl: release.html_url || UPDATE_REPO_URL,
+            phase: available ? 'available' : 'uptodate',
+            progress: 0,
+            message: available ? `发现新版本 v${String(remote).replace(/^v/i, '')}（约 ${sizeMb} MB）` : '已是最新版本',
+            error: null,
+            checkedAt: Date.now(),
+        });
+        prefs.lastUpdateCheck = Date.now();
+        savePrefs();
+        log(`检查更新结果：本地 v${local}，远端 ${remote || '(未知)'}，${available ? '有新版本' : '无需更新'}`);
+        // 更新一律不弹系统气泡：设置页「关于句听」是唯一入口与进度展示处，
+        // 托盘菜单项文字 + 图标提示同步反映状态。
+        if (available) {
+            log(`发现新版本 v${String(remote).replace(/^v/i, '')}（约 ${sizeMb} MB），可在设置页或托盘菜单更新`);
+        }
+    } catch (error) {
+        log(`检查更新失败：${error.message}`);
+        updatePatch({ phase: 'error', error: error.message, message: '检查更新失败' });
+    } finally {
+        updateBusy = false;
+    }
+};
+
+// ── 下载 + 解压 + 校验 ──────────────────────────────────────
+const prepareUpdate = async () => {
+    const info = status.update || {};
+    if (!info.available || !info.assetUrl) throw new Error('没有可用的更新资产，请先检查更新');
+    const edition = fs.existsSync(path.join(repoRoot, 'presets', 'cet6', 'seed.json')) ? 'full' : 'lite';
+    if (info.needs7z && !locate7z()) {
+        throw new Error('该版本只提供 .7z 更新包，且本机未找到 7-Zip；请到 Releases 页手动下载覆盖解压');
+    }
+    log("准备下载目录：" + UPDATE_DIR);
+    fs.rmSync(UPDATE_DIR, { recursive: true, force: true });
+    fs.mkdirSync(UPDATE_DIR, { recursive: true });
+    const archive = path.join(UPDATE_DIR, info.assetName || `update-${Date.now()}.bin`);
+
+    log("开始下载：" + info.assetUrl + " -> " + archive);
+    updatePatch({ phase: 'downloading', progress: 0, message: '正在下载更新…' });
+    setStatus({ tooltip: '句听 · 正在下载更新…' });
+    const started = Date.now();
+    let lastTick = 0;
+    const result = await downloadToFile(info.assetUrl, archive, {
+        onProgress: (received, total) => {
+            // 节流：进度回调可能每秒上千次，状态文件写入压到 ~2 次/秒
+            const now = Date.now();
+            if (now - lastTick < 500) return;
+            lastTick = now;
+            const expected = total || info.assetSize || 0;
+            const percent = expected ? Math.min(99, Math.round((received / expected) * 100)) : 0;
+            const speed = received / Math.max(1, (now - started) / 1000);
+            const speedText = speed > 1048576 ? `${(speed / 1048576).toFixed(1)} MB/s` : `${Math.round(speed / 1024)} KB/s`;
+            updatePatch({ phase: 'downloading', progress: percent, message: `正在下载更新… ${percent}%（${speedText}）` });
+            setStatus({ tooltip: `句听 · 正在下载更新 ${percent}%` });
+        },
+    });
+    log(`下载完成：${(result.bytes / 1048576).toFixed(1)} MB，sha256=${result.sha256.slice(0, 16)}…`);
+    if (info.assetSize && Math.abs(result.bytes - info.assetSize) > 1024) {
+        throw new Error(`下载体积与发布信息不符（${result.bytes} vs ${info.assetSize}），已中止`);
+    }
+    log("下载校验阶段，开始读取 SHA256SUMS.txt");
+    // SHA256SUMS.txt 若在发布资产里，逐字校验
+    try {
+        const assets = (await httpGet(UPDATE_API)).length ? JSON.parse(await httpGet(UPDATE_API)).assets : [];
+        const sums = (assets || []).find((a) => /sha256sums/i.test(a.name));
+        if (sums) {
+            const text = await httpGet(sums.browser_download_url);
+            const line = text.split(/\r?\n/).find((l) => l.includes(info.assetName));
+            const expect = line ? line.trim().split(/\s+/)[0].toLowerCase() : null;
+            if (expect && expect !== result.sha256.toLowerCase()) {
+                throw new Error('SHA256 校验失败，文件可能损坏，已中止更新');
+            }
+            if (expect) log('SHA256 校验通过');
+        }
+    } catch (error) {
+        if (/校验失败/.test(error.message)) throw error;
+        log(`SHA256 校验跳过：${error.message}`);
+    }
+
+    log("开始解压更新包");
+    const archiveIsZip = /\.zip$/i.test(archive) || (fs.readFileSync(archive).subarray(0, 2).toString('latin1') === 'PK');
+    updatePatch({ phase: 'extracting', message: '正在解压更新包…' });
+    setStatus({ tooltip: '句听 · 正在解压更新包…' });
+    fs.rmSync(UPDATE_STAGING, { recursive: true, force: true });
+    fs.mkdirSync(UPDATE_STAGING, { recursive: true });
+    let extractedRoot = UPDATE_STAGING;
+    if (archiveIsZip) {
+        const stats = extractZip(archive, UPDATE_STAGING, {
+            skip: (rel) => /^(temp\/runtime\/(mysql-data|media-store|logs)|\.git)/i.test(rel),
+            onProgress: (done, all) => updatePatch({ message: `正在解压更新包… ${done}/${all}` }),
+        });
+        log(`解压完成：${stats.files} 个文件`);
+    } else {
+        const sevenZip = locate7z();
+        log(`解压 .7z（${sevenZip}）…`);
+        const run = spawnSync(sevenZip, ['x', archive, `-o${UPDATE_STAGING}`, '-y'], { windowsHide: true, timeout: 30 * 60000 });
+        if (run.status !== 0) throw new Error(`7-Zip 解压失败（exit=${run.status}）`);
+    }
+    // 兼容包内多一层同名目录的情况
+    const inner = fs.readdirSync(extractedRoot).filter((n) => !n.startsWith('.'));
+    if (inner.length === 1 && fs.statSync(path.join(extractedRoot, inner[0])).isDirectory()
+        && fs.existsSync(path.join(extractedRoot, inner[0], 'package.json')) && !fs.existsSync(path.join(extractedRoot, 'package.json'))) {
+        extractedRoot = path.join(extractedRoot, inner[0]);
+        log(`更新包为嵌套目录结构，使用 ${inner[0]}/ 作为根`);
+    }
+    for (const anchor of UPDATE_ANCHORS) {
+        if (!fs.existsSync(path.join(extractedRoot, anchor))) {
+            throw new Error(`更新包内容不完整（缺少 ${anchor}），已中止更新`);
+        }
+    }
+    log(`更新包已就绪：${extractedRoot}（版本 ${(() => { try { return JSON.parse(fs.readFileSync(path.join(extractedRoot, 'package.json'), 'utf8')).version; } catch { return '?'; } })()}）`);
+    return { staging: extractedRoot, archive, edition };
+};
+
+const locate7z = () => {
+    const candidates = [
+        process.env.JUTING_7Z,
+        'C:\\Program Files\\7-Zip\\7z.exe',
+        'C:\\Program Files (x86)\\7-Zip\\7z.exe',
+        path.join(process.env.LOCALAPPDATA || '', 'Programs', '7-Zip', '7z.exe'),
+    ].filter(Boolean);
+    for (const candidate of candidates) {
+        try { if (fs.existsSync(candidate)) return candidate; } catch { /* 忽略 */ }
+    }
+    const found = spawnSync('where', ['7z'], { encoding: 'utf8', windowsHide: true });
+    const first = (found.stdout || '').split(/\r?\n/).map((l) => l.trim()).filter(Boolean)[0];
+    return first && fs.existsSync(first) ? first : null;
+};
+
+// ── 一键更新：准备 → 派生更新器 → 停服退出 ──────────────────
+const startUpdate = async () => {
+    if (updateBusy) {
+        log("更新流程已在进行中，忽略本次请求");
+        return;
+    }
+    updateBusy = true;
+    log("开始一键更新流程");
+    try {
+        const { staging } = await prepareUpdate();
+        updatePatch({ phase: 'applying', message: '正在安装更新…', progress: 100 });
+        setStatus({ tooltip: '句听 · 正在安装更新…' });
+        log('开始安装更新：完成后句听会自动重新打开（页面内可见进度）');
+        // 复制自身为独立更新器：运行中的 exe 无法覆盖自己，必须换一个副本执行
+        if (!selfExe) {
+            throw new Error('开发态未构建 句听.exe，无法执行一键更新（请先构建或使用发布包）');
+        }
+        const runnerDir = path.join(runtimeDir, 'update-runner');
+        fs.rmSync(runnerDir, { recursive: true, force: true });
+        fs.mkdirSync(runnerDir, { recursive: true });
+        const runner = path.join(runnerDir, '句听-更新器.exe');
+        fs.copyFileSync(selfExe, runner);
+        const child = spawn(runner, ['--apply-update', staging, '--install-dir', repoRoot, '--wait-pid', String(process.pid)], {
+            cwd: repoRoot,
+            detached: true,
+            stdio: 'ignore',
+            windowsHide: true,
+        });
+        child.unref();
+        log(`更新器已派生（pid=${child.pid}），即将停止服务并退出`);
+        await sleep(800);
+        await stopEverything('安装更新', {
+            balloon: { title: '正在安装更新', text: '覆盖安装完成后句听会自动重新打开。' },
+            tooltip: '句听 · 正在安装更新…',
+        });
+    } catch (error) {
+        log(`更新失败：${error.message}`);
+        updatePatch({ phase: 'error', error: error.message, message: `更新失败：${error.message}` });
+        updateBusy = false;
+    }
+};
+
+// ── 更新器模式（--apply-update）：等旧进程退出后覆盖安装并重启 ──
+const runApplyUpdate = async () => {
+    const staging = argv[argv.indexOf('--apply-update') + 1];
+    const installDir = argv[argv.indexOf('--install-dir') + 1] || repoRoot;
+    const waitPid = Number(argv[argv.indexOf('--wait-pid') + 1] || 0);
+    const logFile = path.join(installDir, 'temp', 'runtime', 'logs', 'update.log');
+    const write = (message) => {
+        const line = `[${new Date().toLocaleString('zh-CN', { hour12: false })}] ${message}`;
+        try {
+            fs.mkdirSync(path.dirname(logFile), { recursive: true });
+            fs.appendFileSync(logFile, `${line}\n`);
+        } catch { /* 忽略 */ }
+    };
+    write(`更新器启动：staging=${staging} install=${installDir} waitPid=${waitPid}`);
+    if (!staging || !fs.existsSync(staging)) {
+        write('更新包目录不存在，退出');
+        return;
+    }
+    // 1. 等旧启动器退出（它要先停掉 MySQL/后端/前端）
+    for (let i = 0; i < 240 && waitPid; i += 1) {
+        let alive = true;
+        try { process.kill(waitPid, 0); } catch (error) { alive = error.code === 'EPERM'; }
+        if (!alive) break;
+        await sleep(500);
+    }
+    write('旧进程已退出，开始覆盖安装');
+    // 2. 覆盖拷贝（跳过 temp：用户数据与便携运行时现场）
+    let copied = 0;
+    try {
+        fs.cpSync(staging, installDir, {
+            recursive: true,
+            force: true,
+            dereference: true,
+            filter: (src) => {
+                const rel = path.relative(staging, src).replace(/\\/g, '/');
+                if (!rel) return true;
+                const top = rel.split('/')[0];
+                if (UPDATE_PROTECTED.includes(top)) return false;
+                return true;
+            },
+        });
+        copied = 1;
+    } catch (error) {
+        write(`覆盖安装失败：${error.message}`);
+    }
+    if (copied) write('覆盖安装完成');
+    // 3. 重启句听
+    const exe = path.join(installDir, '句听.exe');
+    try {
+        if (fs.existsSync(exe)) {
+            const child = spawn(exe, [], { cwd: installDir, detached: true, stdio: 'ignore', windowsHide: true });
+            child.unref();
+            write(`已重新启动 ${exe}`);
+        } else {
+            write('未找到 句听.exe，请手动启动');
+        }
+    } catch (error) {
+        write(`重启失败：${error.message}`);
+    }
+    // 4. 清理更新临时文件（保留日志）
+    try { fs.rmSync(path.join(installDir, 'temp', 'runtime', 'update'), { recursive: true, force: true }); } catch { /* 忽略 */ }
+    write('更新器结束');
+};
+
 // ── 主流程 ──────────────────────────────────────────────────
 const main = async () => {
     if (hasFlag('--selfcheck')) {
         console.log(`OK node ${process.version}`);
         return;
     }
+    // 更新器模式：不拉托盘、不管服务，只等旧进程退出后覆盖安装并重启
+    if (hasFlag('--apply-update')) {
+        await runApplyUpdate();
+        return;
+    }
     fs.mkdirSync(logDir, { recursive: true });
+    // 单实例检测必须先于任何 setStatus：setStatus 会把本进程 pid 写进状态文件，
+    // 先写再读会读到自己的 pid，导致「已有实例在跑」永远判不出来（实测踩过）。
+    const prev = readJson(paths.statusPath);
+    setStatus({ version: currentVersion() });
     log(`启动器启动：安装目录 ${repoRoot}；nodeExe=${paths.nodeExe}；exe=${selfExe || '(开发态未构建)'}`);
 
     if (!fs.existsSync(paths.startScript)) {
@@ -453,8 +945,7 @@ const main = async () => {
         return;
     }
 
-    // 单实例：已有实例在跑 → 转发 focus 后退出
-    const prev = readJson(paths.statusPath);
+    // 单实例：已有实例在跑 → 转发 focus 后退出（prev 已在 setStatus 之前读取）
     if (prev && ['starting', 'running', 'stopping'].includes(prev.state) && isAlive(prev.pid) && prev.pid !== process.pid) {
         log(`检测到已在运行的实例（pid=${prev.pid}），转发 focus`);
         writeJsonAtomic(paths.cmdPath, { action: 'focus', ts: new Date().toISOString() });

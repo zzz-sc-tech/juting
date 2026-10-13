@@ -12,6 +12,12 @@
  *
  * 同时生成 SHA256SUMS.txt。
  *
+ * 发布资产还包含 -update.zip（juting-v<版本>-win-<lite|full>-update.zip）：
+ * 与对应 .7z 同源同内容，但用纯 Node 打包成标准 ZIP（scripts/local/make-update-zip.mjs），
+ * 供客户端「一键更新」原生解压（Node 能直接解 zip，7z 需用户另装）。
+ * 注意：lite 的 zip 在拷入 presets 之前打（否则会串进六级音频），full 在之后打；
+ * --only cet6 的纯课程包不产 update.zip。
+ *
  * 打包内容要点：
  *   - 不打包含绝对路径的任何 .env（启动器会按当前安装位置现场生成 portable.env）；
  *   - 不打包 mysql-data / media-store / logs：数据库首次启动自动初始化，
@@ -24,13 +30,14 @@
  *   - 启动器 句听.exe 由 scripts/local/build-launcher.mjs 构建（Node SEA 单文件），
  *     打包前自动构建；传 --skip-launcher 时要求产物已存在；
  *
- * 用法：node scripts/local/package-release.mjs [--version 1.0.0] [--skip-build] [--skip-launcher] [--only lite|full|cet6|all] [--no-asr]
+ * 用法：node scripts/local/package-release.mjs [--version 1.0.0] [--skip-build] [--skip-launcher] [--only lite|full|cet6|all] [--no-asr] [--no-cet4]
  */
 import fs from 'node:fs';
 import path from 'node:path';
 import { execSync, execFileSync } from 'node:child_process';
 import { createHash } from 'node:crypto';
 import { fileURLToPath } from 'node:url';
+import { makeUpdateZip } from './make-update-zip.mjs';
 
 const repositoryRoot = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..', '..');
 const outDir = path.join(repositoryRoot, '..', 'juting-release');
@@ -72,6 +79,19 @@ const compress = (archiveName, sourceDir) => {
     fs.rmSync(archivePath, { force: true });
     execSync(`"${sevenZip}" a -t7z -mx=7 -mmt=on "${archivePath}" "${sourceDir}" -y`, { stdio: 'inherit', timeout: 1800_000 });
     return archivePath;
+};
+// 更新包（标准 ZIP）：与对应 .7z 同源同内容，供客户端「一键更新」原生解压。
+// 用当前 stage 目录（闭包引用，调用时已创建）；lite 须在拷入 presets 前调用，
+// full 在拷入后调用，否则两个包的课程内容会串。
+const makeUpdateZipFor = (label) => {
+    const zipPath = path.join(outDir, `juting-v${version}-win-${label}-update.zip`);
+    fs.rmSync(zipPath, { force: true }); // 清掉可能的上次残留（本次从头写）
+    log(`生成 ${label} 更新包（zip，供客户端一键更新）…`);
+    const result = makeUpdateZip(stage, zipPath, {
+        onProgress: ({ files }) => console.log(`[打包] 更新包已处理 ${files} 个文件…`),
+    });
+    log(`更新包 ${label}：${result.files} 个文件，${(fs.statSync(zipPath).size / 1024 / 1024).toFixed(0)} MB`);
+    return result.zipPath;
 };
 
 // ── 0. 构建所有产物 ─────────────────────────────────────────
@@ -216,6 +236,8 @@ const artifacts = [];
 if (only === 'all' || only === 'lite') {
     log('压缩简洁版…');
     artifacts.push(compress(`juting-v${version}-win-lite.7z`, stage));
+    // 简洁版更新包：此刻 stage 尚未拷入 presets，包内不含六级音频。
+    artifacts.push(makeUpdateZipFor('lite'));
 }
 
 // ── 5. 完整版 = 简洁版 + 六级预设 ────────────────────────────
@@ -223,13 +245,19 @@ if (only === 'all' || only === 'lite') {
 // 仍需大量人工校准，单机学习用户用不到；需要制课 ASR 时管理后台可一键在线安装
 // 引擎（backend 安装器）。历史带引擎的打包方式见 git（v0.4.2 之前）。
 if (only === 'all' || only === 'full') {
-    log('复制预设（六级 + 四级）…');
+    // --no-cet4：四级真题库仍在完善（题干补全/存疑套/逐句翻译），v0.5.0 起
+    // 发布包暂不含四级，仓库保留 preset 等完善后随版本放开。
+    const includeCet4 = !process.argv.includes('--no-cet4')
+        && fs.existsSync(path.join(repositoryRoot, 'presets/cet4/seed.json'));
+    log(`复制预设（六级${includeCet4 ? ' + 四级' : '，--no-cet4 排除四级'}）…`);
     copyInto('presets/cet6');
-    if (fs.existsSync(path.join(repositoryRoot, 'presets/cet4/seed.json'))) {
+    if (includeCet4) {
         copyInto('presets/cet4');
     }
     log('压缩完整版…');
     artifacts.push(compress(`juting-v${version}-win-full.7z`, stage));
+    // 完整版更新包：此刻 stage 已含 presets，包内预设课程与 .7z 完全一致。
+    artifacts.push(makeUpdateZipFor('full'));
 }
 // ── 6. 校验和（与已有文件按包名合并，支持分次 --only 打包不丢账）──
 const sumsPath = path.join(outDir, 'SHA256SUMS.txt');

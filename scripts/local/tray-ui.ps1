@@ -8,14 +8,19 @@
     1) 状态文件（托盘只读，Node 只写）：
        temp/runtime/launcher-status.json
        字段：state(starting/running/stopping/stopped/error)、tooltip、message、
-             error、balloon({id,title,text})、pid、exePath、autostart、ports
+             error、balloon({id,title,text})、pid、exePath、autostart、ports、
+             version、update({available,version,current,assetName,sizeMb,releaseUrl,
+             phase(checking/available/downloading/extracting/applying/error/uptodate),
+             progress,message,error})
+       注：version/update 为后加字段，老状态文件可能缺失，读取一律容错。
        读取失败 / JSON 解析失败一律当「没有状态」，静默重试，绝不弹错、绝不退出。
        balloon 按 id 去重，同一个 id 只弹一次。
 
     2) 命令文件（托盘只写，Node 只读并消费）：
        temp/runtime/launcher-cmd.json
        形如 {"action":"stop|focus","ts":"..."}；开机自启为
-       {"action":"autostart","value":true|false}；重启为 {"action":"restart"}。
+       {"action":"autostart","value":true|false}；重启为 {"action":"restart"}；
+       检查更新为 {"action":"check-update"}；一键更新为 {"action":"update"}。
        写入采用原子写（先写 .tmp 再替换目标），写完由 Node 删除。
 
     行为要点：
@@ -69,6 +74,12 @@ $script:timer = $null           # 500ms 轮询计时器
 $script:contextMenu = $null     # 右键菜单
 $script:menuAuto = $null        # 「开机自动启动」菜单项（勾选态跟随 status.autostart）
 $script:menuRestart = $null     # 「重新启动」菜单项（仅 error 态可见）
+$script:menuCheckUpdate = $null # 「检查更新」菜单项（始终可见）
+$script:menuUpdate = $null      # 「更新到 vX」菜单项（仅 status.update.available 为真时可见）
+$script:menuAbout = $null       # 「关于 句听 vX」菜单项
+
+$script:checkUpdatePending = $false  # 用户点了「检查更新」，等待 update.phase 变为结束值后恢复
+$script:updatePending = $false       # 用户点了「更新到 vX」，等待进入下载态前维持「正在更新…」
 
 $script:lastState = $null       # 上一次读到的 state，用于「状态变化」记日志
 $script:lastBalloonId = $null   # 上一次弹过的 balloon.id，用于按 id 去重
@@ -295,6 +306,67 @@ function Exit-Tray {
     try { [System.Windows.Forms.Application]::Exit() } catch {}
 }
 
+# ===================== 菜单主题（纸墨书房） =====================
+# 与 web 端设计令牌对齐：暖纸 #f7f5f1 / 墨 #1d1b16 / 松绿 #24584a / 发丝分隔线。
+# 任一步失败只写日志并退回系统默认样式，绝不影响托盘存活。
+
+$script:TrayThemeCSharp = @'
+using System.Drawing;
+using System.Windows.Forms;
+
+namespace JuTing.Tray
+{
+    // 只覆盖菜单相关颜色，其余交给 ProfessionalColorTable 基类
+    public class MenuColors : ProfessionalColorTable
+    {
+        private static readonly Color Paper     = Color.FromArgb(0xF7, 0xF5, 0xF1);
+        private static readonly Color Ink       = Color.FromArgb(0x1D, 0x1B, 0x16);
+        private static readonly Color Green     = Color.FromArgb(0x24, 0x58, 0x4A);
+        private static readonly Color GreenSoft = Color.FromArgb(0xE7, 0xEF, 0xE9);
+        private static readonly Color Hairline  = Color.FromArgb(0xDE, 0xD7, 0xC8);
+        private static readonly Color Border    = Color.FromArgb(0xCF, 0xC8, 0xBA);
+
+        public override Color ToolStripDropDownBackground   { get { return Paper; } }
+        public override Color ImageMarginGradientBegin      { get { return Paper; } }
+        public override Color ImageMarginGradientMiddle     { get { return Paper; } }
+        public override Color ImageMarginGradientEnd        { get { return Paper; } }
+        public override Color MenuStripGradientBegin        { get { return Paper; } }
+        public override Color MenuStripGradientEnd          { get { return Paper; } }
+        public override Color ToolStripBorder               { get { return Border; } }
+        public override Color MenuBorder                    { get { return Border; } }
+        public override Color MenuItemBorder                { get { return Green; } }
+        public override Color MenuItemSelected              { get { return GreenSoft; } }
+        public override Color MenuItemSelectedGradientBegin { get { return GreenSoft; } }
+        public override Color MenuItemSelectedGradientEnd   { get { return GreenSoft; } }
+        public override Color SeparatorDark                 { get { return Hairline; } }
+        public override Color SeparatorLight                { get { return Paper; } }
+    }
+}
+'@
+
+function Set-TrayMenuTheme {
+    param($Menu)
+    try {
+        if (-not ('JuTing.Tray.MenuColors' -as [type])) {
+            # 必须显式引用：本函数可能在主流程 Add-Type -AssemblyName 之前被调用，
+            # 不带引用时 CodeDom 编译报「缺少程序集引用」（实测）。
+            Add-Type -TypeDefinition $script:TrayThemeCSharp `
+                -ReferencedAssemblies 'System.Windows.Forms.dll', 'System.Drawing.dll'
+        }
+        $renderer = New-Object System.Windows.Forms.ToolStripProfessionalRenderer(([JuTing.Tray.MenuColors]::new()))
+        $renderer.RoundedEdges = $true
+        $Menu.Renderer = $renderer
+        $Menu.ShowImageMargin = $false    # 去掉左侧图片留白带（本菜单无图标）
+        $Menu.ShowCheckMargin = $true     # 保留勾选位（「开机自动启动」需要）
+        foreach ($name in @('Microsoft YaHei UI', 'Microsoft YaHei')) {
+            try { $Menu.Font = New-Object System.Drawing.Font($name, 9.0); break } catch { }
+        }
+        Write-TrayLog '菜单主题：纸墨书房（自定义渲染已应用）'
+    } catch {
+        Write-TrayLog "⚠ 菜单主题应用失败，退回系统默认样式：$_"
+    }
+}
+
 # ===================== 菜单与轮询逻辑 =====================
 
 function New-TrayMenuItem {
@@ -304,6 +376,11 @@ function New-TrayMenuItem {
     )
     $item = New-Object System.Windows.Forms.ToolStripMenuItem
     $item.Text = $Text
+    try {
+        # 纸墨书房：墨色文字 + 适度内边距（失败静默退回默认）
+        $item.ForeColor = [System.Drawing.Color]::FromArgb(0x1D, 0x1B, 0x16)
+        $item.Padding = New-Object System.Windows.Forms.Padding(14, 5, 14, 5)
+    } catch { }
     if ($OnClick) { $item.Add_Click($OnClick) }
     return $item
 }
@@ -311,6 +388,7 @@ function New-TrayMenuItem {
 # 构建右键菜单；菜单项点击事件内部一律 try/catch，写命令文件失败不影响托盘
 function Build-ContextMenu {
     $menu = New-Object System.Windows.Forms.ContextMenuStrip
+    Set-TrayMenuTheme $menu
 
     $mOpenWeb = New-TrayMenuItem '打开学习端' {
         try {
@@ -370,6 +448,61 @@ function Build-ContextMenu {
         }
     }
 
+    $mSep3 = New-Object System.Windows.Forms.ToolStripSeparator
+
+    # 检查更新：始终可见可点；点击下发 check-update，自身先置「正在检查更新…」禁用，待 phase 变为结束值再恢复
+    $mCheckUpdate = New-TrayMenuItem '检查更新' {
+        try {
+            Send-LauncherCommand -Action 'check-update'
+            $script:checkUpdatePending = $true
+            if ($null -ne $script:menuCheckUpdate) {
+                $script:menuCheckUpdate.Text = '正在检查更新…'
+                $script:menuCheckUpdate.Enabled = $false
+            }
+            Write-TrayLog '菜单：检查更新（命令已下发）'
+        } catch {
+            Write-TrayLog "⚠ 菜单：检查更新 异常：$_"
+        }
+    }
+    $script:menuCheckUpdate = $mCheckUpdate
+
+    # 更新到 vX：仅 status.update.available 为真时可见，文字带目标版本号；点击下发 update
+    $mUpdate = New-TrayMenuItem '更新' {
+        try {
+            Send-LauncherCommand -Action 'update'
+            $script:updatePending = $true
+            if ($null -ne $script:menuUpdate) {
+                $script:menuUpdate.Enabled = $false
+                $script:menuUpdate.Text = '正在更新…'
+            }
+            Write-TrayLog '菜单：一键更新（命令已下发）'
+        } catch {
+            Write-TrayLog "⚠ 菜单：一键更新 异常：$_"
+        }
+    }
+    $mUpdate.Visible = $false
+    $script:menuUpdate = $mUpdate
+
+    # 关于：只弹气泡给出发布地址，绝不 Start-Process 打开链接（让用户自行复制）
+    $mAbout = New-TrayMenuItem '关于 句听' {
+        try {
+            $st = Read-LauncherStatus
+            $ver = ''
+            if ($null -ne $st -and $null -ne $st.version -and [string]$st.version -ne '') { $ver = [string]$st.version }
+            $url = 'https://github.com/zzz-sc-tech/juting/releases'
+            if ($null -ne $st -and $null -ne $st.update -and $null -ne $st.update.releaseUrl -and [string]$st.update.releaseUrl -ne '') {
+                $url = [string]$st.update.releaseUrl
+            }
+            $title = '句听'
+            if ($ver) { $title = "句听 v$ver" }
+            Show-Balloon $title $url 'Info'
+            Write-TrayLog '菜单：关于（气泡已给出发布地址）'
+        } catch {
+            Write-TrayLog "⚠ 菜单：关于 异常：$_"
+        }
+    }
+    $script:menuAbout = $mAbout
+
     $mSep2 = New-Object System.Windows.Forms.ToolStripSeparator
 
     # 重新启动：仅 state=error 时可见（由 Update-MenuStates 控制）
@@ -410,6 +543,10 @@ function Build-ContextMenu {
     $null = $menu.Items.Add($mSep1)
     $null = $menu.Items.Add($mAuto)
     $null = $menu.Items.Add($mShortcut)
+    $null = $menu.Items.Add($mSep3)
+    $null = $menu.Items.Add($mCheckUpdate)
+    $null = $menu.Items.Add($mUpdate)
+    $null = $menu.Items.Add($mAbout)
     $null = $menu.Items.Add($mSep2)
     $null = $menu.Items.Add($mRestart)
     $null = $menu.Items.Add($mStop)
@@ -440,6 +577,72 @@ function Update-MenuStates {
         if ($null -ne $script:menuRestart -and $script:menuRestart.Visible -ne $err) {
             $script:menuRestart.Visible = $err
         }
+
+        # ---- 更新相关菜单项（update 字段可能不存在，一律容错）----
+        $upd = $null
+        if ($null -ne $Status -and $null -ne $Status.update) { $upd = $Status.update }
+        $phase = ''
+        if ($null -ne $upd -and $null -ne $upd.phase) { $phase = [string]$upd.phase }
+        # 更新进行中：下载/解压/安装三态，此时 1、2 两项都禁用
+        $busy = ($phase -eq 'downloading' -or $phase -eq 'extracting' -or $phase -eq 'applying')
+        $avail = ($null -ne $upd -and $null -ne $upd.available -and [System.Convert]::ToBoolean($upd.available))
+        $uver = ''
+        if ($null -ne $upd -and $null -ne $upd.version) { $uver = [string]$upd.version }
+
+        # 「检查更新」：始终可见；检查中禁用并显示「正在检查更新…」，phase 变为结束值（uptodate/available/error）后恢复
+        if ($null -ne $script:menuCheckUpdate) {
+            if ($script:menuCheckUpdate.Visible -ne $true) { $script:menuCheckUpdate.Visible = $true }
+            $checking = $script:checkUpdatePending
+            if ($checking -and ($phase -eq 'uptodate' -or $phase -eq 'available' -or $phase -eq 'error')) {
+                $script:checkUpdatePending = $false
+                $checking = $false
+            }
+            if ($checking) {
+                if ($script:menuCheckUpdate.Text -ne '正在检查更新…') { $script:menuCheckUpdate.Text = '正在检查更新…' }
+                $script:menuCheckUpdate.Enabled = $false
+            } else {
+                if ($script:menuCheckUpdate.Text -ne '检查更新') { $script:menuCheckUpdate.Text = '检查更新' }
+                $script:menuCheckUpdate.Enabled = -not $busy
+            }
+        }
+
+        # 「更新到 vX」：更新进行中强制可见并显示 update.message；否则仅 available=true 时可见
+        if ($null -ne $script:menuUpdate) {
+            if ($busy) {
+                $script:updatePending = $false
+                if ($script:menuUpdate.Visible -ne $true) { $script:menuUpdate.Visible = $true }
+                $script:menuUpdate.Enabled = $false
+                $umsg = ''
+                if ($null -ne $upd -and $null -ne $upd.message) { $umsg = [string]$upd.message }
+                if (-not $umsg) { $umsg = '正在更新…' }
+                if ($script:menuUpdate.Text -ne $umsg) { $script:menuUpdate.Text = $umsg }
+            } else {
+                $utext = '更新到新版本'
+                if ($uver) { $utext = "更新到 v$uver" }
+                $uvisible = [bool]$avail
+                $uenabled = $true
+                # 已点击更新但尚未进入下载态：维持「正在更新…」禁用，避免被下次轮询重置
+                if ($script:updatePending) {
+                    $utext = '正在更新…'
+                    $uvisible = $true
+                    $uenabled = $false
+                }
+                if ($script:menuUpdate.Visible -ne $uvisible) { $script:menuUpdate.Visible = $uvisible }
+                if ($script:menuUpdate.Text -ne $utext) { $script:menuUpdate.Text = $utext }
+                $script:menuUpdate.Enabled = $uenabled
+            }
+        }
+
+        # 「关于 句听 vX」：始终可见可点，文字跟随 status.version
+        if ($null -ne $script:menuAbout) {
+            if ($script:menuAbout.Visible -ne $true) { $script:menuAbout.Visible = $true }
+            $script:menuAbout.Enabled = $true
+            $ver = ''
+            if ($null -ne $Status -and $null -ne $Status.version -and [string]$Status.version -ne '') { $ver = [string]$Status.version }
+            $atext = '关于 句听'
+            if ($ver) { $atext = "关于 句听 v$ver" }
+            if ($script:menuAbout.Text -ne $atext) { $script:menuAbout.Text = $atext }
+        }
     } catch {
         Write-TrayLog "⚠ 更新菜单状态异常：$_"
     }
@@ -457,6 +660,11 @@ function On-PollTick {
 
         $state = ''
         if ($null -ne $status.state) { $state = [string]$status.state }
+
+        # 更新阶段（update 字段可能不存在）：downloading/extracting/applying 视为更新进行中
+        $updPhase = ''
+        if ($null -ne $status.update -and $null -ne $status.update.phase) { $updPhase = [string]$status.update.phase }
+        $updateBusy = ($updPhase -eq 'downloading' -or $updPhase -eq 'extracting' -or $updPhase -eq 'applying')
 
         # 端口跟随（Node 是唯一真相源，缺省保持 8101/8102）
         if ($null -ne $status.ports) {
@@ -486,7 +694,8 @@ function On-PollTick {
         Update-MenuStates $status
 
         # 气泡：balloon.id 变化才弹，同一个 id 只弹一次；error 态用 Warning 图标
-        if ($null -ne $status.balloon) {
+        # 更新进行中的 stopped 是「更新器接管」而非用户停止，跳过启动器的「已停止」气泡避免误导
+        if ($null -ne $status.balloon -and -not ($state -eq 'stopped' -and $updateBusy)) {
             $bid = ''
             if ($null -ne $status.balloon.id) { $bid = [string]$status.balloon.id }
             if ($bid -ne '' -and $bid -ne $script:lastBalloonId) {
@@ -531,7 +740,13 @@ function On-PollTick {
 
         # 退出判定 1：状态机已停止，托盘随之退出
         if ($state -eq 'stopped') {
-            Exit-Tray '检测到 state=stopped，托盘退出'
+            if ($updateBusy) {
+                # 更新器即将覆盖安装并自动重启句听，最后一次气泡改为更新相关，跳过「已停止」
+                Show-Balloon '句听' '更新中，句听会自动重启' 'Info'
+                Exit-Tray "检测到 state=stopped（更新中：$updPhase），托盘退出，更新器将自动重启句听"
+            } else {
+                Exit-Tray '检测到 state=stopped，托盘退出'
+            }
             return
         }
         # 退出判定 2：用户点了停止且启动器已崩溃，直接兜底

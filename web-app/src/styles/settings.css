@@ -463,3 +463,108 @@
   border-color: var(--danger);
   color: var(--danger);
 }
+
+/* ── 关于句听 / 检查更新 ───────────────────────────────────── */
+.settings-update-row {
+  align-items: center;
+  display: flex;
+  gap: 12px;
+  justify-content: space-between;
+}
+
+.settings-update-button {
+  align-items: center;
+  background: var(--surface);
+  border: 1px solid var(--line-strong);
+  border-radius: var(--radius-pill);
+  color: var(--ink);
+  cursor: pointer;
+  display: inline-flex;
+  font-size: 13px;
+  gap: 6px;
+  min-height: 32px;
+  padding: 0 14px;
+  transition: border-color 0.15s ease, color 0.15s ease, background 0.15s ease;
+  white-space: nowrap;
+}
+
+.settings-update-button:hover:not(:disabled) {
+  border-color: var(--accent);
+  color: var(--accent-strong);
+}
+
+.settings-update-button:focus-visible {
+  box-shadow: var(--focus-ring);
+  outline: none;
+}
+
+.settings-update-button:disabled {
+  color: var(--ink-4);
+  cursor: not-allowed;
+  opacity: 0.7;
+}
+
+.settings-update-button.primary {
+  background: var(--accent);
+  border-color: var(--accent);
+  color: var(--bg);
+}
+
+.settings-update-button.primary:hover:not(:disabled) {
+  background: var(--accent-strong);
+  border-color: var(--accent-strong);
+  color: var(--bg);
+}
+
+.settings-update-notice {
+  align-items: center;
+  background: var(--warning-soft);
+  border: 1px solid var(--line);
+  border-radius: var(--radius-md);
+  color: var(--ink);
+  display: flex;
+  font-size: 14px;
+  gap: 12px;
+  justify-content: space-between;
+  margin-top: 14px;
+  padding: 12px 14px;
+}
+
+.settings-update-link {
+  color: var(--accent-strong);
+  display: inline-block;
+  font-size: 13px;
+  margin-top: 6px;
+}
+
+.settings-update-progress {
+  margin-top: 14px;
+}
+
+.settings-update-progress-label {
+  color: var(--ink);
+  font-size: 13px;
+  margin-bottom: 8px;
+}
+
+.settings-update-track {
+  background: var(--bg-sunken);
+  border: 1px solid var(--line);
+  border-radius: var(--radius-pill);
+  height: 8px;
+  overflow: hidden;
+  width: 100%;
+}
+
+.settings-update-fill {
+  background: var(--accent);
+  border-radius: var(--radius-pill);
+  height: 100%;
+  transition: width 0.4s ease;
+}
+
+.settings-update-error {
+  color: var(--warning);
+  font-size: 13px;
+  margin-top: 12px;
+}

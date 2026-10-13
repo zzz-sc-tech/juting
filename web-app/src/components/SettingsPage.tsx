@@ -17,6 +17,7 @@ import {
 } from '../lib/userPrefs'
 import { SettingsSelect } from './SettingsSelect'
 import { TopBar } from './TopBar'
+import { UpdatePanel } from './UpdatePanel'
 
 /**
  * 设置页：挂在 TopBar 下面，与主学习页共用同一个应用外壳。
@@ -148,6 +149,8 @@ export function SettingsPage() {
             />
           </label>
         </section>
+
+        <UpdatePanel />
       </div>
     </div>
   )
