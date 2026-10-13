@@ -87,11 +87,18 @@ const makeUpdateZipFor = (label) => {
     const zipPath = path.join(outDir, `juting-v${version}-win-${label}-update.zip`);
     fs.rmSync(zipPath, { force: true }); // 清掉可能的上次残留（本次从头写）
     log(`生成 ${label} 更新包（zip，供客户端一键更新）…`);
-    const result = makeUpdateZip(stage, zipPath, {
-        onProgress: ({ files }) => console.log(`[打包] 更新包已处理 ${files} 个文件…`),
-    });
-    log(`更新包 ${label}：${result.files} 个文件，${(fs.statSync(zipPath).size / 1024 / 1024).toFixed(0)} MB`);
-    return result.zipPath;
+    try {
+        const result = makeUpdateZip(stage, zipPath, {
+            onProgress: ({ files }) => console.log(`[打包] 更新包已处理 ${files} 个文件…`),
+        });
+        log(`更新包 ${label}：${result.files} 个文件，${(fs.statSync(zipPath).size / 1024 / 1024).toFixed(0)} MB`);
+        return result.zipPath;
+    } catch (e) {
+        // 条目数超过标准 ZIP 上限 65535（需 Zip64，本实现未支持）→ 跳过 update.zip
+        // 客户端会回退用 .7z（要求用户装 7-Zip）；不影响 .7z 与 SHA256SUMS 产出
+        log(`⚠ 更新包 ${label} 生成失败（${e.message}），跳过——客户端将回退 .7z`);
+        return null;
+    }
 };
 
 // ── 0. 构建所有产物 ─────────────────────────────────────────
