@@ -91,8 +91,13 @@ const paths = {
     nodeExe: firstExisting([path.join(runtimeDir, 'node', 'node.exe')]) || process.execPath,
     builtExe: firstExisting([path.join(repoRoot, 'temp', 'launcher-build', '句听.exe')]),
 };
-// 自启/快捷方式指向的可执行体：SEA 下就是自己；源码态用构建产物兜底。
-const selfExe = /node(\.exe)?$/i.test(path.basename(process.execPath)) ? paths.builtExe : process.execPath;
+// 自启/快捷方式指向的可执行体：新 C# 壳模型下本进程是 node.exe 的子进程，
+// process.execPath 不再指向安装根，因此优先取安装根下的 句听.exe（壳本身）；
+// 旧 SEA 直跑时 execPath 即自身；源码态（仓库根未构建壳）兜底到构建产物，找不到则为 null。
+const shellExePath = path.join(repoRoot, '句听.exe');
+const selfExe = fs.existsSync(shellExePath)
+    ? shellExePath
+    : (/node(\.exe)?$/i.test(path.basename(process.execPath)) ? paths.builtExe : process.execPath);
 
 // ── 原子 JSON 读写 ─────────────────────────────────────────
 const readJson = (file) => {
@@ -481,6 +486,29 @@ const UPDATE_PROTECTED = ['temp'];
 // 应用更新时必须存在于新包里的锚点文件（防止下载残缺包把程序打坏）
 const UPDATE_ANCHORS = ['package.json', '句听.exe', path.join('scripts', 'local', 'start-all.mjs')];
 
+// ── 版本口味（flavor）判定与更新资产选择 ─────────────────────
+// 口味由 presets/<flavor>/seed.json 判定：cet6 → 'cet6'，cet4 → 'cet4'，都没有 → null。
+// 注意：历史资产名里带 "full" 字样（juting-…-win-full-cet6.7z），那是旧命名遗留，
+// 不能拿 'full'/'lite' 之类子串当判据——未来还会有 cet6-opus 等变体，必须用口味 token 本身。
+const detectFlavor = () => {
+    if (fs.existsSync(path.join(repoRoot, 'presets', 'cet6', 'seed.json'))) return 'cet6';
+    if (fs.existsSync(path.join(repoRoot, 'presets', 'cet4', 'seed.json'))) return 'cet4';
+    return null;
+};
+// 口味 token 必须落在分隔符边界上：`-cet6-`、`-cet6.` 都算（update.zip 与 .7z 的分隔符不同），
+// `cet6x` / `cet60` / `cet6cet4` 这类黏连子串不算。
+const flavorAssetPattern = (flavor) => new RegExp(`(^|[-_.])${flavor}([-_.]|$)`, 'i');
+// 资产选择：只认与当前口味精确匹配的资产，偏好顺序 -update.zip → .7z。
+// 绝不回退到其他口味的资产（曾发生过把 cet4 包推给 cet6 用户的隐患）。
+const pickFlavorAsset = (assets, flavor) => {
+    if (!flavor) return null;
+    const matches = flavorAssetPattern(flavor);
+    const eligible = assets.filter((asset) => asset && matches.test(String(asset.name || '')));
+    return eligible.find((asset) => /-update\.zip$/i.test(asset.name))
+        || eligible.find((asset) => /\.7z$/i.test(asset.name))
+        || null;
+};
+
 const currentVersion = () => {
     try {
         return JSON.parse(fs.readFileSync(path.join(repoRoot, 'package.json'), 'utf8')).version || '0.0.0';
@@ -764,18 +792,16 @@ const checkForUpdate = async () => {
         const local = currentVersion();
         const remote = String(release.tag_name || release.name || '').trim();
         const assets = Array.isArray(release.assets) ? release.assets : [];
-        const edition = fs.existsSync(path.join(repoRoot, 'presets', 'cet6', 'seed.json')) ? 'full' : 'lite';
-        const pick = assets.find((a) => /-update\.zip$/i.test(a.name) && a.name.includes(edition))
-            || assets.find((a) => /\.zip$/i.test(a.name) && a.name.includes(edition))
-            || assets.find((a) => /-update\.zip$/i.test(a.name))
-            || assets.find((a) => /\.7z$/i.test(a.name) && a.name.includes(edition))
-            || assets.find((a) => /\.(zip|7z)$/i.test(a.name));
-        const available = Boolean(pick) && isNewerVersion(remote, local);
+        const newer = isNewerVersion(remote, local);
+        const flavor = detectFlavor();
+        const pick = pickFlavorAsset(assets, flavor);
+        const available = Boolean(pick) && newer;
         const sizeMb = pick ? Math.round(pick.size / 1048576) : 0;
         updatePatch({
             available,
             version: String(remote).replace(/^v/i, ''),
             current: local,
+            flavor: flavor || '',
             assetName: pick ? pick.name : '',
             assetUrl: pick ? pick.browser_download_url : '',
             assetSize: pick ? pick.size : 0,
@@ -784,17 +810,21 @@ const checkForUpdate = async () => {
             releaseUrl: release.html_url || UPDATE_REPO_URL,
             phase: available ? 'available' : 'uptodate',
             progress: 0,
-            message: available ? `发现新版本 v${String(remote).replace(/^v/i, '')}（约 ${sizeMb} MB）` : '已是最新版本',
+            message: available
+                ? `发现新版本 v${String(remote).replace(/^v/i, '')}（约 ${sizeMb} MB）`
+                : (newer ? '暂无可用的更新包' : '已是最新版本'),
             error: null,
             checkedAt: Date.now(),
         });
         prefs.lastUpdateCheck = Date.now();
         savePrefs();
-        log(`检查更新结果：本地 v${local}，远端 ${remote || '(未知)'}，${available ? '有新版本' : '无需更新'}`);
+        log(`检查更新结果：本地 v${local}，远端 ${remote || '(未知)'}，${available ? '有新版本' : (newer ? '无匹配更新包' : '无需更新')}（flavor=${flavor || '未知'}）`);
         // 更新一律不弹系统气泡：设置页「关于句听」是唯一入口与进度展示处，
         // 托盘菜单项文字 + 图标提示同步反映状态。
         if (available) {
             log(`发现新版本 v${String(remote).replace(/^v/i, '')}（约 ${sizeMb} MB），可在设置页或托盘菜单更新`);
+        } else if (newer) {
+            log('远端有新版本，但未找到与当前安装口味匹配的更新包，暂不提供一键更新（不做跨口味回退）');
         }
     } catch (error) {
         log(`检查更新失败：${error.message}`);
@@ -808,7 +838,14 @@ const checkForUpdate = async () => {
 const prepareUpdate = async () => {
     const info = status.update || {};
     if (!info.available || !info.assetUrl) throw new Error('没有可用的更新资产，请先检查更新');
-    const edition = fs.existsSync(path.join(repoRoot, 'presets', 'cet6', 'seed.json')) ? 'full' : 'lite';
+    // 口味复核：status 可能来自旧版启动器或陈旧状态，资产必须与当前安装口味精确匹配
+    const flavor = detectFlavor();
+    if (!flavor) {
+        throw new Error('无法识别当前安装口味（缺少 presets/cet6 或 presets/cet4），暂不支持一键更新；请到 Releases 页手动下载');
+    }
+    if (!info.assetName || !flavorAssetPattern(flavor).test(info.assetName)) {
+        throw new Error(`更新资产与当前安装口味不匹配（${info.assetName || '未知资产'}），已中止更新`);
+    }
     if (info.needs7z && !locate7z()) {
         throw new Error('该版本只提供 .7z 更新包，且本机未找到 7-Zip；请到 Releases 页手动下载覆盖解压');
     }
@@ -891,7 +928,7 @@ const prepareUpdate = async () => {
         }
     }
     log(`更新包已就绪：${extractedRoot}（版本 ${(() => { try { return JSON.parse(fs.readFileSync(path.join(extractedRoot, 'package.json'), 'utf8')).version; } catch { return '?'; } })()}）`);
-    return { staging: extractedRoot, archive, edition };
+    return { staging: extractedRoot, archive, flavor };
 };
 
 const locate7z = () => {
@@ -922,23 +959,20 @@ const startUpdate = async () => {
         updatePatch({ phase: 'applying', message: '正在安装更新…', progress: 100 });
         setStatus({ tooltip: '句听 · 正在安装更新…' });
         log('开始安装更新：完成后句听会自动重新打开（页面内可见进度）');
-        // 复制自身为独立更新器：运行中的 exe 无法覆盖自己，必须换一个副本执行
-        if (!selfExe) {
-            throw new Error('开发态未构建 句听.exe，无法执行一键更新（请先构建或使用发布包）');
-        }
+        // 更新器不再复制自身：新 C# 壳的安装根由 exe 自身位置决定，把壳复制到 temp/ 下
+        // 会找不到 node.exe；直接用便携 Node 跑 launcher-app.cjs 的更新器模式即可。
+        // node.exe 位于 temp/（UPDATE_PROTECTED），覆盖安装不会动它，更新器可安全运行到收尾。
         const runnerDir = path.join(runtimeDir, 'update-runner');
-        fs.rmSync(runnerDir, { recursive: true, force: true });
-        fs.mkdirSync(runnerDir, { recursive: true });
-        const runner = path.join(runnerDir, '句听-更新器.exe');
-        fs.copyFileSync(selfExe, runner);
-        const child = spawn(runner, ['--apply-update', staging, '--install-dir', repoRoot, '--wait-pid', String(process.pid)], {
+        fs.rmSync(runnerDir, { recursive: true, force: true }); // 清理旧版复制式更新器的残留
+        const child = spawn(paths.nodeExe, [path.join(repoRoot, 'scripts', 'local', 'launcher-app.cjs'), '--apply-update', staging, '--install-dir', repoRoot, '--wait-pid', String(process.pid)], {
             cwd: repoRoot,
             detached: true,
             stdio: 'ignore',
             windowsHide: true,
         });
+        child.on('error', (error) => log(`更新器派生失败：${error.message}`));
         child.unref();
-        log(`更新器已派生（pid=${child.pid}），即将停止服务并退出`);
+        log(`更新器已派生（pid=${child.pid}，node=${paths.nodeExe}），即将停止服务并退出`);
         await sleep(800);
         await stopEverything('安装更新', {
             balloon: { title: '正在安装更新', text: '覆盖安装完成后句听会自动重新打开。' },

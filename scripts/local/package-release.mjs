@@ -1,36 +1,42 @@
 /**
- * 句听发布打包脚本：产出三个可独立分发的 7z 包（默认输出到 ../juting-release/）。
+ * 句听发布打包脚本：产出可独立分发的 7z 包（默认输出到 ../juting-release/）。
  *
- *   juting-v<版本>-win-lite.7z   简洁版：程序本体 + 便携 Node + 便携 MySQL（裁剪），
- *                                空课程开箱，双击 句听.exe 即用（托盘常驻；bat 保留作
- *                                开发者与排障备用），不内置任何运行环境依赖；
- *   juting-v<版本>-win-full.7z   完整版：= 简洁版 + 六级预设（38 套真题音频与原文）。
- *                                不含本地识别引擎（2026-10-02 起移除：ASR 需大量校准，
- *                                单机学习用户用不到；需要时管理后台一键在线安装）。
- *   juting-v<版本>-cet6-pack.7z  六级课程包：仅 presets/cet6 目录。简洁版用户下载后
- *                                解压到安装目录根，下次启动自动导入（对齐完整版内容）。
+ *   juting-v<版本>-win-lite.7z       简洁版：程序本体 + 便携 Node + 便携 MySQL（裁剪），
+ *                                    空课程开箱，双击 句听.exe 即用（托盘常驻；bat 保留作
+ *                                    开发者与排障备用），不内置任何运行环境依赖；
+ *   juting-v<版本>-win-full-cet6.7z  六级版：= 简洁版 + 六级预设（38 套真题音频与原文）。
+ *                                    不含本地识别引擎（2026-10-02 起移除：ASR 需大量校准，
+ *                                    单机学习用户用不到；需要时管理后台一键在线安装）。
+ *   juting-v<版本>-win-cet4.7z       四级版：= 简洁版 + 四级预设（49 套真题音频与原文）。
+ *   （--flavor both 时输出 juting-v<版本>-win-full-cet6cet4.7z，六级 + 四级合一，内部/自用。）
+ *
+ * 归档命名刻意不对称（详见代码内注释）：cet6 保留 legacy 的 `full` 词元（已发布 v0.5.0
+ * 启动器按资产名子串 `full` 选包，必须仍能命中六级包）；cet4 刻意不含 `full`。
  *
  * 同时生成 SHA256SUMS.txt。
  *
- * 发布资产还包含 -update.zip（juting-v<版本>-win-<lite|full>-update.zip）：
- * 与对应 .7z 同源同内容，但用纯 Node 打包成标准 ZIP（scripts/local/make-update-zip.mjs），
- * 供客户端「一键更新」原生解压（Node 能直接解 zip，7z 需用户另装）。
- * 注意：lite 的 zip 在拷入 presets 之前打（否则会串进六级音频），full 在之后打；
- * --only cet6 的纯课程包不产 update.zip。
+ * 发布资产还包含 -update.zip（juting-v<版本>-win-<full-cet6|cet4|full-cet6cet4>-update.zip）：
+ * 与对应 .7z 同源同内容，但用纯 Node 打包成标准 ZIP（scripts/local/make-update-zip.mjs，
+ * 已支持 Zip64），供客户端「一键更新」原生解压（Node 能直接解 zip，7z 需用户另装）。
+ * 注意：lite 的 zip 在拷入 presets 之前打（否则会串进预设音频），full 在之后打。
  *
  * 打包内容要点：
  *   - 不打包含绝对路径的任何 .env（启动器会按当前安装位置现场生成 portable.env）；
  *   - 不打包 mysql-data / media-store / logs：数据库首次启动自动初始化，
- *     六级媒体由预设导入器从 presets/ 硬链/复制进 media-store；
+ *     预设媒体由预设导入器从 presets/ 硬链/复制进 media-store；
  *   - MySQL 发行目录裁掉调试符号（*.pdb）、C 开发库（lib/*.lib）、日文 mecab 词典、
  *     debug 插件与 include/docs，只留运行所需；
- *   - node_modules 裁掉 .cache 与已移除的 mobile-app 工作区残留依赖（Expo/React Native 系）；
+ *   - node_modules 裁掉 .cache、已移除的 mobile-app 工作区残留依赖（Expo/React Native 系），
+ *     以及工作区符号链接实体化会带入的 @juting/admin 与 @juting/web-app 两棵前端依赖
+ *     （@ant-design/charts ~262MB、react-icons ~85MB，运行时不使用）；
  *   - 打包前必须先 node scripts/local/stop-all.mjs 关掉 MySQL，否则数据文件被锁。
  *
  *   - 启动器 句听.exe 由 scripts/local/build-launcher.mjs 构建（Node SEA 单文件），
  *     打包前自动构建；传 --skip-launcher 时要求产物已存在；
  *
- * 用法：node scripts/local/package-release.mjs [--version 1.0.0] [--skip-build] [--skip-launcher] [--only lite|full|cet6|all] [--no-asr] [--no-cet4|--cet4-only]
+ * 用法：node scripts/local/package-release.mjs [--version 1.0.0] [--skip-build] [--skip-launcher]
+ *       [--only lite|full|all] [--flavor cet6|cet4|both] [--presets-from <dir>] [--stage-only]
+ *   旧旗标兼容：--no-cet4（= --flavor cet6）、--cet4-only（= --flavor cet4）
  */
 import fs from 'node:fs';
 import path from 'node:path';
@@ -56,6 +62,28 @@ const version = argOf('--version') || rootPackage.version || '0.0.0';
 const skipBuild = process.argv.includes('--skip-build');
 const skipLauncher = process.argv.includes('--skip-launcher');
 const only = argOf('--only') || 'all';
+// --stage-only：只搭暂存目录（含预设）供检查，跳过压缩与校验和（验证/排障用）。
+const stageOnly = process.argv.includes('--stage-only');
+// --flavor：发行版构成（新旗标；旧的 --no-cet4 / --cet4-only 保留为别名）。
+const flavorArg = argOf('--flavor');
+const cet4Only = process.argv.includes('--cet4-only');
+const noCet4 = process.argv.includes('--no-cet4');
+if (cet4Only && noCet4 && !flavorArg) {
+    throw new Error('--cet4-only 与 --no-cet4 互斥（或改用 --flavor cet6|cet4|both）');
+}
+const flavor = flavorArg || (cet4Only ? 'cet4' : noCet4 ? 'cet6' : 'both');
+if (!['cet6', 'cet4', 'both'].includes(flavor)) {
+    throw new Error(`未知 --flavor ${flavor}（可选：cet6 / cet4 / both）`);
+}
+// --presets-from：预设树来源目录（默认仓库 presets/）。opus 预设树在
+// temp/opus-presets/presets 时：--presets-from temp/opus-presets/presets。
+const presetsFromArg = argOf('--presets-from');
+const presetsSource = presetsFromArg
+    ? path.resolve(repositoryRoot, presetsFromArg)
+    : path.join(repositoryRoot, 'presets');
+if (presetsFromArg && !fs.existsSync(presetsSource)) {
+    throw new Error(`--presets-from 指向的目录不存在：${presetsSource}`);
+}
 
 // ── 7z 可执行文件定位（环境变量 JUTING_7Z 优先，其次 PATH）────
 const locate7z = () => {
@@ -69,7 +97,7 @@ const locate7z = () => {
     }
 };
 const sevenZip = locate7z();
-if (!sevenZip) {
+if (!sevenZip && !stageOnly) {
     throw new Error('未找到 7z（本脚本以 7z 为准；请安装 7-Zip 或 scoop 7zip）');
 }
 const compress = (archiveName, sourceDir) => {
@@ -94,8 +122,10 @@ const makeUpdateZipFor = (label) => {
         log(`更新包 ${label}：${result.files} 个文件，${(fs.statSync(zipPath).size / 1024 / 1024).toFixed(0)} MB`);
         return result.zipPath;
     } catch (e) {
-        // 条目数超过标准 ZIP 上限 65535（需 Zip64，本实现未支持）→ 跳过 update.zip
-        // 客户端会回退用 .7z（要求用户装 7-Zip）；不影响 .7z 与 SHA256SUMS 产出
+        // 更新包生成失败（磁盘空间/IO 等）→ 跳过 update.zip，不影响 .7z 与 SHA256SUMS
+        // 产出；客户端会回退用 .7z（要求用户装 7-Zip）。
+        // 注：make-update-zip.mjs 已支持 Zip64（条目数 >65535、单文件/偏移 >4GiB 均可打包），
+        // 「超过标准 ZIP 上限」不再是不生成的原因。
         log(`⚠ 更新包 ${label} 生成失败（${e.message}），跳过——客户端将回退 .7z`);
         return null;
     }
@@ -119,8 +149,12 @@ if (!skipLauncher) {
     log('构建启动器 句听.exe…');
     execFileSync(process.execPath, ['scripts/local/build-launcher.mjs'], { cwd: repositoryRoot, stdio: 'inherit' });
 }
-if (!fs.existsSync(launcherExe)) {
+const launcherAvailable = fs.existsSync(launcherExe);
+if (!launcherAvailable && !stageOnly) {
     throw new Error(`未找到启动器产物 ${launcherExe}；请先执行 node scripts/local/build-launcher.mjs（或去掉 --skip-launcher 让打包脚本自动构建）`);
+}
+if (!launcherAvailable) {
+    log('⚠ 未找到启动器产物，--stage-only 下跳过复制（正式打包必须提供）。');
 }
 
 // ── 2. 清理旧暂存 ───────────────────────────────────────────
@@ -166,6 +200,28 @@ const copyFile = (rel) => {
     }
 };
 
+// 目录体积（--stage-only 汇总用）。
+const directorySizeBytes = (dir) => {
+    let total = 0;
+    const walk = (current) => {
+        let entries;
+        try {
+            entries = fs.readdirSync(current, { withFileTypes: true });
+        } catch {
+            return;
+        }
+        for (const entry of entries) {
+            const absolute = path.join(current, entry.name);
+            if (entry.isDirectory()) walk(absolute);
+            else if (entry.isFile()) {
+                try { total += fs.statSync(absolute).size; } catch { /* 忽略异常项 */ }
+            }
+        }
+    };
+    walk(dir);
+    return total;
+};
+
 log('复制源码与配置…');
 for (const dir of ['backend/src', 'web-app/src', 'admin/src', 'scripts', 'infra']) {
     copyInto(dir);
@@ -187,8 +243,8 @@ for (const f of ['package.json', 'package-lock.json', '.env.example', '.npmrc', 
     copyFile(f);
 }
 // 启动器与托盘图标落到包根：源分别在 temp/launcher-build 与 docs/images 下。
-// 简洁版/完整版都带（cet6-pack 是独立暂存目录，天然不带）。
-copyFileFrom(launcherExe, '句听.exe');
+// 简洁版/完整版都带。
+if (launcherAvailable) copyFileFrom(launcherExe, '句听.exe');
 copyFileFrom(path.join(repositoryRoot, 'docs/images/juting.ico'), 'juting.ico');
 
 log('复制构建产物…');
@@ -214,6 +270,15 @@ copyInto('node_modules', (rel) => {
     const top = segments[0].startsWith('@')
         ? segments.slice(0, 2).join(path.sep)
         : segments[0];
+    // ⚠️ 本过滤器语义 =「返回 true 即排除」（copyDirFiltered 内部取反）。
+    // 工作区在 node_modules/@juting/* 放的是符号链接，dereference 复制会实体化成整棵
+    // 子包目录：@juting/admin 拖进 admin/node_modules/@ant-design/charts（~262MB）、
+    // @juting/web-app 拖进 web-app/node_modules/react-icons（~85MB），两者运行时都不
+    // 需要（start-all 用根 node_modules/vite 预览前端 dist；后端只动态 import
+    // @juting/domain）→ 整棵排除。@juting/domain 必须保留；根级 admin/、web-app/
+    // 不受影响（其 dist/src 由上方 copyInto 单独复制）。
+    const topName = top.split(path.sep).join('/');
+    if (topName === '@juting/admin' || topName === '@juting/web-app') return true;
     return isStaleMobileDep(top);
 });
 
@@ -238,60 +303,101 @@ copyFile('temp/runtime/node/node.exe');
 // 占位：让解压后的包带上空的运行时目录骨架（数据目录由启动器创建）。
 fs.mkdirSync(path.join(stage, 'temp/runtime/logs'), { recursive: true });
 
-// ── 4. 简洁版 ───────────────────────────────────────────────
-const artifacts = [];
-if (only === 'all' || only === 'lite') {
-    log('压缩简洁版…');
-    artifacts.push(compress(`juting-v${version}-win-lite.7z`, stage));
-    // 简洁版更新包：此刻 stage 尚未拷入 presets，包内不含六级音频。
-    artifacts.push(makeUpdateZipFor('lite'));
-}
-
-// ── 5. 完整版 = 简洁版 + 预设课程 ────────────────────────────
+// ── 4/5. 预设复制 + 压缩（--stage-only 时只搭暂存目录，跳过压缩）──────
 // 2026-10-02 用户裁定：完整版不再随包本地识别引擎与模型（temp/asr）——ASR 切分后
 // 仍需大量人工校准，单机学习用户用不到；需要制课 ASR 时管理后台可一键在线安装
 // 引擎（backend 安装器）。历史带引擎的打包方式见 git（v0.4.2 之前）。
 //
-// 2026-10-14 用户裁定：四级与六级是**两个独立发行版**，各自内置资源：
-//   --no-cet4  只含六级（六级版）
-//   --cet4-only 只含四级（四级版）
-//   都不传 = 两者都含（内部/自用包）
-const cet4Only = process.argv.includes('--cet4-only');
-const noCet4 = process.argv.includes('--no-cet4');
-if (cet4Only && noCet4) {
-    throw new Error('--cet4-only 与 --no-cet4 互斥');
-}
-if (only === 'all' || only === 'full') {
-    const hasCet4 = fs.existsSync(path.join(repositoryRoot, 'presets/cet4/seed.json'));
-    const includeCet6 = !cet4Only;
-    const includeCet4 = !noCet4 && hasCet4;
-    const label = cet4Only ? '仅四级' : (noCet4 ? '仅六级' : '六级 + 四级');
-    log(`复制预设（${label}）…`);
-    if (includeCet6) copyInto('presets/cet6');
-    if (includeCet4) copyInto('presets/cet4');
-    // 包名区分发行版：独立版各自带后缀（六级版 -cet6 / 四级版 -cet4），
-    // 避免互相覆盖、也避免与旧混合包同名（实测 --no-cet4 产物原名
-    // juting-v0.5.0-win-full.7z 与已发布的混合包同名，上传会误覆盖）。
-    const suffix = cet4Only ? '-cet4' : (noCet4 ? '-cet6' : '-cet6cet4');
-    log('压缩完整版…');
-    artifacts.push(compress(`juting-v${version}-win-full${suffix}.7z`, stage));
-    artifacts.push(makeUpdateZipFor(`full${suffix}`));
-}
-// ── 6. 校验和（与已有文件按包名合并，支持分次 --only 打包不丢账）──
-const sumsPath = path.join(outDir, 'SHA256SUMS.txt');
-const existingSums = {};
-if (fs.existsSync(sumsPath)) {
-    for (const line of fs.readFileSync(sumsPath, 'utf8').split(/\r?\n/)) {
-        const match = line.match(/^([0-9a-f]{64})\s{2}(.+)$/);
-        if (match) existingSums[match[2]] = match[1];
+// 2026-10-14 用户裁定：四级与六级是**两个独立发行版**，各自内置资源。
+// 2026-10-14（本版）：--flavor cet6|cet4|both 取代 --no-cet4/--cet4-only（旧旗标仍兼容）：
+//   --flavor cet6 → juting-v<版本>-win-full-cet6.7z / -update.zip（六级版）
+//   --flavor cet4 → juting-v<版本>-win-cet4.7z      / -update.zip（四级版）
+//   --flavor both → juting-v<版本>-win-full-cet6cet4.7z / -update.zip（默认；内部/自用）
+const presetSeedExists = (key) => fs.existsSync(path.join(presetsSource, key, 'seed.json'));
+const copyPresetsIntoStage = () => {
+    // 来源目录：默认仓库 presets/；--presets-from 可指向 temp/opus-presets/presets 等。
+    const sourceNote = presetsFromArg ? `（来源 ${path.relative(repositoryRoot, presetsSource) || presetsSource}）` : '';
+    if (flavor === 'cet6' || flavor === 'cet4') {
+        if (!presetSeedExists(flavor)) {
+            throw new Error(`--flavor ${flavor} 需要 ${path.join(presetsSource, flavor, 'seed.json')}，未找到${sourceNote}`);
+        }
+        log(`复制预设（仅${flavor === 'cet6' ? '六级' : '四级'}）${sourceNote}…`);
+        copyDirFiltered(path.join(presetsSource, flavor), path.join(stage, 'presets', flavor));
+        return;
     }
-}
-for (const artifact of artifacts) {
-    const name = path.basename(artifact);
-    existingSums[name] = createHash('sha256').update(fs.readFileSync(artifact)).digest('hex');
-    console.log(`[打包] ${name}  ${(fs.statSync(artifact).size / 1024 / 1024).toFixed(0)} MB`);
-}
-fs.writeFileSync(sumsPath, `${Object.entries(existingSums).map(([name, hash]) => `${hash}  ${name}`).join('\n')}\n`, 'utf8');
+    const hasCet6 = presetSeedExists('cet6');
+    const hasCet4 = presetSeedExists('cet4');
+    if (!hasCet6 && !hasCet4) {
+        throw new Error(`--flavor both 但预设来源中没有任何预设：${presetsSource}`);
+    }
+    if (!hasCet6) log('⚠ 未发现六级预设，本次只打包四级。');
+    if (!hasCet4) log('⚠ 未发现四级预设，本次只打包六级。');
+    log(`复制预设（${hasCet6 && hasCet4 ? '六级 + 四级' : hasCet6 ? '仅六级' : '仅四级'}）${sourceNote}…`);
+    if (hasCet6) copyDirFiltered(path.join(presetsSource, 'cet6'), path.join(stage, 'presets', 'cet6'));
+    if (hasCet4) copyDirFiltered(path.join(presetsSource, 'cet4'), path.join(stage, 'presets', 'cet4'));
+};
+// 归档名（刻意不对称）：
+// - cet6 保留 legacy 的 `full` 词元——已发布 v0.5.0 启动器按资产名子串 `full` 选包，
+//   六级资产必须仍含 `full` 才能被它命中；
+// - cet4 刻意不含 `full`——旧启动器（按 `full` 匹配）只会选中六级包，不会把四级包
+//   误当完整包下载；新启动器按各自词元（cet4 / cet6）区分。
+const archiveStem = flavor === 'cet6' ? `juting-v${version}-win-full-cet6`
+    : flavor === 'cet4' ? `juting-v${version}-win-cet4`
+    : `juting-v${version}-win-full-cet6cet4`;
 
-log(`完成，耗时 ${Math.round((Date.now() - startTime) / 1000)}s；产物目录 ${outDir}`);
-log(`暂存目录 ${stageRoot} 体积大，确认产物无误后可手动删除。`);
+if (stageOnly) {
+    // --stage-only：把预设也拷进暂存（便于检查），不压缩、不写校验和。
+    if (only === 'all' || only === 'full') copyPresetsIntoStage();
+    const sizeMb = (directorySizeBytes(stage) / 1024 / 1024).toFixed(0);
+    log('--stage-only：跳过压缩与校验和，仅保留暂存目录供检查。');
+    log(`暂存目录：${stage}`);
+    log(`暂存体积：${sizeMb} MB`);
+    const check = (rel, expected) => {
+        const exists = fs.existsSync(path.join(stage, rel));
+        log(`  ${rel}：${exists ? (expected ? '存在 ✓' : '存在 ⚠（应已排除）') : (expected ? '缺失 ⚠' : '已排除 ✓')}`);
+    };
+    check('node_modules/@juting/domain', true);
+    check('node_modules/@juting/admin', false);
+    check('node_modules/@juting/web-app', false);
+    if (only === 'all' || only === 'full') log(`计划产出：${archiveStem}.7z 与 ${archiveStem}-update.zip`);
+} else {
+    const artifacts = [];
+    // ── 简洁版 ───────────────────────────────────────────────
+    if (only === 'all' || only === 'lite') {
+        log('压缩简洁版…');
+        artifacts.push(compress(`juting-v${version}-win-lite.7z`, stage));
+        // 简洁版更新包：此刻 stage 尚未拷入 presets，包内不含预设音频。
+        artifacts.push(makeUpdateZipFor('lite'));
+    }
+    // ── 完整版 = 简洁版 + 预设课程 ────────────────────────────
+    if (only === 'all' || only === 'full') {
+        copyPresetsIntoStage();
+        log('压缩完整版…');
+        artifacts.push(compress(`${archiveStem}.7z`, stage));
+        artifacts.push(makeUpdateZipFor(archiveStem.replace(`juting-v${version}-win-`, '')));
+    }
+    // ── 6. 校验和（与已有文件按包名合并，支持分次 --only 打包不丢账）──
+    const sumsPath = path.join(outDir, 'SHA256SUMS.txt');
+    const existingSums = {};
+    if (fs.existsSync(sumsPath)) {
+        for (const line of fs.readFileSync(sumsPath, 'utf8').split(/\r?\n/)) {
+            // 兼容外部工具写入的行（sha256sum 在二进制模式会写成 `<hash> *<name>`），
+            // 否则这些行读不回来、重写时被静默丢弃（曾把已发布的六级两条校验和弄丢）。
+            const match = line.match(/^([0-9a-f]{64})\s+\*?(.+)$/);
+            if (match) existingSums[match[2]] = match[1];
+        }
+    }
+    for (const artifact of artifacts) {
+        const name = path.basename(artifact);
+        existingSums[name] = createHash('sha256').update(fs.readFileSync(artifact)).digest('hex');
+        console.log(`[打包] ${name}  ${(fs.statSync(artifact).size / 1024 / 1024).toFixed(0)} MB`);
+    }
+    fs.writeFileSync(sumsPath, `${Object.entries(existingSums).map(([name, hash]) => `${hash}  ${name}`).join('\n')}\n`, 'utf8');
+}
+
+if (stageOnly) {
+    log(`完成（--stage-only，未压缩）；暂存目录 ${stageRoot}`);
+} else {
+    log(`完成，耗时 ${Math.round((Date.now() - startTime) / 1000)}s；产物目录 ${outDir}`);
+    log(`暂存目录 ${stageRoot} 体积大，确认产物无误后可手动删除。`);
+}

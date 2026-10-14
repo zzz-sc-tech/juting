@@ -313,7 +313,22 @@ execFileSync(process.execPath, ['scripts/local/migrate-local.mjs', '--env-file',
 log('确保本地超级管理员存在...');
 execFileSync(process.execPath, ['scripts/local/bootstrap-admin.mjs', '--env-file', portableEnvFile], { cwd: repositoryRoot, stdio: 'inherit' });
 log('导入内置预设课程（如有）...');
-execFileSync(process.execPath, ['scripts/local/import-preset.mjs', '--env-file', portableEnvFile], { cwd: repositoryRoot, stdio: 'inherit' });
+{
+    // 枚举实际存在的预设（presets/<key>/seed.json）逐个导入：import-preset.mjs 的
+    // --preset 默认 cet6，只调一次会让 cet4 版安装的课程永远导不进来。
+    // import-preset 内部按 preset_key 记录导入版本，逐预设调用幂等、可安全重跑。
+    const presetsDir = path.join(repositoryRoot, 'presets');
+    const presetKeys = existsSync(presetsDir)
+        ? readdirSync(presetsDir).filter((name) => existsSync(path.join(presetsDir, name, 'seed.json'))).sort()
+        : [];
+    if (presetKeys.length === 0) {
+        log('未发现预设目录（简洁版即正常状态），跳过预设导入。');
+    } else {
+        for (const key of presetKeys) {
+            execFileSync(process.execPath, ['scripts/local/import-preset.mjs', '--env-file', portableEnvFile, '--preset', key], { cwd: repositoryRoot, stdio: 'inherit' });
+        }
+    }
+}
 
 // ── 5. 启动后端 ─────────────────────────────────────────────
 log('启动后端（端口 8100）...');

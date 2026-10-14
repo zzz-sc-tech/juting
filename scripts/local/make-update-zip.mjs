@@ -74,8 +74,9 @@ const MAX_ENTRIES = MAX_UINT16;     // 标准 EOCD 计数上限
 const ZIP64_EXTRA_ID = 0x0001;      // Zip64 扩展字段头 ID
 
 // 已压缩的格式直接用 stored 存，省 CPU 且不会更小。
+// （.ogg/.opus 同为已压缩的音频容器，再 deflate 无收益。）
 const STORED_EXTENSIONS = new Set([
-    '.7z', '.zip', '.mp3', '.m4a', '.wav', '.png', '.jpg', '.ico',
+    '.7z', '.zip', '.mp3', '.m4a', '.ogg', '.opus', '.wav', '.png', '.jpg', '.ico',
     '.exe', '.dll', '.whl', '.bin',
 ]);
 
