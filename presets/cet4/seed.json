@@ -7247,7 +7247,7 @@
     },
     {
      "n": 5,
-     "stemLineId": null,
+     "stemLineId": "l68",
      "options": {
       "A": "The ruling party candidate.",
       "B": "The chosen successor of Argentina's president.",
@@ -7257,7 +7257,7 @@
     },
     {
      "n": 6,
-     "stemLineId": null,
+     "stemLineId": "l69",
      "options": {
       "A": "Tighten trade restrictions.",
       "B": "Lift some financial controls.",
@@ -44319,7 +44319,7 @@
     },
     {
      "n": 5,
-     "stemLineId": null,
+     "stemLineId": "l52",
      "options": {
       "A": "Provide free meals to the local poor.",
       "B": "Help people connect with each other.",
@@ -51864,7 +51864,7 @@
     },
     {
      "n": 3,
-     "stemLineId": null,
+     "stemLineId": "l25",
      "options": {
       "A": "It may have been due to the lorry driver's drunk driving.",
       "B": "It may affect the local supply of turkeys for Christmas.",
@@ -51884,7 +51884,7 @@
     },
     {
      "n": 5,
-     "stemLineId": null,
+     "stemLineId": "l38",
      "options": {
       "A": "Get approval to add more routes.",
       "B": "Attract more international tourists.",
@@ -59198,7 +59198,7 @@
     },
     {
      "n": 5,
-     "stemLineId": null,
+     "stemLineId": "l47",
      "options": {
       "A": "He apologized for scratching an athlete's gold medal.",
       "B": "He was asked to present a gold medal to Miu Goto.",
@@ -73818,7 +73818,7 @@
     },
     {
      "n": 3,
-     "stemLineId": null,
+     "stemLineId": "l28",
      "options": {
       "A": "He was once a full-time ambassador.",
       "B": "He was soon to retire from the army.",
@@ -73868,7 +73868,7 @@
     },
     {
      "n": 8,
-     "stemLineId": null,
+     "stemLineId": "l60",
      "options": {
       "A": "Sharing her room with friends.",
       "B": "Cutting down her living expenses.",
