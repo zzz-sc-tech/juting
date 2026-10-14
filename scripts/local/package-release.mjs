@@ -269,8 +269,10 @@ if (only === 'all' || only === 'full') {
     log(`复制预设（${label}）…`);
     if (includeCet6) copyInto('presets/cet6');
     if (includeCet4) copyInto('presets/cet4');
-    // 包名区分发行版：四级版用 -cet4 后缀，避免与六级版同名
-    const suffix = cet4Only ? '-cet4' : '';
+    // 包名区分发行版：独立版各自带后缀（六级版 -cet6 / 四级版 -cet4），
+    // 避免互相覆盖、也避免与旧混合包同名（实测 --no-cet4 产物原名
+    // juting-v0.5.0-win-full.7z 与已发布的混合包同名，上传会误覆盖）。
+    const suffix = cet4Only ? '-cet4' : (noCet4 ? '-cet6' : '-cet6cet4');
     log('压缩完整版…');
     artifacts.push(compress(`juting-v${version}-win-full${suffix}.7z`, stage));
     artifacts.push(makeUpdateZipFor(`full${suffix}`));
