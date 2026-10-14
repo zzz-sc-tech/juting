@@ -336,18 +336,41 @@
     color: var(--ink);
   }
 
+  /* 卡片去边框（纯装饰容器），但**表单控件必须保留可交互提示**——
+     下拉/输入框若也去边框，用户看不出哪里能点（实测设置页三个下拉
+     看起来像纯文本）。这里给控件补 1px 发丝边 + 悬停加深。 */
   & .settings-card,
-  & .settings-input,
-  & .settings-select-trigger,
-  & .settings-goal-input,
   & .settings-row {
     border: none;
+  }
+
+  & .settings-input,
+  & .settings-select-trigger,
+  & .settings-goal-input {
+    border: 1px solid var(--line-strong);
+    border-radius: 6px;
+    padding: 6px 10px;
+    background: var(--surface);
+    transition: border-color 0.15s ease;
+  }
+
+  & .settings-input:hover,
+  & .settings-select-trigger:hover,
+  & .settings-goal-input:hover {
+    border-color: var(--ink-3);
   }
 
   & .settings-input:focus,
   & .settings-select-trigger:focus-visible,
   & .settings-goal-input:focus {
+    border-color: var(--ink);
     box-shadow: var(--focus-ring);
+  }
+
+  /* 下拉展开箭头：保留（否则与纯文本无异） */
+  & .settings-select-trigger svg {
+    display: block;
+    color: var(--ink-3);
   }
 
   & .settings-card-title {
@@ -385,9 +408,28 @@
   }
 
   /* ── 泛听：纯阅读列 ──────────────────────────────────────── */
+  /* 媒体卡保留一条发丝下边线：完全去边框会让播放控制栏与正文融成一片，
+     用户看不出「控制区」的范围（实测截图控制栏像被压扁的小条）。 */
   & .listen-visual {
     background: var(--bg);
     border: none;
+    border-bottom: 1px solid var(--line);
+    padding-bottom: 10px;
+  }
+
+  /* 控制栏：基础样式是 position:absolute 浮在媒体容器底部（配暖纸渐隐）。
+     极简主题保留浮动定位（改文档流会被 grid 挤到错误位置），但把暖纸渐隐
+     换成**纯白不透明背景** + 上边发丝线 —— 极简白下暖色渐变很违和，
+     且渐隐会让进度条看不清（实测）。 */
+  & .listen-visual-controls {
+    background: var(--surface);
+    border-top: 1px solid var(--line);
+    padding: 20px 16px 12px;
+  }
+
+  /* 进度条：极简下轨道补可见底色，滑块加大 */
+  & .media-progress-track.overlay {
+    background: var(--line-strong);
   }
 
   & .media-progress-track.overlay .media-progress-fill {
