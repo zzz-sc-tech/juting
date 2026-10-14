@@ -52,6 +52,7 @@ const parseCli = () => {
     let preset = 'all';
     let cliBitrate = null;
     let force = false;
+    let seedVersion = null;
     for (let i = 0; i < argv.length; i += 1) {
         const arg = argv[i];
         const takeValue = () => { if (i + 1 >= argv.length) throw new Error(`参数 ${arg} 缺少取值`); i += 1; return argv[i]; };
@@ -59,17 +60,31 @@ const parseCli = () => {
         else if (arg.startsWith('--preset=')) preset = arg.slice('--preset='.length);
         else if (arg === '--bitrate') cliBitrate = takeValue();
         else if (arg.startsWith('--bitrate=')) cliBitrate = arg.slice('--bitrate='.length);
+        else if (arg === '--seed-version') seedVersion = takeValue();
+        else if (arg.startsWith('--seed-version=')) seedVersion = arg.slice('--seed-version='.length);
         else if (arg === '--force') force = true;
-        else if (arg === '--help' || arg === '-h') { console.log('用法：node scripts/local/prepare-opus-presets.mjs --preset cet6|cet4|all [--bitrate 32k] [--force]'); process.exit(0); }
+        else if (arg === '--help' || arg === '-h') { console.log('用法：node scripts/local/prepare-opus-presets.mjs --preset cet6|cet4|all [--bitrate 32k] [--seed-version <v>] [--force]'); process.exit(0); }
         else throw new Error(`未知参数：${arg}`);
     }
     if (preset !== 'all' && !EXAMS.includes(preset)) throw new Error(`--preset 必须是 cet6、cet4 或 all，收到：${preset}`);
     const bitrate = cliBitrate || process.env.JUTING_OPUS_BITRATE || '32k';
     if (!/^\d+(\.\d+)?[kKmM]?$/.test(bitrate)) throw new Error(`--bitrate 取值无效：${bitrate}`);
-    return { selectedExams: preset === 'all' ? EXAMS : [preset], bitrate, force };
+    if (seedVersion !== null && !/^[0-9A-Za-z._-]+$/.test(seedVersion)) throw new Error(`--seed-version 取值无效：${seedVersion}`);
+    return { selectedExams: preset === 'all' ? EXAMS : [preset], bitrate, force, seedVersion };
 };
 
-const prepareExam = ({ exam, bitrate, force }) => {
+// 种子的 version 是「已导入版本」的判据（import-preset.mjs 用它决定是否重新导入）。
+// 换编码必须让版本变化，否则升级用户的导入会被跳过：既不会把课程指向 .ogg，
+// 也不会触发旧 mp3/m4a 的清理——包更新了却仍在播旧音频。
+// 默认在源版本后加 `-opus` 后缀（如 20261012.5 → 20261012.5-opus）；--seed-version 可显式覆盖。
+const resolveSeedVersion = (sourceVersion, explicit) => {
+    if (explicit) return explicit;
+    const base = String(sourceVersion ?? '').trim();
+    if (!base) throw new Error('源 seed 缺少 version，且未提供 --seed-version');
+    return base.endsWith('-opus') ? base : `${base}-opus`;
+};
+
+const prepareExam = ({ exam, bitrate, force, seedVersion }) => {
     const presetDir = path.join(root, 'presets', exam);
     const sourceMedia = path.join(presetDir, 'media');
     const seedPath = path.join(presetDir, 'seed.json');
@@ -78,6 +93,8 @@ const prepareExam = ({ exam, bitrate, force }) => {
 
     const seed = JSON.parse(fs.readFileSync(seedPath, 'utf8'));
     ensure(Array.isArray(seed.exercises) && seed.exercises.length > 0, `${exam}：seed 缺少 exercises`);
+    // 输出 seed 的版本必须区别于源版本（见 resolveSeedVersion 注释）。
+    const outSeedVersion = resolveSeedVersion(seed.version, seedVersion);
 
     // 先整体校验每个课程都能解析到源文件，缺任何一个直接失败（避免转码到一半才报错）
     const problems = [];
@@ -166,6 +183,7 @@ const prepareExam = ({ exam, bitrate, force }) => {
         exercise.audio_url = `/api/v1/media/objects?key=${encodeURIComponent(entry.objectName)}`;
         exercise.source = String(exercise.source ?? '').replace(SOURCE_EXT_RE, '.ogg');
     }
+    opusSeed.version = outSeedVersion;
     fs.writeFileSync(path.join(outPreset, 'seed.json'), JSON.stringify(opusSeed, null, 2) + '\n');
 
     const totalBytes = entries.reduce((sum, item) => sum + item.size, 0);
@@ -179,6 +197,8 @@ const prepareExam = ({ exam, bitrate, force }) => {
         bitrate,
         channels: 1,
         courses: entries.length,
+        seedVersion: outSeedVersion,
+        sourceSeedVersion: seed.version,
         totalBytes,
         totalMiB: Number((totalBytes / 1024 / 1024).toFixed(2)),
         totalDurationSec: Number(totalDurationSec.toFixed(3)),

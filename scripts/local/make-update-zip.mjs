@@ -75,9 +75,12 @@ const ZIP64_EXTRA_ID = 0x0001;      // Zip64 扩展字段头 ID
 
 // 已压缩的格式直接用 stored 存，省 CPU 且不会更小。
 // （.ogg/.opus 同为已压缩的音频容器，再 deflate 无收益。）
+// 注意：.exe/.dll 不在此列——它们是普通 PE 二进制（node.exe、mysqld.exe 等），
+// 并没有被压缩，deflate 能省掉一大半。实测本包 358 MB 的 .exe/.dll 压到 129 MB
+// （省 230 MB，64%），而更新包正是用户实际下载的那个（启动器优先 -update.zip）。
 const STORED_EXTENSIONS = new Set([
     '.7z', '.zip', '.mp3', '.m4a', '.ogg', '.opus', '.wav', '.png', '.jpg', '.ico',
-    '.exe', '.dll', '.whl', '.bin',
+    '.whl', '.bin',
 ]);
 
 // ── 跳过规则（rel 一律用 '/' 分隔）───────────────────────────
