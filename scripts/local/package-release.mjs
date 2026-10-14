@@ -30,7 +30,7 @@
  *   - 启动器 句听.exe 由 scripts/local/build-launcher.mjs 构建（Node SEA 单文件），
  *     打包前自动构建；传 --skip-launcher 时要求产物已存在；
  *
- * 用法：node scripts/local/package-release.mjs [--version 1.0.0] [--skip-build] [--skip-launcher] [--only lite|full|cet6|all] [--no-asr] [--no-cet4]
+ * 用法：node scripts/local/package-release.mjs [--version 1.0.0] [--skip-build] [--skip-launcher] [--only lite|full|cet6|all] [--no-asr] [--no-cet4|--cet4-only]
  */
 import fs from 'node:fs';
 import path from 'node:path';
@@ -247,24 +247,33 @@ if (only === 'all' || only === 'lite') {
     artifacts.push(makeUpdateZipFor('lite'));
 }
 
-// ── 5. 完整版 = 简洁版 + 六级预设 ────────────────────────────
+// ── 5. 完整版 = 简洁版 + 预设课程 ────────────────────────────
 // 2026-10-02 用户裁定：完整版不再随包本地识别引擎与模型（temp/asr）——ASR 切分后
 // 仍需大量人工校准，单机学习用户用不到；需要制课 ASR 时管理后台可一键在线安装
 // 引擎（backend 安装器）。历史带引擎的打包方式见 git（v0.4.2 之前）。
+//
+// 2026-10-14 用户裁定：四级与六级是**两个独立发行版**，各自内置资源：
+//   --no-cet4  只含六级（六级版）
+//   --cet4-only 只含四级（四级版）
+//   都不传 = 两者都含（内部/自用包）
+const cet4Only = process.argv.includes('--cet4-only');
+const noCet4 = process.argv.includes('--no-cet4');
+if (cet4Only && noCet4) {
+    throw new Error('--cet4-only 与 --no-cet4 互斥');
+}
 if (only === 'all' || only === 'full') {
-    // --no-cet4：四级真题库仍在完善（题干补全/存疑套/逐句翻译），v0.5.0 起
-    // 发布包暂不含四级，仓库保留 preset 等完善后随版本放开。
-    const includeCet4 = !process.argv.includes('--no-cet4')
-        && fs.existsSync(path.join(repositoryRoot, 'presets/cet4/seed.json'));
-    log(`复制预设（六级${includeCet4 ? ' + 四级' : '，--no-cet4 排除四级'}）…`);
-    copyInto('presets/cet6');
-    if (includeCet4) {
-        copyInto('presets/cet4');
-    }
+    const hasCet4 = fs.existsSync(path.join(repositoryRoot, 'presets/cet4/seed.json'));
+    const includeCet6 = !cet4Only;
+    const includeCet4 = !noCet4 && hasCet4;
+    const label = cet4Only ? '仅四级' : (noCet4 ? '仅六级' : '六级 + 四级');
+    log(`复制预设（${label}）…`);
+    if (includeCet6) copyInto('presets/cet6');
+    if (includeCet4) copyInto('presets/cet4');
+    // 包名区分发行版：四级版用 -cet4 后缀，避免与六级版同名
+    const suffix = cet4Only ? '-cet4' : '';
     log('压缩完整版…');
-    artifacts.push(compress(`juting-v${version}-win-full.7z`, stage));
-    // 完整版更新包：此刻 stage 已含 presets，包内预设课程与 .7z 完全一致。
-    artifacts.push(makeUpdateZipFor('full'));
+    artifacts.push(compress(`juting-v${version}-win-full${suffix}.7z`, stage));
+    artifacts.push(makeUpdateZipFor(`full${suffix}`));
 }
 // ── 6. 校验和（与已有文件按包名合并，支持分次 --only 打包不丢账）──
 const sumsPath = path.join(outDir, 'SHA256SUMS.txt');
