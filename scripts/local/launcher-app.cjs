@@ -508,6 +508,17 @@ const pickFlavorAsset = (assets, flavor) => {
         || eligible.find((asset) => /\.7z$/i.test(asset.name))
         || null;
 };
+// 分层资产（增量更新）：-deps.zip / -media.zip 与程序包同样按口味 token 精确匹配，
+// 且**只认自己那一层**——绝不被当成程序包选走（它们既不是 -update.zip 也不是 .7z，
+// pickFlavorAsset 天然选不到；这里再按后缀精确挑一次）。
+const pickLayerAsset = (assets, flavor, layer) => {
+    if (!flavor) return null;
+    const matches = flavorAssetPattern(flavor);
+    const suffix = new RegExp(`-${layer}\\.zip$`, 'i');
+    return assets.find((asset) => asset
+        && matches.test(String(asset.name || ''))
+        && suffix.test(String(asset.name || ''))) || null;
+};
 
 const currentVersion = () => {
     try {
@@ -795,8 +806,12 @@ const checkForUpdate = async () => {
         const newer = isNewerVersion(remote, local);
         const flavor = detectFlavor();
         const pick = pickFlavorAsset(assets, flavor);
+        const depsAsset = pickLayerAsset(assets, flavor, 'deps');
+        const mediaAsset = pickLayerAsset(assets, flavor, 'media');
         const available = Boolean(pick) && newer;
         const sizeMb = pick ? Math.round(pick.size / 1048576) : 0;
+        // 总下载量的上界估计（实际由 update-manifest.json 门控后决定，通常只有程序层）。
+        const totalBytes = pick ? pick.size + (depsAsset?.size || 0) + (mediaAsset?.size || 0) : 0;
         updatePatch({
             available,
             version: String(remote).replace(/^v/i, ''),
@@ -806,12 +821,20 @@ const checkForUpdate = async () => {
             assetUrl: pick ? pick.browser_download_url : '',
             assetSize: pick ? pick.size : 0,
             needs7z: Boolean(pick && /\.7z$/i.test(pick.name)),
+            // 分层资产（可能为 null：老 release 只有整包，或该层为空）
+            depsAssetName: depsAsset ? depsAsset.name : '',
+            depsAssetUrl: depsAsset ? depsAsset.browser_download_url : '',
+            depsAssetSize: depsAsset ? depsAsset.size : 0,
+            mediaAssetName: mediaAsset ? mediaAsset.name : '',
+            mediaAssetUrl: mediaAsset ? mediaAsset.browser_download_url : '',
+            mediaAssetSize: mediaAsset ? mediaAsset.size : 0,
             sizeMb,
+            totalMb: Math.round(totalBytes / 1048576),
             releaseUrl: release.html_url || UPDATE_REPO_URL,
             phase: available ? 'available' : 'uptodate',
             progress: 0,
             message: available
-                ? `发现新版本 v${String(remote).replace(/^v/i, '')}（约 ${sizeMb} MB）`
+                ? `发现新版本 v${String(remote).replace(/^v/i, '')}（程序包约 ${sizeMb} MB${totalBytes > (pick?.size || 0) ? `，按需最多 ${Math.round(totalBytes / 1048576)} MB` : ''}）`
                 : (newer ? '暂无可用的更新包' : '已是最新版本'),
             error: null,
             checkedAt: Date.now(),
@@ -834,7 +857,114 @@ const checkForUpdate = async () => {
     }
 };
 
-// ── 下载 + 解压 + 校验 ──────────────────────────────────────
+// ── 增量更新门控（2026-10-15）──────────────────────────────
+// 依赖门控：本地安装目录 package-lock.json 的 sha256（缺失返回 null → 视为需要下载）。
+const localDepsHash = () => {
+    try {
+        const lockPath = path.join(repoRoot, 'package-lock.json');
+        if (!fs.existsSync(lockPath)) return null;
+        return crypto.createHash('sha256').update(fs.readFileSync(lockPath)).digest('hex');
+    } catch {
+        return null;
+    }
+};
+// 媒体门控：按更新清单逐条 stat 安装目录的实际文件。
+// 关键：**不能**拿本地 presets/<flavor>/manifest.json 当判据——它随程序包一起变新，
+// 媒体其实缺失时它会谎报「已就位」（方案文档 §2.2）。
+// Phase 1 只判定「存在与否」：替换已有文件会打断 presets ↔ media-store 的硬链接
+// （实测 nlink 2→1、内容分叉），列为 Phase 2（方案文档 §2.5）。
+const mediaGate = (manifest) => {
+    const entries = (manifest && manifest.media && Array.isArray(manifest.media.entries))
+        ? manifest.media.entries : [];
+    let missing = 0;
+    for (const entry of entries) {
+        const target = path.join(repoRoot, 'presets', entry.rel);
+        try {
+            if (!fs.statSync(target).isFile()) missing += 1;
+        } catch {
+            missing += 1;
+        }
+    }
+    return { checked: entries.length, missing };
+};
+
+// ── 分层资产：下载 / 校验 / 解压（各层复用）─────────────────
+// SHA256SUMS.txt 取一次，逐层校验复用（取不到就跳过校验，只记日志）。
+const fetchSums = async () => {
+    try {
+        const body = await httpGet(UPDATE_API);
+        const assets = body.length ? JSON.parse(body).assets : [];
+        const sums = (assets || []).find((a) => /sha256sums/i.test(a.name));
+        if (!sums) return '';
+        return await httpGet(sums.browser_download_url);
+    } catch (error) {
+        log(`SHA256SUMS 获取失败（${error.message}），本次跳过逐层哈希校验`);
+        return '';
+    }
+};
+const downloadAsset = async ({ name, url, size, label, sumsText }) => {
+    const archive = path.join(UPDATE_DIR, name);
+    const started = Date.now();
+    let lastTick = 0;
+    const result = await downloadToFile(url, archive, {
+        onProgress: (received, total) => {
+            // 节流：进度回调可能每秒上千次，状态文件写入压到 ~2 次/秒
+            const now = Date.now();
+            if (now - lastTick < 500) return;
+            lastTick = now;
+            const expected = total || size || 0;
+            const percent = expected ? Math.min(99, Math.round((received / expected) * 100)) : 0;
+            const speed = received / Math.max(1, (now - started) / 1000);
+            const speedText = speed > 1048576 ? `${(speed / 1048576).toFixed(1)} MB/s` : `${Math.round(speed / 1024)} KB/s`;
+            updatePatch({ phase: 'downloading', progress: percent, message: `正在下载${label}… ${percent}%（${speedText}）` });
+            setStatus({ tooltip: `句听 · 正在下载${label} ${percent}%` });
+        },
+    });
+    log(`下载完成（${label}）：${(result.bytes / 1048576).toFixed(1)} MB，sha256=${result.sha256.slice(0, 16)}…`);
+    if (size && Math.abs(result.bytes - size) > 1024) {
+        throw new Error(`${label}下载体积与发布信息不符（${result.bytes} vs ${size}），已中止`);
+    }
+    if (sumsText) {
+        const line = sumsText.split(/\r?\n/).find((l) => l.includes(name));
+        const expect = line ? line.trim().split(/\s+/)[0].toLowerCase() : null;
+        if (expect && expect !== result.sha256.toLowerCase()) {
+            throw new Error(`${label} SHA256 校验失败，文件可能损坏，已中止更新`);
+        }
+        if (expect) log(`${label} SHA256 校验通过`);
+    }
+    return archive;
+};
+const extractAsset = async (archive, destDir, label) => {
+    updatePatch({ phase: 'extracting', message: `正在解压${label}…` });
+    setStatus({ tooltip: `句听 · 正在解压${label}…` });
+    fs.rmSync(destDir, { recursive: true, force: true });
+    fs.mkdirSync(destDir, { recursive: true });
+    let root = destDir;
+    const archiveIsZip = /\.zip$/i.test(archive)
+        || (fs.readFileSync(archive).subarray(0, 2).toString('latin1') === 'PK');
+    if (archiveIsZip) {
+        const stats = extractZip(archive, destDir, {
+            skip: (rel) => /^(temp\/runtime\/(mysql-data|media-store|logs)|\.git)/i.test(rel),
+            onProgress: (done, all) => updatePatch({ message: `正在解压${label}… ${done}/${all}` }),
+        });
+        log(`${label}解压完成：${stats.files} 个文件`);
+    } else {
+        const sevenZip = locate7z();
+        log(`解压 .7z（${sevenZip}）…`);
+        const run = spawnSync(sevenZip, ['x', archive, `-o${destDir}`, '-y'], { windowsHide: true, timeout: 30 * 60000 });
+        if (run.status !== 0) throw new Error(`7-Zip 解压失败（exit=${run.status}）`);
+    }
+    // 兼容包内多一层同名目录的情况
+    const inner = fs.readdirSync(root).filter((n) => !n.startsWith('.'));
+    if (inner.length === 1 && fs.statSync(path.join(root, inner[0])).isDirectory()
+        && fs.existsSync(path.join(root, inner[0], 'package.json')) && !fs.existsSync(path.join(root, 'package.json'))) {
+        root = path.join(root, inner[0]);
+        log(`${label}为嵌套目录结构，使用 ${inner[0]}/ 作为根`);
+    }
+    return root;
+};
+
+// ── 下载 + 解压 + 校验（分层：程序 → 依赖 → 媒体，按清单门控）──
 const prepareUpdate = async () => {
     const info = status.update || {};
     if (!info.available || !info.assetUrl) throw new Error('没有可用的更新资产，请先检查更新');
@@ -849,86 +979,96 @@ const prepareUpdate = async () => {
     if (info.needs7z && !locate7z()) {
         throw new Error('该版本只提供 .7z 更新包，且本机未找到 7-Zip；请到 Releases 页手动下载覆盖解压');
     }
-    log("准备下载目录：" + UPDATE_DIR);
+    // 分层资产 URL 以「本次实时拉取的 release」为准（status 可能陈旧或来自旧版启动器）。
+    let depsAsset = null;
+    let mediaAsset = null;
+    try {
+        const release = JSON.parse(await httpGet(UPDATE_API));
+        const assets = Array.isArray(release.assets) ? release.assets : [];
+        depsAsset = pickLayerAsset(assets, flavor, 'deps');
+        mediaAsset = pickLayerAsset(assets, flavor, 'media');
+    } catch (error) {
+        log(`实时获取 release 资产失败（${error.message}），本次只更新程序层`);
+    }
+    const sumsText = await fetchSums();
+
+    log(`准备下载目录：${UPDATE_DIR}`);
     fs.rmSync(UPDATE_DIR, { recursive: true, force: true });
     fs.mkdirSync(UPDATE_DIR, { recursive: true });
-    const archive = path.join(UPDATE_DIR, info.assetName || `update-${Date.now()}.bin`);
 
-    log("开始下载：" + info.assetUrl + " -> " + archive);
+    // ── 第一层：程序（总是下载，~5MB）───────────────────────
+    log(`开始下载程序层：${info.assetUrl}`);
     updatePatch({ phase: 'downloading', progress: 0, message: '正在下载更新…' });
     setStatus({ tooltip: '句听 · 正在下载更新…' });
-    const started = Date.now();
-    let lastTick = 0;
-    const result = await downloadToFile(info.assetUrl, archive, {
-        onProgress: (received, total) => {
-            // 节流：进度回调可能每秒上千次，状态文件写入压到 ~2 次/秒
-            const now = Date.now();
-            if (now - lastTick < 500) return;
-            lastTick = now;
-            const expected = total || info.assetSize || 0;
-            const percent = expected ? Math.min(99, Math.round((received / expected) * 100)) : 0;
-            const speed = received / Math.max(1, (now - started) / 1000);
-            const speedText = speed > 1048576 ? `${(speed / 1048576).toFixed(1)} MB/s` : `${Math.round(speed / 1024)} KB/s`;
-            updatePatch({ phase: 'downloading', progress: percent, message: `正在下载更新… ${percent}%（${speedText}）` });
-            setStatus({ tooltip: `句听 · 正在下载更新 ${percent}%` });
-        },
+    const programArchive = await downloadAsset({
+        name: info.assetName,
+        url: info.assetUrl,
+        size: info.assetSize,
+        label: '更新',
+        sumsText,
     });
-    log(`下载完成：${(result.bytes / 1048576).toFixed(1)} MB，sha256=${result.sha256.slice(0, 16)}…`);
-    if (info.assetSize && Math.abs(result.bytes - info.assetSize) > 1024) {
-        throw new Error(`下载体积与发布信息不符（${result.bytes} vs ${info.assetSize}），已中止`);
-    }
-    log("下载校验阶段，开始读取 SHA256SUMS.txt");
-    // SHA256SUMS.txt 若在发布资产里，逐字校验
-    try {
-        const assets = (await httpGet(UPDATE_API)).length ? JSON.parse(await httpGet(UPDATE_API)).assets : [];
-        const sums = (assets || []).find((a) => /sha256sums/i.test(a.name));
-        if (sums) {
-            const text = await httpGet(sums.browser_download_url);
-            const line = text.split(/\r?\n/).find((l) => l.includes(info.assetName));
-            const expect = line ? line.trim().split(/\s+/)[0].toLowerCase() : null;
-            if (expect && expect !== result.sha256.toLowerCase()) {
-                throw new Error('SHA256 校验失败，文件可能损坏，已中止更新');
-            }
-            if (expect) log('SHA256 校验通过');
-        }
-    } catch (error) {
-        if (/校验失败/.test(error.message)) throw error;
-        log(`SHA256 校验跳过：${error.message}`);
-    }
-
-    log("开始解压更新包");
-    const archiveIsZip = /\.zip$/i.test(archive) || (fs.readFileSync(archive).subarray(0, 2).toString('latin1') === 'PK');
-    updatePatch({ phase: 'extracting', message: '正在解压更新包…' });
-    setStatus({ tooltip: '句听 · 正在解压更新包…' });
-    fs.rmSync(UPDATE_STAGING, { recursive: true, force: true });
-    fs.mkdirSync(UPDATE_STAGING, { recursive: true });
-    let extractedRoot = UPDATE_STAGING;
-    if (archiveIsZip) {
-        const stats = extractZip(archive, UPDATE_STAGING, {
-            skip: (rel) => /^(temp\/runtime\/(mysql-data|media-store|logs)|\.git)/i.test(rel),
-            onProgress: (done, all) => updatePatch({ message: `正在解压更新包… ${done}/${all}` }),
-        });
-        log(`解压完成：${stats.files} 个文件`);
-    } else {
-        const sevenZip = locate7z();
-        log(`解压 .7z（${sevenZip}）…`);
-        const run = spawnSync(sevenZip, ['x', archive, `-o${UPDATE_STAGING}`, '-y'], { windowsHide: true, timeout: 30 * 60000 });
-        if (run.status !== 0) throw new Error(`7-Zip 解压失败（exit=${run.status}）`);
-    }
-    // 兼容包内多一层同名目录的情况
-    const inner = fs.readdirSync(extractedRoot).filter((n) => !n.startsWith('.'));
-    if (inner.length === 1 && fs.statSync(path.join(extractedRoot, inner[0])).isDirectory()
-        && fs.existsSync(path.join(extractedRoot, inner[0], 'package.json')) && !fs.existsSync(path.join(extractedRoot, 'package.json'))) {
-        extractedRoot = path.join(extractedRoot, inner[0]);
-        log(`更新包为嵌套目录结构，使用 ${inner[0]}/ 作为根`);
-    }
+    const programRoot = await extractAsset(programArchive, UPDATE_STAGING, '更新');
     for (const anchor of UPDATE_ANCHORS) {
-        if (!fs.existsSync(path.join(extractedRoot, anchor))) {
+        if (!fs.existsSync(path.join(programRoot, anchor))) {
             throw new Error(`更新包内容不完整（缺少 ${anchor}），已中止更新`);
         }
     }
-    log(`更新包已就绪：${extractedRoot}（版本 ${(() => { try { return JSON.parse(fs.readFileSync(path.join(extractedRoot, 'package.json'), 'utf8')).version; } catch { return '?'; } })()}）`);
-    return { staging: extractedRoot, archive, flavor };
+    const layers = [{ staging: programRoot, mode: 'overwrite', label: '程序' }];
+
+    // ── 读更新清单 → 门控决定后两层 ─────────────────────────
+    // 没有清单（老 release / 单整包）→ 只装程序层，行为与旧版一致。
+    const manifestPath = path.join(programRoot, 'update-manifest.json');
+    const manifest = fs.existsSync(manifestPath)
+        ? (() => { try { return JSON.parse(fs.readFileSync(manifestPath, 'utf8')); } catch { return null; } })()
+        : null;
+
+    if (manifest) {
+        log(`更新清单：v${manifest.version}，依赖哈希 ${manifest.depsHash ? `${String(manifest.depsHash).slice(0, 12)}…` : '(无)'}，媒体 ${manifest.media?.count ?? 0} 个文件`);
+        // 依赖层：本地 package-lock 哈希与清单一致 → 跳过
+        if (manifest.assets?.deps) {
+            const localHash = localDepsHash();
+            if (localHash && manifest.depsHash && localHash === manifest.depsHash) {
+                log('依赖未变化（package-lock 哈希一致），跳过依赖层');
+            } else if (!depsAsset) {
+                log('⚠ 清单声明有依赖层，但 release 里未找到对应资产；依赖保持现状');
+            } else {
+                log(`依赖有变化（本地 ${localHash ? localHash.slice(0, 12) : '无'}… → ${String(manifest.depsHash).slice(0, 12)}…），下载依赖层`);
+                const depsArchive = await downloadAsset({
+                    name: depsAsset.name, url: depsAsset.browser_download_url, size: depsAsset.size, label: '依赖包', sumsText,
+                });
+                const depsRoot = await extractAsset(depsArchive, path.join(UPDATE_DIR, 'staging-deps'), '依赖包');
+                layers.push({ staging: depsRoot, mode: 'overwrite', label: '依赖' });
+            }
+        }
+        // 媒体层：按清单逐条 stat 实际文件，全部存在 → 跳过
+        if (manifest.assets?.media) {
+            const gate = mediaGate(manifest);
+            if (gate.checked > 0 && gate.missing === 0) {
+                log(`媒体已就位（${gate.checked} 个文件齐全），跳过媒体层`);
+            } else if (!mediaAsset) {
+                log(`⚠ 媒体缺失 ${gate.missing}/${gate.checked}，但 release 里未找到媒体资产；对应课程可能无法播放`);
+            } else {
+                log(`媒体缺失 ${gate.missing}/${gate.checked} 个文件，下载媒体层`);
+                const mediaArchive = await downloadAsset({
+                    name: mediaAsset.name, url: mediaAsset.browser_download_url, size: mediaAsset.size, label: '媒体包', sumsText,
+                });
+                const mediaRoot = await extractAsset(mediaArchive, path.join(UPDATE_DIR, 'staging-media'), '媒体包');
+                // 媒体层用 skip-existing：替换已有文件会打断 presets ↔ media-store 的
+                // 硬链接（实测 nlink 2→1、内容分叉，播放仍读旧音频且无报错）。
+                layers.push({ staging: mediaRoot, mode: 'skip-existing', label: '媒体' });
+            }
+        }
+    } else {
+        log('更新包内无 update-manifest.json（单整包格式），只安装程序层');
+    }
+
+    // 交给更新器的分层计划（runApplyUpdate 按此逐层覆盖安装）
+    const planPath = path.join(UPDATE_DIR, 'layers.json');
+    fs.writeFileSync(planPath, JSON.stringify({ flavor, version: String(info.version || ''), layers }, null, 1));
+    log(`更新计划：${layers.map((l) => `${l.label}(${l.mode})`).join(' + ')}`);
+
+    log(`更新包已就绪：${programRoot}（版本 ${(() => { try { return JSON.parse(fs.readFileSync(path.join(programRoot, 'package.json'), 'utf8')).version; } catch { return '?'; } })()}）`);
+    return { staging: programRoot, planPath, layers, archive: programArchive, flavor, manifest };
 };
 
 const locate7z = () => {
@@ -955,16 +1095,16 @@ const startUpdate = async () => {
     updateBusy = true;
     log("开始一键更新流程");
     try {
-        const { staging } = await prepareUpdate();
+        const { planPath, layers } = await prepareUpdate();
         updatePatch({ phase: 'applying', message: '正在安装更新…', progress: 100 });
         setStatus({ tooltip: '句听 · 正在安装更新…' });
-        log('开始安装更新：完成后句听会自动重新打开（页面内可见进度）');
+        log(`开始安装更新（${layers.map((l) => l.label).join(' + ')}）：完成后句听会自动重新打开（页面内可见进度）`);
         // 更新器不再复制自身：新 C# 壳的安装根由 exe 自身位置决定，把壳复制到 temp/ 下
         // 会找不到 node.exe；直接用便携 Node 跑 launcher-app.cjs 的更新器模式即可。
         // node.exe 位于 temp/（UPDATE_PROTECTED），覆盖安装不会动它，更新器可安全运行到收尾。
         const runnerDir = path.join(runtimeDir, 'update-runner');
         fs.rmSync(runnerDir, { recursive: true, force: true }); // 清理旧版复制式更新器的残留
-        const child = spawn(paths.nodeExe, [path.join(repoRoot, 'scripts', 'local', 'launcher-app.cjs'), '--apply-update', staging, '--install-dir', repoRoot, '--wait-pid', String(process.pid)], {
+        const child = spawn(paths.nodeExe, [path.join(repoRoot, 'scripts', 'local', 'launcher-app.cjs'), '--apply-update', planPath, '--install-dir', repoRoot, '--wait-pid', String(process.pid)], {
             cwd: repoRoot,
             detached: true,
             stdio: 'ignore',
@@ -1003,6 +1143,18 @@ const runApplyUpdate = async () => {
         write('更新包目录不存在，退出');
         return;
     }
+    // 分层计划：新格式传 layers.json（prepareUpdate 写出的计划）；老格式传单个 staging 目录
+    // （旧版启动器派生的更新器走这条，行为与升级前一致）。
+    let layers = null;
+    try {
+        if (/\.json$/i.test(staging)) {
+            const plan = JSON.parse(fs.readFileSync(staging, 'utf8'));
+            if (Array.isArray(plan.layers) && plan.layers.length) layers = plan.layers;
+        }
+    } catch (error) {
+        write(`分层计划解析失败（${error.message}），按单层处理`);
+    }
+    if (!layers) layers = [{ staging, mode: 'overwrite', label: '程序' }];
     // 1. 等旧启动器退出（它要先停掉 MySQL/后端/前端）
     for (let i = 0; i < 240 && waitPid; i += 1) {
         let alive = true;
@@ -1010,25 +1162,48 @@ const runApplyUpdate = async () => {
         if (!alive) break;
         await sleep(500);
     }
-    write('旧进程已退出，开始覆盖安装');
-    // 2. 覆盖拷贝（跳过 temp：用户数据与便携运行时现场）
+    write(`旧进程已退出，开始覆盖安装（${layers.map((l) => `${l.label}:${l.mode}`).join(' + ')}）`);
+    // 2. 逐层覆盖拷贝（跳过 temp：用户数据与便携运行时现场）
+    //    overwrite      ：force 覆盖（程序/依赖层）
+    //    skip-existing  ：已存在的文件不覆盖（媒体层）——替换媒体会打断
+    //                     presets ↔ media-store 的硬链接（nlink 2→1、内容分叉，
+    //                     播放仍读旧音频且无任何报错），故只补缺失文件。
     let copied = 0;
-    try {
-        fs.cpSync(staging, installDir, {
-            recursive: true,
-            force: true,
-            dereference: true,
-            filter: (src) => {
-                const rel = path.relative(staging, src).replace(/\\/g, '/');
-                if (!rel) return true;
-                const top = rel.split('/')[0];
-                if (UPDATE_PROTECTED.includes(top)) return false;
-                return true;
-            },
-        });
-        copied = 1;
-    } catch (error) {
-        write(`覆盖安装失败：${error.message}`);
+    for (const layer of layers) {
+        const source = layer.staging;
+        if (!source || !fs.existsSync(source)) {
+            write(`⚠ 跳过 ${layer.label} 层：目录不存在 ${source}`);
+            continue;
+        }
+        const skipExisting = layer.mode === 'skip-existing';
+        let files = 0;
+        try {
+            fs.cpSync(source, installDir, {
+                recursive: true,
+                force: true,
+                dereference: true,
+                filter: (src) => {
+                    const rel = path.relative(source, src).replace(/\\/g, '/');
+                    if (!rel) return true;
+                    const top = rel.split('/')[0];
+                    if (UPDATE_PROTECTED.includes(top)) return false;
+                    if (skipExisting) {
+                        // 目录必须放行——filter 返回 false 会跳过整棵子树，
+                        // 缺失文件就再也补不进来。
+                        let stat;
+                        try { stat = fs.statSync(src); } catch { return false; }
+                        if (!stat.isDirectory() && fs.existsSync(path.join(installDir, rel))) {
+                            return false;
+                        }
+                    }
+                    return true;
+                },
+            });
+            copied = 1;
+            write(`${layer.label}层覆盖安装完成`);
+        } catch (error) {
+            write(`${layer.label}层覆盖安装失败：${error.message}`);
+        }
     }
     if (copied) write('覆盖安装完成');
     // 3. 重启句听

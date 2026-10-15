@@ -15,10 +15,15 @@
  *
  * 同时生成 SHA256SUMS.txt。
  *
- * 发布资产还包含 -update.zip（juting-v<版本>-win-<full-cet6|cet4|full-cet6cet4>-update.zip）：
- * 与对应 .7z 同源同内容，但用纯 Node 打包成标准 ZIP（scripts/local/make-update-zip.mjs，
- * 已支持 Zip64），供客户端「一键更新」原生解压（Node 能直接解 zip，7z 需用户另装）。
- * 注意：lite 的 zip 在拷入 presets 之前打（否则会串进预设音频），full 在之后打。
+ * 发布资产还包含三层增量更新包（2026-10-15 起，替代原来的单个整包 update.zip）：
+ *   -update.zip  程序层（~5MB）  ：程序代码 + seed/manifest；排除 temp/、依赖树、预设媒体
+ *   -deps.zip    依赖层（~120MB）：依赖树，仅 package-lock 变化时才需下载
+ *   -media.zip   媒体层（~218MB）：预设媒体文件，仅音频集合变化时才需下载
+ * 三层内部均与安装目录同构，客户端「一键更新」按 update-manifest.json 门控后逐层覆盖安装。
+ * 纯 Node 打包（scripts/local/make-update-zip.mjs，已支持 Zip64），客户端原生解压，
+ * 无需用户另装 7-Zip（.7z 仍产出，作为全新安装与门控失效时的兜底）。
+ * 注意：lite 的包在拷入 presets 之前打（否则会串进预设音频），full 在之后打。
+ * 方案与门控细节见 docs/增量更新方案.md。
  *
  * 打包内容要点：
  *   - 不打包含绝对路径的任何 .env（启动器会按当前安装位置现场生成 portable.env）；
@@ -108,27 +113,115 @@ const compress = (archiveName, sourceDir) => {
     execSync(`"${sevenZip}" a -t7z -mx=7 -mmt=on "${archivePath}" "${sourceDir}" -y`, { stdio: 'inherit', timeout: 1800_000 });
     return archivePath;
 };
-// 更新包（标准 ZIP）：与对应 .7z 同源同内容，供客户端「一键更新」原生解压。
-// 用当前 stage 目录（闭包引用，调用时已创建）；lite 须在拷入 presets 前调用，
-// full 在拷入后调用，否则两个包的课程内容会串。
-const makeUpdateZipFor = (label) => {
-    const zipPath = path.join(outDir, `juting-v${version}-win-${label}-update.zip`);
+// ── 增量更新：三层分包（2026-10-15）─────────────────────────
+// 原方案把整棵树打成单个 update.zip（六级 466MB），而实际每轮改动往往只是几 MB
+// 程序代码，音频（218MB）与依赖（120MB）根本没变。现拆成三层：
+//   1) 程序包 -update.zip（~5MB）  ：程序代码 + presets/<flavor>/{seed,manifest}.json，
+//                                    排除 temp/（覆盖安装本就不碰，纯死重）、
+//                                    node_modules/、presets/*/media/（另两包承载）；
+//   2) 依赖包 -deps.zip（~120MB）  ：node_modules/**，仅 package-lock 变化时才需下载；
+//   3) 媒体包 -media.zip（~218MB） ：presets/*/media/**，仅音频文件集合变化时才需下载。
+// 程序包内写入 update-manifest.json（版本 / 依赖哈希 / 媒体清单 / 各资产名），
+// 客户端先下程序包 → 读清单 → 门控决定要不要下后两个包。详见 docs/增量更新方案.md。
+// 注意：lite 须在拷入 presets 前调用，full 在之后调用，否则两个包的课程内容会串。
+const normRel = (rel) => rel.split(path.sep).join('/');
+const underTemp = (rel) => { const n = normRel(rel); return n === 'temp' || n.startsWith('temp/'); };
+const underNodeModules = (rel) => { const n = normRel(rel); return n === 'node_modules' || n.startsWith('node_modules/'); };
+// 媒体路径判定必须同时认「目录本身」与「其下内容」——collectEntries 对目录调用 skip，
+// 若只匹配 `presets/<key>/media/`（带尾斜杠），`presets/cet6/media` 这个目录名不匹配，
+// 整棵子树会被当非媒体跳过（实测 media.zip 打成 0 个文件的原因）。
+const isMediaPath = (rel) => /^presets\/[^/]+\/media(\/|$)/.test(normRel(rel));
+// 媒体树的祖先目录（presets、presets/<key>）：媒体包要保留它们才能承载子树。
+const isMediaAncestor = (rel) => { const n = normRel(rel); return n === 'presets' || /^presets\/[^/]+$/.test(n); };
+// 注意 makeUpdateZip 的 skip 语义 =「返回 true 即排除」（与 copyDirFiltered 相反）。
+const programSkip = (rel) => underTemp(rel) || underNodeModules(rel) || isMediaPath(rel);
+const depsSkip = (rel) => !underNodeModules(rel);
+const mediaSkip = (rel) => !(isMediaPath(rel) || isMediaAncestor(rel));
+
+const makeZip = (assetName, skip) => {
+    const zipPath = path.join(outDir, assetName);
     fs.rmSync(zipPath, { force: true }); // 清掉可能的上次残留（本次从头写）
-    log(`生成 ${label} 更新包（zip，供客户端一键更新）…`);
+    log(`生成 ${assetName}…`);
     try {
         const result = makeUpdateZip(stage, zipPath, {
-            onProgress: ({ files }) => console.log(`[打包] 更新包已处理 ${files} 个文件…`),
+            skip,
+            onProgress: ({ files }) => console.log(`[打包] ${assetName} 已处理 ${files} 个文件…`),
         });
-        log(`更新包 ${label}：${result.files} 个文件，${(fs.statSync(zipPath).size / 1024 / 1024).toFixed(0)} MB`);
+        log(`${assetName}：${result.files} 个文件，${(fs.statSync(zipPath).size / 1024 / 1024).toFixed(1)} MB`);
         return result.zipPath;
     } catch (e) {
-        // 更新包生成失败（磁盘空间/IO 等）→ 跳过 update.zip，不影响 .7z 与 SHA256SUMS
-        // 产出；客户端会回退用 .7z（要求用户装 7-Zip）。
+        // 生成失败（磁盘空间/IO 等）→ 跳过该资产，不影响 .7z 与 SHA256SUMS；
+        // 客户端会回退 .7z（要求用户装 7-Zip）。
         // 注：make-update-zip.mjs 已支持 Zip64（条目数 >65535、单文件/偏移 >4GiB 均可打包），
         // 「超过标准 ZIP 上限」不再是不生成的原因。
-        log(`⚠ 更新包 ${label} 生成失败（${e.message}），跳过——客户端将回退 .7z`);
+        log(`⚠ ${assetName} 生成失败（${e.message}），跳过——客户端将回退 .7z`);
         return null;
     }
+};
+
+// 更新清单：写进程序包根，客户端据此做依赖/媒体门控。
+// 依赖门控用 package-lock.json 的 sha256（本地取安装目录同名文件比对）；
+// 媒体门控用「文件集合清单」（rel + size），本地逐条 stat 比对实际文件——
+// 不能拿本地 presets/<flavor>/manifest.json 当判据：它随程序包一起变新，
+// 媒体其实缺失时会谎报「已就位」。
+const writeUpdateManifest = (label) => {
+    const presetsStage = path.join(stage, 'presets');
+    const presetKeys = fs.existsSync(presetsStage)
+        ? fs.readdirSync(presetsStage).filter((k) => fs.existsSync(path.join(presetsStage, k, 'seed.json'))).sort()
+        : [];
+    const mediaEntries = [];
+    for (const key of presetKeys) {
+        const mediaDir = path.join(presetsStage, key, 'media');
+        if (!fs.existsSync(mediaDir)) continue;
+        const walk = (dir) => {
+            for (const name of fs.readdirSync(dir).sort()) {
+                const abs = path.join(dir, name);
+                const stat = fs.statSync(abs);
+                if (stat.isDirectory()) { walk(abs); continue; }
+                // rel 相对 presets/ 且**含 media 段**（客户端拼 install/presets/<rel> 校验），
+                // 所以基准是 presetsStage 而非 mediaDir。
+                mediaEntries.push({ rel: normRel(path.relative(presetsStage, abs)), size: stat.size });
+            }
+        };
+        walk(mediaDir);
+    }
+    const lockPath = path.join(stage, 'package-lock.json');
+    const depsHash = fs.existsSync(lockPath)
+        ? createHash('sha256').update(fs.readFileSync(lockPath)).digest('hex')
+        : null;
+    const manifest = {
+        schema: 1,
+        version,
+        label,
+        depsHash,
+        media: {
+            count: mediaEntries.length,
+            bytes: mediaEntries.reduce((sum, entry) => sum + entry.size, 0),
+            entries: mediaEntries,
+        },
+        assets: {
+            program: `juting-v${version}-win-${label}-update.zip`,
+            deps: `juting-v${version}-win-${label}-deps.zip`,
+            media: mediaEntries.length > 0 ? `juting-v${version}-win-${label}-media.zip` : null,
+        },
+    };
+    fs.writeFileSync(path.join(stage, 'update-manifest.json'), `${JSON.stringify(manifest)}\n`, 'utf8');
+    log(`更新清单：依赖哈希 ${depsHash ? `${depsHash.slice(0, 12)}…` : '(无 lock)'}，媒体 ${mediaEntries.length} 个文件 / ${(manifest.media.bytes / 1024 / 1024).toFixed(0)} MB`);
+    return manifest;
+};
+
+// 产出某一 label 的三层更新包，返回资产路径数组（null 已剔除）。
+const makeSplitAssets = (label) => {
+    const manifest = writeUpdateManifest(label);
+    const assets = [
+        makeZip(`juting-v${version}-win-${label}-update.zip`, programSkip),
+        makeZip(`juting-v${version}-win-${label}-deps.zip`, depsSkip),
+    ];
+    if (manifest.assets.media) assets.push(makeZip(`juting-v${version}-win-${label}-media.zip`, mediaSkip));
+    // 清单只属于程序包内部：打完包就从 stage 撤掉，免得被 .7z 收进去
+    // （否则 --only all 时 full 的 .7z 会带上 lite 的旧清单，虽无害但易误读）。
+    fs.rmSync(path.join(stage, 'update-manifest.json'), { force: true });
+    return assets.filter(Boolean);
 };
 
 // ── 0. 构建所有产物 ─────────────────────────────────────────
@@ -359,22 +452,23 @@ if (stageOnly) {
     check('node_modules/@juting/domain', true);
     check('node_modules/@juting/admin', false);
     check('node_modules/@juting/web-app', false);
-    if (only === 'all' || only === 'full') log(`计划产出：${archiveStem}.7z 与 ${archiveStem}-update.zip`);
+    if (only === 'all' || only === 'full') log(`计划产出：${archiveStem}.7z 与 ${archiveStem}-update.zip / -deps.zip / -media.zip`);
 } else {
     const artifacts = [];
     // ── 简洁版 ───────────────────────────────────────────────
     if (only === 'all' || only === 'lite') {
         log('压缩简洁版…');
         artifacts.push(compress(`juting-v${version}-win-lite.7z`, stage));
-        // 简洁版更新包：此刻 stage 尚未拷入 presets，包内不含预设音频。
-        artifacts.push(makeUpdateZipFor('lite'));
+        // 简洁版更新包：此刻 stage 尚未拷入 presets，包内不含预设音频；
+        // 三层分包同样适用（媒体层为空，故只出程序包 + 依赖包）。
+        artifacts.push(...makeSplitAssets('lite'));
     }
     // ── 完整版 = 简洁版 + 预设课程 ────────────────────────────
     if (only === 'all' || only === 'full') {
         copyPresetsIntoStage();
         log('压缩完整版…');
         artifacts.push(compress(`${archiveStem}.7z`, stage));
-        artifacts.push(makeUpdateZipFor(archiveStem.replace(`juting-v${version}-win-`, '')));
+        artifacts.push(...makeSplitAssets(archiveStem.replace(`juting-v${version}-win-`, '')));
     }
     // ── 6. 校验和（与已有文件按包名合并，支持分次 --only 打包不丢账）──
     const sumsPath = path.join(outDir, 'SHA256SUMS.txt');

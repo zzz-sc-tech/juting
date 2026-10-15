@@ -251,8 +251,19 @@ if (!cleanupOnly) {
     }
 }
 
-// ── 媒体落位（硬链优先、已存在跳过）——仅本次实际导入时执行 ──
-if (importedNow) {
+// ── 媒体落位（硬链优先、已存在跳过）────────────────────────
+// 本次实际导入时必跑；此外若媒体库缺文件（用户删过、或上次媒体层没下全）也跑一次
+// 补齐——放置逻辑幂等，只填缺口、绝不覆盖已有文件（覆盖会打断 presets ↔ media-store
+// 的硬链接，见 docs/增量更新方案.md §2.5）。
+const storeMissingMedia = () => {
+    for (const objectName of objectNames) {
+        const source = path.join(presetMediaDir, objectName);
+        const target = path.join(mediaRoot, mediaBucket, objectName);
+        if (fs.existsSync(source) && !fs.existsSync(target)) return true;
+    }
+    return false;
+};
+if (importedNow || storeMissingMedia()) {
     let linked = 0;
     let copied = 0;
     let skipped = 0;
@@ -289,7 +300,7 @@ if (importedNow) {
         }
     }
 
-    console.log(`[preset] 预设 ${presetKey} 导入完成（版本 ${seed.version}）：`);
+    console.log(`[preset] 预设 ${presetKey} ${importedNow ? '导入完成' : '媒体补齐'}（版本 ${seed.version}）：`);
     console.log(`  课程 ${seed.exercises.length} 门（分组「${seed.group.name}」）`);
     if (objectNames.size === 0) {
         console.log('  媒体：种子未引用任何对象。');
