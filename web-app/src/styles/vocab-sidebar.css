@@ -1,0 +1,317 @@
+/* 点词查词典：句中可点词 + 右侧滑出侧栏（生词本页与精听句卡共用）。
+   全部走设计令牌，四套主题换肤时跟随 --surface / --accent 等自动一致。 */
+
+/* ── 句中可点词 ────────────────────────────────────────────
+   常态只留一条虚线下边线（暗示可点），hover 才上底色——
+   揭晓状态的字幕是整张卡的重心，铺满 hover 底色会盖掉衬纸的克制感。 */
+.clickable-word {
+  border-bottom: 1px dashed var(--ink-4);
+  cursor: pointer;
+  transition: background-color 0.12s ease, border-color 0.12s ease;
+}
+
+.clickable-word:hover {
+  background: var(--accent-soft);
+  border-bottom-color: var(--accent);
+  color: var(--accent-ink);
+}
+
+.clickable-gap {
+  white-space: pre-wrap;
+}
+
+/* ── 侧栏 ─────────────────────────────────────────────── */
+/* 遮罩只做视觉压暗，不吃点击：开着侧栏时还要能直接点句中另一个词换词查询
+   （交接文档 §5.2 第 7 条），关闭交给 × / Esc / 再点一次同一个词。 */
+.vocab-sidebar-mask {
+  background: rgba(29, 27, 22, 0.16);
+  inset: 0;
+  pointer-events: none;
+  position: fixed;
+  z-index: 90;
+}
+
+.vocab-sidebar {
+  animation: vocab-sidebar-in 0.16s ease-out;
+  background: var(--surface);
+  border-left: 1px solid var(--line-strong);
+  box-shadow: var(--shadow-float);
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  position: fixed;
+  right: 0;
+  top: 0;
+  width: min(360px, calc(100vw - 56px));
+  z-index: 91;
+}
+
+@keyframes vocab-sidebar-in {
+  from {
+    opacity: 0;
+    transform: translateX(16px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+.vocab-sidebar-head {
+  align-items: flex-start;
+  border-bottom: 1px solid var(--line);
+  display: flex;
+  gap: 10px;
+  justify-content: space-between;
+  padding: 16px 18px 12px;
+}
+
+.vocab-sidebar-title {
+  align-items: baseline;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  min-width: 0;
+}
+
+.vocab-sidebar-word {
+  font-family: var(--font-serif);
+  font-size: 24px;
+  line-height: 1.2;
+  overflow-wrap: anywhere;
+}
+
+/* 点到变形词时标出的词条头词 */
+.vocab-sidebar-headword {
+  color: var(--ink-3);
+  font-size: 12px;
+}
+
+.vocab-sidebar-close {
+  align-items: center;
+  background: transparent;
+  border: 1px solid var(--line);
+  border-radius: var(--radius-sm);
+  color: var(--ink-3);
+  cursor: pointer;
+  display: inline-flex;
+  flex: none;
+  justify-content: center;
+  min-height: 26px;
+  min-width: 26px;
+  padding: 0;
+}
+
+.vocab-sidebar-close:hover {
+  border-color: var(--line-strong);
+  color: var(--ink);
+}
+
+.vocab-sidebar-body {
+  flex: 1;
+  overflow-y: auto;
+  padding: 14px 18px;
+}
+
+.vocab-sidebar-meta {
+  align-items: center;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-bottom: 10px;
+}
+
+.vocab-sidebar-phonetic {
+  color: var(--ink-2);
+  font-family: var(--font-serif);
+  font-size: 14px;
+}
+
+/* 考试标签：六级/考研等的低饱和徽标，不抢释义的视觉重心 */
+.vocab-tag {
+  background: var(--accent-soft-2);
+  border: 1px solid var(--line);
+  border-radius: var(--radius-pill);
+  color: var(--accent-ink);
+  font-size: 11px;
+  line-height: 1;
+  padding: 3px 8px;
+}
+
+/* 释义：ECDICT 的 translation 带换行（n./vt. 分行列义），保留原样 */
+.vocab-sidebar-zh {
+  color: var(--ink);
+  font-size: 14px;
+  line-height: 1.7;
+  margin: 0;
+  white-space: pre-line;
+}
+
+.vocab-sidebar-missing {
+  color: var(--ink-2);
+  font-size: 14px;
+  margin: 4px 0;
+}
+
+.vocab-sidebar-missing-hint {
+  color: var(--ink-3);
+  font-size: 12.5px;
+  line-height: 1.6;
+  margin: 0;
+}
+
+.vocab-sidebar-examples {
+  border-top: 1px solid var(--line);
+  margin-top: 16px;
+  padding-top: 12px;
+}
+
+.vocab-sidebar-examples-title {
+  color: var(--ink-3);
+  font-size: 11.5px;
+  font-weight: 600;
+  letter-spacing: 0.06em;
+  margin: 0 0 8px;
+}
+
+.vocab-sidebar-examples ul {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.vocab-ctx-jump {
+  background: var(--accent-soft-2);
+  border: none;
+  border-radius: var(--radius-pill);
+  color: var(--accent-ink);
+  cursor: pointer;
+  font: inherit;
+  font-size: 11px;
+  line-height: 1;
+  margin-bottom: 4px;
+  max-width: 100%;
+  overflow: hidden;
+  padding: 4px 9px;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.vocab-ctx-jump:hover {
+  background: var(--accent-soft);
+}
+
+.vocab-ctx-text {
+  color: var(--ink-2);
+  font-family: var(--font-serif);
+  font-size: 13px;
+  line-height: 1.55;
+  margin: 0;
+}
+
+.vocab-ctx-text.pending {
+  color: var(--ink-4);
+  font-family: var(--font-ui);
+}
+
+.vocab-sidebar-foot {
+  border-top: 1px solid var(--line);
+  padding: 12px 18px;
+}
+
+.vocab-sidebar-action {
+  align-items: center;
+  background: var(--accent);
+  border: none;
+  border-radius: var(--radius-md);
+  color: var(--bg);
+  cursor: pointer;
+  display: flex;
+  font: inherit;
+  font-size: 13.5px;
+  gap: 8px;
+  justify-content: center;
+  min-height: 40px;
+  width: 100%;
+}
+
+.vocab-sidebar-action:hover {
+  background: var(--accent-strong);
+}
+
+/* 已收藏态：弱化成描边按钮，避免和「加入」抢注意力 */
+.vocab-sidebar-action.saved {
+  background: transparent;
+  border: 1px solid var(--line-strong);
+  color: var(--ink-2);
+}
+
+.vocab-sidebar-action.saved:hover {
+  background: var(--danger-soft);
+  border-color: var(--danger);
+  color: var(--danger);
+}
+
+/* ── 生词本页：音标/释义行 + 课程筛选 ───────────────────── */
+/* 词条按钮：继承列表行的字色与字号，只把「可点」的姿态做出来 */
+.vocab-word {
+  background: none;
+  border: none;
+  cursor: pointer;
+  font: inherit;
+  font-size: 14.5px;
+  padding: 0;
+  text-align: left;
+}
+
+.vocab-word:hover {
+  color: var(--accent-ink);
+  text-decoration: underline;
+}
+
+.vocab-filter {
+  align-items: center;
+  display: flex;
+  gap: 8px;
+  margin-bottom: 12px;
+}
+
+.vocab-filter select {
+  background: var(--surface);
+  border: 1px solid var(--line-strong);
+  border-radius: var(--radius-sm);
+  color: var(--ink);
+  font: inherit;
+  font-size: 13px;
+  min-height: 34px;
+  padding: 0 8px;
+}
+
+.vocab-lex {
+  align-items: baseline;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.vocab-lex-phonetic {
+  color: var(--ink-3);
+  font-family: var(--font-serif);
+  font-size: 12.5px;
+}
+
+.vocab-lex-zh {
+  color: var(--ink-2);
+  font-size: 12.5px;
+  line-height: 1.55;
+  margin: 2px 0 0;
+  white-space: pre-line;
+}
+
+.vocab-missing {
+  color: var(--ink-4);
+  font-size: 12px;
+}

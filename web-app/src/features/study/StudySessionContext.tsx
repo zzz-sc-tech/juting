@@ -7,6 +7,7 @@ import {
   useState,
   type ReactNode,
 } from 'react'
+import { useParams, useSearchParams } from 'react-router-dom'
 import {
   extractDialogueAnchors,
   type CatalogExerciseSummary,
@@ -55,10 +56,12 @@ export type StudySessionContextValue = {
     seriesId: number,
     exerciseId: number,
     stage?: StudyStage,
-    options?: { replace?: boolean },
+    options?: { replace?: boolean; lineId?: string },
   ) => void
   selectedSeriesId: number
   seriesExercises: CatalogExerciseSummary[]
+  /** categoryId → 该系列下的课程摘要（预载自 useCourseRouting，跨系列查找用） */
+  exercisesByCategory: Record<string, CatalogExerciseSummary[]>
   activeExerciseSummary: CatalogExerciseSummary | undefined
   hasExercise: boolean
   // 课程详情
@@ -232,6 +235,41 @@ export function StudySessionProvider({ children }: { children: ReactNode }) {
     setStore,
   })
 
+  // ?line= 行定位：词典侧栏的例句点进来时带上目标行（跨课跳转同理）。
+  // 选中态仍以 ExerciseProgress.lastLineId 为准，这里消费一次就清参，
+  // 免得刷新/回退时反复抢占用户自己的选中行。
+  const [searchParams, setSearchParams] = useSearchParams()
+  const { exerciseId: routeExerciseId } = useParams<{ exerciseId?: string }>()
+  const pendingLineId = searchParams.get('line')
+  useEffect(() => {
+    if (!pendingLineId || !studyExercise || !activeExercise) return
+    // 换课时转写是异步换的：当前 loaded 的还不是 URL 指向的那一课时必须等，
+    // 否则会拿上一课的行集去匹配，然后清掉参数把定位吃掉（实测跨课必现）
+    if (routeExerciseId && String(activeExercise.id) !== routeExerciseId) return
+    if (studyExercise.lines.some((line) => line.id === pendingLineId)) {
+      selectLine(pendingLineId)
+    } else {
+      // 目标是锚点/指令行（不在正文句集）——落到它后面最近的一句，
+      // 免得跳过去只看到课程开头
+      const anchorIndex = activeExercise.lines.findIndex((line) => line.id === pendingLineId)
+      const following = activeExercise.lines
+        .slice(anchorIndex + 1)
+        .find((line) => studyExercise.lines.some((content) => content.id === line.id))
+      if (following) selectLine(following.id)
+    }
+    const next = new URLSearchParams(searchParams)
+    next.delete('line')
+    setSearchParams(next, { replace: true })
+  }, [
+    pendingLineId,
+    studyExercise,
+    activeExercise,
+    routeExerciseId,
+    selectLine,
+    searchParams,
+    setSearchParams,
+  ])
+
   const toggleRevealLine = useCallback((lineId: string) => {
     setRevealedLineIds((current) => {
       if (!current[lineId]) {
@@ -312,6 +350,7 @@ export function StudySessionProvider({ children }: { children: ReactNode }) {
       syncRoute,
       selectedSeriesId,
       seriesExercises,
+      exercisesByCategory,
       activeExerciseSummary,
       hasExercise,
       activeExercise,
@@ -354,6 +393,7 @@ export function StudySessionProvider({ children }: { children: ReactNode }) {
       syncRoute,
       selectedSeriesId,
       seriesExercises,
+      exercisesByCategory,
       activeExerciseSummary,
       hasExercise,
       activeExercise,

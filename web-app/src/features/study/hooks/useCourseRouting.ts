@@ -66,13 +66,19 @@ export function useCourseRouting({
     nextSeriesId: number,
     nextExerciseId: number,
     nextStage: StudyStage = studyStage,
-    options?: { replace?: boolean },
+    // lineId：词典侧栏例句跳转时带上目标行，选中后由 StudySession 消费并清参
+    options?: { replace?: boolean; lineId?: string },
   ) => {
     const nextParams = new URLSearchParams(searchParams)
     if (nextStage === 'extensive') {
       nextParams.delete('stage')
     } else {
       nextParams.set('stage', nextStage)
+    }
+    if (options?.lineId) {
+      nextParams.set('line', options.lineId)
+    } else {
+      nextParams.delete('line')
     }
 
     const nextSearch = nextParams.toString()
@@ -185,6 +191,7 @@ export function useCourseRouting({
     syncRoute,
     selectedSeriesId,
     seriesExercises,
+    exercisesByCategory,
     activeExerciseSummary,
     hasExercise,
   }

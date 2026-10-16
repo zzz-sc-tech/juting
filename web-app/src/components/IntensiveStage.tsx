@@ -12,10 +12,11 @@ import {
   Repeat,
   RotateCcw,
 } from 'lucide-react'
-import { useCallback, useEffect, useState, type RefObject } from 'react'
+import { useCallback, useEffect, useMemo, useState, type RefObject } from 'react'
 import { Tooltip } from './Tooltip'
 import { DictationPanel } from './DictationPanel'
 import { DialogueAnchorBar } from './DialogueAnchorBar'
+import { VocabSidebar } from './VocabSidebar'
 import type {
   DialogueAnchor,
   ExerciseProgress,
@@ -27,6 +28,7 @@ import type { StudySection } from '../lib/studySections'
 import { TranscriptPanel } from './TranscriptPanel'
 import { useLanguage } from '../i18n/LanguageProvider'
 import { resolveApiUrl } from '../lib/apiClient'
+import { splitClickableWords } from '../lib/clickableText'
 import { resolveLineTranslation } from '../lib/lineTranslation'
 import { loadUserPrefs, RATE_OPTIONS } from '../lib/userPrefs'
 
@@ -58,6 +60,12 @@ type IntensiveStageProps = {
   onGoWaveLoop: (line: TranscriptLine) => void
   /** 收藏生词（多个词用空白/逗号分隔），存入本课 vocabulary */
   onAddVocabulary: (words: string[]) => void
+  /** 从本课生词本移除（词典侧栏里点「已收藏」时用） */
+  onRemoveVocabulary: (word: string) => void
+  /** 词典侧栏例句跳转：跳到 courseId 的 lineId */
+  onJumpToLine: (courseId: number, lineId: string) => void
+  /** courseId → 课标题（词典侧栏标注例句来源） */
+  courseTitles?: Record<number, string>
 }
 
 const playbackRates = RATE_OPTIONS
@@ -68,6 +76,46 @@ const formatLineDuration = (start: number, end: number) => {
   return Number.isInteger(roundedDuration)
     ? `${roundedDuration}s`
     : `${roundedDuration.toFixed(2).replace(/\.?0+$/, '')}s`
+}
+
+/**
+ * 字幕正文逐词渲染：词形可点（唤起词典侧栏），标点与空白原样保留。
+ * 词形不做 tab 焦点（一句话上百个词，全进 Tab 序列反而没法用），
+ * 键盘用户仍可用「+生词」手动输入入口。
+ * 可点性的视觉提示交给 CSS（虚线下边线），不挂原生 title——
+ * 鼠标扫过整句会连续弹 tooltip，读句子时很干扰。
+ */
+function ClickableSentence({
+  text,
+  onPickWord,
+}: {
+  text: string
+  onPickWord: (word: string) => void
+}) {
+  const parts = useMemo(() => splitClickableWords(text), [text])
+  return (
+    <>
+      {parts.map((part, index) =>
+        part.type === 'word' ? (
+          <span
+            className="clickable-word"
+            key={`${index}-${part.text}`}
+            onClick={() => {
+              // 用户在拖选复制某个词时不要弹出侧栏，把选择让给浏览器
+              if (!window.getSelection()?.isCollapsed) return
+              onPickWord(part.text)
+            }}
+          >
+            {part.text}
+          </span>
+        ) : (
+          <span className="clickable-gap" key={`${index}-gap`}>
+            {part.text}
+          </span>
+        ),
+      )}
+    </>
+  )
 }
 
 export function IntensiveStage({
@@ -95,6 +143,9 @@ export function IntensiveStage({
   onToggleAutoAdvance,
   onGoWaveLoop,
   onAddVocabulary,
+  onRemoveVocabulary,
+  onJumpToLine,
+  courseTitles,
 }: IntensiveStageProps) {
   const [ratePickerOpen, setRatePickerOpen] = useState(false)
   // 听写模式：开启后字幕区被听写面板取代（强制用耳朵），跨句保持
@@ -103,6 +154,8 @@ export function IntensiveStage({
   const [vocabOpen, setVocabOpen] = useState(false)
   const [vocabInput, setVocabInput] = useState('')
   const [vocabSaved, setVocabSaved] = useState(false)
+  // 词典侧栏：点句中单词唤起，右侧滑出（存词形本身，其余从词条派生）
+  const [dictWord, setDictWord] = useState<string | null>(null)
   // 译文开关：默认开（保持既有行为），做题时不想看可以关掉
   const [translationOn, setTranslationOn] = useState(() => loadUserPrefs().translationDefault)
   const { t, contentLocale } = useLanguage()
@@ -111,6 +164,22 @@ export function IntensiveStage({
   // 这里会渲染成同一句英文出现两次。译文权威数据在 translations[contentLocale]。
   const resolvedTranslation = resolveLineTranslation(selectedLine, contentLocale)
   const translationVisible = translationOn && Boolean(resolvedTranslation)
+
+  // 点到的词是否已在生词本（历史数据里词形大小写不统一，比对时忽略大小写）
+  const dictWordSaved = useMemo(() => {
+    if (!dictWord) return false
+    const target = dictWord.toLowerCase()
+    return Object.keys(progress.vocabulary ?? {}).some((key) => key.toLowerCase() === target)
+  }, [dictWord, progress.vocabulary])
+
+  // 词典侧栏的本课行文本：正文句已在内存里，直接给；锚点行（不在正文句集）
+  // 查不到会由侧栏按需拉整课，省一次请求
+  const localLines = useMemo(
+    () => ({
+      [exercise.id]: Object.fromEntries(exercise.lines.map((line) => [line.id, line.text])),
+    }),
+    [exercise],
+  )
 
   const handleMarkMastered = useCallback(() => {
     // 点击"我已掌握"时触发一次显示字幕
@@ -124,11 +193,18 @@ export function IntensiveStage({
     setVocabOpen(false)
     setVocabInput('')
     setVocabSaved(false)
+    // 换句即收起词典侧栏：留着上一个词的释义会误导
+    setDictWord(null)
   }, [selectedLine.id])
 
   // 键盘快捷键
   const handleKeyDown = useCallback(
     (event: KeyboardEvent) => {
+      // 词典侧栏优先响应 Esc（此时不抢占方向键/播放等学习快捷键）
+      if (event.key === 'Escape' && dictWord) {
+        setDictWord(null)
+        return
+      }
       // 如果 Popover 打开，不响应快捷键
       if (ratePickerOpen) return
 
@@ -176,6 +252,7 @@ export function IntensiveStage({
       }
     },
     [
+      dictWord,
       ratePickerOpen,
       isPlaying,
       onMoveLine,
@@ -257,7 +334,17 @@ export function IntensiveStage({
             </div>
             {!dictationOn && (
               <p className={sentenceVisible ? 'subtitle-text revealed' : 'subtitle-text'}>
-                {sentenceVisible ? selectedLine.text : ''}
+                {sentenceVisible ? (
+                  <ClickableSentence
+                    text={selectedLine.text}
+                    onPickWord={(word) =>
+                      // 再点同一个词 = 收起（遮罩不吃点击，想换词得能直接点）
+                      setDictWord((current) => (current === word ? null : word))
+                    }
+                  />
+                ) : (
+                  ''
+                )}
               </p>
             )}
             {dictationOn ? (
@@ -478,6 +565,19 @@ export function IntensiveStage({
         sections={sections}
         onLineSelect={onLineSelect}
       />
+
+      {dictWord && (
+        <VocabSidebar
+          courseTitles={courseTitles}
+          localLines={localLines}
+          onAdd={(word) => onAddVocabulary([word])}
+          onClose={() => setDictWord(null)}
+          onJumpToLine={onJumpToLine}
+          onRemove={onRemoveVocabulary}
+          saved={dictWordSaved}
+          word={dictWord}
+        />
+      )}
     </section>
   )
 }

@@ -1,4 +1,4 @@
-import { useCallback, useEffect, useRef, useState } from 'react'
+import { useCallback, useEffect, useMemo, useRef, useState } from 'react'
 import { IntensiveStage } from '../../../components/IntensiveStage'
 import {
   useMediaControls,
@@ -19,14 +19,19 @@ export function IntensiveContainer() {
     activeExercise,
     countLineRepeat,
     dialogueAnchors,
+    exercisesByCategory,
     lineProgress,
     markLineUnclear,
     progress,
     revealedLineIds,
     selectedLine,
     selectedLineIndex,
+    selectedSeriesId,
+    seriesExercises,
     studyExercise,
     studySections,
+    syncRoute,
+    studyStage,
     toggleLineMastered,
     toggleRevealLine,
     updateActiveProgress,
@@ -111,6 +116,21 @@ export function IntensiveContainer() {
     [activeExercise, goToStage],
   )
 
+  // 词典侧栏：例句来源标注用课标题；跳转保持当前阶段
+  const courseTitles = useMemo(
+    () => Object.fromEntries(seriesExercises.map((item) => [item.id, item.title])),
+    [seriesExercises],
+  )
+
+  // courseId → seriesId：ctx 里的例句可能来自别的系列（今天都同系列，属防御）
+  const seriesOfCourse = useMemo(() => {
+    const map: Record<number, number> = {}
+    for (const [categoryId, list] of Object.entries(exercisesByCategory)) {
+      for (const item of list ?? []) map[item.id] = Number(categoryId)
+    }
+    return map
+  }, [exercisesByCategory])
+
   if (!activeExercise || !studyExercise || !progress || !selectedLine) {
     return null
   }
@@ -153,10 +173,31 @@ export function IntensiveContainer() {
         updateActiveProgress((current) => {
           const vocabulary = { ...current.vocabulary }
           for (const word of words) {
-            vocabulary[word] = selectedLine.text
+            // 词表里可能已存在大小写不同的同一词（The / the），复用旧键而不是新增一条
+            const existingKey = Object.keys(vocabulary).find(
+              (key) => key.toLowerCase() === word.toLowerCase(),
+            )
+            vocabulary[existingKey ?? word] = selectedLine.text
           }
           return { ...current, vocabulary }
         })
+      }}
+      onRemoveVocabulary={(word) => {
+        updateActiveProgress((current) => {
+          // 侧栏的「已收藏」判定忽略大小写，删除也必须同样忽略，否则按钮点了没反应
+          const key = Object.keys(current.vocabulary ?? {}).find(
+            (item) => item.toLowerCase() === word.toLowerCase(),
+          )
+          if (!key) return current
+          const vocabulary = { ...current.vocabulary }
+          delete vocabulary[key]
+          return { ...current, vocabulary }
+        })
+      }}
+      courseTitles={courseTitles}
+      onJumpToLine={(courseId, lineId) => {
+        // ctx 的 courseId 可能属于别的系列，用映射表里的系列，别拿当前系列硬套
+        syncRoute(seriesOfCourse[courseId] ?? selectedSeriesId, courseId, studyStage, { lineId })
       }}
     />
   )
