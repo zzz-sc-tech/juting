@@ -262,6 +262,14 @@ if (!existsSync(path.join(mysqlDataDir, 'mysql'))) {
 }
 // 配置文件独立于初始化：每次启动都确保存在（改端口/参数后重装也能生效）。
 // 只写 ASCII 配置项，路径类配置见上——不放 ini。
+//
+// 单机自用调优（2026-10-16，省磁盘 ~90MB）：
+//   - innodb_redo_log_capacity=32M：MySQL 8.4 默认 100MB redo，而本应用数据库才 16MB。
+//     容量在启动时自动调整（8.0.30+ 语义），存量安装下次启动即生效。
+//   - skip-log-bin：关闭二进制日志。binlog 是为主从复制/时间点恢复设计的，
+//     单机自用无意义，且会随使用持续增长。
+//   - innodb_temp_data_file_path 加上限：临时表空间默认无限自动增长，封顶防跑飞。
+//   - innodb_buffer_pool_size 降到 128M：库仅 16MB，128M 已远超需求（省的是内存非磁盘）。
 writeFileSync(
     path.join(runtimeDir, 'my.ini'),
     [
@@ -270,7 +278,10 @@ writeFileSync(
         'bind-address=127.0.0.1',
         'character-set-server=utf8mb4',
         'collation-server=utf8mb4_0900_ai_ci',
-        'innodb_buffer_pool_size=256M',
+        'innodb_buffer_pool_size=128M',
+        'innodb_redo_log_capacity=32M',
+        'innodb_temp_data_file_path=ibtmp1:12M:autoextend:max:64M',
+        'skip-log-bin',
         'max_connections=100',
         'default-time-zone=+08:00',
         '',

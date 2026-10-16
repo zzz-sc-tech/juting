@@ -857,15 +857,18 @@ const checkForUpdate = async () => {
     }
 };
 
-// ── 增量更新门控（2026-10-15）──────────────────────────────
-// 依赖门控：本地安装目录 package-lock.json 的 sha256（缺失返回 null → 视为需要下载）。
-const localDepsHash = () => {
+// ── 增量更新门控（2026-10-15，依赖门控 2026-10-16 改版）──────
+// 依赖门控：比对「上次已应用的依赖包哈希」（本地标记文件）与清单里的 deps.filesHash。
+// ⚠️ 为什么不再用 package-lock 哈希：2026-10-16 起依赖包按运行期闭包裁剪，裁剪只改
+// 「打包进包的内容」不改 lock，用 lock 哈希会让老用户判定「依赖没变」而拿不到裁剪版
+// （磁盘瘦不下来）。标记文件由更新器在依赖层安装成功后写入，只有真正装过才算数。
+const depsStatePath = () => path.join(runtimeDir, 'deps-state.json');
+const localDepsState = () => {
     try {
-        const lockPath = path.join(repoRoot, 'package-lock.json');
-        if (!fs.existsSync(lockPath)) return null;
-        return crypto.createHash('sha256').update(fs.readFileSync(lockPath)).digest('hex');
+        const raw = JSON.parse(fs.readFileSync(depsStatePath(), 'utf8'));
+        return { appliedHash: typeof raw.appliedHash === 'string' ? raw.appliedHash : null, appliedAt: raw.appliedAt || null };
     } catch {
-        return null;
+        return { appliedHash: null, appliedAt: null };
     }
 };
 // 媒体门控：按更新清单逐条 stat 安装目录的实际文件。
@@ -1023,21 +1026,24 @@ const prepareUpdate = async () => {
         : null;
 
     if (manifest) {
-        log(`更新清单：v${manifest.version}，依赖哈希 ${manifest.depsHash ? `${String(manifest.depsHash).slice(0, 12)}…` : '(无)'}，媒体 ${manifest.media?.count ?? 0} 个文件`);
-        // 依赖层：本地 package-lock 哈希与清单一致 → 跳过
+        log(`更新清单：v${manifest.version}，依赖 ${manifest.deps?.count ?? 0} 个文件 / ${((manifest.deps?.bytes || 0) / 1048576).toFixed(0)} MB，媒体 ${manifest.media?.count ?? 0} 个文件`);
+        // 依赖层：本地标记里的「已应用哈希」与清单一致 → 跳过
         if (manifest.assets?.deps) {
-            const localHash = localDepsHash();
-            if (localHash && manifest.depsHash && localHash === manifest.depsHash) {
-                log('依赖未变化（package-lock 哈希一致），跳过依赖层');
+            const state = localDepsState();
+            const target = manifest.deps?.filesHash || null;
+            if (state.appliedHash && target && state.appliedHash === target) {
+                log(`依赖已就位（哈希 ${target.slice(0, 12)}… 已应用过），跳过依赖层`);
             } else if (!depsAsset) {
                 log('⚠ 清单声明有依赖层，但 release 里未找到对应资产；依赖保持现状');
             } else {
-                log(`依赖有变化（本地 ${localHash ? localHash.slice(0, 12) : '无'}… → ${String(manifest.depsHash).slice(0, 12)}…），下载依赖层`);
+                log(`依赖需更新（本地 ${state.appliedHash ? `${state.appliedHash.slice(0, 12)}…` : '无标记'} → ${target ? `${target.slice(0, 12)}…` : '无'}），下载依赖层`);
                 const depsArchive = await downloadAsset({
                     name: depsAsset.name, url: depsAsset.browser_download_url, size: depsAsset.size, label: '依赖包', sumsText,
                 });
                 const depsRoot = await extractAsset(depsArchive, path.join(UPDATE_DIR, 'staging-deps'), '依赖包');
-                layers.push({ staging: depsRoot, mode: 'overwrite', label: '依赖' });
+                // prune：把本地 node_modules 里**不属于本包**的顶层依赖删掉。
+                // 覆盖安装只覆盖不删除，不清理则老用户磁盘瘦不下来（构建期依赖永远留着）。
+                layers.push({ staging: depsRoot, mode: 'overwrite', label: '依赖', prune: manifest.deps?.owned || [], depsHash: target });
             }
         }
         // 媒体层：按清单逐条 stat 实际文件，全部存在 → 跳过
@@ -1125,6 +1131,24 @@ const startUpdate = async () => {
     }
 };
 
+// 目录占用（用于依赖清理的释放量统计；失败返回 0，不影响清理本身）。
+const dirSize = (dir) => {
+    let total = 0;
+    const walk = (d) => {
+        let entries;
+        try { entries = fs.readdirSync(d, { withFileTypes: true }); } catch { return; }
+        for (const e of entries) {
+            const p = path.join(d, e.name);
+            try {
+                if (e.isDirectory()) walk(p);
+                else if (e.isFile()) total += fs.statSync(p).size;
+            } catch { /* 忽略 */ }
+        }
+    };
+    walk(dir);
+    return total;
+};
+
 // ── 更新器模式（--apply-update）：等旧进程退出后覆盖安装并重启 ──
 const runApplyUpdate = async () => {
     const staging = argv[argv.indexOf('--apply-update') + 1];
@@ -1201,6 +1225,61 @@ const runApplyUpdate = async () => {
             });
             copied = 1;
             write(`${layer.label}层覆盖安装完成`);
+            // 依赖层收尾：清理本地多余依赖（覆盖安装只覆盖不删除）+ 写「已应用」标记。
+            // prune 清单来自更新包内的 update-manifest.json（deps.owned），只删 node_modules
+            // 顶层那些**不在清单里**的条目——它们都是构建期依赖（antd/vite/typescript 等），
+            // 运行期不需要。@juting/* 永不删（工作区包，归程序层）。
+            if (layer.prune && Array.isArray(layer.prune)) {
+                const owned = new Set(layer.prune);
+                const nmDir = path.join(installDir, 'node_modules');
+                let removed = 0;
+                let freed = 0;
+                try {
+                    for (const name of fs.readdirSync(nmDir)) {
+                        if (name === '@juting' || name === '.cache' || name.startsWith('.')) continue;
+                        if (name.startsWith('@')) {
+                            // 作用域目录：逐个子包判断，全部多余才删整个作用域目录
+                            const scopeDir = path.join(nmDir, name);
+                            let keptAny = false;
+                            for (const sub of fs.readdirSync(scopeDir)) {
+                                if (owned.has(`${name}/${sub}`)) { keptAny = true; continue; }
+                                const target = path.join(scopeDir, sub);
+                                try {
+                                    freed += dirSize(target);
+                                    fs.rmSync(target, { recursive: true, force: true });
+                                    removed += 1;
+                                } catch { /* 占用中，跳过 */ }
+                            }
+                            if (!keptAny) {
+                                try { fs.rmdirSync(scopeDir); } catch { /* 非空则留着 */ }
+                            }
+                            continue;
+                        }
+                        if (owned.has(name)) continue;
+                        const target = path.join(nmDir, name);
+                        try {
+                            freed += dirSize(target);
+                            fs.rmSync(target, { recursive: true, force: true });
+                            removed += 1;
+                        } catch { /* 占用中，跳过 */ }
+                    }
+                    write(`依赖清理：移除 ${removed} 个多余包，释放 ${(freed / 1048576).toFixed(0)} MB`);
+                } catch (error) {
+                    write(`依赖清理失败（不影响本次更新）：${error.message}`);
+                }
+            }
+            if (layer.depsHash) {
+                try {
+                    fs.mkdirSync(path.dirname(depsStatePath()), { recursive: true });
+                    fs.writeFileSync(depsStatePath(), JSON.stringify({
+                        appliedHash: layer.depsHash,
+                        appliedAt: new Date().toISOString(),
+                    }, null, 1));
+                    write(`依赖标记已写入（${String(layer.depsHash).slice(0, 12)}…）`);
+                } catch (error) {
+                    write(`依赖标记写入失败：${error.message}`);
+                }
+            }
         } catch (error) {
             write(`${layer.label}层覆盖安装失败：${error.message}`);
         }

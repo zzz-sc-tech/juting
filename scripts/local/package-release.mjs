@@ -49,6 +49,7 @@ import { execSync, execFileSync } from 'node:child_process';
 import { createHash } from 'node:crypto';
 import { fileURLToPath } from 'node:url';
 import { makeUpdateZip } from './make-update-zip.mjs';
+import * as layerPaths from './layer-paths.mjs';
 
 const repositoryRoot = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..', '..');
 const outDir = path.join(repositoryRoot, '..', 'juting-release');
@@ -63,7 +64,20 @@ const argOf = (name) => {
     return index >= 0 ? process.argv[index + 1] : undefined;
 };
 const rootPackage = JSON.parse(fs.readFileSync(path.join(repositoryRoot, 'package.json'), 'utf8'));
-const version = argOf('--version') || rootPackage.version || '0.0.0';
+const versionArg = argOf('--version');
+const version = versionArg || rootPackage.version || '0.0.0';
+// ⚠️ 版本一致性守卫（2026-10-16 实测教训）：`--version` 只影响**归档命名**，不会改包内
+// package.json（那是从仓库根原样复制的）。若两者不一致，客户端装完读到的版本仍是旧的
+// → 判定「还有新版」→ **无限重复更新**。正式发版必须先改 package.json 再打包；
+// `--version` 仅用于测试构建，此时强制要求显式 --allow-version-mismatch 才放行。
+if (versionArg && versionArg !== rootPackage.version && !process.argv.includes('--allow-version-mismatch')) {
+    throw new Error(
+        `--version ${versionArg} 与 package.json 的 ${rootPackage.version} 不一致。\n`
+        + '包内 package.json 会保留旧版本号，客户端将陷入「无限重复更新」。\n'
+        + '正式发版：先把 package.json 改成目标版本再打包（不要用 --version）。\n'
+        + '仅测试构建：加 --allow-version-mismatch 显式放行。',
+    );
+}
 const skipBuild = process.argv.includes('--skip-build');
 const skipLauncher = process.argv.includes('--skip-launcher');
 const only = argOf('--only') || 'all';
@@ -124,19 +138,8 @@ const compress = (archiveName, sourceDir) => {
 // 程序包内写入 update-manifest.json（版本 / 依赖哈希 / 媒体清单 / 各资产名），
 // 客户端先下程序包 → 读清单 → 门控决定要不要下后两个包。详见 docs/增量更新方案.md。
 // 注意：lite 须在拷入 presets 前调用，full 在之后调用，否则两个包的课程内容会串。
-const normRel = (rel) => rel.split(path.sep).join('/');
-const underTemp = (rel) => { const n = normRel(rel); return n === 'temp' || n.startsWith('temp/'); };
-const underNodeModules = (rel) => { const n = normRel(rel); return n === 'node_modules' || n.startsWith('node_modules/'); };
-// 媒体路径判定必须同时认「目录本身」与「其下内容」——collectEntries 对目录调用 skip，
-// 若只匹配 `presets/<key>/media/`（带尾斜杠），`presets/cet6/media` 这个目录名不匹配，
-// 整棵子树会被当非媒体跳过（实测 media.zip 打成 0 个文件的原因）。
-const isMediaPath = (rel) => /^presets\/[^/]+\/media(\/|$)/.test(normRel(rel));
-// 媒体树的祖先目录（presets、presets/<key>）：媒体包要保留它们才能承载子树。
-const isMediaAncestor = (rel) => { const n = normRel(rel); return n === 'presets' || /^presets\/[^/]+$/.test(n); };
-// 注意 makeUpdateZip 的 skip 语义 =「返回 true 即排除」（与 copyDirFiltered 相反）。
-const programSkip = (rel) => underTemp(rel) || underNodeModules(rel) || isMediaPath(rel);
-const depsSkip = (rel) => !underNodeModules(rel);
-const mediaSkip = (rel) => !(isMediaPath(rel) || isMediaAncestor(rel));
+// 分层路径判定抽在 layer-paths.mjs（打包器与 temp/layer-skip-test.mjs 共用，防漂移）。
+const { programSkip, depsSkip, mediaSkip, normRel } = layerPaths;
 
 const makeZip = (assetName, skip) => {
     const zipPath = path.join(outDir, assetName);
@@ -189,11 +192,59 @@ const writeUpdateManifest = (label) => {
     const depsHash = fs.existsSync(lockPath)
         ? createHash('sha256').update(fs.readFileSync(lockPath)).digest('hex')
         : null;
+    // 依赖层清单（2026-10-16）：裁剪后不能再用 package-lock 哈希做门控——
+    // 裁剪只改「打包进包的内容」，不改 lock，老用户会因此判定「依赖没变」而拿不到裁剪版。
+    // 改为：deps.filesHash = 依赖包内文件清单（rel+size）的哈希，客户端用本地标记文件
+    // 里记录的「上次已应用的 filesHash」比对（标记由更新器在安装成功后写入）。
+    // deps.owned = 本包拥有的顶层包名清单；更新器据此**清理**本地多余的旧依赖
+    // （覆盖安装不删文件，不清理则老用户磁盘瘦不下来）。
+    const depsDir = path.join(stage, 'node_modules');
+    const depsEntries = [];
+    const depsOwned = [];
+    if (fs.existsSync(depsDir)) {
+        for (const name of fs.readdirSync(depsDir).sort()) {
+            if (name === '@juting') continue;   // 工作区包归程序层
+            if (name.startsWith('@')) {
+                for (const sub of fs.readdirSync(path.join(depsDir, name)).sort()) {
+                    depsOwned.push(`${name}/${sub}`);
+                    const walk = (dir) => {
+                        for (const n of fs.readdirSync(dir).sort()) {
+                            const abs = path.join(dir, n);
+                            const st = fs.statSync(abs);
+                            if (st.isDirectory()) { walk(abs); continue; }
+                            depsEntries.push({ rel: normRel(path.relative(depsDir, abs)), size: st.size });
+                        }
+                    };
+                    walk(path.join(depsDir, name, sub));
+                }
+            } else {
+                depsOwned.push(name);
+                const walk = (dir) => {
+                    for (const n of fs.readdirSync(dir).sort()) {
+                        const abs = path.join(dir, n);
+                        const st = fs.statSync(abs);
+                        if (st.isDirectory()) { walk(abs); continue; }
+                        depsEntries.push({ rel: normRel(path.relative(depsDir, abs)), size: st.size });
+                    }
+                };
+                walk(path.join(depsDir, name));
+            }
+        }
+    }
+    const depsFilesHash = createHash('sha256')
+        .update(depsEntries.map((e) => `${e.rel}\n${e.size}`).join('\n'))
+        .digest('hex');
     const manifest = {
         schema: 1,
         version,
         label,
         depsHash,
+        deps: {
+            filesHash: depsFilesHash,
+            count: depsEntries.length,
+            bytes: depsEntries.reduce((sum, entry) => sum + entry.size, 0),
+            owned: depsOwned,
+        },
         media: {
             count: mediaEntries.length,
             bytes: mediaEntries.reduce((sum, entry) => sum + entry.size, 0),
@@ -206,7 +257,7 @@ const writeUpdateManifest = (label) => {
         },
     };
     fs.writeFileSync(path.join(stage, 'update-manifest.json'), `${JSON.stringify(manifest)}\n`, 'utf8');
-    log(`更新清单：依赖哈希 ${depsHash ? `${depsHash.slice(0, 12)}…` : '(无 lock)'}，媒体 ${mediaEntries.length} 个文件 / ${(manifest.media.bytes / 1024 / 1024).toFixed(0)} MB`);
+    log(`更新清单：依赖 ${depsOwned.length} 包 / ${depsEntries.length} 文件 / ${(manifest.deps.bytes / 1024 / 1024).toFixed(0)} MB（哈希 ${depsFilesHash.slice(0, 12)}…），媒体 ${mediaEntries.length} 个文件 / ${(manifest.media.bytes / 1024 / 1024).toFixed(0)} MB`);
     return manifest;
 };
 
@@ -345,34 +396,89 @@ copyInto('backend/dist');
 copyInto('web-app/dist');
 copyInto('admin/dist');
 
-// node_modules：裁掉缓存与 mobile-app 残留依赖（工作区已移除，仅安装现场残留）。
-// 注意 exponential-backoff 是后端在用的通用退避库，不在 Expo 前缀误伤范围内（正则用 (-|/) 收边）。
-log('复制 node_modules（裁剪）…');
-const staleMobilePatterns = [
-    /^expo(-|\/|$)/, /^@expo\//, /^react-native(-|\/|$)/, /^@react-native\//,
-    /^metro(-|\/|$)/, /^hermes-(compiler|parser|estree)$/,
-];
-const staleMobileExact = new Set(['babel-preset-expo', 'babel-plugin-react-native-web', 'react-devtools-core']);
-const isStaleMobileDep = (topSegment) => {
-    const name = topSegment.split(path.sep).join('/');
-    return staleMobileExact.has(name) || staleMobilePatterns.some((pattern) => pattern.test(name));
+// node_modules：按「运行期依赖闭包」白名单裁剪（2026-10-16）。
+// 背景：node_modules 解压后 365MB，其中约 250MB 是只在构建期用的东西（antd/vite 插件/
+// typescript/eslint/expo 残留等），而前端与后台都以**预编译 dist** 提供服务，运行期不需要。
+// 改用白名单：从真正的运行入口（backend 的 dependencies、packages/* 的 dependencies、
+// 以及 vite——start-all 用它 preview 前端 dist）出发递归展开依赖图，只保留闭包内的包。
+// 白名单制优于黑名单：新装的无关依赖默认被排除，不会像黑名单那样越漏越多。
+// ⚠️ 实测约束（改这里前务必重测）：
+//   - vite 8 顶层就 import rolldown（缺了 preview 直接 ERR_MODULE_NOT_FOUND），必须保留；
+//   - esbuild 缺了 preview 仍正常（实测），但它在 vite 的依赖里，闭包会带上，无害；
+//   - resend（邮件服务，源码仅 env 配置项、零 require）与 mysql v2（已废弃，实际用 mysql2，
+//     sequelize 走 _loadDialectModule("mysql2")）从入口摘掉，可连带裁掉 prettier 等一串。
+log('复制 node_modules（按运行期依赖闭包裁剪）…');
+
+// 运行期不用的入口依赖（实测零引用，见 HANDOFF）
+const ENTRY_EXCLUDE = new Set(['resend', 'mysql']);
+// 解析 node_modules 里的包（支持嵌套与 @scope）
+const readInstalledPkg = (name, fromDir) => {
+    const candidates = [];
+    if (fromDir) candidates.push(path.join(fromDir, 'node_modules', name, 'package.json'));
+    candidates.push(path.join(repositoryRoot, 'node_modules', name, 'package.json'));
+    for (const c of candidates) {
+        try {
+            if (fs.existsSync(c)) return { dir: path.dirname(c), json: JSON.parse(fs.readFileSync(c, 'utf8')) };
+        } catch { /* 忽略损坏的 package.json */ }
+    }
+    return null;
 };
+const collectEntryDeps = (dir) => {
+    try {
+        const p = JSON.parse(fs.readFileSync(path.join(dir, 'package.json'), 'utf8'));
+        return [...Object.keys(p.dependencies || {}), ...Object.keys(p.optionalDependencies || {})]
+            .filter((d) => !ENTRY_EXCLUDE.has(d));
+    } catch {
+        return [];
+    }
+};
+const runtimeRoots = new Set([
+    ...collectEntryDeps(path.join(repositoryRoot, 'backend')),
+    ...fs.readdirSync(path.join(repositoryRoot, 'packages')).flatMap((pkg) => collectEntryDeps(path.join(repositoryRoot, 'packages', pkg))),
+    // start-all.mjs 用 vite preview 服务前端 dist；而 vite preview 会**读取
+    // web-app/vite.config.ts 与 admin/vite.config.ts**，两个 config 都 import
+    // '@vitejs/plugin-react'——所以这个包虽属构建期，却是「启动必需」。
+    // ⚠️ 实测教训：只把 vite 列入闭包不够，漏掉 plugin-react 会让前端 preview
+    // 报 UNRESOLVED_IMPORT 并返回 HTTP 000（后端却是好的，容易误判）。
+    'vite',
+    '@vitejs/plugin-react',
+]);
+const runtimeKeep = new Set();
+{
+    const queue = [...runtimeRoots];
+    while (queue.length) {
+        const name = queue.shift();
+        if (runtimeKeep.has(name)) continue;
+        runtimeKeep.add(name);
+        const found = readInstalledPkg(name, repositoryRoot);
+        if (!found) continue;
+        for (const key of ['dependencies', 'optionalDependencies', 'peerDependencies']) {
+            for (const dep of Object.keys(found.json[key] || {})) {
+                if (!runtimeKeep.has(dep)) queue.push(dep);
+            }
+        }
+    }
+}
+log(`  运行期闭包：${runtimeKeep.size} 个包（入口 ${runtimeRoots.size} 个）`);
 copyInto('node_modules', (rel) => {
     const segments = rel.split(path.sep);
     if (segments[0] === '.cache') return true;
+    // ⚠️ 作用域容器目录（只有一段且以 @ 开头，如 `@colors`、`@juting`）必须放行：
+    // 它的名字不是任何真实包名，若不显式放行会落到闭包判定被排除 →
+    // 整棵子树被切掉（实测踩过两次：@juting/domain 缺失、@colors/colors 缺失）。
+    if (segments.length === 1 && segments[0].startsWith('@')) return false;
     const top = segments[0].startsWith('@')
         ? segments.slice(0, 2).join(path.sep)
         : segments[0];
-    // ⚠️ 本过滤器语义 =「返回 true 即排除」（copyDirFiltered 内部取反）。
-    // 工作区在 node_modules/@juting/* 放的是符号链接，dereference 复制会实体化成整棵
-    // 子包目录：@juting/admin 拖进 admin/node_modules/@ant-design/charts（~262MB）、
-    // @juting/web-app 拖进 web-app/node_modules/react-icons（~85MB），两者运行时都不
-    // 需要（start-all 用根 node_modules/vite 预览前端 dist；后端只动态 import
-    // @juting/domain）→ 整棵排除。@juting/domain 必须保留；根级 admin/、web-app/
-    // 不受影响（其 dist/src 由上方 copyInto 单独复制）。
     const topName = top.split(path.sep).join('/');
+    // ⚠️ 本过滤器语义 =「返回 true 即排除」（copyDirFiltered 内部取反）。
+    // @juting/admin 与 @juting/web-app 是构建期用的（其 dist/src 由上方 copyInto 单独复制），
+    // 且在 node_modules 里是符号链接，dereference 会展开成 187MB / 93MB 的整棵子树 → 排除。
     if (topName === '@juting/admin' || topName === '@juting/web-app') return true;
-    return isStaleMobileDep(top);
+    // 其余工作区包（@juting/domain 等）运行期要用，保留。
+    if (topName.startsWith('@juting/')) return false;
+    // 闭包外的包一律排除（白名单制）。
+    return !runtimeKeep.has(topName);
 });
 
 // 便携 MySQL：裁掉调试符号、C 开发库、日文 mecab 词典、debug 插件与头文件，
