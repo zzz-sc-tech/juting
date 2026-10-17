@@ -4,6 +4,7 @@ import { DashboardPage } from './components/dashboard/DashboardPage'
 import { SettingsPage } from './components/SettingsPage'
 import { StudyPage } from './features/study/StudyPage'
 import { GlobalReviewPage } from './pages/GlobalReviewPage'
+import { SearchPage } from './pages/SearchPage'
 import { VocabularyPage } from './pages/VocabularyPage'
 
 function App() {
@@ -16,6 +17,7 @@ function App() {
       <Route path="/courses/:seriesId/chapters/:exerciseId" element={<StudyPage />} />
       <Route path="/review" element={<GlobalReviewPage />} />
       <Route path="/vocabulary" element={<VocabularyPage />} />
+      <Route path="/search" element={<SearchPage />} />
       <Route path="/settings" element={<SettingsPage />} />
       <Route path="*" element={<Navigate to="/home" replace />} />
     </Routes>

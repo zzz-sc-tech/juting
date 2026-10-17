@@ -9,6 +9,7 @@ import { useStudySession } from '../StudySessionContext'
 import { useActiveAnchorId, useJumpToAnchor } from '../hooks/useAnchorNavigation'
 import { useStageNavigation } from '../hooks/useStageNavigation'
 import { setPendingWaveLoop } from '../../../lib/waveHandoff'
+import { registerVocabWords, unregisterVocabWord } from '../../../lib/vocabReview'
 import { loadUserPrefs, persistUserPrefs } from '../../../lib/userPrefs'
 
 // 精听容器：正文中「上一句/下一句」移动必须用 studyExercise.lines 寻址——
@@ -170,6 +171,8 @@ export function IntensiveContainer() {
       onGoWaveLoop={goWaveLoop}
       onAddVocabulary={(words) => {
         if (!selectedLine) return
+        // 复习调度登记：新收藏的词按默认间隔明天才进复习队列（见 vocabReview.ts）
+        registerVocabWords(words)
         updateActiveProgress((current) => {
           const vocabulary = { ...current.vocabulary }
           for (const word of words) {
@@ -183,6 +186,8 @@ export function IntensiveContainer() {
         })
       }}
       onRemoveVocabulary={(word) => {
+        // 同步清掉复习调度记录（同词再收藏会重新排队）
+        unregisterVocabWord(word)
         updateActiveProgress((current) => {
           // 侧栏的「已收藏」判定忽略大小写，删除也必须同样忽略，否则按钮点了没反应
           const key = Object.keys(current.vocabulary ?? {}).find(

@@ -8,6 +8,7 @@ export const dashboardMessages = {
     'dashboard.stat.streak': '连续学习',
     'dashboard.stat.total': '累计掌握',
     'dashboard.stat.courses': '在学课程',
+    'dashboard.stat.listenLabel': '累计所听 · 今日 {{today}} 分钟',
     'dashboard.stat.unit.sentences': '句',
     'dashboard.stat.unit.days': '天',
     'dashboard.stat.unit.courses': '门',
@@ -29,4 +30,8 @@ export const dashboardMessages = {
     'dashboard.examCount': '累计 {{count}} 场',
     'dashboard.examEmpty': '还没考过——任意真题课 → 模拟实战',
     'dashboard.examLast': '最近：{{title}} {{score}}/{{total}}',
+    'dashboard.wrong.title': '你最常错的题',
+    'dashboard.wrong.item': '{{title}} · 第 {{no}} 题',
+    'dashboard.wrong.meta': '错 {{wrong}} 次 / 考过 {{attempts}} 场 · Section {{section}}',
+    'dashboard.wrong.empty': '还没有反复错的题——保持！',
 }

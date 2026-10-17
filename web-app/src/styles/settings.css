@@ -568,3 +568,322 @@
   font-size: 13px;
   margin-top: 12px;
 }
+
+/* 数据备份（导出/导入） */
+.settings-data-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-top: 10px;
+}
+
+.settings-data-button {
+  align-items: center;
+  background: var(--bg-sunken);
+  border: 1px solid var(--line-strong);
+  border-radius: var(--radius-sm);
+  color: var(--ink);
+  cursor: pointer;
+  display: inline-flex;
+  font-size: 13px;
+  gap: 6px;
+  padding: 7px 14px;
+}
+
+.settings-data-button:hover {
+  border-color: var(--accent);
+  color: var(--accent-ink);
+}
+
+.settings-data-button.primary {
+  background: var(--accent);
+  border-color: var(--accent);
+  color: #ffffff;
+}
+
+.settings-data-import-choose {
+  border-top: 1px dashed var(--line);
+  font-size: 13px;
+  margin-top: 14px;
+  padding-top: 12px;
+}
+
+.settings-data-ok {
+  color: var(--accent-ink);
+  font-size: 13px;
+  margin-top: 10px;
+}
+
+.settings-data-error {
+  color: var(--warning);
+  font-size: 13px;
+  margin-top: 10px;
+}
+
+/* 生词复习调度 */
+.vocab-review-entry {
+  margin-bottom: 12px;
+}
+
+.vocab-review-start {
+  background: var(--accent);
+  border: none;
+  border-radius: var(--radius-md);
+  color: #ffffff;
+  cursor: pointer;
+  font-size: 14px;
+  font-weight: 500;
+  padding: 9px 18px;
+}
+
+.vocab-review-start:hover {
+  background: var(--accent-strong);
+}
+
+.vocab-review-none {
+  color: var(--ink-3);
+  font-size: 13px;
+}
+
+.vocab-review-card {
+  background: var(--surface);
+  border: 1px solid var(--line-strong);
+  border-radius: var(--radius-md);
+  margin-bottom: 14px;
+  padding: 16px 18px;
+}
+
+.vocab-review-head {
+  align-items: baseline;
+  color: var(--ink-3);
+  display: flex;
+  font-size: 12.5px;
+  justify-content: space-between;
+  margin-bottom: 10px;
+}
+
+.vocab-review-quit {
+  background: none;
+  border: none;
+  color: var(--ink-3);
+  cursor: pointer;
+  font-size: 12.5px;
+  text-decoration: underline;
+}
+
+.vocab-review-course {
+  color: var(--ink-3);
+  font-size: 12.5px;
+  margin: 0 0 6px;
+}
+
+.vocab-review-context {
+  color: var(--ink);
+  font-family: var(--font-serif);
+  font-size: 17px;
+  line-height: 1.6;
+  margin: 0 0 12px;
+}
+
+.vocab-review-context-full {
+  color: var(--ink-2);
+  font-family: var(--font-serif);
+  font-size: 14px;
+  margin: 6px 0 12px;
+}
+
+.vocab-review-answer {
+  align-items: baseline;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin: 0 0 4px;
+}
+
+.vocab-review-answer strong {
+  color: var(--accent-ink);
+  font-size: 17px;
+}
+
+.vocab-review-meaning {
+  color: var(--ink-2);
+  font-size: 13.5px;
+}
+
+.vocab-review-actions {
+  display: flex;
+  gap: 10px;
+  margin-top: 12px;
+}
+
+.vocab-review-btn {
+  border-radius: var(--radius-sm);
+  cursor: pointer;
+  font-size: 13.5px;
+  padding: 8px 18px;
+  border: 1px solid var(--line-strong);
+  background: var(--bg-sunken);
+  color: var(--ink);
+}
+
+.vocab-review-btn.primary {
+  background: var(--accent);
+  border-color: var(--accent);
+  color: #ffffff;
+}
+
+.vocab-review-btn.known {
+  background: var(--accent);
+  border-color: var(--accent);
+  color: #ffffff;
+}
+
+.vocab-review-btn.unknown {
+  background: var(--warning-soft);
+  border-color: var(--warning);
+  color: var(--warning);
+}
+
+.vocab-review-finished {
+  color: var(--accent-ink);
+  font-size: 14px;
+  margin: 0;
+}
+
+.vocab-review-badge {
+  border-radius: var(--radius-pill);
+  font-size: 11px;
+  line-height: 1;
+  padding: 3px 8px;
+}
+
+.vocab-review-badge.mastered {
+  background: var(--accent-soft-2);
+  border: 1px solid var(--line);
+  color: var(--accent-ink);
+}
+
+.vocab-review-badge.today {
+  background: var(--warning-soft);
+  border: 1px solid var(--warning);
+  color: var(--warning);
+}
+
+.vocab-review-badge.later {
+  background: var(--bg-sunken);
+  border: 1px solid var(--line);
+  color: var(--ink-3);
+}
+
+/* 跨课搜索 */
+.search-box {
+  align-items: center;
+  background: var(--surface);
+  border: 1px solid var(--line-strong);
+  border-radius: var(--radius-md);
+  display: flex;
+  gap: 8px;
+  margin-bottom: 14px;
+  padding: 9px 12px;
+}
+
+.search-box-icon {
+  color: var(--ink-3);
+  flex-shrink: 0;
+}
+
+.search-box-input {
+  background: none;
+  border: none;
+  color: var(--ink);
+  flex: 1;
+  font-size: 14px;
+  outline: none;
+}
+
+.search-box-clear {
+  background: none;
+  border: none;
+  color: var(--ink-3);
+  cursor: pointer;
+  padding: 2px;
+}
+
+.search-status {
+  color: var(--ink-3);
+  font-size: 13px;
+  margin: 0 0 12px;
+}
+
+.search-status.error {
+  color: var(--warning);
+}
+
+.search-results {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+}
+
+.search-group-title {
+  color: var(--ink-2);
+  font-size: 13px;
+  font-weight: 600;
+  margin: 0 0 8px;
+}
+
+.search-list {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.search-row {
+  background: var(--surface);
+  border: 1px solid var(--line);
+  border-radius: var(--radius-sm);
+  color: var(--ink);
+  cursor: pointer;
+  display: flex;
+  flex-direction: column;
+  font: inherit;
+  gap: 2px;
+  padding: 9px 12px;
+  text-align: left;
+  width: 100%;
+}
+
+.search-row:hover {
+  border-color: var(--accent);
+}
+
+.search-row mark {
+  background: var(--accent-soft);
+  color: var(--accent-ink);
+  padding: 0 1px;
+}
+
+.search-row-course {
+  color: var(--ink-3);
+  font-size: 12px;
+}
+
+.search-row-text {
+  color: var(--ink);
+  font-family: var(--font-serif);
+  font-size: 14.5px;
+  line-height: 1.5;
+}
+
+.search-vocab-word {
+  color: var(--accent-ink);
+  font-weight: 600;
+}
+
+.search-vocab-meaning {
+  color: var(--ink-2);
+  font-size: 13px;
+}

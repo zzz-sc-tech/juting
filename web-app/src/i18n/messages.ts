@@ -8,6 +8,7 @@ import { examStageMessages } from './messages/examStage'
 import { extensiveStageMessages } from './messages/extensiveStage'
 import { globalReviewMessages } from './messages/globalReview'
 import { intensiveStageMessages } from './messages/intensiveStage'
+import { searchMessages } from './messages/search'
 import { settingsMessages } from './messages/settings'
 import { stageMessages } from './messages/studyStages'
 import { studyStatesMessages } from './messages/studyStates'
@@ -27,6 +28,7 @@ const messages = {
   ...extensiveStageMessages,
   ...globalReviewMessages,
   ...intensiveStageMessages,
+  ...searchMessages,
   ...settingsMessages,
   ...stageMessages,
   ...studyStatesMessages,

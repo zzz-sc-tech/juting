@@ -665,6 +665,7 @@ export function ExamStage({
             queue={drillQueue}
             t={t}
           />}
+          <ExamHistoryPanel exerciseId={exercise.id} t={t} />
           <ol className="exam-review-list">
             {timing.map((item) => {
               const mine = answers[item.question.n]
@@ -825,6 +826,102 @@ function ExamDrill({
           </div>
         </>
       )}
+    </div>
+  )
+}
+
+
+/**
+ * 单课成绩历史（交卷后展示）：历场 日期|得分|错题|未答|Section 分布 + 得分走势折线。
+ * 折线手写 SVG（复用仪表盘 MasteryChart 的先例），项目不引图表库。
+ */
+function ExamHistoryPanel({
+  exerciseId,
+  t,
+}: {
+  exerciseId: number
+  t: (key: MessageKey, values?: Record<string, string | number>) => string
+}) {
+  const attempts = useMemo(() => getAttempts(exerciseId), [exerciseId])
+
+  if (attempts.length === 0) {
+    return (
+      <div className="exam-history">
+        <p className="exam-history-empty">{t('exam.history.empty')}</p>
+      </div>
+    )
+  }
+
+  return (
+    <div className="exam-history">
+      <strong className="exam-history-title">{t('exam.history.title')}</strong>
+      <ExamHistoryTrend attempts={attempts} />
+      <ul className="exam-history-list">
+        {[...attempts].reverse().map((attempt, index) => {
+          const date = new Date(attempt.date)
+          const pad = (n: number) => String(n).padStart(2, '0')
+          const dateLabel = Number.isNaN(date.getTime())
+            ? attempt.date
+            : `${date.getFullYear()}-${pad(date.getMonth() + 1)}-${pad(date.getDate())} ${pad(date.getHours())}:${pad(date.getMinutes())}`
+          return (
+            <li className="exam-history-row" key={`${attempt.date}-${index}`}>
+              <span className="exam-history-date">{dateLabel}</span>
+              <span className="exam-history-score">{t('exam.history.row', { score: attempt.score, total: attempt.total })}</span>
+              <span className="exam-history-meta">
+                {t('exam.history.wrongCount', {
+                  wrong: Array.isArray(attempt.wrong) ? attempt.wrong.length : 0,
+                  unanswered: attempt.unanswered,
+                })}
+              </span>
+              <span className="exam-history-sections">
+                {t('exam.history.sections', {
+                  a: attempt.wrongBySection?.A ?? 0,
+                  b: attempt.wrongBySection?.B ?? 0,
+                  c: attempt.wrongBySection?.C ?? 0,
+                })}
+              </span>
+            </li>
+          )
+        })}
+      </ul>
+    </div>
+  )
+}
+
+/** 得分走势（score/total 百分比），手写 SVG 折线。 */
+function ExamHistoryTrend({ attempts }: { attempts: Array<{ date: string; score: number; total: number }> }) {
+  const { t } = useLanguage()
+  if (attempts.length < 2) {
+    return null
+  }
+  const width = 560
+  const height = 110
+  const padX = 18
+  const padTop = 12
+  const padBottom = 14
+  const percentOf = (attempt: { score: number; total: number }) =>
+    attempt.total > 0 ? Math.max(0, Math.min(100, (attempt.score / attempt.total) * 100)) : 0
+  const stepX = attempts.length > 1 ? (width - padX * 2) / (attempts.length - 1) : 0
+  const yOf = (percent: number) => padTop + (1 - percent / 100) * (height - padTop - padBottom)
+  const coords = attempts.map((attempt, index) => ({
+    x: padX + index * stepX,
+    y: yOf(percentOf(attempt)),
+    key: `${attempt.date}-${index}`,
+  }))
+  const linePath = coords
+    .map((coord, index) => `${index === 0 ? 'M' : 'L'}${coord.x.toFixed(1)},${coord.y.toFixed(1)}`)
+    .join(' ')
+
+  return (
+    <div className="exam-history-trend">
+      <span className="exam-history-trend-label">{t('exam.history.trend')}</span>
+      <svg aria-hidden="true" preserveAspectRatio="none" role="img" viewBox={`0 0 ${width} ${height}`}>
+        <line className="exam-history-trend-grid" x1={padX} x2={width - padX} y1={yOf(50)} y2={yOf(50)} />
+        <path className="exam-history-trend-line" d={linePath} />
+        {coords.map((coord) => (
+          <circle className="exam-history-trend-dot" cx={coord.x} cy={coord.y} key={coord.key} r={3.5} />
+        ))}
+      </svg>
     </div>
   )
 }

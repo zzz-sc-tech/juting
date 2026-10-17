@@ -379,3 +379,47 @@
   background: var(--accent);
   color: var(--bg);
 }
+
+/* 反复错题卡 */
+.dashboard-wrong-list {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.dashboard-wrong-list button {
+  align-items: center;
+  background: none;
+  border: 0;
+  cursor: pointer;
+  display: flex;
+  font: inherit;
+  gap: 8px;
+  padding: 5px 6px;
+  text-align: left;
+  width: 100%;
+}
+
+.dashboard-wrong-list button:hover .dashboard-course-title {
+  color: var(--accent);
+}
+
+.dashboard-wrong-icon {
+  color: var(--warning);
+  flex-shrink: 0;
+}
+
+.dashboard-wrong-main {
+  display: flex;
+  flex-direction: column;
+  gap: 1px;
+  min-width: 0;
+}
+
+.dashboard-wrong-meta {
+  color: var(--ink-3);
+  font-size: 12px;
+}

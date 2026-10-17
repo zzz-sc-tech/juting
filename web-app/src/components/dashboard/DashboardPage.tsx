@@ -1,10 +1,15 @@
-import { Play, ChevronRight } from 'lucide-react'
+import { Play, ChevronRight, CircleAlert } from 'lucide-react'
 import { useEffect, useMemo, useState } from 'react'
 import { useNavigate } from 'react-router-dom'
 import { useLanguage } from '../../i18n/LanguageProvider'
-import { getLatestByCourse } from '../../lib/examHistory'
+import { getAllAttempts, getLatestByCourse } from '../../lib/examHistory'
+import { aggregateWrong } from '../../lib/wrongStats'
 import { useCatalog } from '../../hooks/useCatalog'
 import { useCategoryExercises } from '../../hooks/useCategoryExercises'
+import {
+  formatListenDuration,
+  loadListenTime,
+} from '../../lib/listenTime'
 import {
   loadDailyGoal,
   loadLocalActivity,
@@ -61,6 +66,8 @@ export function DashboardPage() {
   const [store] = useState<StudyStore>(loadStoredStudyStore)
   const [dailyGoal] = useState(loadDailyGoal)
   const [activity] = useState<LocalDailyActivity>(loadLocalActivity)
+  // 所听时长（localStorage 落盘值；进入首页时重新读一次，够新鲜）
+  const [listenTime] = useState(loadListenTime)
   const { catalog } = useCatalog(undefined)
   const { exercisesByCategory, loadExercises } = useCategoryExercises(undefined)
 
@@ -100,6 +107,8 @@ export function DashboardPage() {
 
   const todayKey = localDayString()
   const todayCount = activity[todayKey] ?? 0
+  const todayListenMs = listenTime.byDay[todayKey] ?? 0
+  const listenDurationLabel = formatListenDuration(listenTime.totalMs)
   const streak = useMemo(() => calcStreak(activity), [activity])
   const totalMastered = useMemo(
     () =>
@@ -134,6 +143,18 @@ export function DashboardPage() {
       ? Math.round((recent.reduce((sum, entry) => sum + entry.attempt.score, 0) / recent.length) * 10) / 10
       : 0
     return { entries, avg, count: entries.length, last: entries[0] ?? null }
+  }, [allExercises])
+
+  // 反复错题：历次实战 wrong[] 跨场次累计，取最常错的 5 题（需考过 2 次以上才算"反复"）
+  const wrongTop = useMemo(() => {
+    const all = getAllAttempts()
+    const stats = aggregateWrong(all)
+      .filter((stat) => stat.attemptCount >= 2 || stat.wrongCount >= 2)
+      .slice(0, 5)
+    return stats.map((stat) => {
+      const exercise = allExercises.find((item) => item.id === stat.courseId)
+      return { ...stat, title: exercise?.title ?? `#${stat.courseId}`, categoryId: exercise?.categoryId ?? 1 }
+    })
   }, [allExercises])
 
   const chart = useMemo(() => {
@@ -186,6 +207,12 @@ export function DashboardPage() {
               <div className="dashboard-stat">
                 <strong className="dashboard-stat-value">{activeCourseCount}</strong>
                 <span className="dashboard-stat-label">{t('dashboard.stat.courses')}</span>
+              </div>
+              <div className="dashboard-stat">
+                <strong className="dashboard-stat-value">{listenDurationLabel}</strong>
+                <span className="dashboard-stat-label">
+                  {t('dashboard.stat.listenLabel', { today: Math.floor(todayListenMs / 60_000) })}
+                </span>
               </div>
             </section>
 
@@ -267,6 +294,37 @@ export function DashboardPage() {
                 </ul>
               ) : (
                 <p className="dashboard-empty">{t('dashboard.examEmpty')}</p>
+              )}
+            </section>
+
+            <section className="dashboard-card dashboard-wrong-card" aria-label={t('dashboard.wrong.title')}>
+              <div className="dashboard-card-head">
+                <h2>{t('dashboard.wrong.title')}</h2>
+              </div>
+              {wrongTop.length > 0 ? (
+                <ul className="dashboard-wrong-list">
+                  {wrongTop.map((stat) => (
+                    <li key={`${stat.courseId}:${stat.questionNo}`}>
+                      <button
+                        onClick={() => navigate(`/courses/${stat.categoryId}/chapters/${stat.courseId}?stage=intensive`)}
+                        type="button"
+                      >
+                        <CircleAlert size={14} aria-hidden="true" className="dashboard-wrong-icon" />
+                        <span className="dashboard-wrong-main">
+                          <span className="dashboard-course-title">
+                            {t('dashboard.wrong.item', { title: stat.title, no: stat.questionNo })}
+                          </span>
+                          <span className="dashboard-wrong-meta">
+                            {t('dashboard.wrong.meta', { wrong: stat.wrongCount, attempts: stat.attemptCount, section: stat.section })}
+                          </span>
+                        </span>
+                        <ChevronRight size={14} aria-hidden="true" />
+                      </button>
+                    </li>
+                  ))}
+                </ul>
+              ) : (
+                <p className="dashboard-empty">{t('dashboard.wrong.empty')}</p>
               )}
             </section>
 

@@ -592,3 +592,89 @@
   font-weight: 600;
   margin: 0;
 }
+
+/* 成绩历史（交卷后） */
+.exam-history {
+  border-top: 1px solid var(--line);
+  margin-top: 18px;
+  padding-top: 14px;
+}
+
+.exam-history-title {
+  color: var(--ink);
+  display: block;
+  font-size: 14px;
+  margin-bottom: 10px;
+}
+
+.exam-history-empty {
+  color: var(--ink-3);
+  font-size: 13px;
+}
+
+.exam-history-trend {
+  margin-bottom: 10px;
+}
+
+.exam-history-trend-label {
+  color: var(--ink-3);
+  display: block;
+  font-size: 12px;
+  margin-bottom: 4px;
+}
+
+.exam-history-trend svg {
+  display: block;
+  width: 100%;
+}
+
+.exam-history-trend-grid {
+  stroke: var(--line);
+  stroke-dasharray: 4 4;
+  stroke-width: 1;
+}
+
+.exam-history-trend-line {
+  fill: none;
+  stroke: var(--accent);
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  stroke-width: 2;
+}
+
+.exam-history-trend-dot {
+  fill: var(--surface);
+  stroke: var(--accent);
+  stroke-width: 1.5;
+}
+
+.exam-history-list {
+  display: flex;
+  flex-direction: column;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.exam-history-row {
+  align-items: baseline;
+  border-bottom: 1px dashed var(--line);
+  color: var(--ink-2);
+  display: flex;
+  flex-wrap: wrap;
+  font-size: 12.5px;
+  gap: 4px 14px;
+  padding: 6px 2px;
+}
+
+.exam-history-date {
+  color: var(--ink-3);
+  font-variant-numeric: tabular-nums;
+  min-width: 130px;
+}
+
+.exam-history-score {
+  color: var(--ink);
+  font-variant-numeric: tabular-nums;
+  font-weight: 600;
+}

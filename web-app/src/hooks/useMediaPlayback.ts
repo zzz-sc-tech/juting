@@ -1,4 +1,5 @@
 import { useCallback, useEffect, useRef, useState, type RefObject } from 'react'
+import { accumulateListenTime, flushListenTime } from '../lib/listenTime'
 
 type UseMediaPlaybackOptions = {
   mediaRef: RefObject<HTMLMediaElement | null>
@@ -77,6 +78,43 @@ export function useMediaPlayback({
     },
     [],
   )
+
+  // ---- 所听时长累计（任务：首页「所听时长」统计）----
+  // 在本 hook 的播放状态上按墙钟时间累计（不乘倍速），复用这一层而不是另起采集体系。
+  // 细节：
+  // - 只在 isPlayingRef === true 时累加（音频加载中/暂停/ended 都不计）
+  // - document.hidden 时停止累加（切走标签页不算听），且跳过与上一次 tick 间隔
+  //   过大的补账（浏览器后台节流会把 interval 拉长到分钟级，回来一次性补一大段会虚高）
+  // - 落盘交给 listenTime 模块节流（15 秒一次），这里只在暂停/卸载时强制 flush
+  useEffect(() => {
+    let lastTickAt = Date.now()
+    const timer = window.setInterval(() => {
+      const now = Date.now()
+      const delta = now - lastTickAt
+      lastTickAt = now
+      if (document.hidden || delta > 5000) {
+        return
+      }
+      if (isPlayingRef.current) {
+        accumulateListenTime(delta)
+      }
+    }, 1000)
+
+    const flushOnHide = () => {
+      if (document.hidden) {
+        flushListenTime()
+      }
+    }
+    window.addEventListener('pagehide', flushListenTime)
+    document.addEventListener('visibilitychange', flushOnHide)
+
+    return () => {
+      window.clearInterval(timer)
+      window.removeEventListener('pagehide', flushListenTime)
+      document.removeEventListener('visibilitychange', flushOnHide)
+      flushListenTime()
+    }
+  }, [])
 
   const applyPlaybackRate = useCallback(() => {
     if (mediaRef.current) {

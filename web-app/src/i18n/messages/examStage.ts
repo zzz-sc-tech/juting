@@ -35,4 +35,11 @@ export const examStageMessages = {
     'exam.drillNext': '下一题',
     'exam.drillFinish': '完成',
     'exam.partNotStarted': '该部分尚未开始',
+    // 成绩历史（交卷后展示本课历场）
+    'exam.history.title': '成绩历史',
+    'exam.history.empty': '还没有历史成绩——这是本课的第一场',
+    'exam.history.row': '{{date}} · {{score}}/{{total}}',
+    'exam.history.wrongCount': '错 {{wrong}} · 未答 {{unanswered}}',
+    'exam.history.sections': 'A {{a}} / B {{b}} / C {{c}}',
+    'exam.history.trend': '得分走势（%）',
 } as const

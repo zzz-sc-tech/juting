@@ -1,4 +1,4 @@
-import { Settings } from 'lucide-react'
+import { Search, Settings } from 'lucide-react'
 import { useNavigate } from 'react-router-dom'
 import { useLanguage } from '../i18n/LanguageProvider'
 
@@ -58,6 +58,15 @@ export function TopBar({ active }: TopBarProps) {
       <div className="topbar-actions">
         {/* 管理后台入口已移除（2026-10-11 用户裁定）：38 套真题开箱即用，学习端零依赖后台；
             制课/课程管理仍可用——浏览器直接访问 <host>:8102（应用本体保留）。 */}
+        <button
+          aria-label={t('search.title')}
+          className="account-trigger"
+          onClick={() => navigate('/search')}
+          title={t('search.title')}
+          type="button"
+        >
+          <Search size={16} aria-hidden="true" />
+        </button>
         <button
           className="account-trigger"
           onClick={() => navigate('/settings')}

@@ -1,7 +1,14 @@
-import { ArrowLeft, Newspaper, Play, Target } from 'lucide-react'
-import { useState } from 'react'
+import { ArrowLeft, Database, Download, Newspaper, Play, Target, Upload } from 'lucide-react'
+import { useRef, useState, type ChangeEvent } from 'react'
 import { useNavigate } from 'react-router-dom'
 import { useLanguage } from '../i18n/LanguageProvider'
+import {
+  downloadBackup,
+  getLastExportAt,
+  importAll,
+  parseBackup,
+  type BackupFile,
+} from '../lib/dataBackup'
 import { DEFAULT_DAILY_GOAL, loadDailyGoal, persistDailyGoal } from '../lib/progressStore'
 import {
   applyTheme,
@@ -30,6 +37,11 @@ export function SettingsPage() {
   const [dailyGoal, setDailyGoal] = useState(loadDailyGoal)
   const [theme, setTheme] = useState<UiTheme>(getStoredTheme)
   const [prefs, setPrefs] = useState<UserPrefs>(loadUserPrefs)
+  // 数据备份区：选完文件先挂起，由用户选覆盖/合并后才真正写入
+  const [pendingBackup, setPendingBackup] = useState<BackupFile | null>(null)
+  const [backupMessage, setBackupMessage] = useState<{ kind: 'ok' | 'error'; text: string } | null>(null)
+  const [lastExportAt, setLastExportAt] = useState(getLastExportAt)
+  const fileInputRef = useRef<HTMLInputElement>(null)
 
   const handleDailyGoalChange = (value: number) => {
     setDailyGoal(value)
@@ -54,6 +66,58 @@ export function SettingsPage() {
     { value: 'show', label: t('settings.show') },
     { value: 'hide', label: t('settings.hide') },
   ]
+
+  const formatExportTime = (iso: string) => {
+    const date = new Date(iso)
+    if (Number.isNaN(date.getTime())) return iso
+    const pad = (n: number) => String(n).padStart(2, '0')
+    return `${date.getFullYear()}-${pad(date.getMonth() + 1)}-${pad(date.getDate())} ${pad(date.getHours())}:${pad(date.getMinutes())}`
+  }
+
+  const handleExport = () => {
+    downloadBackup()
+    setLastExportAt(getLastExportAt())
+    setBackupMessage({ kind: 'ok', text: t('settings.data.exportDone') })
+  }
+
+  const handlePickFile = (event: ChangeEvent<HTMLInputElement>) => {
+    const file = event.target.files?.[0]
+    event.target.value = '' // 允许连续选同一个文件
+    if (!file) return
+    setBackupMessage(null)
+    file.text()
+      .then((text) => {
+        const backup = parseBackup(text)
+        setPendingBackup(backup)
+        setBackupMessage({
+          kind: 'ok',
+          text: t('settings.data.parsed', { date: backup.exportedAt ? formatExportTime(backup.exportedAt) : '—' }),
+        })
+      })
+      .catch((error: unknown) => {
+        setPendingBackup(null)
+        setBackupMessage({
+          kind: 'error',
+          text: error instanceof Error ? error.message : t('settings.data.importFailed'),
+        })
+      })
+  }
+
+  const runImport = (mode: 'replace' | 'merge') => {
+    if (!pendingBackup) return
+    const result = importAll(pendingBackup, mode)
+    if (!result.ok) {
+      setBackupMessage({ kind: 'error', text: result.error ?? t('settings.data.importFailed') })
+      return
+    }
+    const skippedNote = result.skipped.length > 0
+      ? ` ${t('settings.data.skippedNote', { parts: result.skipped.join('、') })}`
+      : ''
+    setBackupMessage({ kind: 'ok', text: `${t('settings.data.importDone')}${skippedNote}` })
+    setPendingBackup(null)
+    // React state 还是旧数据，直接刷新最可靠
+    window.setTimeout(() => window.location.reload(), 900)
+  }
 
   return (
     <div className="settings-page">
@@ -148,6 +212,54 @@ export function SettingsPage() {
               value={dailyGoal}
             />
           </label>
+        </section>
+
+        <section className="settings-card">
+          <h2 className="settings-card-title">
+            <Database size={15} />
+            {t('settings.data.title')}
+          </h2>
+          <p className="settings-field-hint">{t('settings.data.hint')}</p>
+          <div className="settings-data-actions">
+            <button className="settings-data-button" onClick={handleExport} type="button">
+              <Download size={14} aria-hidden="true" />
+              {t('settings.data.export')}
+            </button>
+            <button className="settings-data-button" onClick={() => fileInputRef.current?.click()} type="button">
+              <Upload size={14} aria-hidden="true" />
+              {t('settings.data.import')}
+            </button>
+            <input
+              accept=".json,application/json"
+              hidden
+              onChange={handlePickFile}
+              ref={fileInputRef}
+              type="file"
+            />
+          </div>
+          {lastExportAt && (
+            <p className="settings-field-hint">
+              {t('settings.data.lastExport', { time: formatExportTime(lastExportAt) })}
+            </p>
+          )}
+          {pendingBackup && (
+            <div className="settings-data-import-choose">
+              <span>{t('settings.data.chooseMode')}</span>
+              <div className="settings-data-actions">
+                <button className="settings-data-button primary" onClick={() => runImport('replace')} type="button">
+                  {t('settings.data.replace')}
+                </button>
+                <button className="settings-data-button" onClick={() => runImport('merge')} type="button">
+                  {t('settings.data.merge')}
+                </button>
+              </div>
+            </div>
+          )}
+          {backupMessage && (
+            <p className={backupMessage.kind === 'ok' ? 'settings-data-ok' : 'settings-data-error'}>
+              {backupMessage.text}
+            </p>
+          )}
         </section>
 
         <UpdatePanel />

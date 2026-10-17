@@ -49,4 +49,18 @@ export const settingsMessages = {
     'settings.updateRestarting': '句听正在重启，稍候页面会自动刷新…',
     'settings.updateDone': '更新完成，正在刷新页面…',
     'settings.updateFailed': '更新失败',
+    // 数据备份（导出/导入）
+    'settings.data.title': '数据',
+    'settings.data.hint': '导出全部学习数据为 JSON 备份文件；清缓存或换机后可导入恢复。建议定期导出。',
+    'settings.data.export': '导出学习数据',
+    'settings.data.import': '导入学习数据',
+    'settings.data.exportDone': '已导出备份文件，请妥善保存。',
+    'settings.data.lastExport': '上次导出：{{time}}',
+    'settings.data.parsed': '备份读取成功（导出于 {{date}}）。请选择导入方式：',
+    'settings.data.chooseMode': '导入方式',
+    'settings.data.replace': '覆盖（以备份为准）',
+    'settings.data.merge': '合并（与现有进度取并集）',
+    'settings.data.importDone': '导入成功，页面即将刷新…',
+    'settings.data.importFailed': '导入失败：备份文件无法使用',
+    'settings.data.skippedNote': '（以下部分校验未通过、已跳过：{{parts}}）',
 }

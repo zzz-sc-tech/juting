@@ -10,6 +10,17 @@ import { loadStoredStudyStore, persistStudyStore } from '../lib/progressStore'
 import type { StudyStore } from '@juting/shared'
 import { collectVocabEntries } from '../lib/vocab'
 import { lookupVocab } from '../lib/vocabDict'
+import {
+  blankContext,
+  dueWords,
+  loadVocabReview,
+  recordVocabVerdict,
+  registerVocabWords,
+  registerVocabWordsDueNow,
+  scheduleBadgeOf,
+  unregisterVocabWord,
+  type VocabReviewState,
+} from '../lib/vocabReview'
 import type { MessageKey } from '../i18n/messages'
 import { useLanguage } from '../i18n/LanguageProvider'
 
@@ -38,6 +49,12 @@ export function VocabularyPage() {
   /** courseId → seriesId（例句跳转要拼 /courses/:seriesId/chapters/:courseId） */
   const [seriesOf, setSeriesOf] = useState<Record<number, number>>({})
   const [courseFilter, setCourseFilter] = useState('all')
+  // ---- 生词复习调度（旁路键 vocab-review.v1，见 lib/vocabReview.ts）----
+  const [reviewState, setReviewState] = useState<VocabReviewState>(loadVocabReview)
+  const [reviewQueue, setReviewQueue] = useState<string[]>([])
+  const [reviewIdx, setReviewIdx] = useState(0)
+  const [revealed, setRevealed] = useState(false)
+  const [reviewDone, setReviewDone] = useState(0) // >0 = 本次复习完成的词数（0=不在复习模式）
   /** 侧栏看的是哪个词、归到哪一课、以及收藏时要记的原句（都取自点开的那一行） */
   const [dictTarget, setDictTarget] = useState<{
     word: string
@@ -77,6 +94,58 @@ export function VocabularyPage() {
     [store.progressByExercise],
   )
 
+  // 老数据迁移：没有复习记录的词补登记并标记「今日可复习」（ensureVocabEntries 幂等，
+  // 新收藏的词在收藏瞬间已被登记，不会被这里的 dueNow 扫到）
+  useEffect(() => {
+    if (entries.length === 0) return
+    const state = loadVocabReview()
+    const next = registerVocabWordsDueNow(entries.map((entry) => entry.word))
+    if (next !== state) {
+      setReviewState(next)
+    }
+  }, [entries])
+
+  // 今日待复习队列（到期未掌握的词）
+  const dueList = useMemo(
+    () => dueWords(reviewState, entries.map((entry) => entry.word)),
+    [reviewState, entries],
+  )
+
+  const startReview = () => {
+    setReviewQueue(dueList)
+    setReviewIdx(0)
+    setRevealed(false)
+    setReviewDone(0)
+  }
+
+  const handleVerdict = (known: boolean) => {
+    const word = reviewQueue[reviewIdx]
+    if (!word) return
+    const next = recordVocabVerdict(word, known ? 'known' : 'unknown')
+    setReviewState(next)
+    setRevealed(false)
+    if (reviewIdx + 1 >= reviewQueue.length) {
+      setReviewDone(reviewQueue.length)
+      setReviewQueue([])
+      setReviewIdx(0)
+    } else {
+      setReviewIdx((current) => current + 1)
+    }
+  }
+
+  const quitReview = () => {
+    setReviewQueue([])
+    setReviewDone(0)
+    setReviewIdx(0)
+    setRevealed(false)
+  }
+
+  const reviewEntry = useMemo(() => {
+    const word = reviewQueue[reviewIdx]
+    if (!word) return null
+    return entries.find((entry) => entry.word.toLowerCase() === word) ?? null
+  }, [entries, reviewIdx, reviewQueue])
+
   const courseOptions = useMemo(() => {
     const ids = [...new Set(entries.map((entry) => entry.courseId))].sort((a, b) => a - b)
     return ids.map((id) => ({
@@ -94,6 +163,8 @@ export function VocabularyPage() {
   )
 
   const remove = (courseId: number, word: string) => {
+    // 同步清掉复习调度记录（同词再收藏会重新排队）
+    unregisterVocabWord(word)
     setStore((current) => {
       const courseProgress = current.progressByExercise[courseId]
       // 删除同样忽略大小写：侧栏的「已收藏」判定就是忽略大小写的
@@ -126,6 +197,8 @@ export function VocabularyPage() {
    * —— vocabulary 的 value 语义就是「这个词被收藏时所在的那句话」。
    */
   const addToCourse = (courseId: number, context: string, word: string) => {
+    // 复习调度登记：新收藏的词按默认间隔明天才进复习队列
+    registerVocabWords([word])
     setStore((current) => {
       const courseProgress = current.progressByExercise[courseId]
       if (!courseProgress) return current
@@ -178,6 +251,75 @@ export function VocabularyPage() {
           <p className="dashboard-empty">{t('vocab.empty')}</p>
         ) : (
           <>
+            {/* 复习入口：N>0 高亮可点，N=0 灰字提示 */}
+            <div className="vocab-review-entry">
+              {dueList.length > 0 ? (
+                <button className="vocab-review-start" onClick={startReview} type="button">
+                  {t('vocab.review.entry', { count: dueList.length })}
+                </button>
+              ) : (
+                <span className="vocab-review-none">{t('vocab.review.none')}</span>
+              )}
+            </div>
+
+            {/* 复习视图：挖空原句 → 显示答案 → 认识/不认识 */}
+            {reviewQueue.length > 0 && reviewEntry && (
+              <div className="vocab-review-card">
+                <div className="vocab-review-head">
+                  <span>
+                    {t('vocab.review.progress', { current: reviewIdx + 1, total: reviewQueue.length })}
+                  </span>
+                  <button className="vocab-review-quit" onClick={quitReview} type="button">
+                    {t('vocab.review.quit')}
+                  </button>
+                </div>
+                <p className="vocab-review-course">
+                  {titles[reviewEntry.courseId] ?? `#${reviewEntry.courseId}`}
+                </p>
+                <p className="vocab-review-context">{blankContext(reviewEntry.context, reviewEntry.word)}</p>
+                {revealed ? (
+                  <>
+                    <p className="vocab-review-answer">
+                      <strong>{reviewEntry.word}</strong>
+                      {lookupVocab(reviewEntry.word)?.zh && (
+                        <span className="vocab-review-meaning">{lookupVocab(reviewEntry.word)?.zh}</span>
+                      )}
+                    </p>
+                    <p className="vocab-review-context-full">{reviewEntry.context}</p>
+                    <div className="vocab-review-actions">
+                      <button
+                        className="vocab-review-btn unknown"
+                        onClick={() => handleVerdict(false)}
+                        type="button"
+                      >
+                        {t('vocab.review.unknown')}
+                      </button>
+                      <button
+                        className="vocab-review-btn known"
+                        onClick={() => handleVerdict(true)}
+                        type="button"
+                      >
+                        {t('vocab.review.known')}
+                      </button>
+                    </div>
+                  </>
+                ) : (
+                  <div className="vocab-review-actions">
+                    <button className="vocab-review-btn primary" onClick={() => setRevealed(true)} type="button">
+                      {t('vocab.review.showAnswer')}
+                    </button>
+                  </div>
+                )}
+              </div>
+            )}
+
+            {/* 本次复习完成 */}
+            {reviewDone > 0 && (
+              <div className="vocab-review-card">
+                <p className="vocab-review-finished">{t('vocab.review.done', { count: reviewDone })}</p>
+              </div>
+            )}
+
             {courseOptions.length > 1 && (
               <div className="vocab-filter">
                 <label className="sr-only" htmlFor="vocab-course-filter">
@@ -201,6 +343,7 @@ export function VocabularyPage() {
             <ul className="vocab-list">
               {visible.map((entry) => {
                 const lex = lookupVocab(entry.word)
+                const badge = scheduleBadgeOf(reviewState[entry.word.toLowerCase()])
                 return (
                   <li className="vocab-row" key={`${entry.courseId}|${entry.word}`}>
                     <div className="vocab-main">
@@ -217,6 +360,15 @@ export function VocabularyPage() {
                         {lex?.tag && TAG_MESSAGE_KEYS[lex.tag] && (
                           <span className={`vocab-tag vocab-tag-${lex.tag}`}>
                             {t(TAG_MESSAGE_KEYS[lex.tag])}
+                          </span>
+                        )}
+                        {badge && (
+                          <span className={`vocab-review-badge ${badge.kind}`}>
+                            {badge.kind === 'mastered'
+                              ? t('vocab.review.mastered')
+                              : badge.kind === 'today'
+                                ? t('vocab.review.today')
+                                : t('vocab.review.later', { days: badge.days })}
                           </span>
                         )}
                       </div>

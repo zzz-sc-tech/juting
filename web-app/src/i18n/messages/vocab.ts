@@ -29,4 +29,16 @@ export const vocabMessages = {
     'vocab.tag.gk': '高考',
     'vocab.tag.zk': '中考',
     'vocab.tag.gre': 'GRE',
+    // 生词复习调度（遗忘曲线）
+    'vocab.review.entry': '今日待复习 {{count}} 词',
+    'vocab.review.none': '今日无复习',
+    'vocab.review.progress': '{{current}} / {{total}}',
+    'vocab.review.quit': '退出复习',
+    'vocab.review.showAnswer': '显示答案',
+    'vocab.review.known': '认识',
+    'vocab.review.unknown': '不认识',
+    'vocab.review.done': '本次复习完成，共 {{count}} 词',
+    'vocab.review.mastered': '已掌握',
+    'vocab.review.today': '今日待复习',
+    'vocab.review.later': '下次复习：{{days}} 天后',
 }
