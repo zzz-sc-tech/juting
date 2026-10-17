@@ -11,7 +11,16 @@ router.get('/:exerciseId', async (req: any, res) => {
         return res.status(400).send({ success: false, message: 'Invalid exercise id' });
     }
 
-    const exercise = await getExercise(exerciseId, false, (parseContentLocale(req.query.contentLocale) ?? 'en-US'), [], undefined);
+    // 不带 contentLocale 就不传 locale（而不是兜底 en-US）：管理后台/导出
+    // 需要完整的 translations 对象逐语种编辑，兜底默认值会让它被当成
+    // 「学习者请求」而省掉该字段（C3）。学习者侧始终显式带 zh-CN。
+    const exercise = await getExercise(
+        exerciseId,
+        false,
+        parseContentLocale(req.query.contentLocale),
+        [],
+        undefined,
+    );
     if (!exercise) {
         return res.status(404).send({ success: false, message: 'Exercise not found' });
     }

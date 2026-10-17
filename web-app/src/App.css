@@ -9,7 +9,9 @@
 @import './styles/waveform-stage.css';
 @import './styles/exam-stage.css';
 @import './styles/settings.css';
+@import './styles/storage-alert.css';
 @import './styles/vocab-sidebar.css';
+@import './styles/route-states.css';
 @import './styles/responsive.css';
 /* 主题装饰层放在最后：同优先级时靠后覆盖 */
 @import './styles/themes/gazette.css';

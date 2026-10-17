@@ -1,4 +1,5 @@
 import { createEmptyStore, type StudyStore } from '@juting/domain'
+import { quarantineCorrupt, safeSetItem } from './storageSafety'
 
 export {
   calculateChapterProgress,
@@ -22,22 +23,57 @@ export type {
  */
 const STORE_STORAGE_KEY = 'juting.web.progress.v1'
 const LEGACY_STORE_STORAGE_KEY = 'duolinting.web.progress.v1'
+/** 隔离副本键前缀：完整损坏 → juting.web.progress.corrupt.<时间戳> */
+const CORRUPT_KEY_PREFIX = 'juting.web.progress'
 
-/** 启动时读取本地进度；数据损坏或结构不符时回退空仓库，绝不因此白屏。 */
+/**
+ * 整块解析失败时暂停写盘：否则 StudySessionProvider 挂载 800ms 后
+ * 就会把空仓库写回，把原始数据覆盖成不可恢复（见 A1）。
+ * 用户显式处理（设置页「忽略损坏数据」/导入备份）后才恢复写入。
+ */
+let writeBlocked = false
+/** 最近一次加载丢弃的课程条目数（诊断用） */
+let lastDroppedCount = 0
+
+export const isProgressWriteBlocked = (): boolean => writeBlocked
+export const getLastDroppedCount = (): number => lastDroppedCount
+
+/** 用户显式确认后可恢复写盘（隔离副本仍在，随时可导出）。 */
+export const resumeProgressWrites = (): void => {
+  writeBlocked = false
+}
+
+/**
+ * 启动时读取本地进度；数据损坏或结构不符时回退空仓库，绝不因此白屏。
+ * 但「不白屏」不等于「可以静默覆盖」：损坏的原始字符串先隔离另存，
+ * 整块解析失败时暂停写盘，等用户处理。
+ */
 export const loadStoredStudyStore = (): StudyStore => {
   try {
     const raw = localStorage.getItem(STORE_STORAGE_KEY) ?? localStorage.getItem(LEGACY_STORE_STORAGE_KEY)
     if (!raw) {
       return createEmptyStore()
     }
-    const parsed = JSON.parse(raw) as StudyStore
-    if (typeof parsed !== 'object' || parsed === null) {
+    let parsed: unknown
+    try {
+      parsed = JSON.parse(raw)
+    } catch {
+      // 整块坏档：隔离 + 停止写盘（顺序很重要，先留证据再降级）
+      quarantineCorrupt(CORRUPT_KEY_PREFIX, raw, { blocking: true })
+      writeBlocked = true
       return createEmptyStore()
     }
-    const rawProgress = parsed.progressByExercise
+    if (typeof parsed !== 'object' || parsed === null || Array.isArray(parsed)) {
+      quarantineCorrupt(CORRUPT_KEY_PREFIX, raw, { blocking: true })
+      writeBlocked = true
+      return createEmptyStore()
+    }
+    const record = parsed as Partial<StudyStore>
+    const rawProgress = record.progressByExercise
     const progressByExercise: StudyStore['progressByExercise'] = {}
+    let dropped = 0
     if (rawProgress && typeof rawProgress === 'object') {
-      // 逐条体检：任何畸形条目（缺 lines 等）都会让渲染期抛错白屏，直接重建为空进度
+      // 逐条体检：任何畸形条目（缺 lines 等）都会让渲染期抛错白屏，直接丢弃
       for (const [key, value] of Object.entries(rawProgress as Record<string, unknown>)) {
         // 畸形条目直接丢弃：该课程下次打开时会被 ensureExerciseProgress 重建
         if (
@@ -45,12 +81,21 @@ export const loadStoredStudyStore = (): StudyStore => {
           typeof (value as { lines: unknown }).lines === 'object' && (value as { lines: object }).lines !== null
         ) {
           progressByExercise[key] = value as StudyStore['progressByExercise'][string]
+        } else {
+          dropped += 1
         }
       }
     }
+    lastDroppedCount = dropped
+    if (dropped > 0) {
+      // 部分条目坏掉：原始内容同样留档，但不锁写盘——否则用户这门课以外
+      // 的进度也一起写不进去，代价过大。UI 侧给非阻塞提示。
+      quarantineCorrupt(CORRUPT_KEY_PREFIX, raw, { dropped })
+      console.warn(`[progressStore] 丢弃 ${dropped} 条畸形课程进度，原始数据已隔离另存`)
+    }
     return {
       activeExerciseId:
-        typeof parsed.activeExerciseId === 'number' ? parsed.activeExerciseId : '',
+        typeof record.activeExerciseId === 'number' ? record.activeExerciseId : '',
       progressByExercise,
     }
   } catch {
@@ -58,12 +103,17 @@ export const loadStoredStudyStore = (): StudyStore => {
   }
 }
 
-/** 进度写回本地；调用方负责防抖，这里静默容忍配额/隐私模式异常。 */
+/** 进度写回本地；调用方负责防抖。损坏未处理期间直接跳过写盘。 */
 export const persistStudyStore = (store: StudyStore) => {
+  if (writeBlocked) {
+    // 原始数据还没被处理，此时写回等于覆盖证据
+    return false
+  }
   try {
-    localStorage.setItem(STORE_STORAGE_KEY, JSON.stringify(store))
+    return safeSetItem(STORE_STORAGE_KEY, JSON.stringify(store))
   } catch {
-    // 隐私模式或配额满：进度仅保留在内存，本次会话仍可用
+    // JSON.stringify 失败（循环引用等理论可能）：不阻断学习，交给上层兜底
+    return false
   }
 }
 
@@ -109,9 +159,9 @@ export const recordLocalMastery = (
 
 export const persistLocalActivity = (activity: LocalDailyActivity) => {
   try {
-    localStorage.setItem(ACTIVITY_STORAGE_KEY, JSON.stringify(activity))
+    safeSetItem(ACTIVITY_STORAGE_KEY, JSON.stringify(activity))
   } catch {
-    // 同上：静默降级
+    // stringify 异常（理论可能）：不阻断学习
   }
 }
 
@@ -139,9 +189,5 @@ export const loadDailyGoal = (): number => {
 }
 
 export const persistDailyGoal = (goal: number) => {
-  try {
-    localStorage.setItem(DAILY_GOAL_KEY, String(goal))
-  } catch {
-    // 静默降级：目标仅保留在内存
-  }
+  safeSetItem(DAILY_GOAL_KEY, String(goal))
 }

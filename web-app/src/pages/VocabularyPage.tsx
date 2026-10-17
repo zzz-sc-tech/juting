@@ -1,10 +1,9 @@
 import { Trash2 } from 'lucide-react'
 import { Fragment, useEffect, useMemo, useRef, useState } from 'react'
 import { useNavigate } from 'react-router-dom'
-import type { CatalogExerciseSummary } from '@juting/shared'
 import { TopBar } from '../components/TopBar'
 import { VocabSidebar } from '../components/VocabSidebar'
-import { apiClient } from '../lib/apiClient'
+import { loadCatalogBundle } from '../lib/catalogBundle'
 import { splitClickableWords } from '../lib/clickableText'
 import { loadStoredStudyStore, persistStudyStore } from '../lib/progressStore'
 import type { StudyStore } from '@juting/shared'
@@ -68,26 +67,15 @@ export function VocabularyPage() {
 
   useEffect(() => {
     let mounted = true
-    const load = async () => {
-      try {
-        const catalog = await apiClient.getCatalog('zh-CN')
-        const next: Record<number, string> = {}
-        const series: Record<number, number> = {}
-        for (const category of catalog.categories) {
-          const exercises = (await apiClient.getCategoryExercises(category.id, 'zh-CN')) as CatalogExerciseSummary[]
-          for (const exercise of exercises) {
-            next[exercise.id] = exercise.title
-            series[exercise.id] = category.id
-          }
-        }
+    loadCatalogBundle()
+      .then((bundle) => {
         if (!mounted) return
-        setTitles(next)
-        setSeriesOf(series)
-      } catch {
+        setTitles(bundle.titleOf)
+        setSeriesOf(bundle.seriesOf)
+      })
+      .catch(() => {
         // 标题缺省不阻断列表
-      }
-    }
-    void load()
+      })
     return () => {
       mounted = false
     }
@@ -168,30 +156,31 @@ export function VocabularyPage() {
 
   /** 状态提交（原 remove 的 React 部分）；动画包装在 remove 里。 */
   const commitRemove = (courseId: number, word: string) => {
-    setStore((current) => {
-      const courseProgress = current.progressByExercise[courseId]
-      // 删除同样忽略大小写：侧栏的「已收藏」判定就是忽略大小写的
-      const key = Object.keys(courseProgress?.vocabulary ?? {}).find(
-        (item) => item.toLowerCase() === word.toLowerCase(),
-      )
-      if (!courseProgress || !key) {
-        return current
-      }
-      const vocabulary = { ...courseProgress.vocabulary }
-      delete vocabulary[key]
-      const next: StudyStore = {
-        ...current,
-        progressByExercise: {
-          ...current.progressByExercise,
-          [courseId]: { ...courseProgress, vocabulary },
-        },
-      }
-      persistStudyStore(next)
-      return next
-    })
+    // 先算出 next 再一次性 setState + 落盘：updater 里做副作用在 StrictMode
+    // 下会被双调用（重复写盘），而且 updater 应该是纯函数（D4）
+    const current = store
+    const courseProgress = current.progressByExercise[courseId]
+    // 删除同样忽略大小写：侧栏的「已收藏」判定就是忽略大小写的
+    const key = Object.keys(courseProgress?.vocabulary ?? {}).find(
+      (item) => item.toLowerCase() === word.toLowerCase(),
+    )
+    if (!courseProgress || !key) {
+      return
+    }
+    const vocabulary = { ...courseProgress.vocabulary }
+    delete vocabulary[key]
+    const next: StudyStore = {
+      ...current,
+      progressByExercise: {
+        ...current.progressByExercise,
+        [courseId]: { ...courseProgress, vocabulary },
+      },
+    }
+    setStore(next)
+    persistStudyStore(next)
     // 侧栏开着的正是被删的那个词：删完收起，免得停在一个空壳上
-    setDictTarget((current) =>
-      current?.word.toLowerCase() === word.toLowerCase() ? null : current,
+    setDictTarget((value) =>
+      value?.word.toLowerCase() === word.toLowerCase() ? null : value,
     )
   }
 
@@ -252,26 +241,26 @@ export function VocabularyPage() {
   const addToCourse = (courseId: number, context: string, word: string) => {
     // 复习调度登记：新收藏的词按默认间隔明天才进复习队列
     registerVocabWords([word])
-    setStore((current) => {
-      const courseProgress = current.progressByExercise[courseId]
-      if (!courseProgress) return current
-      const existingKey = Object.keys(courseProgress.vocabulary ?? {}).find(
-        (key) => key.toLowerCase() === word.toLowerCase(),
-      )
-      if (existingKey) return current
-      const next: StudyStore = {
-        ...current,
-        progressByExercise: {
-          ...current.progressByExercise,
-          [courseId]: {
-            ...courseProgress,
-            vocabulary: { ...courseProgress.vocabulary, [word]: context },
-          },
+    // 同 commitRemove：先算 next，再 setState + 落盘，updater 保持纯函数
+    const current = store
+    const courseProgress = current.progressByExercise[courseId]
+    if (!courseProgress) return
+    const existingKey = Object.keys(courseProgress.vocabulary ?? {}).find(
+      (key) => key.toLowerCase() === word.toLowerCase(),
+    )
+    if (existingKey) return
+    const next: StudyStore = {
+      ...current,
+      progressByExercise: {
+        ...current.progressByExercise,
+        [courseId]: {
+          ...courseProgress,
+          vocabulary: { ...courseProgress.vocabulary, [word]: context },
         },
-      }
-      persistStudyStore(next)
-      return next
-    })
+      },
+    }
+    setStore(next)
+    persistStudyStore(next)
   }
 
   const dictWordSaved = useMemo(() => {

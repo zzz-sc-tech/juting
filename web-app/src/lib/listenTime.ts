@@ -7,6 +7,8 @@
  * 结构：{ totalMs, byDay: { 'yyyy-MM-dd': ms } }
  */
 
+import { safeSetItem } from './storageSafety'
+
 const KEY = 'juting.web.listen-time.v1'
 
 export type ListenTimeStore = {
@@ -49,11 +51,8 @@ const localDay = (): string => {
 }
 
 const writeStore = (store: ListenTimeStore) => {
-  try {
-    localStorage.setItem(KEY, JSON.stringify(store))
-  } catch {
-    // 存储不可用时静默：时长统计不阻断学习
-  }
+  // 静默容忍会丢掉全部听时长记录，改为经安全写入上报（配额/隐私模式）
+  safeSetItem(KEY, JSON.stringify(store))
 }
 
 /** 采集层调用：累计一段墙钟播放时间（ms），内部按 15 秒节流落盘。 */

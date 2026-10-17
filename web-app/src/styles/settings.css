@@ -620,6 +620,31 @@
   margin-top: 10px;
 }
 
+/* 存储诊断 · 自动快照列表（与数据区同款卡片风格） */
+.settings-snapshot-list {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  list-style: none;
+  margin: 12px 0 0;
+  padding: 0;
+}
+
+.settings-snapshot-list li {
+  align-items: center;
+  border-top: 1px dashed var(--line);
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  justify-content: space-between;
+  padding-top: 10px;
+}
+
+.settings-snapshot-time {
+  color: var(--ink-2);
+  font-size: 13px;
+}
+
 /* 生词复习调度 */
 .vocab-review-entry {
   margin-bottom: 12px;

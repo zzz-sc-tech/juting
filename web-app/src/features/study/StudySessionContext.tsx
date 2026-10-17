@@ -4,6 +4,7 @@ import {
   useContext,
   useEffect,
   useMemo,
+  useRef,
   useState,
   type ReactNode,
 } from 'react'
@@ -115,6 +116,13 @@ export function StudySessionProvider({ children }: { children: ReactNode }) {
 
   // 进度变更 800ms 防抖写回本地（原服务端同步的本地替代）。
   // pagehide 兜底：防抖窗口内关页也不丢最后一次进度。
+  // latestStoreRef + 卸载 flush：SPA 路由切换不会触发 pagehide，
+  // 「标掌握 → 立刻点首页」原本会丢掉这次写（D4）。
+  const latestStoreRef = useRef(store)
+  useEffect(() => {
+    latestStoreRef.current = store
+  }, [store])
+
   useEffect(() => {
     const timer = window.setTimeout(() => persistStudyStore(store), 800)
     const flushOnHide = () => persistStudyStore(store)
@@ -124,6 +132,14 @@ export function StudySessionProvider({ children }: { children: ReactNode }) {
       window.removeEventListener('pagehide', flushOnHide)
     }
   }, [store])
+
+  useEffect(
+    () => () => {
+      // 仅卸载时执行一次：把最新快照落盘（persistStudyStore 内部会拦住坏档）
+      persistStudyStore(latestStoreRef.current)
+    },
+    [],
+  )
 
   const {
     catalog,

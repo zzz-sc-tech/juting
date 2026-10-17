@@ -299,7 +299,10 @@ const normalizeTranscriptLine = (
         end,
         text: cleanEnglishAnswerText(String(item.text ?? '')),
         translation: resolvedTranslation,
-        translations,
+        // 带 contentLocale 时 translation 已经是解析好的单语值，再带整份
+        // translations 只是重复传输（cet4 全量多传约 396KB）。管理后台/导出
+        // 不带 locale，仍保留完整对象供逐语种编辑。
+        translations: contentLocale ? undefined : translations,
         answers: parseStringList(item.answers, cleanEnglishAnswerText),
         keywords: parseStringList(item.keywords),
     };
@@ -577,6 +580,42 @@ const buildExerciseSummary = (
     answerKey: parseAnswerKey(row.answer_key_json),
     questions: parseQuestions(row.questions_json),
     };
+};
+
+/**
+ * 学习端列表专用轻量摘要（?view=summary）。
+ *
+ * 完整摘要里 questions / answerKey / localizations 是详情级字段：实测
+ * questions 单独就占 219–259KB。学习端的列表/首页/仪表盘/生词本/全局复习
+ * 只读 id/title/lineCount/sortOrder/status/mediaType，没必要背这些。
+ * 默认仍是完整摘要（view 不传时行为不变），前端切完再考虑翻转默认。
+ */
+const buildExerciseListItem = (
+    row: ExerciseRow,
+    lineCount: number,
+    contentLocale: ContentLocale | undefined,
+    contentLineCount?: number,
+): CatalogExerciseSummary => {
+    const localized = contentLocale
+        ? normalizeExerciseLocalizations(row.localizations_json)[contentLocale]
+        : undefined;
+    return {
+        id: Number(row.id),
+        categoryId: Number(row.category_id),
+        title: localized?.title ?? row.title,
+        source: row.source,
+        sourceUrl: normalizeSourceUrl(row.source_url) || undefined,
+        difficulty: row.difficulty,
+        durationLabel: row.duration_label,
+        mediaType: row.media_type ?? 'audio',
+        audioUrl: toDeliveryMediaUrl(row.audio_url),
+        coverImageUrl: toDeliveryMediaUrl(row.cover_image_url) || undefined,
+        summary: localized?.summary ?? row.summary,
+        status: row.status,
+        sortOrder: Number(row.sort_order ?? 0),
+        lineCount,
+        ...(contentLineCount !== undefined ? { contentLineCount } : {}),
+    } as CatalogExerciseSummary;
 };
 
 // 该片段被 Admin 的所有课程列表复用，避免列表与详情因不同 SQL 规则而显示不同阶段。
@@ -927,6 +966,7 @@ export async function listCategoryExercises(
     includeDrafts = false,
     contentLocale?: ContentLocale,
     previewExerciseIds: number[] = [],
+    view: 'full' | 'summary' = 'full',
 ): Promise<CatalogExerciseSummary[]> {
     const statusFilter = includeDrafts ? '' : `and ${buildLearnerStatusFilter(previewExerciseIds)}`;
 
@@ -963,11 +1003,13 @@ export async function listCategoryExercises(
         return Promise.all(
             (exerciseRows as ExerciseRow[]).map(async (row) => {
                 const lines = parseTranscriptJson(row.transcript_json, contentLocale);
-                return buildExerciseSummary(
+                const contentLines = await countContentLinesSafe(lines);
+                const build = view === 'summary' ? buildExerciseListItem : buildExerciseSummary;
+                return build(
                     row,
                     lines.length,
                     contentLocale,
-                    await countContentLinesSafe(lines),
+                    contentLines,
                 );
             }),
         );

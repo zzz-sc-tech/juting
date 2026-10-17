@@ -217,16 +217,11 @@ export const judgeDictation = (
   let pe = 0
   let pa = 0
   while (pe < pendingExpected.length && pa < pendingActual.length) {
-    const eIdx = pendingExpected[pe]
-    const aIdx = pendingActual[pa]
-    // 邻近判据：下一对已匹配位置之间
-    const nextE = pendingExpected[pe + 1]
-    if (nextE === undefined || nextE > aIdx + 1 || true) {
-      // 简化：顺序配对（LCS 之后剩余基本同位）
-      substitution.push({ e: eIdx, a: aIdx })
-      pe += 1
-      pa += 1
-    }
+    // 顺序配对：LCS 之后剩余的基本同位，逐个配成替换对。
+    // （曾打算按「下一对已匹配位置之间」做邻近判据，但该分支恒被短路，未生效。）
+    substitution.push({ e: pendingExpected[pe], a: pendingActual[pa] })
+    pe += 1
+    pa += 1
   }
 
   const words: WordVerdict[] = []

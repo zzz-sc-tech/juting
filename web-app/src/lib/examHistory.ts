@@ -3,6 +3,8 @@
  * 每课最多保留 50 场，供仪表盘分数曲线 / 章节卡最近分 / 错题重练消费。
  * 六级听力卷面固定 25 题、Section 划分固定（1-8 A / 9-15 B / 16-25 C）。
  */
+import { safeSetItem } from './storageSafety'
+
 export type ExamSection = 'A' | 'B' | 'C'
 export type ExamLetter = 'A' | 'B' | 'C' | 'D'
 
@@ -80,9 +82,9 @@ export const recordAttempt = (
     const all = loadAll()
     const key = String(exerciseId)
     all[key] = [...(all[key] ?? []), attempt].slice(-MAX_PER_COURSE)
-    localStorage.setItem(KEY, JSON.stringify(all))
+    safeSetItem(KEY, JSON.stringify(all))
   } catch {
-    // 存储不可用时静默：成绩档案只是统计，不阻断交卷
+    // stringify 异常（理论可能）：成绩档案只是统计，不阻断交卷
   }
   return attempt
 }

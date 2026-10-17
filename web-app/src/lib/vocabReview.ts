@@ -17,8 +17,9 @@
  * 「今日可复习」（dueAt=now，一次性），避免老数据永远不排队。
  */
 
-const KEY = 'juting.web.vocab-review.v1'
+import { safeSetItem } from './storageSafety'
 
+const KEY = 'juting.web.vocab-review.v1'
 const DAY_MS = 24 * 60 * 60 * 1000
 
 /** reviewCount → 下次复习间隔（天）；超出即已掌握。 */
@@ -78,11 +79,7 @@ export const loadVocabReview = (): VocabReviewState => {
 }
 
 export const persistVocabReview = (state: VocabReviewState): void => {
-  try {
-    localStorage.setItem(KEY, JSON.stringify(state))
-  } catch {
-    // 复习调度是增强功能，存储不可用时不阻断学习
-  }
+  safeSetItem(KEY, JSON.stringify(state))
 }
 
 /** 该词在复习状态里是否已有记录。 */
@@ -93,15 +90,16 @@ export const hasReviewEntry = (state: VocabReviewState, word: string): boolean =
  * 确保这些词都有登记记录（幂等）。
  * dueNow=true 用于老数据一次性迁移：补时间并标记「今日可复习」；
  * 新收藏走 dueNow=false，按默认间隔明天才排进队列。
+ * now 可注入（单测用），不传取当前时间。
  */
 export const ensureVocabEntries = (
   state: VocabReviewState,
   words: readonly string[],
-  options: { dueNow?: boolean } = {},
+  options: { dueNow?: boolean; now?: number } = {},
 ): VocabReviewState => {
   let changed = false
   const next: VocabReviewState = { ...state }
-  const now = Date.now()
+  const now = options.now ?? Date.now()
   for (const raw of words) {
     const word = normalize(raw)
     if (!word || word in next) continue

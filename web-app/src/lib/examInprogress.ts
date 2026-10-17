@@ -3,6 +3,7 @@
  * 切阶段/误关页后回到考试可继续（作答 + 播放位置）。交卷或重新开考即清。
  */
 import type { ExamLetter } from './examHistory'
+import { safeSetItem } from './storageSafety'
 
 export type ExamInprogress = {
   answers: Record<string, ExamLetter>
@@ -41,9 +42,11 @@ export const saveInprogress = (exerciseId: number, state: ExamInprogress): void 
     const raw = localStorage.getItem(KEY)
     const all = raw ? (JSON.parse(raw) as Record<string, ExamInprogress>) : {}
     all[String(exerciseId)] = state
-    localStorage.setItem(KEY, JSON.stringify(all))
+    // 25 分钟的作答暂存，写不进去必须让用户看到提示（不再静默）
+    safeSetItem(KEY, JSON.stringify(all))
   } catch {
-    // 同上：静默失败
+    // 读旧值失败时同样尝试落盘本次暂存
+    safeSetItem(KEY, JSON.stringify({ [String(exerciseId)]: state }))
   }
 }
 

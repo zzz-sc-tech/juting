@@ -15,7 +15,10 @@ router.get('/category/:categoryId/exercises', async (req: any, res) => {
         return res.status(400).send({ success: false, message: 'Invalid category id' });
     }
 
-    const exercises = await listCategoryExercises(categoryId, false, (parseContentLocale(req.query.contentLocale) ?? 'en-US'), []);
+    // ?view=summary 只返回列表需要的字段（问题/答案/多语言都不带），
+    // 传输量约为完整摘要的 1/10；不传就是原来的完整摘要（管理端用）。
+    const view = req.query.view === 'summary' ? 'summary' : 'full';
+    const exercises = await listCategoryExercises(categoryId, false, (parseContentLocale(req.query.contentLocale) ?? 'en-US'), [], view);
     res.status(200).send(exercises);
 });
 

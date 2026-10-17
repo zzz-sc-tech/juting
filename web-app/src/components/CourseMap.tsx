@@ -48,8 +48,8 @@ export function CourseMap({
   onMarkExerciseDone,
   onResetExerciseProgress,
 }: CourseMapProps) {
-  // 模拟实战最近分角标（每行一条，读取 localStorage 是廉价同步操作）
-  const latestExamScores = getLatestByCourse()
+  // 模拟实战最近分角标：整份档案 JSON.parse 不该每次渲染都做（D5）
+  const latestExamScores = useMemo(() => getLatestByCourse(), [])
   const { t } = useLanguage()
   // 章节按学习状态三分类：进行中 → 未开始 → 已完成（组内保持时间顺序）。
   // 做一半的排最前方便续学；完成态沉底归档。

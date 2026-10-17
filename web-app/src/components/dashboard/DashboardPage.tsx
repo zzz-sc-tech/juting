@@ -134,7 +134,15 @@ export function DashboardPage() {
     const entries = Object.entries(latestByCourse)
       .map(([exerciseId, attempt]) => {
         const exercise = allExercises.find((item) => item.id === Number(exerciseId))
-        return exercise ? { exerciseId: Number(exerciseId), title: exercise.title, attempt } : null
+        return exercise
+          ? {
+              exerciseId: Number(exerciseId),
+              title: exercise.title,
+              // 系列 id 必须跟着课程走：写死 1 会让四级（category 9）的课跳错课（B2）
+              categoryId: exercise.categoryId,
+              attempt,
+            }
+          : null
       })
       .filter((entry): entry is NonNullable<typeof entry> => entry !== null)
       .sort((left, right) => right.attempt.date.localeCompare(left.attempt.date))
@@ -277,7 +285,7 @@ export function DashboardPage() {
                   {examStats.entries.slice(0, 5).map((entry) => (
                     <li key={entry.exerciseId}>
                       <button
-                        onClick={() => navigate(`/courses/1/chapters/${entry.exerciseId}?stage=exam`)}
+                        onClick={() => navigate(`/courses/${entry.categoryId}/chapters/${entry.exerciseId}?stage=exam`)}
                         type="button"
                       >
                         <span className="dashboard-course-title">{entry.title}</span>

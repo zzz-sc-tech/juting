@@ -1,10 +1,11 @@
 import { ArrowLeft, CircleHelp, ChevronRight } from 'lucide-react'
 import { useCallback, useEffect, useMemo, useRef, useState } from 'react'
 import { useNavigate } from 'react-router-dom'
-import type { CatalogExerciseSummary, ListeningExercise, TranscriptLine } from '@juting/shared'
+import type { ListeningExercise, TranscriptLine } from '@juting/shared'
 import { DifficultReviewStage } from '../components/DifficultReviewStage'
 import { TopBar } from '../components/TopBar'
 import { apiClient } from '../lib/apiClient'
+import { loadCatalogBundle } from '../lib/catalogBundle'
 import { loadStoredStudyStore, persistStudyStore } from '../lib/progressStore'
 import { loadUserPrefs, persistUserPrefs } from '../lib/userPrefs'
 import { setPendingWaveLoop } from '../lib/waveHandoff'
@@ -22,32 +23,41 @@ export function GlobalReviewPage() {
   const navigate = useNavigate()
   const [store, setStore] = useState(loadStoredStudyStore)
   const [catalogTitleById, setCatalogTitleById] = useState<Record<number, string>>({})
+  /** courseId → categoryId：跳转要拼 /courses/:seriesId/chapters/:courseId，
+   *  写死 series 1 会让四级（category 9）的难点跳错课（B2） */
+  const [seriesById, setSeriesById] = useState<Record<number, number>>({})
 
-  // 进度落盘：800ms 防抖（与学习页同节奏）
+  // 进度落盘：800ms 防抖（与学习页同节奏）；卸载时补一次 flush，
+  // 否则「攻克难点 → 立刻返回首页」会丢掉这次写入
+  const latestStoreRef = useRef(store)
+  useEffect(() => {
+    latestStoreRef.current = store
+  }, [store])
+
   useEffect(() => {
     const timer = window.setTimeout(() => persistStudyStore(store), 800)
     return () => window.clearTimeout(timer)
   }, [store])
 
-  // 课程标题：目录接口（summary 级，廉价）
+  useEffect(
+    () => () => {
+      persistStudyStore(latestStoreRef.current)
+    },
+    [],
+  )
+
+  // 课程标题与系列：共享目录包（与生词本/搜索同一份缓存，见 lib/catalogBundle）
   useEffect(() => {
     let mounted = true
-    const titles: Record<number, string> = {}
-    const load = async () => {
-      try {
-        const catalog = await apiClient.getCatalog('zh-CN')
-        for (const category of catalog.categories) {
-          const exercises = await apiClient.getCategoryExercises(category.id, 'zh-CN')
-          for (const exercise of exercises as CatalogExerciseSummary[]) {
-            titles[exercise.id] = exercise.title
-          }
-        }
-        if (mounted) setCatalogTitleById(titles)
-      } catch {
+    loadCatalogBundle()
+      .then((bundle) => {
+        if (!mounted) return
+        setCatalogTitleById(bundle.titleOf)
+        setSeriesById(bundle.seriesOf)
+      })
+      .catch(() => {
         // 目录失败不阻断复习：标题缺省显示课程 id
-      }
-    }
-    void load()
+      })
     return () => {
       mounted = false
     }
@@ -214,11 +224,24 @@ export function GlobalReviewPage() {
   const goWaveLoop = useCallback(
     (line: { start: number; end: number }) => {
       if (!drill) return
+      const seriesId = seriesById[drill.id]
+      if (!seriesId) {
+        // 目录还没加载到这一课：与其猜 series 1 跳错课，不如回首页
+        navigate('/home')
+        return
+      }
       setPendingWaveLoop({ exerciseId: drill.id, start: line.start, end: line.end })
-      navigate(`/courses/1/chapters/${drill.id}?stage=waveform`)
+      navigate(`/courses/${seriesId}/chapters/${drill.id}?stage=waveform`)
     },
-    [drill, navigate],
+    [drill, navigate, seriesById],
   )
+
+  /** 回精听：同样按真实 series 跳，不能写死。 */
+  const goIntensive = useCallback(() => {
+    if (!drill) return
+    const seriesId = seriesById[drill.id]
+    navigate(seriesId ? `/courses/${seriesId}/chapters/${drill.id}?stage=intensive` : '/home')
+  }, [drill, navigate, seriesById])
 
   // 先听后看
   const [revealed, setRevealed] = useState(false)
@@ -286,7 +309,7 @@ export function GlobalReviewPage() {
             isPlaying={isPlaying}
             revealed={revealed}
             onReveal={() => setRevealed(true)}
-            onBackToIntensive={() => navigate(`/courses/1/chapters/${drill.id}?stage=intensive`)}
+            onBackToIntensive={goIntensive}
             onLineSelect={(lineId) => {
               const line = reviewLines.find((item) => item.id === lineId)
               if (line) void playLine(line)

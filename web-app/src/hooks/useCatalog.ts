@@ -17,8 +17,17 @@ type CatalogCacheEntry = {
 }
 const catalogCache = new Map<string, CatalogCacheEntry>()
 
-function fetchCatalogCached(cacheKey: string, contentLocale?: ContentLocale, authToken?: string) {
+/** 供 lib/catalogBundle 复用同一份缓存（导出用，不要在组件里直接调）。 */
+export function fetchCatalogCached(
+  cacheKey: string,
+  contentLocale?: ContentLocale,
+  authToken?: string,
+) {
   let entry = catalogCache.get(cacheKey)
+  if (entry?.data) {
+    // 已经拉过：直接复用结果（原先只看 promise，导致「完成后再取」会重新请求）
+    return Promise.resolve(entry.data)
+  }
   if (entry?.promise) {
     return entry.promise
   }
@@ -38,8 +47,18 @@ function fetchCatalogCached(cacheKey: string, contentLocale?: ContentLocale, aut
   return promise
 }
 
+/**
+ * 单语产品：界面与内容恒为 zh-CN。
+ *
+ * 缓存键归一的关键：仪表盘传 `undefined`、学习页传 `'zh-CN'`，如果各自成键，
+ * 同一份目录会被请求两次且永不命中（D1）。这里把两者统一成 zh-CN——
+ * 既归一了缓存键，也让请求 URL 一致。
+ */
+const EFFECTIVE_LOCALE: ContentLocale = 'zh-CN'
+
 export function useCatalog(contentLocale?: ContentLocale, authToken?: string) {
-  const cacheKey = `${contentLocale ?? 'default'}:${authToken ?? 'anonymous'}`
+  const locale = contentLocale ?? EFFECTIVE_LOCALE
+  const cacheKey = `${locale}:${authToken ?? 'anonymous'}`
   const [catalog, setCatalog] = useState<CatalogResponse>(
     () => catalogCache.get(cacheKey)?.data ?? emptyCatalog,
   )
@@ -61,7 +80,7 @@ export function useCatalog(contentLocale?: ContentLocale, authToken?: string) {
 
     let mounted = true
 
-    fetchCatalogCached(cacheKey, contentLocale, authToken)
+    fetchCatalogCached(cacheKey, locale, authToken)
       .then((remoteCatalog) => {
         if (!mounted) {
           return
@@ -81,7 +100,7 @@ export function useCatalog(contentLocale?: ContentLocale, authToken?: string) {
     return () => {
       mounted = false
     }
-  }, [authToken, cacheKey, contentLocale, reloadNonce])
+  }, [authToken, cacheKey, locale, reloadNonce])
 
   return {
     catalog,

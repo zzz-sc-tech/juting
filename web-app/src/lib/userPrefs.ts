@@ -4,6 +4,8 @@
  *   （控制条上的开关仍可随时切，这里只管「打开课程时的默认值」）
  * - defaultPlaybackRate：未手动调速课程的播放速率（手动调过即按课程记忆）
  */
+import { safeSetItem } from './storageSafety'
+
 export const RATE_OPTIONS = [0.75, 0.9, 1, 1.15, 1.3] as const
 
 export type UserPrefs = {
@@ -56,9 +58,6 @@ export const loadUserPrefs = (): UserPrefs => {
 }
 
 export const persistUserPrefs = (prefs: UserPrefs): void => {
-  try {
-    localStorage.setItem(USER_PREFS_KEY, JSON.stringify(prefs))
-  } catch {
-    // 存储被禁用/写满时静默失败：偏好只是默认值，不值得打断学习
-  }
+  // 静默失败会让设置「看起来生效、刷新即回退」，改走安全写入上报
+  safeSetItem(USER_PREFS_KEY, JSON.stringify(prefs))
 }

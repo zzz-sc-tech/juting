@@ -1,0 +1,63 @@
+/**
+ * 存储故障横幅（components/StorageAlertBanner）。
+ * 用 sticky 而不是 fixed：横幅占位、把页面往下推，不遮挡 TopBar；
+ * 滚动时仍吸在顶部，故障没处理完就跑不掉。
+ */
+.storage-alert {
+  align-items: center;
+  border-bottom: 1px solid var(--line-strong);
+  display: flex;
+  font-size: 13px;
+  gap: 10px;
+  line-height: 1.5;
+  padding: 9px 16px;
+  position: sticky;
+  top: 0;
+  z-index: 95;
+}
+
+.storage-alert-warning {
+  background: var(--warning-soft);
+  color: var(--warning);
+}
+
+.storage-alert-danger {
+  background: var(--danger-soft);
+  color: var(--danger);
+}
+
+.storage-alert-icon {
+  display: inline-flex;
+  flex: none;
+}
+
+.storage-alert-text {
+  flex: 1 1 auto;
+  min-width: 0;
+}
+
+.storage-alert-action {
+  background: transparent;
+  border: 1px solid currentColor;
+  border-radius: var(--radius-pill);
+  color: inherit;
+  cursor: pointer;
+  flex: none;
+  font-size: 12px;
+  padding: 3px 12px;
+}
+
+.storage-alert-action:hover {
+  background: rgba(255, 255, 255, 0.55);
+}
+
+/* 窄屏：按钮换行到第二行，别把提示文字挤成一列 */
+@media (max-width: 640px) {
+  .storage-alert {
+    flex-wrap: wrap;
+  }
+
+  .storage-alert-action {
+    margin-left: 26px;
+  }
+}

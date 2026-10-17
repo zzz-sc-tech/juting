@@ -133,12 +133,27 @@ export const createApiClient = ({
       undefined,
       { authToken },
     ),
-    getCategoryExercises: (categoryId: number, contentLocale?: ContentLocale, authToken?: string) =>
-      fetchJson<CatalogExerciseSummary[]>(
-        `/api/v1/catalog/category/${categoryId}/exercises${contentLocale ? `?contentLocale=${encodeURIComponent(contentLocale)}` : ''}`,
+    /**
+     * 系列下的课程列表。
+     * `view: 'summary'` 只返回列表渲染需要的字段（不含 questions/answerKey/
+     * localizations），体量约为完整摘要的 1/10；不传则保持旧行为。
+     */
+    getCategoryExercises: (
+      categoryId: number,
+      contentLocale?: ContentLocale,
+      authToken?: string,
+      view?: 'summary',
+    ) => {
+      const params = new URLSearchParams()
+      if (contentLocale) params.set('contentLocale', contentLocale)
+      if (view) params.set('view', view)
+      const search = params.toString()
+      return fetchJson<CatalogExerciseSummary[]>(
+        `/api/v1/catalog/category/${categoryId}/exercises${search ? `?${search}` : ''}`,
         undefined,
         { authToken },
-      ),
+      )
+    },
     getExercise: (exerciseId: number, contentLocale?: ContentLocale, authToken?: string) =>
       fetchJson<ListeningExercise>(
         `/api/v1/exercises/${exerciseId}${contentLocale ? `?contentLocale=${encodeURIComponent(contentLocale)}` : ''}`,

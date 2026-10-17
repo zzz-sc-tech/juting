@@ -93,6 +93,13 @@ export function TranscriptPanel({
     [sections, selectedLineId],
   )
 
+  // 行号：200 句 × 每句 findIndex 会变成 4 万次比较（每次渲染），
+  // 预建 id → 序号 的 Map 一次搞定（D5）
+  const lineNumberById = useMemo(
+    () => new Map(exercise.lines.map((line, index) => [line.id, index])),
+    [exercise.lines],
+  )
+
   // 选中句变化：自动展开所在组（其余保持原状，不强制收起）。
   useEffect(() => {
     if (!sectionOfSelected) {
@@ -232,7 +239,7 @@ export function TranscriptPanel({
                 section.lines.map((line) => {
                   const item = progress.lines[line.id] ?? createLineProgress()
                   const lineVisible = Boolean(revealedLineIds[line.id]) || item.mastered
-                  const globalIndex = exercise.lines.findIndex((l) => l.id === line.id)
+                  const globalIndex = lineNumberById.get(line.id) ?? -1
                   return (
                     <li
                       className={

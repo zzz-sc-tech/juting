@@ -1,4 +1,4 @@
-import { ArrowLeft, Database, Download, Newspaper, Play, Target, Upload } from 'lucide-react'
+import { ArrowLeft, Database, Download, HardDriveDownload, History, Newspaper, Play, ShieldCheck, Target, Upload } from 'lucide-react'
 import { useRef, useState, type ChangeEvent } from 'react'
 import { useNavigate } from 'react-router-dom'
 import { useLanguage } from '../i18n/LanguageProvider'
@@ -6,10 +6,25 @@ import {
   downloadBackup,
   getLastExportAt,
   importAll,
+  listAutoSnapshots,
   parseBackup,
+  restoreAutoSnapshot,
+  type AutoSnapshotSummary,
   type BackupFile,
 } from '../lib/dataBackup'
-import { DEFAULT_DAILY_GOAL, loadDailyGoal, persistDailyGoal } from '../lib/progressStore'
+import {
+  DEFAULT_DAILY_GOAL,
+  getLastDroppedCount,
+  isProgressWriteBlocked,
+  loadDailyGoal,
+  persistDailyGoal,
+  resumeProgressWrites,
+} from '../lib/progressStore'
+import {
+  clearStorageIssue,
+  listQuarantineKeys,
+  readQuarantineCopies,
+} from '../lib/storageSafety'
 import {
   applyTheme,
   getStoredTheme,
@@ -42,6 +57,13 @@ export function SettingsPage() {
   const [backupMessage, setBackupMessage] = useState<{ kind: 'ok' | 'error'; text: string } | null>(null)
   const [lastExportAt, setLastExportAt] = useState(getLastExportAt)
   const fileInputRef = useRef<HTMLInputElement>(null)
+  // 存储诊断：损坏隔离、暂停写盘、自动快照（挂载时读一次即可）
+  const [storageState, setStorageState] = useState(() => ({
+    blocked: isProgressWriteBlocked(),
+    dropped: getLastDroppedCount(),
+    copies: listQuarantineKeys(),
+  }))
+  const [snapshots] = useState<AutoSnapshotSummary[]>(listAutoSnapshots)
 
   const handleDailyGoalChange = (value: number) => {
     setDailyGoal(value)
@@ -117,6 +139,37 @@ export function SettingsPage() {
     setPendingBackup(null)
     // React state 还是旧数据，直接刷新最可靠
     window.setTimeout(() => window.location.reload(), 900)
+  }
+
+  /** 把隔离副本原样打包下载：给用户（或后续人工排查）留一份可读的原始数据。 */
+  const handleDownloadCorruptCopies = () => {
+    const copies = readQuarantineCopies()
+    const blob = new Blob([JSON.stringify(copies, null, 2)], { type: 'application/json' })
+    const url = URL.createObjectURL(blob)
+    const anchor = document.createElement('a')
+    anchor.href = url
+    anchor.download = `juting-corrupt-${new Date().toISOString().slice(0, 10)}.json`
+    document.body.appendChild(anchor)
+    anchor.click()
+    anchor.remove()
+    URL.revokeObjectURL(url)
+  }
+
+  /** 用户明确选择「不管损坏数据了」：恢复写盘，副本仍在 localStorage 里。 */
+  const handleResumeWrites = () => {
+    resumeProgressWrites()
+    clearStorageIssue()
+    setStorageState((current) => ({ ...current, blocked: false }))
+  }
+
+  const handleRestoreSnapshot = (at: string) => {
+    if (!window.confirm(t('settings.storage.snapshotConfirm'))) return
+    if (!restoreAutoSnapshot(at)) {
+      setBackupMessage({ kind: 'error', text: t('settings.storage.snapshotFailed') })
+      return
+    }
+    setBackupMessage({ kind: 'ok', text: t('settings.storage.snapshotDone') })
+    window.setTimeout(() => window.location.reload(), 700)
   }
 
   return (
@@ -261,6 +314,80 @@ export function SettingsPage() {
             </p>
           )}
         </section>
+
+        <section className="settings-card">
+          <h2 className="settings-card-title">
+            <ShieldCheck size={15} />
+            {t('settings.storage.title')}
+          </h2>
+          {storageState.blocked ? (
+            <>
+              <p className="settings-data-error">{t('settings.storage.blocked')}</p>
+              <p className="settings-field-hint">{t('settings.storage.resumeHint')}</p>
+            </>
+          ) : storageState.dropped > 0 || storageState.copies.length > 0 ? (
+            <>
+              {storageState.dropped > 0 && (
+                <p className="settings-data-error">
+                  {t('settings.storage.dropped', { count: storageState.dropped })}
+                </p>
+              )}
+              {storageState.copies.length > 0 && (
+                <p className="settings-field-hint">
+                  {t('settings.storage.copyCount', { count: storageState.copies.length })}
+                </p>
+              )}
+            </>
+          ) : (
+            <p className="settings-field-hint">{t('settings.storage.ok')}</p>
+          )}
+          {(storageState.blocked || storageState.copies.length > 0) && (
+            <div className="settings-data-actions">
+              {storageState.copies.length > 0 && (
+                <button className="settings-data-button" onClick={handleDownloadCorruptCopies} type="button">
+                  <HardDriveDownload size={14} aria-hidden="true" />
+                  {t('settings.storage.downloadCopies')}
+                </button>
+              )}
+              {storageState.blocked && (
+                <button className="settings-data-button primary" onClick={handleResumeWrites} type="button">
+                  {t('settings.storage.resume')}
+                </button>
+              )}
+            </div>
+          )}
+        </section>
+
+        {snapshots.length > 0 && (
+          <section className="settings-card">
+            <h2 className="settings-card-title">
+              <History size={15} />
+              {t('settings.storage.snapshotTitle')}
+            </h2>
+            <p className="settings-field-hint">{t('settings.storage.snapshotHint')}</p>
+            <ul className="settings-snapshot-list">
+              {snapshots.map((snapshot) => (
+                <li key={snapshot.at}>
+                  <span className="settings-snapshot-time">
+                    {t('settings.storage.snapshotItem', {
+                      time: formatExportTime(snapshot.at),
+                      courses: snapshot.courseCount,
+                      lines: snapshot.lineCount,
+                      mastered: snapshot.masteredCount,
+                    })}
+                  </span>
+                  <button
+                    className="settings-data-button"
+                    onClick={() => handleRestoreSnapshot(snapshot.at)}
+                    type="button"
+                  >
+                    {t('settings.storage.snapshotRestore')}
+                  </button>
+                </li>
+              ))}
+            </ul>
+          </section>
+        )}
 
         <UpdatePanel />
       </div>

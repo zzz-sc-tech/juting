@@ -1,6 +1,7 @@
 import express, { ErrorRequestHandler } from 'express';
 import http from 'http';
 import cookieParser from 'cookie-parser';
+import compression from 'compression';
 import index from './router';
 import { Logger } from './lib/logger';
 import { banner } from './lib/banner';
@@ -34,6 +35,10 @@ async function Main() {
     // Express 取得对象。未设置 MEDIA_PUBLIC_BASE_URL 时该调用是无操作。
     await preparePublicMediaDelivery();
 
+    // 全站 gzip：目录/详情接口是纯 JSON，压缩率 3–5 倍；默认 filter 不压
+    // audio/video 与已压缩格式，媒体流不受影响。必须放在请求日志之前，
+    // 否则日志里记的是压缩前的大小。
+    app.use(compression());
     app.use(requestLogger);
     app.use((req, res, next) => {
         const origin = req.headers.origin;

@@ -6,12 +6,14 @@
  *
  * 覆盖（replace）：备份原样写回，适合换机/清缓存后恢复。
  * 合并（merge）：进度取并集（同句 mastered/unclear 取 OR、repeatCount 取 max、
- * 生词并集）、每日活动按日取 max、实战档案逐场去重追加；偏好/目标/主题
- * 属于设备偏好，合并时保留本机不动。
+ * 生词并集）、每日活动按日取 max、实战档案逐场去重追加、生词复习取更靠后的一方、
+ * 所听时长按日取 max；偏好/目标/主题属于设备偏好，合并时保留本机不动。
  *
  * 老键兼容：duolinting.web.progress.v1 是更名前的 legacy 键，读取仍回退；
  * 导出时 legacy 值会作为 progress 导出，导入统一写回新键。
  */
+
+import { registerSpaceReclaimer, safeSetItem } from './storageSafety'
 
 export type BackupFile = {
   format: 'juting-backup'
@@ -25,6 +27,10 @@ export type BackupFile = {
     prefs?: unknown
     dailyGoal?: unknown
     theme?: unknown
+    /** 生词复习调度（A3 补入；老备份可能没有） */
+    vocabReview?: unknown
+    /** 所听时长（A3 补入；老备份可能没有） */
+    listenTime?: unknown
   }
 }
 
@@ -49,6 +55,8 @@ const KEYS = {
   dailyGoal: 'juting.web.daily-goal.v1',
   legacyDailyGoal: 'duolinting.web.daily-goal.v1',
   theme: 'juting.web.theme.v1',
+  vocabReview: 'juting.web.vocab-review.v1',
+  listenTime: 'juting.web.listen-time.v1',
   autobackup: 'juting.web.autobackup.v1',
   lastExport: 'juting.web.last-export.v1',
 } as const
@@ -69,7 +77,7 @@ const readRaw = (key: string, legacyKey?: string): unknown => {
   }
 }
 
-/** 导出全部学习数据（6 类；exam-inprogress 是临时态，故意不含）。 */
+/** 导出全部学习数据（8 类；exam-inprogress 是临时态，故意不含）。 */
 export const exportAll = (): BackupFile => ({
   format: 'juting-backup',
   version: 1,
@@ -81,6 +89,8 @@ export const exportAll = (): BackupFile => ({
     prefs: readRaw(KEYS.prefs),
     dailyGoal: readRaw(KEYS.dailyGoal, KEYS.legacyDailyGoal),
     theme: readRaw(KEYS.theme),
+    vocabReview: readRaw(KEYS.vocabReview),
+    listenTime: readRaw(KEYS.listenTime),
   },
 })
 
@@ -211,8 +221,67 @@ const THEMES = ['paper', 'gazette', 'minimal', 'exam'] as const
 const sanitizeTheme = (value: unknown): string | null =>
   typeof value === 'string' && (THEMES as readonly string[]).includes(value) ? value : null
 
+type VocabReviewLike = {
+  addedAt: number
+  dueAt?: number
+  lastReviewedAt?: number
+  reviewCount: number
+  mastered: boolean
+}
+
+/** 生词复习：逐词体检，非法词条丢弃（与 vocabReview.loadVocabReview 同款容错）。 */
+const sanitizeVocabReview = (value: unknown): Record<string, VocabReviewLike> | null => {
+  if (value === undefined) return null
+  if (!isRecord(value)) return null
+  const safe: Record<string, VocabReviewLike> = {}
+  for (const [word, rawEntry] of Object.entries(value)) {
+    if (!isRecord(rawEntry)) continue
+    const addedAt = typeof rawEntry.addedAt === 'number' && Number.isFinite(rawEntry.addedAt) ? rawEntry.addedAt : null
+    if (addedAt === null) continue
+    const reviewCount =
+      typeof rawEntry.reviewCount === 'number' && Number.isFinite(rawEntry.reviewCount)
+        ? Math.max(0, Math.floor(rawEntry.reviewCount))
+        : 0
+    safe[word] = {
+      addedAt,
+      dueAt: typeof rawEntry.dueAt === 'number' && Number.isFinite(rawEntry.dueAt) ? rawEntry.dueAt : undefined,
+      lastReviewedAt:
+        typeof rawEntry.lastReviewedAt === 'number' && Number.isFinite(rawEntry.lastReviewedAt)
+          ? rawEntry.lastReviewedAt
+          : undefined,
+      reviewCount,
+      mastered: rawEntry.mastered === true,
+    }
+  }
+  return safe
+}
+
+type ListenTimeLike = { totalMs: number; byDay: Record<string, number> }
+
+/** 所听时长：只保留合法日期键与非负数值，totalMs 不得小于按日累计。 */
+const sanitizeListenTime = (value: unknown): ListenTimeLike | null => {
+  if (value === undefined) return null
+  if (!isRecord(value)) return null
+  const byDay: Record<string, number> = {}
+  if (isRecord(value.byDay)) {
+    for (const [day, rawMs] of Object.entries(value.byDay)) {
+      if (DAY_RE.test(day) && typeof rawMs === 'number' && Number.isFinite(rawMs) && rawMs > 0) {
+        byDay[day] = rawMs
+      }
+    }
+  }
+  const declared =
+    typeof value.totalMs === 'number' && Number.isFinite(value.totalMs) && value.totalMs > 0 ? value.totalMs : 0
+  const summed = Object.values(byDay).reduce((sum, ms) => sum + ms, 0)
+  return { totalMs: Math.max(declared, summed), byDay }
+}
+
 const writeRaw = (key: string, value: unknown) => {
-  localStorage.setItem(key, typeof value === 'string' ? value : JSON.stringify(value))
+  // 导入写盘同样不能静默失败：配额满时用户以为恢复成功，实际一条没写进去
+  const ok = safeSetItem(key, typeof value === 'string' ? value : JSON.stringify(value))
+  if (!ok) {
+    throw new Error('本地存储写入失败（可能空间已满），导入未完成')
+  }
 }
 
 // ---------- 合并（merge） ----------
@@ -265,7 +334,8 @@ const mergeExerciseProgress = (local: ExerciseProgressLike, incoming: ExercisePr
   }
 }
 
-const mergeProgress = (local: unknown, incoming: unknown): Record<string, unknown> => {
+// 合并规则是纯函数，导出供单测直接覆盖（不摸 localStorage / DOM）
+export const mergeProgress = (local: unknown, incoming: unknown): Record<string, unknown> => {
   const localStore = isRecord(local) ? local : {}
   const incomingStore = isRecord(incoming) ? incoming : {}
   const localProgress = isRecord(localStore.progressByExercise) ? localStore.progressByExercise : {}
@@ -287,7 +357,7 @@ const mergeProgress = (local: unknown, incoming: unknown): Record<string, unknow
   }
 }
 
-const mergeActivity = (local: unknown, incoming: unknown): Record<string, number> => {
+export const mergeActivity = (local: unknown, incoming: unknown): Record<string, number> => {
   const localActivity = sanitizeActivity(local) ?? {}
   const incomingActivity = sanitizeActivity(incoming) ?? {}
   const merged: Record<string, number> = { ...localActivity }
@@ -300,7 +370,7 @@ const mergeActivity = (local: unknown, incoming: unknown): Record<string, number
 const attemptFingerprint = (attempt: AttemptLike) =>
   `${attempt.date}|${attempt.score}|${Array.isArray(attempt.wrong) ? attempt.wrong.length : -1}`
 
-const mergeExamHistory = (local: unknown, incoming: unknown): Record<string, AttemptLike[]> => {
+export const mergeExamHistory = (local: unknown, incoming: unknown): Record<string, AttemptLike[]> => {
   const localHistory = sanitizeExamHistory(local) ?? {}
   const incomingHistory = sanitizeExamHistory(incoming) ?? {}
   const merged: Record<string, AttemptLike[]> = { ...localHistory }
@@ -319,8 +389,46 @@ const mergeExamHistory = (local: unknown, incoming: unknown): Record<string, Att
   return merged
 }
 
-// ---------- 导入 ----------
+// ---------- 生词复习 / 听时长的合并 ----------
 
+const mergeVocabEntry = (local: VocabReviewLike, incoming: VocabReviewLike): VocabReviewLike => {
+  // 以「更靠后」的一方为基底（复习次数多者优先，同次数取最近复习时间）
+  const incomingAhead =
+    incoming.reviewCount > local.reviewCount ||
+    (incoming.reviewCount === local.reviewCount && (incoming.lastReviewedAt ?? 0) > (local.lastReviewedAt ?? 0))
+  const base = incomingAhead ? incoming : local
+  const lastReviewedAt = Math.max(local.lastReviewedAt ?? 0, incoming.lastReviewedAt ?? 0)
+  return {
+    addedAt: Math.min(local.addedAt, incoming.addedAt),
+    dueAt: base.dueAt,
+    lastReviewedAt: lastReviewedAt > 0 ? lastReviewedAt : undefined,
+    reviewCount: Math.max(local.reviewCount, incoming.reviewCount),
+    // 任一侧已掌握即算掌握：用户确实复习够次数了，回退只会让它重新排队
+    mastered: local.mastered || incoming.mastered,
+  }
+}
+
+export const mergeVocabReview = (local: unknown, incoming: unknown): Record<string, VocabReviewLike> => {
+  const merged = { ...(sanitizeVocabReview(local) ?? {}) }
+  for (const [word, entry] of Object.entries(sanitizeVocabReview(incoming) ?? {})) {
+    merged[word] = merged[word] ? mergeVocabEntry(merged[word], entry) : entry
+  }
+  return merged
+}
+
+export const mergeListenTime = (local: unknown, incoming: unknown): ListenTimeLike => {
+  const localTime = sanitizeListenTime(local) ?? { totalMs: 0, byDay: {} }
+  const incomingTime = sanitizeListenTime(incoming) ?? { totalMs: 0, byDay: {} }
+  const byDay: Record<string, number> = { ...localTime.byDay }
+  for (const [day, ms] of Object.entries(incomingTime.byDay)) {
+    byDay[day] = Math.max(byDay[day] ?? 0, ms)
+  }
+  // 同一段时间在两台设备都听过，不能简单相加（会翻倍），取按日累计的较大者
+  const summed = Object.values(byDay).reduce((sum, ms) => sum + ms, 0)
+  return { totalMs: Math.max(localTime.totalMs, incomingTime.totalMs, summed), byDay }
+}
+
+// ---------- 导入 ----------
 /** 导入备份；mode=replace 原样写回（校验过的部分），mode=merge 按并集规则合并。 */
 export const importAll = (backup: BackupFile, mode: ImportMode): ImportResult => {
   const imported: string[] = []
@@ -371,6 +479,20 @@ export const importAll = (backup: BackupFile, mode: ImportMode): ImportResult =>
         writeRaw(KEYS.theme, theme)
         imported.push(KEYS.theme)
       }
+
+      const vocabReview = sanitizeVocabReview(data.vocabReview)
+      if (data.vocabReview !== undefined && !vocabReview) skipped.push('vocabReview')
+      else if (vocabReview) {
+        writeRaw(KEYS.vocabReview, vocabReview)
+        imported.push(KEYS.vocabReview)
+      }
+
+      const listenTime = sanitizeListenTime(data.listenTime)
+      if (data.listenTime !== undefined && !listenTime) skipped.push('listenTime')
+      else if (listenTime) {
+        writeRaw(KEYS.listenTime, listenTime)
+        imported.push(KEYS.listenTime)
+      }
     } else {
       // 合并：只碰学习数据（progress/activity/examHistory）；偏好/目标/主题保留本机
       const localProgress = readRaw(KEYS.progress, KEYS.legacyProgress)
@@ -391,6 +513,20 @@ export const importAll = (backup: BackupFile, mode: ImportMode): ImportResult =>
         writeRaw(KEYS.examHistory, mergeExamHistory(readRaw(KEYS.examHistory), data.examHistory))
         imported.push(KEYS.examHistory)
       }
+
+      if (data.vocabReview !== undefined && sanitizeVocabReview(data.vocabReview) !== null) {
+        writeRaw(KEYS.vocabReview, mergeVocabReview(readRaw(KEYS.vocabReview), data.vocabReview))
+        imported.push(KEYS.vocabReview)
+      } else if (data.vocabReview !== undefined) {
+        skipped.push('vocabReview')
+      }
+
+      if (data.listenTime !== undefined && sanitizeListenTime(data.listenTime) !== null) {
+        writeRaw(KEYS.listenTime, mergeListenTime(readRaw(KEYS.listenTime), data.listenTime))
+        imported.push(KEYS.listenTime)
+      } else if (data.listenTime !== undefined) {
+        skipped.push('listenTime')
+      }
     }
   } catch (error) {
     return {
@@ -404,22 +540,63 @@ export const importAll = (backup: BackupFile, mode: ImportMode): ImportResult =>
   return { ok: true, imported, skipped }
 }
 
-// ---------- 启动自动快照（环形 3 份，误清数据的兜底） ----------
+// ---------- 自动快照（环形 2 份，误清数据的兜底；可在设置页恢复） ----------
 
 type AutoSnapshot = { at: string; progress: unknown; activity: unknown }
 
 /**
- * 应用启动时把进度快照一份到 autobackup（保留最近 3 份）。
+ * 保留份数：原先 3 份完整 progress 副本与主数据抢同一个 5MB 配额，
+ * 配额满时先失败的恰恰是真正的进度写入（见 A2）。降到 2 份并加回收器。
+ */
+const MAX_SNAPSHOTS = 2
+/** 配额告急时先裁到这份数，把空间还给主数据 */
+const SNAPSHOTS_WHEN_TIGHT = 1
+
+const readAutobackup = (): AutoSnapshot[] => {
+  try {
+    const raw = localStorage.getItem(KEYS.autobackup)
+    if (!raw) return []
+    const parsed = JSON.parse(raw) as unknown
+    if (!Array.isArray(parsed)) return []
+    return (parsed as AutoSnapshot[]).filter(
+      (item) => isRecord(item) && typeof item.at === 'string',
+    )
+  } catch {
+    return []
+  }
+}
+
+/** 直接写回快照列表（不经 safeSetItem，避免回收器递归）。 */
+const writeAutobackup = (list: AutoSnapshot[]): boolean => {
+  try {
+    localStorage.setItem(KEYS.autobackup, JSON.stringify(list))
+    return true
+  } catch {
+    return false
+  }
+}
+
+/** 裁掉多余快照；返回是否真的删掉了东西（供配额回收判断）。 */
+const trimAutobackup = (keep: number): boolean => {
+  const list = readAutobackup()
+  if (list.length <= keep) return false
+  return writeAutobackup(list.slice(0, keep))
+}
+
+// 配额满时优先牺牲快照，保住主数据（顺序：先裁到 1 份）
+registerSpaceReclaimer(() => trimAutobackup(SNAPSHOTS_WHEN_TIGHT))
+
+/**
+ * 把当前进度快照一份到 autobackup（保留最近 2 份）。
  * 与上一份内容完全一致时跳过，不重复堆栈。
+ * 启动时调用一次；长驻会话由 main.tsx 的低频定时器续做（见 D 批 A3 修复）。
  */
 export const snapshotForAutobackup = (): void => {
   try {
     const progress = readRaw(KEYS.progress, KEYS.legacyProgress)
     if (progress === undefined) return
     const activity = readRaw(KEYS.activity, KEYS.legacyActivity)
-    const rawList = localStorage.getItem(KEYS.autobackup)
-    const parsed = rawList ? (JSON.parse(rawList) as unknown) : []
-    const list: AutoSnapshot[] = Array.isArray(parsed) ? (parsed as AutoSnapshot[]) : []
+    const list = readAutobackup()
     const latest = list[0]
     if (
       latest &&
@@ -428,9 +605,57 @@ export const snapshotForAutobackup = (): void => {
     ) {
       return
     }
-    const next = [{ at: new Date().toISOString(), progress, activity }, ...list].slice(0, 3)
-    localStorage.setItem(KEYS.autobackup, JSON.stringify(next))
+    const next = [{ at: new Date().toISOString(), progress, activity }, ...list].slice(0, MAX_SNAPSHOTS)
+    // 快照写失败不打扰用户：主数据才是要紧的（配额问题会由主写入路径上报）
+    writeAutobackup(next)
   } catch {
     // 快照是兜底措施，任何异常都不该影响启动
+  }
+}
+
+/** 快照摘要：设置页列表用（时间 + 课程数 + 句子数 + 已掌握数）。 */
+export type AutoSnapshotSummary = {
+  at: string
+  courseCount: number
+  lineCount: number
+  masteredCount: number
+}
+
+export const listAutoSnapshots = (): AutoSnapshotSummary[] =>
+  readAutobackup().map((snapshot) => {
+    const progressByExercise = isRecord(snapshot.progress) && isRecord(snapshot.progress.progressByExercise)
+      ? snapshot.progress.progressByExercise
+      : {}
+    let courseCount = 0
+    let lineCount = 0
+    let masteredCount = 0
+    for (const entry of Object.values(progressByExercise)) {
+      if (!isRecord(entry) || !isRecord(entry.lines)) continue
+      const lines = Object.values(entry.lines)
+      if (lines.length === 0) continue
+      courseCount += 1
+      lineCount += lines.length
+      masteredCount += lines.filter((line) => isRecord(line) && line.mastered === true).length
+    }
+    return { at: snapshot.at, courseCount, lineCount, masteredCount }
+  })
+
+/**
+ * 从自动快照恢复：只回写 progress + activity（快照的结构就是这两项）。
+ * 返回是否写入成功；调用方负责刷新页面。
+ */
+export const restoreAutoSnapshot = (at: string): boolean => {
+  const snapshot = readAutobackup().find((item) => item.at === at)
+  if (!snapshot) return false
+  try {
+    if (snapshot.progress !== undefined) {
+      writeRaw(KEYS.progress, snapshot.progress)
+    }
+    if (snapshot.activity !== undefined) {
+      writeRaw(KEYS.activity, snapshot.activity)
+    }
+    return true
+  } catch {
+    return false
   }
 }

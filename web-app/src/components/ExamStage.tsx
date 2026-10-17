@@ -229,16 +229,27 @@ export function ExamStage({
     }
   }, [currentTime, duration, isPlaying, submitted])
 
-  // 进行中作答暂存（800ms 防抖）：答案 + 播放位置；交卷即清
+  // 进行中作答暂存（800ms 防抖）：答案 + 播放位置；交卷即清。
+  // 播放位置走 ref：currentTime 由播放器每 ~100ms 推一次，若进依赖数组，
+  // 定时器会被不断重置、800ms 永远走不完 → 连续播放时暂存从不落盘（B1）。
+  const currentTimeRef = useRef(currentTime)
+  useEffect(() => {
+    currentTimeRef.current = currentTime
+  }, [currentTime])
+
   useEffect(() => {
     if (submitted || Object.keys(answers).length === 0) {
       return
     }
     const timer = window.setTimeout(() => {
-      saveInprogress(exercise.id, { answers, currentTime, savedAt: Date.now() })
+      saveInprogress(exercise.id, {
+        answers,
+        currentTime: currentTimeRef.current,
+        savedAt: Date.now(),
+      })
     }, 800)
     return () => window.clearTimeout(timer)
-  }, [answers, currentTime, exercise.id, submitted])
+  }, [answers, exercise.id, submitted])
 
   // 交卷后自动滚到第一条错题（无错题则滚回顶部）
   useEffect(() => {

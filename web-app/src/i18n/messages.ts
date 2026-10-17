@@ -10,6 +10,7 @@ import { globalReviewMessages } from './messages/globalReview'
 import { intensiveStageMessages } from './messages/intensiveStage'
 import { searchMessages } from './messages/search'
 import { settingsMessages } from './messages/settings'
+import { storageMessages } from './messages/storage'
 import { stageMessages } from './messages/studyStages'
 import { studyStatesMessages } from './messages/studyStates'
 import { vocabMessages } from './messages/vocab'
@@ -30,6 +31,7 @@ const messages = {
   ...intensiveStageMessages,
   ...searchMessages,
   ...settingsMessages,
+  ...storageMessages,
   ...stageMessages,
   ...studyStatesMessages,
   ...vocabMessages,

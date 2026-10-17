@@ -161,6 +161,10 @@ export function IntensiveStage({
   const [dictWord, setDictWord] = useState<string | null>(null)
   // 译文开关：默认开（保持既有行为），做题时不想看可以关掉
   const [translationOn, setTranslationOn] = useState(() => loadUserPrefs().translationDefault)
+  // 默认倍速只读一次：原先在 JSX 里连着调 3 次 loadUserPrefs()，
+  // 等于每次渲染做 3 次同步 localStorage 读 + JSON.parse（D5）
+  const defaultRate = useMemo(() => loadUserPrefs().defaultPlaybackRate, [])
+  const effectiveRate = progress.playbackRate ?? defaultRate
   const { t, contentLocale } = useLanguage()
   const sentenceVisible = Boolean(revealedLineIds[selectedLine.id])
   // 译文行只在「真的有译文且与原文不同」时显示：接口若把原文回填进译文，
@@ -436,7 +440,7 @@ export function IntensiveStage({
                     className={ratePickerOpen ? 'rate-trigger active' : 'rate-trigger'}
                     type="button"
                   >
-                    <span className="rate-value">{progress.playbackRate ?? loadUserPrefs().defaultPlaybackRate}x</span>
+                    <span className="rate-value">{effectiveRate}x</span>
                     <ChevronDown size={24} strokeWidth={3} aria-hidden="true" />
                   </button>
                 </Popover.Trigger>
@@ -451,9 +455,9 @@ export function IntensiveStage({
                   <div role="radiogroup">
                     {playbackRates.map((rate) => (
                       <button
-                        aria-checked={(progress.playbackRate ?? loadUserPrefs().defaultPlaybackRate) === rate}
+                        aria-checked={effectiveRate === rate}
                         className={
-                          (progress.playbackRate ?? loadUserPrefs().defaultPlaybackRate) === rate
+                          effectiveRate === rate
                             ? 'rate-option active'
                             : 'rate-option'
                         }

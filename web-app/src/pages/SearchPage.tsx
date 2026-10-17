@@ -1,9 +1,9 @@
 import { Search, X } from 'lucide-react'
 import { useEffect, useMemo, useRef, useState } from 'react'
 import { useNavigate } from 'react-router-dom'
-import type { CatalogExerciseSummary } from '@juting/shared'
 import { TopBar } from '../components/TopBar'
 import { apiClient } from '../lib/apiClient'
+import { loadCatalogBundle } from '../lib/catalogBundle'
 import { loadStoredStudyStore } from '../lib/progressStore'
 import { collectVocabEntries } from '../lib/vocab'
 import { lookupVocab } from '../lib/vocabDict'
@@ -36,6 +36,9 @@ type SearchIndex = {
   courses: SearchCourse[]
 }
 
+/** 命中行 + 所属课程标题（搜索页渲染用）。 */
+type SearchLineHit = SearchLine & { courseTitle: string }
+
 type IndexState =
   | { status: 'idle' }
   | { status: 'building'; done: number; total: number }
@@ -46,34 +49,49 @@ type IndexState =
 let cachedIndex: SearchIndex | null = null
 let buildingPromise: Promise<SearchIndex> | null = null
 
+/**
+ * 单批并发数：全量课程逐课串行要 0.4-0.9s，分批并发可压掉一半以上。
+ * 8 是本机 Express 的舒适区——再高（16/32 实测）没有进一步收益，反而会挤占学习页的播放请求。
+ */
+const INDEX_CONCURRENCY = 8
+
 const buildIndex = (onProgress: (done: number, total: number) => void): Promise<SearchIndex> => {
   if (cachedIndex) return Promise.resolve(cachedIndex)
   if (buildingPromise) return buildingPromise
 
   buildingPromise = (async () => {
-    const catalog = await apiClient.getCatalog('zh-CN')
-    // 先把课程表拉齐（summary 级，廉价），得到 总课数 与 series 映射
+    // 目录与课程表来自共享目录包（与生词本/全局复习同一份缓存），
+    // 不再各自 getCatalog + 逐系列列举
+    const bundle = await loadCatalogBundle()
     const courses: SearchCourse[] = []
-    for (const category of catalog.categories) {
-      const exercises = (await apiClient.getCategoryExercises(category.id, 'zh-CN')) as CatalogExerciseSummary[]
-      for (const exercise of exercises) {
+    for (const category of bundle.categories) {
+      for (const exercise of bundle.byCategory[category.id] ?? []) {
         courses.push({ id: exercise.id, seriesId: category.id, title: exercise.title })
       }
     }
     const total = courses.length
-    let done = 0
     const lines: SearchLine[] = []
-    for (const course of courses) {
-      try {
-        const exercise = await apiClient.getExercise(course.id, 'zh-CN')
-        for (const line of exercise.lines) {
-          lines.push({ courseId: course.id, lineId: line.id, text: line.text, start: line.start })
-        }
-      } catch {
-        // 单课失败不拖垮整个索引：这门课搜不到，其余照常
-      }
-      done += 1
-      onProgress(done, total)
+    // 分批并发：Promise.all 保持输入顺序，索引里的课程顺序与串行版一致（结果排序依赖它）
+    for (let start = 0; start < total; start += INDEX_CONCURRENCY) {
+      const batch = courses.slice(start, start + INDEX_CONCURRENCY)
+      const chunks = await Promise.all(
+        batch.map(async (course): Promise<SearchLine[]> => {
+          try {
+            const exercise = await apiClient.getExercise(course.id, 'zh-CN')
+            return exercise.lines.map((line) => ({
+              courseId: course.id,
+              lineId: line.id,
+              text: line.text,
+              start: line.start,
+            }))
+          } catch {
+            // 单课失败不拖垮整个索引：这门课搜不到，其余照常
+            return []
+          }
+        }),
+      )
+      for (const chunk of chunks) lines.push(...chunk)
+      onProgress(Math.min(start + batch.length, total), total)
     }
     const index: SearchIndex = { lines, courses }
     cachedIndex = index
@@ -158,25 +176,41 @@ export function SearchPage() {
     inputRef.current?.focus()
   }, [])
 
-  const store = useMemo(loadStoredStudyStore, [])
+  // 内联包装：react-hooks/use-memo 不接受裸函数引用；loadStoredStudyStore 无参，行为不变
+  const store = useMemo(() => loadStoredStudyStore(), [])
   const vocabEntries = useMemo(() => collectVocabEntries(store.progressByExercise), [store])
 
   const results = useMemo(() => {
     const q = debounced
     if (!q || indexState.status !== 'ready' || !cachedIndex) return null
     const lower = q.toLowerCase()
-    const lineHits = cachedIndex.lines
-      .filter((line) => line.text.toLowerCase().includes(lower))
-      .slice(0, RESULT_LIMIT)
-      .map((line) => ({
-        ...line,
-        courseTitle: cachedIndex?.courses.find((course) => course.id === line.courseId)?.title ?? `#${line.courseId}`,
-      }))
-    const lineTruncated =
-      cachedIndex.lines.filter((line) => line.text.toLowerCase().includes(lower)).length > RESULT_LIMIT
+    // 一次遍历同时取结果与总数（原先 filter 跑两遍、7690 行扫两轮）；
+    // 课程标题预建 Map，避免每条命中都 courses.find（D5）
+    const titleByCourse = new Map(cachedIndex.courses.map((course) => [course.id, course.title]))
+    const lineHits: SearchLineHit[] = []
+    let lineTotal = 0
+    for (const line of cachedIndex.lines) {
+      if (!line.text.toLowerCase().includes(lower)) continue
+      lineTotal += 1
+      if (lineHits.length < RESULT_LIMIT) {
+        lineHits.push({
+          ...line,
+          courseTitle: titleByCourse.get(line.courseId) ?? `#${line.courseId}`,
+        })
+      }
+    }
+    const lineTruncated = lineTotal > RESULT_LIMIT
     const vocabHits = vocabEntries.filter((entry) => entry.word.toLowerCase().includes(lower)).slice(0, 20)
-    const courseHits = cachedIndex.courses.filter((course) => course.title.toLowerCase().includes(lower)).slice(0, 10)
-    return { lineHits, lineTruncated, vocabHits, courseHits, empty: lineHits.length === 0 && vocabHits.length === 0 && courseHits.length === 0 }
+    const courseHits = cachedIndex.courses
+      .filter((course) => course.title.toLowerCase().includes(lower))
+      .slice(0, 10)
+    return {
+      lineHits,
+      lineTruncated,
+      vocabHits,
+      courseHits,
+      empty: lineHits.length === 0 && vocabHits.length === 0 && courseHits.length === 0,
+    }
   }, [debounced, indexState.status, vocabEntries])
 
   const jumpToLine = (courseId: number, lineId: string) => {
