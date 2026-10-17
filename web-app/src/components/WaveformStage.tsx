@@ -158,6 +158,26 @@ export function WaveformStage({
   // 当前句译文：初始状态跟「设置 → 译文默认显示」
   const [translationOn, setTranslationOn] = useState(() => loadUserPrefs().translationDefault)
 
+  // ---- 播放头平滑（动效任务五）----
+  // currentTime 以 4Hz 离散推进，原生 cursor 会跳格；改为外层 div + transform
+  // 线性补帧。scrubbing = 用户正在拖动/点击 seek（currentTime 大跳变），
+  // 此间关掉 transition 保证跟手，松手 300ms 内无新跳变即恢复补帧。
+  const [scrubbing, setScrubbing] = useState(false)
+  const prevTimeRef = useRef(0)
+  useEffect(() => {
+    const delta = currentTime - prevTimeRef.current
+    prevTimeRef.current = currentTime
+    if (Math.abs(delta) > 1.2) {
+      setScrubbing(true)
+      const timer = window.setTimeout(() => setScrubbing(false), 300)
+      return () => window.clearTimeout(timer)
+    }
+    setScrubbing(false)
+  }, [currentTime])
+
+  // 波形可视宽度：fit 模式按比例定位，zoom 模式按 px/s 定位，resize 时同步
+  const [canvasWidth, setCanvasWidth] = useState(0)
+
   // A-B 循环：标 A → 标 B → 循环中（再点清除）；用户点击波形/句区即退出循环
   const [abState, setAbState] = useState<AbLoopState>('off')
   const abARef = useRef(0)
@@ -314,7 +334,9 @@ export function WaveformStage({
       barWidth: 2,
       container,
       cursorColor: palette.cursor,
-      cursorWidth: 2,
+      // 播放头由外层 .waveform-playhead（transform + linear 补帧）承担，
+      // 原生 cursor 关掉——它随 4Hz currentTime 跳格
+      cursorWidth: 0,
       // 拖动时由 wavesurfer 自己 seek，配合下面的 interaction 处理实现「拖到哪就从哪播」
       dragToSeek: true,
       fillParent: true,
@@ -512,11 +534,23 @@ export function WaveformStage({
     if (!surface || !canvas || typeof ResizeObserver === 'undefined') {
       return
     }
-    const observer = new ResizeObserver(updatePan)
+    const observer = new ResizeObserver(() => {
+      setCanvasWidth(canvas.clientWidth)
+      updatePan()
+    })
     observer.observe(surface)
     observer.observe(canvas)
     return () => observer.disconnect()
   }, [updatePan, status.kind])
+
+  // 播放头 x（surface 视口坐标）：fit 按时长比例，zoom 按 px/s 减去滚动偏移
+  const playheadX = useMemo(() => {
+    if (!duration || !canvasWidth) return 0
+    if (zoomPx > 0) {
+      return Math.max(-2, Math.min(currentTime * zoomPx - pan.pos, canvasWidth))
+    }
+    return (currentTime / duration) * canvasWidth
+  }, [currentTime, duration, canvasWidth, zoomPx, pan.pos])
 
   // 切课时复位循环状态（区域随 wavesurfer 销毁，状态也要归零）
   useEffect(() => {
@@ -613,6 +647,15 @@ export function WaveformStage({
           {/* 与其余阶段共用同一个媒体元素，保证播放状态一致 */}
           <audio ref={mediaRef as RefObject<HTMLAudioElement | null>} src={sourceUrl} preload="auto" />
           <div className="waveform-canvas" ref={containerRef} />
+          {/* 平滑播放头：transform 线性补帧 4Hz 的 currentTime 台阶；
+              拖动 seek 期间加 .scrubbing 关 transition 保证跟手 */}
+          {status.kind === 'ready' && (
+            <div
+              aria-hidden="true"
+              className={scrubbing ? 'waveform-playhead scrubbing' : 'waveform-playhead'}
+              style={{ transform: `translateX(${playheadX}px)` }}
+            />
+          )}
 
           {status.kind === 'loading' && (
             <div className="waveform-overlay" role="status">

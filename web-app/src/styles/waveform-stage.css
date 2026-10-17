@@ -220,3 +220,23 @@
   cursor: default;
   opacity: 0.45;
 }
+
+/* 平滑播放头：从 wavesurfer 原生 cursor（随 4Hz currentTime 跳格）拆出，
+   用 transform + 200ms linear 补帧走合成器；拖动 seek 时 .scrubbing 关补帧跟手。 */
+.waveform-playhead {
+  background: var(--ink);
+  bottom: 0;
+  left: 0;
+  opacity: 0.85;
+  pointer-events: none;
+  position: absolute;
+  top: 0;
+  transition: transform 200ms linear;
+  width: 2px;
+  will-change: transform;
+  z-index: 1;
+}
+
+.waveform-playhead.scrubbing {
+  transition: none;
+}

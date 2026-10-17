@@ -179,7 +179,7 @@
   justify-content: center;
   min-height: 42px;
   padding: 0 18px;
-  transition: background 0.15s ease;
+  transition: background 0.15s ease, transform var(--dur-instant) var(--ease-spring);
 }
 
 .command-button:hover {
@@ -351,7 +351,8 @@
   font-weight: 500;
   min-height: 28px;
   padding: 0 11px;
-  transition: color 0.15s ease, border-color 0.15s ease, background 0.15s ease;
+  transition: color 0.15s ease, border-color 0.15s ease, background 0.15s ease,
+    transform var(--dur-instant) var(--ease-spring);
 }
 
 .subtitle-chip:hover {

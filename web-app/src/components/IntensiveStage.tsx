@@ -38,6 +38,8 @@ type IntensiveStageProps = {
   progress: ExerciseProgress
   selectedLine: TranscriptLine
   selectedLineIndex: number
+  /** 换句方向（上句 prev / 其余 next），容器在方向源事件里设置 */
+  lineDirection: 'prev' | 'next'
   lineProgress: LineProgress
   revealedLineIds: Record<string, true>
   isPlaying: boolean
@@ -124,6 +126,7 @@ export function IntensiveStage({
   progress,
   selectedLine,
   selectedLineIndex,
+  lineDirection,
   lineProgress,
   revealedLineIds,
   isPlaying,
@@ -335,13 +338,18 @@ export function IntensiveStage({
             {!dictationOn && (
               <p className={sentenceVisible ? 'subtitle-text revealed' : 'subtitle-text'}>
                 {sentenceVisible ? (
-                  <ClickableSentence
-                    text={selectedLine.text}
-                    onPickWord={(word) =>
-                      // 再点同一个词 = 收起（遮罩不吃点击，想换词得能直接点）
-                      setDictWord((current) => (current === word ? null : word))
-                    }
-                  />
+                  /* key 放内层 span：换句重挂载只重播入场动画；
+                     外层 <p> 的 className 带揭示状态，若把 key 放它上面，
+                     刚揭示的句子会连状态一起重置回空白 */
+                  <span key={selectedLine.id} className={`line-body dir-${lineDirection}`}>
+                    <ClickableSentence
+                      text={selectedLine.text}
+                      onPickWord={(word) =>
+                        // 再点同一个词 = 收起（遮罩不吃点击，想换词得能直接点）
+                        setDictWord((current) => (current === word ? null : word))
+                      }
+                    />
+                  </span>
                 ) : (
                   ''
                 )}

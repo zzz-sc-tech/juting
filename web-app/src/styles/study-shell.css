@@ -187,3 +187,15 @@
   color: var(--accent-ink);
   font-weight: 600;
 }
+
+/* 阶段切换入场：key 重挂载触发，新舞台从右侧 12px 淡入。
+   动画只作用于这层容器本身（transform/opacity 走合成器），
+   舞台内部一律不加动画，避免拖慢首帧。 */
+@keyframes stage-enter {
+  from { opacity: 0; transform: translateX(12px); }
+  to   { opacity: 1; transform: translateX(0); }
+}
+
+.stage-viewport {
+  animation: stage-enter var(--dur-base) var(--ease-out-quint) both;
+}

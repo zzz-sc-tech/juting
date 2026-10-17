@@ -65,6 +65,11 @@ export function IntensiveContainer() {
     [countLineRepeat, playSingleLine],
   )
 
+  // 换句方向（动效）：上句/下句按钮与自动推进是显式方向源；其余换句路径
+  // （面板点行、点词跳转）保持 next。放容器层而不是 render 期比较索引——
+  // 换句常伴随二次渲染（进度/揭示状态），render 期读 ref 会被覆盖。
+  const [lineDirection, setLineDirection] = useState<'prev' | 'next'>('next')
+
   const moveSelectedLineAndPlay = useCallback(
     async (offset: number) => {
       if (!activeExercise || !studyExercise || !selectedLine) {
@@ -76,6 +81,7 @@ export function IntensiveContainer() {
         return
       }
 
+      setLineDirection(offset < 0 ? 'prev' : 'next')
       await playLine(nextLine)
     },
     [activeExercise, playLine, selectedLine, selectedLineIndex, studyExercise],
@@ -144,6 +150,7 @@ export function IntensiveContainer() {
       progress={progress}
       selectedLine={selectedLine}
       selectedLineIndex={selectedLineIndex}
+      lineDirection={lineDirection}
       lineProgress={lineProgress}
       revealedLineIds={revealedLineIds}
       isPlaying={isPlaying}

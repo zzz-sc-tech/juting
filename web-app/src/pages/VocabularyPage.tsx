@@ -1,5 +1,5 @@
 import { Trash2 } from 'lucide-react'
-import { Fragment, useEffect, useMemo, useState } from 'react'
+import { Fragment, useEffect, useMemo, useRef, useState } from 'react'
 import { useNavigate } from 'react-router-dom'
 import type { CatalogExerciseSummary } from '@juting/shared'
 import { TopBar } from '../components/TopBar'
@@ -9,6 +9,7 @@ import { splitClickableWords } from '../lib/clickableText'
 import { loadStoredStudyStore, persistStudyStore } from '../lib/progressStore'
 import type { StudyStore } from '@juting/shared'
 import { collectVocabEntries } from '../lib/vocab'
+import { capturePositions, playFlip } from '../lib/flip'
 import { lookupVocab } from '../lib/vocabDict'
 import {
   blankContext,
@@ -55,6 +56,9 @@ export function VocabularyPage() {
   const [reviewIdx, setReviewIdx] = useState(0)
   const [revealed, setRevealed] = useState(false)
   const [reviewDone, setReviewDone] = useState(0) // >0 = 本次复习完成的词数（0=不在复习模式）
+  // 列表增删动画（FLIP，见 lib/flip.ts）：删除前记 First，提交后平滑上移
+  const listRef = useRef<HTMLUListElement>(null)
+  const prevVocabKeysRef = useRef<Set<string>>(new Set())
   /** 侧栏看的是哪个词、归到哪一课、以及收藏时要记的原句（都取自点开的那一行） */
   const [dictTarget, setDictTarget] = useState<{
     word: string
@@ -162,9 +166,8 @@ export function VocabularyPage() {
     [entries, courseFilter],
   )
 
-  const remove = (courseId: number, word: string) => {
-    // 同步清掉复习调度记录（同词再收藏会重新排队）
-    unregisterVocabWord(word)
+  /** 状态提交（原 remove 的 React 部分）；动画包装在 remove 里。 */
+  const commitRemove = (courseId: number, word: string) => {
     setStore((current) => {
       const courseProgress = current.progressByExercise[courseId]
       // 删除同样忽略大小写：侧栏的「已收藏」判定就是忽略大小写的
@@ -190,6 +193,56 @@ export function VocabularyPage() {
     setDictTarget((current) =>
       current?.word.toLowerCase() === word.toLowerCase() ? null : current,
     )
+  }
+
+  // 收藏新词 → 新行缩小淡入（FLIP 的新增分支逻辑，等 React 提交后对新节点播放）
+  useEffect(() => {
+    const list = listRef.current
+    if (!list) return
+    const nextKeys = new Set<string>()
+    const added: string[] = []
+    for (const entry of entries) {
+      const k = `${entry.courseId}|${entry.word.toLowerCase()}`
+      nextKeys.add(k)
+      if (!prevVocabKeysRef.current.has(k)) added.push(k)
+    }
+    prevVocabKeysRef.current = nextKeys
+    if (added.length === 0) return
+    requestAnimationFrame(() => {
+      requestAnimationFrame(() => {
+        for (const k of added) {
+          const el = list.querySelector<HTMLElement>(`[data-key="${CSS.escape(k)}"]`)
+          el?.animate(
+            [{ opacity: 0, transform: 'scale(0.96)' }, { opacity: 1, transform: 'scale(1)' }],
+            { duration: 200, easing: 'cubic-bezier(0.22, 1, 0.36, 1)', fill: 'both' },
+          )
+        }
+      })
+    })
+  }, [entries])
+
+  const remove = (courseId: number, word: string) => {
+    // 同步清掉复习调度记录（同词再收藏会重新排队）
+    unregisterVocabWord(word)
+    const list = listRef.current
+    if (!list) {
+      commitRemove(courseId, word)
+      return
+    }
+    const first = capturePositions(list)
+    const row = list.querySelector<HTMLElement>(
+      `[data-key="${CSS.escape(`${courseId}|${word.toLowerCase()}`)}"]`,
+    )
+    if (!row) {
+      commitRemove(courseId, word)
+      return
+    }
+    // 先淡出 120ms（比 FLIP 的 200ms 短，不拖沓），塌陷交给 React 提交后的 FLIP
+    row.animate([{ opacity: 1 }, { opacity: 0 }], { duration: 120, fill: 'forwards' })
+    window.setTimeout(() => {
+      commitRemove(courseId, word)
+      playFlip(list, first)
+    }, 120)
   }
 
   /**
@@ -340,12 +393,16 @@ export function VocabularyPage() {
               </div>
             )}
 
-            <ul className="vocab-list">
+            <ul className="vocab-list" ref={listRef}>
               {visible.map((entry) => {
                 const lex = lookupVocab(entry.word)
                 const badge = scheduleBadgeOf(reviewState[entry.word.toLowerCase()])
                 return (
-                  <li className="vocab-row" key={`${entry.courseId}|${entry.word}`}>
+                  <li
+                    className="vocab-row"
+                    data-key={`${entry.courseId}|${entry.word.toLowerCase()}`}
+                    key={`${entry.courseId}|${entry.word}`}
+                  >
                     <div className="vocab-main">
                       <div className="vocab-lex">
                         <button

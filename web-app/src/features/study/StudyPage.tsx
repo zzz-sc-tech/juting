@@ -79,11 +79,15 @@ function StudyLayout() {
 
               <StageRailContainer />
 
-              {studyStage === 'extensive' && <ExtensiveContainer />}
-              {studyStage === 'intensive' && <IntensiveContainer />}
-              {studyStage === 'waveform' && <WaveformContainer />}
-              {studyStage === 'review' && <ReviewContainer />}
-              {studyStage === 'exam' && <ExamContainer />}
+              {/* key 触发换阶段重挂载 → .stage-viewport 入场动画；
+                  动画只作用于这层容器，不给舞台内部元素加（拖慢首帧） */}
+              <div className="stage-viewport" key={studyStage}>
+                {studyStage === 'extensive' && <ExtensiveContainer />}
+                {studyStage === 'intensive' && <IntensiveContainer />}
+                {studyStage === 'waveform' && <WaveformContainer />}
+                {studyStage === 'review' && <ReviewContainer />}
+                {studyStage === 'exam' && <ExamContainer />}
+              </div>
             </>
           )}
         </section>

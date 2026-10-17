@@ -1,0 +1,53 @@
+/* 动效令牌：全站动画的时长阶梯与缓动曲线单一来源。
+   约定（见 docs/HANDOFF-动效打磨任务.md）：
+   - 交互反馈 90-150ms，内容切换 200ms，上限 250ms——学习工具忌"等动画"
+   - 只动 transform / opacity（走合成器），不动 width/height/top/left 与颜色
+   - 既有 0.15s ease 状态过渡是定稿观感，不要批量替换；token 只用于新增动画 */
+:root {
+  /* 时长阶梯 */
+  --dur-instant: 90ms;   /* 按下/抬起 */
+  --dur-fast: 150ms;     /* hover/选中（与既有 0.15s 对齐） */
+  --dur-base: 200ms;     /* 内容切换（句子/阶段） */
+  --dur-slow: 280ms;     /* 大面积展开/收起 */
+
+  /* 缓动：物理感 */
+  --ease-out-quint: cubic-bezier(0.22, 1, 0.36, 1);  /* 入场：快进慢出 */
+  --ease-in-quint: cubic-bezier(0.64, 0, 0.78, 0);   /* 退场 */
+  --ease-spring: cubic-bezier(0.34, 1.56, 0.64, 1);  /* 轻微过冲：按钮反馈 */
+  --ease-standard: cubic-bezier(0.4, 0, 0.2, 1);     /* 通用 */
+}
+
+/* 无障碍底线：尊重系统「减少动态效果」——动画直接出终态 */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+/* ── 按钮按下反馈 ─────────────────────────────────────────
+   只给真正可点的按钮（不用通配符，容器/文本不参与）。
+   scale(0.96) + 轻微过冲回弹；键盘 Enter 触发 :active 同样生效。
+   有既有 transition 的类（icon-button/pill/command-button/subtitle-chip）
+   在各自声明里追加了 transform 项，这里只补没有 transition 的类。 */
+.rate-chip,
+.vocab-delete,
+.waveform-loop-btn,
+.waveform-go-intensive {
+  transition: transform var(--dur-instant) var(--ease-spring);
+}
+
+.icon-button:active:not(:disabled),
+.command-button:active:not(:disabled),
+.status-actions .pill:active,
+.subtitle-chip:active,
+.rate-chip:active,
+.vocab-delete:active,
+.waveform-loop-btn:active,
+.waveform-go-intensive:active:not(:disabled) {
+  transform: scale(0.96);
+}
