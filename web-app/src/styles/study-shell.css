@@ -238,18 +238,26 @@
    舞台内部一律不加动画，避免拖慢首帧。
    方向由阶段序号决定：往前走从右来，往后退从左来；
    600ms 内回访同一阶段不重播（组件加 .no-enter）。 */
+/* 注意 to 必须写 transform: none 而不是 translateX(0)：
+   动画用 fill-mode: both 会把终态留在元素上，而任何非 none 的 transform
+   都会给 position: fixed 的后代新建包含块——词典侧栏因此被锚到舞台而不是
+   视口，底部「收藏」直接跑到屏幕外（真机实测，安卓 Chrome 113）。 */
 @keyframes stage-enter {
   from { opacity: 0; transform: translateX(6px); }
-  to   { opacity: 1; transform: translateX(0); }
+  to   { opacity: 1; transform: none; }
 }
 
 @keyframes stage-enter-prev {
   from { opacity: 0; transform: translateX(-6px); }
-  to   { opacity: 1; transform: translateX(0); }
+  to   { opacity: 1; transform: none; }
 }
 
 .stage-viewport {
-  animation: stage-enter var(--dur-fast) var(--ease-out-quint) both;
+  /* fill-mode 必须是 backwards 而不是 both：both 会把终态留在元素上，
+     而 Chrome 把终态 transform 解析成 identity matrix（不是 none），
+     这仍然会给 position: fixed 的后代新建包含块——词典侧栏因此错位。
+     backwards 在动画结束后回落到元素自身的 transform: none。 */
+  animation: stage-enter var(--dur-fast) var(--ease-out-quint) backwards;
 }
 
 .stage-viewport.dir-prev {

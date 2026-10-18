@@ -34,6 +34,11 @@ describe('splitClickableWords', () => {
     expect(words).toEqual(['I', "don't", 'know'])
   })
 
+  it('弯撇号也留在词内（don’t 不能被拆成 don + t）', () => {
+    const words = splitClickableWords('I don’t know').filter((p) => p.type === 'word').map((p) => p.text)
+    expect(words).toEqual(['I', 'don’t', 'know'])
+  })
+
   it('开头与结尾是标点时，首尾都有 gap', () => {
     const parts = splitClickableWords('"Hello!"')
     expect(parts[0]).toEqual({ type: 'gap', text: '"' })

@@ -8,7 +8,9 @@
  */
 export type SentencePart = { type: 'word' | 'gap'; text: string }
 
-const WORD_RE = /[A-Za-z][A-Za-z'-]*/g
+// 撇号必须同时认 ASCII ' 和弯撇号 ’：转写稿里大量出现 Word 自动替换的 ’，
+// 只认 ASCII 会把 don’t 拆成 don + t，用户点到的是一段碎片（真机实测踩到）。
+const WORD_RE = /[A-Za-z][A-Za-z'’-]*/g
 
 export const splitClickableWords = (text: string): SentencePart[] => {
   const parts: SentencePart[] = []

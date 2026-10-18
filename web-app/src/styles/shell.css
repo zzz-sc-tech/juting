@@ -58,6 +58,9 @@
 }
 
 .sr-only {
+  /* left: 0 是必须的：没有定位祖先时 absolute 会以初始包含块为基准，
+     放在横向滚动容器里的 sr-only 元素会把文档撑宽（320 下多出 52px） */
+  left: 0;
   position: absolute;
   width: 1px;
   height: 1px;

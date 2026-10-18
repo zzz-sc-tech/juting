@@ -38,7 +38,10 @@
   box-shadow: var(--shadow-float);
   display: flex;
   flex-direction: column;
+  /* 100vh 在移动浏览器里包含地址栏区域，底部会被浏览器 UI 压住；
+     dvh 跟着可见视口走（不支持的浏览器仍用上一行兜底） */
   height: 100vh;
+  height: 100dvh;
   position: fixed;
   right: 0;
   top: 0;

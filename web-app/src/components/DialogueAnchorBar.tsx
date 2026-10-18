@@ -62,8 +62,8 @@ export function DialogueAnchorBar({
         ))}
         {hasOverflow && (
           <label className="dialogue-anchor-select-wrap">
-            <span className="sr-only">{t('anchors.moreLabel')}</span>
             <select
+              aria-label={t('anchors.moreLabel')}
               className="dialogue-anchor-select"
               onChange={(event) => {
                 const next = anchors.find((anchor) => anchor.id === event.target.value)

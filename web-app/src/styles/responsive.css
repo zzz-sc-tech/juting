@@ -163,6 +163,11 @@
     padding: 6px 10px;
   }
 
+  /* 吸顶导航占了 56px：scrollIntoView 要让开它，否则切题后题干被盖住 */
+  .exam-question-card {
+    scroll-margin-top: 72px;
+  }
+
   /* 三个横向滚动容器统一：右缘渐隐提示「还有更多」+ 吸附，滑起来有段落感。
      滚动条本来就是隐藏的，没有渐隐时用户会以为只有屏上这几个。 */
   .stage-rail,
@@ -309,8 +314,10 @@
   }
 }
 
-/* ── 触控设备：可点区域 ≥44px（不影响桌面密度） ────────── */
-@media (pointer: coarse) {
+/* ── 触控设备：可点区域 ≥44px（不影响桌面密度） ──────────
+   同时按宽度兜底：安卓 Chrome 接了鼠标/触控笔、或开「桌面版网站」时
+   pointer 会报 fine，只靠 pointer: coarse 会让手机上的触控目标缩回 26px。 */
+@media (pointer: coarse), (max-width: 720px) {
   .icon-button,
   .rate-trigger,
   .dialogue-anchor-chip,
@@ -347,6 +354,12 @@
   .exam-confirm-primary,
   .exam-confirm-secondary {
     min-height: 44px;
+  }
+
+  /* 侧栏关闭按钮原来 26×26，单手很难点中 */
+  .vocab-sidebar-close {
+    min-height: 44px;
+    min-width: 44px;
   }
 }
 
@@ -392,6 +405,17 @@
    844×390 原来 顶栏64 + 章节栏109 → 学习区仅 217px，再被横幅98 + 阶段栏134 一挤，
    正文起点 y=463 已经在视口外。窄轨方案不用加抽屉，章节仍可切换。 */
 @media (max-height: 480px) and (orientation: landscape) {
+  /* 真机横屏的可视高度只有 268px（浏览器 UI 吃掉一百多像素），
+     顶栏副标题在这里没有信息价值 */
+  .brand-lockup p {
+    display: none;
+  }
+
+  .topbar {
+    min-height: 48px;
+    padding-block: 4px;
+  }
+
   .workspace {
     grid-template-columns: 196px minmax(0, 1fr);
     grid-template-rows: minmax(0, 1fr);
@@ -522,5 +546,16 @@
     overflow-x: auto;
     overflow-y: hidden;
     padding: 4px 8px;
+  }
+}
+
+/* ── 极矮视口（安卓横屏只有 ~268px）：横幅让位给正文 ───── */
+@media (max-height: 320px) and (orientation: landscape) {
+  .study-chapter-banner {
+    display: none;
+  }
+
+  .stage-board {
+    padding: 8px;
   }
 }

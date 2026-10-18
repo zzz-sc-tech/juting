@@ -12,6 +12,7 @@ import type { DialogueAnchor, ExamQuestion, ListeningExercise } from '@juting/sh
 import { useLanguage } from '../i18n/LanguageProvider'
 import type { MessageKey } from '../i18n/messages'
 import { resolveApiUrl } from '../lib/apiClient'
+import { smoothOrAuto } from '../lib/scroll'
 import {
   getAttempts,
   recordAttempt,
@@ -329,6 +330,21 @@ export function ExamStage({
     return () => window.removeEventListener('keydown', onKeyDown)
   }, [confirmOpen, resumeAsk])
 
+  // 窄屏的题号导航是吸顶的，切题后题卡顶部会被它盖住。
+  // 只在「卡片顶已经被压到导航下面」时把卡片滚回导航下方，避免无谓跳动。
+  const goToQuestion = useCallback((idx: number) => {
+    setViewIdx(idx)
+    requestAnimationFrame(() => {
+      const card = document.querySelector<HTMLElement>('.exam-question-card')
+      if (!card) return
+      const nav = document.querySelector<HTMLElement>('.exam-navigator')
+      const navBottom = nav ? nav.getBoundingClientRect().bottom : 0
+      if (card.getBoundingClientRect().top < navBottom + 8) {
+        card.scrollIntoView({ block: 'start', behavior: smoothOrAuto() })
+      }
+    })
+  }, [])
+
   const wrongUnion = useMemo(() => {
     if (!submitted) return []
     const seen = new Set<number>()
@@ -592,7 +608,7 @@ export function ExamStage({
                     (locked(idx) ? ' past' : '')
                   }
                   key={item.question.n}
-                  onClick={() => setViewIdx(idx)}
+                  onClick={() => goToQuestion(idx)}
                   title={item.question.n === timing[stemLiveIdx]?.question.n ? t('exam.reading') : undefined}
                   type="button"
                 >
