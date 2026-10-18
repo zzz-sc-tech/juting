@@ -341,11 +341,11 @@ export function IntensiveStage({
             </div>
             {!dictationOn && (
               <p className={sentenceVisible ? 'subtitle-text revealed' : 'subtitle-text'}>
-                {sentenceVisible ? (
-                  /* key 放内层 span：换句重挂载只重播入场动画；
-                     外层 <p> 的 className 带揭示状态，若把 key 放它上面，
-                     刚揭示的句子会连状态一起重置回空白 */
-                  <span key={selectedLine.id} className={`line-body dir-${lineDirection}`}>
+                {/* 槽（.line-body）始终在 DOM 里，换句只换内容：
+                    原先未揭晓时整块不渲染，换句动画根本没有承载者，
+                    而且卡片高度随字幕行数跳动 67px。 */}
+                <span key={selectedLine.id} className={`line-body dir-${lineDirection}`}>
+                  {sentenceVisible ? (
                     <ClickableSentence
                       text={selectedLine.text}
                       onPickWord={(word) =>
@@ -353,10 +353,11 @@ export function IntensiveStage({
                         setDictWord((current) => (current === word ? null : word))
                       }
                     />
-                  </span>
-                ) : (
-                  ''
-                )}
+                  ) : (
+                    /* 空态给一句提示，而不是留一块空白板——否则用户以为字幕坏了 */
+                    <span className="subtitle-placeholder">{t('intensive.transcriptHint')}</span>
+                  )}
+                </span>
               </p>
             )}
             {dictationOn ? (
@@ -411,7 +412,8 @@ export function IntensiveStage({
               </Tooltip>
               <Tooltip label={t('intensive.showTranscript')} shortcut="R">
                 <button
-                  className="icon-button reveal"
+                  className={sentenceVisible ? 'icon-button reveal' : 'icon-button'}
+                  aria-pressed={sentenceVisible}
                   onClick={() => onRevealLine(selectedLine.id)}
                   type="button"
                 >

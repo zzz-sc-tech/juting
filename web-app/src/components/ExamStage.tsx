@@ -294,6 +294,41 @@ export function ExamStage({
     }
   }, [answers, exercise.answerKey, exercise.id, onComplete, questions, submitted])
 
+  // 弹层键盘行为：Esc 关确认层；Tab 在弹层内循环（aria-modal 不能只写在属性上）
+  useEffect(() => {
+    if (!confirmOpen && !resumeAsk) return
+    const onKeyDown = (event: KeyboardEvent) => {
+      const card = document.querySelector<HTMLElement>('.exam-confirm-card')
+      if (event.key === 'Escape') {
+        if (confirmOpen) {
+          event.preventDefault()
+          setConfirmOpen(false)
+        }
+        return
+      }
+      if (event.key !== 'Tab') return
+      const buttons = card ? [...card.querySelectorAll<HTMLElement>('button')] : []
+      if (buttons.length === 0) return
+      const first = buttons[0]!
+      const last = buttons[buttons.length - 1]!
+      const active = document.activeElement
+      if (!card?.contains(active)) {
+        event.preventDefault()
+        first.focus()
+        return
+      }
+      if (event.shiftKey && active === first) {
+        event.preventDefault()
+        last.focus()
+      } else if (!event.shiftKey && active === last) {
+        event.preventDefault()
+        first.focus()
+      }
+    }
+    window.addEventListener('keydown', onKeyDown)
+    return () => window.removeEventListener('keydown', onKeyDown)
+  }, [confirmOpen, resumeAsk])
+
   const wrongUnion = useMemo(() => {
     if (!submitted) return []
     const seen = new Set<number>()
@@ -441,22 +476,32 @@ export function ExamStage({
       />
 
       <header className="exam-head">
-        <div className="exam-head-status">
-          <span className={submitted ? 'exam-dot done' : 'exam-dot live'} />
-          <span>
-            {submitted
-              ? t('exam.submitted')
-              : activePartIdx < 0
-                ? t('exam.waiting')
-                : t('exam.inProgress')}
+        {/* 「准备开始」不再出现在顶栏：题卡里已经有一句更具体的「该部分尚未开始」，
+            同一件事说两遍反而把顶栏挤成噪音 */}
+        {(submitted || activePartIdx >= 0) && (
+          <div className="exam-head-status">
+            <span className={submitted ? 'exam-dot done' : 'exam-dot live'} />
+            <span>{submitted ? t('exam.submitted') : t('exam.inProgress')}</span>
+          </div>
+        )}
+        <div className="exam-head-progress">
+          <span className="exam-head-progress-text">
+            {t('exam.answered', { answered: answeredCount, total: questions.length })}
+          </span>
+          <span className="exam-head-progress-track">
+            <span
+              className="exam-head-progress-fill"
+              style={{ width: `${Math.round((answeredCount / Math.max(1, questions.length)) * 100)}%` }}
+            />
           </span>
         </div>
-        <div className="exam-head-progress">{t('exam.answered', {
-          answered: answeredCount,
-          total: questions.length,
-        })}</div>
         {!submitted && !resumeAsk && (
-          <button className="exam-submit" onClick={() => setConfirmOpen(true)} type="button">
+          <button
+            /* 一题未答时交卷不是主行动：降成描边，答过题再恢复实心 */
+            className={answeredCount === 0 ? 'exam-submit is-quiet' : 'exam-submit'}
+            onClick={() => setConfirmOpen(true)}
+            type="button"
+          >
             <Send size={14} aria-hidden="true" />
             <span>{t('exam.submit')}</span>
           </button>
@@ -490,12 +535,27 @@ export function ExamStage({
                   <Lock size={12} aria-hidden="true" />
                   {t('exam.sectionLocked')}
                 </span>
-              ) : viewPartIdx > activePartIdx ? (
-                <span className="exam-window reading">
-                  {t('exam.partNotStarted')}
-                </span>
               ) : null}
             </div>
+            {/* 播放器提到选项之前：实战页真正该做的第一件事是「听」，
+                原来它压在四个选项下方，视觉上像页脚 */}
+            <div className="exam-q-audio">
+              <button className="exam-play" onClick={onTogglePlayback} type="button">
+                {isPlaying ? <Pause size={15} aria-hidden="true" /> : <Play size={15} aria-hidden="true" />}
+                <span>{isPlaying ? t('exam.pause') : t('exam.play')}</span>
+              </button>
+              <span className="exam-clock">
+                {formatClock(currentTime)} / {formatClock(duration)}
+              </span>
+            </div>
+            {/* 不能作答时必须说人话：只靠题头右上角 12px 的小字，用户只会觉得点不动 */}
+            {!submitted && !answerable && (
+              <p className="exam-answerable-hint">
+                {viewPartIdx >= 0 && viewPartIdx < activePartIdx
+                  ? t('exam.lockedHint')
+                  : t('exam.answerableHint', { n: viewPartIdx + 1 })}
+              </p>
+            )}
             <div className="exam-options">
               {LETTERS.map((letter) => {
                 const selected = answers[view.question.n] === letter
@@ -515,15 +575,6 @@ export function ExamStage({
                   </button>
                 )
               })}
-            </div>
-            <div className="exam-q-audio">
-              <button className="exam-play" onClick={onTogglePlayback} type="button">
-                {isPlaying ? <Pause size={15} aria-hidden="true" /> : <Play size={15} aria-hidden="true" />}
-                <span>{isPlaying ? t('exam.pause') : t('exam.play')}</span>
-              </button>
-              <span className="exam-clock">
-                {formatClock(currentTime)} / {formatClock(duration)}
-              </span>
             </div>
           </div>
 
@@ -552,15 +603,21 @@ export function ExamStage({
           </nav>
 
           {resumeAsk && (
-            <div className="exam-confirm-backdrop" role="dialog" aria-modal="true">
+            <div
+              aria-labelledby="exam-resume-title"
+              aria-modal="true"
+              className="exam-confirm-backdrop"
+              role="dialog"
+            >
               <div className="exam-confirm-card">
-                <strong>{t('exam.resumeTitle')}</strong>
+                <strong id="exam-resume-title">{t('exam.resumeTitle')}</strong>
                 <p>{t('exam.resumeHint', {
                   count: Object.keys(resumeAsk.answers).length,
                   time: formatClock(resumeAsk.currentTime),
                 })}</p>
                 <div className="exam-confirm-actions">
                   <button
+                    autoFocus
                     className="exam-confirm-primary"
                     onClick={() => {
                       setAnswers(resumeAsk.answers)
@@ -593,9 +650,14 @@ export function ExamStage({
           )}
 
           {confirmOpen && (
-            <div className="exam-confirm-backdrop" role="dialog" aria-modal="true">
+            <div
+              aria-labelledby="exam-confirm-title"
+              aria-modal="true"
+              className="exam-confirm-backdrop"
+              role="dialog"
+            >
               <div className="exam-confirm-card">
-                <strong>{t('exam.confirmTitle')}</strong>
+                <strong id="exam-confirm-title">{t('exam.confirmTitle')}</strong>
                 <p>{t('exam.confirmBody', {
                   answered: answeredCount,
                   total: questions.length,
@@ -605,7 +667,13 @@ export function ExamStage({
                   <button className="exam-confirm-primary" onClick={submitExam} type="button">
                     {t('exam.confirmOk')}
                   </button>
-                  <button className="exam-confirm-secondary" onClick={() => setConfirmOpen(false)} type="button">
+                  {/* 打开时焦点落在安全出口上：误按回车不会直接交卷 */}
+                  <button
+                    autoFocus
+                    className="exam-confirm-secondary"
+                    onClick={() => setConfirmOpen(false)}
+                    type="button"
+                  >
                     {t('exam.confirmCancel')}
                   </button>
                 </div>

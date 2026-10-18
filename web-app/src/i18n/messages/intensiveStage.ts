@@ -14,8 +14,9 @@ export const intensiveStageMessages = {
     'intensive.pausePlayback': '暂停播放',
     'intensive.replaySentence': '重播本句',
     'intensive.replayShort': '重播',
-    'intensive.showTranscript': '查看字幕',
-    'intensive.transcript': '字幕',
+    'intensive.showTranscript': '显示原文',
+    'intensive.transcript': '原文',
+    'intensive.transcriptHint': '点击播放逐句揭晓，或按 R 显示原文',
     'intensive.rateLabel': '播放速度',
     'intensive.markDifficult': '标记难点',
     'intensive.mastered': '我已掌握',
@@ -38,5 +39,5 @@ export const intensiveStageMessages = {
     'intensive.dictationNear': '拼写注意：你写了 {{typo}}',
     'intensive.dictationWrote': '你写了 {{typo}}',
     'intensive.dictationFn': '虚词（不计分）',
-    'intensive.dictationMarkDifficult': '这句听不出来，标为难点',
+    'intensive.dictationMarkDifficult': '这句听不出来 → 标记难点',
 }

@@ -4,6 +4,7 @@ import type { ContentLocale, DialogueAnchor, ListeningExercise } from '@juting/s
 import { DialogueAnchorBar } from './DialogueAnchorBar'
 import { resolveApiUrl } from '../lib/apiClient'
 import { resolveLineTranslation } from '../lib/lineTranslation'
+import { smoothOrAuto } from '../lib/scroll'
 import { loadUserPrefs } from '../lib/userPrefs'
 import { useLanguage } from '../i18n/LanguageProvider'
 
@@ -100,7 +101,7 @@ export function ExtensiveStage({
     }
     container.scrollTo({
       top: active.offsetTop - container.clientHeight / 2 + active.clientHeight / 2,
-      behavior: scrolledOnceRef.current ? 'smooth' : 'auto',
+      behavior: scrolledOnceRef.current ? smoothOrAuto() : 'auto',
     })
     scrolledOnceRef.current = true
     // captionsOn 关→开时容器重新挂载，需要重跑定位
@@ -236,7 +237,12 @@ export function ExtensiveStage({
           <p className="listen-passes">{t('extensive.passes', { count: extensivePasses })}</p>
         )}
         <button
-          className="command-button primary large listen-progress-cta"
+          /* 一屏只留一个实心主按钮：没听到 80% 之前，「跳到逐句学习」是次要路径 */
+          className={
+            progressPercent >= 80
+              ? 'command-button primary large listen-progress-cta'
+              : 'command-button large listen-progress-cta ghost-accent'
+          }
           onClick={onNextStage}
           type="button"
         >

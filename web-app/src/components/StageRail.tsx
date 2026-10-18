@@ -1,3 +1,4 @@
+import { Check } from 'lucide-react'
 import type { ComponentType, SVGProps } from 'react'
 import { useLanguage } from '../i18n/LanguageProvider'
 
@@ -53,6 +54,10 @@ export function StageRail<TStage extends string>({
                 <strong>{stage.title}</strong>
               </span>
             </span>
+            {/* 「已完成」用角标而不是边框色：原先只改 1px 边框色，与 hover 一模一样 */}
+            {completed && !active && (
+              <Check className="stage-done-badge" size={14} strokeWidth={3} aria-hidden="true" />
+            )}
           </button>
         )
       })}

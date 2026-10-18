@@ -1,4 +1,4 @@
-import { Trash2 } from 'lucide-react'
+import { BookOpen, Trash2 } from 'lucide-react'
 import { Fragment, useEffect, useMemo, useRef, useState } from 'react'
 import { useNavigate } from 'react-router-dom'
 import { TopBar } from '../components/TopBar'
@@ -226,12 +226,13 @@ export function VocabularyPage() {
       commitRemove(courseId, word)
       return
     }
-    // 先淡出 120ms（比 FLIP 的 200ms 短，不拖沓），塌陷交给 React 提交后的 FLIP
-    row.animate([{ opacity: 1 }, { opacity: 0 }], { duration: 120, fill: 'forwards' })
+    // 淡出 90ms 后立刻提交并跑 FLIP：两段动作首尾相接，
+    // 原来是 120ms 淡出 + 200ms 位移，中间能看出一道接缝
+    row.animate([{ opacity: 1 }, { opacity: 0 }], { duration: 90, fill: 'forwards' })
     window.setTimeout(() => {
       commitRemove(courseId, word)
-      playFlip(list, first)
-    }, 120)
+      playFlip(list, first, { duration: 160 })
+    }, 90)
   }
 
   /**
@@ -279,7 +280,7 @@ export function VocabularyPage() {
 
   return (
     <div className="settings-page">
-      <TopBar />
+      <TopBar active="vocabulary" />
       <div className="settings-container">
         <header className="settings-header">
           <button aria-label={t('settings.back')} className="settings-back" onClick={() => navigate('/home')} type="button">
@@ -290,7 +291,16 @@ export function VocabularyPage() {
         </header>
 
         {entries.length === 0 ? (
-          <p className="dashboard-empty">{t('vocab.empty')}</p>
+          <div className="page-empty">
+            <BookOpen className="page-empty-icon" size={26} aria-hidden="true" />
+            <p className="page-empty-title">{t('vocab.emptyTitle')}</p>
+            <p className="page-empty-text">{t('vocab.empty')}</p>
+            <div className="page-empty-actions">
+              <button className="command-button" onClick={() => navigate('/courses')} type="button">
+                {t('vocab.emptyAction')}
+              </button>
+            </div>
+          </div>
         ) : (
           <>
             {/* 复习入口：N>0 高亮可点，N=0 灰字提示 */}

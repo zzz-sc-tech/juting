@@ -63,6 +63,11 @@ export function useCatalog(contentLocale?: ContentLocale, authToken?: string) {
     () => catalogCache.get(cacheKey)?.data ?? emptyCatalog,
   )
   const [catalogLoadFailed, setCatalogLoadFailed] = useState(false)
+  // 没有 loading 标志时，请求还没回来就先渲染「暂无课程 / 请先在管理端添加」，
+  // 网慢的用户会以为数据被清了（I-02）。
+  const [catalogLoading, setCatalogLoading] = useState(
+    () => !catalogCache.get(cacheKey)?.data,
+  )
   const [reloadNonce, setReloadNonce] = useState(0)
 
   const reload = useCallback(() => {
@@ -75,10 +80,12 @@ export function useCatalog(contentLocale?: ContentLocale, authToken?: string) {
     if (cached?.data) {
       setCatalog(cached.data)
       setCatalogLoadFailed(false)
+      setCatalogLoading(false)
       return
     }
 
     let mounted = true
+    setCatalogLoading(true)
 
     fetchCatalogCached(cacheKey, locale, authToken)
       .then((remoteCatalog) => {
@@ -88,6 +95,7 @@ export function useCatalog(contentLocale?: ContentLocale, authToken?: string) {
 
         setCatalog(remoteCatalog)
         setCatalogLoadFailed(false)
+        setCatalogLoading(false)
       })
       .catch(() => {
         if (!mounted) {
@@ -95,6 +103,7 @@ export function useCatalog(contentLocale?: ContentLocale, authToken?: string) {
         }
 
         setCatalogLoadFailed(true)
+        setCatalogLoading(false)
       })
 
     return () => {
@@ -106,5 +115,6 @@ export function useCatalog(contentLocale?: ContentLocale, authToken?: string) {
     catalog,
     reload,
     catalogLoadFailed,
+    catalogLoading,
   }
 }

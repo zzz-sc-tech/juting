@@ -197,12 +197,36 @@
     font-weight: 500;
   }
 
+  /* 序号保留：minimal 去掉了图标，如果连序号也藏起来，
+     「泛听 → 逐句 → 难点 → 实战」的先后关系就消失了，只剩五个并列的词。
+     只去掉外框，保留一位数字。 */
   & .stage-number {
-    display: none;
+    background: none;
+    border: none;
+    color: var(--ink-3);
+    font-size: 11px;
+    height: auto;
+    min-width: 0;
+    width: auto;
   }
 
+  & .stage-step.active .stage-number {
+    background: none;
+    color: var(--ink);
+  }
+
+  /* 已完成不再和「当前」共用同一条下划线（原来两者一模一样，
+     用户无法判断自己是在第 2 步还是已经走完第 2 步） */
   & .stage-step.completed {
-    border-bottom-color: var(--ink);
+    border-bottom-color: transparent;
+    color: var(--ink-2);
+  }
+
+  /* minimal 隐藏所有图标，已完成改用文字对勾，仍然是一个独立通道 */
+  & .stage-step.completed .stage-label strong::after {
+    color: var(--ink-2);
+    content: ' ✓';
+    font-weight: 400;
   }
 
   & .stage-step.tool {
@@ -444,12 +468,14 @@
     background: var(--ink);
   }
 
+  /* 非当前句必须是「可读的次级信息」，不是装饰：
+     --ink-4 在白底只有 1.48:1，整页英文会读成一片空白（原值 #d4d4d8） */
   & .extensive-lyric {
-    color: var(--ink-4);
+    color: var(--ink-2);
   }
 
   & .extensive-lyric:hover {
-    color: var(--ink-3);
+    color: var(--ink);
   }
 
   & .extensive-lyric.active {
@@ -482,9 +508,11 @@
     text-underline-offset: 3px;
   }
 
+  /* 开态是黑字 + 下划线，关态至少要有 5:1 的灰（原来 ink-4 只有 1.48:1，
+     三枚 chip 在极简主题里几乎隐形，用户找不到字幕开关） */
   & .subtitle-chip:not(.on) {
     border-style: none;
-    color: var(--ink-4);
+    color: var(--ink-3);
   }
 
   & .listen-visual-waves {

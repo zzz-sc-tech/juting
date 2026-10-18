@@ -11,6 +11,7 @@ export const waveformStageMessages = {
     'waveform.zoomOut': '缩小',
     'waveform.fit': '适应宽度',
     'waveform.sentenceCount': '共 {{count}} 句',
+    'waveform.sentenceCountSplit': '共 {{count}} 句（正文 {{content}}）',
     'waveform.viewSlider': '拖动查看波形',
     'waveform.rate': '倍速',
     'waveform.markA': '标 A',

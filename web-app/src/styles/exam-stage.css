@@ -58,21 +58,63 @@
   font-variant-numeric: tabular-nums;
 }
 
+.exam-head-progress {
+  display: grid;
+  gap: 5px;
+  min-width: 132px;
+}
+
+.exam-head-progress-text {
+  color: var(--ink-2);
+  font-size: 14px;
+  font-variant-numeric: tabular-nums;
+}
+
+.exam-head-progress-track {
+  background: var(--line);
+  border-radius: var(--radius-pill);
+  display: block;
+  height: 4px;
+  overflow: hidden;
+}
+
+.exam-head-progress-fill {
+  background: var(--accent);
+  display: block;
+  height: 100%;
+  transition: width 0.2s ease;
+}
+
 .exam-submit {
   align-items: center;
   background: var(--ink);
-  border: none;
+  border: 1px solid var(--ink);
   border-radius: var(--radius-pill);
   color: var(--bg);
   cursor: pointer;
   display: inline-flex;
   font-size: 13px;
   gap: 6px;
-  padding: 8px 16px;
+  min-height: 32px;
+  padding: 0 16px;
 }
 
 .exam-submit:hover {
   background: var(--accent);
+  border-color: var(--accent);
+}
+
+/* 一题未答：交卷降为描边——全页最重的元素应该是播放器，不是「我还什么都没做」时的交卷 */
+.exam-submit.is-quiet {
+  background: transparent;
+  border-color: var(--line-strong);
+  color: var(--ink-2);
+}
+
+.exam-submit.is-quiet:hover {
+  background: var(--accent-soft);
+  border-color: var(--accent);
+  color: var(--accent-ink);
 }
 
 /* 题卡（看板左列，与矩阵同为看板直接子项——此前两者被包在内层 .exam-body
@@ -187,13 +229,18 @@
   border-color: var(--accent);
 }
 
+/* 选项字母：圆形（单选题的通用语汇）。30px 小方块看起来像多选 checkbox。 */
 .exam-option-letter {
-  border: 1px solid var(--line-strong);
-  border-radius: var(--radius-sm);
+  align-items: center;
+  border: 1.5px solid var(--line-strong);
+  border-radius: 50%;
+  display: inline-flex;
+  flex: 0 0 auto;
+  font-size: 12px;
   font-weight: 600;
-  min-width: 26px;
-  padding: 1px 6px;
-  text-align: center;
+  height: 24px;
+  justify-content: center;
+  width: 24px;
 }
 
 .exam-option.selected .exam-option-letter {
@@ -208,14 +255,12 @@
   margin-top: 3px;
 }
 
-/* 题卡底部：极简播放控制（无拖动条——考试不能回听） */
+/* 题卡内的播放控制：位于题号与选项之间（考试不能回听，所以只有播放/暂停 + 时钟） */
 .exam-q-audio {
   align-items: center;
-  border-top: 1px solid var(--line);
   display: flex;
   gap: 14px;
-  margin-top: auto;
-  padding-top: 14px;
+  min-height: 44px;
 }
 
 .exam-play {
@@ -228,7 +273,8 @@
   display: inline-flex;
   font-size: 13px;
   gap: 6px;
-  padding: 7px 16px;
+  min-height: 36px;
+  padding: 0 16px;
 }
 
 .exam-play:hover {
@@ -237,9 +283,17 @@
 }
 
 .exam-clock {
-  color: var(--ink-3);
+  color: var(--ink-2);
   font-size: 13px;
   font-variant-numeric: tabular-nums;
+}
+
+/* 不可作答的原因说明，贴在选项组上方 */
+.exam-answerable-hint {
+  color: var(--ink-2);
+  font-size: 13px;
+  line-height: 1.5;
+  margin: -6px 0 0;
 }
 
 /* 题号导航（右列）：固定 5×5 规格、收贴内容——不随左侧题卡高度拉伸

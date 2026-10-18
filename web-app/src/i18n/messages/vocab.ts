@@ -1,7 +1,9 @@
 export const vocabMessages = {
     'vocab.title': '生词本',
     'vocab.count': '共 {{count}} 词',
-    'vocab.empty': '还没有生词——精听句卡上点句中的单词就能收藏',
+    'vocab.empty': '在逐句学习里点句中任意一个词，就能收藏到这里。',
+    'vocab.emptyTitle': '生词本还是空的',
+    'vocab.emptyAction': '去逐句学习',
     'vocab.delete': '删除',
     'vocab.save': '收藏',
     'vocab.cancel': '取消',

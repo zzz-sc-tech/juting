@@ -1,4 +1,4 @@
-import { ChevronDown, ListChecks } from 'lucide-react'
+import { Check, ChevronDown, CircleAlert, ListChecks } from 'lucide-react'
 import { Fragment, useEffect, useMemo, useRef, useState } from 'react'
 import type {
   ExerciseProgress,
@@ -7,6 +7,7 @@ import type {
 } from '@juting/shared'
 import type { StudySection } from '../lib/studySections'
 import { createLineProgress } from '../lib/progressStore'
+import { smoothOrAuto } from '../lib/scroll'
 import { useLanguage } from '../i18n/LanguageProvider'
 
 const shortLine = (line: TranscriptLine) =>
@@ -133,7 +134,7 @@ export function TranscriptPanel({
         (itemRect.top - panelRect.top) -
         panel.clientHeight / 2 +
         itemRect.height / 2,
-      behavior: 'smooth',
+      behavior: smoothOrAuto(),
     })
   }, [selectedLineId, collapsedIds])
 
@@ -274,8 +275,19 @@ export function TranscriptPanel({
                         </span>
                       </button>
                       <div className="line-actions">
-                        {item.unclear && <span className="status-dot warning" />}
-                        {item.mastered && <span className="status-dot success" />}
+                        {/* 状态不能只用颜色：难点=感叹号、掌握=对勾，灰度截图下也能区分 */}
+                        {item.unclear && (
+                          <span className="line-flag unclear" title={t('transcript.flagUnclear')}>
+                            <CircleAlert size={13} aria-hidden="true" />
+                            <span className="sr-only">{t('transcript.flagUnclear')}</span>
+                          </span>
+                        )}
+                        {item.mastered && (
+                          <span className="line-flag mastered" title={t('transcript.flagMastered')}>
+                            <Check size={13} aria-hidden="true" />
+                            <span className="sr-only">{t('transcript.flagMastered')}</span>
+                          </span>
+                        )}
                       </div>
                     </li>
                   )

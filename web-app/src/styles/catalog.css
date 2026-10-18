@@ -8,6 +8,8 @@
   min-height: 0;
   align-content: start;
   padding-right: 4px;
+  /* 给底部渐隐留出余量，最后一行不会被永久压在渐变里 */
+  padding-bottom: 14px;
 }
 
 .exercise-list::-webkit-scrollbar {
@@ -425,27 +427,29 @@
   color: #ffffff;
 }
 
-/* 章节状态框：未开始=空框 / 进行中=半充填 / 已完成=打勾 */
+/* 章节状态槽：占 18px 固定位宽（避免文字跳动），但三种状态用三种形状表达——
+   未开始 = 留白（原来那圈空方框看着像 checkbox，用户会反复去点）；
+   进行中 = 6px 圆点；已完成 = 对勾。 */
 .chapter-status-box {
   align-items: center;
-  border: 1.5px solid var(--line-strong);
-  border-radius: 5px;
-  color: #ffffff;
+  border: 0;
   display: inline-flex;
-  flex: 0 0 auto;
+  flex: 0 0 18px;
   height: 18px;
   justify-content: center;
   width: 18px;
 }
 
-.chapter-status-box.doing {
-  background: linear-gradient(90deg, var(--warning) 0 50%, transparent 50% 100%);
-  border-color: var(--warning);
+.chapter-status-box.doing .chapter-status-dot {
+  background: var(--warning);
+  border-radius: var(--radius-pill);
+  display: block;
+  height: 6px;
+  width: 6px;
 }
 
 .chapter-status-box.done {
-  background: var(--accent);
-  border-color: var(--accent);
+  color: var(--accent);
 }
 
 /* 章节分组头（进行中/未开始/已完成）：小字弱化 */
@@ -462,7 +466,7 @@
 }
 
 .chapter-group-label span {
-  color: var(--ink-4);
+  color: var(--ink-3);
   display: inline-block;
   font-variant-numeric: tabular-nums;
   margin-left: 6px;

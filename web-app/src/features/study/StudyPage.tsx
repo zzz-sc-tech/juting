@@ -1,11 +1,14 @@
 import {
   CatalogErrorState,
+  CatalogLoadingState,
   EmptyStudyState,
   ExerciseErrorState,
   ExerciseLoadingState,
 } from '../../components/StudyStates'
+import { useLayoutEffect, useRef } from 'react'
 import { TopBar } from '../../components/TopBar'
 import { useLanguage } from '../../i18n/LanguageProvider'
+import { stageCopy, type StudyStage } from '../../lib/studyStages'
 import { CourseMapContainer } from './CourseMapContainer'
 import { ExamContainer } from './containers/ExamContainer'
 import { ExtensiveContainer } from './containers/ExtensiveContainer'
@@ -47,6 +50,7 @@ function StudyLayout() {
   const {
     activeExercise,
     catalogLoadFailed,
+    catalogLoading,
     exerciseLoadFailed,
     exerciseLoading,
     hasExercise,
@@ -57,6 +61,25 @@ function StudyLayout() {
     studyStage,
   } = useStudySession()
 
+  // 阶段切场的方向与「回访不重播」：
+  // 恒定从右滑进来会让「返回泛听」看着像前进；600ms 内来回对照两个阶段时
+  // 每次都重播入场动画，是学习工具最不该有的等待。
+  const stageOrder = Object.keys(stageCopy) as StudyStage[]
+  const prevStageRef = useRef<StudyStage | null>(null)
+  const lastEnterRef = useRef<Record<string, number>>({})
+  const viewportRef = useRef<HTMLDivElement | null>(null)
+  const prevIndex = prevStageRef.current ? stageOrder.indexOf(prevStageRef.current) : -1
+  const nextIndex = stageOrder.indexOf(studyStage)
+  const stageDirection = prevIndex >= 0 && nextIndex < prevIndex ? 'prev' : 'next'
+  // 用 layout effect 在首帧绘制前打标记：渲染期不能读时钟（react-hooks/purity）
+  useLayoutEffect(() => {
+    const now = performance.now()
+    const last = lastEnterRef.current[studyStage] ?? 0
+    lastEnterRef.current[studyStage] = now
+    viewportRef.current?.classList.toggle('no-enter', now - last < 600)
+    prevStageRef.current = studyStage
+  }, [studyStage])
+
   return (
     <main className="app-shell">
       <TopBar active="study" />
@@ -65,7 +88,9 @@ function StudyLayout() {
         <CourseMapContainer />
 
         <section className="study-pane" aria-label={t('app.studyArea.aria')}>
-          {catalogLoadFailed ? (
+          {catalogLoading ? (
+            <CatalogLoadingState />
+          ) : catalogLoadFailed ? (
             <CatalogErrorState onRetry={() => reloadCatalog()} />
           ) : exerciseLoadFailed ? (
             <ExerciseErrorState />
@@ -81,7 +106,11 @@ function StudyLayout() {
 
               {/* key 触发换阶段重挂载 → .stage-viewport 入场动画；
                   动画只作用于这层容器，不给舞台内部元素加（拖慢首帧） */}
-              <div className="stage-viewport" key={studyStage}>
+              <div
+                className={`stage-viewport dir-${stageDirection}`}
+                key={studyStage}
+                ref={viewportRef}
+              >
                 {studyStage === 'extensive' && <ExtensiveContainer />}
                 {studyStage === 'intensive' && <IntensiveContainer />}
                 {studyStage === 'waveform' && <WaveformContainer />}

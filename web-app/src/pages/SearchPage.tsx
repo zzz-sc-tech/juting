@@ -136,6 +136,20 @@ const Highlighted = ({ text, query }: { text: string; query: string }) => (
 const RESULT_LIMIT = 60
 
 /**
+ * 首页示例词：必须是语料里真实高频出现的词（197 套转写里 airbnb 出现 0 次，
+ * 新用户照着 placeholder 输入只会得到「没有匹配的结果」，直接判定搜索坏了）。
+ * 计数口径：presets 下 cet4/cet6 的 seed.json 正文行，注释里是该词的命中行数。
+ */
+const SUGGESTED_WORDS = [
+  'research', // 217
+  'university', // 118
+  'company', // 130
+  'interview', // 36
+  'weather', // 27
+  'travel', // 40
+]
+
+/**
  * 跨课搜索页：句子 / 生词 / 课程标题 三组结果，句子可跳精听定位。
  */
 export function SearchPage() {
@@ -222,7 +236,7 @@ export function SearchPage() {
 
   return (
     <div className="settings-page">
-      <TopBar />
+      <TopBar active="search" />
       <div className="settings-container">
         <header className="settings-header">
           <h1 className="settings-title">{t('search.title')}</h1>
@@ -230,7 +244,7 @@ export function SearchPage() {
         </header>
 
         <div className="search-box">
-          <Search className="search-box-icon" size={16} aria-hidden="true" />
+          <Search className="search-box-icon" size={20} aria-hidden="true" />
           <input
             aria-label={t('search.placeholder')}
             autoComplete="off"
@@ -248,6 +262,22 @@ export function SearchPage() {
           )}
         </div>
 
+        {!query && indexState.status === 'ready' && (
+          <div className="search-suggest">
+            <span className="search-suggest-label">{t('search.suggestLabel')}</span>
+            {SUGGESTED_WORDS.map((word) => (
+              <button
+                className="search-suggest-chip"
+                key={word}
+                onClick={() => setQuery(word)}
+                type="button"
+              >
+                {word}
+              </button>
+            ))}
+          </div>
+        )}
+
         {indexState.status === 'building' && (
           <p className="search-status">
             {t('search.building', { done: indexState.done, total: indexState.total })}
@@ -259,7 +289,24 @@ export function SearchPage() {
 
         {results && debounced && (
           <div className="search-results">
-            {results.empty && <p className="dashboard-empty">{t('search.empty')}</p>}
+            {results.empty && (
+              <div className="search-empty">
+                <p className="page-empty-title">{t('search.empty')}</p>
+                <p className="page-empty-text">{t('search.emptyHint')}</p>
+                <div className="search-suggest">
+                  {SUGGESTED_WORDS.slice(0, 4).map((word) => (
+                    <button
+                      className="search-suggest-chip"
+                      key={word}
+                      onClick={() => setQuery(word)}
+                      type="button"
+                    >
+                      {word}
+                    </button>
+                  ))}
+                </div>
+              </div>
+            )}
 
             {results.courseHits.length > 0 && (
               <section className="search-group">

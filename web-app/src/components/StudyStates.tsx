@@ -2,6 +2,18 @@ import { BookOpen, Hourglass, TriangleAlert, Unplug } from 'lucide-react'
 import { useLanguage } from '../i18n/LanguageProvider'
 import '../styles/study-states.css'
 
+export function CatalogLoadingState() {
+  const { t } = useLanguage()
+  return (
+    <section className="empty-study-state loading" aria-label={t('study.catalogLoading.aria')}>
+      <div className="icon-wrapper"><Hourglass size={30} aria-hidden="true" /></div>
+      <p className="eyebrow">{t('study.catalogLoading.eyebrow')}</p>
+      <h2>{t('study.catalogLoading.title')}</h2>
+      <p>{t('study.catalogLoading.body')}</p>
+    </section>
+  )
+}
+
 export function EmptyStudyState() {
   const { t } = useLanguage()
   return (

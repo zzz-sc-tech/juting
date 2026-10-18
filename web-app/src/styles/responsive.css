@@ -1,5 +1,19 @@
+/* 响应式：三个断点的职责分工
+   ≤1120  侧栏折到正文上方 + 舞台网格单列（必须同时重置子项 grid-column/grid-row，
+          否则单列网格里的 grid-column:2 会生成隐式第二列，把显式 1fr 挤成 100px）
+   ≤720   阶段导航改横向滚动条；章节栏压到 32vh；横幅标题降级
+   ≤560   顶栏换行（品牌 + 操作一行、导航独占一行），不再竖排断字
+   另有两条能力查询：pointer: coarse（触控目标 ≥44px）、hover: none（常驻 kebab/插旗）。 */
+
+/* ── ≤1120：单列堆叠 ─────────────────────────────────────── */
 @media (max-width: 1120px) {
-  .workspace,
+  /* 行高显式声明：第一行 = 章节栏（受 max-height 约束），第二行 = 正文吃满剩余。
+     只改列数不写行模板时，.library-pane 的 height:100% 会在隐式行里解析成约 50%。 */
+  .workspace {
+    grid-template-columns: 1fr;
+    grid-template-rows: auto minmax(0, 1fr);
+  }
+
   .extensive-board,
   .difficult-review-board,
   .intensive-board {
@@ -9,21 +23,65 @@
   .library-pane {
     border-bottom: 1px solid var(--line);
     border-right: 0;
+    height: auto;
+    max-height: 28vh;
   }
 
   .exercise-list {
     grid-template-columns: repeat(2, minmax(0, 1fr));
   }
+
+  /* 泛听：媒体区与进度卡回到同一列（原来 grid-column:2 会开隐式列，
+     390 下媒体被挤到 100px 宽） */
+  .extensive-board .listen-visual,
+  .extensive-board .listen-progress-card {
+    grid-column: 1;
+    grid-row: auto;
+  }
+
+  .extensive-board .listen-visual {
+    min-height: 300px;
+  }
+
+  /* 模拟实战：题号导航提到题卡之上并吸顶——首屏先看到导航与题目开头 */
+  .exam-board {
+    grid-template-columns: 1fr;
+    grid-template-rows: auto auto auto;
+  }
+
+  .exam-head {
+    grid-column: 1;
+    grid-row: 1;
+  }
+
+  .exam-navigator {
+    align-self: start;
+    background: var(--surface);
+    grid-column: 1;
+    grid-row: 2;
+    grid-template-columns: repeat(auto-fill, minmax(44px, 1fr));
+    justify-content: stretch;
+    /* 25 格在窄屏会摊成 4–5 行（310px），把题卡推到视口之外。
+       限高 + 自身滚动，保证「导航始终在场，题卡也能露头」。 */
+    max-height: 148px;
+    overflow-y: auto;
+    position: sticky;
+    top: 0;
+    width: 100%;
+    z-index: 5;
+  }
+
+  .exam-question-card {
+    grid-column: 1;
+    grid-row: 3;
+  }
 }
 
+/* ── ≤720：窄屏排版 ─────────────────────────────────────── */
 @media (max-width: 720px) {
   .topbar {
     gap: 14px;
     padding: 0 16px;
-  }
-
-  .workspace {
-    height: auto;
   }
 
   .study-pane,
@@ -31,10 +89,153 @@
     padding: 14px;
   }
 
+  /* 窄屏把舞台的内边距与网格间距收一收：22px 内边距 + 20px 间距
+     在小屏上等于白送掉半句正文。 */
+  .stage-board {
+    padding: 14px;
+  }
+
+  .extensive-board,
+  .exam-board,
+  .intensive-board,
+  .difficult-review-board {
+    gap: 12px;
+  }
+
   .series-grid,
-  .exercise-list,
-  .stage-rail {
+  .exercise-list {
     grid-template-columns: 1fr;
+  }
+
+  /* 对话锚点条：390 下 25 个 chip 会折成 6 行、把媒体区挤出首屏。
+     窄屏改成单行横向滚动，锚点依然可达，但只占一行高度。 */
+  .dialogue-anchor-bar {
+    flex-wrap: nowrap;
+    overflow-x: auto;
+    scrollbar-width: none;
+  }
+
+  .dialogue-anchor-bar::-webkit-scrollbar {
+    height: 0;
+  }
+
+  .dialogue-anchor-bar-title {
+    white-space: nowrap;
+  }
+
+  .dialogue-anchor-chips {
+    flex-wrap: nowrap;
+  }
+
+  .dialogue-anchor-chip {
+    white-space: nowrap;
+  }
+
+  /* 阶段导航：竖排 350px 吃掉了整个首屏 → 改成横向滚动的一行 */
+  .stage-rail {
+    display: flex;
+    gap: 8px;
+    overflow-x: auto;
+    padding-bottom: 4px;
+    scrollbar-width: none;
+  }
+
+  .stage-rail::-webkit-scrollbar {
+    height: 0;
+  }
+
+  .stage-step {
+    flex: 0 0 auto;
+    min-height: 48px;
+    padding: 8px 12px;
+  }
+
+  /* 题号导航：148px 的竖网格会吃掉 390 下 30%、320 下 59% 的正文高度。
+     改成一行横向滚动（56px），题目区不再被压成一条缝。 */
+  .exam-navigator {
+    grid-auto-columns: 44px;
+    grid-auto-flow: column;
+    grid-template-columns: none;
+    height: 56px;
+    max-height: none;
+    overflow-x: auto;
+    overflow-y: hidden;
+    padding: 6px 10px;
+  }
+
+  /* 三个横向滚动容器统一：右缘渐隐提示「还有更多」+ 吸附，滑起来有段落感。
+     滚动条本来就是隐藏的，没有渐隐时用户会以为只有屏上这几个。 */
+  .stage-rail,
+  .dialogue-anchor-bar {
+    overscroll-behavior-x: contain;
+    scroll-snap-type: x proximity;
+  }
+
+  .stage-rail {
+    -webkit-mask-image: linear-gradient(90deg, #000 0, #000 calc(100% - 22px), transparent);
+    mask-image: linear-gradient(90deg, #000 0, #000 calc(100% - 22px), transparent);
+  }
+
+  .dialogue-anchor-bar {
+    -webkit-mask-image: linear-gradient(90deg, #000 0, #000 calc(100% - 22px), transparent);
+    mask-image: linear-gradient(90deg, #000 0, #000 calc(100% - 22px), transparent);
+    padding-right: 8px;
+  }
+
+  .exam-navigator {
+    overscroll-behavior-x: contain;
+    scroll-snap-type: x proximity;
+    -webkit-mask-image: linear-gradient(90deg, #000 0, #000 calc(100% - 22px), transparent);
+    mask-image: linear-gradient(90deg, #000 0, #000 calc(100% - 22px), transparent);
+  }
+
+  .stage-step,
+  .dialogue-anchor-chip,
+  .exam-nav-cell {
+    scroll-snap-align: start;
+  }
+
+  .study-chapter-banner-title {
+    font-size: 24px;
+  }
+
+  /* 章节栏定高而不是按视口百分比：390 下 30vh=253 太多，
+     176 足够放「系列选择 + 3 行章节」，正文能多露 77px。 */
+  .library-pane {
+    max-height: 176px;
+  }
+
+  /* 横幅右侧的「系列名 · 第 N 章 · 共 M 章」在窄屏会折成第二行，
+     但它对「现在在读哪一课」没有增量信息——让位给正文。 */
+  .study-chapter-banner-metrics {
+    display: none;
+  }
+
+  .study-chapter-banner {
+    gap: 10px;
+    margin-bottom: 14px;
+    padding: 2px 2px 12px;
+  }
+
+  /* 精听/复习底部动作条：四枚按钮在 390 排不下，改成 2×2 */
+  .status-actions .pill,
+  .status-actions .vocab-anchor {
+    flex: 1 1 calc(50% - 4px);
+  }
+
+  /* 章节栏只有 176px，别让两层小标题把章节行挤没 */
+  .library-pane .pane-heading {
+    display: none;
+  }
+
+  .series-trigger {
+    margin-bottom: 8px;
+    min-height: 56px;
+    padding: 10px 12px;
+  }
+
+  .chapter-group-label {
+    margin: 8px 2px 2px;
   }
 
   .control-cluster {
@@ -65,15 +266,261 @@
   }
 }
 
-/* 模拟实战：窄屏单列堆叠，题号导航横向自适应铺满 */
-@media (max-width: 1120px) {
-  .exam-board {
+/* ── ≤560：顶栏换行 ─────────────────────────────────────── */
+@media (max-width: 560px) {
+  .topbar {
+    flex: 0 0 auto;
+    flex-wrap: wrap;
+    height: auto;
+    min-height: 0;
+    padding: 6px 12px 0;
+    row-gap: 2px;
+  }
+
+  .brand-lockup {
+    flex: 0 0 auto;
+  }
+
+  .brand-lockup h1 {
+    white-space: nowrap;
+  }
+
+  /* 副标题（听力课程）在窄屏只会被压成两行碎字，直接让位 */
+  .brand-lockup p {
+    display: none;
+  }
+
+  .topbar-nav {
+    justify-content: space-between;
+    margin-left: 0;
+    order: 3;
+    width: 100%;
+  }
+
+  .topbar-nav-item {
+    font-size: 13px;
+    min-height: 44px;
+    padding: 0 6px;
+    white-space: nowrap;
+  }
+
+  .topbar-actions {
+    flex-wrap: nowrap;
+  }
+}
+
+/* ── 触控设备：可点区域 ≥44px（不影响桌面密度） ────────── */
+@media (pointer: coarse) {
+  .icon-button,
+  .rate-trigger,
+  .dialogue-anchor-chip,
+  .subtitle-chip,
+  .exam-submit,
+  .exam-play,
+  .settings-back,
+  .answer-toggle,
+  .exam-nav-cell {
+    min-height: 44px;
+  }
+
+  .dialogue-anchor-chip,
+  .subtitle-chip {
+    padding-block: 10px;
+  }
+
+  .chapter-kebab {
+    height: 44px;
+    width: 44px;
+  }
+
+  /* 视觉仍是 24px，热区补到 44px（绝对定位，用伪元素扩边最稳） */
+  .extensive-lyric-flag::after {
+    content: '';
+    inset: -10px;
+    position: absolute;
+  }
+
+  .rate-option,
+  .chapter-menu button,
+  .vocab-popover-actions .command-button,
+  .account-trigger,
+  .exam-confirm-primary,
+  .exam-confirm-secondary {
+    min-height: 44px;
+  }
+}
+
+/* ── 无悬停设备：只在 hover 出现的按钮必须常驻 ──────────── */
+@media (hover: none) {
+  .chapter-kebab,
+  .extensive-lyric-flag {
+    opacity: 1;
+  }
+}
+
+/* ── ≤360：超小屏把横幅整块收起 ─────────────────────────
+   320×640 上横幅占掉两成屏高，而「当前在读哪一章」在左侧列表里
+   本来就是高亮的那一行——标题在这里是重复信息。 */
+@media (max-width: 360px) {
+  .study-chapter-banner {
+    display: none;
+  }
+
+  .library-pane {
+    max-height: 160px;
+  }
+
+  .theme-grid {
     grid-template-columns: 1fr;
   }
 
+  .theme-card-name {
+    white-space: nowrap;
+  }
+}
+
+/* ── ≥1600：超宽屏别把一行拉到 1900px ───────────────────── */
+@media (min-width: 1600px) {
+  .study-pane {
+    margin-inline: auto;
+    max-width: 1440px;
+    width: 100%;
+  }
+}
+
+/* ── 手机横屏（高度 ≤480）：章节栏改成左侧窄轨，把高度全让给正文 ──
+   844×390 原来 顶栏64 + 章节栏109 → 学习区仅 217px，再被横幅98 + 阶段栏134 一挤，
+   正文起点 y=463 已经在视口外。窄轨方案不用加抽屉，章节仍可切换。 */
+@media (max-height: 480px) and (orientation: landscape) {
+  .workspace {
+    grid-template-columns: 196px minmax(0, 1fr);
+    grid-template-rows: minmax(0, 1fr);
+  }
+
+  .library-pane {
+    border-bottom: 0;
+    border-right: 1px solid var(--line);
+    height: 100%;
+    max-height: none;
+    padding: 10px 8px;
+  }
+
+  .library-pane .pane-heading {
+    display: none;
+  }
+
+  .series-trigger {
+    margin-bottom: 6px;
+    min-height: 44px;
+    padding: 6px 10px;
+  }
+
+  .series-trigger small {
+    display: none;
+  }
+
+  .chapter-group-label {
+    margin: 6px 2px 2px;
+  }
+
+  /* 196px 窄轨里不能再用双列：两列会把「2015年6月 第1套」挤成一字一行 */
+  .library-pane .exercise-list {
+    grid-template-columns: 1fr;
+  }
+
+  .library-pane .quest-node {
+    padding-left: 34px;
+  }
+
+  /* 窄轨里标题只给一行 + 省略号：折成两行会把 6 个章节挤成 3 个 */
+  .library-pane .exercise-title {
+    font-size: 13px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  }
+
+  .study-pane {
+    padding: 8px 12px 10px;
+  }
+
+  /* 横屏只有 326px 高，22px 的舞台内边距与 20px 网格间距都在挤正文 */
+  .stage-board {
+    min-height: 0;
+    padding: 10px;
+  }
+
+  .extensive-board,
+  .exam-board,
+  .intensive-board {
+    gap: 8px;
+  }
+
+  .dialogue-anchor-bar {
+    margin-bottom: 6px;
+    padding-bottom: 2px;
+  }
+
+  .study-chapter-banner {
+    gap: 8px;
+    margin-bottom: 6px;
+    padding: 0 2px 6px;
+  }
+
+  .study-chapter-banner-icon,
+  .study-chapter-banner-metrics {
+    display: none;
+  }
+
+  .study-chapter-banner-title {
+    font-size: 19px;
+  }
+
+  .stage-rail {
+    display: flex;
+    gap: 8px;
+    margin-bottom: 6px;
+    overflow-x: auto;
+    padding-bottom: 2px;
+    -webkit-mask-image: linear-gradient(90deg, #000 0, #000 calc(100% - 22px), transparent);
+    mask-image: linear-gradient(90deg, #000 0, #000 calc(100% - 22px), transparent);
+  }
+
+  .stage-step {
+    flex: 0 0 auto;
+    min-height: 44px;
+    padding: 6px 10px;
+  }
+
+  .dialogue-anchor-bar {
+    flex-wrap: nowrap;
+    margin-bottom: 8px;
+    overflow-x: auto;
+    padding-bottom: 6px;
+    scrollbar-width: none;
+  }
+
+  .dialogue-anchor-bar::-webkit-scrollbar {
+    height: 0;
+  }
+
+  .dialogue-anchor-chips {
+    flex-wrap: nowrap;
+  }
+
+  .dialogue-anchor-chip {
+    white-space: nowrap;
+  }
+
+  /* 题号导航同样收成单行，否则它自己就吃掉半屏 */
   .exam-navigator {
-    grid-column: 1;
-    grid-row: auto;
-    grid-template-columns: repeat(auto-fill, minmax(44px, 1fr));
+    grid-auto-columns: 44px;
+    grid-auto-flow: column;
+    grid-template-columns: none;
+    height: 52px;
+    max-height: none;
+    overflow-x: auto;
+    overflow-y: hidden;
+    padding: 4px 8px;
   }
 }

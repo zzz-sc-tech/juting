@@ -55,6 +55,7 @@
   gap: 12px;
   min-height: 62px;
   padding: 12px 14px;
+  position: relative;
   text-align: left;
   transition: border-color 0.15s ease, background 0.15s ease;
 }
@@ -69,8 +70,28 @@
   color: var(--accent-ink);
 }
 
+/* 当前阶段：左侧 3px 竖条 + 实心编号（两个通道，不只靠底色） */
+.stage-step.active::before {
+  background: var(--accent);
+  border-radius: 0 2px 2px 0;
+  bottom: 10px;
+  content: '';
+  left: -1px;
+  position: absolute;
+  top: 10px;
+  width: 3px;
+}
+
+/* 已完成改用右上角对勾角标；边框保持常态，别再和 hover 撞成同一个样子 */
 .stage-step.completed {
-  border-color: var(--accent);
+  border-color: var(--line-strong);
+}
+
+.stage-done-badge {
+  color: var(--accent);
+  position: absolute;
+  right: 10px;
+  top: 8px;
 }
 
 .stage-step.tool {
@@ -188,14 +209,53 @@
   font-weight: 600;
 }
 
-/* 阶段切换入场：key 重挂载触发，新舞台从右侧 12px 淡入。
+/* 「全部 N 段…」下拉：与 chip 同高同色，原生 select 保留平台箭头 */
+.dialogue-anchor-select-wrap {
+  display: inline-flex;
+  flex: 0 0 auto;
+}
+
+.dialogue-anchor-select {
+  background: transparent;
+  border: 1px dashed var(--line-strong);
+  border-radius: var(--radius-sm);
+  color: var(--ink-2);
+  cursor: pointer;
+  font: inherit;
+  font-size: 12.5px;
+  height: 30px;
+  max-width: 168px;
+  padding: 0 6px;
+}
+
+.dialogue-anchor-select:hover {
+  border-color: var(--accent);
+  color: var(--accent-ink);
+}
+
+/* 阶段切换入场：key 重挂载触发，新舞台淡入 + 6px 位移。
    动画只作用于这层容器本身（transform/opacity 走合成器），
-   舞台内部一律不加动画，避免拖慢首帧。 */
+   舞台内部一律不加动画，避免拖慢首帧。
+   方向由阶段序号决定：往前走从右来，往后退从左来；
+   600ms 内回访同一阶段不重播（组件加 .no-enter）。 */
 @keyframes stage-enter {
-  from { opacity: 0; transform: translateX(12px); }
+  from { opacity: 0; transform: translateX(6px); }
+  to   { opacity: 1; transform: translateX(0); }
+}
+
+@keyframes stage-enter-prev {
+  from { opacity: 0; transform: translateX(-6px); }
   to   { opacity: 1; transform: translateX(0); }
 }
 
 .stage-viewport {
-  animation: stage-enter var(--dur-base) var(--ease-out-quint) both;
+  animation: stage-enter var(--dur-fast) var(--ease-out-quint) both;
+}
+
+.stage-viewport.dir-prev {
+  animation-name: stage-enter-prev;
+}
+
+.stage-viewport.no-enter {
+  animation: none;
 }

@@ -9,7 +9,6 @@ export const coreMessages = {
     contentLanguage: '学习内容语言',
     preferences: '语言偏好',
     'topbar.learningOverview': '学习概览',
-    'topbar.openSource': 'GitHub 开源',
     'stageRail.label': '学习阶段',
     'tooltip.shortcut': '快捷键：{{shortcut}}',
     'topbar.review': '难点复习',

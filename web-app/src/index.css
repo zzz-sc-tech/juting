@@ -18,16 +18,17 @@
   --accent-soft-2: #eef3f0;
   --accent-ink: #1b4439; /* 淡绿底上的主色文字态 */
 
-  /* 墨色四级 */
+  /* 墨色四级。--ink-3 是「正文级灰字」的下限：对比度 ≥ 4.5:1（WCAG AA），
+     原先 #8a8578 只有 3.38:1，正文灰字读起来发飘。--ink-4 仅用于分隔线/装饰。 */
   --ink: #1d1b16;
   --ink-2: #57534a;
-  --ink-3: #8a8578;
+  --ink-3: #6f6a5e;
   --ink-4: #c6c1b4;
 
   /* 语义色：掌握并入绿族，难点用赭橙 */
   --success: #2f6b4f;
   --success-soft: #e3eee7;
-  --warning: #b4531f;
+  --warning: #a84a1b;
   --warning-soft: #f4e8dc;
   --danger: #b3261e;
   --danger-soft: #f5e3e0;
@@ -50,6 +51,9 @@
     "Segoe UI", ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont,
     "Microsoft YaHei UI", "PingFang SC", sans-serif;
   --font-serif: Georgia, "Times New Roman", "Songti SC", "SimSun", serif;
+  /* 数字专用字体：Georgia 用老式比例数字（1/0 宽度差 43%，tnum 也救不回来），
+     凡是要对齐的数字（进度、句数、时间码）一律走这一族。 */
+  --font-num: "Segoe UI", ui-sans-serif, system-ui, -apple-system, sans-serif;
 
   /* 波形画布色（canvas 不解析 CSS 变量，WaveformStage 用 getComputedStyle 读这里） */
   --wave-region: rgba(36, 88, 74, 0.1);
@@ -74,6 +78,23 @@ body {
   min-width: 320px;
 }
 
+/* 移动端默认行为收敛：
+   1) 去掉系统蓝色点按高亮（在纸墨配色里非常刺眼，也像误触）；
+   2) 可点元素用 manipulation，双击不再缩放页面（连点播放/题号很容易触发）。 */
+html {
+  -webkit-tap-highlight-color: transparent;
+}
+
+button,
+a,
+[role='button'],
+input,
+select,
+textarea,
+label {
+  touch-action: manipulation;
+}
+
 button,
 input,
 select,
@@ -81,17 +102,42 @@ textarea {
   letter-spacing: 0;
 }
 
-/* 统一焦点可见性：键盘导航可见、鼠标点击不残留 */
+/* 统一焦点可见性：键盘导航可见、鼠标点击不残留。
+   原来是 22% 透明度的柔光（与纸底合成约 1.4:1），肉眼基本看不见；
+   改为实色描边，四主题都靠 --accent 自适应。 */
 :focus-visible {
-  outline: none;
-  box-shadow: var(--focus-ring);
+  outline: 2px solid var(--accent);
+  outline-offset: 2px;
 }
 
-/* 数字统一等宽对齐（统计卡、进度、时间戳） */
+/* 数字统一等宽对齐（统计卡、进度、时间戳）。
+   font-family 不是多余的：gazette 主题的正文字体是 Georgia，它的数字是
+   老式比例数字，#1111 比 #0000 窄 43%，tabular-nums 对 Georgia 不生效。 */
 .tabular-nums,
 .dashboard-stat-value,
-.dashboard-goal-count {
-  font-variant-numeric: tabular-nums;
+.dashboard-goal-count,
+.dashboard-course-percent,
+.dashboard-exam-score,
+.exam-clock,
+.exam-nav-cell,
+.exam-score-value,
+.exam-score-total,
+.exam-review-no,
+.exam-history-date,
+.exam-history-score,
+.media-time-label,
+.rate-value,
+.listen-progress-pct,
+.subtitle-repeat-count,
+.line-index,
+.line-repeat-count,
+.quest-badge,
+.stage-number,
+.series-progress-ring,
+.series-progress-ring span,
+.global-review-course-count {
+  font-family: var(--font-num);
+  font-variant-numeric: lining-nums tabular-nums;
 }
 
 /* ══════════════════════════════════════════════════════════════
@@ -114,7 +160,7 @@ textarea {
 
   --ink: #171512;
   --ink-2: #454039;
-  --ink-3: #7b7466;
+  --ink-3: #6a6355;
   --ink-4: #b3ab99;
 
   --success: #171512;
@@ -127,10 +173,14 @@ textarea {
   --radius-lg: 0;
   --radius-md: 0;
   --radius-sm: 0;
+  --radius-pill: 0;
 
-  --font-ui: Georgia, "Times New Roman", "Songti SC", "SimSun",
-    "Noto Serif CJK SC", serif;
+  /* 英文衬线 + 中文黑体：Windows 没有 Songti SC 时会落到 SimSun，
+     13px 宋体在屏上笔画发虚，中文译文比英文明显弱一档。 */
+  --font-ui: Georgia, "Times New Roman", "Microsoft YaHei", "PingFang SC",
+    sans-serif;
   --font-serif: var(--font-ui);
+  --font-num: "Consolas", "Cascadia Mono", ui-monospace, "Courier New", monospace;
 
   --focus-ring: 0 0 0 2px #f4f0e6, 0 0 0 4px #171512;
 
@@ -157,7 +207,7 @@ textarea {
 
   --ink: #18181b;
   --ink-2: #52525b;
-  --ink-3: #a1a1aa;
+  --ink-3: #6b6b74;
   --ink-4: #d4d4d8;
 
   --success: #18181b;
@@ -198,7 +248,7 @@ textarea {
   /* 蜡纸蓝黑油墨 */
   --ink: #2e3153;
   --ink-2: #4c5178;
-  --ink-3: #8b8ea8;
+  --ink-3: #62667f;
   --ink-4: #c3c5d4;
 
   --success: #2e3153;
@@ -216,6 +266,7 @@ textarea {
 
   /* 内容字体：英文打字机体 + 中文楷体——老试卷的原装搭配 */
   --font-serif: "Courier New", "KaiTi", "STKaiti", "SimSun", monospace;
+  --font-num: "Courier New", ui-monospace, "Consolas", monospace;
 
   /* 波形：油墨底 + 红笔播放进度 */
   --wave-region: rgba(46, 49, 83, 0.08);

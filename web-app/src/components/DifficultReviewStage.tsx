@@ -1,7 +1,9 @@
 import {
+  Check,
   CheckCircle2,
   ChevronLeft,
   ChevronRight,
+  CircleAlert,
   CircleHelp,
   Eye,
   Pause,
@@ -220,7 +222,13 @@ export function DifficultReviewStage({
               </span>
             </div>
             <p className={revealed ? 'subtitle-text revealed' : 'subtitle-text'}>
-              {revealed ? selectedLine.text : ''}
+              <span className="line-body" key={selectedLine.id}>
+                {revealed ? (
+                  selectedLine.text
+                ) : (
+                  <span className="subtitle-placeholder">{t('review.transcriptHint')}</span>
+                )}
+              </span>
             </p>
             <p className={revealed && translationVisible ? 'subtitle-translation revealed' : 'subtitle-translation hidden'}>
               {revealed && translationVisible ? translation : ' '}
@@ -264,7 +272,8 @@ export function DifficultReviewStage({
               </Tooltip>
               <Tooltip label={t('intensive.showTranscript')} shortcut="R">
                 <button
-                  className="icon-button reveal"
+                  className={revealed ? 'icon-button reveal' : 'icon-button'}
+                  aria-pressed={revealed}
                   onClick={onReveal}
                   type="button"
                 >
@@ -356,8 +365,16 @@ export function DifficultReviewStage({
                       {item.repeatCount}
                     </span>
                   )}
-                  {item.mastered && <span className="status-dot success" />}
-                  <span className="status-dot warning" />
+                  {item.mastered && (
+                    <span className="line-flag mastered" title={t('transcript.flagMastered')}>
+                      <Check size={13} aria-hidden="true" />
+                      <span className="sr-only">{t('transcript.flagMastered')}</span>
+                    </span>
+                  )}
+                  <span className="line-flag unclear" title={t('transcript.flagUnclear')}>
+                    <CircleAlert size={13} aria-hidden="true" />
+                    <span className="sr-only">{t('transcript.flagUnclear')}</span>
+                  </span>
                 </div>
               </li>
             )

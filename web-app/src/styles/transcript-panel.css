@@ -80,9 +80,10 @@
 }
 
 .line-index {
-  color: var(--ink-4);
+  /* 行号原来用 --ink-4（约 1.2:1），几乎是看不见的——它是定位信息，不是装饰 */
+  color: var(--ink-3);
   flex: 0 0 26px;
-  font-size: 11.5px;
+  font-size: 12px;
   font-variant-numeric: tabular-nums;
   text-align: left;
 }
@@ -106,7 +107,7 @@
 
 /* 精听页选中句：大字幕已在上方显示，列表行只留提示，避免同句渲染两遍 */
 .line-copy.is-selected-hint {
-  color: var(--ink-3);
+  color: var(--ink-2);
   font-family: inherit;
   font-size: 12.5px;
   font-style: normal;
@@ -119,19 +120,22 @@
   padding-right: 2px;
 }
 
-.status-dot {
-  border-radius: var(--radius-pill);
-  display: inline-block;
-  height: 8px;
-  width: 8px;
+/* 行状态标：形状 + 图标 + 颜色三通道（原来只有 8px 圆点 + 颜色，
+   色弱或灰度截图下完全不可辨，也不在无障碍名称里） */
+.line-flag {
+  align-items: center;
+  display: inline-flex;
+  height: 16px;
+  justify-content: center;
+  width: 16px;
 }
 
-.status-dot.warning {
-  background: var(--warning);
+.line-flag.unclear {
+  color: var(--warning);
 }
 
-.status-dot.success {
-  background: var(--accent);
+.line-flag.mastered {
+  color: var(--accent);
 }
 
 /* ── 锚点分组手风琴 ───────────────────────────────────────
@@ -187,14 +191,14 @@ li.anchor-section-head.static .anchor-section-label {
 }
 
 .anchor-section-count {
-  color: var(--ink-4);
+  color: var(--ink-3);
   font-size: 11.5px;
   font-variant-numeric: tabular-nums;
   margin-left: auto;
 }
 
 .anchor-section-chevron {
-  color: var(--ink-4);
+  color: var(--ink-3);
   flex-shrink: 0;
   transition: transform 0.15s ease;
 }

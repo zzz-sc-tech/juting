@@ -2,6 +2,7 @@
 .settings-page {
   min-height: 100vh;
   background: var(--bg);
+  padding-bottom: env(safe-area-inset-bottom, 0px);
 }
 
 .settings-container {
@@ -46,11 +47,107 @@
   color: var(--accent-ink);
 }
 
+/* ── 通用空态块（全局复习 / 生词本）────────────────────────
+   结构固定：图标（弱墨但可见）→ 标题 → 一句说明 → 主按钮 + 次按钮。
+   空屏不应该是「一句话 + 700px 留白」，用户需要知道下一步点哪里。 */
+.page-empty {
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  justify-content: center;
+  margin: 0 auto;
+  max-width: 360px;
+  min-height: calc(100vh - 220px);
+  padding: 32px 16px 64px;
+  text-align: center;
+}
+
+.page-empty-icon {
+  color: var(--ink-2);
+}
+
+.page-empty-title {
+  color: var(--ink);
+  font-size: 18px;
+  font-weight: 600;
+  margin: 0;
+}
+
+.page-empty-text {
+  color: var(--ink-2);
+  font-size: 13.5px;
+  line-height: 1.65;
+  margin: 0;
+}
+
+.page-empty-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  justify-content: center;
+  margin-top: 4px;
+}
+
+.page-empty-actions .command-button {
+  min-height: 40px;
+}
+
 .settings-card {
   background: var(--surface);
   border: 1px solid var(--line);
   border-radius: var(--radius-lg);
   padding: 20px;
+}
+
+/* ── 主题卡：2×2，每张显示该主题的纸底/墨色/主色 ─────────── */
+.theme-grid {
+  display: grid;
+  gap: 10px;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
+.theme-card {
+  align-items: center;
+  background: var(--bg);
+  border: 1px solid var(--line-strong);
+  border-radius: var(--radius-md);
+  cursor: pointer;
+  display: flex;
+  font: inherit;
+  gap: 12px;
+  min-height: 72px;
+  padding: 12px 14px;
+  text-align: left;
+  transition: border-color 0.15s ease, background 0.15s ease;
+}
+
+.theme-card:hover {
+  border-color: var(--accent);
+}
+
+.theme-card.active {
+  background: var(--accent-soft-2);
+  border-color: var(--accent);
+  box-shadow: inset 0 0 0 1px var(--accent);
+}
+
+.theme-card-swatches {
+  border: 1px solid var(--line);
+  border-radius: var(--radius-sm);
+  display: grid;
+  flex: 0 0 54px;
+  grid-template-columns: repeat(3, 1fr);
+  height: 34px;
+  overflow: hidden;
+  width: 54px;
+}
+
+.theme-card-name {
+  color: var(--ink);
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 1.35;
 }
 
 .settings-card-title {
@@ -372,7 +469,8 @@
   left: 0;
   padding: 14px;
   position: absolute;
-  width: 320px;
+  /* 写死 320px 会在 320 宽的小屏上右溢 22px，收藏按钮被切 */
+  width: min(320px, calc(100vw - 28px));
   z-index: 40;
 }
 
@@ -390,9 +488,10 @@
   border: 1px solid var(--line-strong);
   border-radius: var(--radius-sm);
   font: inherit;
-  font-size: 13px;
-  min-height: 36px;
-  padding: 0 10px;
+  /* 16px 是 iOS 的硬门槛：小于它聚焦会自动放大整页，弹层跟着错位 */
+  font-size: 16px;
+  min-height: 44px;
+  padding: 0 12px;
 }
 
 .vocab-popover-actions {
@@ -494,8 +593,8 @@
 }
 
 .settings-update-button:focus-visible {
-  box-shadow: var(--focus-ring);
-  outline: none;
+  outline: 2px solid var(--accent);
+  outline-offset: 2px;
 }
 
 .settings-update-button:disabled {
@@ -807,9 +906,17 @@
   border: 1px solid var(--line-strong);
   border-radius: var(--radius-md);
   display: flex;
-  gap: 8px;
-  margin-bottom: 14px;
-  padding: 9px 12px;
+  gap: 10px;
+  margin-bottom: 10px;
+  min-height: 52px;
+  padding: 0 14px;
+  transition: border-color 0.15s ease, box-shadow 0.15s ease;
+}
+
+/* 焦点环画在整条搜索框上：原先画在内层 input 上，看着像「框里又套了个小框」 */
+.search-box:focus-within {
+  border-color: var(--accent);
+  box-shadow: 0 0 0 3px rgba(36, 88, 74, 0.18);
 }
 
 .search-box-icon {
@@ -822,7 +929,12 @@
   border: none;
   color: var(--ink);
   flex: 1;
-  font-size: 14px;
+  font-size: 16px;
+  outline: none;
+}
+
+.search-box-input:focus-visible {
+  box-shadow: none;
   outline: none;
 }
 
@@ -832,6 +944,50 @@
   color: var(--ink-3);
   cursor: pointer;
   padding: 2px;
+}
+
+/* 示例词 chip：输入框空着时给一组「点了就一定有结果」的词 */
+.search-suggest {
+  align-items: center;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-bottom: 16px;
+}
+
+.search-suggest-label {
+  color: var(--ink-3);
+  font-size: 12.5px;
+}
+
+.search-suggest-chip {
+  background: transparent;
+  border: 1px solid var(--line-strong);
+  border-radius: var(--radius-pill);
+  color: var(--ink-2);
+  cursor: pointer;
+  font: inherit;
+  font-size: 12.5px;
+  min-height: 30px;
+  padding: 0 12px;
+  transition: border-color 0.15s ease, color 0.15s ease, background 0.15s ease;
+}
+
+.search-suggest-chip:hover {
+  background: var(--accent-soft);
+  border-color: var(--accent);
+  color: var(--accent-ink);
+}
+
+.search-empty {
+  align-items: center;
+  border: 1px dashed var(--line-strong);
+  border-radius: var(--radius-lg);
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  padding: 32px 20px;
+  text-align: center;
 }
 
 .search-status {

@@ -68,7 +68,7 @@ export function DashboardPage() {
   const [activity] = useState<LocalDailyActivity>(loadLocalActivity)
   // 所听时长（localStorage 落盘值；进入首页时重新读一次，够新鲜）
   const [listenTime] = useState(loadListenTime)
-  const { catalog } = useCatalog(undefined)
+  const { catalog, catalogLoadFailed, catalogLoading, reload: reloadCatalog } = useCatalog(undefined)
   const { exercisesByCategory, loadExercises } = useCategoryExercises(undefined)
 
   useEffect(() => {
@@ -93,7 +93,7 @@ export function DashboardPage() {
       if (!started) {
         continue
       }
-      const total = exercise.lineCount || 0
+      const total = exercise.contentLineCount ?? exercise.lineCount ?? 0
       const mastered = Object.values(progress.lines).filter((line) => line.mastered).length
       entries.push({
         exercise,
@@ -184,6 +184,19 @@ export function DashboardPage() {
 
   const goalPercent = percentOf(todayCount, dailyGoal)
 
+  // 首页三个数字必须互相自洽：今日掌握 ≤ 累计掌握；今日有掌握则在学课程 ≥ 1。
+  // 曾经出现过「今日 4 / 累计 0 / 在学 0」同屏（统计口径不同源），
+  // 用户第一反应是数据坏了。开发期把不自洽喊出来，别让它再悄悄出现。
+  useEffect(() => {
+    if (!import.meta.env.DEV) return
+    if (todayCount > totalMastered) {
+      console.warn('[dashboard] 今日掌握数大于累计掌握数', { todayCount, totalMastered })
+    }
+    if (todayCount > 0 && activeCourseCount === 0) {
+      console.warn('[dashboard] 今日有掌握但没有任何在学课程', { todayCount })
+    }
+  }, [todayCount, totalMastered, activeCourseCount])
+
   const openCourse = (exercise: CatalogExerciseSummary) => {
     navigate(`/courses/${exercise.categoryId}/chapters/${exercise.id}?stage=intensive`)
   }
@@ -194,46 +207,58 @@ export function DashboardPage() {
       <div className="dashboard-container">
         <header className="dashboard-hero">
           <h1>{t('dashboard.title')}</h1>
-          <p>{t('dashboard.goal.line', { count: todayCount, goal: dailyGoal })}</p>
+          {/* 首屏第一眼应该是「今天做了多少」——28px 主数字 + 4px 进度条，
+              原先这里是 14px 灰字，而 24px 的累计时长抢了视觉首位 */}
+          <div className="dashboard-hero-goal">
+            <div className="dashboard-hero-goal-head">
+              <span className="dashboard-hero-count">
+                <strong>{todayCount}</strong>
+                <span>{t('dashboard.goal.suffix', { goal: dailyGoal })}</span>
+              </span>
+              <span className="dashboard-hero-goal-label">
+                {goalPercent >= 100 ? t('dashboard.goal.done') : t('dashboard.goal.title')}
+              </span>
+            </div>
+            <span className="dashboard-hero-track">
+              <span className="dashboard-hero-fill" style={{ width: `${goalPercent}%` }} />
+            </span>
+          </div>
         </header>
 
         <div className="dashboard-layout">
           <div className="dashboard-main">
             <section className="dashboard-stat-strip" aria-label={t('dashboard.title')}>
               <div className="dashboard-stat">
-                <strong className="dashboard-stat-value">{todayCount}</strong>
-                <span className="dashboard-stat-label">{t('dashboard.stat.today')}</span>
-              </div>
-              <div className="dashboard-stat">
-                <strong className="dashboard-stat-value">{streak}</strong>
+                <strong className="dashboard-stat-value">
+                  {streak}
+                  <span className="dashboard-stat-unit">{t('dashboard.stat.unit.days')}</span>
+                </strong>
                 <span className="dashboard-stat-label">{t('dashboard.stat.streak')}</span>
               </div>
-              <div className="dashboard-stat">
-                <strong className="dashboard-stat-value">{totalMastered}</strong>
-                <span className="dashboard-stat-label">{t('dashboard.stat.total')}</span>
-              </div>
-              <div className="dashboard-stat">
-                <strong className="dashboard-stat-value">{activeCourseCount}</strong>
-                <span className="dashboard-stat-label">{t('dashboard.stat.courses')}</span>
-              </div>
-              <div className="dashboard-stat">
-                <strong className="dashboard-stat-value">{listenDurationLabel}</strong>
-                <span className="dashboard-stat-label">
-                  {t('dashboard.stat.listenLabel', { today: Math.floor(todayListenMs / 60_000) })}
-                </span>
-              </div>
-            </section>
-
-            <section className="dashboard-card dashboard-chart-card">
-              <div className="dashboard-card-head">
-                <div>
-                  <h2>{t('dashboard.chart.title')}</h2>
-                  <span className="dashboard-card-subtitle">{t('dashboard.chart.subtitle')}</span>
+              {/* 0 值统计不占视觉位：新用户看到三个 0 只会以为页面没加载完 */}
+              {totalMastered > 0 && (
+                <div className="dashboard-stat">
+                  <strong className="dashboard-stat-value">{totalMastered}</strong>
+                  <span className="dashboard-stat-label">{t('dashboard.stat.total')}</span>
                 </div>
-              </div>
-              <MasteryChart points={chart} />
+              )}
+              {activeCourseCount > 0 && (
+                <div className="dashboard-stat">
+                  <strong className="dashboard-stat-value">{activeCourseCount}</strong>
+                  <span className="dashboard-stat-label">{t('dashboard.stat.courses')}</span>
+                </div>
+              )}
+              {(listenTime.totalMs > 0 || todayListenMs > 0) && (
+                <div className="dashboard-stat">
+                  <strong className="dashboard-stat-value is-secondary">{listenDurationLabel}</strong>
+                  <span className="dashboard-stat-label">
+                    {t('dashboard.stat.listenLabel', { today: Math.floor(todayListenMs / 60_000) })}
+                  </span>
+                </div>
+              )}
             </section>
 
+            {/* 继续学习卡提到趋势图上方：它才是这一页的「下一步」 */}
             <section className="dashboard-card dashboard-continue-card">
               <div className="dashboard-card-head">
                 <h2>{t('dashboard.continue.title')}</h2>
@@ -264,9 +289,52 @@ export function DashboardPage() {
                     {t('dashboard.continue.action')}
                   </button>
                 </div>
+              ) : catalogLoadFailed ? (
+                <div className="dashboard-continue-body">
+                  {/* 断网时不能一边显示「今日 7 句」一边说「还没有开始任何课程」——
+                      那会让用户以为本地数据丢了 */}
+                  <p className="dashboard-empty">{t('dashboard.continue.loadFailed')}</p>
+                  <button
+                    className="dashboard-primary-button is-ghost"
+                    onClick={() => reloadCatalog()}
+                    type="button"
+                  >
+                    {t('dashboard.continue.retry')}
+                  </button>
+                </div>
+              ) : catalogLoading ? (
+                <p className="dashboard-empty">{t('dashboard.continue.loading')}</p>
               ) : (
-                <p className="dashboard-empty">{t('dashboard.continue.empty')}</p>
+                <div className="dashboard-continue-body">
+                  <p className="dashboard-empty">{t('dashboard.continue.empty')}</p>
+                  {/* 零数据时全站唯一的主 CTA：没有它，新用户点「开始复习」
+                      会进到空态再弹回首页，转两圈走不出去 */}
+                  <button
+                    className="dashboard-primary-button"
+                    onClick={() => navigate('/courses')}
+                    type="button"
+                  >
+                    <Play size={16} aria-hidden="true" />
+                    {t('dashboard.continue.startFirst')}
+                  </button>
+                </div>
               )}
+            </section>
+
+            <section className="dashboard-card dashboard-chart-card">
+              <div className="dashboard-card-head">
+                <div>
+                  <h2>{t('dashboard.chart.title')}</h2>
+                  <span className="dashboard-card-subtitle">{t('dashboard.chart.subtitle')}</span>
+                </div>
+                <span className="dashboard-card-subtitle">
+                  {t('dashboard.chart.summary', {
+                    days: CHART_DAYS,
+                    count: chart.reduce((sum, point) => sum + point.count, 0),
+                  })}
+                </span>
+              </div>
+              <MasteryChart points={chart} />
             </section>
           </div>
 
@@ -340,24 +408,20 @@ export function DashboardPage() {
               <div className="dashboard-card-head">
                 <h2>{t('topbar.review')}</h2>
               </div>
-              <button className="dashboard-review-cta" onClick={() => navigate('/review')} type="button">
+              {/* 还没有任何在学课程时，这里不该是全页唯一实心按钮——
+                  否则新用户的第一动作变成「去复习还没学过的课」 */}
+              <button
+                className={
+                  courseProgressList.length === 0
+                    ? 'dashboard-review-cta ghost'
+                    : 'dashboard-review-cta'
+                }
+                onClick={() => navigate('/review')}
+                type="button"
+              >
                 {t('globalReview.reviewHere')}
                 <ChevronRight size={16} aria-hidden="true" />
               </button>
-            </section>
-
-            <section className="dashboard-card dashboard-goal-card">
-              <div className="dashboard-card-head">
-                <h2>{t('dashboard.goal.title')}</h2>
-              </div>
-              <div className="dashboard-goal-body">
-                <GoalRing percent={goalPercent} />
-                <p className="dashboard-goal-count">
-                  {goalPercent >= 100
-                    ? t('dashboard.goal.done')
-                    : t('dashboard.goal.progress', { current: todayCount, target: dailyGoal })}
-                </p>
-              </div>
             </section>
 
             <section className="dashboard-card dashboard-courses-card">
@@ -426,6 +490,17 @@ function MasteryChart({ points }: { points: Array<{ day: string; label: string; 
           role="img"
           viewBox={`0 0 ${width} ${height}`}
         >
+          {/* 三条基线（0 / 半 / 顶）：没有基线时折线悬空，读者无从判断量级 */}
+          {[0, 0.5, 1].map((ratio) => (
+            <line
+              className="dashboard-chart-grid"
+              key={ratio}
+              x1={padX}
+              x2={width - padX}
+              y1={yOf(maxValue * ratio)}
+              y2={yOf(maxValue * ratio)}
+            />
+          ))}
           <path className="dashboard-chart-area" d={areaPath} />
           <path className="dashboard-chart-line" d={linePath} />
           {coords.map((coord) => (
@@ -452,25 +527,4 @@ function MasteryChart({ points }: { points: Array<{ day: string; label: string; 
   )
 }
 
-/** 每日目标进度环。 */
-function GoalRing({ percent }: { percent: number }) {
-  const radius = 38
-  const circumference = 2 * Math.PI * radius
-  const offset = circumference * (1 - Math.min(percent, 100) / 100)
-  return (
-    <svg aria-hidden="true" className="dashboard-goal-ring" viewBox="0 0 100 100">
-      <circle className="dashboard-goal-track" cx="50" cy="50" r={radius} />
-      <circle
-        className="dashboard-goal-fill"
-        cx="50"
-        cy="50"
-        r={radius}
-        strokeDasharray={circumference}
-        strokeDashoffset={offset}
-      />
-      <text className="dashboard-goal-percent" textAnchor="middle" x="50" y="58">
-        {percent}%
-      </text>
-    </svg>
-  )
-}
+/** 每日目标进度环已并入首页 hero 的进度条（同一个数字不再画三遍）。 */

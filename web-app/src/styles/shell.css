@@ -7,6 +7,8 @@
   flex-direction: column;
   height: 100vh;
   overflow: hidden;
+  /* 全屏/PWA 下让出 iPhone 底部 Home 指示条 */
+  padding-bottom: env(safe-area-inset-bottom, 0px);
 }
 
 .topbar {
@@ -90,6 +92,13 @@
   color: var(--accent-ink);
 }
 
+/* 搜索页没有独立导航项：放大镜按钮本身就是「当前位置」的指示 */
+.account-trigger.active {
+  background: var(--accent-soft);
+  border-color: var(--accent);
+  color: var(--accent-ink);
+}
+
 /* ── 顶栏「首页 / 学习」导航：文字式，激活态用下划线 ─────────── */
 .topbar-nav {
   display: inline-flex;
@@ -137,6 +146,21 @@
   overflow: hidden;
   height: 100%;
   min-height: 0;
+  position: relative;
+}
+
+/* 底部渐隐：列表末行贴着容器边缘被切断时，看着像渲染坏了；
+   一道 24px 的纸色渐变把它收成「还有更多，可继续滚」。
+   纯装饰、不吃点击。 */
+.library-pane::after {
+  background: linear-gradient(transparent, var(--bg));
+  bottom: 0;
+  content: '';
+  height: 24px;
+  left: 0;
+  pointer-events: none;
+  position: absolute;
+  right: 0;
 }
 
 /* 小字组头：弱化、宽字距，报纸栏目的感觉 */
@@ -150,6 +174,12 @@
   gap: 8px;
   letter-spacing: 0.08em;
   margin-bottom: 12px;
+}
+
+/* 面板标题是列表的「名字」，不该比列表正文还小 */
+.panel-title {
+  color: var(--ink-2);
+  font-size: 13px;
 }
 
 .pane-heading.compact {

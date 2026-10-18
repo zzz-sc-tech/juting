@@ -196,20 +196,8 @@ export function WaveformStage({
   const handleAbButtonClick = () => {
     if (abState === 'off') {
       abARef.current = currentTime
-      // A 点竖线标记：标 B 之前让用户看到 A 落在哪
-      const regions = regionsRef.current
-      if (regions) {
-        regions.getRegions().find((r) => r.id === AB_A_MARKER_ID)?.remove()
-        regions.addRegion({
-          id: AB_A_MARKER_ID,
-          start: currentTime,
-          end: currentTime + 0.12,
-          color: hexToRgba(readWavePalette().loop, 0.85),
-          content: abTag('A', 'left'),
-          drag: false,
-          resize: false,
-        })
-      }
+      // A 点不再用「0.12 秒宽的区域」表达——在 980px 宽的波形上它只有 0.08px，
+      // 视觉上等于不存在；改为独立的 2px 竖线（.waveform-a-marker）。
       setAbState('a')
       return
     }
@@ -543,6 +531,17 @@ export function WaveformStage({
     return () => observer.disconnect()
   }, [updatePan, status.kind])
 
+  // 句数口径：全量行（含指令行）与正文句（精听/首页的计数口径）差一截，
+  // 界面必须标注，否则「精听 187 句 / 波形 197 句」看起来像进度算错了。
+  const contentLineCount = useMemo(() => {
+    const instructionIds = new Set(dialogueAnchors.flatMap((anchor) => anchor.lineIds))
+    if (instructionIds.size === 0) return exercise.lines.length
+    return exercise.lines.reduce(
+      (sum, line) => (instructionIds.has(line.id) ? sum : sum + 1),
+      0,
+    )
+  }, [dialogueAnchors, exercise.lines])
+
   // 播放头 x（surface 视口坐标）：fit 按时长比例，zoom 按 px/s 减去滚动偏移
   const playheadX = useMemo(() => {
     if (!duration || !canvasWidth) return 0
@@ -551,6 +550,16 @@ export function WaveformStage({
     }
     return (currentTime / duration) * canvasWidth
   }, [currentTime, duration, canvasWidth, zoomPx, pan.pos])
+
+  // A 点竖线：与播放头同一套坐标系（fit 按比例、zoom 按 px/s 减滚动偏移）
+  const aMarkerX = useMemo(() => {
+    if (abState === 'off' || !duration || !canvasWidth) return null
+    const a = abARef.current
+    if (zoomPx > 0) {
+      return Math.max(-2, Math.min(a * zoomPx - pan.pos, canvasWidth))
+    }
+    return (a / duration) * canvasWidth
+  }, [abState, duration, canvasWidth, zoomPx, pan.pos])
 
   // 切课时复位循环状态（区域随 wavesurfer 销毁，状态也要归零）
   useEffect(() => {
@@ -570,7 +579,12 @@ export function WaveformStage({
         <header className="waveform-header">
           <div>
             <p className="waveform-meta">
-              {t('waveform.sentenceCount', { count: exercise.lines.length })}
+              {contentLineCount === exercise.lines.length
+                ? t('waveform.sentenceCount', { count: exercise.lines.length })
+                : t('waveform.sentenceCountSplit', {
+                    count: exercise.lines.length,
+                    content: contentLineCount,
+                  })}
             </p>
           </div>
           <div className="waveform-tools">
@@ -655,6 +669,16 @@ export function WaveformStage({
               className={scrubbing ? 'waveform-playhead scrubbing' : 'waveform-playhead'}
               style={{ transform: `translateX(${playheadX}px)` }}
             />
+          )}
+          {/* A 点：贯穿波形高度的 2px 竖线，标 B 之前一直可见 */}
+          {status.kind === 'ready' && aMarkerX !== null && (
+            <div
+              aria-hidden="true"
+              className="waveform-a-marker"
+              style={{ transform: `translateX(${aMarkerX}px)` }}
+            >
+              <span className="waveform-a-flag">A</span>
+            </div>
           )}
 
           {status.kind === 'loading' && (

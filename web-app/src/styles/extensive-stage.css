@@ -366,10 +366,11 @@
   color: var(--accent-ink);
 }
 
-/* 关态要一眼可辨：虚线框 + 灰字（曾有人点了「翻译」没察觉开关已翻转） */
+/* 关态：空心描边 + 灰字（开态是实心淡绿底）。
+   虚线只留给「工具阶段」一种语义，不要拿它表示开关关闭。 */
 .subtitle-chip:not(.on) {
-  border-style: dashed;
-  color: var(--ink-4);
+  border-style: solid;
+  color: var(--ink-3);
 }
 
 .subtitle-topline-right {
@@ -439,7 +440,7 @@
   background: var(--surface);
   border: 1px solid var(--line);
   border-radius: 50%;
-  color: var(--ink-4);
+  color: var(--ink-3);
   cursor: pointer;
   display: inline-flex;
   height: 24px;
@@ -488,4 +489,15 @@
   background: var(--accent-soft-2);
   border-color: var(--accent);
   color: var(--accent-ink);
+}
+
+/* 「跳阶段」在主行动（播放）还没完成前降为描边——同屏只允许一个实心按钮 */
+.command-button.ghost-accent {
+  background: transparent;
+  border: 1px solid var(--accent);
+  color: var(--accent-ink);
+}
+
+.command-button.ghost-accent:hover {
+  background: var(--accent-soft);
 }

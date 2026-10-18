@@ -18,7 +18,6 @@ export const storageMessages = {
     // 设置页 · 自动快照
     'settings.storage.snapshotTitle': '从自动快照恢复',
     'settings.storage.snapshotHint': '每次启动与每 10 分钟自动存一份进度快照（保留最近 2 份），误清数据时可回到上一份。',
-    'settings.storage.snapshotEmpty': '暂无可用的自动快照。',
     'settings.storage.snapshotItem': '{{time}} · {{courses}} 门课 / {{lines}} 句 / 已掌握 {{mastered}}',
     'settings.storage.snapshotRestore': '恢复这一份',
     'settings.storage.snapshotConfirm': '将用这份快照覆盖当前进度与学习日历，确定继续？',

@@ -2,6 +2,7 @@ import { ArrowLeft, Database, Download, HardDriveDownload, History, Newspaper, P
 import { useRef, useState, type ChangeEvent } from 'react'
 import { useNavigate } from 'react-router-dom'
 import { useLanguage } from '../i18n/LanguageProvider'
+import type { MessageKey } from '../i18n/messages'
 import {
   downloadBackup,
   getLastExportAt,
@@ -46,6 +47,22 @@ import { UpdatePanel } from './UpdatePanel'
  * 本地免登录模式：只保留主题、播放/字幕默认值、每日目标等本机偏好；
  * 均持久化在 localStorage。界面与内容语言固定中文（无切换项）。
  */
+
+/**
+ * 主题选择：四套主题是视觉差异，用一个原生下拉只能读到名字，看不到配色。
+ * 改为 2×2 卡片（每组 3 个色块：纸底 / 墨色 / 主色），用 radiogroup 保留键盘与读屏。
+ */
+const THEME_CARDS: Array<{
+  id: UiTheme
+  labelKey: MessageKey
+  swatches: [string, string, string]
+}> = [
+  { id: 'paper', labelKey: 'settings.themePaper', swatches: ['#f7f5f1', '#1d1b16', '#24584a'] },
+  { id: 'gazette', labelKey: 'settings.themeGazette', swatches: ['#f4f0e6', '#171512', '#9a3b2e'] },
+  { id: 'minimal', labelKey: 'settings.themeMinimal', swatches: ['#ffffff', '#18181b', '#a1a1aa'] },
+  { id: 'exam', labelKey: 'settings.themeExam', swatches: ['#f2f1ea', '#2e3153', '#b03030'] },
+]
+
 export function SettingsPage() {
   const navigate = useNavigate()
   const { t } = useLanguage()
@@ -174,7 +191,7 @@ export function SettingsPage() {
 
   return (
     <div className="settings-page">
-      <TopBar />
+      <TopBar active="settings" />
 
       <div className="settings-container">
         <header className="settings-header">
@@ -194,20 +211,25 @@ export function SettingsPage() {
             <Newspaper size={15} />
             {t('settings.theme')}
           </h2>
-          <label className="settings-field">
-            <span className="settings-field-label">{t('settings.theme')}</span>
-            <SettingsSelect
-              ariaLabel={t('settings.theme')}
-              onChange={(value) => handleThemeChange(value as UiTheme)}
-              options={[
-                { value: 'paper', label: t('settings.themePaper') },
-                { value: 'gazette', label: t('settings.themeGazette') },
-                { value: 'minimal', label: t('settings.themeMinimal') },
-                { value: 'exam', label: t('settings.themeExam') },
-              ]}
-              value={theme}
-            />
-          </label>
+          <div className="theme-grid" role="radiogroup" aria-label={t('settings.theme')}>
+            {THEME_CARDS.map((card) => (
+              <button
+                aria-checked={theme === card.id}
+                className={theme === card.id ? 'theme-card active' : 'theme-card'}
+                key={card.id}
+                onClick={() => handleThemeChange(card.id)}
+                role="radio"
+                type="button"
+              >
+                <span aria-hidden="true" className="theme-card-swatches">
+                  {card.swatches.map((color) => (
+                    <span key={color} style={{ background: color }} />
+                  ))}
+                </span>
+                <span className="theme-card-name">{t(card.labelKey)}</span>
+              </button>
+            ))}
+          </div>
         </section>
 
         <section className="settings-card">

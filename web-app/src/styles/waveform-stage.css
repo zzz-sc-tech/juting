@@ -42,7 +42,7 @@
   background: var(--bg);
   border: 1px solid var(--line);
   border-radius: var(--radius-md);
-  min-height: 132px;
+  min-height: 156px;
   overflow-x: auto;
   overflow-y: hidden;
   position: relative;
@@ -62,7 +62,7 @@
 }
 
 .waveform-canvas {
-  height: 132px;
+  height: 156px;
   width: 100%;
 }
 
@@ -231,7 +231,9 @@
   pointer-events: none;
   position: absolute;
   top: 0;
-  transition: transform 200ms linear;
+  /* 过渡窗口对齐 timeupdate 的 250ms 间隔：比它短会出现「每拍末尾静止」，
+     比它长则会慢半拍 */
+  transition: transform 250ms linear;
   width: 2px;
   will-change: transform;
   z-index: 1;
@@ -239,4 +241,32 @@
 
 .waveform-playhead.scrubbing {
   transition: none;
+}
+
+/* A 点标记：早期版本用一个 0.12 秒宽的区域来画，在 980px 宽的波形上只有 0.08px，
+   等于不存在。改成贯穿波形高度的 2px 竖线 + 顶部 A 角标。 */
+.waveform-a-marker {
+  background: var(--accent);
+  bottom: 0;
+  left: 0;
+  opacity: 0.9;
+  pointer-events: none;
+  position: absolute;
+  top: 0;
+  width: 2px;
+  z-index: 3;
+}
+
+.waveform-a-flag {
+  background: var(--accent);
+  border-radius: 0 3px 3px 0;
+  color: #ffffff;
+  font-family: var(--font-ui);
+  font-size: 10px;
+  font-weight: 700;
+  left: 2px;
+  line-height: 1;
+  padding: 3px 5px;
+  position: absolute;
+  top: 2px;
 }

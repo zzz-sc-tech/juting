@@ -249,17 +249,75 @@ export function GlobalReviewPage() {
     setRevealed(false)
   }, [selectedLine?.id])
 
+  // 空态要分两种：从来没标记过难点（该去学习）/ 已经全部攻克（该回首页）
+  const everMarked = useMemo(
+    () =>
+      Object.values(store.progressByExercise).some((progress) =>
+        Object.values(progress.lines ?? {}).some((line) => line?.unclear),
+      ),
+    [store.progressByExercise],
+  )
+
   if (totalRemaining === 0 || courseQueue.length === 0) {
+    const activeCourseSeries = store.activeExerciseId
+      ? seriesById[store.activeExerciseId]
+      : undefined
+    const goIntensivePath =
+      store.activeExerciseId && activeCourseSeries
+        ? `/courses/${activeCourseSeries}/chapters/${store.activeExerciseId}?stage=intensive`
+        : '/courses'
     return (
       <div className="settings-page">
-        <TopBar />
+        <TopBar active="review" />
         <div className="settings-container">
-          <div className="review-empty-card">
-            <CircleHelp size={26} aria-hidden="true" />
-            <strong>{t('globalReview.empty')}</strong>
-            <button className="icon-button primary wide" onClick={() => navigate('/home')} type="button">
-              {t('globalReview.backHome')}
+          <header className="settings-header">
+            <button
+              aria-label={t('settings.back')}
+              className="settings-back"
+              onClick={() => navigate('/home')}
+              type="button"
+            >
+              <ArrowLeft size={20} />
             </button>
+            <h1 className="settings-title">{t('globalReview.title')}</h1>
+          </header>
+
+          <div className="page-empty">
+            <CircleHelp className="page-empty-icon" size={26} aria-hidden="true" />
+            <p className="page-empty-title">
+              {everMarked ? t('globalReview.empty') : t('globalReview.nothingMarked')}
+            </p>
+            <p className="page-empty-text">
+              {everMarked ? t('globalReview.emptyHint') : t('globalReview.nothingMarkedHint')}
+            </p>
+            <div className="page-empty-actions">
+              {everMarked ? (
+                <button
+                  className="command-button"
+                  onClick={() => navigate('/home')}
+                  type="button"
+                >
+                  {t('globalReview.backHome')}
+                </button>
+              ) : (
+                <>
+                  <button
+                    className="command-button"
+                    onClick={() => navigate(goIntensivePath)}
+                    type="button"
+                  >
+                    {t('globalReview.goIntensive')}
+                  </button>
+                  <button
+                    className="command-button ghost"
+                    onClick={() => navigate('/courses')}
+                    type="button"
+                  >
+                    {t('globalReview.goCourses')}
+                  </button>
+                </>
+              )}
+            </div>
           </div>
         </div>
       </div>
@@ -268,7 +326,7 @@ export function GlobalReviewPage() {
 
   return (
     <div className="settings-page">
-      <TopBar />
+      <TopBar active="review" />
       <div className="settings-container global-review-container">
         <header className="settings-header">
           <button aria-label={t('settings.back')} className="settings-back" onClick={() => navigate('/home')} type="button">
@@ -308,7 +366,7 @@ export function GlobalReviewPage() {
             selectedLine={selectedLine}
             isPlaying={isPlaying}
             revealed={revealed}
-            onReveal={() => setRevealed(true)}
+            onReveal={() => setRevealed((current) => !current)}
             onBackToIntensive={goIntensive}
             onLineSelect={(lineId) => {
               const line = reviewLines.find((item) => item.id === lineId)

@@ -19,9 +19,19 @@
 }
 
 .sentence-workbench {
+  display: flex;
+  flex-direction: column;
   min-height: 0;
   min-width: 0;
   overflow-y: auto;
+}
+
+/* 媒体卡吃满工作台高度：卡片高度一旦由内容决定，换一句（2 行字幕 → 1 行占位）
+   整张卡就矮 67px，底下的播放键与四个动作按钮跟着上下跳。
+   上限 420px 是为了不让它在 900px 高的屏上被撑成一整列空白。 */
+.sentence-workbench > .lesson-media-card {
+  flex: 1 1 auto;
+  max-height: 420px;
 }
 
 .review-workbench {
@@ -92,6 +102,14 @@
   min-height: 1.45em;
 }
 
+/* 未揭晓时的占位提示：正文字号、弱墨色，读起来是「待办」而不是「坏掉」 */
+.subtitle-placeholder {
+  color: var(--ink-3);
+  font-family: var(--font-ui);
+  font-size: 15px;
+  font-weight: 400;
+}
+
 /* 揭晓字幕：淡绿衬纸 + 左侧主色起线，英文衬线——整张脸的重心 */
 .subtitle-text.revealed {
   background: var(--accent-soft-2);
@@ -99,10 +117,10 @@
   border-radius: var(--radius-sm) var(--radius-md) var(--radius-md) var(--radius-sm);
   color: var(--ink);
   font-family: var(--font-serif);
-  font-size: 20px;
+  font-size: 21px;
   font-weight: 500;
   line-height: 1.55;
-  padding: 12px 16px;
+  padding: 14px 18px;
 }
 
 /* 换句入场：key 重挂载触发，只淡入 + 8px 位移（不做淡出——新句必须立刻可读）。
@@ -177,7 +195,8 @@
 }
 
 .review-empty-card svg {
-  color: var(--ink-4);
+  /* 空态图标原来是 --ink-4（1.65:1），肉眼几乎看不见 */
+  color: var(--ink-2);
 }
 
 .review-empty-card strong {
@@ -368,6 +387,9 @@
 /* ── 状态动作（标记难点 / 我已掌握）：两枚独立安静按钮 ──────── */
 .status-actions {
   display: flex;
+  /* 允许换行：390 下「标记难点 + 去波形循环 + +生词 + 我已掌握」四枚
+     单行排不下，右边界会溢出到屏幕外（只有 53px 露出来） */
+  flex-wrap: wrap;
   gap: 8px;
   margin-top: 12px;
   width: 100%;
@@ -382,7 +404,8 @@
   color: var(--ink-2);
   cursor: pointer;
   display: inline-flex;
-  flex: 1;
+  /* 桌面按内容宽度自然排一行；窄屏由 responsive.css 改成 2×2 */
+  flex: 1 1 auto;
   font: inherit;
   font-size: 14.5px;
   font-weight: 500;
@@ -392,6 +415,18 @@
   padding: 0 8px;
   transition: border-color 0.15s ease, background 0.15s ease, color 0.15s ease,
     transform var(--dur-instant) var(--ease-spring);
+}
+
+/* 生词按钮外面还套了一层定位容器，得让它自己也当一个「卡片宽」的 flex 项 */
+.status-actions .vocab-anchor {
+  display: flex;
+  flex: 1 1 auto;
+  min-width: 0;
+}
+
+.status-actions .vocab-anchor .pill {
+  flex: 1 1 auto;
+  width: 100%;
 }
 
 .status-actions .pill:hover {
@@ -460,6 +495,14 @@
   position: relative;
   right: auto;
   top: auto;
+  /* 卡片中间是一大片留白，当前句贴着顶部坐、控件压到底部，
+     中间空出来的区域让「读这句话」这件事失去了重心——改为垂直居中。
+     min-height 兜住短句：1 行句子与 2 行句子不再让卡片换高度。 */
+  display: flex;
+  flex: 1 1 auto;
+  flex-direction: column;
+  justify-content: center;
+  min-height: 226px;
 }
 
 .intensive-board .media-overlay-controls {
@@ -586,8 +629,8 @@
 }
 
 .dw-pass { color: var(--ink); }
-.dw-given { color: var(--ink-4); font-style: italic; }
-.dw-fn { color: var(--ink-4); }
+.dw-given { color: var(--ink-3); font-style: italic; }
+.dw-fn { color: var(--ink-3); }
 .dw-near { color: var(--warning); text-decoration: underline wavy var(--warning) 1px; text-underline-offset: 3px; }
 .dw-miss { color: var(--danger); font-weight: 600; border-bottom: 2px solid var(--danger); }
 .dw-extra { color: var(--ink-3); }

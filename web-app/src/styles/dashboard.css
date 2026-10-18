@@ -2,6 +2,7 @@
 
 .dashboard-page {
   min-height: 100vh;
+  padding-bottom: env(safe-area-inset-bottom, 0px);
 }
 
 .dashboard-container {
@@ -26,6 +27,60 @@
   color: var(--ink-3);
   font-size: 14px;
   margin: 0;
+}
+
+/* 今日进度：28px 主数字 + 4px 进度条，占据首屏第一视觉位 */
+.dashboard-hero-goal {
+  display: grid;
+  gap: 7px;
+  margin-top: 12px;
+  max-width: 340px;
+}
+
+.dashboard-hero-goal-head {
+  align-items: baseline;
+  display: flex;
+  gap: 12px;
+  /* 标签紧跟数值，和下方统计条的「数值 + 标签」同一种读法；
+     原来的 space-between 会把标签推到 340px 的右边缘，两行看着不像同一张表 */
+  justify-content: flex-start;
+}
+
+.dashboard-hero-count {
+  align-items: baseline;
+  color: var(--ink-3);
+  display: inline-flex;
+  font-size: 14px;
+  gap: 6px;
+}
+
+.dashboard-hero-count strong {
+  color: var(--ink);
+  font-size: 28px;
+  font-variant-numeric: tabular-nums;
+  font-weight: 650;
+  line-height: 1;
+}
+
+.dashboard-hero-goal-label {
+  color: var(--ink-3);
+  font-size: 12.5px;
+}
+
+.dashboard-hero-track {
+  background: var(--line);
+  border-radius: var(--radius-pill);
+  display: block;
+  height: 4px;
+  overflow: hidden;
+}
+
+.dashboard-hero-fill {
+  background: var(--accent);
+  border-radius: inherit;
+  display: block;
+  height: 100%;
+  transition: width 0.3s ease;
 }
 
 .dashboard-layout {
@@ -76,6 +131,11 @@
   margin: 6px 0 2px;
 }
 
+/* 空态与「开始第一课」并排：空话后面必须跟一个能做事的按钮 */
+.dashboard-continue-body .dashboard-empty {
+  margin: 0;
+}
+
 /* ── 统计条：一行大数字细标签，上下发丝线，不再是白卡 ───────── */
 .dashboard-stat-strip {
   align-items: baseline;
@@ -100,6 +160,21 @@
   font-variant-numeric: tabular-nums;
   font-weight: 650;
   line-height: 1.1;
+}
+
+/* 所听时长是次级信息：别用和「今日/累计掌握」一样大的字号抢位 */
+.dashboard-stat-value.is-secondary {
+  color: var(--ink-2);
+  font-size: 16px;
+  font-weight: 600;
+}
+
+/* 单位跟在数字后面，小一号、弱一档：「0天 连续学习」读得通，「0 连续学习」读不通 */
+.dashboard-stat-unit {
+  color: var(--ink-3);
+  font-size: 12.5px;
+  font-weight: 500;
+  margin-left: 2px;
 }
 
 .dashboard-stat-label {
@@ -129,6 +204,11 @@
   fill: var(--surface);
   stroke: var(--accent);
   stroke-width: 1.5;
+}
+
+.dashboard-chart-grid {
+  stroke: var(--line);
+  stroke-width: 1;
 }
 
 .dashboard-chart-label {
@@ -182,6 +262,18 @@
 
 .dashboard-primary-button:hover {
   background: var(--accent-strong);
+}
+
+/* 失败态的重试不是「主行动」：描边即可，别和「开始第一课」抢同样的分量 */
+.dashboard-primary-button.is-ghost {
+  background: transparent;
+  border: 1px solid var(--accent);
+  color: var(--accent-ink);
+}
+
+.dashboard-primary-button.is-ghost:hover {
+  background: var(--accent-soft);
+  color: var(--accent-ink);
 }
 
 /* ── 进度条 ─────────────────────────────────────────────── */
@@ -378,6 +470,19 @@
 .dashboard-review-cta:hover {
   background: var(--accent);
   color: var(--bg);
+}
+
+/* 无在学课程时降为描边：零数据首页只允许一个实心主按钮 */
+.dashboard-review-cta.ghost {
+  background: transparent;
+  border: 1px solid var(--line-strong);
+  color: var(--ink-2);
+}
+
+.dashboard-review-cta.ghost:hover {
+  background: var(--accent-soft-2);
+  border-color: var(--accent);
+  color: var(--accent-ink);
 }
 
 /* 反复错题卡 */

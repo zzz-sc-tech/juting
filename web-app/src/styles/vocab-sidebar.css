@@ -213,7 +213,7 @@
 }
 
 .vocab-ctx-text.pending {
-  color: var(--ink-4);
+  color: var(--ink-3);
   font-family: var(--font-ui);
 }
 
@@ -312,6 +312,6 @@
 }
 
 .vocab-missing {
-  color: var(--ink-4);
+  color: var(--ink-3);
   font-size: 12px;
 }

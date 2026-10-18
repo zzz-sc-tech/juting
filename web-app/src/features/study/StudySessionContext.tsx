@@ -45,6 +45,7 @@ export type StudySessionContextValue = {
   // 目录
   catalog: CatalogResponse
   catalogLoadFailed: boolean
+  catalogLoading: boolean
   reloadCatalog: () => void
   loadExercises: (categoryId: number) => Promise<CatalogExerciseSummary[]>
   seriesProgressByCategory: Record<string, SeriesProgressSummary>
@@ -144,6 +145,7 @@ export function StudySessionProvider({ children }: { children: ReactNode }) {
   const {
     catalog,
     catalogLoadFailed,
+    catalogLoading,
     reload: reloadCatalog,
   } = useCatalog(contentLocale)
   const { exercisesByCategory, loadExercises } =
@@ -355,6 +357,7 @@ export function StudySessionProvider({ children }: { children: ReactNode }) {
     () => ({
       catalog,
       catalogLoadFailed,
+      catalogLoading,
       reloadCatalog,
       loadExercises,
       seriesProgressByCategory,
@@ -399,6 +402,7 @@ export function StudySessionProvider({ children }: { children: ReactNode }) {
     [
       catalog,
       catalogLoadFailed,
+      catalogLoading,
       reloadCatalog,
       loadExercises,
       seriesProgressByCategory,

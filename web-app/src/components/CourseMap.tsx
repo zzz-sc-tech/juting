@@ -77,6 +77,25 @@ export function CourseMap({
     ]
   }, [seriesExercises, chapterProgressByExercise])
   const [seriesDialogOpen, setSeriesDialogOpen] = useState(false)
+  // 章节列表的 roving tabindex：49 章 ×（行 + ⋯）原来有 99 个 tab stop，
+  // 键盘用户按一分钟 Tab 也进不了正文。现在整个列表只占 2 个 stop，
+  // 其余行用 ↑↓ / Home / End 移动（标准 roving 模式）。
+  const orderedChapterIds = useMemo(
+    () => chapterGroups.flatMap((group) => group.items.map((item) => item.exercise.id)),
+    [chapterGroups],
+  )
+  const rovingChapterId =
+    typeof activeExerciseId === 'number' && orderedChapterIds.includes(activeExerciseId)
+      ? activeExerciseId
+      : orderedChapterIds[0]
+
+  const focusChapterAt = (offset: number) => {
+    if (orderedChapterIds.length === 0) return
+    const current = orderedChapterIds.indexOf(rovingChapterId)
+    const next = Math.max(0, Math.min(orderedChapterIds.length - 1, current + offset))
+    const nextId = orderedChapterIds[next]
+    document.querySelector<HTMLElement>(`[data-chapter-id="${nextId}"]`)?.focus()
+  }
   // 章节卡 ⋯ 菜单：menuForId 当前展开的章节；confirmResetId 二次确认重置；
   // busyId 标完成请求进行中（防重复点击）。
   const [menuForId, setMenuForId] = useState<number | null>(null)
@@ -87,6 +106,23 @@ export function CourseMap({
     setMenuForId(null)
     setConfirmResetId(null)
   }
+
+  // Esc 收起章节菜单并把焦点还给触发它的 ⋯（浮层没有 Esc 是全站通病，这里先补一处）
+  useEffect(() => {
+    if (menuForId === null) return
+    const onKeyDown = (event: KeyboardEvent) => {
+      if (event.key !== 'Escape') return
+      event.stopPropagation()
+      const trigger = document.querySelector<HTMLElement>(
+        `[data-chapter-id="${menuForId}"] .chapter-kebab`,
+      )
+      setMenuForId(null)
+      setConfirmResetId(null)
+      trigger?.focus()
+    }
+    window.addEventListener('keydown', onKeyDown)
+    return () => window.removeEventListener('keydown', onKeyDown)
+  }, [menuForId])
 
   const handleMarkDoneClick = async (exercise: CatalogExerciseSummary) => {
     setMenuForId(null)
@@ -193,16 +229,44 @@ export function CourseMap({
                       ? 'exercise-item quest-node active'
                       : 'exercise-item quest-node'
                   }
+                  data-chapter-id={exercise.id}
                   key={exercise.id}
                   onClick={() => onExerciseSelect(exercise)}
                   onKeyDown={(event) => {
                     if (event.key === 'Enter' || event.key === ' ') {
                       event.preventDefault()
                       onExerciseSelect(exercise)
+                      return
+                    }
+                    if (event.key === 'ArrowDown') {
+                      event.preventDefault()
+                      focusChapterAt(1)
+                      return
+                    }
+                    if (event.key === 'ArrowUp') {
+                      event.preventDefault()
+                      focusChapterAt(-1)
+                      return
+                    }
+                    if (event.key === 'Home') {
+                      event.preventDefault()
+                      focusChapterAt(-orderedChapterIds.length)
+                      return
+                    }
+                    if (event.key === 'End') {
+                      event.preventDefault()
+                      focusChapterAt(orderedChapterIds.length)
+                      return
+                    }
+                    // 菜单键 / Shift+F10：任意章节行都能唤出 ⋯ 菜单（与右键菜单同一套约定）
+                    if (event.key === 'ContextMenu' || (event.shiftKey && event.key === 'F10')) {
+                      event.preventDefault()
+                      setConfirmResetId(null)
+                      setMenuForId(exercise.id)
                     }
                   }}
                   role="button"
-                  tabIndex={0}
+                  tabIndex={exercise.id === rovingChapterId ? 0 : -1}
                 >
                   <span className="quest-badge">{index + 1}</span>
                   <span className="exercise-main">
@@ -219,12 +283,13 @@ export function CourseMap({
                     aria-hidden="true"
                     className={`chapter-status-box ${status}`}
                   >
-                    {status === 'done' && <Check size={15} strokeWidth={3.5} aria-hidden="true" />}
+                    {status === 'done' && <Check size={14} strokeWidth={3.5} aria-hidden="true" />}
+                    {status === 'doing' && <span className="chapter-status-dot" />}
                   </span>
                   <button
                     aria-expanded={menuForId === exercise.id}
                     aria-haspopup="menu"
-                    aria-label={t('courseMap.chapterMenuAria')}
+                    aria-label={`${exercise.title} · ${t('courseMap.chapterMenuAria')}`}
                     className="chapter-kebab"
                     disabled={busyId === exercise.id}
                     onClick={(event) => {
@@ -232,6 +297,7 @@ export function CourseMap({
                       setConfirmResetId(null)
                       setMenuForId((current) => (current === exercise.id ? null : exercise.id))
                     }}
+                    tabIndex={exercise.id === rovingChapterId ? 0 : -1}
                     type="button"
                   >
                     <MoreVertical size={14} aria-hidden="true" />
