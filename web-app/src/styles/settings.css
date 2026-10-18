@@ -17,7 +17,7 @@
 .settings-title {
   color: var(--ink);
   font-size: 24px;
-  font-weight: 650;
+  font-weight: 600;
   letter-spacing: -0.01em;
   margin: 0;
 }
@@ -36,6 +36,8 @@
   color: var(--ink-2);
   cursor: pointer;
   display: inline-flex;
+  /* 不设字号会落到浏览器给 button 的 13.333px，凭空多出一档 */
+  font-size: 14px;
   height: 38px;
   justify-content: center;
   transition: border-color 0.15s ease, color 0.15s ease;
@@ -76,7 +78,7 @@
 
 .page-empty-text {
   color: var(--ink-2);
-  font-size: 13.5px;
+  font-size: 13px;
   line-height: 1.65;
   margin: 0;
 }
@@ -189,7 +191,7 @@
   border: 1px solid var(--line-strong);
   border-radius: var(--radius-md);
   color: var(--ink);
-  font-size: 15px;
+  font-size: 14px;
   outline: none;
   padding: 10px 12px;
   transition: border-color 0.15s ease, box-shadow 0.15s ease;
@@ -215,7 +217,7 @@
   cursor: pointer;
   display: flex;
   font: inherit;
-  font-size: 15px;
+  font-size: 14px;
   gap: 8px;
   justify-content: space-between;
   outline: none;
@@ -282,7 +284,7 @@
   border-radius: var(--radius-md);
   color: #ffffff;
   cursor: pointer;
-  font-size: 14.5px;
+  font-size: 14px;
   font-weight: 500;
   margin-top: 6px;
   padding: 11px 14px;
@@ -353,7 +355,7 @@
 }
 
 .settings-row-copy strong {
-  font-size: 14.5px;
+  font-size: 14px;
   font-weight: 600;
 }
 
@@ -441,7 +443,7 @@
   background: var(--accent);
   border-radius: var(--radius-pill);
   color: var(--bg);
-  font-size: 11px;
+  font-size: 12px;
   font-variant-numeric: tabular-nums;
   min-width: 22px;
   padding: 1px 6px;
@@ -489,7 +491,7 @@
   border-radius: var(--radius-sm);
   font: inherit;
   /* 16px 是 iOS 的硬门槛：小于它聚焦会自动放大整页，弹层跟着错位 */
-  font-size: 16px;
+  font-size: 18px;
   min-height: 44px;
   padding: 0 12px;
 }
@@ -533,18 +535,18 @@
 }
 
 .vocab-word {
-  font-size: 14.5px;
+  font-size: 14px;
 }
 
 .vocab-context {
   color: var(--ink-2);
-  font-size: 12.5px;
+  font-size: 13px;
   line-height: 1.5;
 }
 
 .vocab-course {
   color: var(--ink-3);
-  font-size: 11.5px;
+  font-size: 12px;
 }
 
 .vocab-delete {
@@ -663,7 +665,7 @@
 }
 
 .settings-update-error {
-  color: var(--warning);
+  color: var(--danger);
   font-size: 13px;
   margin-top: 12px;
 }
@@ -714,7 +716,7 @@
 }
 
 .settings-data-error {
-  color: var(--warning);
+  color: var(--danger);
   font-size: 13px;
   margin-top: 10px;
 }
@@ -781,7 +783,7 @@
   align-items: baseline;
   color: var(--ink-3);
   display: flex;
-  font-size: 12.5px;
+  font-size: 13px;
   justify-content: space-between;
   margin-bottom: 10px;
 }
@@ -791,20 +793,20 @@
   border: none;
   color: var(--ink-3);
   cursor: pointer;
-  font-size: 12.5px;
+  font-size: 13px;
   text-decoration: underline;
 }
 
 .vocab-review-course {
   color: var(--ink-3);
-  font-size: 12.5px;
+  font-size: 13px;
   margin: 0 0 6px;
 }
 
 .vocab-review-context {
   color: var(--ink);
   font-family: var(--font-serif);
-  font-size: 17px;
+  font-size: 18px;
   line-height: 1.6;
   margin: 0 0 12px;
 }
@@ -826,12 +828,12 @@
 
 .vocab-review-answer strong {
   color: var(--accent-ink);
-  font-size: 17px;
+  font-size: 18px;
 }
 
 .vocab-review-meaning {
   color: var(--ink-2);
-  font-size: 13.5px;
+  font-size: 13px;
 }
 
 .vocab-review-actions {
@@ -843,7 +845,7 @@
 .vocab-review-btn {
   border-radius: var(--radius-sm);
   cursor: pointer;
-  font-size: 13.5px;
+  font-size: 13px;
   padding: 8px 18px;
   border: 1px solid var(--line-strong);
   background: var(--bg-sunken);
@@ -862,10 +864,11 @@
   color: #ffffff;
 }
 
+/* 复习卡「不认识」= 答错，用 danger；「认识」才用主色 */
 .vocab-review-btn.unknown {
-  background: var(--warning-soft);
-  border-color: var(--warning);
-  color: var(--warning);
+  background: var(--danger-soft);
+  border-color: var(--danger);
+  color: var(--danger);
 }
 
 .vocab-review-finished {
@@ -876,7 +879,7 @@
 
 .vocab-review-badge {
   border-radius: var(--radius-pill);
-  font-size: 11px;
+  font-size: 12px;
   line-height: 1;
   padding: 3px 8px;
 }
@@ -929,7 +932,7 @@
   border: none;
   color: var(--ink);
   flex: 1;
-  font-size: 16px;
+  font-size: 18px;
   outline: none;
 }
 
@@ -957,7 +960,7 @@
 
 .search-suggest-label {
   color: var(--ink-3);
-  font-size: 12.5px;
+  font-size: 13px;
 }
 
 .search-suggest-chip {
@@ -967,7 +970,7 @@
   color: var(--ink-2);
   cursor: pointer;
   font: inherit;
-  font-size: 12.5px;
+  font-size: 13px;
   min-height: 30px;
   padding: 0 12px;
   transition: border-color 0.15s ease, color 0.15s ease, background 0.15s ease;
@@ -1055,7 +1058,7 @@
 .search-row-text {
   color: var(--ink);
   font-family: var(--font-serif);
-  font-size: 14.5px;
+  font-size: 14px;
   line-height: 1.5;
 }
 

@@ -140,7 +140,7 @@
 }
 
 .exam-q-no {
-  font-size: 15px;
+  font-size: 14px;
   font-weight: 600;
 }
 
@@ -394,7 +394,7 @@
 
 .exam-score-total {
   color: var(--accent-ink);
-  font-size: 15px;
+  font-size: 14px;
 }
 
 .exam-score-side {
@@ -406,7 +406,7 @@
 }
 
 .exam-score-line {
-  font-size: 16px;
+  font-size: 18px;
   font-weight: 600;
   margin: 0;
 }
@@ -554,7 +554,7 @@
 }
 
 .exam-confirm-card strong {
-  font-size: 15px;
+  font-size: 14px;
 }
 
 .exam-confirm-card p {
@@ -642,7 +642,7 @@
 }
 
 .exam-drill-summary p {
-  font-size: 15px;
+  font-size: 14px;
   font-weight: 600;
   margin: 0;
 }
@@ -716,7 +716,7 @@
   color: var(--ink-2);
   display: flex;
   flex-wrap: wrap;
-  font-size: 12.5px;
+  font-size: 13px;
   gap: 4px 14px;
   padding: 6px 2px;
 }

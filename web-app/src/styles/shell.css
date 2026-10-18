@@ -35,8 +35,8 @@
 
 .brand-lockup h1 {
   color: var(--ink);
-  font-size: 21px;
-  font-weight: 650;
+  font-size: 24px;
+  font-weight: 600;
   letter-spacing: 0.01em;
   line-height: 1;
   margin: 0;
@@ -79,7 +79,7 @@
   cursor: pointer;
   display: inline-flex;
   font: inherit;
-  font-size: 13.5px;
+  font-size: 13px;
   font-weight: 500;
   gap: 7px;
   min-height: 36px;
@@ -237,8 +237,8 @@
 .study-chapter-banner-title {
   color: var(--ink);
   display: block;
-  font-size: 30px;
-  font-weight: 650;
+  font-size: 28px;
+  font-weight: 600;
   letter-spacing: -0.01em;
   line-height: 1.15;
   margin: 0;

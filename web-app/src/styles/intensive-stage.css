@@ -85,7 +85,7 @@
   align-items: center;
   color: var(--ink-3);
   display: flex;
-  font-size: 11.5px;
+  font-size: 12px;
   font-variant-numeric: tabular-nums;
   justify-content: space-between;
   letter-spacing: 0.04em;
@@ -94,7 +94,7 @@
 
 .subtitle-text {
   color: var(--ink);
-  font-size: 15px;
+  font-size: 14px;
   font-weight: 600;
   line-height: 1.45;
   margin: 0;
@@ -106,7 +106,7 @@
 .subtitle-placeholder {
   color: var(--ink-3);
   font-family: var(--font-ui);
-  font-size: 15px;
+  font-size: 14px;
   font-weight: 400;
 }
 
@@ -117,7 +117,7 @@
   border-radius: var(--radius-sm) var(--radius-md) var(--radius-md) var(--radius-sm);
   color: var(--ink);
   font-family: var(--font-serif);
-  font-size: 21px;
+  font-size: 24px;
   font-weight: 500;
   line-height: 1.55;
   padding: 14px 18px;
@@ -164,11 +164,11 @@
 }
 
 .review-subtitle-overlay .subtitle-text.revealed {
-  font-size: 23px;
+  font-size: 24px;
 }
 
 .review-subtitle-overlay .subtitle-translation.revealed {
-  font-size: 16px;
+  font-size: 18px;
   padding: 10px 16px 0;
 }
 
@@ -201,7 +201,7 @@
 
 .review-empty-card strong {
   color: var(--ink);
-  font-size: 17px;
+  font-size: 18px;
   font-weight: 600;
 }
 
@@ -249,7 +249,7 @@
 
 .icon-button span {
   color: inherit;
-  font-size: 12.5px;
+  font-size: 13px;
   font-weight: 500;
   line-height: 1;
 }
@@ -306,6 +306,8 @@
   border-radius: var(--radius-sm);
   cursor: pointer;
   display: flex;
+  /* 不设字号会落到 UA 默认的 13.333px，凭空多出一档 */
+  font-size: 13px;
   gap: 4px;
   justify-content: center;
   min-height: 36px;
@@ -407,7 +409,7 @@
   /* 桌面按内容宽度自然排一行；窄屏由 responsive.css 改成 2×2 */
   flex: 1 1 auto;
   font: inherit;
-  font-size: 14.5px;
+  font-size: 14px;
   font-weight: 500;
   gap: 8px;
   justify-content: center;
@@ -468,7 +470,7 @@
 
 .custom-tooltip-shortcut {
   color: #b8b3a6;
-  font-size: 11px;
+  font-size: 12px;
   margin-top: 2px;
 }
 
@@ -530,7 +532,7 @@
   border-radius: var(--radius-pill);
   color: var(--ink-3);
   display: inline-flex;
-  font-size: 10.5px;
+  font-size: 12px;
   font-variant-numeric: tabular-nums;
   min-width: 18px;
   padding: 0 5px;
@@ -554,7 +556,7 @@
 
 .dictation-label {
   color: var(--accent-ink);
-  font-size: 12.5px;
+  font-size: 13px;
   font-weight: 600;
 }
 
@@ -581,7 +583,7 @@
   border-radius: var(--radius-md);
   color: var(--ink);
   font-family: var(--font-serif);
-  font-size: 14.5px;
+  font-size: 14px;
   line-height: 1.6;
   padding: 10px 12px;
   resize: vertical;
@@ -638,7 +640,7 @@
 .dictation-punct {
   color: var(--warning);
   display: flex;
-  font-size: 12.5px;
+  font-size: 13px;
   gap: 6px;
   margin: 0;
 }
@@ -688,7 +690,7 @@
   color: var(--warning);
   cursor: pointer;
   display: inline-flex;
-  font-size: 12.5px;
+  font-size: 13px;
   gap: 6px;
   padding: 5px 12px;
 }

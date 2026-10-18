@@ -424,11 +424,13 @@ export function DashboardPage() {
               </button>
             </section>
 
-            <section className="dashboard-card dashboard-courses-card">
-              <div className="dashboard-card-head">
-                <h2>{t('dashboard.courses.title')}</h2>
-              </div>
-              {courseProgressList.length > 0 ? (
+            {/* 只有一门在学课程时，「课程完成度」和上面「继续学习」说的是同一件事，
+                整张卡只输出一句空话；≥2 门时它才是「多课进度」的独立视图。 */}
+            {courseProgressList.length >= 2 && (
+              <section className="dashboard-card dashboard-courses-card">
+                <div className="dashboard-card-head">
+                  <h2>{t('dashboard.courses.title')}</h2>
+                </div>
                 <ul className="dashboard-course-list">
                   {courseProgressList.slice(0, 5).map((entry) => (
                     <li key={entry.exercise.id}>
@@ -447,10 +449,8 @@ export function DashboardPage() {
                     </li>
                   ))}
                 </ul>
-              ) : (
-                <p className="dashboard-empty">{t('dashboard.courses.empty')}</p>
-              )}
-            </section>
+              </section>
+            )}
           </aside>
         </div>
       </div>

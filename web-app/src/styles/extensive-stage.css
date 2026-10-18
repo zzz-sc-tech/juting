@@ -173,7 +173,7 @@
   cursor: pointer;
   display: inline-flex;
   font: inherit;
-  font-size: 14.5px;
+  font-size: 14px;
   font-weight: 500;
   gap: 8px;
   justify-content: center;
@@ -236,7 +236,7 @@
   color: var(--accent-ink);
   font-size: clamp(28px, 6vw, 44px);
   font-variant-numeric: tabular-nums;
-  font-weight: 650;
+  font-weight: 600;
   left: 50%;
   letter-spacing: -0.01em;
   position: absolute;
@@ -314,7 +314,7 @@
 
 .extensive-lyric.active {
   color: var(--ink);
-  font-size: 19px;
+  font-size: 18px;
   font-weight: 600;
 }
 
@@ -382,7 +382,7 @@
 .media-subtitle-overlay .subtitle-chip {
   min-height: 24px;
   padding: 0 9px;
-  font-size: 11px;
+  font-size: 12px;
 }
 
 /* ── 泛听控制栏扩展：±15s 步进 + 倍速循环；窄时允许换行 ── */
@@ -399,7 +399,7 @@
   color: var(--ink-2);
   cursor: pointer;
   display: inline-flex;
-  font-size: 11px;
+  font-size: 12px;
   font-variant-numeric: tabular-nums;
   gap: 3px;
   min-height: 30px;
@@ -464,9 +464,10 @@
   color: var(--accent);
 }
 
+/* 「已标记」是用户自己的动作，不是系统告警——用主色，别占警示色 */
 .extensive-lyric-flag.flagged {
-  border-color: var(--warning);
-  color: var(--warning);
+  border-color: var(--accent);
+  color: var(--accent-ink);
   opacity: 1;
 }
 

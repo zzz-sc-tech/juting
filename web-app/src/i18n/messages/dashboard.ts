@@ -25,7 +25,6 @@ export const dashboardMessages = {
     'dashboard.continue.retry': '重试',
     'dashboard.courses.title': '课程完成度',
     'dashboard.courses.progress': '{{percent}}%',
-    'dashboard.courses.empty': '暂无正在学习的课程',
     'dashboard.examCardTitle': '模拟实战',
     'dashboard.examAvg': '近 10 场平均 {{avg}} 分',
     'dashboard.examCount': '累计 {{count}} 场',

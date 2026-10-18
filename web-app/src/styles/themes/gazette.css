@@ -33,7 +33,7 @@
   }
 
   & .brand-lockup p {
-    font-size: 11px;
+    font-size: 12px;
     letter-spacing: 0.14em;
     text-transform: uppercase;
   }
@@ -41,7 +41,7 @@
   & .topbar-nav-item {
     border-bottom: 3px solid transparent;
     color: var(--ink-2);
-    font-size: 12.5px;
+    font-size: 13px;
     letter-spacing: 0.1em;
     min-height: 80px;
     text-transform: uppercase;
@@ -133,13 +133,13 @@
   }
 
   & .study-chapter-banner-title {
-    font-size: 34px;
+    font-size: 40px;
     font-weight: 700;
     letter-spacing: 0;
   }
 
   & .study-chapter-banner-metrics span {
-    font-size: 11.5px;
+    font-size: 12px;
     letter-spacing: 0.1em;
     text-transform: uppercase;
   }
@@ -223,7 +223,7 @@
     border-bottom: 1px solid var(--ink);
     border-top: 1px solid var(--ink);
     border-radius: 0;
-    font-size: 21px;
+    font-size: 24px;
     padding: 14px 8px;
     text-align: center;
   }

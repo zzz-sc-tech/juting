@@ -140,7 +140,7 @@
   color: var(--ink-2);
   cursor: pointer;
   display: inline-flex;
-  font-size: 11.5px;
+  font-size: 12px;
   gap: 5px;
   min-height: 30px;
   padding: 0 10px;
@@ -151,15 +151,16 @@
   color: var(--accent-ink);
 }
 
+/* A-B 循环是「模式已开」，不是告警——用主色，和「已标记」保持同一套语义 */
 .waveform-loop-btn.armed {
-  background: var(--warning-soft);
-  border-color: var(--warning);
-  color: var(--warning);
+  background: var(--accent-soft);
+  border-color: var(--accent);
+  color: var(--accent-ink);
 }
 
 .waveform-loop-btn.on {
-  background: var(--warning);
-  border-color: var(--warning);
+  background: var(--accent);
+  border-color: var(--accent);
   color: #ffffff;
   font-variant-numeric: tabular-nums;
 }
@@ -262,7 +263,7 @@
   border-radius: 0 3px 3px 0;
   color: #ffffff;
   font-family: var(--font-ui);
-  font-size: 10px;
+  font-size: 12px;
   font-weight: 700;
   left: 2px;
   line-height: 1;

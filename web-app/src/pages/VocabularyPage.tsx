@@ -1,6 +1,6 @@
-import { BookOpen, Trash2 } from 'lucide-react'
+import { BookOpen, Search, Trash2 } from 'lucide-react'
 import { Fragment, useEffect, useMemo, useRef, useState } from 'react'
-import { useNavigate } from 'react-router-dom'
+import { useNavigate, useSearchParams } from 'react-router-dom'
 import { TopBar } from '../components/TopBar'
 import { VocabSidebar } from '../components/VocabSidebar'
 import { loadCatalogBundle } from '../lib/catalogBundle'
@@ -49,6 +49,9 @@ export function VocabularyPage() {
   /** courseId → seriesId（例句跳转要拼 /courses/:seriesId/chapters/:courseId） */
   const [seriesOf, setSeriesOf] = useState<Record<number, number>>({})
   const [courseFilter, setCourseFilter] = useState('all')
+  // 本地筛选：搜索页把词带进来（?q=），用户也可以直接在这里按词形/释义过滤
+  const [searchParams] = useSearchParams()
+  const [query, setQuery] = useState(() => searchParams.get('q') ?? '')
   // ---- 生词复习调度（旁路键 vocab-review.v1，见 lib/vocabReview.ts）----
   const [reviewState, setReviewState] = useState<VocabReviewState>(loadVocabReview)
   const [reviewQueue, setReviewQueue] = useState<string[]>([])
@@ -146,13 +149,25 @@ export function VocabularyPage() {
     }))
   }, [entries])
 
-  const visible = useMemo(
-    () =>
+  // 从搜索页带着 ?q= 进来时同步筛选词（已在页内时再跳一次也能生效）
+  useEffect(() => {
+    const incoming = searchParams.get('q')
+    if (incoming !== null) setQuery(incoming)
+  }, [searchParams])
+
+  const visible = useMemo(() => {
+    const byCourse =
       courseFilter === 'all'
         ? entries
-        : entries.filter((entry) => String(entry.courseId) === courseFilter),
-    [entries, courseFilter],
-  )
+        : entries.filter((entry) => String(entry.courseId) === courseFilter)
+    const keyword = query.trim().toLowerCase()
+    if (!keyword) return byCourse
+    return byCourse.filter((entry) => {
+      if (entry.word.toLowerCase().includes(keyword)) return true
+      const zh = lookupVocab(entry.word)?.zh ?? ''
+      return zh.toLowerCase().includes(keyword)
+    })
+  }, [entries, courseFilter, query])
 
   /** 状态提交（原 remove 的 React 部分）；动画包装在 remove 里。 */
   const commitRemove = (courseId: number, word: string) => {
@@ -372,24 +387,40 @@ export function VocabularyPage() {
               </div>
             )}
 
-            {courseOptions.length > 1 && (
-              <div className="vocab-filter">
-                <label className="sr-only" htmlFor="vocab-course-filter">
-                  {t('vocab.filterLabel')}
-                </label>
-                <select
-                  id="vocab-course-filter"
-                  onChange={(event) => setCourseFilter(event.target.value)}
-                  value={courseFilter}
-                >
-                  <option value="all">{`${t('vocab.filterAll')}（${entries.length}）`}</option>
-                  {courseOptions.map((option) => (
-                    <option key={option.id} value={String(option.id)}>
-                      {`${titles[option.id] ?? `#${option.id}`}（${option.count}）`}
-                    </option>
-                  ))}
-                </select>
-              </div>
+            <div className="vocab-toolbar">
+              <label className="vocab-search">
+                <Search size={15} aria-hidden="true" />
+                <span className="sr-only">{t('vocab.searchLabel')}</span>
+                <input
+                  onChange={(event) => setQuery(event.target.value)}
+                  placeholder={t('vocab.searchPlaceholder')}
+                  type="search"
+                  value={query}
+                />
+              </label>
+              {courseOptions.length > 1 && (
+                <div className="vocab-filter">
+                  <label className="sr-only" htmlFor="vocab-course-filter">
+                    {t('vocab.filterLabel')}
+                  </label>
+                  <select
+                    id="vocab-course-filter"
+                    onChange={(event) => setCourseFilter(event.target.value)}
+                    value={courseFilter}
+                  >
+                    <option value="all">{`${t('vocab.filterAll')}（${entries.length}）`}</option>
+                    {courseOptions.map((option) => (
+                      <option key={option.id} value={String(option.id)}>
+                        {`${titles[option.id] ?? `#${option.id}`}（${option.count}）`}
+                      </option>
+                    ))}
+                  </select>
+                </div>
+              )}
+            </div>
+
+            {visible.length === 0 && (
+              <p className="vocab-no-match">{t('vocab.noMatch', { query: query.trim() })}</p>
             )}
 
             <ul className="vocab-list" ref={listRef}>

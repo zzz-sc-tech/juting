@@ -76,8 +76,8 @@
 
 .error-boundary h1 {
   color: var(--ink);
-  font-size: 22px;
-  font-weight: 650;
+  font-size: 24px;
+  font-weight: 600;
   margin: 0;
 }
 
@@ -107,7 +107,7 @@
   cursor: pointer;
   display: inline-flex;
   font: inherit;
-  font-size: 14.5px;
+  font-size: 14px;
   font-weight: 500;
   justify-content: center;
   min-height: 42px;
@@ -134,7 +134,7 @@
 .error-boundary details {
   border-top: 1px solid var(--line);
   color: var(--ink-3);
-  font-size: 12.5px;
+  font-size: 13px;
   margin-top: 10px;
   max-width: 640px;
   padding-top: 12px;
@@ -166,7 +166,7 @@
   border-radius: var(--radius-sm);
   color: var(--ink-3);
   font-family: ui-monospace, 'Cascadia Mono', Consolas, monospace;
-  font-size: 11.5px;
+  font-size: 12px;
   line-height: 1.5;
   margin: 6px 0 0;
   max-height: 220px;

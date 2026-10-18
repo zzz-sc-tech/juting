@@ -133,7 +133,7 @@
   border: 1px solid var(--line);
   border-radius: var(--radius-pill);
   color: var(--accent-ink);
-  font-size: 11px;
+  font-size: 12px;
   line-height: 1;
   padding: 3px 8px;
 }
@@ -155,7 +155,7 @@
 
 .vocab-sidebar-missing-hint {
   color: var(--ink-3);
-  font-size: 12.5px;
+  font-size: 13px;
   line-height: 1.6;
   margin: 0;
 }
@@ -168,7 +168,7 @@
 
 .vocab-sidebar-examples-title {
   color: var(--ink-3);
-  font-size: 11.5px;
+  font-size: 12px;
   font-weight: 600;
   letter-spacing: 0.06em;
   margin: 0 0 8px;
@@ -190,7 +190,7 @@
   color: var(--accent-ink);
   cursor: pointer;
   font: inherit;
-  font-size: 11px;
+  font-size: 12px;
   line-height: 1;
   margin-bottom: 4px;
   max-width: 100%;
@@ -231,7 +231,7 @@
   cursor: pointer;
   display: flex;
   font: inherit;
-  font-size: 13.5px;
+  font-size: 13px;
   gap: 8px;
   justify-content: center;
   min-height: 40px;
@@ -262,7 +262,7 @@
   border: none;
   cursor: pointer;
   font: inherit;
-  font-size: 14.5px;
+  font-size: 14px;
   padding: 0;
   text-align: left;
 }
@@ -272,11 +272,60 @@
   text-decoration: underline;
 }
 
+/* 工具栏：本地筛选框 + 按课程筛选同一行（窄屏自动换行） */
+.vocab-toolbar {
+  align-items: center;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-bottom: 12px;
+}
+
+.vocab-search {
+  align-items: center;
+  background: var(--surface);
+  border: 1px solid var(--line-strong);
+  border-radius: var(--radius-sm);
+  color: var(--ink-3);
+  display: flex;
+  flex: 1 1 220px;
+  gap: 8px;
+  min-height: 40px;
+  padding: 0 10px;
+}
+
+.vocab-search:focus-within {
+  border-color: var(--accent);
+}
+
+.vocab-search input {
+  background: transparent;
+  border: 0;
+  color: var(--ink);
+  flex: 1 1 auto;
+  font: inherit;
+  font-size: 18px;
+  min-height: 38px;
+  min-width: 0;
+  outline: none;
+  padding: 0;
+}
+
+.vocab-search input::placeholder {
+  color: var(--ink-3);
+}
+
+.vocab-no-match {
+  color: var(--ink-3);
+  font-size: 14px;
+  margin: 4px 0 12px;
+}
+
 .vocab-filter {
   align-items: center;
   display: flex;
   gap: 8px;
-  margin-bottom: 12px;
+  margin-bottom: 0;
 }
 
 .vocab-filter select {
@@ -300,12 +349,12 @@
 .vocab-lex-phonetic {
   color: var(--ink-3);
   font-family: var(--font-serif);
-  font-size: 12.5px;
+  font-size: 13px;
 }
 
 .vocab-lex-zh {
   color: var(--ink-2);
-  font-size: 12.5px;
+  font-size: 13px;
   line-height: 1.55;
   margin: 2px 0 0;
   white-space: pre-line;

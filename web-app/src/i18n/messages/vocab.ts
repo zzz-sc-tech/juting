@@ -22,6 +22,9 @@ export const vocabMessages = {
     'vocab.exampleFailed': '例句暂不可用',
     'vocab.filterAll': '全部课程',
     'vocab.filterLabel': '按课程筛选',
+    'vocab.searchLabel': '筛选生词',
+    'vocab.searchPlaceholder': '筛选词形或释义…',
+    'vocab.noMatch': '没有匹配「{{query}}」的生词。',
     // 考试标签（ECDICT tag 字段，按优先级取一个）
     'vocab.tag.cet6': '六级',
     'vocab.tag.ky': '考研',

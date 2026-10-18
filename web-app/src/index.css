@@ -74,6 +74,9 @@
 }
 
 body {
+  /* 基准字号落在阶梯上：容器继承 14px，而不是浏览器默认的 16px，
+     否则「没显式设字号」的文本会在 16 与 12/13/14 之间多出一档 */
+  font-size: 14px;
   margin: 0;
   min-width: 320px;
 }
@@ -165,8 +168,9 @@ textarea {
 
   --success: #171512;
   --success-soft: #e9e4d6;
-  --warning: #9a3b2e;
-  --warning-soft: #efe0d8;
+  /* 警示色必须与 accent（报头红）分开，否则「进行中」和「标题」同色 */
+  --warning: #8a5a12;
+  --warning-soft: #efe6d2;
   --danger: #8c2f23;
   --danger-soft: #efe0da;
 
@@ -253,8 +257,9 @@ textarea {
 
   --success: #2e3153;
   --success-soft: #e7e8f0;
-  --warning: #b03030;
-  --warning-soft: #f3e6e1;
+  /* 同 gazette：warning 不能等于 accent（试卷红），改用赭黄 */
+  --warning: #8a5a12;
+  --warning-soft: #f2ecdc;
   --danger: #9c2828;
   --danger-soft: #f5e4e0;
 

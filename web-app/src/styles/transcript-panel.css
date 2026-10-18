@@ -97,7 +97,7 @@
   display: block;
   flex: 1 1 auto;
   font-family: var(--font-serif);
-  font-size: 13.5px;
+  font-size: 13px;
   line-height: 1.5;
   min-width: 0;
   overflow: hidden;
@@ -109,7 +109,7 @@
 .line-copy.is-selected-hint {
   color: var(--ink-2);
   font-family: inherit;
-  font-size: 12.5px;
+  font-size: 13px;
   font-style: normal;
 }
 
@@ -180,7 +180,7 @@ li.anchor-section-head.static {
 }
 
 .anchor-section-label {
-  font-size: 12.5px;
+  font-size: 13px;
   font-weight: 600;
   letter-spacing: 0.02em;
 }
@@ -192,7 +192,7 @@ li.anchor-section-head.static .anchor-section-label {
 
 .anchor-section-count {
   color: var(--ink-3);
-  font-size: 11.5px;
+  font-size: 12px;
   font-variant-numeric: tabular-nums;
   margin-left: auto;
 }

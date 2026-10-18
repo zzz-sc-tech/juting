@@ -335,7 +335,8 @@ export function SearchPage() {
                     <li key={`${entry.courseId}|${entry.word}`}>
                       <button
                         className="search-row"
-                        onClick={() => navigate('/vocabulary')}
+                        /* 带上查询词：生词本据此做本地筛选，用户点进来直接看到那个词 */
+                        onClick={() => navigate(`/vocabulary?q=${encodeURIComponent(entry.word)}`)}
                         type="button"
                       >
                         <span className="search-vocab-word">
