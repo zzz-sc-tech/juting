@@ -32,6 +32,7 @@
     "deploy:build-server": "bash scripts/build-production-images-on-server.sh",
     "deploy:sync-sources": "bash scripts/sync-production-sources.sh",
     "build": "npm run build --workspace @juting/domain && npm run build --workspace @juting/app-config && npm run build --workspace @juting/ui-tokens && npm run build --workspace @juting/api-client && npm run build --workspace @juting/shared && npm run build --workspace @juting/backend && npm run build --workspace @juting/web-app && npm run build --workspace @juting/admin",
+    "verify:ui": "node scripts/audit/ui-verify.mjs && node scripts/audit/ui-verify-p0p1.mjs && node scripts/audit/ui-verify-polish.mjs && node scripts/audit/ui-verify-debt.mjs && node scripts/audit/ui-verify-boundary.mjs",
     "lint": "eslint .",
     "check:admin-i18n": "node --import tsx scripts/check-admin-i18n.mjs",
     "preview:web-app": "npm run preview --workspace @juting/web-app",
