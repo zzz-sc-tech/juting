@@ -164,21 +164,72 @@
   /* 单行横向滚动：16–20 个锚点全部常驻，只占一行高度。
      早先用 flex-wrap: wrap 平铺会折成 2–3 行把字幕区挤下去，于是把多余锚点
      塞进原生下拉——但用户看不出下拉里是导航。改成滚动后真题结构一眼看全。
-     滚动条隐藏 + 右缘渐隐，避免「以为只有屏上这几个」。 */
+
+     滚动条保留可见（细轨 + 圆角滑块）：桌面上没有可见滚动条，用户不知道
+     这行还能拖。注意右缘渐隐必须放在 .dialogue-anchor-scroll 内层上——
+     mask-image 作用于整个元素（含滚动条），加在这层会把滑块一起遮掉。 */
   flex-wrap: nowrap;
   gap: 8px 12px;
   margin-bottom: 14px;
+  overflow: hidden;
+  padding: 0 2px 0;
+}
+
+/* 真正的滚动容器：只负责滚动与渐隐，滚动条样式挂在它身上 */
+.dialogue-anchor-scroll {
+  flex: 1 1 auto;
+  min-width: 0;
   overflow-x: auto;
   overscroll-behavior-x: contain;
-  padding: 0 2px 10px;
+  padding-bottom: 8px;
   scroll-snap-type: x proximity;
-  scrollbar-width: none;
   -webkit-mask-image: linear-gradient(90deg, #000 0, #000 calc(100% - 22px), transparent);
   mask-image: linear-gradient(90deg, #000 0, #000 calc(100% - 22px), transparent);
 }
 
-.dialogue-anchor-bar::-webkit-scrollbar {
-  height: 0;
+/* WebKit（Chrome/Edge/Safari）：8px 细轨 + 圆角滑块。
+   不用 scrollbar-width: thin —— Chromium 一旦命中 ::-webkit-scrollbar 规则，
+   scrollbar-width 会被忽略、滑块塌成 1px，反而不明显。
+   滑块颜色用 --ink-4→--ink-3 之间：轨道和滑块对比不足时用户看不出可拖。 */
+.dialogue-anchor-scroll::-webkit-scrollbar {
+  height: 8px;
+}
+
+.dialogue-anchor-scroll::-webkit-scrollbar-track {
+  background: var(--bg-sunken);
+  border-radius: var(--radius-pill);
+  margin: 2px 2px 0;
+}
+
+.dialogue-anchor-scroll::-webkit-scrollbar-thumb {
+  background: var(--ink-3);
+  border: 2px solid var(--bg);
+  border-radius: var(--radius-pill);
+  min-width: 40px;
+}
+
+.dialogue-anchor-scroll::-webkit-scrollbar-thumb:hover {
+  background: var(--accent);
+}
+
+/* Firefox：没有 ::-webkit-scrollbar，只能靠 scrollbar-width/color */
+@supports not selector(::-webkit-scrollbar) {
+  .dialogue-anchor-scroll {
+    scrollbar-color: var(--ink-3) var(--bg-sunken);
+    scrollbar-width: thin;
+  }
+}
+
+/* 触屏没有悬停滚动条，隐藏以免在窄屏白占高度 */
+@media (pointer: coarse) {
+  .dialogue-anchor-scroll {
+    padding-bottom: 4px;
+    scrollbar-width: none;
+  }
+
+  .dialogue-anchor-scroll::-webkit-scrollbar {
+    height: 0;
+  }
 }
 
 .dialogue-anchor-bar-title {

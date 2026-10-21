@@ -34,14 +34,15 @@ const check = (name, pass, detail) => {
   await p.goto(BASE + '/courses/9/chapters/1001?stage=intensive', { waitUntil: 'networkidle' })
   await sleep(1600)
   const info = await p.evaluate(() => {
-    const bar = document.querySelector('.dialogue-anchor-bar')
-    if (!bar) return null
+    const bar = document.querySelector('.dialogue-anchor-scroll')
+    const outer = document.querySelector('.dialogue-anchor-bar')
+    if (!bar || !outer) return null
     const chips = [...bar.querySelectorAll('.dialogue-anchor-chip')]
     return {
       chips: chips.length,
       hasSelect: !!bar.querySelector('select'),
       chipLabels: chips.map((b) => b.textContent.trim()),
-      barHeight: Math.round(bar.getBoundingClientRect().height),
+      barHeight: Math.round(outer.getBoundingClientRect().height),
       scrollW: bar.scrollWidth,
       clientW: bar.clientWidth,
       overflowX: getComputedStyle(bar).overflowX,
@@ -64,7 +65,7 @@ const check = (name, pass, detail) => {
   const after = await p.locator('.subtitle-topline, .line-index').first().innerText().catch(() => '')
   check('点后段锚点可跳转', before !== after, `${before.slice(0, 12)} → ${after.slice(0, 12)}`)
   const follow = await p.evaluate(() => {
-    const bar = document.querySelector('.dialogue-anchor-bar')
+    const bar = document.querySelector('.dialogue-anchor-scroll')
     const a = document.querySelector('.dialogue-anchor-chip.active')
     if (!bar || !a) return null
     const br = bar.getBoundingClientRect(), ar = a.getBoundingClientRect()

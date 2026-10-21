@@ -43,27 +43,31 @@ export function DialogueAnchorBar({
   }
 
   return (
-    <div className="dialogue-anchor-bar" aria-label={t('anchors.barLabel')} ref={barRef}>
+    <div className="dialogue-anchor-bar" aria-label={t('anchors.barLabel')}>
       <span className="dialogue-anchor-bar-title">
         <Flag size={14} aria-hidden="true" />
         {t('anchors.barLabel')}
       </span>
-      <div className="dialogue-anchor-chips" role="group">
-        {anchors.map((anchor) => {
-          const active = anchor.id === activeAnchorId
-          return (
-            <button
-              className={active ? 'dialogue-anchor-chip active' : 'dialogue-anchor-chip'}
-              key={anchor.id}
-              onClick={() => onJump(anchor)}
-              ref={active ? activeRef : undefined}
-              title={t('anchors.jumpTooltip', { label: anchor.label })}
-              type="button"
-            >
-              {anchor.label}
-            </button>
-          )
-        })}
+      {/* 滚动容器单独一层：右缘渐隐用的 mask-image 会连滚动条一起遮掉，
+          所以 mask 只加在这层（.dialogue-anchor-scroll），滚动条样式也挂在它身上。 */}
+      <div className="dialogue-anchor-scroll" ref={barRef}>
+        <div className="dialogue-anchor-chips" role="group">
+          {anchors.map((anchor) => {
+            const active = anchor.id === activeAnchorId
+            return (
+              <button
+                className={active ? 'dialogue-anchor-chip active' : 'dialogue-anchor-chip'}
+                key={anchor.id}
+                onClick={() => onJump(anchor)}
+                ref={active ? activeRef : undefined}
+                title={t('anchors.jumpTooltip', { label: anchor.label })}
+                type="button"
+              >
+                {anchor.label}
+              </button>
+            )
+          })}
+        </div>
       </div>
     </div>
   )
