@@ -5,6 +5,4 @@ export const dialogueAnchorMessages = {
     'transcript.groupSentences': '{{count}} 句',
     'anchors.barLabel': '对话锚点',
     'anchors.jumpTooltip': '跳转到 {{label}}',
-    'anchors.moreLabel': '跳到其他段落',
-    'anchors.moreOption': '全部 {{count}} 段…',
 }

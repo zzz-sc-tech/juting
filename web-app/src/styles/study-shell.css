@@ -158,13 +158,27 @@
 .dialogue-anchor-bar {
   /* 泛听/精听面板是两列网格，锚点条作为第一个子元素横跨整行，保持在媒体区上方。 */
   grid-column: 1 / -1;
-  align-items: baseline;
+  align-items: center;
   border-bottom: 1px solid var(--line);
   display: flex;
-  flex-wrap: wrap;
+  /* 单行横向滚动：16–20 个锚点全部常驻，只占一行高度。
+     早先用 flex-wrap: wrap 平铺会折成 2–3 行把字幕区挤下去，于是把多余锚点
+     塞进原生下拉——但用户看不出下拉里是导航。改成滚动后真题结构一眼看全。
+     滚动条隐藏 + 右缘渐隐，避免「以为只有屏上这几个」。 */
+  flex-wrap: nowrap;
   gap: 8px 12px;
   margin-bottom: 14px;
+  overflow-x: auto;
+  overscroll-behavior-x: contain;
   padding: 0 2px 10px;
+  scroll-snap-type: x proximity;
+  scrollbar-width: none;
+  -webkit-mask-image: linear-gradient(90deg, #000 0, #000 calc(100% - 22px), transparent);
+  mask-image: linear-gradient(90deg, #000 0, #000 calc(100% - 22px), transparent);
+}
+
+.dialogue-anchor-bar::-webkit-scrollbar {
+  height: 0;
 }
 
 .dialogue-anchor-bar-title {
@@ -181,7 +195,7 @@
 .dialogue-anchor-chips {
   display: flex;
   flex: 1 1 auto;
-  flex-wrap: wrap;
+  flex-wrap: nowrap;
   gap: 6px;
 }
 
@@ -191,10 +205,13 @@
   border-radius: var(--radius-sm);
   color: var(--ink-2);
   cursor: pointer;
+  flex: 0 0 auto;
   font-size: 13px;
   line-height: 1;
   padding: 6px 10px;
+  scroll-snap-align: start;
   transition: border-color 0.15s ease, color 0.15s ease, background 0.15s ease;
+  white-space: nowrap;
 }
 
 .dialogue-anchor-chip:hover {
@@ -207,30 +224,6 @@
   border-color: var(--accent);
   color: var(--accent-ink);
   font-weight: 600;
-}
-
-/* 「全部 N 段…」下拉：与 chip 同高同色，原生 select 保留平台箭头 */
-.dialogue-anchor-select-wrap {
-  display: inline-flex;
-  flex: 0 0 auto;
-}
-
-.dialogue-anchor-select {
-  background: transparent;
-  border: 1px dashed var(--line-strong);
-  border-radius: var(--radius-sm);
-  color: var(--ink-2);
-  cursor: pointer;
-  font: inherit;
-  font-size: 13px;
-  height: 30px;
-  max-width: 168px;
-  padding: 0 6px;
-}
-
-.dialogue-anchor-select:hover {
-  border-color: var(--accent);
-  color: var(--accent-ink);
 }
 
 /* 阶段切换入场：key 重挂载触发，新舞台淡入 + 6px 位移。

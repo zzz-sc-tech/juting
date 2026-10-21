@@ -107,27 +107,9 @@
     grid-template-columns: 1fr;
   }
 
-  /* 对话锚点条：390 下 25 个 chip 会折成 6 行、把媒体区挤出首屏。
-     窄屏改成单行横向滚动，锚点依然可达，但只占一行高度。 */
-  .dialogue-anchor-bar {
-    flex-wrap: nowrap;
-    overflow-x: auto;
-    scrollbar-width: none;
-  }
-
-  .dialogue-anchor-bar::-webkit-scrollbar {
-    height: 0;
-  }
-
+  /* 对话锚点条的单行横向滚动已提到 study-shell.css 基线（全尺寸统一），
+     这里只补窄屏下标题不许换行——否则「对话锚点」四字会竖排。 */
   .dialogue-anchor-bar-title {
-    white-space: nowrap;
-  }
-
-  .dialogue-anchor-chips {
-    flex-wrap: nowrap;
-  }
-
-  .dialogue-anchor-chip {
     white-space: nowrap;
   }
 

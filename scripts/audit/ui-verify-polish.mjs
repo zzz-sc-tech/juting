@@ -36,23 +36,41 @@ const check = (name, pass, detail) => {
   const info = await p.evaluate(() => {
     const bar = document.querySelector('.dialogue-anchor-bar')
     if (!bar) return null
-    const controls = bar.querySelectorAll('button, select')
-    const select = bar.querySelector('select')
+    const chips = [...bar.querySelectorAll('.dialogue-anchor-chip')]
     return {
-      total: controls.length,
-      chips: bar.querySelectorAll('.dialogue-anchor-chip').length,
-      options: select ? select.options.length : 0,
-      chipLabels: [...bar.querySelectorAll('.dialogue-anchor-chip')].map((b) => b.textContent.trim()),
+      chips: chips.length,
+      hasSelect: !!bar.querySelector('select'),
+      chipLabels: chips.map((b) => b.textContent.trim()),
+      barHeight: Math.round(bar.getBoundingClientRect().height),
+      scrollW: bar.scrollWidth,
+      clientW: bar.clientWidth,
+      overflowX: getComputedStyle(bar).overflowX,
     }
   })
-  check('锚点条控件 ≤ 5', info && info.total <= 5, JSON.stringify(info))
-  check('下拉覆盖全部锚点（含占位）', info && info.options >= 10, `options=${info?.options}`)
-  // 选下拉能跳转
+  // 2026-10-21 改版：锚点从「3 + 下拉」改成单行横向滚动，全部常驻。
+  // 旧断言（控件 ≤5、必须有下拉）已作废，改成校验新形态的三条特征。
+  check('全部锚点常驻（不再折叠）', info && info.chips >= 16, `chips=${info?.chips}`)
+  check('下拉已移除', info && !info.hasSelect)
+  check('单行高度 ≤60px', info && info.barHeight <= 60, `h=${info?.barHeight}`)
+  check('可横向滚动', info && info.overflowX === 'auto' && info.scrollW > info.clientW,
+    `${info?.scrollW}>${info?.clientW}`)
+  // 点后段锚点能跳转且自动滚入视野
   const before = await p.locator('.subtitle-topline, .line-index').first().innerText().catch(() => '')
-  await p.selectOption('.dialogue-anchor-select', { index: 5 }).catch(() => {})
-  await sleep(600)
+  const chips = p.locator('.dialogue-anchor-chip')
+  if (await chips.count() > 14) {
+    await chips.nth(14).click().catch(() => {})
+    await sleep(900)
+  }
   const after = await p.locator('.subtitle-topline, .line-index').first().innerText().catch(() => '')
-  check('下拉选段可跳转', before !== after, `${before.slice(0, 12)} → ${after.slice(0, 12)}`)
+  check('点后段锚点可跳转', before !== after, `${before.slice(0, 12)} → ${after.slice(0, 12)}`)
+  const follow = await p.evaluate(() => {
+    const bar = document.querySelector('.dialogue-anchor-bar')
+    const a = document.querySelector('.dialogue-anchor-chip.active')
+    if (!bar || !a) return null
+    const br = bar.getBoundingClientRect(), ar = a.getBoundingClientRect()
+    return { scrollLeft: bar.scrollLeft, visible: ar.left >= br.left - 2 && ar.right <= br.right + 2 }
+  })
+  check('当前锚点自动滚入视野', follow?.visible === true, JSON.stringify(follow))
   await p.screenshot({ path: 'temp/review/rest-anchors.png' })
   await ctx.close()
 }
