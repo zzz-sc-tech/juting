@@ -53,3 +53,6 @@ docs/images/youzack-authorization-email.png
 # 启动器构建产物（随发布包分发，不入库）
 /句听.exe
 /juting.ico
+
+# 语料修复时的本地备份（不进仓库，git 历史已是备份）
+*.bak-*

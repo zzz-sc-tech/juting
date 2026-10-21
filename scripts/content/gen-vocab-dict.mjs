@@ -16,6 +16,8 @@ const csvPath = path.resolve(
   process.argv[2] ?? process.env.ECDICT_CSV ?? path.join(root, 'temp/ecdict.csv'),
 )
 const seedPath = path.join(root, 'presets/cet6/seed.json')
+// cet4 也要收：词典按「本库出现的词」生成，只读 cet6 会让四级语料有 37% 的词查不到释义
+const seedPaths = [seedPath, path.join(root, 'presets/cet4/seed.json')]
 const outPath = path.join(root, 'web-app/src/lib/generated/vocabDict.ts')
 
 /** 每个词条最多保留几条本库语境（例句多了体积膨胀，展示也戴不下） */
@@ -29,7 +31,9 @@ const seed = JSON.parse(fs.readFileSync(seedPath, 'utf8'))
 const formSet = new Set()
 /** @type {Map<string, Array<[number, string]>>} 词形 → [课id, 行id][] */
 const formOccurrences = new Map()
-for (const ex of seed.exercises) {
+// 合并 cet6 + cet4 的语料（课程 id 在两库间不重叠，可安全合并）
+const allExercises = seedPaths.flatMap((p) => JSON.parse(fs.readFileSync(p, 'utf8')).exercises)
+for (const ex of allExercises) {
   for (const line of ex.transcript_json) {
     for (const raw of line.text.toLowerCase().match(/[a-z][a-z'-]*/g) ?? []) {
       formSet.add(raw)
@@ -42,7 +46,7 @@ for (const ex of seed.exercises) {
     }
   }
 }
-console.log(`[seed] ${seed.exercises.length} 课，唯一词形 ${formSet.size} 个`)
+console.log(`[seed] ${allExercises.length} 课（cet6+cet4），唯一词形 ${formSet.size} 个`)
 
 // ─────────────────────────────────────────────────────────────
 // 2. 启发式词形还原候选（仅用于「哪些行可能要保留」与兜底解析；
@@ -197,6 +201,29 @@ const isStub = (row) =>
 /** @type {Map<string, string>} 词形 → 头词 */
 const formToHead = new Map()
 const missed = []
+
+/**
+ * 复合词/所有格的词根候选：
+ *   company's → company；apple's → apple；four-inch → inch / four
+ * 这些形态在 ECDICT 里通常没有独立词条，但学习者点它们时想知道的是词根本义。
+ */
+const rootCandidates = (form) => {
+  const out = []
+  // 所有格：xxx's / xxxs'
+  const poss = form.match(/^([a-z][a-z'-]*)['’]s?$/)
+  if (poss) out.push(poss[1])
+  // 连字符复合词：逐段拆，取最长且 ≥3 字符的段
+  if (form.includes('-')) {
+    const segs = form.split('-').filter((s) => s.length >= 3)
+    segs.sort((a, b) => b.length - a.length)
+    out.push(...segs)
+  }
+  // 去掉结尾多余单引号
+  const bare = form.replace(/['’]+$/, '')
+  if (bare !== form && bare.length >= 3) out.push(bare)
+  return [...new Set(out)].filter((c) => c !== form)
+}
+
 for (const form of [...formSet].sort()) {
   const direct = rows.get(form)
   const viaExchange = exchangeMap.get(form)
@@ -214,6 +241,15 @@ for (const form of [...formSet].sort()) {
   }
   if (direct) {
     formToHead.set(form, form)
+    continue
+  }
+  // 复合词/所有格：回退到词根（词根本身有完整词条才算）
+  const root = rootCandidates(form).find((c) => {
+    const row = rows.get(c)
+    return row && !isStub(row)
+  })
+  if (root) {
+    formToHead.set(form, root)
     continue
   }
   missed.push(form)
