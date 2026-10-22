@@ -116,10 +116,11 @@ export const loadTranscript = async (conn, cid) => {
   return { title: rows[0].title, lines, stats: collectStats(lines) }
 }
 
-const loadSeed = () => JSON.parse(fs.readFileSync(SEED_PATH, 'utf8'))
+const loadSeed = (seedPath = SEED_PATH) => JSON.parse(fs.readFileSync(seedPath, 'utf8'))
 
 // 带护栏的落库（DB + seed 同步写；seed 每次写必须升版本号）
-export const saveTranscript = async ({ conn, cid, lines, version, expect = {}, dryRun = true }) => {
+//   seedPath：默认 cet6（历史行为）；写四级传 presets/cet4/seed.json。
+export const saveTranscript = async ({ conn, cid, lines, version, expect = {}, dryRun = true, seedPath = SEED_PATH }) => {
   const { lineDelta = [0, 0], allowTranslationDrop = false, note = '' } = expect
   const old = await loadTranscript(conn, cid)
   const fails = []
@@ -171,12 +172,12 @@ export const saveTranscript = async ({ conn, cid, lines, version, expect = {}, d
     ...(l.keywords?.length ? { keywords: l.keywords } : {}),
   }))
   await conn.query('UPDATE exercises SET transcript_json=? WHERE id=?', [JSON.stringify(fixed), cid])
-  const seed = loadSeed()
+  const seed = loadSeed(seedPath)
   seed.exercises.find((e) => e.id === cid).transcript_json = fixed
   seed.version = version
   seed.generatedAt = new Date().toISOString()
-  const indent = 1
-  fs.writeFileSync(SEED_PATH, JSON.stringify(seed, null, indent))
+  const indent = 2
+  fs.writeFileSync(seedPath, JSON.stringify(seed, null, indent))
   console.log(`✅ 已写入 #${cid}（${fixed.length} 行）→ DB + seed v${version}`)
   return { ok: true, lines: fixed }
 }
