@@ -49,6 +49,29 @@ const ffprobe = (file) => JSON.parse(execFileSync('ffprobe',
   ['-v', 'error', '-select_streams', 'a:0', '-show_entries',
     'format=duration:stream=codec_name,channels,sample_rate', '-of', 'json', file], { encoding: 'utf8' }))
 
+/**
+ * 真实语音时长（-48 dBFS 能量检测）。
+ *
+ * 语速必须按语音时长算，不能按音频总时长：真题音频里 directions、题间停顿、
+ * 试音占了 35~45%，而原文 md 只收「实际念到的内容」。按总时长算会把正常素材
+ * 误判成语速偏低（实测 2015-2016 十套：总时长 1.53~1.63，语音内 2.45~2.70，
+ * 与现有六级课程 2.70 一致）。
+ */
+const speechSeconds = (file) => {
+  const SR = 8000, FRAME = 0.05, THRESH = 0.004
+  const raw = execFileSync('ffmpeg', ['-hide_banner', '-loglevel', 'error', '-i', file,
+    '-ar', String(SR), '-ac', '1', '-f', 's16le', '-'], { maxBuffer: 1 << 30 })
+  const per = Math.round(SR * FRAME)
+  let hit = 0, total = 0
+  for (let i = 0; i + per <= raw.length / 2; i += per) {
+    let s = 0
+    for (let j = i; j < i + per; j++) { const v = raw.readInt16LE(j * 2) / 32768; s += v * v }
+    if (Math.sqrt(s / per) >= THRESH) hit++
+    total++
+  }
+  return { speech: hit * FRAME, total: total * FRAME }
+}
+
 // 允许出现的分节头（锚点提取器认这些形态）
 const SECTION_HEAD = /^(?:section\s+[a-d]|conversation\s+(?:one|two|three|[0-9]+)|passage\s+(?:one|two|three|[0-9]+)|recording\s+(?:one|two|three|[0-9]+)|news\s+report\s+(?:one|two|three|[0-9]+)|lecture\s+[0-9]+|talk\s+[0-9]+|text\s+[0-9]+)\s*$/i
 
@@ -136,12 +159,21 @@ for (const set of manifest.sets) {
     const body = parsed.filter((s) => !s.isSectionHead)
     const words = body.reduce((n, s) => n + tokenize(s.rawText ?? s.text).length, 0)
     if (!body.length) fail(key, '解析结果为空')
-    if (entry.audio?.duration && words) {
-      const wps = words / entry.audio.duration
-      if (wps < 1.2 || wps > 4.5) fail(key, `语速异常：${wps.toFixed(2)} 词/秒（正常 1.8~3.2）——原文与音频可能不匹配或漏段`)
-      else if (wps < 1.6 || wps > 3.6) warn(key, `语速偏低/偏高：${wps.toFixed(2)} 词/秒`)
-    }
     entry.md = { sections: heads.length, questions: [...new Set(qNums)].length, words, lines: body.length }
+    if (entry.audio?.duration && words) {
+      // 语速按真实语音时长算（见 speechSeconds 注释）
+      let speech = entry.audio.duration
+      try {
+        const m = speechSeconds(ogg)
+        if (m.speech > 60) speech = m.speech
+        entry.audio.speech = +speech.toFixed(1)
+        entry.audio.speechRatio = +(speech / entry.audio.duration).toFixed(2)
+      } catch { /* 能量检测失败就退回总时长 */ }
+      const wps = words / speech
+      entry.md.rate = +wps.toFixed(2)
+      if (wps < 1.2 || wps > 4.5) fail(key, `语音内语速异常：${wps.toFixed(2)} 词/秒（正常 2.0~3.2）——原文与音频可能不匹配或漏段`)
+      else if (wps < 1.8 || wps > 3.4) warn(key, `语音内语速偏低/偏高：${wps.toFixed(2)} 词/秒`)
+    }
   }
 
   if (problems.some((p) => p.key === key)) entry.ok = false
@@ -154,9 +186,13 @@ if (AS_JSON) {
 } else {
   console.log(`\n══ 校验 ${dir}：${manifest.sets.length} 套 ══\n`)
   for (const r of report) {
-    const a = r.audio ? `${r.audio.codec}/${r.audio.channels}ch ${r.audio.duration}s` : '音频缺失'
-    const m = r.md ? `${r.md.sections} 节 / ${r.md.questions} 题 / ${r.md.words} 词` : '原文缺失'
-    console.log(`${r.ok ? '✓' : '✗'} ${r.key.padEnd(18)} ${a.padEnd(26)} ${m}`)
+    const a = r.audio
+      ? `${r.audio.codec}/${r.audio.channels}ch ${r.audio.duration}s${r.audio.speechRatio ? ` 语音${(100 * r.audio.speechRatio).toFixed(0)}%` : ''}`
+      : '音频缺失'
+    const m = r.md
+      ? `${r.md.sections} 节 / ${r.md.questions} 题 / ${r.md.words} 词${r.md.rate ? ` / ${r.md.rate} 词秒` : ''}`
+      : '原文缺失'
+    console.log(`${r.ok ? '✓' : '✗'} ${r.key.padEnd(18)} ${a.padEnd(30)} ${m}`)
   }
   if (problems.length) {
     console.log(`\n── FAIL ${problems.length} 项 ──`)
