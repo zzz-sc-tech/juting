@@ -333,7 +333,15 @@ const dedupeQuestions = (lines) => {
     }
     out.push(l)
   }
-  return out
+  // 填隙碎片去重：whisper 重复转写题干时，fillLongGaps 会在邻近塞进一条
+  // 短碎片（实测 "devil's tower look like?"），其归一文本是相邻完整行的子串
+  const keyOf = (t) => String(t).toLowerCase().replace(/[^a-z0-9]/g, '')
+  const longs = out.filter((l) => keyOf(l.text).length >= 24).map((l) => keyOf(l.text))
+  return out.filter((l) => {
+    const k = keyOf(l.text)
+    if (k.length >= 24 || k.length < 10) return true
+    return !longs.some((K) => K.includes(k))
+  })
 }
 
 /**
@@ -388,19 +396,31 @@ const snapSilentLines = (lines, mask, islands, duration) => {
   // （实测 Q16–Q25 全落在 1550–1597s，而它们实际分布在 1060–1550s）。
   // 字幕的展示顺序本来就该是时间顺序，按时间重排是正确的。
   out.sort((a, b) => a.start - b.start)
-  let prev = 0
+  const needOf = (ln) => {
+    const wc = (String(ln.text).replace(/^[A-Z]{1,3}:\s*/, '').match(/[a-zA-Z0-9']+/g) || [])
+      .filter((w) => w.length >= 2).length
+    const isShort = /^(Section [A-D]|Conversation \d|Passage \d|Recording \d|News Report \d|Q\d+|Question\s)/i.test(String(ln.text).trim())
+    return isShort ? 0.3 : Math.min(Math.max(wc * 0.28, 0.3), 20)
+  }
   for (let idx = 0; idx < out.length; idx++) {
     const l = out[idx]
-    if (l.start < prev) l.start = +prev.toFixed(2)
+    const p = out[idx - 1]
+    if (l.start < (p?.end ?? 0)) {
+      // 重叠时优先**收回前一行的终点**而不是推后本行起点：前一行的终点是
+      // 词数铺排/岛累计撑出来的弹性值，而钉位行的起点是音频实测 onset。
+      // 实测 2015-06-3 的 Q1 终点（铺排 173.1）压住 Q2 真实起点 171.4，
+      // 旧钳制把 Q2 推到 173.1 → 点 Q2 少听 1.7 秒开头。
+      // 但收回不得低于前一行自身的可读时长（实测 #55 的 11 词播报被压到
+      // 0.62s 触发时长门禁）——不满足就退回推后本行。
+      if (p && l.start - p.start >= needOf(p)) p.end = +l.start.toFixed(2)
+      else l.start = +(p?.end ?? 0).toFixed(2)
+    }
     if (l.end <= l.start) l.end = +(l.start + 0.3).toFixed(2)
     // 时长门禁：一行至少 词数×0.28s（可读速度）。被相邻行夹扁的短句
     // （实测 0.01~0.07s）：有空隙直接补足；没空隙给到 门禁压缩线的下限
     // （预期×0.35，check-duration-sanity 的 FAIL 线是 >10词/s），
     // 后续行起点顺延——级联量 ≤0.25s，被句后静音吸收，撞不到钉位题干。
-    const wc = (String(l.text).replace(/^[A-Z]{1,3}:\s*/, '').match(/[a-zA-Z0-9']+/g) || [])
-      .filter((w) => w.length >= 2).length
-    const isShort = /^(Section [A-D]|Conversation \d|Passage \d|Recording \d|News Report \d|Q\d+|Question\s)/i.test(String(l.text).trim())
-    const need = isShort ? 0.3 : Math.min(Math.max(wc * 0.28, 0.3), 20)
+    const need = needOf(l)
     if (l.end - l.start < need - 0.01) {
       const nextStart = idx + 1 < out.length ? out[idx + 1].start : duration
       if (nextStart - l.start >= need - 0.01) {
@@ -410,7 +430,6 @@ const snapSilentLines = (lines, mask, islands, duration) => {
         l.end = +Math.min(duration, l.start + floor).toFixed(2)
       }
     }
-    prev = l.end
   }
   // 重编号（id 必须与展示顺序一致）
   for (let i = 0; i < out.length; i++) out[i].id = `l${i + 1}`
@@ -728,10 +747,11 @@ const snapInstructionLines = (lines, wordSegs, islands, duration) => {
    * 有的词早落到上一岛尾部，有的词晚落进本岛中部）。只认 ≥0.5s 的岛，
    * 排除答题停顿里的呼吸/爆音幻影岛。
    */
-  const snapIsland = (t) => {
+  const snapIsland = (t, claimed) => {
     let best = null
     for (const [a, b] of islands) {
       if (b - a < 0.5) continue
+      if (claimed.has(a)) continue
       if (a >= t - 4.0 && a <= t + 4.0) {
         if (best === null || Math.abs(a - t) < Math.abs(best - t)) best = a
       }
@@ -740,30 +760,47 @@ const snapInstructionLines = (lines, wordSegs, islands, duration) => {
   }
 
   const out = lines.map((l) => ({ ...l }))
-  for (const l of out) {
+  // 按时间顺序处理并**认领**岛起点：DP 边界词误差会把相邻两行吸到同一个岛
+  // （实测 2016-12-1 的 Q9 与题组播报都吸到播报岛 586.5，Q9 真实在 591.1；
+  // 2015-06-3 的 Q2 被吸到 Q1 的岛 169.7，真实在 171.4）。先到先行，
+  // 后到的行自动落到下一个空岛——恰好就是它的真实归属。
+  const claimed = new Set()
+  const order = out.map((l, i) => ({ i, s: Number(l.start) || 0 })).sort((a, b) => a.s - b.s)
+  for (const { i } of order) {
+    const l = out[i]
     if (!isSnap(l.text)) continue
     const body = String(l.text).trim().replace(Q_LABEL, '').replace(/^[^a-z0-9]+/i, '')
     const lt = body.split(/[^A-Za-z0-9]+/).filter(Boolean).map(norm)
     const k = findSeq(lt, l.start)
-    if (k < 0) continue
-    // 题号标签（"Question one."）：在正文匹配点之前找 question+题号 词，
-    // 有就用标签词的时间做锚（题干播报从标签词开始）
-    let anchorT = wordSegs[k].start
-    const qm = String(l.text).match(Q_LABEL)
-    if (qm) {
-      const nTok = norm(qm[1] ?? qm[2] ?? '')
-      for (let m = k - 1; m >= Math.max(0, k - 6); m--) {
-        if (wt[m] === 'question' || wt[m] === 'questions') {
-          for (let q = m + 1; q <= Math.min(wt.length - 1, m + 2); q++) {
-            if (numOf(wordSegs[q].text) === numOf(qm[1] ?? qm[2])) { anchorT = wordSegs[m].start; m = -1; break }
+    let s = null
+    let anchorT = null
+    if (k >= 0) {
+      // 题号标签（"Question one."）：在正文匹配点之前找 question+题号 词，
+      // 有就用标签词的时间做锚（题干播报从标签词开始）
+      anchorT = wordSegs[k].start
+      const qm = String(l.text).match(Q_LABEL)
+      if (qm) {
+        for (let m = k - 1; m >= Math.max(0, k - 6); m--) {
+          if (wt[m] === 'question' || wt[m] === 'questions') {
+            for (let q = m + 1; q <= Math.min(wt.length - 1, m + 2); q++) {
+              if (numOf(wordSegs[q].text) === numOf(qm[1] ?? qm[2])) { anchorT = wordSegs[m].start; m = -1; break }
+            }
           }
+          if (m === -1) break
         }
-        if (m === -1) break
       }
+      s = snapIsland(anchorT, claimed) ?? snapIsland(wordSegs[k].start, claimed)
     }
-    const s = snapIsland(anchorT) ?? snapIsland(wordSegs[k].start)
-    if (process.env.DBG_SNAP) console.error(`[snap] "${String(l.text).slice(0, 40)}" k=${k} anchor=${anchorT.toFixed(1)} s=${s ?? 'null'} old=${l.start.toFixed(1)}`)
+    // 位置认领：本行当前位置 ±1.2s 内的空岛占住，防后行抢占。放在 s 计算
+    // **之后**——放前面会把自己的目标岛先占掉（实测 #53 播报行自占 148.45
+    // 后被排除，退到 144.3）。匹配失败（k<0，whisper 转写差异大）也照占。
+    for (const [a, b] of islands) {
+      if (b - a < 0.5 || claimed.has(a)) continue
+      if (Math.abs(a - (Number(l.start) || 0)) <= 1.2) { claimed.add(a); break }
+    }
+    if (process.env.DBG_SNAP) console.error(`[snap] "${String(l.text).slice(0, 40)}" k=${k} anchor=${anchorT?.toFixed(1) ?? '-'} s=${s ?? 'null'} old=${l.start.toFixed(1)}`)
     if (s === null || s > l.start + 8) continue
+    claimed.add(s)
     // 终点：末个匹配词的结束，向后吸到 ≤0.7s 内的岛尾
     let endK = k
     for (let t = 0; t < lt.length && k + t < wordSegs.length; t++) {
@@ -814,6 +851,12 @@ for (const set of targets) {
   const _lq = dedupeQuestions(locateQuestions(lines, wordSegs))
   const _rt = refineTiming(_lq, mask, islands, duration)
   const out = snapSilentLines(snapInstructionLines(_rt, wordSegs, islands, duration), mask, islands, duration)
+  if (process.env.DUMP_WORDS) {
+    fs.writeFileSync(`temp/build-work/${set.key}.audit.json`, JSON.stringify({
+      islands: islands.map(([a, b]) => [+a.toFixed(2), +b.toFixed(2)]),
+      words: wordSegs.map((w) => [+w.start.toFixed(2), +w.end.toFixed(2), w.text]),
+    }))
+  }
   if (process.env.DBG_STAGE) {
     const dump = (tag, arr) => console.error(`[${tag}] ` + arr.filter((l) => /^(?:Q\d+|Question\s)/i.test(l.text.trim())).slice(0, 8).map((l) => `Q@${l.start.toFixed(0)}`).join(' '))
     dump('合成后', lines); dump('钉位后', _lq); dump('refine后', _rt); dump('snap后', out)
