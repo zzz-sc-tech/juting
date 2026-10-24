@@ -316,11 +316,15 @@ const dedupeQuestions = (lines) => {
       if (n) mdNums.add(n)
     }
   }
-  // 第二遍：只去重 Question 形式的补充行——号已在 md 里、或补充行内部重复 → 丢弃
+  // 第二遍：只去重 Question 形式的补充行——号已在 md 里、或补充行内部重复 → 丢弃。
+  // 另删「播报+题干」粘旧行：fillLongGaps 填隙时，播报与题干间隙 <0.6s 会连成
+  // 一条（"…you have just heard. Question nine, what does…"），其两半都已有
+  // 独立行，纯重复。
   const seen = new Set()
   const out = []
   for (const l of lines) {
     const t = String(l.text).trim()
+    if (/you have just heard\.\s*questions?\s/i.test(t)) continue
     const n = qNumOfLine(t)
     const isMdForm = /^Q\s*\d+\s*[.。:：]/.test(t)
     if (n && !isMdForm && !/based\s+on/i.test(t)) {
@@ -351,7 +355,9 @@ const snapSilentLines = (lines, mask, islands, duration) => {
     return h / (i1 - i0)
   }
   const nextIslandStart = (t) => {
-    for (const [a] of islands) if (a >= t - 0.05) return a
+    // 只认 ≥0.5s 的岛：答题停顿里的呼吸/爆音会形成 0.1~0.3s 的幻影岛，
+    // 钉上去等于把行压在噪声上（实测 #53 一行正文被钉到 158s 的噪声）
+    for (const [a, b] of islands) if (b - a >= 0.5 && a >= t - 0.05) return a
     return null
   }
   const out = lines.map((l) => ({ ...l }))
@@ -564,8 +570,16 @@ const loadBlockWords = (set, audio, blocks) => {
 }
 
 /**
- * 块内词 → 时间：按字符比例铺到该块覆盖的语音岛上（retime 验证过的做法，
- * 不依赖 whisper 词时间——短块内 whisper 会把整句塌缩到同一时间戳）。
+ * 块内词 → 时间：词组与语音岛做 DP 对齐。
+ *
+ * 旧做法（按字符比例匀铺）对连续对话误差 ≤1s，但对「慢对话 + 紧跟快播报」的块
+ * 系统性失准——实测 #53：题组播报的词被铺到 146.5s（真实语音 148.5s 起），
+ * Q1 题干铺到 152.5s（真实 154.1s 起），逐句播放错位 2 秒多。
+ *
+ * 词序（whisper 转写顺序）和岛时长（能量检测）都是事实，唯一的自由度是
+ * 「哪几个词落在哪个岛」。DP 目标：每岛的词组时长与岛时长相对误差最小，
+ * 且语速落在 1.2~4.5 词/s 的合理区间。岛可以分不到词（呼吸/噪声），
+ * 词必须全部落岛。DP 无解（词太多/岛太短）时退回字符比例铺排。
  */
 const placeBlockWords = (toks, block, islands) => {
   const [a, b] = block
@@ -573,43 +587,194 @@ const placeBlockWords = (toks, block, islands) => {
   const spans = blockIslands.length ? blockIslands : [[a, b]]
   const speechLen = spans.reduce((x, [ia, ib]) => x + (ib - ia), 0) || 1
   const totalChars = toks.reduce((x, w) => x + w.length, 0) || 1
-  const fromSpeechLocal = (c) => {
-    let acc = 0
-    for (const [ia, ib] of spans) {
-      const d = ib - ia
-      if (c <= acc + d) return ia + Math.max(0, c - acc)
-      acc += d
+  const charRate = speechLen / totalChars
+
+  const prefix = [0]
+  for (const w of toks) prefix.push(prefix[prefix.length - 1] + w.length)
+  const durOf = (i, n) => Math.max(0.12, (prefix[i + n] - prefix[i]) * charRate)
+  const dur = spans.map(([ia, ib]) => ib - ia)
+
+  const N = toks.length
+  const M = spans.length
+  const INF = 1e18
+  const dp = Array.from({ length: N + 1 }, () => new Array(M + 1).fill(INF))
+  const take = Array.from({ length: N + 1 }, () => new Array(M + 1).fill(0))
+  dp[0][0] = 0
+  for (let j = 0; j < M; j++) {
+    for (let i = 0; i <= N; i++) {
+      if (dp[i][j] >= INF) continue
+      // n = 0：岛不分词（呼吸/噪声），小成本
+      if (dp[i][j] + 0.02 < dp[i][j + 1]) { dp[i][j + 1] = dp[i][j] + 0.02; take[i][j + 1] = 0 }
+      for (let n = 1; i + n <= N; n++) {
+        const pred = durOf(i, n)
+        if (pred > dur[j] * 1.9 + 0.35 && n >= 2) break // 预测时长超岛 90% 就不可能
+        const wps = n / dur[j]
+        let c = ((pred - dur[j]) / Math.max(0.25, dur[j])) ** 2
+        if (wps > 4.5) c += 10 * (wps - 4.5)
+        if (wps < 1.2) c += 6 * (1.2 - wps)
+        if (dp[i][j] + c < dp[i + n][j + 1]) { dp[i + n][j + 1] = dp[i][j] + c; take[i + n][j + 1] = n }
+      }
     }
-    return spans[spans.length - 1][1]
   }
-  const out = []
-  let charAcc = 0
-  for (const w of toks) {
-    const c0 = speechLen * (charAcc / totalChars)
-    charAcc += w.length
-    const c1 = speechLen * (charAcc / totalChars)
-    const s = fromSpeechLocal(c0)
-    const e = Math.max(s + 0.02, fromSpeechLocal(c1))
-    out.push({ start: +s.toFixed(3), end: +e.toFixed(3), text: w })
+
+  let out
+  if (dp[N][M] < INF) {
+    // 回溯：每岛分到的词组，岛内按字符比例铺
+    const assign = new Array(M)
+    let i = N; let j = M
+    while (j > 0) {
+      const n = take[i][j]
+      assign[j - 1] = n
+      i -= n
+      j -= 1
+    }
+    out = []
+    for (let s = 0; s < M; s++) {
+      const n = assign[s] ?? 0
+      if (!n) continue
+      const wi = out.length
+      const chars = prefix[wi + n] - prefix[wi]
+      let acc = 0
+      for (let k = 0; k < n; k++) {
+        const c0 = (acc / chars) * dur[s]
+        acc += toks[wi + k].length
+        const c1 = (acc / chars) * dur[s]
+        const st = spans[s][0] + c0
+        out.push({ start: +st.toFixed(3), end: +(spans[s][0] + c1).toFixed(3), text: toks[wi + k] })
+      }
+    }
+  } else {
+    // 退回：字符比例铺（与 retime 相同的旧逻辑）
+    const fromSpeechLocal = (c) => {
+      let acc = 0
+      for (const [ia, ib] of spans) {
+        const d = ib - ia
+        if (c <= acc + d) return ia + Math.max(0, c - acc)
+        acc += d
+      }
+      return spans[spans.length - 1][1]
+    }
+    out = []
+    let charAcc = 0
+    for (const w of toks) {
+      const c0 = speechLen * (charAcc / totalChars)
+      charAcc += w.length
+      const c1 = speechLen * (charAcc / totalChars)
+      const s = fromSpeechLocal(c0)
+      const e = Math.max(s + 0.02, fromSpeechLocal(c1))
+      out.push({ start: +s.toFixed(3), end: +e.toFixed(3), text: w })
+    }
   }
   return out
 }
 
 /**
- * 词时间轴合并回伪句。extractAnnouncementRows / interleaveStackedQuestions
- * 等都按「句文本」做正则，直接喂单字分段全是碎片（实测一节课多出 56 行
- * "questions" 垃圾行）。按 ≥0.6s 词间隙断句——铺完岛后词间隙就是真实停顿。
+ * 词时间轴合并回伪句。直接喂单字分段，正则类消费方全是碎片。
+ * 两种粒度：
+ *   细（gap 0.6s）：buildAsrWordTimeline 用，词时间尽量贴真实停顿；
+ *   粗（gap 1.5s）：extractAnnouncementRows / interleaveStackedQuestions 用——
+ *     DP 落岛后 "Questions one" 与 "to four…" 常被 1.1s 的岛间隙切开，
+ *     细粒度下题组播报的正则（"Questions N to M …"）匹配不上，播报行会整个丢失
+ *     （实测 #53 的 Q1–4 播报行消失 → 锚点条少一个锚点）。
  */
-const mergeWordTimeline = (wordSegs, duration) => {
-  const GAP = 0.6
+const mergeWordTimeline = (wordSegs, duration, gap = 0.6) => {
   const out = []
   let cur = null
   for (const s of wordSegs) {
-    if (cur && s.start - cur.end < GAP) { cur.end = s.end; cur.text += ' ' + s.text }
+    if (cur && s.start - cur.end < gap) { cur.end = s.end; cur.text += ' ' + s.text }
     else { if (cur) out.push(cur); cur = { start: s.start, end: s.end, text: s.text } }
   }
   if (cur) out.push(cur)
   for (const s of out) s.end = Math.min(s.end, duration)
+  return out
+}
+
+/**
+ * 播报行/题干行钉到词级实测时间 + 语音岛起点。
+ *
+ * 词时间轴（placeBlockWords 的 DP 对齐）对整组的落岛是准的，但组边界上的
+ * 1~2 个词可能被挤到相邻岛的尾部（实测 #53：题组播报的前两个词落在上一段
+ * 对话岛的末尾）。这些行的真实起点是**岛起点**（播报前必有 ≥0.6s 停顿），
+ * 所以：正文词序在词流里对上 → 行起点吸附到就近的岛起点（向前偏向）。
+ */
+const snapInstructionLines = (lines, wordSegs, islands, duration) => {
+  const norm = (t) => String(t).toLowerCase().replace(/[^a-z0-9]/g, '')
+  const Q_LABEL = /^(?:Q\s*(\d+)|Question\s+(\d{1,2}|one|two|three|four|five|six|seven|eight|nine|ten|eleven|twelve|thirteen|fourteen|fifteen|sixteen|seventeen|eighteen|nineteen|twenty(?:[-\s](?:one|two|three|four|five))?))[.。:：,，]\s*/i
+  const isSnap = (t) => Q_LABEL.test(String(t).trim()) || /based\s+on/i.test(t)
+  const wt = wordSegs.map((w) => norm(w.text))
+
+  /**
+   * 词流里找 body 的连续序列。打分：最长公共前缀优先（前 6 词），同分取离 hint 近的。
+   * 只按距离选会串位——实测 2015-12-3 的 Q13/Q14 题干都以 "What does Dr. Mironov"
+   * 开头，Q13 被钉到了 Q14 的位置（时间倒挂 20 秒）。
+   */
+  const findSeq = (needle, hint) => {
+    if (needle.length < 3) return -1
+    let best = -1; let bestP = 0; let bestD = Infinity
+    for (let k = 0; k + 3 <= wt.length; k++) {
+      let p = 0
+      for (let t = 0; t < Math.min(needle.length, 6); t++) {
+        if (k + t < wt.length && wt[k + t] === needle[t]) p++
+        else break
+      }
+      if (p < Math.min(needle.length, 4)) continue
+      const d = Math.abs(wordSegs[k].start - hint)
+      if (p > bestP || (p === bestP && d < bestD)) { bestP = p; bestD = d; best = k }
+    }
+    return bestD <= 8 ? best : -1
+  }
+  /**
+   * t 附近的岛起点，±4s 窗口内取最近（DP 边界词的落岛误差双向都实测可达 3s+：
+   * 有的词早落到上一岛尾部，有的词晚落进本岛中部）。只认 ≥0.5s 的岛，
+   * 排除答题停顿里的呼吸/爆音幻影岛。
+   */
+  const snapIsland = (t) => {
+    let best = null
+    for (const [a, b] of islands) {
+      if (b - a < 0.5) continue
+      if (a >= t - 4.0 && a <= t + 4.0) {
+        if (best === null || Math.abs(a - t) < Math.abs(best - t)) best = a
+      }
+    }
+    return best
+  }
+
+  const out = lines.map((l) => ({ ...l }))
+  for (const l of out) {
+    if (!isSnap(l.text)) continue
+    const body = String(l.text).trim().replace(Q_LABEL, '').replace(/^[^a-z0-9]+/i, '')
+    const lt = body.split(/[^A-Za-z0-9]+/).filter(Boolean).map(norm)
+    const k = findSeq(lt, l.start)
+    if (k < 0) continue
+    // 题号标签（"Question one."）：在正文匹配点之前找 question+题号 词，
+    // 有就用标签词的时间做锚（题干播报从标签词开始）
+    let anchorT = wordSegs[k].start
+    const qm = String(l.text).match(Q_LABEL)
+    if (qm) {
+      const nTok = norm(qm[1] ?? qm[2] ?? '')
+      for (let m = k - 1; m >= Math.max(0, k - 6); m--) {
+        if (wt[m] === 'question' || wt[m] === 'questions') {
+          for (let q = m + 1; q <= Math.min(wt.length - 1, m + 2); q++) {
+            if (numOf(wordSegs[q].text) === numOf(qm[1] ?? qm[2])) { anchorT = wordSegs[m].start; m = -1; break }
+          }
+        }
+        if (m === -1) break
+      }
+    }
+    const s = snapIsland(anchorT) ?? snapIsland(wordSegs[k].start)
+    if (process.env.DBG_SNAP) console.error(`[snap] "${String(l.text).slice(0, 40)}" k=${k} anchor=${anchorT.toFixed(1)} s=${s ?? 'null'} old=${l.start.toFixed(1)}`)
+    if (s === null || s > l.start + 8) continue
+    // 终点：末个匹配词的结束，向后吸到 ≤0.7s 内的岛尾
+    let endK = k
+    for (let t = 0; t < lt.length && k + t < wordSegs.length; t++) {
+      if (wt[k + t] === lt[t]) endK = k + t; else if (t >= 3) break
+    }
+    let e = wordSegs[endK].end
+    for (const [, b] of islands) if (b > e && b - e <= 0.7) { e = b; break }
+    if (e <= s) e = Math.min(duration, s + 0.8)
+    l.start = +s.toFixed(2)
+    l.end = +e.toFixed(2)
+  }
   return out
 }
 
@@ -636,13 +801,19 @@ for (const set of targets) {
   }
   const segments = mergeWordTimeline(wordSegs, duration)
 
-  const mdSentences = parseYuanwenMd(interleaveStackedQuestions(fs.readFileSync(mdPath, 'utf8'), segments))
+  const segmentsCoarse = mergeWordTimeline(wordSegs, duration, 1.5)
+  const mdSentences = parseYuanwenMd(interleaveStackedQuestions(fs.readFileSync(mdPath, 'utf8'), segmentsCoarse))
   const timeline = buildAsrWordTimeline(segments)
-  const { lines, stats } = synthesizeTranscript(mdSentences, timeline, { audioDuration: duration, segments })
+  const { lines, stats } = synthesizeTranscript(mdSentences, timeline, {
+    audioDuration: duration,
+    segments,
+    // 播报提取用粗合并（防 "Questions one | to four" 被岛间隙切开）；空档补填用细粒度
+    announceSegments: segmentsCoarse,
+  })
 
   const _lq = dedupeQuestions(locateQuestions(lines, wordSegs))
   const _rt = refineTiming(_lq, mask, islands, duration)
-  const out = snapSilentLines(_rt, mask, islands, duration)
+  const out = snapSilentLines(snapInstructionLines(_rt, wordSegs, islands, duration), mask, islands, duration)
   if (process.env.DBG_STAGE) {
     const dump = (tag, arr) => console.error(`[${tag}] ` + arr.filter((l) => /^(?:Q\d+|Question\s)/i.test(l.text.trim())).slice(0, 8).map((l) => `Q@${l.start.toFixed(0)}`).join(' '))
     dump('合成后', lines); dump('钉位后', _lq); dump('refine后', _rt); dump('snap后', out)

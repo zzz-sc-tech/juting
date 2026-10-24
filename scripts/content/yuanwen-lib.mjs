@@ -651,7 +651,11 @@ export const MIN_HIT_RATE = 0.7
  *
  * @param {Array} mdSentences parseYuanwenMd 的输出
  * @param {Array} asrTimeline buildAsrWordTimeline 的输出
- * @param {{audioDuration?:number}} [options] 音频真实时长（秒）。给了就强钳制时间轴。
+ * @param {{audioDuration?:number, segments?:Array, announceSegments?:Array}} [options]
+ *   音频真实时长（秒），给了就强钳制时间轴；segments 用于播报提取与空档补填；
+ *   announceSegments 可单独指定播报提取用的分段（词落岛后短停顿会把
+ *   "Questions one | to four" 切成两段，播报正则匹配不上——提取需要更粗的合并，
+ *   而空档补填需要细粒度，两者可以不一样；缺省回落到 segments）。
  * @returns {{lines:Array, stats:object}} lines 为字幕行；stats 含对齐质量指标。
  */
 export const synthesizeTranscript = (mdSentences, asrTimeline, options = {}) => {
@@ -793,7 +797,7 @@ export const synthesizeTranscript = (mdSentences, asrTimeline, options = {}) => 
     let instructionRows = 0
     if (Array.isArray(options.segments) && options.segments.length > 0) {
         const seen = []
-        const extras = extractAnnouncementRows(options.segments, matchedAsrIdx)
+        const extras = extractAnnouncementRows(options.announceSegments ?? options.segments, matchedAsrIdx)
             .sort((a, b) => a.start - b.start)
             .filter((ex) => {
                 // 同一句播报在 ASR 里可能被重复转写，去重避免锚点重名
@@ -815,11 +819,22 @@ export const synthesizeTranscript = (mdSentences, asrTimeline, options = {}) => 
                 else s0 = Math.max(s0, h.end)
             }
             if (e0 - s0 < 0.3) continue
-            // 从被覆盖的原文行里切出该区间
+            // 从被覆盖的原文行里切出该区间。「横跨整个播报区的行」（start < s0
+            // 且 end > e0）按起点远近分流：
+            //   · 起点贴着播报（≤1s，实测 2016-06-2 未朗读的 Q1 题干被无缝铺排
+            //     摊到 190.1、播报 190.2 起）：它占的其实是播报后的答题停顿，
+            //     推到播报之后；旧行为把 end 钳到 s0 → 0.1s 残行被整行删掉；
+            //   · 起点明显早于播报（实测 2015-06-1 的正文行 144.3 vs 播报 148.0）：
+            //     它的真实位置在播报之前，按旧行为截尾。
             for (const l of result) {
                 if (l.end <= s0 || l.start >= e0) continue
                 if (l.start < s0) {
-                    l.end = Math.min(l.end, s0)
+                    if (l.end > e0) {
+                        if (s0 - l.start <= 1.0) l.start = e0
+                        else l.end = s0
+                    } else {
+                        l.end = Math.min(l.end, s0)
+                    }
                 } else {
                     l.start = Math.max(l.start, e0)
                 }
