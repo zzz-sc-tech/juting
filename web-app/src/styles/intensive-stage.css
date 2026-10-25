@@ -102,12 +102,27 @@
   min-height: 1.45em;
 }
 
-/* 未揭晓时的占位提示：正文字号、弱墨色，读起来是「待办」而不是「坏掉」 */
+/* 未揭晓态：居中的空态模块。
+   旧样式是 14px 左对齐的一行小字，飘在 420px 高的卡片中部——水平只占卡宽
+   32%，上下各留 140~190px 空白，读起来像被挤在一个小角落（用户实测反馈）。
+   放大 + 水平居中 + 虚线框，与 .review-empty-card 的空态语言一致。 */
+.subtitle-text:not(.revealed) {
+  align-items: center;
+  display: flex;
+  justify-content: center;
+  min-height: 96px;
+}
+
 .subtitle-placeholder {
+  border: 1px dashed var(--line-strong);
+  border-radius: var(--radius-md);
   color: var(--ink-3);
+  display: inline-block;
   font-family: var(--font-ui);
-  font-size: 14px;
+  font-size: 15.5px;
   font-weight: 400;
+  letter-spacing: 0.02em;
+  padding: 16px 24px;
 }
 
 /* 揭晓字幕：淡绿衬纸 + 左侧主色起线，英文衬线——整张脸的重心 */
