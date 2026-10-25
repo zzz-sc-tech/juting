@@ -1,7 +1,7 @@
 {
   "preset": "cet4",
-  "version": "20261022.3",
-  "generatedAt": "2026-10-22T16:44:35.612Z",
+  "version": "20261025.1",
+  "generatedAt": "2026-10-25T07:40:07.275Z",
   "group": {
     "id": 9,
     "name": "英语四级真题",
@@ -519,8 +519,8 @@
         },
         {
           "id": "l30",
-          "start": 229.52,
-          "end": 238.6,
+          "start": 231.3,
+          "end": 235.9,
           "text": "Questions three and four are based on the news report you have just heard.",
           "translation": "问题3和问题4基于你刚听到的这篇新闻报道。"
         },
@@ -803,7 +803,7 @@
         {
           "id": "l71",
           "start": 532.76,
-          "end": 533.26,
+          "end": 533.16,
           "text": "Well, Mr."
         },
         {
@@ -830,7 +830,7 @@
         {
           "id": "l75",
           "start": 541.64,
-          "end": 543.74,
+          "end": 543.88,
           "text": "Then he'll be away in New York.",
           "translation": "然后他还要去纽约。"
         },
@@ -990,7 +990,7 @@
         },
         {
           "id": "l99",
-          "start": 595.53,
+          "start": 597.8,
           "end": 602,
           "text": "Question eight, what do we learn about the woman's company?",
           "translation": "第8题，我们能了解到女方公司的什么情况？"
@@ -1046,7 +1046,7 @@
         {
           "id": "l107",
           "start": 709.04,
-          "end": 709.47,
+          "end": 709.44,
           "text": "Oh, yes."
         },
         {
@@ -1086,20 +1086,20 @@
         {
           "id": "l113",
           "start": 718.35,
-          "end": 719.36,
+          "end": 718.94,
           "text": "Did you like it?",
           "translation": "你喜欢吗？"
         },
         {
           "id": "l114",
           "start": 719.36,
-          "end": 719.79,
+          "end": 719.76,
           "text": "Oh, yes."
         },
         {
           "id": "l115",
           "start": 719.79,
-          "end": 720.47,
+          "end": 720.28,
           "text": "Yes, very much.",
           "translation": "喜欢，非常喜欢。"
         },
@@ -1217,7 +1217,7 @@
         },
         {
           "id": "l132",
-          "start": 785.85,
+          "start": 787.6,
           "end": 792.15,
           "text": "Questions 12 to 15 are based on the conversation you have just heard.",
           "translation": "问题12到15基于你刚听到的对话。"
@@ -1591,14 +1591,14 @@
         {
           "id": "l186",
           "start": 1182.06,
-          "end": 1191.58,
+          "end": 1190.35,
           "text": "It's the friendliest and most sincere form of communication, and is sure to be understood in any part of the world.",
           "translation": "这是最友好、最真诚的交流方式，世界任何地方的人都一定能理解。"
         },
         {
           "id": "l187",
-          "start": 1191.58,
-          "end": 1197.4,
+          "start": 1190.35,
+          "end": 1193.99,
           "text": "Questions 19 to 21 are based on the passage you have just heard.",
           "translation": "第19到21题根据你刚听到的短文回答。"
         },
@@ -1751,7 +1751,7 @@
         },
         {
           "id": "l209",
-          "start": 1390.26,
+          "start": 1391.9,
           "end": 1398.4,
           "text": "Question 22: What did Gerald Ratner decide to do when he took over his father's shops?",
           "translation": "第22题：杰拉尔德·拉特纳接手父亲的店铺后，决定做什么？"
@@ -2620,7 +2620,7 @@
         {
           "id": "l79",
           "start": 588.8,
-          "end": 590.05,
+          "end": 589.49,
           "text": "If not you, then who?",
           "translation": "如果你不做，谁来做？"
         },
@@ -2845,14 +2845,14 @@
         },
         {
           "id": "l112",
-          "start": 814.09,
+          "start": 816.3,
           "end": 820.95,
           "text": "Questions twelve to fifteen are based on the conversation you have just heard.",
           "translation": "问题12到15基于你刚听到的对话。"
         },
         {
           "id": "l113",
-          "start": 820.95,
+          "start": 822.2,
           "end": 825.65,
           "text": "Question twelve: Where is the woman planning to go?",
           "translation": "问题12：这位女士打算去哪里？"
@@ -3927,7 +3927,7 @@
         },
         {
           "id": "l31",
-          "start": 246.18,
+          "start": 248.1,
           "end": 252.8,
           "text": "Questions three and four are based on the news report you have just heard.",
           "translation": "问题3和问题4基于你刚才听到的新闻报道。"
@@ -4133,7 +4133,7 @@
         {
           "id": "l61",
           "start": 491.12,
-          "end": 492.34,
+          "end": 491.81,
           "text": "So what is it like?",
           "translation": "那到底是什么感觉？"
         },
@@ -4189,7 +4189,7 @@
         {
           "id": "l69",
           "start": 531.07,
-          "end": 534.41,
+          "end": 532.54,
           "text": "From May to July in the north of Sweden, the sun never sets.",
           "translation": "在瑞典北部，从5月到7月，太阳从不落山。"
         },
@@ -4299,7 +4299,7 @@
         {
           "id": "l85",
           "start": 662.8,
-          "end": 666.41,
+          "end": 664.27,
           "text": "What kind of training does one need to go into this type of job?",
           "translation": "从事这类工作需要什么样的培训？"
         },
@@ -4417,12 +4417,12 @@
         {
           "id": "l102",
           "start": 733.06,
-          "end": 733.36,
+          "end": 733.46,
           "text": "No, no."
         },
         {
           "id": "l103",
-          "start": 733.36,
+          "start": 733.46,
           "end": 737.49,
           "text": "I come from the north of England, from West Yorkshire.",
           "translation": "我来自英格兰北部的西约克郡。"
@@ -4648,8 +4648,8 @@
         },
         {
           "id": "l136",
-          "start": 980.7,
-          "end": 988.19,
+          "start": 981.95,
+          "end": 987.15,
           "text": "Questions 16 to 18 are based on the passage you have just heard.",
           "translation": "第16至18题基于你刚刚听到的短文。"
         },
@@ -4781,7 +4781,7 @@
         {
           "id": "l155",
           "start": 1140.43,
-          "end": 1144.7,
+          "end": 1144.91,
           "text": "His boss likes Kim's work, and he expects that his work will be compared with hers.",
           "translation": "他的老板欣赏金的工作，他估计自己的工作会和她的进行比较。"
         },
@@ -4816,7 +4816,7 @@
         {
           "id": "l160",
           "start": 1200.29,
-          "end": 1201.35,
+          "end": 1201.41,
           "text": "In the near future.",
           "translation": "在不久的将来。"
         },
@@ -5490,8 +5490,8 @@
         },
         {
           "id": "l35",
-          "start": 263.35,
-          "end": 271.2,
+          "start": 264.7,
+          "end": 269.35,
           "text": "Questions three and four are based on the news report you have just heard.",
           "translation": "问题三和问题四基于你刚听到的新闻报道。"
         },
@@ -5916,7 +5916,7 @@
         {
           "id": "l98",
           "start": 572.35,
-          "end": 574.54,
+          "end": 573.33,
           "text": "What would you like to do now then?",
           "translation": "那你现在想做什么呢？"
         },
@@ -6087,14 +6087,14 @@
         },
         {
           "id": "l123",
-          "start": 759.73,
+          "start": 761.8,
           "end": 766.15,
           "text": "Questions 12 to 15 are based on the conversation you have just heard.",
           "translation": "第12至15题根据你刚才听到的对话回答。"
         },
         {
           "id": "l124",
-          "start": 766.15,
+          "start": 767.35,
           "end": 772.65,
           "text": "Question 12: What does the man say about his involvement with pubs?",
           "translation": "第12题：这位男士说他与酒吧有什么渊源？"
@@ -6197,7 +6197,7 @@
         {
           "id": "l139",
           "start": 902.11,
-          "end": 902.84,
+          "end": 902.6,
           "text": "Change in people.",
           "translation": "引起人的变化。"
         },
@@ -6336,21 +6336,21 @@
         },
         {
           "id": "l159",
-          "start": 995.86,
-          "end": 1002.51,
+          "start": 999.05,
+          "end": 1003.1,
           "text": "Questions 16 to 18 are based on the passage you have just heard.",
           "translation": "第16至18题基于你刚听到的短文。"
         },
         {
           "id": "l160",
-          "start": 1002.51,
-          "end": 1004.19,
+          "start": 1004.25,
+          "end": 1008.75,
           "text": "Question 16: What does the speaker say about drug abuse?",
           "translation": "第16题：关于药物滥用，说话人说了什么？"
         },
         {
           "id": "l161",
-          "start": 1004.19,
+          "start": 1008.75,
           "end": 1030,
           "text": "Question 17: What does the speaker say about recreational drug users?",
           "translation": "第17题：关于娱乐型吸毒者，说话人说了什么？"
@@ -6463,14 +6463,14 @@
         {
           "id": "l177",
           "start": 1164.64,
-          "end": 1176.71,
+          "end": 1174.7,
           "text": "This was accomplished through the dark green packaging that not only differed from the competitors, but also suggested freshness and richness in vitamins.",
           "translation": "这是通过深绿色包装实现的，它不仅区别于竞争对手，还让人联想到新鲜和丰富的维生素。"
         },
         {
           "id": "l178",
-          "start": 1176.71,
-          "end": 1181.75,
+          "start": 1174.7,
+          "end": 1179.95,
           "text": "Questions 19 to 22 are based on the passage you have just heard.",
           "translation": "第19至22题基于你刚听到的短文。"
         },
@@ -7157,7 +7157,7 @@
         },
         {
           "id": "l31",
-          "start": 238.98,
+          "start": 240.55,
           "end": 245.2,
           "text": "Questions three and four are based on the news report you have just heard.",
           "translation": "问题3和问题4基于你刚刚听到的新闻报道。"
@@ -7334,7 +7334,7 @@
         {
           "id": "l57",
           "start": 411.21,
-          "end": 411.95,
+          "end": 412.33,
           "text": "Macri want to do?",
           "translation": "想做什么？"
         },
@@ -7642,7 +7642,7 @@
         {
           "id": "l102",
           "start": 690.62,
-          "end": 691.35,
+          "end": 691.11,
           "text": "Yes, it is.",
           "translation": "是的。"
         },
@@ -7669,7 +7669,7 @@
         {
           "id": "l106",
           "start": 700.57,
-          "end": 701,
+          "end": 701.13,
           "text": "What sort?"
         },
         {
@@ -7682,7 +7682,7 @@
         {
           "id": "l108",
           "start": 707.4,
-          "end": 708.55,
+          "end": 708.8,
           "text": "A DO 44 or DO 45?",
           "translation": "是DO 44还是DO 45？"
         },
@@ -7825,7 +7825,7 @@
         {
           "id": "l129",
           "start": 758.19,
-          "end": 758.68,
+          "end": 758.59,
           "text": "Oh dear."
         },
         {
@@ -8125,14 +8125,14 @@
         {
           "id": "l173",
           "start": 1004.5,
-          "end": 1012.5,
+          "end": 1011.1,
           "text": "With such grand history, kite flying is sure to remain an entertaining and popular sport.",
           "translation": "有着如此悠久的历史，放风筝一定会继续是一项有趣又受欢迎的运动。"
         },
         {
           "id": "l174",
-          "start": 1012.5,
-          "end": 1017.56,
+          "start": 1011.1,
+          "end": 1016,
           "text": "Questions 16 to 18 are based on the passage you have just heard.",
           "translation": "问题16到18基于你刚刚听到的短文。"
         },
@@ -8263,14 +8263,14 @@
         },
         {
           "id": "l193",
-          "start": 1197.72,
-          "end": 1202.82,
+          "start": 1199.25,
+          "end": 1203.75,
           "text": "19 to 22 are based on the passage you have just heard.",
           "translation": "19至22题根据你刚听到的短文。"
         },
         {
           "id": "l194",
-          "start": 1202.82,
+          "start": 1204.9,
           "end": 1208.9,
           "text": "Question 19: What does the speaker say about herself?",
           "translation": "问题19：说话者谈到她自己的什么情况？"
@@ -9297,7 +9297,7 @@
         {
           "id": "l82",
           "start": 554.04,
-          "end": 554.86,
+          "end": 554.53,
           "text": "Thank you, Mr.",
           "translation": "谢谢您，"
         },
@@ -9541,7 +9541,7 @@
         },
         {
           "id": "l118",
-          "start": 757.71,
+          "start": 759.9,
           "end": 766.05,
           "text": "Question 12. What does the woman say about steel-related manufacturing in the region?",
           "translation": "第12题。女士对该地区的钢铁相关制造业说了什么？"
@@ -9861,21 +9861,21 @@
         {
           "id": "l164",
           "start": 1125.9,
-          "end": 1129.33,
+          "end": 1129.54,
           "text": "He had to pay a fee of forty dollars to get his car back.",
           "translation": "他得交40美元的费用才能把车取回来。"
         },
         {
           "id": "l165",
-          "start": 1129.33,
-          "end": 1141.98,
+          "start": 1130.65,
+          "end": 1136.25,
           "text": "In addition, he got a parking ticket, his first one ever in Greenville are based on the passage you have just heard.",
           "translation": "此外，他还收到了一张停车罚单，这是他在格林维尔的第一张罚单。请根据刚才听到的短文回答问题。"
         },
         {
           "id": "l166",
-          "start": 1141.98,
-          "end": 1150.55,
+          "start": 1143.85,
+          "end": 1148.61,
           "text": "Question 19. Where did Luis intend to park his car when he came back from work one night?",
           "translation": "问题19。路易斯某天晚上下班回来时打算把车停在哪里？"
         },
@@ -9993,14 +9993,14 @@
         {
           "id": "l183",
           "start": 1310.82,
-          "end": 1320.78,
+          "end": 1319.1,
           "text": "It's your creative mind that gets meaning from the chaos of your experiences and brings order to your world.",
           "translation": "正是你的创造性思维，从纷乱的经历中得出意义，让你的世界井然有序。"
         },
         {
           "id": "l184",
-          "start": 1321.52,
-          "end": 1326.32,
+          "start": 1319.1,
+          "end": 1324.5,
           "text": "22 to 25 are based on the passage you have just heard.",
           "translation": "22至25题基于你刚才听到的短文。"
         },
@@ -10519,8 +10519,8 @@
         },
         {
           "id": "l28",
-          "start": 262.4,
-          "end": 270.6,
+          "start": 263.85,
+          "end": 268.3,
           "text": "Questions three and four are based on the news report you have just heard.",
           "translation": "第3题和第4题基于你刚才听到的新闻报道。"
         },
@@ -10630,7 +10630,7 @@
         },
         {
           "id": "l44",
-          "start": 410.18,
+          "start": 411.6,
           "end": 415.6,
           "text": "Questions five to seven are based on the news report you have just heard.",
           "translation": "问题5到7基于你刚听到的新闻报道。"
@@ -10861,7 +10861,7 @@
         {
           "id": "l77",
           "start": 586.07,
-          "end": 588.76,
+          "end": 587.25,
           "text": "But it seems like now I don't use it so much.",
           "translation": "但好像现在我不怎么用了。"
         },
@@ -11040,7 +11040,7 @@
         {
           "id": "l103",
           "start": 763.59,
-          "end": 765.45,
+          "end": 764.48,
           "text": "Bond has a lot of trust in you.",
           "translation": "邦德先生很信任你。"
         },
@@ -11081,7 +11081,7 @@
         {
           "id": "l109",
           "start": 781.6,
-          "end": 785.1,
+          "end": 785.24,
           "text": "I've tried, but it seems like he just has no time for me.",
           "translation": "我试过，可他好像根本没时间理我。"
         },
@@ -11136,13 +11136,13 @@
         {
           "id": "l117",
           "start": 814.29,
-          "end": 816.32,
+          "end": 816.53,
           "text": "Good luck, and let us know the outcome.",
           "translation": "祝你好运，有结果了告诉我们。"
         },
         {
           "id": "l118",
-          "start": 816.32,
+          "start": 817.8,
           "end": 822.05,
           "text": "Questions twelve to fifteen are based on the conversation you have just heard.",
           "translation": "12至15题基于你刚听到的对话。"
@@ -11184,13 +11184,13 @@
         {
           "id": "l124",
           "start": 905.2,
-          "end": 905.5,
+          "end": 905.6,
           "text": "Section C Directions",
           "translation": "C部分 说明"
         },
         {
           "id": "l125",
-          "start": 905.5,
+          "start": 905.6,
           "end": 910.7,
           "text": "Directions: In this section, you will hear three passages.",
           "translation": "说明：本部分你将听到3段短文。"
@@ -11343,14 +11343,14 @@
         },
         {
           "id": "l147",
-          "start": 1043.35,
+          "start": 1044.85,
           "end": 1049.75,
           "text": "Questions 16 to 18 are based on the passage you have just heard.",
           "translation": "16至18题基于你刚听到的短文。"
         },
         {
           "id": "l148",
-          "start": 1049.75,
+          "start": 1051.25,
           "end": 1055.75,
           "text": "Question 16: What is the speaker mainly talking about?",
           "translation": "问题16：讲话者主要谈论什么？"
@@ -12389,7 +12389,7 @@
         {
           "id": "l58",
           "start": 508.51,
-          "end": 510.7,
+          "end": 509.59,
           "text": "All I have to do is turn on the TV.",
           "translation": "我只要打开电视就行。"
         },
@@ -12463,7 +12463,7 @@
         },
         {
           "id": "l69",
-          "start": 560.64,
+          "start": 563,
           "end": 567.75,
           "text": "Questions eight to eleven are based on the conversation you have just heard.",
           "translation": "问题8到11基于你刚才听到的对话。"
@@ -12923,14 +12923,14 @@
         {
           "id": "l136",
           "start": 1002.05,
-          "end": 1007.83,
+          "end": 1006.35,
           "text": "But many tech home remedies can be explained by a little science.",
           "translation": "但很多科技产品的家庭偏方可以用一点科学来解释。"
         },
         {
           "id": "l137",
-          "start": 1007.83,
-          "end": 1012.94,
+          "start": 1006.35,
+          "end": 1011.3,
           "text": "Questions 16 to 18 are based on the passage you have just heard.",
           "translation": "16至18题基于你刚才听到的短文。"
         },
@@ -13181,7 +13181,7 @@
         {
           "id": "l173",
           "start": 1361.96,
-          "end": 1367.7,
+          "end": 1365.6,
           "text": "Questions twenty-two to twenty-five are based on the passage you have just heard.",
           "translation": "问题22到25基于你刚才听到的短文。"
         },
@@ -13547,13 +13547,13 @@
         {
           "id": "l5",
           "start": 7.6,
-          "end": 7.9,
+          "end": 8,
           "text": "Section A - Directions",
           "translation": "A部分——说明"
         },
         {
           "id": "l6",
-          "start": 7.9,
+          "start": 8,
           "end": 12.6,
           "text": "Directions: In this section, you will hear three news reports.",
           "translation": "说明：在本部分，你将听到3篇新闻报道。"
@@ -13637,14 +13637,14 @@
         },
         {
           "id": "l18",
-          "start": 117.26,
-          "end": 123.32,
+          "start": 120,
+          "end": 123.95,
           "text": "Questions one and two are based on the news report you have just heard.",
           "translation": "第1题和第2题基于你刚听到的新闻报道。"
         },
         {
           "id": "l19",
-          "start": 123.32,
+          "start": 125,
           "end": 129.9,
           "text": "Question one: Why did John Gordon move out of Abigail De Castle?",
           "translation": "第1题：约翰·戈登为什么要搬出阿伯格尔迪城堡？"
@@ -13714,14 +13714,14 @@
         {
           "id": "l29",
           "start": 228.23,
-          "end": 236.22,
+          "end": 234.9,
           "text": "The Rock Salt Mine is one of three operated by Cargill, with the other two in Louisiana and Ohio.",
           "translation": "这座岩盐矿是嘉吉公司运营的3座矿之一，另外两座在路易斯安那州和俄亥俄州。"
         },
         {
           "id": "l30",
-          "start": 236.22,
-          "end": 242.15,
+          "start": 234.9,
+          "end": 240.3,
           "text": "Questions three and four are based on the news report you have just heard.",
           "translation": "第3题和第4题基于你刚听到的新闻报道。"
         },
@@ -13809,15 +13809,15 @@
         },
         {
           "id": "l43",
-          "start": 349.19,
-          "end": 355.04,
+          "start": 351.4,
+          "end": 355.6,
           "text": "Questions five to seven are based on the news report you have just heard.",
           "translation": "第5到第7题基于你刚才听到的新闻报道。"
         },
         {
           "id": "l44",
-          "start": 355.04,
-          "end": 358.71,
+          "start": 356.5,
+          "end": 360.85,
           "text": "Question five: What is the U.S.",
           "translation": "第5题：美国"
         },
@@ -13894,7 +13894,7 @@
         {
           "id": "l55",
           "start": 452.65,
-          "end": 453.75,
+          "end": 453.24,
           "text": "Oh dear, what about?",
           "translation": "哎呀，出什么事了？"
         },
@@ -13915,7 +13915,7 @@
         {
           "id": "l58",
           "start": 459.45,
-          "end": 461.42,
+          "end": 460.43,
           "text": "He'll simply lose part of his pay.",
           "translation": "扣他点工资不就行了。"
         },
@@ -13950,14 +13950,14 @@
         {
           "id": "l63",
           "start": 473.53,
-          "end": 474.04,
+          "end": 474.02,
           "text": "Yes, he is.",
           "translation": "靠得住。"
         },
         {
           "id": "l64",
           "start": 474.04,
-          "end": 476.08,
+          "end": 475.02,
           "text": "That's why we chose him for the job.",
           "translation": "所以我们才让他干这份差事。"
         },
@@ -13971,7 +13971,7 @@
         {
           "id": "l66",
           "start": 478.75,
-          "end": 479.19,
+          "end": 479.15,
           "text": "\"Not yet."
         },
         {
@@ -14005,7 +14005,7 @@
         {
           "id": "l71",
           "start": 497.47,
-          "end": 499.16,
+          "end": 498.45,
           "text": "\"Well, what do you want me to do?\"",
           "translation": "那你想让我怎么做？"
         },
@@ -14019,14 +14019,14 @@
         {
           "id": "l73",
           "start": 506.72,
-          "end": 507.46,
+          "end": 507.21,
           "text": "\"Oh, all right.",
           "translation": "好吧。"
         },
         {
           "id": "l74",
           "start": 507.46,
-          "end": 508.2,
+          "end": 508.3,
           "text": "I'll see him.",
           "translation": "我去见他。"
         },
@@ -14060,14 +14060,14 @@
         },
         {
           "id": "l79",
-          "start": 525.7,
-          "end": 530.67,
+          "start": 527.45,
+          "end": 531.25,
           "text": "Questions eight to eleven are based on the conversation you have just heard.",
           "translation": "第8到11题根据你刚才听到的对话。"
         },
         {
           "id": "l80",
-          "start": 530.67,
+          "start": 532.05,
           "end": 538.05,
           "text": "Question eight: What will happen to the press operator who was late for work, according to the woman?",
           "translation": "第8题：据那位女士说，迟到的印刷工会怎么样？"
@@ -14200,7 +14200,7 @@
         {
           "id": "l99",
           "start": 663.85,
-          "end": 664.66,
+          "end": 664.34,
           "text": "Not in London.",
           "translation": "在伦敦不会。"
         },
@@ -14658,7 +14658,7 @@
         },
         {
           "id": "l166",
-          "start": 1100.42,
+          "start": 1103.3,
           "end": 1107.6,
           "text": "Questions 19 to 21 are based on the passage you have just heard.",
           "translation": "问题19到21基于你刚听到的短文。"
@@ -15271,14 +15271,14 @@
         },
         {
           "id": "l16",
-          "start": 105.92,
-          "end": 112.66,
+          "start": 109.35,
+          "end": 113.45,
           "text": "Questions one and two are based on the news report you have just heard.",
           "translation": "问题1和问题2基于你刚才听到的新闻报道。"
         },
         {
           "id": "l17",
-          "start": 112.66,
+          "start": 114.55,
           "end": 119.85,
           "text": "Question one: Why does New York State want to turn off Niagara Falls?",
           "translation": "问题1：纽约州为什么要关闭尼亚加拉瀑布？"
@@ -15398,7 +15398,7 @@
         {
           "id": "l34",
           "start": 301.87,
-          "end": 302.7,
+          "end": 302.46,
           "text": "They call it Ekaia.",
           "translation": "他们给它取名叫Ekaia。"
         },
@@ -15474,14 +15474,14 @@
         },
         {
           "id": "l45",
-          "start": 357.86,
-          "end": 364.22,
+          "start": 361.3,
+          "end": 365.25,
           "text": "Questions five to seven are based on the news report you have just heard.",
           "translation": "问题5到7基于你刚才听到的新闻报道。"
         },
         {
           "id": "l46",
-          "start": 364.22,
+          "start": 366.35,
           "end": 370.75,
           "text": "Question five: What did the three university students invent?",
           "translation": "问题5：这3名大学生发明了什么？"
@@ -15562,7 +15562,7 @@
         {
           "id": "l58",
           "start": 463.38,
-          "end": 464.65,
+          "end": 464.07,
           "text": "What can I do for you?",
           "translation": "我能帮您什么忙？"
         },
@@ -15675,7 +15675,7 @@
         {
           "id": "l75",
           "start": 502.75,
-          "end": 503.68,
+          "end": 503.34,
           "text": "What did you do?",
           "translation": "你是怎么处理的？"
         },
@@ -15783,14 +15783,14 @@
         },
         {
           "id": "l91",
-          "start": 540.19,
-          "end": 545.89,
+          "start": 542.55,
+          "end": 546.35,
           "text": "Questions eight to eleven are based on the conversation you have just heard.",
           "translation": "第8到11题基于你刚刚听到的对话。"
         },
         {
           "id": "l92",
-          "start": 545.89,
+          "start": 547.45,
           "end": 552.15,
           "text": "Question eight: What did the man do before the telephone conversation?",
           "translation": "第8题：通话之前这位男士做了什么？"
@@ -15930,7 +15930,7 @@
         {
           "id": "l112",
           "start": 685.27,
-          "end": 687.4,
+          "end": 687.51,
           "text": "The wind blew the baby onto the tracks.",
           "translation": "大风把婴儿吹到了铁轨上。"
         },
@@ -15992,8 +15992,8 @@
         },
         {
           "id": "l121",
-          "start": 718.43,
-          "end": 725.2,
+          "start": 720.1,
+          "end": 724,
           "text": "Questions 12 to 15 are based on the conversation you have just heard.",
           "translation": "12至15题根据你刚才听到的对话。"
         },
@@ -16124,7 +16124,7 @@
         {
           "id": "l140",
           "start": 881.34,
-          "end": 886.45,
+          "end": 886.66,
           "text": "Truly, my favorite part is to see the kids jumping up and down, and they just get so excited.",
           "translation": "说真的，我最喜欢的就是看孩子们蹦蹦跳跳，兴奋得不得了。"
         },
@@ -16173,14 +16173,14 @@
         {
           "id": "l147",
           "start": 915.56,
-          "end": 928.31,
+          "end": 926.4,
           "text": "\"When there are three kids and only two of them have money, I always make sure the third one gets something because I can't drive away and have that third one not have something,\" she said.",
           "translation": "\"如果三个孩子里只有两个有钱，我总会让第三个孩子也拿到一份，因为我不能开车走掉，让第三个孩子什么都没有，\"她说。"
         },
         {
           "id": "l148",
-          "start": 928.31,
-          "end": 933.43,
+          "start": 926.4,
+          "end": 931.95,
           "text": "Questions 16 to 18 are based on the passage you have just heard.",
           "translation": "16至18题基于你刚才听到的短文。"
         },
@@ -16214,14 +16214,14 @@
         {
           "id": "l153",
           "start": 996.85,
-          "end": 999.14,
+          "end": 998.03,
           "text": "We know we have to pay for what we get.",
           "translation": "我们知道得到东西就得付钱。"
         },
         {
           "id": "l154",
           "start": 999.14,
-          "end": 1001.27,
+          "end": 1000.32,
           "text": "If we buy food, we have to pay for it.",
           "translation": "如果我们买食物，就得付钱。"
         },
@@ -16921,7 +16921,7 @@
         },
         {
           "id": "l19",
-          "start": 118.07,
+          "start": 120.35,
           "end": 124.5,
           "text": "Questions one and two are based on the news report you have just heard.",
           "translation": "第1题和第2题基于你刚才听到的新闻报道。"
@@ -17095,7 +17095,7 @@
         {
           "id": "l44",
           "start": 323.05,
-          "end": 324.49,
+          "end": 323.84,
           "text": "The team was led by Dr.",
           "translation": "该团队由"
         },
@@ -17136,7 +17136,7 @@
         },
         {
           "id": "l50",
-          "start": 363.3,
+          "start": 364.8,
           "end": 368.65,
           "text": "Question five: What is the news report mainly about?",
           "translation": "问题5：这则新闻报道主要讲的是什么？"
@@ -17423,14 +17423,14 @@
         },
         {
           "id": "l92",
-          "start": 548.13,
+          "start": 550.7,
           "end": 555.1,
           "text": "Questions eight to eleven are based on the conversation you have just heard.",
           "translation": "第8到11题基于您刚听到的对话。"
         },
         {
           "id": "l93",
-          "start": 555.1,
+          "start": 556.95,
           "end": 561.9,
           "text": "Question eight: Why does the man ask about the quickest way to the airport?",
           "translation": "第8题：这位男士为什么问去机场最快的路线？"
@@ -17992,14 +17992,14 @@
         {
           "id": "l174",
           "start": 1121.49,
-          "end": 1138.33,
+          "end": 1137.1,
           "text": "Instead of focusing on a given feature, they suggest this indicates that dogs aren't sensing emotions from a single feature, but piecing together information from all facial features just as humans do.",
           "translation": "他们认为，狗不是靠某一个五官特征来感知情绪，而是像人类一样把所有面部特征的信息拼凑起来，而不是只关注某个特征。"
         },
         {
           "id": "l175",
-          "start": 1138.33,
-          "end": 1143.45,
+          "start": 1137.1,
+          "end": 1139.85,
           "text": "Questions 19 to 21 are Based on the passage you have just heard, question nineteen: What do dogs do when they are faced with angry humans?",
           "translation": "第19至21题：A 根据刚才听到的短文，第19题：狗面对愤怒的人类时会怎么做？"
         },
@@ -18506,13 +18506,13 @@
         {
           "id": "l4",
           "start": 6.65,
-          "end": 6.95,
+          "end": 7.05,
           "text": "section A, directions.",
           "translation": "A部分，答题说明。"
         },
         {
           "id": "l5",
-          "start": 6.95,
+          "start": 7.05,
           "end": 13.68,
           "text": "Directions: In this section, you will hear three news reports.",
           "translation": "说明：在本节中，你将听到3篇新闻报道。"
@@ -18700,14 +18700,14 @@
         {
           "id": "l32",
           "start": 252.32,
-          "end": 256.43,
+          "end": 254.9,
           "text": "He faces trial on several charges.",
           "translation": "他面临数项指控的审判。"
         },
         {
           "id": "l33",
-          "start": 256.43,
-          "end": 261.71,
+          "start": 254.9,
+          "end": 260.25,
           "text": "Questions three and four are based on the news report you have just heard.",
           "translation": "第3题和第4题基于你刚刚听到的新闻报道。"
         },
@@ -18796,7 +18796,7 @@
         },
         {
           "id": "l46",
-          "start": 378.01,
+          "start": 380.1,
           "end": 384.7,
           "text": "Questions five to seven are based on the news report you have just heard.",
           "translation": "第5题至第7题基于你刚刚听到的新闻报道。"
@@ -18965,7 +18965,7 @@
         {
           "id": "l71",
           "start": 515.16,
-          "end": 517.37,
+          "end": 516.14,
           "text": "You know, but the pay isn't too bad.",
           "translation": "你知道的，不过薪水还不错。"
         },
@@ -19013,7 +19013,7 @@
         {
           "id": "l78",
           "start": 542.26,
-          "end": 543,
+          "end": 543.1,
           "text": "The... Dream Team.",
           "translation": "那就是……梦之队了。"
         },
@@ -19161,7 +19161,7 @@
         {
           "id": "l100",
           "start": 590.27,
-          "end": 596.65,
+          "end": 595.7,
           "text": "Questions eight to eleven are based on the conversation you have just heard.",
           "translation": "第8题到第11题根据你刚才听到的对话回答。"
         },
@@ -19286,7 +19286,7 @@
         {
           "id": "l118",
           "start": 755.45,
-          "end": 757.23,
+          "end": 756.34,
           "text": "We have a lot of work to do.",
           "translation": "我们有很多工作要做。"
         },
@@ -19314,7 +19314,7 @@
         {
           "id": "l122",
           "start": 768.87,
-          "end": 770.2,
+          "end": 769.56,
           "text": "How much do you pay?",
           "translation": "你要付多少钱？"
         },
@@ -19361,13 +19361,13 @@
         {
           "id": "l129",
           "start": 793.48,
-          "end": 794.19,
+          "end": 794.32,
           "text": "Thank you, Gabriel.",
           "translation": "谢谢你，加布里埃尔。"
         },
         {
           "id": "l130",
-          "start": 794.64,
+          "start": 796.55,
           "end": 801.15,
           "text": "Questions 12 to 15 are based on the conversation you have just heard.",
           "translation": "第12至15题基于你刚听到的对话。"
@@ -19430,7 +19430,7 @@
         {
           "id": "l139",
           "start": 902.78,
-          "end": 903.22,
+          "end": 903.18,
           "text": "Only once."
         },
         {
@@ -19853,14 +19853,14 @@
         {
           "id": "l200",
           "start": 1391.28,
-          "end": 1393.13,
+          "end": 1392.46,
           "text": "Question twenty-one: What does Catherine realize about her Facebook friends?",
           "translation": "第21题：凯瑟琳对自己的脸书好友有什么认识？"
         },
         {
           "id": "l201",
           "start": 1393.13,
-          "end": 1395.45,
+          "end": 1395.65,
           "text": "Question twenty two: What does the speaker say about mules?",
           "translation": "第22题：讲话者说骡子是怎么回事？"
         },
@@ -20305,7 +20305,7 @@
         },
         {
           "id": "l16",
-          "start": 123.2,
+          "start": 125.2,
           "end": 128.8,
           "text": "Question one: Who did Addison raise money for?",
           "translation": "第1题：阿迪森为谁筹款？"
@@ -20436,8 +20436,8 @@
         },
         {
           "id": "l35",
-          "start": 365.65,
-          "end": 373.61,
+          "start": 367.65,
+          "end": 371.01,
           "text": "Questions five to seven are based on the news report you have just heard.",
           "translation": "第5题到第7题基于你刚听到的这则新闻报道。"
         },
@@ -20532,14 +20532,14 @@
         {
           "id": "l49",
           "start": 472.81,
-          "end": 473.11,
+          "end": 473.21,
           "text": "Yes, I am.",
           "translation": "是啊，盼着呢。"
         },
         {
           "id": "l50",
-          "start": 473.11,
-          "end": 474.2,
+          "start": 473.21,
+          "end": 473.7,
           "text": "How did you know?",
           "translation": "你怎么知道的？"
         },
@@ -20565,7 +20565,7 @@
         {
           "id": "l54",
           "start": 478.5,
-          "end": 479.45,
+          "end": 479.09,
           "text": "Oh, yes, that's right.",
           "translation": "哦，对，没错。"
         },
@@ -21113,14 +21113,14 @@
         {
           "id": "l133",
           "start": 996.74,
-          "end": 1004.48,
+          "end": 1002.6,
           "text": "No one knows how new spin-off technology from the International Space Station will help us in the future.",
           "translation": "没有人知道国际空间站的新衍生技术将来会如何帮助我们。"
         },
         {
           "id": "l134",
-          "start": 1004.48,
-          "end": 1008.95,
+          "start": 1002.6,
+          "end": 1007.1,
           "text": "Questions 16 to 18 are based on the passage you have just heard.",
           "translation": "第16至18题基于你刚听到的短文。"
         },
@@ -21378,14 +21378,14 @@
         {
           "id": "l171",
           "start": 1327.86,
-          "end": 1333.8,
+          "end": 1332.15,
           "text": "Also, when someone comes looking, you should be able to signal to them.",
           "translation": "另外，当有人来找你时，你应该能给他们发信号。"
         },
         {
           "id": "l172",
-          "start": 1333.8,
-          "end": 1338.46,
+          "start": 1332.15,
+          "end": 1337.1,
           "text": "Questions 22 to 25 are based on the passage you have just heard.",
           "translation": "22至25题基于你刚听到的短文。"
         },
@@ -21830,8 +21830,8 @@
         },
         {
           "id": "l16",
-          "start": 120.49,
-          "end": 128.31,
+          "start": 122.3,
+          "end": 125.66,
           "text": "Questions 1 and 2 are based on the news report you have just heard.",
           "translation": "问题1和问题2基于你刚听到的新闻报道。"
         },
@@ -22059,7 +22059,7 @@
         },
         {
           "id": "l49",
-          "start": 362.6,
+          "start": 364.75,
           "end": 368.6,
           "text": "Questions five to seven are based on the news report you have just heard.",
           "translation": "问题5到问题7将根据你刚刚听到的新闻报道来回答。"
@@ -22143,7 +22143,7 @@
         {
           "id": "l61",
           "start": 464.76,
-          "end": 466.27,
+          "end": 465.55,
           "text": "What are you up to tonight?",
           "translation": "你今晚打算干嘛？"
         },
@@ -22283,7 +22283,7 @@
         {
           "id": "l81",
           "start": 533.79,
-          "end": 535.25,
+          "end": 535.47,
           "text": "Then you can join me there.",
           "translation": "然后你到车站来跟我会合。"
         },
@@ -22418,7 +22418,7 @@
         {
           "id": "l101",
           "start": 640.36,
-          "end": 641.31,
+          "end": 640.95,
           "text": "So far, so good.",
           "translation": "目前还算顺利。"
         },
@@ -22452,7 +22452,7 @@
         {
           "id": "l106",
           "start": 653.25,
-          "end": 656.27,
+          "end": 655.21,
           "text": "I've saved my tips from my waiter job these past few months, and I should have enough by July.",
           "translation": "这几个月我把当服务员的小费都攒下来了，到7月应该够了。"
         },
@@ -22466,7 +22466,7 @@
         {
           "id": "l108",
           "start": 657.97,
-          "end": 662.52,
+          "end": 659.93,
           "text": "I've got A little put aside for a rainy day, but I might need to earn a little more before we go.",
           "translation": "我存了一点应急的钱，不过出发前可能还得再多挣一点。"
         },
@@ -22569,14 +22569,14 @@
         },
         {
           "id": "l123",
-          "start": 727.41,
-          "end": 733.53,
+          "start": 729.35,
+          "end": 732.99,
           "text": "Questions 12 to 15 are based on the conversation you have just heard.",
           "translation": "问题12到15基于你刚才听到的对话。"
         },
         {
           "id": "l124",
-          "start": 733.53,
+          "start": 735.6,
           "end": 739.3,
           "text": "Question 12: What does the man think of doing?",
           "translation": "问题12：男士想做什么？"
@@ -22776,7 +22776,7 @@
         },
         {
           "id": "l153",
-          "start": 967.9,
+          "start": 969.3,
           "end": 973.35,
           "text": "Questions 16 to 18 are based on the passage you have just heard.",
           "translation": "第16至18题根据你刚才听到的短文。"
@@ -22993,7 +22993,7 @@
         {
           "id": "l184",
           "start": 1217.45,
-          "end": 1219.63,
+          "end": 1218.63,
           "text": "Where do you think you'll be in ten years?",
           "translation": "你觉得十年后你会在哪里？"
         },
@@ -23583,14 +23583,14 @@
         },
         {
           "id": "l18",
-          "start": 110.13,
-          "end": 117.1,
+          "start": 112.55,
+          "end": 115.91,
           "text": "Questions 1 and 2 are based on the news report you have just heard.",
           "translation": "问题1和问题2基于你刚听到的新闻报道。"
         },
         {
           "id": "l19",
-          "start": 117.1,
+          "start": 118.45,
           "end": 122.15,
           "text": "Question 1: What is the news report mainly about?",
           "translation": "问题1：这则新闻报道主要讲了什么？"
@@ -23765,8 +23765,8 @@
         },
         {
           "id": "l44",
-          "start": 355.35,
-          "end": 362.2,
+          "start": 357.75,
+          "end": 361.11,
           "text": "Questions five to seven are Based on the news report you have just heard.",
           "translation": "第5到7题基于你刚听到的新闻报道。"
         },
@@ -23855,7 +23855,7 @@
         {
           "id": "l57",
           "start": 466.73,
-          "end": 467.56,
+          "end": 467.22,
           "text": "Yeah, why not?",
           "translation": "好啊，为什么不呢？"
         },
@@ -24000,7 +24000,7 @@
         {
           "id": "l78",
           "start": 518.7,
-          "end": 519.11,
+          "end": 519.1,
           "text": "At 7.30."
         },
         {
@@ -24076,7 +24076,7 @@
         {
           "id": "l89",
           "start": 548.2,
-          "end": 549.58,
+          "end": 548.89,
           "text": "Hmm, I'm not keen on him.",
           "translation": "嗯，我对这个人没什么好感。"
         },
@@ -24364,8 +24364,8 @@
         },
         {
           "id": "l131",
-          "start": 751.5,
-          "end": 758.35,
+          "start": 752.7,
+          "end": 757.3,
           "text": "Questions 12 to 15 are based on the conversation you have just heard.",
           "translation": "第12到15题基于你刚刚听到的对话。"
         },
@@ -24710,14 +24710,14 @@
         },
         {
           "id": "l181",
-          "start": 1159.65,
-          "end": 1165.65,
+          "start": 1160.9,
+          "end": 1164.54,
           "text": "Questions 19 to 21 are based on the passage you have just heard.",
           "translation": "问题19到21基于你刚才听到的短文。"
         },
         {
           "id": "l182",
-          "start": 1165.65,
+          "start": 1166.9,
           "end": 1172.95,
           "text": "Question 19: What does the speaker say about the American highway system?",
           "translation": "问题19：关于美国公路系统，说话者说了什么？"
@@ -25278,14 +25278,14 @@
         },
         {
           "id": "l19",
-          "start": 113.18,
+          "start": 115.65,
           "end": 119.7,
           "text": "Questions 1 and 2 are based on the news report you have just heard.",
           "translation": "问题1和2基于你刚才听到的这篇新闻报道。"
         },
         {
           "id": "l20",
-          "start": 119.7,
+          "start": 120.95,
           "end": 126.75,
           "text": "Question one: How did Kelly Swisher feel when she first came across the rat snake?",
           "translation": "问题一：凯莉·斯威舍第一次遇到鼠蛇时是什么感觉？"
@@ -25375,7 +25375,7 @@
         },
         {
           "id": "l33",
-          "start": 254.09,
+          "start": 256.85,
           "end": 261.15,
           "text": "Questions three and four are based on the news report you have just heard.",
           "translation": "问题三和问题四基于你刚听到的新闻报道。"
@@ -25688,7 +25688,7 @@
         {
           "id": "l78",
           "start": 558.75,
-          "end": 561.94,
+          "end": 560.13,
           "text": "Well, you can tell me all about it when you get back.",
           "translation": "好啊，你回来的时候再慢慢跟我讲。"
         },
@@ -25716,7 +25716,7 @@
         {
           "id": "l82",
           "start": 572.65,
-          "end": 573.13,
+          "end": 573.05,
           "text": "Bye now."
         },
         {
@@ -25886,7 +25886,7 @@
         {
           "id": "l107",
           "start": 718.44,
-          "end": 719.34,
+          "end": 719.03,
           "text": "No, not at all.",
           "translation": "不，一点都不危险。"
         },
@@ -25967,7 +25967,7 @@
         },
         {
           "id": "l119",
-          "start": 768.11,
+          "start": 769.55,
           "end": 773.3,
           "text": "Question 12, what are the speakers talking about?",
           "translation": "问题12：说话人在谈论什么？"
@@ -26134,7 +26134,7 @@
         },
         {
           "id": "l143",
-          "start": 990.18,
+          "start": 992.55,
           "end": 996.85,
           "text": "Questions sixteen to eighteen are based on the passage you have just heard.",
           "translation": "16至18题基于你刚听到的短文。"
@@ -26254,7 +26254,7 @@
         {
           "id": "l160",
           "start": 1160.92,
-          "end": 1162.25,
+          "end": 1162.32,
           "text": "We need more of it.",
           "translation": "我们需要更多这样的做法。"
         },
@@ -26455,7 +26455,7 @@
         },
         {
           "id": "l189",
-          "start": 1341.37,
+          "start": 1342.9,
           "end": 1348.05,
           "text": "Question 22, what does the passage say about dance in America?",
           "translation": "第22题：关于舞蹈在美国的情况，短文是怎么说的？"
@@ -27021,14 +27021,14 @@
         },
         {
           "id": "l35",
-          "start": 234.21,
-          "end": 240.34,
+          "start": 236.8,
+          "end": 240.85,
           "text": "Questions three and four are based on the news report you have just heard.",
           "translation": "第3、4题基于你刚听到的新闻报道。"
         },
         {
           "id": "l36",
-          "start": 240.34,
+          "start": 241.95,
           "end": 246.25,
           "text": "Question 3: What does the news item say about the fire?",
           "translation": "第3题：新闻对这场火灾说了什么？"
@@ -27161,13 +27161,13 @@
         {
           "id": "l55",
           "start": 425.4,
-          "end": 425.7,
+          "end": 425.8,
           "text": "Section B, Directions.",
           "translation": "B部分，说明。"
         },
         {
           "id": "l56",
-          "start": 425.7,
+          "start": 425.8,
           "end": 431.1,
           "text": "Directions: In this section, you will hear two long conversations.",
           "translation": "说明：在这一部分，你将听到两段长对话。"
@@ -27396,14 +27396,14 @@
         },
         {
           "id": "l89",
-          "start": 566.9,
+          "start": 569.55,
           "end": 574,
           "text": "Questions eight to eleven are based on the conversation you have just heard.",
           "translation": "第8题到第11题根据你刚刚听到的对话回答。"
         },
         {
           "id": "l90",
-          "start": 574,
+          "start": 575.3,
           "end": 579.11,
           "text": "Question eight: What does the man think of Mr.",
           "translation": "第8题：这位男士觉得……先生怎么样？"
@@ -27464,7 +27464,7 @@
         {
           "id": "l99",
           "start": 659.75,
-          "end": 661,
+          "end": 660.44,
           "text": "The Taj Mahal in India.",
           "translation": "印度的泰姬陵。"
         },
@@ -27775,14 +27775,14 @@
         },
         {
           "id": "l144",
-          "start": 984.92,
-          "end": 991.7,
+          "start": 987,
+          "end": 990.64,
           "text": "Questions 16 to 18 are based on the passage you have just heard.",
           "translation": "第16至18题基于你刚听到的短文。"
         },
         {
           "id": "l145",
-          "start": 991.7,
+          "start": 992.9,
           "end": 998.9,
           "text": "Question 16: What do most Americans say about local public libraries?",
           "translation": "第16题：大多数美国人对本地公共图书馆有何评价？"
@@ -28367,13 +28367,13 @@
         {
           "id": "l4",
           "start": 8.4,
-          "end": 8.7,
+          "end": 8.8,
           "text": "Section A Directions",
           "translation": "A部分说明"
         },
         {
           "id": "l5",
-          "start": 8.7,
+          "start": 8.8,
           "end": 14.11,
           "text": "Directions: In this section, you will hear three news reports.",
           "translation": "说明：在这一部分，你将听到三篇新闻报道。"
@@ -28939,8 +28939,8 @@
         },
         {
           "id": "l87",
-          "start": 575.1,
-          "end": 581.05,
+          "start": 576.45,
+          "end": 579.81,
           "text": "Questions eight to eleven are based on the conversation you have just heard.",
           "translation": "第8到11题基于你刚刚听到的对话。"
         },
@@ -29002,7 +29002,7 @@
         {
           "id": "l96",
           "start": 678.28,
-          "end": 680.8,
+          "end": 681.36,
           "text": "I can call to add two more to the table if you'd like.",
           "translation": "如果你愿意，我可以打电话给餐厅再加两个位子。"
         },
@@ -29175,7 +29175,7 @@
         {
           "id": "l121",
           "start": 764.84,
-          "end": 767.8,
+          "end": 766.31,
           "text": "Just let me know what type of food you would like to try.",
           "translation": "你想吃什么类型的，告诉我就行。"
         },
@@ -29500,14 +29500,14 @@
         {
           "id": "l168",
           "start": 1152.05,
-          "end": 1161.65,
+          "end": 1159.9,
           "text": "Moreover, some of the objects on the moon are still being used, including a laser range reflector left by the Apollo 11 crew.",
           "translation": "此外，月球上的一些物品仍在使用，包括阿波罗11号乘组留下的激光测距反射器。"
         },
         {
           "id": "l169",
-          "start": 1161.65,
-          "end": 1166.65,
+          "start": 1159.9,
+          "end": 1164.75,
           "text": "Questions 19 to 21 are based on the passage you have just heard.",
           "translation": "19至21题基于你刚听到的短文。"
         },
@@ -30111,7 +30111,7 @@
         },
         {
           "id": "l18",
-          "start": 111.83,
+          "start": 113.65,
           "end": 118.15,
           "text": "Questions one and two are based on the news report you have just heard.",
           "translation": "问题1和问题2根据你刚听到的新闻报道。"
@@ -30637,7 +30637,7 @@
         {
           "id": "l94",
           "start": 720,
-          "end": 720.54,
+          "end": 720.56,
           "text": "No money."
         },
         {
@@ -30691,7 +30691,7 @@
         },
         {
           "id": "l102",
-          "start": 750.14,
+          "start": 751.6,
           "end": 755,
           "text": "Question 12. What does the man want to know?",
           "translation": "第十二题。男士想了解什么？"
@@ -31012,14 +31012,14 @@
         },
         {
           "id": "l148",
-          "start": 1145.6,
+          "start": 1147.1,
           "end": 1152,
           "text": "Questions 19 to 21 are based on the passage you have just heard.",
           "translation": "问题19到21基于你刚刚听到的短文。"
         },
         {
           "id": "l149",
-          "start": 1152,
+          "start": 1153.3,
           "end": 1157.9,
           "text": "Question 19: What is the focus of the speaker's research?",
           "translation": "问题19：演讲者的研究重点是什么？"
@@ -31068,7 +31068,7 @@
         {
           "id": "l156",
           "start": 1237.35,
-          "end": 1240.75,
+          "end": 1238.82,
           "text": "Let me go and show these kids how to do it,\" he said.",
           "translation": "让我去教这些孩子怎么下吧。\"他说。"
         },
@@ -31674,12 +31674,12 @@
         {
           "id": "l28",
           "start": 239.54,
-          "end": 239.86,
+          "end": 239.94,
           "text": "And cold."
         },
         {
           "id": "l29",
-          "start": 239.86,
+          "start": 239.94,
           "end": 248.08,
           "text": "\"Antarctica creates a hostile environment,\" says the operations director for the British Antarctic Survey.",
           "translation": "“南极洲环境恶劣，”英国南极调查局的运营总监说。"
@@ -31693,14 +31693,14 @@
         },
         {
           "id": "l31",
-          "start": 252.17,
+          "start": 254.2,
           "end": 258.55,
           "text": "Questions three and four are based on the news report you have just heard.",
           "translation": "问题3和问题4基于你刚听到的新闻报道。"
         },
         {
           "id": "l32",
-          "start": 258.55,
+          "start": 259.85,
           "end": 264.55,
           "text": "Question three: What was the small plane's mission to Antarctica?",
           "translation": "问题3：这架小型飞机飞往南极洲的任务是什么？"
@@ -31762,7 +31762,7 @@
         {
           "id": "l41",
           "start": 350.65,
-          "end": 352.58,
+          "end": 351.54,
           "text": "At the end of the video, Mr.",
           "translation": "在视频结尾，先生——"
         },
@@ -31890,7 +31890,7 @@
         {
           "id": "l60",
           "start": 487.19,
-          "end": 487.7,
+          "end": 487.59,
           "text": "Hi, Emma."
         },
         {
@@ -31931,7 +31931,7 @@
         {
           "id": "l66",
           "start": 498,
-          "end": 499.75,
+          "end": 498.89,
           "text": "Can you put it in my mailbox?",
           "translation": "能把它放进我的信箱吗？"
         },
@@ -32033,7 +32033,7 @@
         {
           "id": "l81",
           "start": 553.23,
-          "end": 554.05,
+          "end": 553.72,
           "text": "No, you don't.",
           "translation": "不需要。"
         },
@@ -32047,7 +32047,7 @@
         {
           "id": "l83",
           "start": 558.78,
-          "end": 559.52,
+          "end": 559.27,
           "text": "Oh, yes, I did.",
           "translation": "哦，对，是付过了。"
         },
@@ -32081,20 +32081,20 @@
         {
           "id": "l88",
           "start": 568.68,
-          "end": 569.75,
+          "end": 569.8,
           "text": "Yes, see you then.",
           "translation": "好的，到时见。"
         },
         {
           "id": "l89",
-          "start": 569.75,
+          "start": 571.1,
           "end": 575.85,
           "text": "Questions eight to eleven are based on the conversation you have just heard.",
           "translation": "第8到11题基于您刚听到的对话。"
         },
         {
           "id": "l90",
-          "start": 575.85,
+          "start": 577.55,
           "end": 581.45,
           "text": "Question eight: Why is the man making the phone call?",
           "translation": "第8题：男士为什么打电话？"
@@ -32309,8 +32309,8 @@
         },
         {
           "id": "l121",
-          "start": 751.5,
-          "end": 759.01,
+          "start": 752.9,
+          "end": 757.7,
           "text": "Questions 12 to 15 are based on the conversation you have just heard.",
           "translation": "第12到15题基于你刚听到的对话。"
         },
@@ -32510,14 +32510,14 @@
         },
         {
           "id": "l150",
-          "start": 989.75,
-          "end": 995.9,
+          "start": 990.95,
+          "end": 994.59,
           "text": "Questions 16 to 18 are based on the passage you have just heard.",
           "translation": "问题16至18基于你刚刚听到的短文。"
         },
         {
           "id": "l151",
-          "start": 995.9,
+          "start": 997.1,
           "end": 1001.7,
           "text": "Question 16: What does the speaker say about Mount Etna?",
           "translation": "问题16：说话者对埃特纳火山说了什么？"
@@ -32642,7 +32642,7 @@
         },
         {
           "id": "l169",
-          "start": 1160.3,
+          "start": 1161.75,
           "end": 1166.45,
           "text": "Questions 19 to 21 are based on the passage you have just heard.",
           "translation": "第19到21题基于你刚听到的短文。"
@@ -32781,8 +32781,8 @@
         },
         {
           "id": "l189",
-          "start": 1324.03,
-          "end": 1331.1,
+          "start": 1325.95,
+          "end": 1329.59,
           "text": "Questions 22 to 25 are based on the passage you have just heard.",
           "translation": "第22至25题基于你刚才听到的短文。"
         },
@@ -33501,7 +33501,7 @@
         },
         {
           "id": "l56",
-          "start": 376.9,
+          "start": 378.1,
           "end": 382.45,
           "text": "Questions five to seven are based on the news report you have just heard.",
           "translation": "第5题到第7题基于你刚听到的新闻报道。"
@@ -33646,7 +33646,7 @@
         {
           "id": "l77",
           "start": 515.35,
-          "end": 515.88,
+          "end": 515.75,
           "text": "Kind of."
         },
         {
@@ -33673,7 +33673,7 @@
         {
           "id": "l81",
           "start": 538.5,
-          "end": 540,
+          "end": 539.29,
           "text": "Okay, so it'll be both.",
           "translation": "好吧，那它就是两者兼有。"
         },
@@ -34011,7 +34011,7 @@
         {
           "id": "l130",
           "start": 793.35,
-          "end": 793.87,
+          "end": 793.75,
           "text": "Thank you."
         },
         {
@@ -34177,14 +34177,14 @@
         {
           "id": "l154",
           "start": 1004.2,
-          "end": 1019.22,
+          "end": 1017.9,
           "text": "All-girls schools tend to be smaller than coeducational schools, which means teachers will be able to tailor the materials to girls' students' personal learning styles and interests.",
           "translation": "女子学校往往比男女合校规模更小，这意味着老师可以根据女生的学习风格和兴趣来调整教材。"
         },
         {
           "id": "l155",
-          "start": 1019.22,
-          "end": 1024.06,
+          "start": 1017.9,
+          "end": 1022.9,
           "text": "Questions 16 to 18 are based on the passage you have just heard.",
           "translation": "问题16到18基于你刚听到的短文。"
         },
@@ -35082,7 +35082,7 @@
         {
           "id": "l40",
           "start": 298.08,
-          "end": 298.85,
+          "end": 298.92,
           "text": "At the top.",
           "translation": "在楼顶。"
         },
@@ -35151,7 +35151,7 @@
         },
         {
           "id": "l50",
-          "start": 363.44,
+          "start": 365.7,
           "end": 370.15,
           "text": "Questions five to seven are based on the news report you have just heard.",
           "translation": "问题五至问题七基于你刚听到的新闻报道。"
@@ -35366,7 +35366,7 @@
         {
           "id": "l81",
           "start": 564.08,
-          "end": 565.15,
+          "end": 564.67,
           "text": "Hmm, you're right.",
           "translation": "嗯，你说得对。"
         },
@@ -35524,7 +35524,7 @@
         {
           "id": "l104",
           "start": 717.11,
-          "end": 719.5,
+          "end": 718.19,
           "text": "What do you mean by part of the problem?",
           "translation": "你说\"问题的一部分\"是什么意思？"
         },
@@ -35800,14 +35800,14 @@
         {
           "id": "l144",
           "start": 992.42,
-          "end": 997.89,
+          "end": 995.85,
           "text": "It helps you to actively develop your analytical skills.",
           "translation": "它帮助你积极地培养分析能力。"
         },
         {
           "id": "l145",
-          "start": 997.89,
-          "end": 1003.4,
+          "start": 995.85,
+          "end": 1001.4,
           "text": "Questions 16 to 18 are based on the passage you have just heard.",
           "translation": "问题16到18基于你刚听到的短文。"
         },
@@ -35924,8 +35924,8 @@
         },
         {
           "id": "l162",
-          "start": 1168.5,
-          "end": 1175.64,
+          "start": 1169.75,
+          "end": 1174.35,
           "text": "Questions 19 to 21 are based on the passage you have just heard.",
           "translation": "19至21题根据你刚才听到的短文回答。"
         },
@@ -36050,14 +36050,14 @@
         {
           "id": "l180",
           "start": 1326.27,
-          "end": 1335.03,
+          "end": 1333.5,
           "text": "Jude and his family have been invited by the researchers to see the fossil being preserved at the university.",
           "translation": "研究人员邀请裘德和家人到大学观看化石的保存过程。"
         },
         {
           "id": "l181",
-          "start": 1335.03,
-          "end": 1340.23,
+          "start": 1333.5,
+          "end": 1337.14,
           "text": "Questions 22 to 25 are based on the passage you have just heard.",
           "translation": "22至25题基于你刚才听到的短文。"
         },
@@ -36764,7 +36764,7 @@
         },
         {
           "id": "l54",
-          "start": 381.79,
+          "start": 383.75,
           "end": 387.55,
           "text": "Questions five to seven are based on the news report you have just heard.",
           "translation": "第5至7题基于你刚听到的新闻报道。"
@@ -36861,7 +36861,7 @@
         {
           "id": "l68",
           "start": 489.45,
-          "end": 490.07,
+          "end": 489.94,
           "text": "Yes and no.",
           "translation": "喜欢也不喜欢。"
         },
@@ -36993,8 +36993,8 @@
         },
         {
           "id": "l87",
-          "start": 587.75,
-          "end": 594.32,
+          "start": 589.55,
+          "end": 593.65,
           "text": "Questions eight to eleven are based on the conversation you have just heard.",
           "translation": "第8到11题基于你刚才听到的对话。"
         },
@@ -37597,14 +37597,14 @@
         {
           "id": "l174",
           "start": 1332.91,
-          "end": 1346.33,
+          "end": 1344.2,
           "text": "If you're concerned that the amount of television you're watching could have a negative impact on your health, you should limit the amount of TV you watch each day and undertake some healthy hobbies.",
           "translation": "如果你担心自己看电视的时间过长会对健康造成不良影响，就应该限制每天看电视的时间，并培养一些健康的爱好。"
         },
         {
           "id": "l175",
-          "start": 1346.33,
-          "end": 1350.85,
+          "start": 1344.2,
+          "end": 1348.8,
           "text": "Questions 22 to 25 are based on the passage you have just heard.",
           "translation": "第22至25题基于你刚听到的短文。"
         },
@@ -38179,8 +38179,8 @@
         },
         {
           "id": "l34",
-          "start": 234.82,
-          "end": 239.54,
+          "start": 236.65,
+          "end": 239.78,
           "text": "Questions three and four are based on the news report.",
           "translation": "第3题和第4题基于新闻报道。"
         },
@@ -38381,7 +38381,7 @@
         {
           "id": "l63",
           "start": 490.51,
-          "end": 491.02,
+          "end": 490.91,
           "text": "But how?"
         },
         {
@@ -38533,14 +38533,14 @@
         {
           "id": "l85",
           "start": 635.75,
-          "end": 637.77,
+          "end": 637.13,
           "text": "Question ten: What might the man tend to buy with payment apps?",
           "translation": "第十题：男士可能倾向于用支付应用购买什么？"
         },
         {
           "id": "l86",
           "start": 637.77,
-          "end": 640.3,
+          "end": 640.57,
           "text": "Question eleven, what does the man think of electronic payment?",
           "translation": "问题11：这位男士怎么看电子支付？"
         },
@@ -38586,12 +38586,12 @@
         {
           "id": "l93",
           "start": 666.65,
-          "end": 667.02,
+          "end": 667.05,
           "text": "No, no."
         },
         {
           "id": "l94",
-          "start": 667.02,
+          "start": 667.05,
           "end": 668.3,
           "text": "The table is fine.",
           "translation": "桌子没问题。"
@@ -38924,8 +38924,8 @@
         },
         {
           "id": "l143",
-          "start": 887.9,
-          "end": 901.53,
+          "start": 889.25,
+          "end": 901.74,
           "text": "Say hello to a TV show called Tidying Up with Marie Kondo, a home improvement show based on her wildly popular book, the The life-changing magic of tidying up.",
           "translation": "向你推荐一档叫《和近藤麻理惠一起整理》的电视节目，这是一档家居改造节目，改编自她那本超级畅销书《怦然心动的人生整理魔法》。"
         },
@@ -39288,8 +39288,8 @@
         },
         {
           "id": "l195",
-          "start": 1337.55,
-          "end": 1344.35,
+          "start": 1339.3,
+          "end": 1343.78,
           "text": "Question 22: What were the college students in both groups required to do in the study?",
           "translation": "问题22：在这项研究中，两组大学生都被要求做什么？"
         },
@@ -39725,7 +39725,7 @@
         },
         {
           "id": "l16",
-          "start": 97.55,
+          "start": 98.8,
           "end": 102.8,
           "text": "Questions one and two are based on the news report you have just heard.",
           "translation": "第1题和第2题基于你刚听到的新闻报道。"
@@ -39879,14 +39879,14 @@
         },
         {
           "id": "l38",
-          "start": 328.92,
-          "end": 334.5,
+          "start": 330.85,
+          "end": 334.95,
           "text": "Questions five to seven are based on the news report you have just heard.",
           "translation": "问题5至问题7基于你刚刚听到的新闻报道。"
         },
         {
           "id": "l39",
-          "start": 334.5,
+          "start": 335.8,
           "end": 340.2,
           "text": "Question five: What happened to the Philippine fisherman one day?",
           "translation": "问题5：这位菲律宾渔民某天遭遇了什么？"
@@ -40050,7 +40050,7 @@
         {
           "id": "l63",
           "start": 477.05,
-          "end": 478.07,
+          "end": 477.64,
           "text": "Could I ask you, Mr.",
           "translation": "我能请问一下吗，先生……"
         },
@@ -40138,7 +40138,7 @@
         },
         {
           "id": "l76",
-          "start": 530.69,
+          "start": 532.5,
           "end": 536.4,
           "text": "Questions eight to eleven are based on the conversation you have just heard.",
           "translation": "第8题到第11题基于你刚刚听到的对话。"
@@ -40711,8 +40711,8 @@
         },
         {
           "id": "l159",
-          "start": 1128.34,
-          "end": 1136.05,
+          "start": 1130.2,
+          "end": 1134.45,
           "text": "Questions nineteen to twenty-one are based on the passage you have just heard.",
           "translation": "第19到21题基于你刚听到的短文。"
         },
@@ -40802,7 +40802,7 @@
         {
           "id": "l172",
           "start": 1253.9,
-          "end": 1256.95,
+          "end": 1255.18,
           "text": "However, it's not long before the mice begin to catch on.",
           "translation": "不过没过多久，老鼠们就摸到了门道。"
         },
@@ -41205,13 +41205,13 @@
         {
           "id": "l3",
           "start": 7.9,
-          "end": 8.2,
+          "end": 8.3,
           "text": "section A, directions.",
           "translation": "A部分，答题说明。"
         },
         {
           "id": "l4",
-          "start": 8.2,
+          "start": 8.3,
           "end": 13.58,
           "text": "Directions: In this section, you will hear three news reports.",
           "translation": "说明：在本部分中，你将听到三篇新闻报道。"
@@ -41433,14 +41433,14 @@
         },
         {
           "id": "l36",
-          "start": 209.05,
+          "start": 210.6,
           "end": 215.05,
           "text": "Questions three and four are based on the news report you have just heard.",
           "translation": "问题3和问题4基于你刚刚听到的新闻报道。"
         },
         {
           "id": "l37",
-          "start": 215.05,
+          "start": 216.55,
           "end": 220.65,
           "text": "Question three: What is Maraf's vote on Tuesday about?",
           "translation": "问题3：Maraf周二的投票是关于什么的？"
@@ -41517,7 +41517,7 @@
         {
           "id": "l48",
           "start": 315.38,
-          "end": 319.27,
+          "end": 316.95,
           "text": "The door was held for 15 to 20 people at a time at each location.",
           "translation": "在每个地点，一次会为15到20个人扶门。"
         },
@@ -41676,7 +41676,7 @@
         {
           "id": "l71",
           "start": 460.28,
-          "end": 463.17,
+          "end": 461.56,
           "text": "He tells me it has saved him over $500 thus far.",
           "translation": "他说到目前为止已经省了500多美元。"
         },
@@ -41812,12 +41812,12 @@
         {
           "id": "l91",
           "start": 540.56,
-          "end": 540.86,
+          "end": 541.12,
           "text": "Thank you."
         },
         {
           "id": "l92",
-          "start": 540.86,
+          "start": 542.85,
           "end": 546.95,
           "text": "Questions 8 to 11 are based on the conversation you have just heard.",
           "translation": "问题8到11基于你刚听到的对话。"
@@ -41879,7 +41879,7 @@
         {
           "id": "l101",
           "start": 638.45,
-          "end": 639.27,
+          "end": 638.94,
           "text": "Oh, no problem.",
           "translation": "哦，没问题。"
         },
@@ -41934,7 +41934,7 @@
         {
           "id": "l109",
           "start": 673.65,
-          "end": 676.97,
+          "end": 675.03,
           "text": "So, what sort of deals do you have for package holidays then?",
           "translation": "那么，你们的跟团游有哪些优惠套餐呢？"
         },
@@ -41948,7 +41948,7 @@
         {
           "id": "l111",
           "start": 678.64,
-          "end": 681.54,
+          "end": 680.02,
           "text": "How long do you want to go for, and on what dates?",
           "translation": "您想去多长时间？什么日期出发？"
         },
@@ -42932,7 +42932,7 @@
         },
         {
           "id": "l17",
-          "start": 108.6,
+          "start": 110.05,
           "end": 114.25,
           "text": "Questions one and two are based on the news report you have just heard.",
           "translation": "第1题和第2题基于你刚听到的新闻报道。"
@@ -43016,8 +43016,8 @@
         },
         {
           "id": "l29",
-          "start": 223.24,
-          "end": 228.5,
+          "start": 219.65,
+          "end": 223.45,
           "text": "Question three. What is Kirstine Marshall trying to do?",
           "translation": "问题3。克斯汀·马歇尔想要做什么？"
         },
@@ -43209,7 +43209,7 @@
         {
           "id": "l57",
           "start": 451.61,
-          "end": 453.54,
+          "end": 452.5,
           "text": "How about inviting people to come at 6 p.m.",
           "translation": "请大家下午6点来怎么样？"
         },
@@ -43318,7 +43318,7 @@
         {
           "id": "l73",
           "start": 507.6,
-          "end": 508.65,
+          "end": 508.19,
           "text": "What do you think?",
           "translation": "你觉得呢？"
         },
@@ -43578,7 +43578,7 @@
         {
           "id": "l111",
           "start": 716.99,
-          "end": 719.7,
+          "end": 719.79,
           "text": "He's a lovely guy, and he'll be happy to help.",
           "translation": "他人很好，而且会很乐意帮忙。"
         },
@@ -44086,7 +44086,7 @@
         {
           "id": "l184",
           "start": 1378.95,
-          "end": 1380.2,
+          "end": 1379.64,
           "text": "That's the end of listening.",
           "translation": "听力到此结束。"
         },
@@ -44520,7 +44520,7 @@
         },
         {
           "id": "l19",
-          "start": 113.45,
+          "start": 114.8,
           "end": 119.2,
           "text": "Questions 1 and 2 are based on the news report you have just heard.",
           "translation": "第1题和第2题基于你刚才听到的新闻报道。"
@@ -44590,15 +44590,15 @@
         },
         {
           "id": "l29",
-          "start": 230.26,
-          "end": 236.01,
+          "start": 232.5,
+          "end": 236.65,
           "text": "Questions three and four are based on the news report you have just heard.",
           "translation": "第3题和第4题将根据你刚才听到的新闻报道作答。"
         },
         {
           "id": "l30",
-          "start": 236.01,
-          "end": 239.98,
+          "start": 238,
+          "end": 241.3,
           "text": "Question three: What do we learn",
           "translation": "第3题：我们了解到什么？第4题：苏格兰电力公司的首席执行官在全能源大会召开前说了什么？"
         },
@@ -44702,15 +44702,15 @@
         },
         {
           "id": "l45",
-          "start": 362.71,
-          "end": 368.07,
+          "start": 364.6,
+          "end": 368.6,
           "text": "Questions five to seven are based on the news report you have just heard.",
           "translation": "第5题至第7题将根据你刚才听到的新闻报道作答。"
         },
         {
           "id": "l46",
-          "start": 368.07,
-          "end": 374.25,
+          "start": 370.8,
+          "end": 374.72,
           "text": "Question five: What do we learn from the news report about the Japanese IT firm?",
           "translation": "第5题：关于这家日本IT公司，我们从新闻报道中了解到什么？"
         },
@@ -44832,7 +44832,7 @@
         {
           "id": "l64",
           "start": 479.89,
-          "end": 481.55,
+          "end": 481.57,
           "text": "I'd come in and check with you.",
           "translation": "进来跟你打听一下。"
         },
@@ -44881,14 +44881,14 @@
         {
           "id": "l71",
           "start": 505.35,
-          "end": 507.4,
+          "end": 507.87,
           "text": "But still, a bit too much to just let go.",
           "translation": "不过话说回来，就这么算了还是有点亏。"
         },
         {
           "id": "l72",
           "start": 508.4,
-          "end": 510.45,
+          "end": 509.38,
           "text": "He told us he'd got into an accident.",
           "translation": "他跟我们说他出了事故。"
         },
@@ -44929,7 +44929,7 @@
         {
           "id": "l78",
           "start": 535.98,
-          "end": 541.06,
+          "end": 538.04,
           "text": "See, I did think it was a bit weird for him to be asking for money for that sort of thing.",
           "translation": "你看，我确实觉得他为那种事情要钱有点奇怪。"
         },
@@ -45047,7 +45047,7 @@
         {
           "id": "l95",
           "start": 679.05,
-          "end": 679.8,
+          "end": 679.54,
           "text": "Oh, come on.",
           "translation": "哦，得了吧。"
         },
@@ -45344,7 +45344,7 @@
         },
         {
           "id": "l138",
-          "start": 966.63,
+          "start": 968.5,
           "end": 972.45,
           "text": "Questions 16 to 18 are based on the passage you have just heard.",
           "translation": "16至18题基于你刚听到的短文。"
@@ -46219,7 +46219,7 @@
         },
         {
           "id": "l38",
-          "start": 240.64,
+          "start": 241.9,
           "end": 246.5,
           "text": "Question three: What do we learn about the mother elephant, Semba?",
           "translation": "问题三：关于母象桑巴，我们了解到什么？"
@@ -46323,7 +46323,7 @@
         {
           "id": "l53",
           "start": 346.34,
-          "end": 348.69,
+          "end": 348.86,
           "text": "It was from 1855 and worth as much as $2,000.",
           "translation": "它是1855年的，价值高达2,000美元。"
         },
@@ -46462,7 +46462,7 @@
         {
           "id": "l73",
           "start": 498.65,
-          "end": 499.11,
+          "end": 499.05,
           "text": "It does."
         },
         {
@@ -46600,7 +46600,7 @@
         {
           "id": "l93",
           "start": 656.06,
-          "end": 658.92,
+          "end": 657.73,
           "text": "I estimate you have between two hundred and ten and two hundred and fifty acres of arable land.",
           "translation": "我估计你有210到250英亩的可耕地。"
         },
@@ -47234,14 +47234,14 @@
         },
         {
           "id": "l185",
-          "start": 1321.59,
-          "end": 1327.65,
+          "start": 1323.15,
+          "end": 1328.25,
           "text": "Questions 22 to 25 are based on the passage you have just heard.",
           "translation": "22至25题基于你刚听到的短文。"
         },
         {
           "id": "l186",
-          "start": 1327.65,
+          "start": 1329.1,
           "end": 1333.95,
           "text": "Question 22: Why are some people criticizing the British government?",
           "translation": "第22题：为什么有人批评英国政府？"
@@ -49462,15 +49462,15 @@
         },
         {
           "id": "l27",
-          "start": 134.65,
+          "start": 136.2,
           "end": 140.65,
           "text": "Questions one and two are based on the news report you have just heard.",
           "translation": "第1题和第2题基于你刚才听到的新闻报道。"
         },
         {
           "id": "l28",
-          "start": 140.65,
-          "end": 147,
+          "start": 143.75,
+          "end": 147.39,
           "text": "Question one: What do we learn about the new study from the news report?",
           "translation": "第1题：从新闻报道中，我们对这项新研究有什么了解？"
         },
@@ -49663,8 +49663,8 @@
         },
         {
           "id": "l56",
-          "start": 384.22,
-          "end": 390.8,
+          "start": 386.2,
+          "end": 389.56,
           "text": "Questions 5 to 7 are based on the news report you have just heard.",
           "translation": "第5至7题基于你刚听到的新闻报道。"
         },
@@ -49918,7 +49918,7 @@
         {
           "id": "l93",
           "start": 692.99,
-          "end": 694.25,
+          "end": 694.39,
           "text": "Do you have any advice?",
           "translation": "你有什么建议吗？"
         },
@@ -50076,14 +50076,14 @@
         },
         {
           "id": "l116",
-          "start": 817.65,
+          "start": 819.2,
           "end": 824.45,
           "text": "Questions 12 to 15 are based on the conversation you have just heard.",
           "translation": "第12到15题基于你刚听到的对话。"
         },
         {
           "id": "l117",
-          "start": 824.45,
+          "start": 825.9,
           "end": 830.25,
           "text": "Question 12. What does the woman advise the man do?",
           "translation": "问题12。女士建议男士做什么？"
@@ -50234,7 +50234,7 @@
         },
         {
           "id": "l139",
-          "start": 1047.52,
+          "start": 1049.9,
           "end": 1054.7,
           "text": "Questions 16 to 18 are based on the passage you have just heard.",
           "translation": "问题16到18基于你刚听到的短文。"
@@ -50381,8 +50381,8 @@
         },
         {
           "id": "l160",
-          "start": 1252.1,
-          "end": 1259.98,
+          "start": 1253.55,
+          "end": 1261.7,
           "text": "Question 19: What do we learn from the current statistics about diversity",
           "translation": "问题19：从目前关于多元化的统计数据中我们能了解到什么？问题20。"
         },
@@ -50506,8 +50506,8 @@
         },
         {
           "id": "l178",
-          "start": 1447.95,
-          "end": 1458,
+          "start": 1449.15,
+          "end": 1456.15,
           "text": "Question 22: What is a major key to success in international business, according to the passage?",
           "translation": "问题22：根据短文，国际商务成功的一大关键是什么？"
         },
@@ -51078,12 +51078,12 @@
         {
           "id": "l35",
           "start": 240.65,
-          "end": 240.95,
+          "end": 241.05,
           "text": "Just heard."
         },
         {
           "id": "l36",
-          "start": 240.95,
+          "start": 241.05,
           "end": 248.25,
           "text": "Question three: What does the news report say about the accident at the crossing of High Street and Milton?",
           "translation": "问题3：新闻报道对高街与米尔顿路口发生的事故说了什么？"
@@ -51154,7 +51154,7 @@
         {
           "id": "l46",
           "start": 348.5,
-          "end": 352.01,
+          "end": 349.97,
           "text": "This is not a low-cost option, but it is an option, she added.",
           "translation": "她补充说，这不是一个低成本选项，但它是一个选项。"
         },
@@ -51504,7 +51504,7 @@
         },
         {
           "id": "l97",
-          "start": 590.98,
+          "start": 592.75,
           "end": 596.8,
           "text": "Question eight: What does the woman plan to do for the weekend?",
           "translation": "第8题：这位女士周末打算做什么？"
@@ -51725,8 +51725,8 @@
         },
         {
           "id": "l129",
-          "start": 811.9,
-          "end": 819.45,
+          "start": 813.4,
+          "end": 817.04,
           "text": "Questions twelve to fifteen are based on the conversation you have just heard.",
           "translation": "12到15题基于你刚听到的对话。"
         },
@@ -52052,8 +52052,8 @@
         },
         {
           "id": "l176",
-          "start": 1225.8,
-          "end": 1235.55,
+          "start": 1227.65,
+          "end": 1233,
           "text": "Question 19: What does the new study suggest about young people today and those from the previous generation?",
           "translation": "问题19：这项新研究对当今的年轻人和上一代人有何提示？"
         },
@@ -52727,8 +52727,8 @@
         },
         {
           "id": "l29",
-          "start": 235.06,
-          "end": 239.22,
+          "start": 237.15,
+          "end": 239.44,
           "text": "Questions three and four are based on the news report.",
           "translation": "问题3和问题4基于这则新闻报道。"
         },
@@ -52844,7 +52844,7 @@
         },
         {
           "id": "l46",
-          "start": 368.85,
+          "start": 370.6,
           "end": 374.8,
           "text": "Questions five to seven are based on the news report you have just heard.",
           "translation": "5到7题基于你刚听到的新闻报道。"
@@ -53117,7 +53117,7 @@
         },
         {
           "id": "l86",
-          "start": 561.05,
+          "start": 563.5,
           "end": 567.55,
           "text": "Questions eight to eleven are based on the conversation you have just heard.",
           "translation": "第8到11题基于你刚听到的对话。"
@@ -53860,14 +53860,14 @@
         },
         {
           "id": "l194",
-          "start": 1314.96,
-          "end": 1325.16,
+          "start": 1316.3,
+          "end": 1322.74,
           "text": "Being left-handed maximizes their chances of success in these Questions 22 to 25 are based on the passage you have just heard.",
           "translation": "左撇子的身份能让他们在这些项目中成功的几率最大化。第22至25题基于你刚才听到的短文。"
         },
         {
           "id": "l195",
-          "start": 1325.16,
+          "start": 1326.75,
           "end": 1331.35,
           "text": "Question 22: What does the passage say about left-handed people?",
           "translation": "第22题：短文关于左撇子说了什么？"
@@ -54418,15 +54418,15 @@
         },
         {
           "id": "l32",
-          "start": 229.7,
-          "end": 235.43,
+          "start": 231.9,
+          "end": 236,
           "text": "Questions three and four are based on the news report you have just heard.",
           "translation": "问题3和问题4基于你刚刚听到的新闻报道。"
         },
         {
           "id": "l33",
-          "start": 235.43,
-          "end": 240.12,
+          "start": 236.95,
+          "end": 241.35,
           "text": "Question three: What is scientists warning",
           "translation": "问题3：科学家发出了什么警告？问题4：关于今年格陵兰岛的融化季节，我们了解到什么？"
         },
@@ -54655,7 +54655,7 @@
         {
           "id": "l66",
           "start": 511.9,
-          "end": 520.55,
+          "end": 515.14,
           "text": "Birthday reminders can be helpful, but I kind of worry I won't be able to drum up my own day and show it to look as exciting as it is supposed to be.",
           "translation": "生日提醒可能会有帮助，但我有点担心自己没法把这一天张罗起来，没法把它表现得像大家期待的那样热闹。"
         },
@@ -54708,7 +54708,7 @@
         },
         {
           "id": "l74",
-          "start": 551.44,
+          "start": 552.85,
           "end": 557.1,
           "text": "Questions eight to eleven are based on the conversation you have just heard.",
           "translation": "第8到11题基于你刚才听到的对话。"
@@ -54883,7 +54883,7 @@
         {
           "id": "l99",
           "start": 712.04,
-          "end": 713.75,
+          "end": 714,
           "text": "Or you could just walk to work.",
           "translation": "或者你干脆走着去上班。"
         },
@@ -54950,14 +54950,14 @@
         },
         {
           "id": "l109",
-          "start": 740.44,
-          "end": 746.08,
+          "start": 742.25,
+          "end": 746.6,
           "text": "Questions twelve to fifteen are based on the conversation you have just heard.",
           "translation": "第12至15题基于你刚听到的对话。"
         },
         {
           "id": "l110",
-          "start": 746.08,
+          "start": 747.35,
           "end": 751.25,
           "text": "Question twelve. What does the woman say about her subway ride?",
           "translation": "问题12：女士说她坐地铁的经历如何？"
@@ -55950,7 +55950,7 @@
         {
           "id": "l33",
           "start": 240.23,
-          "end": 243.67,
+          "end": 243.03,
           "text": "Four are based on the news report you have just heard.",
           "translation": "这4道题基于你刚听到的新闻报道。"
         },
@@ -56033,14 +56033,14 @@
         },
         {
           "id": "l45",
-          "start": 369.25,
-          "end": 375.48,
+          "start": 372,
+          "end": 376,
           "text": "Questions 5 to 7 are based on the news report you have just heard.",
           "translation": "第5至7题基于你刚听到的新闻报道。"
         },
         {
           "id": "l46",
-          "start": 375.48,
+          "start": 376.8,
           "end": 382.45,
           "text": "Question 5: What does the news report say about French people's bread consumption?",
           "translation": "第5题：这则新闻报道关于法国人的面包消费说了什么？"
@@ -56263,14 +56263,14 @@
         {
           "id": "l79",
           "start": 527.87,
-          "end": 529.21,
+          "end": 528.66,
           "text": "The price will be the same.",
           "translation": "价格是一样的。"
         },
         {
           "id": "l80",
           "start": 529.21,
-          "end": 532.66,
+          "end": 530.78,
           "text": "All you need to do is wait at the far end of the platform.",
           "translation": "你只需要在站台最远的那一端等着就行了。"
         },
@@ -56488,7 +56488,7 @@
         {
           "id": "l112",
           "start": 708.96,
-          "end": 713.35,
+          "end": 710.73,
           "text": "The fact that we have been open and in business for all these years proves it.",
           "translation": "我们这么多年一直开门营业，就证明了这一点。"
         },
@@ -56542,7 +56542,7 @@
         },
         {
           "id": "l120",
-          "start": 738.81,
+          "start": 740.4,
           "end": 744.75,
           "text": "Questions 12 to 15 are based on the conversation you have just heard.",
           "translation": "第12到15题基于你刚听到的对话。"
@@ -56736,7 +56736,7 @@
         {
           "id": "l148",
           "start": 951.6,
-          "end": 955.05,
+          "end": 953.07,
           "text": "Questions sixteen to eighteen are based on the passage you have just heard.",
           "translation": "第16到18题基于你刚才听到的短文。"
         },
@@ -56854,7 +56854,7 @@
         {
           "id": "l165",
           "start": 1112.31,
-          "end": 1115.05,
+          "end": 1115.11,
           "text": "She had a lot of fun and learned a really good lesson.",
           "translation": "她玩得很开心，还学到了很好的一课。"
         },
@@ -57472,7 +57472,7 @@
         },
         {
           "id": "l20",
-          "start": 95.52,
+          "start": 97.45,
           "end": 101.65,
           "text": "Questions one and two are based on the news report you have just heard.",
           "translation": "第1题和第2题基于你刚才听到的新闻报道。"
@@ -57603,8 +57603,8 @@
         },
         {
           "id": "l39",
-          "start": 239.4,
-          "end": 246.14,
+          "start": 240.65,
+          "end": 245,
           "text": "Questions three and four are based on the news report you have just heard.",
           "translation": "问题三和问题四基于你刚听到的新闻报道。"
         },
@@ -57852,7 +57852,7 @@
         {
           "id": "l75",
           "start": 491,
-          "end": 494.62,
+          "end": 492.47,
           "text": "So, blue light is harmful and that's why you want to block it?",
           "translation": "所以蓝光有害，所以你想把它挡掉？"
         },
@@ -58287,7 +58287,7 @@
         },
         {
           "id": "l138",
-          "start": 988,
+          "start": 990.65,
           "end": 994.33,
           "text": "Questions sixteen to eighteen are based on the passage you have just heard.",
           "translation": "第16至18题基于你刚才听到的短文。"
@@ -58510,14 +58510,14 @@
         {
           "id": "l170",
           "start": 1264.8,
-          "end": 1268.25,
+          "end": 1268.44,
           "text": "It sells the idea of the nap as much as the nap itself.",
           "translation": "它卖的不只是午睡本身，更是午睡的理念。"
         },
         {
           "id": "l171",
           "start": 1269.4,
-          "end": 1270.2,
+          "end": 1270.52,
           "text": "Is a nap worth $25?",
           "translation": "午睡值25美元吗？"
         },
@@ -59050,15 +59050,15 @@
         },
         {
           "id": "l19",
-          "start": 87.52,
-          "end": 92.99,
+          "start": 89.75,
+          "end": 93.55,
           "text": "Questions one and two are based on the news report you have just heard.",
           "translation": "第1题和第2题基于你刚听到的这则新闻报道。"
         },
         {
           "id": "l20",
-          "start": 92.99,
-          "end": 97.25,
+          "start": 95.35,
+          "end": 97.87,
           "text": "Question one: What do we learn from the police report?",
           "translation": "第1题：从警方报告中我们了解到什么？"
         },
@@ -59264,7 +59264,7 @@
         },
         {
           "id": "l50",
-          "start": 327.4,
+          "start": 328.75,
           "end": 332.75,
           "text": "Questions five to seven are based on the news report you have just heard.",
           "translation": "问题五到七基于你刚听到的新闻报道。"
@@ -59401,7 +59401,7 @@
         {
           "id": "l70",
           "start": 456.2,
-          "end": 458.76,
+          "end": 457.38,
           "text": "The way the person related to their mum and dad.",
           "translation": "就看这个人小时候是怎么和父母相处的。"
         },
@@ -59543,7 +59543,7 @@
         },
         {
           "id": "l91",
-          "start": 544.2,
+          "start": 546.5,
           "end": 550.2,
           "text": "Questions eight to eleven are based on the conversation you have just heard.",
           "translation": "第8到11题基于你刚刚听到的对话。"
@@ -59737,7 +59737,7 @@
         {
           "id": "l119",
           "start": 707.59,
-          "end": 710.25,
+          "end": 710.39,
           "text": "I have a 34 waist, and size 30 or 32 in length.",
           "translation": "我腰围34，裤长30或32。"
         },
@@ -60195,7 +60195,7 @@
         },
         {
           "id": "l185",
-          "start": 1147,
+          "start": 1148.25,
           "end": 1152.6,
           "text": "Questions 19 to 21 are based on the passage you have just heard.",
           "translation": "第19至21题根据你刚听到的短文提出。"
@@ -60793,7 +60793,7 @@
         {
           "id": "l11",
           "start": 59.32,
-          "end": 61.75,
+          "end": 61.84,
           "text": "Now it seems that Their brains are alike too.",
           "translation": "现在看来，他们的大脑也很相似。"
         },
@@ -60855,7 +60855,7 @@
         },
         {
           "id": "l20",
-          "start": 122.65,
+          "start": 123.85,
           "end": 130.95,
           "text": "Question 1: What may be the reason that friends are similar to each other, according to the recent research?",
           "translation": "第1题：根据最近的研究，朋友之间彼此相似的原因可能是什么？"
@@ -60932,8 +60932,8 @@
         },
         {
           "id": "l31",
-          "start": 224.75,
-          "end": 232.3,
+          "start": 226.05,
+          "end": 230.4,
           "text": "Questions three and four are based on the news report you have just heard.",
           "translation": "第3题和第4题基于你刚听到的新闻报道。"
         },
@@ -61113,7 +61113,7 @@
         {
           "id": "l57",
           "start": 448.08,
-          "end": 449.55,
+          "end": 449.76,
           "text": "Would you like to join us?",
           "translation": "你要一起来吗？"
         },
@@ -61127,13 +61127,13 @@
         {
           "id": "l59",
           "start": 455.85,
-          "end": 456.29,
+          "end": 456.41,
           "text": "Oh dear."
         },
         {
           "id": "l60",
           "start": 456.43,
-          "end": 457.1,
+          "end": 456.92,
           "text": "Is it serious?",
           "translation": "严重吗？"
         },
@@ -61175,7 +61175,7 @@
         {
           "id": "l66",
           "start": 473.27,
-          "end": 473.71,
+          "end": 473.67,
           "text": "The zoo?"
         },
         {
@@ -61236,7 +61236,7 @@
         {
           "id": "l75",
           "start": 500.88,
-          "end": 501.9,
+          "end": 502,
           "text": "Yeah, I think he will.",
           "translation": "在，我觉得他在。"
         },
@@ -61505,7 +61505,7 @@
         },
         {
           "id": "l114",
-          "start": 727.63,
+          "start": 729.6,
           "end": 734.1,
           "text": "Questions twelve to fifteen are based on the conversation you have just heard.",
           "translation": "问题12到15基于你刚听到的对话。"
@@ -61649,7 +61649,7 @@
         },
         {
           "id": "l135",
-          "start": 912.84,
+          "start": 914.55,
           "end": 917.5,
           "text": "Other experiments showed similar results based on racial group.",
           "translation": "其他实验基于种族群体也显示出类似结果。"
@@ -61830,7 +61830,7 @@
         {
           "id": "l161",
           "start": 1141.74,
-          "end": 1146.25,
+          "end": 1145.38,
           "text": "Questions 19 to 21 are based on the passage you have just heard.",
           "translation": "第19至21题基于你刚刚听到的短文。"
         },
@@ -61955,14 +61955,14 @@
         {
           "id": "l179",
           "start": 1304.3,
-          "end": 1320,
+          "end": 1318.65,
           "text": "We don't know if you'll achieve what these risk takers have achieved, but for as long as you want to stay safe, and for as long as you're content with where your business is right now, you will never find out.",
           "translation": "我们不知道你能否取得这些冒险家那样的成就，但只要你只想求安稳，只要安于企业目前的现状，你就永远无从得知。"
         },
         {
           "id": "l180",
-          "start": 1320,
-          "end": 1325.1,
+          "start": 1318.65,
+          "end": 1323.05,
           "text": "Questions 22 to 25 are based on the passage you have just heard.",
           "translation": "问题22至25基于你刚才听到的短文。"
         },
@@ -62496,8 +62496,8 @@
         },
         {
           "id": "l29",
-          "start": 211.25,
-          "end": 218.6,
+          "start": 212.75,
+          "end": 217.3,
           "text": "Questions three and four are based on the news report you have just heard.",
           "translation": "问题3和问题4基于你刚才听到的新闻报道。"
         },
@@ -62608,8 +62608,8 @@
         },
         {
           "id": "l45",
-          "start": 340.7,
-          "end": 347.12,
+          "start": 341.95,
+          "end": 346.1,
           "text": "Questions five to seven are based on the news report you have just heard.",
           "translation": "第5到7题基于你刚听到的新闻报道。"
         },
@@ -62691,7 +62691,7 @@
         {
           "id": "l57",
           "start": 443.95,
-          "end": 446.3,
+          "end": 445.03,
           "text": "So, where do you want to go for lunch?",
           "translation": "那么，你午饭想去哪儿吃？"
         },
@@ -62737,12 +62737,12 @@
         {
           "id": "l64",
           "start": 453.37,
-          "end": 453.69,
+          "end": 453.77,
           "text": "No, sorry."
         },
         {
           "id": "l65",
-          "start": 453.69,
+          "start": 453.77,
           "end": 455.84,
           "text": "I don't feel like sandwiches today.",
           "translation": "我今天不想吃三明治。"
@@ -62782,12 +62782,12 @@
         {
           "id": "l71",
           "start": 465.84,
-          "end": 466.14,
+          "end": 466.24,
           "text": "Of course."
         },
         {
           "id": "l72",
-          "start": 466.14,
+          "start": 466.24,
           "end": 467.49,
           "text": "How could I ever forget?",
           "translation": "我怎么会忘呢？"
@@ -62828,7 +62828,7 @@
         {
           "id": "l78",
           "start": 478.8,
-          "end": 479.37,
+          "end": 479.29,
           "text": "I like that place.",
           "translation": "我喜欢那家店。"
         },
@@ -62972,15 +62972,15 @@
         },
         {
           "id": "l99",
-          "start": 525.2,
+          "start": 526.9,
           "end": 531.1,
           "text": "Questions 8 to 11 are based on the conversation you have just heard.",
           "translation": "第8到11题基于你刚刚听到的对话。"
         },
         {
           "id": "l100",
-          "start": 531.1,
-          "end": 535.98,
+          "start": 532.3,
+          "end": 534.54,
           "text": "Question eight: What do we learn about the woman?",
           "translation": "问题八：我们了解到关于这位女士的什么信息？"
         },
@@ -63014,7 +63014,7 @@
         {
           "id": "l105",
           "start": 616.55,
-          "end": 618.15,
+          "end": 617.34,
           "text": "Hi there, how are you today?",
           "translation": "你好，今天过得怎么样？"
         },
@@ -63055,7 +63055,7 @@
         {
           "id": "l111",
           "start": 630.5,
-          "end": 631.7,
+          "end": 631.19,
           "text": "Yes, we have it here.",
           "translation": "有的，就在这儿。"
         },
@@ -63185,8 +63185,8 @@
         },
         {
           "id": "l130",
-          "start": 711.95,
-          "end": 719,
+          "start": 713.3,
+          "end": 717.9,
           "text": "Questions twelve to fifteen are based on the conversation you have just heard.",
           "translation": "问题12到15基于你刚听到的对话。"
         },
@@ -63289,7 +63289,7 @@
         {
           "id": "l145",
           "start": 848.05,
-          "end": 850.25,
+          "end": 850.29,
           "text": "They're even beginning to drive our cars.",
           "translation": "它们甚至开始替我们开车了。"
         },
@@ -63373,14 +63373,14 @@
         {
           "id": "l157",
           "start": 936.6,
-          "end": 944.92,
+          "end": 943.55,
           "text": "Participants were more willing to employ deceptive strategies when assigned an AI agent to negotiate on their behalf.",
           "translation": "当被指派AI代理代为谈判时，参与者更愿意使用欺骗策略。"
         },
         {
           "id": "l158",
-          "start": 944.92,
-          "end": 949.43,
+          "start": 943.55,
+          "end": 948.05,
           "text": "Questions 16 to 18 are based on the passage you have just heard.",
           "translation": "问题16到18基于你刚刚听到的短文。"
         },
@@ -64393,7 +64393,7 @@
         },
         {
           "id": "l50",
-          "start": 365.68,
+          "start": 369.15,
           "end": 372.5,
           "text": "Question 5: What do the researchers' tests show about the cloned dog?",
           "translation": "问题5：研究人员的测试显示这只克隆犬怎么样？"
@@ -64482,7 +64482,7 @@
         {
           "id": "l63",
           "start": 479.41,
-          "end": 484.03,
+          "end": 481.28,
           "text": "Well, sounds Sounds like if you're going to read anything for fun, this is the book.",
           "translation": "那这么说，如果你想看点消遣的东西，就该看这本书。"
         },
@@ -64524,7 +64524,7 @@
         {
           "id": "l69",
           "start": 516.45,
-          "end": 524.55,
+          "end": 524.85,
           "text": "It's rare for the show or movie to be better than the book, and then you just end up ruining the book for yourself if the show isn't very good.",
           "translation": "剧或电影很少比原著好，如果剧拍得不好，你就会毁了自己对这本书的好印象。"
         },
@@ -64580,7 +64580,7 @@
         {
           "id": "l77",
           "start": 554.22,
-          "end": 555.56,
+          "end": 554.91,
           "text": "Thanks for the tip, Alice.",
           "translation": "谢谢你的建议，爱丽丝。"
         },
@@ -64592,8 +64592,8 @@
         },
         {
           "id": "l79",
-          "start": 556.5,
-          "end": 563.29,
+          "start": 558,
+          "end": 561.36,
           "text": "Questions eight to eleven are based on the conversation you have just heard.",
           "translation": "第8到11题基于你刚刚听到的对话。"
         },
@@ -64655,7 +64655,7 @@
         {
           "id": "l88",
           "start": 657.78,
-          "end": 658.53,
+          "end": 658.27,
           "text": "Yes, of course.",
           "translation": "当然可以。"
         },
@@ -64704,7 +64704,7 @@
         {
           "id": "l95",
           "start": 683.19,
-          "end": 689.58,
+          "end": 686.23,
           "text": "Do you prefer to fill out an application on the web, or to print it out and fill it in by hand and then post it back to us?",
           "translation": "你更愿意在网上填申请表，还是打印出来手写填好再寄回给我们？"
         },
@@ -64752,7 +64752,7 @@
         {
           "id": "l102",
           "start": 725.42,
-          "end": 727,
+          "end": 727.1,
           "text": "The post code is NU29 3LJ.",
           "translation": "邮编是NU29 3LJ。"
         },
@@ -64958,14 +64958,14 @@
         {
           "id": "l132",
           "start": 945.15,
-          "end": 954.21,
+          "end": 952.8,
           "text": "They have been attracted by a patch of land that is close to wilderness, and it is their responsibility to keep it that way.",
           "translation": "他们被这片接近荒野的土地所吸引，就有责任让它保持原样。"
         },
         {
           "id": "l133",
-          "start": 954.21,
-          "end": 959.15,
+          "start": 952.8,
+          "end": 956.95,
           "text": "Questions 16 to 18 are based on the passage you have just heard.",
           "translation": "第16至18题基于你刚听到的短文。"
         },
@@ -65658,7 +65658,7 @@
         },
         {
           "id": "l17",
-          "start": 101.3,
+          "start": 105.35,
           "end": 110.05,
           "text": "Question one. What do we learn about the JetBlue Airlines flight from the news report?",
           "translation": "问题一。从新闻报道中我们对捷蓝航空的这次航班有何了解？"
@@ -65735,14 +65735,14 @@
         },
         {
           "id": "l28",
-          "start": 215.15,
+          "start": 217,
           "end": 221.5,
           "text": "Questions three and four are based on the news report you have just heard.",
           "translation": "问题三和问题四将根据你刚才听到的新闻报道作答。"
         },
         {
           "id": "l29",
-          "start": 221.5,
+          "start": 222.85,
           "end": 227.9,
           "text": "Question three: What do we learn about the deadly snake from the news report?",
           "translation": "问题三：从这则新闻报道中，我们能了解到关于这条毒蛇的什么信息？"
@@ -65819,14 +65819,14 @@
         },
         {
           "id": "l40",
-          "start": 337,
+          "start": 338.3,
           "end": 342.85,
           "text": "Questions five to seven are based on the news report you have just heard.",
           "translation": "问题5到问题7基于你刚才听到的新闻报道。"
         },
         {
           "id": "l41",
-          "start": 342.85,
+          "start": 344.15,
           "end": 351.45,
           "text": "Question five: What do we learn from the news report about the introduction of electric bikes into Jacksonville?",
           "translation": "问题5：关于电动自行车引入杰克逊维尔，我们从新闻报道中了解到什么？"
@@ -66015,7 +66015,7 @@
         {
           "id": "l68",
           "start": 545.15,
-          "end": 547.35,
+          "end": 547.39,
           "text": "Yes, it's such an important lesson to learn.",
           "translation": "是啊，这真是一堂很重要的课。"
         },
@@ -66214,14 +66214,14 @@
         },
         {
           "id": "l97",
-          "start": 748.82,
+          "start": 750.55,
           "end": 755.05,
           "text": "Questions twelve to fifteen are based on the conversation you have just heard.",
           "translation": "第12到15题基于你刚听到的对话。"
         },
         {
           "id": "l98",
-          "start": 755.05,
+          "start": 756.3,
           "end": 759.45,
           "text": "Question twelve. What do we learn about the man?",
           "translation": "问题十二。我们对这位男士有何了解？"
@@ -67286,14 +67286,14 @@
         },
         {
           "id": "l35",
-          "start": 227.9,
-          "end": 233.83,
+          "start": 230.35,
+          "end": 234.4,
           "text": "Questions three and four are based on the news report you have just heard.",
           "translation": "问题3和问题4基于你刚才听到的新闻报道。"
         },
         {
           "id": "l36",
-          "start": 233.83,
+          "start": 235.1,
           "end": 240.35,
           "text": "Question three: What does the news report say the Wilton School Board has",
           "translation": "问题3：新闻报道说威尔顿学校董事会提出了什么？问题4。"
@@ -67641,7 +67641,7 @@
         {
           "id": "l86",
           "start": 639.3,
-          "end": 639.6,
+          "end": 639.7,
           "text": "Hi, Mary."
         },
         {
@@ -68062,14 +68062,14 @@
         {
           "id": "l147",
           "start": 1154.07,
-          "end": 1165.13,
+          "end": 1163.2,
           "text": "And the team also found that participants were willing to look at listings with lower salaries if they came from companies with a higher diversity score.",
           "translation": "团队还发现，如果职位来自多元化评分较高的公司，参与者也愿意查看薪资较低的职位。"
         },
         {
           "id": "l148",
-          "start": 1165.13,
-          "end": 1170.1,
+          "start": 1163.2,
+          "end": 1168.45,
           "text": "Questions 19 to 21 are based on the passage you have just heard.",
           "translation": "第19至21题基于你刚刚听到的短文。"
         },
@@ -68172,15 +68172,15 @@
         },
         {
           "id": "l163",
-          "start": 1333.1,
-          "end": 1338.19,
+          "start": 1334.3,
+          "end": 1338.65,
           "text": "Questions 22 to 25 are based on the passage you have just heard.",
           "translation": "第22至25题基于你刚刚听到的短文。"
         },
         {
           "id": "l164",
-          "start": 1338.19,
-          "end": 1346.45,
+          "start": 1339.45,
+          "end": 1344.45,
           "text": "Question 22: What does the passage say about the findings of a new study from Oregon State University?",
           "translation": "第22题：关于俄勒冈州立大学这项新研究的发现，短文是怎么说的？"
         },
@@ -68672,7 +68672,7 @@
         },
         {
           "id": "l24",
-          "start": 123.45,
+          "start": 124.9,
           "end": 130.2,
           "text": "Question one: Why are families across the U.S looking to this winter with fear?",
           "translation": "第1题：为什么美国各地的家庭对今年冬天心怀恐惧？"
@@ -68762,14 +68762,14 @@
         },
         {
           "id": "l37",
-          "start": 236.27,
-          "end": 242.6,
+          "start": 238.9,
+          "end": 243.3,
           "text": "Questions three and Four are based on the news report you have just heard.",
           "translation": "第3题和第4题基于你刚才听到的新闻报道。"
         },
         {
           "id": "l38",
-          "start": 242.6,
+          "start": 243.95,
           "end": 249.15,
           "text": "Question three: What is the main finding of a new study about many Americans?",
           "translation": "第3题：关于许多美国人，这项新研究的主要发现是什么？"
@@ -69006,7 +69006,7 @@
         {
           "id": "l72",
           "start": 506.12,
-          "end": 507.7,
+          "end": 507.01,
           "text": "Well, what do you do now then?",
           "translation": "那你现在怎么做呢？"
         },
@@ -69179,12 +69179,12 @@
         {
           "id": "l97",
           "start": 700.97,
-          "end": 701.27,
+          "end": 701.37,
           "text": "Oh, oh!"
         },
         {
           "id": "l98",
-          "start": 701.27,
+          "start": 701.37,
           "end": 703.07,
           "text": "What about volleyball?",
           "translation": "排球怎么样？"
@@ -69296,7 +69296,7 @@
         {
           "id": "l114",
           "start": 841.45,
-          "end": 843.81,
+          "end": 843.02,
           "text": "Listen to the audio and choose the best answers from the choices marked A, B, C, and D.",
           "translation": "听录音，从标有A、B、C、D的选项中选出最佳答案。"
         },
@@ -69512,14 +69512,14 @@
         {
           "id": "l145",
           "start": 1134.67,
-          "end": 1144.9,
+          "end": 1143.2,
           "text": "And of course, if a child doesn't have a pet in their own household, they can still benefit from all of the above When visiting a friend who does.",
           "translation": "当然，如果孩子自己家里没有宠物，在去有宠物的朋友家做客时，他们仍然能获得以上所有好处。"
         },
         {
           "id": "l146",
-          "start": 1144.9,
-          "end": 1149.96,
+          "start": 1143.2,
+          "end": 1147.45,
           "text": "Questions nineteen to twenty-one are based on the passage you have just heard.",
           "translation": "19至21题基于你刚听到的短文。"
         },
@@ -69686,7 +69686,7 @@
         {
           "id": "l170",
           "start": 1380.63,
-          "end": 1381.4,
+          "end": 1381.47,
           "text": "From the passage.",
           "translation": "根据短文。"
         },
@@ -70019,7 +70019,7 @@
         {
           "id": "l3",
           "start": 9.29,
-          "end": 9.8,
+          "end": 9.69,
           "text": "Section A, Directions",
           "translation": "A部分，说明"
         },
@@ -70143,14 +70143,14 @@
         },
         {
           "id": "l21",
-          "start": 114.42,
-          "end": 119.62,
+          "start": 116.8,
+          "end": 121.2,
           "text": "Questions one and two are based on the news report.",
           "translation": "第1题和第2题基于这则新闻报道。"
         },
         {
           "id": "l22",
-          "start": 120.91,
+          "start": 123.8,
           "end": 126.2,
           "text": "Question 1: How did Tariq make corn taste better?",
           "translation": "问题1：塔里克是怎么让玉米更好吃的？"
@@ -70317,14 +70317,14 @@
         },
         {
           "id": "l46",
-          "start": 363.9,
-          "end": 369.87,
+          "start": 366.1,
+          "end": 370.45,
           "text": "Questions five to seven are based on the news report you have just heard.",
           "translation": "第5至7题基于你刚刚听到的新闻报道。"
         },
         {
           "id": "l47",
-          "start": 369.87,
+          "start": 371.45,
           "end": 375.7,
           "text": "Question five: Why has the clothing industry come under attack?",
           "translation": "第5题：服装业为什么遭到抨击？"
@@ -70419,7 +70419,7 @@
         {
           "id": "l61",
           "start": 470.26,
-          "end": 472.17,
+          "end": 471.24,
           "text": "Rush hour in this city is killing me.",
           "translation": "这座城市的高峰期快把我逼疯了。"
         },
@@ -70432,7 +70432,7 @@
         {
           "id": "l63",
           "start": 472.52,
-          "end": 473,
+          "end": 472.92,
           "text": "Ah, yes."
         },
         {
@@ -70692,13 +70692,13 @@
         {
           "id": "l101",
           "start": 654.73,
-          "end": 655.03,
+          "end": 655.22,
           "text": "Is he okay?",
           "translation": "他没事吧？"
         },
         {
           "id": "l102",
-          "start": 655.03,
+          "start": 655.22,
           "end": 657.7,
           "text": "He had some plastic surgery done.",
           "translation": "他做了整形手术。"
@@ -70759,7 +70759,7 @@
         {
           "id": "l111",
           "start": 673.56,
-          "end": 674.57,
+          "end": 674.15,
           "text": "What do you mean?",
           "translation": "什么意思？"
         },
@@ -70842,7 +70842,7 @@
         {
           "id": "l123",
           "start": 716.57,
-          "end": 718.18,
+          "end": 718.25,
           "text": "No, no, that's not the reason.",
           "translation": "不，不，不是这个原因。"
         },
@@ -70897,13 +70897,13 @@
         {
           "id": "l131",
           "start": 739.59,
-          "end": 740.35,
+          "end": 740.43,
           "text": "\"You're right."
         },
         {
           "id": "l132",
           "start": 740.75,
-          "end": 743.72,
+          "end": 742.03,
           "text": "So he is insane to give in to her like that.",
           "translation": "那他这样迁就她简直就是疯了。"
         },
@@ -71118,14 +71118,14 @@
         {
           "id": "l163",
           "start": 959.44,
-          "end": 970.68,
+          "end": 969.3,
           "text": "The reason they Switched to making sounds, the theory goes, is that talking out loud lets you communicate with someone even when you can't see them.",
           "translation": "这个理论认为，他们之所以转而发出声音，是因为大声说话能让你在看不见对方时也能与之交流。"
         },
         {
           "id": "l164",
-          "start": 970.68,
-          "end": 975.2,
+          "start": 969.3,
+          "end": 973.7,
           "text": "Questions 16 to 18 are based on the passage you have just heard.",
           "translation": "第16至18题基于你刚刚听到的短文。"
         },
@@ -71229,7 +71229,7 @@
         {
           "id": "l179",
           "start": 1108.44,
-          "end": 1110.25,
+          "end": 1109.33,
           "text": "This is the era of social media.",
           "translation": "这是社交媒体的时代。"
         },
@@ -71263,7 +71263,7 @@
         },
         {
           "id": "l184",
-          "start": 1149.3,
+          "start": 1150.5,
           "end": 1157.65,
           "text": "Question 19, how would people describe someone who shows off their social status according to new research?",
           "translation": "第19题：根据新研究，人们会如何描述炫耀社会地位的人？"
@@ -71776,7 +71776,7 @@
         {
           "id": "l4",
           "start": 9.48,
-          "end": 9.95,
+          "end": 9.88,
           "text": "Section A, Directions",
           "translation": "A部分，说明"
         },
@@ -71907,8 +71907,8 @@
         },
         {
           "id": "l23",
-          "start": 120.8,
-          "end": 127.75,
+          "start": 122.1,
+          "end": 126.45,
           "text": "Questions one and two are based on the news report you have just heard.",
           "translation": "第1题和第2题基于你刚听到的新闻报道。"
         },
@@ -72005,14 +72005,14 @@
         {
           "id": "l37",
           "start": 236.5,
-          "end": 239.92,
+          "end": 237.9,
           "text": "Questions three and four are based.",
           "translation": "第3题和第4题基于。"
         },
         {
           "id": "l38",
-          "start": 239.92,
-          "end": 242.82,
+          "start": 237.9,
+          "end": 242.15,
           "text": "Based on the news report you have just heard.",
           "translation": "基于你刚听到的新闻报道。"
         },
@@ -72231,12 +72231,12 @@
         {
           "id": "l70",
           "start": 480.45,
-          "end": 480.75,
+          "end": 480.85,
           "text": "That's true."
         },
         {
           "id": "l71",
-          "start": 480.75,
+          "start": 480.85,
           "end": 482.5,
           "text": "I'm not sure we can afford it.",
           "translation": "我不确定我们负担得起。"
@@ -72293,7 +72293,7 @@
         {
           "id": "l79",
           "start": 507.9,
-          "end": 513.89,
+          "end": 510.26,
           "text": "And if we move far enough from the city center, the rent is low enough for us to afford all of it.",
           "translation": "而且只要我们离市中心够远，房租就够低，所有费用我们都能负担。"
         },
@@ -72526,7 +72526,7 @@
         {
           "id": "l113",
           "start": 697.2,
-          "end": 698,
+          "end": 697.69,
           "text": "Yes, of course.",
           "translation": "当然有。"
         },
@@ -72650,7 +72650,7 @@
         {
           "id": "l131",
           "start": 752.23,
-          "end": 753.02,
+          "end": 752.72,
           "text": "\"There you are.",
           "translation": "\"给您。"
         },
@@ -72670,7 +72670,7 @@
         {
           "id": "l134",
           "start": 756.56,
-          "end": 756.99,
+          "end": 756.96,
           "text": "You too.\""
         },
         {
@@ -73572,15 +73572,15 @@
         },
         {
           "id": "l17",
-          "start": 98.59,
-          "end": 104.07,
+          "start": 100.3,
+          "end": 104.55,
           "text": "Questions one and two are based on the news report you have just heard.",
           "translation": "第1题和第2题基于你刚听到的新闻报道。"
         },
         {
           "id": "l18",
-          "start": 104.07,
-          "end": 108.15,
+          "start": 106.55,
+          "end": 108.51,
           "text": "Question one: Where was the black cat found?",
           "translation": "问题一：这只黑猫是在哪里被发现的？"
         },
@@ -73883,7 +73883,7 @@
         {
           "id": "l62",
           "start": 441.42,
-          "end": 441.9,
+          "end": 441.82,
           "text": "No meat?"
         },
         {
@@ -73903,7 +73903,7 @@
         {
           "id": "l65",
           "start": 446.85,
-          "end": 449.85,
+          "end": 449.93,
           "text": "What does he do to strengthen his muscles and all that?",
           "translation": "他是怎么锻炼肌肉之类的？"
         },
@@ -74022,7 +74022,7 @@
         {
           "id": "l82",
           "start": 507.83,
-          "end": 510.1,
+          "end": 508.91,
           "text": "But just don't let him hear you say that.",
           "translation": "不过千万别让他听到你说这话。"
         },
@@ -74201,7 +74201,7 @@
         },
         {
           "id": "l108",
-          "start": 697.92,
+          "start": 700.15,
           "end": 704.15,
           "text": "Questions twelve to fifteen are based on the conversation you have just heard.",
           "translation": "第12到15题基于你刚刚听到的对话。"
@@ -74491,7 +74491,7 @@
         },
         {
           "id": "l150",
-          "start": 1100.05,
+          "start": 1101.65,
           "end": 1106,
           "text": "Questions 19 to 21 are based on the passage you have just heard.",
           "translation": "问题19至21基于你刚刚听到的短文。"
@@ -74541,12 +74541,12 @@
         {
           "id": "l157",
           "start": 1183.14,
-          "end": 1183.45,
+          "end": 1183.54,
           "text": "Headteacher Dr."
         },
         {
           "id": "l158",
-          "start": 1183.45,
+          "start": 1183.54,
           "end": 1190.3,
           "text": "Roger Harris confirmed that this was due to a change in the school's uniform policy.",
           "translation": "罗杰·哈里斯证实，这是由于学校校服政策发生了变化。"
@@ -75041,12 +75041,12 @@
         {
           "id": "l10",
           "start": 62.77,
-          "end": 63.07,
+          "end": 63.17,
           "text": "25 cents."
         },
         {
           "id": "l11",
-          "start": 63.07,
+          "start": 63.17,
           "end": 67.95,
           "text": "That's more than double their $1.78 price in December 2023.",
           "translation": "比2023年12月的$1.78涨了一倍多。"
@@ -75193,7 +75193,7 @@
         {
           "id": "l32",
           "start": 227.35,
-          "end": 229.8,
+          "end": 228.43,
           "text": "Moms are tired and don't have time to cook.",
           "translation": "妈妈们已经很累了，没时间做饭。"
         },
@@ -75234,7 +75234,7 @@
         },
         {
           "id": "l38",
-          "start": 252.4,
+          "start": 253.9,
           "end": 259.35,
           "text": "Question three: What do we learn from the news report about the restaurant, Nettie's House?",
           "translation": "第3题：从这则新闻报道中，我们对Nettie's House这家餐厅有什么了解？"
@@ -75330,7 +75330,7 @@
         },
         {
           "id": "l52",
-          "start": 377.65,
+          "start": 379.25,
           "end": 383.75,
           "text": "Questions five to seven are based on the news report you have just heard.",
           "translation": "问题5到问题7基于你刚才听到的新闻报道。"
@@ -75497,7 +75497,7 @@
         {
           "id": "l77",
           "start": 502.78,
-          "end": 504.05,
+          "end": 503.47,
           "text": "How much did she win?",
           "translation": "她赢了多少钱？"
         },
@@ -75649,13 +75649,13 @@
         {
           "id": "l99",
           "start": 574.1,
-          "end": 580.4,
+          "end": 580.54,
           "text": "He says the car is the best thing that has ever happened to him, and if she sells it, he will divorce her.",
           "translation": "他说这辆车是他这辈子遇到的最好的东西，要是她敢卖，他就跟她离婚。"
         },
         {
           "id": "l100",
-          "start": 580.4,
+          "start": 581.9,
           "end": 586.3,
           "text": "Questions eight to eleven are based on the conversation you have just heard.",
           "translation": "第8到11题基于你刚刚听到的对话。"
@@ -76015,14 +76015,14 @@
         {
           "id": "l152",
           "start": 981.49,
-          "end": 994.94,
+          "end": 993.1,
           "text": "Database technology enabled business leaders to look to hard evidence in analyzing target markets and promotional strategies rather than making assumptions or guesses on what works.",
           "translation": "数据库技术使商界领导者在分析目标市场和推广策略时能依靠确凿证据，而不是凭假设或猜测来判断什么有效。"
         },
         {
           "id": "l153",
-          "start": 994.94,
-          "end": 999.55,
+          "start": 993.1,
+          "end": 997.5,
           "text": "Questions 16 to 18 are based on the passage you have just heard.",
           "translation": "第16至18题基于你刚听到的短文。"
         },
@@ -76183,7 +76183,7 @@
         {
           "id": "l176",
           "start": 1170.66,
-          "end": 1173.3,
+          "end": 1173.46,
           "text": "Question 19: What do we learn about Brâneas Moreira?",
           "translation": "第19题：关于布拉尼亚斯·莫雷拉，我们知道什么？"
         },
@@ -76869,7 +76869,7 @@
         },
         {
           "id": "l30",
-          "start": 222.55,
+          "start": 223.8,
           "end": 228.1,
           "text": "Questions three and four are based on the news report you have just heard.",
           "translation": "问题3和问题4基于你刚刚听到的新闻报道。"
@@ -77071,7 +77071,7 @@
         {
           "id": "l59",
           "start": 465.3,
-          "end": 468.5,
+          "end": 468.66,
           "text": "A: Hey, Mike, what do you think of the museum you visited today?",
           "translation": "A：嘿，迈克，你觉得今天参观的博物馆怎么样？"
         },
@@ -77229,7 +77229,7 @@
         {
           "id": "l82",
           "start": 530.55,
-          "end": 531.29,
+          "end": 531.04,
           "text": "What is that?",
           "translation": "那是什么？"
         },
@@ -77271,7 +77271,7 @@
         {
           "id": "l88",
           "start": 547.71,
-          "end": 550.21,
+          "end": 548.79,
           "text": "Do you mind if Kathy and I join you tomorrow?",
           "translation": "你介意凯西和我明天加入你们吗？"
         },
@@ -77299,13 +77299,13 @@
         {
           "id": "l92",
           "start": 557.65,
-          "end": 560.95,
+          "end": 561.29,
           "text": "Let me ask her first, but I'm sure she'll be up for it.",
           "translation": "我先问问她，不过我确定她会愿意的。"
         },
         {
           "id": "l93",
-          "start": 560.95,
+          "start": 562.3,
           "end": 566.8,
           "text": "Questions eight to eleven are based on the conversation you have just heard.",
           "translation": "第8到11题基于你刚刚听到的对话。"
@@ -77423,7 +77423,7 @@
         {
           "id": "l110",
           "start": 699.3,
-          "end": 699.81,
+          "end": 699.7,
           "text": "Oh, right."
         },
         {
@@ -77502,7 +77502,7 @@
         },
         {
           "id": "l122",
-          "start": 747.9,
+          "start": 749.15,
           "end": 753.35,
           "text": "Questions 12 to 15 are based on the conversation you have just heard.",
           "translation": "第12到15题基于你刚才听到的对话。"
@@ -78356,13 +78356,13 @@
         {
           "id": "l4",
           "start": 7.81,
-          "end": 8.11,
+          "end": 8.21,
           "text": "Section A, Directions.",
           "translation": "A部分，答题说明。"
         },
         {
           "id": "l5",
-          "start": 8.11,
+          "start": 8.21,
           "end": 13.3,
           "text": "Directions: In this section, you will hear three news reports.",
           "translation": "说明：在本部分，你将听到3篇新闻报道。"
@@ -78570,7 +78570,7 @@
         },
         {
           "id": "l35",
-          "start": 217.55,
+          "start": 219.3,
           "end": 223.6,
           "text": "Questions three and four are based on the news report you have just heard.",
           "translation": "第3题和第4题基于你刚听到的新闻报道。"
@@ -78780,7 +78780,7 @@
         {
           "id": "l65",
           "start": 474.46,
-          "end": 478.9,
+          "end": 476.23,
           "text": "I can book it and take the payment over the phone if that's not a problem for you.",
           "translation": "如果您不介意的话，我可以帮您订票，通过电话收款。"
         },
@@ -78843,7 +78843,7 @@
         {
           "id": "l74",
           "start": 519.99,
-          "end": 520.98,
+          "end": 520.58,
           "text": "Oh my goodness, no.",
           "translation": "哦，天哪，可别。"
         },
@@ -79038,14 +79038,14 @@
         {
           "id": "l102",
           "start": 760.4,
-          "end": 762.42,
+          "end": 761.78,
           "text": "Question 13: What does the woman say about her friends and family?",
           "translation": "第13题：女士对她的朋友和家人是怎么说的？"
         },
         {
           "id": "l103",
           "start": 762.42,
-          "end": 765.4,
+          "end": 766.06,
           "text": "Question fourteen: What did the man spend much time doing with his phone?",
           "translation": "14题：这个男人花了很多时间用手机做什么？"
         },
@@ -79203,7 +79203,7 @@
         },
         {
           "id": "l126",
-          "start": 950.8,
+          "start": 952,
           "end": 960.5,
           "text": "Question 16: What does the passage say about the gap in wage gains between job switchers and those who stay in their",
           "translation": "第16题：短文关于跳槽者与留在原岗位者之间工资涨幅差距说了什么？第17题：我们现在对工资增长有何了解？"
