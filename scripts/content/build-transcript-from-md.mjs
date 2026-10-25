@@ -324,6 +324,9 @@ const dedupeQuestions = (lines) => {
   const out = []
   for (const l of lines) {
     const t = String(l.text).trim()
+    // 泛化：播报句（…are based on the recording/conversation/passage…）出现在行中部
+    // 就是粘旧行（填隙把上一句尾巴和播报连成一条），两半均已有独立行
+    if (/\.\s*[Qq]uestions?\s+\S+\s*(?:to|-|–)\s*\S+\s+are\s+based\s+on/i.test(t)) continue
     if (/you have just heard\.\s*questions?\s/i.test(t)) continue
     const n = qNumOfLine(t)
     const isMdForm = /^Q\s*\d+\s*[.。:：]/.test(t)
@@ -333,14 +336,21 @@ const dedupeQuestions = (lines) => {
     }
     out.push(l)
   }
-  // 填隙碎片去重：whisper 重复转写题干时，fillLongGaps 会在邻近塞进一条
-  // 短碎片（实测 "devil's tower look like?"），其归一文本是相邻完整行的子串
+  // 填隙碎片去重：whisper 重复转写/切开题干时，fillLongGaps 会在邻近塞进
+  // 碎片行（实测 "devil's tower look like?"、Q22 的尾巴 "is Mel Wilson going
+  // to talk about…"——48 字符，按长度上限拦不住）。判据改为不限长度：
+  // 归一文本是 ±30s 内更长行的子串 → 删。
   const keyOf = (t) => String(t).toLowerCase().replace(/[^a-z0-9]/g, '')
-  const longs = out.filter((l) => keyOf(l.text).length >= 24).map((l) => keyOf(l.text))
   return out.filter((l) => {
     const k = keyOf(l.text)
-    if (k.length >= 24 || k.length < 10) return true
-    return !longs.some((K) => K.includes(k))
+    if (k.length < 10) return true
+    if (/^Q\s*\d+/.test(String(l.text).trim())) return true
+    // 不限距离：去重发生在线时间定型之前，碎片行此时可能还挂在别处
+    //（实测 Q14 的尾巴碎片在去重时点距 Q14 行 40s+，30s 窗口放行了它）
+    return !out.some((o) => {
+      const K = keyOf(o.text)
+      return K !== k && K.length > k.length && K.includes(k)
+    })
   })
 }
 
@@ -426,10 +436,28 @@ const snapSilentLines = (lines, mask, islands, duration) => {
       if (nextStart - l.start >= need - 0.01) {
         l.end = +(l.start + need).toFixed(2)
       } else {
-        const floor = Math.max(0.15, need * 0.35 + 0.02)
+        const floor = Math.max(0.18, need * 0.35 + 0.2)
         l.end = +Math.min(duration, l.start + floor).toFixed(2)
       }
     }
+  }
+  // 邻近题干的碎片行清理（时间定型后跑）：fillLongGaps 塞进来的题干残片与
+  // 题干正文常有转写差异（whisper 写 "a speaker"、md 是 "the speaker"），
+  // 子串判重失效；按「±12s 内有题干行 + 词重叠 ≥70%」删。
+  const tokSet = (t) => new Set(String(t).toLowerCase().split(/[^a-z0-9']+/).filter((w) => w.length >= 3))
+  const qRowsAll = out.filter((x) => /^Q\s*\d+/.test(String(x.text).trim()))
+  for (let i = out.length - 1; i >= 0; i--) {
+    const l = out[i]
+    const t = String(l.text).trim()
+    if (/^(Q\s*\d+|Question\s|Section |Conversation |Passage |Recording |News Report |[WM]:)/i.test(t)) continue
+    const lt = tokSet(t)
+    if (lt.size < 3) continue
+    const near = qRowsAll.find((q) => Math.abs(q.start - l.start) <= 12 && q !== l)
+    if (!near) continue
+    const qt = tokSet(near.text.replace(/^Q\s*\d+[.。:：]?\s*/i, ''))
+    let hit = 0
+    for (const w of lt) if (qt.has(w)) hit++
+    if (hit / lt.size >= 0.7) out.splice(i, 1)
   }
   // 重编号（id 必须与展示顺序一致）
   for (let i = 0; i < out.length; i++) out[i].id = `l${i + 1}`
