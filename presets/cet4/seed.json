@@ -1,7 +1,7 @@
 {
   "preset": "cet4",
-  "version": "20261025.1",
-  "generatedAt": "2026-10-25T07:40:07.275Z",
+  "version": "20261025.2",
+  "generatedAt": "2026-10-25T08:41:19.984Z",
   "group": {
     "id": 9,
     "name": "英语四级真题",
@@ -17846,15 +17846,15 @@
         {
           "id": "l153",
           "start": 949.63,
-          "end": 958.44,
+          "end": 957.85,
           "text": "We didn't have much money, but it didn't matter, and there was plenty of opportunity to do whatever you felt like doing.",
           "translation": "我们没多少钱，但那不要紧，有的是机会去做任何你想做的事。"
         },
         {
           "id": "l154",
-          "start": 960.62,
-          "end": 964.14,
-          "text": "Are based on the passage you have just heard.",
+          "start": 957.85,
+          "end": 962.85,
+          "text": "Questions sixteen to eighteen are based on the passage you have just heard.",
           "translation": "根据你刚才听到的短文。"
         },
         {
@@ -72005,1157 +72005,1150 @@
         {
           "id": "l37",
           "start": 236.5,
-          "end": 237.9,
-          "text": "Questions three and four are based.",
+          "end": 242.15,
+          "text": "Questions three and four are based on the news report you have just heard.",
           "translation": "第3题和第4题基于。"
         },
         {
           "id": "l38",
-          "start": 237.9,
-          "end": 242.15,
-          "text": "Based on the news report you have just heard.",
-          "translation": "基于你刚听到的新闻报道。"
-        },
-        {
-          "id": "l39",
           "start": 242.82,
           "end": 247.55,
           "text": "Question three: What do we learn from the news report about Tim Peake?",
           "translation": "第3题：关于蒂姆·皮克，我们从新闻报道中了解到什么？"
         },
         {
-          "id": "l40",
+          "id": "l39",
           "start": 262.6,
           "end": 268.95,
           "text": "Question four: What does Tim Peake say about his work with the European Space Agency?",
           "translation": "问题4：蒂姆·皮克怎么说他与欧洲航天局的工作？"
         },
         {
-          "id": "l41",
+          "id": "l40",
           "start": 283.85,
           "end": 285.05,
           "text": "News report three."
         },
         {
-          "id": "l42",
+          "id": "l41",
           "start": 286.05,
           "end": 293.7,
           "text": "An Asda store in Wales is now home to five cats after they wandered in and made themselves comfortable.",
           "translation": "威尔士一家阿斯达超市现在成了5只猫的家，它们溜达进来后就不走了。"
         },
         {
-          "id": "l43",
+          "id": "l42",
           "start": 293.7,
           "end": 300.42,
           "text": "The supermarket is known for its loyal customers, but now has a different kind of visitor.",
           "translation": "这家超市以忠实顾客著称，但现在多了一种不同寻常的访客。"
         },
         {
-          "id": "l44",
+          "id": "l43",
           "start": 300.73,
           "end": 303.57,
           "text": "That has appeared over the last year.",
           "translation": "这是过去一年里出现的情况。"
         },
         {
-          "id": "l45",
+          "id": "l44",
           "start": 303.57,
           "end": 312.47,
           "text": "Regular shoppers at the supermarket are familiar with the sight of several cats settling down in the shop aisles.",
           "translation": "常去这家超市购物的人对几只猫趴在过道上休息的情景已经见怪不怪了。"
         },
         {
-          "id": "l46",
+          "id": "l45",
           "start": 312.47,
           "end": 320.35,
           "text": "The unusual situation started about 12 months ago, when one cat routinely started visiting the store.",
           "translation": "这种不寻常的情况大约始于12个月前，当时有一只猫开始经常光顾这家店。"
         },
         {
-          "id": "l47",
+          "id": "l46",
           "start": 320.35,
           "end": 328.25,
           "text": "Local newspapers reported that puzzled customers posted on Facebook groups to try to find out if the cat was lost.",
           "translation": "当地报纸报道称，困惑的顾客在脸书群组上发帖，想弄清楚这只猫是不是走丢了。"
         },
         {
-          "id": "l48",
+          "id": "l47",
           "start": 329.25,
           "end": 334.75,
           "text": "But its owner assured the concerned customers it was very much loved and fed at home.",
           "translation": "但猫的主人让关心的顾客放心，说它在家备受疼爱，也按时喂食。"
         },
         {
-          "id": "l49",
+          "id": "l48",
           "start": 334.75,
           "end": 338.68,
           "text": "It just enjoyed visiting the shop.",
           "translation": "它只是喜欢来逛逛店。"
         },
         {
-          "id": "l50",
+          "id": "l49",
           "start": 338.68,
           "end": 349.72,
           "text": "Staff did their best to discourage the pet from hanging around, but instead of leaving and never coming back, it invited its friends round.",
           "translation": "员工们竭力想让这只宠物别老待在这儿，但它非但没一去不返，反而把自己的朋友也叫来了。"
         },
         {
-          "id": "l51",
+          "id": "l50",
           "start": 349.72,
           "end": 355.56,
           "text": "There are now at least five different cats who come almost on a daily basis.",
           "translation": "现在至少有5只不同的猫几乎每天都来。"
         },
         {
-          "id": "l52",
+          "id": "l51",
           "start": 355.56,
           "end": 360.67,
           "text": "They visit the store so much that staff have been forced to put up signs.",
           "translation": "它们来得太频繁了，员工们只好贴出告示。"
         },
         {
-          "id": "l53",
+          "id": "l52",
           "start": 360.67,
           "end": 364.67,
           "text": "Asking their customers not to feed them.",
           "translation": "请顾客不要给它们喂食。"
         },
         {
-          "id": "l54",
+          "id": "l53",
           "start": 364.67,
           "end": 370.7,
           "text": "Questions five to seven are based on the news report you have just heard.",
           "translation": "问题5至7基于你刚听到的新闻报道。"
         },
         {
-          "id": "l55",
+          "id": "l54",
           "start": 370.7,
           "end": 375.7,
           "text": "Question five: What do we learn about the five cats seen in the Asda store?",
           "translation": "问题5：关于在阿斯达超市出现的5只猫，我们了解到什么？"
         },
         {
-          "id": "l56",
+          "id": "l55",
           "start": 390.7,
           "end": 398.15,
           "text": "Question six: What did some customers think when they saw the first cat routinely appear in the store?",
           "translation": "问题6：一些顾客看到第一只猫经常出现在店里时是怎么想的？"
         },
         {
-          "id": "l57",
+          "id": "l56",
           "start": 413.1,
           "end": 416.7,
           "text": "Question seven: What are customers asked not to do?",
           "translation": "问题7：顾客被要求不要做什么？"
         },
         {
-          "id": "l58",
+          "id": "l57",
           "start": 431.95,
           "end": 432.6,
           "text": "Section B."
         },
         {
-          "id": "l59",
+          "id": "l58",
           "start": 432.6,
           "end": 434.05,
           "text": "Directions."
         },
         {
-          "id": "l60",
+          "id": "l59",
           "start": 434.05,
           "end": 438.45,
           "text": "In this section, you will hear two long conversations.",
           "translation": "在这一部分，你将听到两段长对话。"
         },
         {
-          "id": "l61",
+          "id": "l60",
           "start": 438.45,
           "end": 443.5,
           "text": "At the end of each conversation, you will hear four questions.",
           "translation": "每段对话结束后，你会听到4个问题。"
         },
         {
-          "id": "l62",
+          "id": "l61",
           "start": 443.5,
           "end": 448.03,
           "text": "Both the conversation and the questions will be spoken only once.",
           "translation": "对话和问题都只读一遍。"
         },
         {
-          "id": "l63",
+          "id": "l62",
           "start": 448.03,
           "end": 454.53,
           "text": "After you hear a question, you must choose the best answer from the four choices marked A, B, C, and D.",
           "translation": "听到问题后，请从A、B、C、D四个选项中选出最佳答案。"
         },
         {
-          "id": "l64",
+          "id": "l63",
           "start": 454.53,
           "end": 462.05,
           "text": "Then, mark the corresponding letter on answer sheet one with a single line through the center.",
           "translation": "然后在答题卡1上对应字母中间划一道横线。"
         },
         {
-          "id": "l65",
+          "id": "l64",
           "start": 463.65,
           "end": 464.45,
           "text": "Conversation one."
         },
         {
-          "id": "l66",
+          "id": "l65",
           "start": 465.45,
           "end": 468.95,
           "text": "I've been thinking about moving off campus next semester.",
           "translation": "我在考虑下学期搬出学校住。"
         },
         {
-          "id": "l67",
+          "id": "l66",
           "start": 468.95,
           "end": 469.8,
           "text": "Hmm."
         },
         {
-          "id": "l68",
+          "id": "l67",
           "start": 469.8,
           "end": 477.79,
           "text": "I don't know if that's a good idea, as your mother and I would worry about you living all by yourself in an apartment so far from home.",
           "translation": "我不确定这是不是个好主意，因为我和你妈会担心你一个人住在离家那么远的公寓里。"
         },
         {
-          "id": "l69",
+          "id": "l68",
           "start": 477.79,
           "end": 480.45,
           "text": "And then there's the expense.",
           "translation": "而且还有开销的问题。"
         },
         {
-          "id": "l70",
+          "id": "l69",
           "start": 480.45,
           "end": 480.85,
           "text": "That's true."
         },
         {
-          "id": "l71",
+          "id": "l70",
           "start": 480.85,
           "end": 482.5,
           "text": "I'm not sure we can afford it.",
           "translation": "我不确定我们负担得起。"
         },
         {
-          "id": "l72",
+          "id": "l71",
           "start": 482.5,
           "end": 484.92,
           "text": "Well, I wouldn't be alone, actually.",
           "translation": "嗯，其实我不是一个人住。"
         },
         {
-          "id": "l73",
+          "id": "l72",
           "start": 484.92,
           "end": 489.45,
           "text": "Three of my friends from the dormitory would share the place with me.",
           "translation": "我宿舍的三个朋友会跟我合租。"
         },
         {
-          "id": "l74",
+          "id": "l73",
           "start": 489.45,
           "end": 493.63,
           "text": "And with four of us, it wouldn't cost any more than living in the dorm.",
           "translation": "我们四个人一起，花的钱不会比住宿舍多。"
         },
         {
-          "id": "l75",
+          "id": "l74",
           "start": 493.63,
           "end": 495.95,
           "text": "Are you sure about that?",
           "translation": "你确定吗？"
         },
         {
-          "id": "l76",
+          "id": "l75",
           "start": 495.95,
           "end": 501.3,
           "text": "Rents in big cities are high, and then there's the cost of electricity and gas.",
           "translation": "大城市的房租很高，而且还有电费和燃气费。"
         },
         {
-          "id": "l77",
+          "id": "l76",
           "start": 501.3,
           "end": 503.49,
           "text": "Have you factored those in?",
           "translation": "你把这些都算进去了吗？"
         },
         {
-          "id": "l78",
+          "id": "l77",
           "start": 503.49,
           "end": 507.15,
           "text": "We've budgeted for those, and for internet and transportation.",
           "translation": "我们把这些都算进去了，还有网费和交通费。"
         },
         {
-          "id": "l79",
+          "id": "l78",
           "start": 507.9,
           "end": 510.26,
           "text": "And if we move far enough from the city center, the rent is low enough for us to afford all of it.",
           "translation": "而且只要我们离市中心够远，房租就够低，所有费用我们都能负担。"
         },
         {
-          "id": "l80",
+          "id": "l79",
           "start": 513.89,
           "end": 517.35,
           "text": "What about the commute to and from campus?",
           "translation": "那每天往返学校呢？"
         },
         {
-          "id": "l81",
+          "id": "l80",
           "start": 517.35,
           "end": 523.07,
           "text": "It sounds like you'll be wasting several hours every day on the road instead of studying.",
           "translation": "听起来你每天要在路上浪费好几个小时，而不是学习。"
         },
         {
-          "id": "l82",
+          "id": "l81",
           "start": 523.07,
           "end": 528.31,
           "text": "It's about an hour to campus, but there's no reason I can't study on the bus.",
           "translation": "到学校大概一小时，但我在车上照样可以看书啊。"
         },
         {
-          "id": "l83",
+          "id": "l82",
           "start": 528.31,
           "end": 532.57,
           "text": "After all, I did that during high school, and my commute was even longer then.",
           "translation": "毕竟我高中时就是这么干的，那时候通勤时间比现在还长。"
         },
         {
-          "id": "l84",
+          "id": "l83",
           "start": 532.57,
           "end": 533.87,
           "text": "That's true."
         },
         {
-          "id": "l85",
+          "id": "l84",
           "start": 533.87,
           "end": 540.2,
           "text": "But I'm not sure why you want to leave campus and go through all that trouble when the cost is the same.",
           "translation": "但我不太明白，既然花费一样，你为什么要搬出学校，给自己找这么多麻烦。"
         },
         {
-          "id": "l86",
+          "id": "l85",
           "start": 540.9,
           "end": 542.05,
           "text": "For a lot of reasons.",
           "translation": "原因有很多。"
         },
         {
-          "id": "l87",
+          "id": "l86",
           "start": 542.05,
           "end": 551.55,
           "text": "We'd have a kitchen, so we could cook ourselves, and we'd each have our own bedroom where we could study, instead of going to the library.",
           "translation": "我们会有个厨房，这样就能自己做饭，而且每人有自己单独的卧室，可以学习，就不用去图书馆了。"
         },
         {
-          "id": "l88",
+          "id": "l87",
           "start": 551.55,
           "end": 554.03,
           "text": "We'd just have more space and privacy.",
           "translation": "我们会有更多空间和隐私。"
         },
         {
-          "id": "l89",
+          "id": "l88",
           "start": 554.03,
           "end": 562.92,
           "text": "I'm not convinced that the benefits are greater than the disadvantages, but I'll discuss this with your mother.",
           "translation": "我不敢确定好处是否大于坏处，不过我会和你妈妈商量一下。"
         },
         {
-          "id": "l90",
+          "id": "l89",
           "start": 562.92,
           "end": 568.45,
           "text": "Questions eight to eleven are based on the conversation you have just heard.",
           "translation": "第8到11题基于你刚听到的对话。"
         },
         {
-          "id": "l91",
+          "id": "l90",
           "start": 568.45,
           "end": 573.05,
           "text": "Question eight. What has the woman been thinking of doing next semester?",
           "translation": "问题八。这位女士下学期考虑做什么？"
         },
         {
-          "id": "l92",
+          "id": "l91",
           "start": 587.6,
           "end": 592.9,
           "text": "Question nine. What does the man suggest the woman take into consideration?",
           "translation": "问题九。男士建议女士考虑什么？"
         },
         {
-          "id": "l93",
+          "id": "l92",
           "start": 607.5,
           "end": 612.15,
           "text": "Question ten. What does the woman say she did during high school?",
           "translation": "问题十。女士说她高中时期做了什么？"
         },
         {
-          "id": "l94",
+          "id": "l93",
           "start": 626.65,
           "end": 631.9,
           "text": "Question eleven. What does the man say he'll do at the end of the conversation?",
           "translation": "问题十一。男士说在对话结束时他会做什么？"
         },
         {
-          "id": "l95",
+          "id": "l94",
           "start": 646.3,
           "end": 647.55,
           "text": "Conversation two."
         },
         {
-          "id": "l96",
+          "id": "l95",
           "start": 647.55,
           "end": 649.4,
           "text": "Good morning."
         },
         {
-          "id": "l97",
+          "id": "l96",
           "start": 649.4,
           "end": 654.05,
           "text": "I'm looking for a present for my nephew, Lawrence.",
           "translation": "我想给我侄子劳伦斯买个礼物。"
         },
         {
-          "id": "l98",
+          "id": "l97",
           "start": 654.05,
           "end": 654.35,
           "text": "Hi."
         },
         {
-          "id": "l99",
+          "id": "l98",
           "start": 654.35,
           "end": 656.56,
           "text": "Do you have anything in mind?",
           "translation": "你有什么想法吗？"
         },
         {
-          "id": "l100",
+          "id": "l99",
           "start": 656.56,
           "end": 657.45,
           "text": "I'm not sure.",
           "translation": "我不确定。"
         },
         {
-          "id": "l101",
+          "id": "l100",
           "start": 657.45,
           "end": 658.1,
           "text": "No."
         },
         {
-          "id": "l102",
+          "id": "l101",
           "start": 658.1,
           "end": 661.65,
           "text": "Do you know what boys aged around around ten, typically like..",
           "translation": "你知道10岁左右的男孩一般喜欢什么吗……"
         },
         {
-          "id": "l103",
+          "id": "l102",
           "start": 662.65,
           "end": 667.94,
           "text": "For that age group, our biggest seller this year has been this action figure.",
           "translation": "这个年龄段的话，我们今年卖得最好的是这个动作人偶。"
         },
         {
-          "id": "l104",
+          "id": "l103",
           "start": 667.94,
           "end": 671.76,
           "text": "It's called Bobo Man, and it's incredibly popular.",
           "translation": "它叫波波侠，非常受欢迎。"
         },
         {
-          "id": "l105",
+          "id": "l104",
           "start": 671.76,
           "end": 673.43,
           "text": "Does it do anything?",
           "translation": "它会动吗？"
         },
         {
-          "id": "l106",
+          "id": "l105",
           "start": 673.43,
           "end": 674.8,
           "text": "Not by itself.",
           "translation": "它自己不会。"
         },
         {
-          "id": "l107",
+          "id": "l106",
           "start": 674.8,
           "end": 678,
           "text": "It has no batteries, if that's what you mean.",
           "translation": "它没有电池，如果你是问这个的话。"
         },
         {
-          "id": "l108",
+          "id": "l107",
           "start": 678,
           "end": 685.68,
           "text": "There's a Bobo Man cartoon popular amongst young children, you see, and this toy is the lead character from the show.",
           "translation": "你看，有个波波侠的动画片很受小孩子欢迎，这个玩具就是剧里的主角。"
         },
         {
-          "id": "l109",
+          "id": "l108",
           "start": 685.68,
           "end": 687.2,
           "text": "Oh, I understand now.",
           "translation": "哦，我明白了。"
         },
         {
-          "id": "l110",
+          "id": "l109",
           "start": 687.2,
           "end": 691.45,
           "text": "I've never heard of it, but I do know little Lawrence loves cartoons.",
           "translation": "我从没听说过，不过我知道小劳伦斯很喜欢看动画片。"
         },
         {
-          "id": "l111",
+          "id": "l110",
           "start": 692.35,
           "end": 694.4,
           "text": "Do you have any other popular toys?",
           "translation": "你们还有别的热门玩具吗？"
         },
         {
-          "id": "l112",
+          "id": "l111",
           "start": 694.4,
           "end": 697.2,
           "text": "Perhaps something educational?",
           "translation": "或者有没有益智类的？"
         },
         {
-          "id": "l113",
+          "id": "l112",
           "start": 697.2,
           "end": 697.69,
           "text": "Yes, of course.",
           "translation": "当然有。"
         },
         {
-          "id": "l114",
+          "id": "l113",
           "start": 698,
           "end": 702.97,
           "text": "Right over here we have dozens of puzzles for children of all ages.",
           "translation": "就在这边，我们有几十款拼图，适合各个年龄段的孩子。"
         },
         {
-          "id": "l115",
+          "id": "l114",
           "start": 702.97,
           "end": 709.18,
           "text": "They are fun, great for exercising the mind, and can be played either alone or in groups.",
           "translation": "很好玩，能锻炼脑筋，可以一个人玩，也可以大家一起玩。"
         },
         {
-          "id": "l116",
+          "id": "l115",
           "start": 709.18,
           "end": 710.7,
           "text": "I like this sort of idea.",
           "translation": "我喜欢这种点子。"
         },
         {
-          "id": "l117",
+          "id": "l116",
           "start": 710.7,
           "end": 717.3,
           "text": "Lawrence has a sister who is slightly older, so maybe a game that they can play together would be good.",
           "translation": "劳伦斯有个比他大一点的姐姐，所以买个他们能一起玩的游戏可能不错。"
         },
         {
-          "id": "l118",
+          "id": "l117",
           "start": 718.2,
           "end": 720.15,
           "text": "What do you think of battleships?",
           "translation": "你觉得\"战舰\"这个游戏怎么样？"
         },
         {
-          "id": "l119",
+          "id": "l118",
           "start": 720.6,
           "end": 722.55,
           "text": "\"It's a total classic.",
           "translation": "\"这可是经典中的经典。"
         },
         {
-          "id": "l120",
+          "id": "l119",
           "start": 722.55,
           "end": 724.7,
           "text": "It has been around since the 1930s.\"",
           "translation": "从20世纪30年代就有了。\""
         },
         {
-          "id": "l121",
+          "id": "l120",
           "start": 724.7,
           "end": 727.6,
           "text": "\"Oh yeah, we had one of those when growing up.\"",
           "translation": "\"哦对，我们小时候就有一个。\""
         },
         {
-          "id": "l122",
+          "id": "l121",
           "start": 727.6,
           "end": 729.82,
           "text": "\"Of course you did.",
           "translation": "\"那肯定。"
         },
         {
-          "id": "l123",
+          "id": "l122",
           "start": 729.82,
           "end": 731.06,
           "text": "Everyone did."
         },
         {
-          "id": "l124",
+          "id": "l123",
           "start": 731.06,
           "end": 735.83,
           "text": "And kids enjoy it just as much today as you and I did when we were young.",
           "translation": "今天的孩子玩起来，跟你我小时候一样着迷。"
         },
         {
-          "id": "l125",
+          "id": "l124",
           "start": 735.83,
           "end": 738.26,
           "text": "Some games just never get old.\"",
           "translation": "有些游戏就是永远不会过时。\""
         },
         {
-          "id": "l126",
+          "id": "l125",
           "start": 738.26,
           "end": 740.03,
           "text": "\"I suppose you are right.",
           "translation": "\"我想你说得对。"
         },
         {
-          "id": "l127",
+          "id": "l126",
           "start": 740.03,
           "end": 746.96,
           "text": "I have fond memories playing battleships when it was raining outside and we had to stay indoors.\"",
           "translation": "外面下雨、我们只能待在屋里玩战舰，那些回忆真美好。\""
         },
         {
-          "id": "l128",
+          "id": "l127",
           "start": 746.96,
           "end": 748.35,
           "text": "\"That's decided then.",
           "translation": "\"那就这么定了。"
         },
         {
-          "id": "l129",
+          "id": "l128",
           "start": 748.35,
           "end": 749.23,
           "text": "How much?\""
         },
         {
-          "id": "l130",
+          "id": "l129",
           "start": 749.23,
           "end": 752.23,
           "text": "\"Nineteen pounds and ninety pence, please.\"",
           "translation": "\"19镑90便士，谢谢。\""
         },
         {
-          "id": "l131",
+          "id": "l130",
           "start": 752.23,
           "end": 752.72,
           "text": "\"There you are.",
           "translation": "\"给您。"
         },
         {
-          "id": "l132",
+          "id": "l131",
           "start": 753.02,
           "end": 754.25,
           "text": "Have a nice day.\"",
           "translation": "祝您今天愉快。\""
         },
         {
-          "id": "l133",
+          "id": "l132",
           "start": 754.25,
           "end": 756.56,
           "text": "\"Thank you."
         },
         {
-          "id": "l134",
+          "id": "l133",
           "start": 756.56,
           "end": 756.96,
           "text": "You too.\""
         },
         {
-          "id": "l135",
+          "id": "l134",
           "start": 756.99,
           "end": 761.76,
           "text": "Questions 12 to 15 are based on the conversation you have just heard.",
           "translation": "第12至15题基于你刚才听到的对话。"
         },
         {
-          "id": "l136",
+          "id": "l135",
           "start": 761.76,
           "end": 764.3,
           "text": "Question 12. What is the woman doing?",
           "translation": "问题12。这位女士正在做什么？"
         },
         {
-          "id": "l137",
+          "id": "l136",
           "start": 778.8,
           "end": 784.35,
           "text": "Question 13. How does the man describe Bobo Man, the action figure?",
           "translation": "问题13。男士如何描述动作人偶\"波波人\"？"
         },
         {
-          "id": "l138",
+          "id": "l137",
           "start": 798.95,
           "end": 804.4,
           "text": "Question 14. What kind of game does the woman think would be good for Lawrence?",
           "translation": "问题14。女士认为什么样的游戏适合劳伦斯？"
         },
         {
-          "id": "l139",
+          "id": "l138",
           "start": 819.1,
           "end": 824.8,
           "text": "Question 15. What do we learn from the conversation about the game Battleships?",
           "translation": "问题15。从对话中我们对\"战舰\"游戏有什么了解？"
         },
         {
-          "id": "l140",
+          "id": "l139",
           "start": 839.35,
           "end": 840.25,
           "text": "Section C."
         },
         {
-          "id": "l141",
+          "id": "l140",
           "start": 840.25,
           "end": 845.87,
           "text": "Directions: In this section, you will hear three passages.",
           "translation": "说明：本节你将听到3篇短文。"
         },
         {
-          "id": "l142",
+          "id": "l141",
           "start": 845.87,
           "end": 851.25,
           "text": "At the end of each passage, you will hear three or four questions.",
           "translation": "每篇短文结束后，你将听到3到4个问题。"
         },
         {
-          "id": "l143",
+          "id": "l142",
           "start": 851.25,
           "end": 856.14,
           "text": "Both the passage and the questions will be spoken only once.",
           "translation": "短文和问题都只读一遍。"
         },
         {
-          "id": "l144",
+          "id": "l143",
           "start": 856.14,
           "end": 862.94,
           "text": "After you hear a question, you must choose the best answer from the four choices marked A, B, C, and D.",
           "translation": "听到问题后，你必须从标有A、B、C、D的4个选项中选出最佳答案。"
         },
         {
-          "id": "l145",
+          "id": "l144",
           "start": 862.94,
           "end": 869.85,
           "text": "Then mark the corresponding letter on answer sheet one with a single line through the center.",
           "translation": "然后在答题卡1上相应的字母中间画一条横线。"
         },
         {
-          "id": "l146",
+          "id": "l145",
           "start": 871.1,
           "end": 871.9,
           "text": "Passage one",
           "translation": "短文一：我们以为，给顾客提供的选择越多，他们就越可能购买我们的产品。"
         },
         {
-          "id": "l147",
+          "id": "l146",
           "start": 873,
           "end": 881.03,
           "text": "We assume that if we offer our customers more choices, then they'll be more likely to buy our products.",
           "translation": "短文一：我们以为，给顾客提供的选择越多，他们就越可能购买我们的产品。"
         },
         {
-          "id": "l148",
+          "id": "l147",
           "start": 881.03,
           "end": 890.25,
           "text": "But here's the paradox of choice: if a person is presented with too many choices, they are actually less likely to buy.",
           "translation": "但这就是选择的悖论：一个人面对太多选择时，反而更不可能购买。"
         },
         {
-          "id": "l149",
+          "id": "l148",
           "start": 890.25,
           "end": 894.36,
           "text": "In 2012, psychologists published a study about jams.",
           "translation": "2012年，心理学家发表了一项关于果酱的研究。"
         },
         {
-          "id": "l150",
+          "id": "l149",
           "start": 894.36,
           "end": 899.71,
           "text": "On a regular day at a local food market, people would find a display table with twenty.",
           "translation": "在当地食品市场平常的一天，人们会看到一张展示台，上面摆着20种"
         },
         {
-          "id": "l151",
+          "id": "l150",
           "start": 899.87,
           "end": 901.39,
           "text": "For different kinds of jams.",
           "translation": "不同口味的果酱。"
         },
         {
-          "id": "l152",
+          "id": "l151",
           "start": 901.39,
           "end": 909.8,
           "text": "Then, on another day, at that same food market, people were given only six different types of jam choices.",
           "translation": "然后在另一天，同一家食品市场里，人们只有6种不同口味的果酱可选。"
         },
         {
-          "id": "l153",
+          "id": "l152",
           "start": 910.85,
           "end": 913.75,
           "text": "Guess which display table led to more sales?",
           "translation": "猜猜哪种展示台卖出的更多？"
         },
         {
-          "id": "l154",
+          "id": "l153",
           "start": 913.75,
           "end": 925.95,
           "text": "The study found that while the bigger display table created more interest, people were almost ten times less likely to purchase a jar of jam than in the case of the smaller display.",
           "translation": "研究发现，虽然大展示台吸引了更多人驻足，但人们购买果酱的可能性比小展示台时低了将近10倍。"
         },
         {
-          "id": "l155",
+          "id": "l154",
           "start": 926.95,
           "end": 930.29,
           "text": "Customer satisfaction takes a hit as well.",
           "translation": "顾客满意度也随之下降。"
         },
         {
-          "id": "l156",
+          "id": "l155",
           "start": 930.29,
           "end": 938.43,
           "text": "In the study, the bigger display of jams leads to lower customer satisfaction than the smaller display.",
           "translation": "研究中，大展示台的果酱带来的顾客满意度低于小展示台。"
         },
         {
-          "id": "l157",
+          "id": "l156",
           "start": 938.43,
           "end": 950.95,
           "text": "In an extensive study published in 2015, researchers analyzed a total of 99 choice studies and specifically looked at those cases in which reducing choices helped to boost sales.",
           "translation": "在2015年发表的一项广泛研究中，研究人员分析了共99项选择研究，特别关注了减少选择有助于提升销量的案例。"
         },
         {
-          "id": "l158",
+          "id": "l157",
           "start": 950.95,
           "end": 954.89,
           "text": "They found four rules that motivate consumers to buy.",
           "translation": "他们发现了促使消费者购买的4条规则。"
         },
         {
-          "id": "l159",
+          "id": "l158",
           "start": 955.18,
           "end": 968.12,
           "text": "When people want to make a quick and easy choice, when the product is complex when it's difficult to compare alternatives and when consumers don't have clear preferences.",
           "translation": "当人们想快速轻松地做出选择时、当产品很复杂时、当难以比较不同选项时，以及当消费者没有明确偏好时。"
         },
         {
-          "id": "l160",
+          "id": "l159",
           "start": 968.12,
           "end": 972.35,
           "text": "So, as you can see, when it comes to choices, less is more.",
           "translation": "所以你看，说到选择，少即是多。"
         },
         {
-          "id": "l161",
+          "id": "l160",
           "start": 973.5,
           "end": 978.87,
           "text": "Questions 16 to 18 are based on the passage you have just heard.",
           "translation": "16至18题基于你刚刚听到的短文。"
         },
         {
-          "id": "l162",
+          "id": "l161",
           "start": 978.87,
           "end": 984.15,
           "text": "Question 16: What do we learn from the passage about the paradox of choice?",
           "translation": "问题16：关于选择悖论，我们从短文中了解到什么？"
         },
         {
-          "id": "l163",
+          "id": "l162",
           "start": 998.6,
           "end": 1005.7,
           "text": "Question 17: What did the psychologists want to find out in their 2012 study about jams?",
           "translation": "问题17：心理学家在2012年关于果酱的研究中想弄清什么？"
         },
         {
-          "id": "l164",
+          "id": "l163",
           "start": 1020.3,
           "end": 1026.65,
           "text": "Question 18. What is the finding of an extensive study published in 2015?",
           "translation": "问题18。2015年发表的一项大规模研究有什么发现？"
         },
         {
-          "id": "l165",
+          "id": "l164",
           "start": 1041.15,
           "end": 1042.05,
           "text": "Passage two."
         },
         {
-          "id": "l166",
+          "id": "l165",
           "start": 1042.05,
           "end": 1050.25,
           "text": "The new year has come and gone, and many may have already forgotten what they had resolved to do on January 1st.",
           "translation": "新年已经来了又去，很多人可能已经忘了自己在1月1日下定的决心。"
         },
         {
-          "id": "l167",
+          "id": "l166",
           "start": 1051,
           "end": 1056.15,
           "text": "But if that resolution was to volunteer more, now is the best time to start.",
           "translation": "但如果那个决心是多做志愿活动，现在正是开始的最佳时机。"
         },
         {
-          "id": "l168",
+          "id": "l167",
           "start": 1057.25,
           "end": 1067.5,
           "text": "Volunteering can drop after the holiday season, and by February, some organizations lack the volunteers they had in surplus just a month ago.",
           "translation": "节假日过后志愿活动会减少，到2月时，一些组织会缺少仅仅一个月前还富余的志愿者。"
         },
         {
-          "id": "l169",
+          "id": "l168",
           "start": 1067.5,
           "end": 1077.8,
           "text": "According to one survey, only 26 percent of Americans volunteer, despite reports that many Americans view volunteering as worthwhile.",
           "translation": "据一项调查显示，只有26%的美国人做志愿服务，尽管有报道称许多美国人认为志愿活动很有价值。"
         },
         {
-          "id": "l170",
+          "id": "l169",
           "start": 1077.8,
           "end": 1079.8,
           "text": "Why such a disconnect?",
           "translation": "为什么会有这样的落差？"
         },
         {
-          "id": "l171",
+          "id": "l170",
           "start": 1080.65,
           "end": 1093.58,
           "text": "Most people cite time and conflicting work schedules as major barriers, but employees and employers would actually benefit if companies made employee volunteering part of the job.",
           "translation": "大多数人把时间和工作时间冲突列为主要障碍，但如果企业把员工志愿活动纳入工作的一部分，员工和雇主其实都会受益。"
         },
         {
-          "id": "l172",
+          "id": "l171",
           "start": 1093.58,
           "end": 1104.13,
           "text": "Researchers have found donating our time and talent to others can lower blood pressure, boost happiness, and improve mental and physical health.",
           "translation": "研究发现，把自己的时间和才能奉献给他人可以降低血压、提升幸福感，并改善身心健康。"
         },
         {
-          "id": "l173",
+          "id": "l172",
           "start": 1104.13,
           "end": 1110.48,
           "text": "Studies have also linked employee volunteer programs with more productive employees.",
           "translation": "研究还把员工志愿项目与更高的员工生产力联系起来。"
         },
         {
-          "id": "l174",
+          "id": "l173",
           "start": 1110.48,
           "end": 1118.65,
           "text": "With so much emphasis on employee wellness these days, company volunteer programs could be the perfect 2025 resolution.",
           "translation": "如今大家都很重视员工健康，公司志愿项目或许正是完美的2025年新年计划。"
         },
         {
-          "id": "l175",
+          "id": "l174",
           "start": 1119.55,
           "end": 1128,
           "text": "But for volunteering to benefit employees and the workplace, the entire organization needs to be involved.",
           "translation": "但要让志愿活动惠及员工和职场，整个组织都需要参与进来。"
         },
         {
-          "id": "l176",
+          "id": "l175",
           "start": 1128,
           "end": 1139.83,
           "text": "By allowing employees to donate their time during work hours, the workplace becomes an outlet for personal fulfillment without affecting personal time.",
           "translation": "允许员工在工作时间做志愿服务，职场就成为了实现个人价值的出口，而不会占用个人时间。"
         },
         {
-          "id": "l177",
+          "id": "l176",
           "start": 1139.83,
           "end": 1154.61,
           "text": "In one survey, 89 percent Of employees perceived companies that sponsored volunteer activities as creating a better working environment, and 75% said volunteering was critical to their well-being.",
           "translation": "在一项调查中，89%的员工认为赞助志愿活动的公司能营造更好的工作环境，75%的人说志愿服务对他们的幸福感至关重要。"
         },
         {
-          "id": "l178",
+          "id": "l177",
           "start": 1154.61,
           "end": 1159.7,
           "text": "Questions 19 to 21 are based on the passage you have just heard.",
           "translation": "第19至21题根据你刚才听到的短文回答。"
         },
         {
-          "id": "l179",
+          "id": "l178",
           "start": 1159.7,
           "end": 1164.1,
           "text": "Question 19: What do many Americans think of volunteering?",
           "translation": "第19题：许多美国人如何看待志愿服务？"
         },
         {
-          "id": "l180",
+          "id": "l179",
           "start": 1178.65,
           "end": 1185.95,
           "text": "Question 20: How could companies ensure both employees and employers benefit from volunteering?",
           "translation": "第20题：企业如何确保员工和雇主都能从志愿服务中受益？"
         },
         {
-          "id": "l181",
+          "id": "l180",
           "start": 1200.5,
           "end": 1207.4,
           "text": "Question 21: What did 75% of employees say about volunteering in a survey?",
           "translation": "第21题：在一项调查中，75%的员工对志愿服务说了什么？"
         },
         {
-          "id": "l182",
+          "id": "l181",
           "start": 1221.95,
           "end": 1222.9,
           "text": "Passage 3",
           "translation": "短文3：英国零售业每年20万吨的食品浪费绝大部分来自超市，但这个问题也影响到独立的高档食品供应商。"
         },
         {
-          "id": "l183",
+          "id": "l182",
           "start": 1224.05,
           "end": 1237.2,
           "text": "The vast majority of the UK's 200,000 tons of retail sector's annual food waste comes from supermarkets, but it's a problem that impacts independent luxury food suppliers too.",
           "translation": "短文3：英国零售业每年20万吨的食品浪费绝大部分来自超市，但这个问题也影响到独立的高档食品供应商。"
         },
         {
-          "id": "l184",
+          "id": "l183",
           "start": 1237.2,
           "end": 1247.78,
           "text": "The scale is small; it's estimated at less than 1% of the UK's food waste total, but the quality from these suppliers is high.",
           "translation": "规模不大，估计不到英国食品浪费总量的1%，但这些供应商的产品质量很高。"
         },
         {
-          "id": "l185",
+          "id": "l184",
           "start": 1247.78,
           "end": 1257.3,
           "text": "Everything from specialist cheeses to sought-after coffee beans gets thrown away every day in the current food system.",
           "translation": "从特色奶酪到抢手的咖啡豆，在现有的食品体系里每天都有大量被扔掉。"
         },
         {
-          "id": "l186",
+          "id": "l185",
           "start": 1258.5,
           "end": 1263.02,
           "text": "This is where French entrepreneurs Entrepreneur Sophie Andre comes in.",
           "translation": "这正是法国创业者索菲·安德烈发挥作用的地方。"
         },
         {
-          "id": "l187",
+          "id": "l186",
           "start": 1263.02,
           "end": 1270.4,
           "text": "In 2016, she moved to London and began by setting up a business delivering luxury handmade food across the city.",
           "translation": "2016年，她搬到伦敦，先是做起了在全城配送高档手工食品的生意。"
         },
         {
-          "id": "l188",
+          "id": "l187",
           "start": 1270.4,
           "end": 1274.68,
           "text": "Food delivery seems to be a big thing here, she says.",
           "translation": "她说，送餐在这里似乎很火。"
         },
         {
-          "id": "l189",
+          "id": "l188",
           "start": 1274.68,
           "end": 1278.29,
           "text": "So I started delivering products by bicycle.",
           "translation": "所以我开始骑自行车送货。"
         },
         {
-          "id": "l190",
+          "id": "l189",
           "start": 1278.29,
           "end": 1291.6,
           "text": "Talking with local producers, I learnt that a small part of the production is sometimes wasted due to problems with size or shape, but the quality of the products remains unchanged.",
           "translation": "和当地生产者交流后我了解到，有时会因为大小或形状问题浪费一小部分产品，但产品的质量并没有改变。"
         },
         {
-          "id": "l191",
+          "id": "l190",
           "start": 1292.65,
           "end": 1303.6,
           "text": "Unlike many food waste projects that have sprung up in recent years, the idea is not simply to redistribute waste food, but to provide a high-quality product.",
           "translation": "与近年来涌现的许多食品浪费项目不同，这个想法不只是重新分配浪费的食物，而是提供高品质的产品。"
         },
         {
-          "id": "l192",
+          "id": "l191",
           "start": 1303.6,
           "end": 1310.5,
           "text": "Andre's company, Elysia, offers breakfasts and snacks specifically aimed at business meetings and events.",
           "translation": "安德烈的公司Elysia提供早餐和点心，专门面向商务会议和活动。"
         },
         {
-          "id": "l193",
+          "id": "l192",
           "start": 1310.5,
           "end": 1317.53,
           "text": "Once sourced, Elysia uses waste products to create simple, natural, straightforward meals and snacks.",
           "translation": "采购回来后，Elysia用这些废弃产品制作简单、天然、朴实的餐食和点心。"
         },
         {
-          "id": "l194",
+          "id": "l193",
           "start": 1317.53,
           "end": 1320.23,
           "text": "Perhaps unlike other Another waste food.",
           "translation": "也许不像其他……是另一种浪费的食物。"
         },
         {
-          "id": "l195",
+          "id": "l194",
           "start": 1320.46,
           "end": 1322.45,
           "text": "The supply is regular.",
           "translation": "供应是稳定的。"
         },
         {
-          "id": "l196",
+          "id": "l195",
           "start": 1322.45,
           "end": 1326.35,
           "text": "Suppliers will always have a certain amount of surplus.",
           "translation": "供应商总会有一定数量的剩余。"
         },
         {
-          "id": "l197",
+          "id": "l196",
           "start": 1326.85,
           "end": 1329.15,
           "text": "So the menus remain regular too.",
           "translation": "所以菜单也能保持稳定。"
         },
         {
-          "id": "l198",
+          "id": "l197",
           "start": 1329.15,
           "end": 1334.68,
           "text": "Andre believes this benefits both her business and her customers.",
           "translation": "安德烈认为，这对她的生意和顾客都有好处。"
         },
         {
-          "id": "l199",
+          "id": "l198",
           "start": 1334.68,
           "end": 1340.35,
           "text": "Questions 22 to 25 are based on the passage you have just heard.",
           "translation": "第22至25题基于你刚听到的短文。"
         },
         {
-          "id": "l200",
+          "id": "l199",
           "start": 1340.35,
           "end": 1345.75,
           "text": "Question 22: What do we learn about the UK's retail sector food waste?",
           "translation": "第22题：关于英国零售业的食物浪费，我们了解到什么？"
         },
         {
-          "id": "l201",
+          "id": "l200",
           "start": 1360.6,
           "end": 1366.15,
           "text": "Question 23: What does Sophie Andre's business do in London?",
           "translation": "第23题：索菲·安德烈在伦敦的公司是做什么的？"
         },
         {
-          "id": "l202",
+          "id": "l201",
           "start": 1380.6,
           "end": 1387.95,
           "text": "Question 24: In what way does Sophie Andre's business differ from many food waste projects?",
           "translation": "第24题：索菲·安德烈的公司与许多食物浪费项目有什么不同？"
         },
         {
-          "id": "l203",
+          "id": "l202",
           "start": 1402.75,
           "end": 1408.25,
           "text": "Question 25: Why will suppliers always have a certain amount of surplus?",
           "translation": "第25题：为什么供应商总会有一定数量的剩余？"
         },
         {
-          "id": "l204",
+          "id": "l203",
           "start": 1422.75,
           "end": 1424.8,
           "text": "That's the end of listening comprehension.",
