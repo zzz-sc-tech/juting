@@ -1,7 +1,7 @@
 {
   "preset": "cet4",
-  "version": "20261026.12",
-  "generatedAt": "2026-10-26T14:41:19.108Z",
+  "version": "20261026.13",
+  "generatedAt": "2026-10-26T14:54:55.052Z",
   "group": {
     "id": 9,
     "name": "英语四级真题",
@@ -13588,13 +13588,15 @@
           "id": "l2",
           "start": 2.65,
           "end": 4.15,
-          "text": "Part Two."
+          "text": "Part Two.",
+          "translation": "第二部分。"
         },
         {
           "id": "l3",
           "start": 4.15,
           "end": 6.92,
-          "text": "Listening Comprehension."
+          "text": "Listening Comprehension.",
+          "translation": "听力理解。"
         },
         {
           "id": "l4",
@@ -13801,7 +13803,8 @@
           "id": "l33",
           "start": 280,
           "end": 280.6,
-          "text": "The U.S."
+          "text": "The U.S.",
+          "translation": "美国……"
         },
         {
           "id": "l34",
@@ -14024,7 +14027,8 @@
           "id": "l65",
           "start": 478.75,
           "end": 479.15,
-          "text": "\"Not yet."
+          "text": "\"Not yet.",
+          "translation": "还没有。"
         },
         {
           "id": "l66",
@@ -14260,7 +14264,8 @@
           "id": "l99",
           "start": 664.66,
           "end": 665.25,
-          "text": "That's it."
+          "text": "That's it.",
+          "translation": "就是这样。"
         },
         {
           "id": "l100",
@@ -14280,7 +14285,8 @@
           "id": "l102",
           "start": 672.52,
           "end": 673.47,
-          "text": "Not completely."
+          "text": "Not completely.",
+          "translation": "不完全是。"
         },
         {
           "id": "l103",
@@ -14370,7 +14376,8 @@
           "id": "l115",
           "start": 711.96,
           "end": 712.7,
-          "text": "That's true."
+          "text": "That's true.",
+          "translation": "确实如此。"
         },
         {
           "id": "l116",
@@ -14638,7 +14645,8 @@
           "id": "l154",
           "start": 1046.1,
           "end": 1046.68,
-          "text": "Mr."
+          "text": "Mr.",
+          "translation": "……先生。"
         },
         {
           "id": "l155",
@@ -14679,7 +14687,8 @@
           "id": "l160",
           "start": 1079.91,
           "end": 1080.55,
-          "text": "But Mr."
+          "text": "But Mr.",
+          "translation": "但……先生。"
         },
         {
           "id": "l161",
@@ -15603,7 +15612,8 @@
           "id": "l57",
           "start": 462.15,
           "end": 463.38,
-          "text": "Good morning."
+          "text": "Good morning.",
+          "translation": "早上好。"
         },
         {
           "id": "l58",
@@ -15616,7 +15626,8 @@
           "id": "l59",
           "start": 464.65,
           "end": 465.53,
-          "text": "Good morning."
+          "text": "Good morning.",
+          "translation": "早上好。"
         },
         {
           "id": "l60",
@@ -15629,19 +15640,22 @@
           "id": "l61",
           "start": 468.17,
           "end": 468.8,
-          "text": "Speaking."
+          "text": "Speaking.",
+          "translation": "我就是。"
         },
         {
           "id": "l62",
           "start": 468.8,
           "end": 469.52,
-          "text": "Hello, Jeff."
+          "text": "Hello, Jeff.",
+          "translation": "你好，杰夫。"
         },
         {
           "id": "l63",
           "start": 469.52,
           "end": 470.24,
-          "text": "It's Helen."
+          "text": "It's Helen.",
+          "translation": "我是海伦。"
         },
         {
           "id": "l64",
@@ -15661,7 +15675,8 @@
           "id": "l66",
           "start": 474.39,
           "end": 474.95,
-          "text": "Oh, Helen."
+          "text": "Oh, Helen.",
+          "translation": "哦，海伦。"
         },
         {
           "id": "l67",
@@ -15716,7 +15731,8 @@
           "id": "l74",
           "start": 502.03,
           "end": 502.75,
-          "text": "I see."
+          "text": "I see.",
+          "translation": "我明白了。"
         },
         {
           "id": "l75",
@@ -15750,7 +15766,8 @@
           "id": "l79",
           "start": 509.63,
           "end": 509.98,
-          "text": "OK."
+          "text": "OK.",
+          "translation": "好的。"
         },
         {
           "id": "l80",
@@ -15791,7 +15808,8 @@
           "id": "l85",
           "start": 524.4,
           "end": 524.78,
-          "text": "Right."
+          "text": "Right.",
+          "translation": "对。"
         },
         {
           "id": "l86",
@@ -15804,7 +15822,8 @@
           "id": "l87",
           "start": 533.83,
           "end": 534.18,
-          "text": "OK."
+          "text": "OK.",
+          "translation": "好的。"
         },
         {
           "id": "l88",
@@ -16847,7 +16866,8 @@
           "id": "l2",
           "start": 3.35,
           "end": 5.67,
-          "text": "Listening Comprehension."
+          "text": "Listening Comprehension.",
+          "translation": "听力理解。"
         },
         {
           "id": "l3",
@@ -17248,7 +17268,8 @@
           "id": "l60",
           "start": 459.75,
           "end": 460.05,
-          "text": "Brown?"
+          "text": "Brown?",
+          "translation": "布朗？"
         },
         {
           "id": "l61",
@@ -17317,7 +17338,8 @@
           "id": "l70",
           "start": 493.66,
           "end": 494.86,
-          "text": "Fantastic."
+          "text": "Fantastic.",
+          "translation": "太好了。"
         },
         {
           "id": "l71",
@@ -17358,7 +17380,8 @@
           "id": "l76",
           "start": 505.49,
           "end": 506.76,
-          "text": "Let's see."
+          "text": "Let's see.",
+          "translation": "我看看。"
         },
         {
           "id": "l77",
@@ -17385,7 +17408,8 @@
           "id": "l80",
           "start": 520,
           "end": 520.8,
-          "text": "Absolutely."
+          "text": "Absolutely.",
+          "translation": "当然。"
         },
         {
           "id": "l81",
@@ -17412,7 +17436,8 @@
           "id": "l84",
           "start": 531.52,
           "end": 532.12,
-          "text": "Thank you."
+          "text": "Thank you.",
+          "translation": "谢谢。"
         },
         {
           "id": "l85",
@@ -17425,7 +17450,8 @@
           "id": "l86",
           "start": 536.85,
           "end": 537.75,
-          "text": "Sure."
+          "text": "Sure.",
+          "translation": "当然。"
         },
         {
           "id": "l87",
@@ -17770,7 +17796,8 @@
           "id": "l136",
           "start": 866.74,
           "end": 867.6,
-          "text": "The 1960s."
+          "text": "The 1960s.",
+          "translation": "20世纪60年代。"
         },
         {
           "id": "l137",
@@ -18522,7 +18549,8 @@
           "id": "l2",
           "start": 5.1,
           "end": 5.9,
-          "text": "Listening Comprehension."
+          "text": "Listening Comprehension.",
+          "translation": "听力理解。"
         },
         {
           "id": "l3",
@@ -18893,7 +18921,8 @@
           "id": "l56",
           "start": 485.5,
           "end": 486.5,
-          "text": "Hi, Susan."
+          "text": "Hi, Susan.",
+          "translation": "嗨，苏珊。"
         },
         {
           "id": "l57",
@@ -18920,7 +18949,8 @@
           "id": "l60",
           "start": 494.42,
           "end": 495.1,
-          "text": "What job?"
+          "text": "What job?",
+          "translation": "什么工作？"
         },
         {
           "id": "l61",
@@ -18933,7 +18963,8 @@
           "id": "l62",
           "start": 498.44,
           "end": 498.83,
-          "text": "Yeah."
+          "text": "Yeah.",
+          "translation": "是的。"
         },
         {
           "id": "l63",
@@ -18960,7 +18991,8 @@
           "id": "l66",
           "start": 509.28,
           "end": 510.75,
-          "text": "That's fantastic."
+          "text": "That's fantastic.",
+          "translation": "那太好了。"
         },
         {
           "id": "l67",
@@ -18994,7 +19026,8 @@
           "id": "l71",
           "start": 527.6,
           "end": 527.9,
-          "text": "Hmm."
+          "text": "Hmm.",
+          "translation": "嗯。"
         },
         {
           "id": "l72",
@@ -19056,13 +19089,15 @@
           "id": "l80",
           "start": 557.3,
           "end": 558.28,
-          "text": "Thanks, Susan."
+          "text": "Thanks, Susan.",
+          "translation": "谢谢你，苏珊。"
         },
         {
           "id": "l81",
           "start": 558.28,
           "end": 559.2,
-          "text": "That's great."
+          "text": "That's great.",
+          "translation": "太好了。"
         },
         {
           "id": "l82",
@@ -19082,13 +19117,15 @@
           "id": "l84",
           "start": 566.99,
           "end": 567.34,
-          "text": "Sure."
+          "text": "Sure.",
+          "translation": "当然。"
         },
         {
           "id": "l85",
           "start": 567.34,
           "end": 568.33,
-          "text": "Thanks, James."
+          "text": "Thanks, James.",
+          "translation": "谢谢，詹姆斯。"
         },
         {
           "id": "l86",
@@ -19122,7 +19159,8 @@
           "id": "l90",
           "start": 577,
           "end": 577.8,
-          "text": "No problem."
+          "text": "No problem.",
+          "translation": "没问题。"
         },
         {
           "id": "l91",
@@ -19149,7 +19187,8 @@
           "id": "l94",
           "start": 587.05,
           "end": 587.76,
-          "text": "Of course."
+          "text": "Of course.",
+          "translation": "当然。"
         },
         {
           "id": "l95",
@@ -19336,7 +19375,8 @@
           "id": "l121",
           "start": 775.33,
           "end": 776.31,
-          "text": "You're right."
+          "text": "You're right.",
+          "translation": "你说得对。"
         },
         {
           "id": "l122",
@@ -19356,7 +19396,8 @@
           "id": "l124",
           "start": 787.85,
           "end": 788.35,
-          "text": "Right."
+          "text": "Right.",
+          "translation": "对。"
         },
         {
           "id": "l125",
@@ -20515,7 +20556,8 @@
           "id": "l46",
           "start": 466.95,
           "end": 467.25,
-          "text": "A."
+          "text": "A.",
+          "translation": "A."
         },
         {
           "id": "l47",
@@ -20528,7 +20570,8 @@
           "id": "l48",
           "start": 472.46,
           "end": 472.81,
-          "text": "B."
+          "text": "B.",
+          "translation": "B."
         },
         {
           "id": "l49",
@@ -20548,7 +20591,8 @@
           "id": "l51",
           "start": 474.2,
           "end": 474.5,
-          "text": "C."
+          "text": "C.",
+          "translation": "C."
         },
         {
           "id": "l52",
@@ -20561,7 +20605,8 @@
           "id": "l53",
           "start": 478.15,
           "end": 478.5,
-          "text": "D."
+          "text": "D.",
+          "translation": "D."
         },
         {
           "id": "l54",
@@ -20623,7 +20668,8 @@
           "id": "l62",
           "start": 516.2,
           "end": 517.75,
-          "text": "Interesting."
+          "text": "Interesting.",
+          "translation": "有意思。"
         },
         {
           "id": "l63",
@@ -20650,7 +20696,8 @@
           "id": "l66",
           "start": 527.21,
           "end": 528.04,
-          "text": "Actually, yes."
+          "text": "Actually, yes.",
+          "translation": "其实是的。"
         },
         {
           "id": "l67",
@@ -20788,7 +20835,8 @@
           "id": "l86",
           "start": 649.2,
           "end": 649.5,
-          "text": "Mr."
+          "text": "Mr.",
+          "translation": "……先生。"
         },
         {
           "id": "l87",
@@ -21882,7 +21930,8 @@
           "id": "l23",
           "start": 178.34,
           "end": 178.75,
-          "text": "The U.S."
+          "text": "The U.S.",
+          "translation": "美国……"
         },
         {
           "id": "l24",
@@ -22299,7 +22348,8 @@
           "id": "l83",
           "start": 538.26,
           "end": 538.96,
-          "text": "Brilliant."
+          "text": "Brilliant.",
+          "translation": "太棒了。"
         },
         {
           "id": "l84",
@@ -22319,7 +22369,8 @@
           "id": "l86",
           "start": 543.1,
           "end": 544.45,
-          "text": "Don't worry."
+          "text": "Don't worry.",
+          "translation": "别担心。"
         },
         {
           "id": "l87",
@@ -22353,7 +22404,8 @@
           "id": "l91",
           "start": 556.85,
           "end": 557.15,
-          "text": "Fine."
+          "text": "Fine.",
+          "translation": "好。"
         },
         {
           "id": "l92",
@@ -22407,7 +22459,8 @@
           "id": "l99",
           "start": 637.1,
           "end": 637.9,
-          "text": "Hi, Jane."
+          "text": "Hi, Jane.",
+          "translation": "嗨，简。"
         },
         {
           "id": "l100",
@@ -22434,7 +22487,8 @@
           "id": "l103",
           "start": 643.57,
           "end": 644.05,
-          "text": "Good."
+          "text": "Good.",
+          "translation": "挺好。"
         },
         {
           "id": "l104",
@@ -22552,7 +22606,8 @@
           "id": "l120",
           "start": 718.93,
           "end": 719.23,
-          "text": "Okay."
+          "text": "Okay.",
+          "translation": "好的。"
         },
         {
           "id": "l121",
@@ -22654,7 +22709,8 @@
           "id": "l135",
           "start": 839.73,
           "end": 841.75,
-          "text": "One."
+          "text": "One.",
+          "translation": "第一篇。"
         },
         {
           "id": "l136",
@@ -23838,7 +23894,8 @@
           "id": "l54",
           "start": 462.25,
           "end": 463.95,
-          "text": "A."
+          "text": "A.",
+          "translation": "A."
         },
         {
           "id": "l55",
@@ -23865,7 +23922,8 @@
           "id": "l58",
           "start": 469.48,
           "end": 470.15,
-          "text": "What's on?"
+          "text": "What's on?",
+          "translation": "上映什么？"
         },
         {
           "id": "l59",
@@ -23983,7 +24041,8 @@
           "id": "l75",
           "start": 516.48,
           "end": 517.13,
-          "text": "Okay then."
+          "text": "Okay then.",
+          "translation": "那好吧。"
         },
         {
           "id": "l76",
@@ -23996,7 +24055,8 @@
           "id": "l77",
           "start": 518.7,
           "end": 519.1,
-          "text": "At 7.30."
+          "text": "At 7.30.",
+          "translation": "7点30分。"
         },
         {
           "id": "l78",
@@ -24114,7 +24174,8 @@
           "id": "l94",
           "start": 561.14,
           "end": 561.52,
-          "text": "Great."
+          "text": "Great.",
+          "translation": "太好了。"
         },
         {
           "id": "l95",
@@ -24175,7 +24236,8 @@
           "id": "l103",
           "start": 654.4,
           "end": 654.7,
-          "text": "Lee."
+          "text": "Lee.",
+          "translation": "李先生。"
         },
         {
           "id": "l104",
@@ -24188,7 +24250,8 @@
           "id": "l105",
           "start": 656.9,
           "end": 658.37,
-          "text": "Sure, Catherine."
+          "text": "Sure, Catherine.",
+          "translation": "当然，凯瑟琳。"
         },
         {
           "id": "l106",
@@ -24250,7 +24313,8 @@
           "id": "l114",
           "start": 696.7,
           "end": 697.49,
-          "text": "That's nice."
+          "text": "That's nice.",
+          "translation": "那挺好的。"
         },
         {
           "id": "l115",
@@ -24382,7 +24446,8 @@
           "id": "l133",
           "start": 796.85,
           "end": 797.48,
-          "text": "Question 14."
+          "text": "Question 14.",
+          "translation": "问题14。"
         },
         {
           "id": "l134",
@@ -24755,7 +24820,8 @@
           "id": "l187",
           "start": 1260.19,
           "end": 1260.65,
-          "text": "T.J."
+          "text": "T.J.",
+          "translation": "T.J."
         },
         {
           "id": "l188",
@@ -25552,7 +25618,8 @@
           "id": "l60",
           "start": 496.93,
           "end": 497.49,
-          "text": "Really?"
+          "text": "Really?",
+          "translation": "真的吗？"
         },
         {
           "id": "l61",
@@ -25705,7 +25772,8 @@
           "id": "l82",
           "start": 572.65,
           "end": 573.05,
-          "text": "Bye now."
+          "text": "Bye now.",
+          "translation": "再见。"
         },
         {
           "id": "l83",
@@ -25718,7 +25786,8 @@
           "id": "l84",
           "start": 575.4,
           "end": 575.7,
-          "text": "Bye."
+          "text": "Bye.",
+          "translation": "再见。"
         },
         {
           "id": "l85",
@@ -25765,7 +25834,8 @@
           "id": "l91",
           "start": 664,
           "end": 664.66,
-          "text": "Hi, David."
+          "text": "Hi, David.",
+          "translation": "嗨，戴维。"
         },
         {
           "id": "l92",
@@ -25827,7 +25897,8 @@
           "id": "l100",
           "start": 694.1,
           "end": 694.62,
-          "text": "Great."
+          "text": "Great.",
+          "translation": "太好了。"
         },
         {
           "id": "l101",
@@ -25903,7 +25974,8 @@
           "id": "l111",
           "start": 731.35,
           "end": 732.4,
-          "text": "Thank you."
+          "text": "Thank you.",
+          "translation": "谢谢。"
         },
         {
           "id": "l112",
@@ -25937,7 +26009,8 @@
           "id": "l116",
           "start": 758.93,
           "end": 759.6,
-          "text": "Perfect."
+          "text": "Perfect.",
+          "translation": "好极了。"
         },
         {
           "id": "l117",
@@ -26786,13 +26859,15 @@
           "id": "l2",
           "start": 2.5,
           "end": 3.28,
-          "text": "Part Two."
+          "text": "Part Two.",
+          "translation": "第二部分。"
         },
         {
           "id": "l3",
           "start": 3.28,
           "end": 5.85,
-          "text": "Listening Comprehension."
+          "text": "Listening Comprehension.",
+          "translation": "听力理解。"
         },
         {
           "id": "l4",
@@ -26949,7 +27024,8 @@
           "id": "l26",
           "start": 179.81,
           "end": 180.8,
-          "text": "Mary's Church."
+          "text": "Mary's Church.",
+          "translation": "玛丽教堂。"
         },
         {
           "id": "l27",
@@ -27192,7 +27268,8 @@
           "id": "l61",
           "start": 461.05,
           "end": 461.35,
-          "text": "Mr."
+          "text": "Mr.",
+          "translation": "……先生。"
         },
         {
           "id": "l62",
@@ -27394,7 +27471,8 @@
           "id": "l90",
           "start": 579.11,
           "end": 580.35,
-          "text": "Brown's lectures?"
+          "text": "Brown's lectures?",
+          "translation": "布朗的课？"
         },
         {
           "id": "l91",
@@ -27407,7 +27485,8 @@
           "id": "l92",
           "start": 599.18,
           "end": 600.3,
-          "text": "Brown's lectures?"
+          "text": "Brown's lectures?",
+          "translation": "布朗的课？"
         },
         {
           "id": "l93",
@@ -27657,7 +27736,8 @@
           "id": "l128",
           "start": 839.95,
           "end": 840.4,
-          "text": "C."
+          "text": "C.",
+          "translation": "C."
         },
         {
           "id": "l129",
@@ -28739,13 +28819,15 @@
           "id": "l60",
           "start": 464.72,
           "end": 465.21,
-          "text": "Thanks."
+          "text": "Thanks.",
+          "translation": "谢谢。"
         },
         {
           "id": "l61",
           "start": 465.21,
           "end": 467.05,
-          "text": "My pleasure."
+          "text": "My pleasure.",
+          "translation": "不客气。"
         },
         {
           "id": "l62",
@@ -28800,7 +28882,8 @@
           "id": "l69",
           "start": 498.35,
           "end": 499.85,
-          "text": "That's right."
+          "text": "That's right.",
+          "translation": "没错。"
         },
         {
           "id": "l70",
@@ -28827,7 +28910,8 @@
           "id": "l73",
           "start": 510.8,
           "end": 511.38,
-          "text": "Correct."
+          "text": "Correct.",
+          "translation": "对。"
         },
         {
           "id": "l74",
@@ -29063,13 +29147,15 @@
           "id": "l107",
           "start": 720.8,
           "end": 721.81,
-          "text": "Restaurant Week?"
+          "text": "Restaurant Week?",
+          "translation": "餐厅周？"
         },
         {
           "id": "l108",
           "start": 721.81,
           "end": 722.48,
-          "text": "What's that?"
+          "text": "What's that?",
+          "translation": "那是什么？"
         },
         {
           "id": "l109",
@@ -29194,7 +29280,8 @@
           "id": "l126",
           "start": 836.7,
           "end": 839.05,
-          "text": "Question fifteen."
+          "text": "Question fifteen.",
+          "translation": "问题十五。"
         },
         {
           "id": "l127",
@@ -30325,7 +30412,8 @@
           "id": "l52",
           "start": 464.81,
           "end": 465.5,
-          "text": "Yes."
+          "text": "Yes.",
+          "translation": "是的。"
         },
         {
           "id": "l53",
@@ -30366,7 +30454,8 @@
           "id": "l58",
           "start": 494.8,
           "end": 496.07,
-          "text": "Congratulations!"
+          "text": "Congratulations!",
+          "translation": "恭喜！"
         },
         {
           "id": "l59",
@@ -30421,7 +30510,8 @@
           "id": "l66",
           "start": 521.3,
           "end": 521.97,
-          "text": "Yes, thanks."
+          "text": "Yes, thanks.",
+          "translation": "是的，谢谢。"
         },
         {
           "id": "l67",
@@ -30524,7 +30614,8 @@
           "id": "l81",
           "start": 655,
           "end": 656.19,
-          "text": "Congratulations."
+          "text": "Congratulations.",
+          "translation": "恭喜。"
         },
         {
           "id": "l82",
@@ -30614,7 +30705,8 @@
           "id": "l94",
           "start": 720,
           "end": 720.56,
-          "text": "No money."
+          "text": "No money.",
+          "translation": "没钱。"
         },
         {
           "id": "l95",
@@ -31651,7 +31743,8 @@
           "id": "l28",
           "start": 239.54,
           "end": 240.1,
-          "text": "And cold."
+          "text": "And cold.",
+          "translation": "而且很冷。"
         },
         {
           "id": "l29",
@@ -31712,7 +31805,8 @@
           "id": "l37",
           "start": 320.25,
           "end": 320.98,
-          "text": "Instead, Mr."
+          "text": "Instead, Mr.",
+          "translation": "而是，……先生。"
         },
         {
           "id": "l38",
@@ -31760,7 +31854,8 @@
           "id": "l44",
           "start": 369.47,
           "end": 369.77,
-          "text": "Mr."
+          "text": "Mr.",
+          "translation": "……先生。"
         },
         {
           "id": "l45",
@@ -31861,13 +31956,15 @@
           "id": "l59",
           "start": 486.47,
           "end": 487.19,
-          "text": "Who's this?"
+          "text": "Who's this?",
+          "translation": "您是哪位？"
         },
         {
           "id": "l60",
           "start": 487.19,
           "end": 487.59,
-          "text": "Hi, Emma."
+          "text": "Hi, Emma.",
+          "translation": "你好，艾玛。"
         },
         {
           "id": "l61",
@@ -31922,7 +32019,8 @@
           "id": "l68",
           "start": 501.83,
           "end": 502.23,
-          "text": "Sorry."
+          "text": "Sorry.",
+          "translation": "抱歉。"
         },
         {
           "id": "l69",
@@ -31942,7 +32040,8 @@
           "id": "l71",
           "start": 513.3,
           "end": 513.63,
-          "text": "Okay."
+          "text": "Okay.",
+          "translation": "好的。"
         },
         {
           "id": "l72",
@@ -31969,7 +32068,8 @@
           "id": "l75",
           "start": 530.23,
           "end": 531.15,
-          "text": "I'm sorry."
+          "text": "I'm sorry.",
+          "translation": "很抱歉。"
         },
         {
           "id": "l76",
@@ -32045,7 +32145,8 @@
           "id": "l86",
           "start": 565.05,
           "end": 566.31,
-          "text": "Okay, great."
+          "text": "Okay, great.",
+          "translation": "好的，太好了。"
         },
         {
           "id": "l87",
@@ -32106,7 +32207,8 @@
           "id": "l95",
           "start": 653.6,
           "end": 654.3,
-          "text": "Hi, Emily."
+          "text": "Hi, Emily.",
+          "translation": "嗨，艾米莉。"
         },
         {
           "id": "l96",
@@ -33238,7 +33340,8 @@
           "id": "l21",
           "start": 120.45,
           "end": 121.72,
-          "text": "Just heard."
+          "text": "Just heard.",
+          "translation": "刚刚听到。"
         },
         {
           "id": "l22",
@@ -33617,7 +33720,8 @@
           "id": "l76",
           "start": 515.35,
           "end": 515.75,
-          "text": "Kind of."
+          "text": "Kind of.",
+          "translation": "有点像。"
         },
         {
           "id": "l77",
@@ -33665,25 +33769,29 @@
           "id": "l83",
           "start": 547.29,
           "end": 548.7,
-          "text": "That's correct."
+          "text": "That's correct.",
+          "translation": "没错。"
         },
         {
           "id": "l84",
           "start": 548.7,
           "end": 549,
-          "text": "Yes."
+          "text": "Yes.",
+          "translation": "是的。"
         },
         {
           "id": "l85",
           "start": 549.1,
           "end": 549.54,
-          "text": "Right."
+          "text": "Right.",
+          "translation": "对。"
         },
         {
           "id": "l86",
           "start": 549.54,
           "end": 550.5,
-          "text": "Thank you."
+          "text": "Thank you.",
+          "translation": "谢谢。"
         },
         {
           "id": "l87",
@@ -33982,7 +34090,8 @@
           "id": "l129",
           "start": 793.35,
           "end": 793.75,
-          "text": "Thank you."
+          "text": "Thank you.",
+          "translation": "谢谢。"
         },
         {
           "id": "l130",
@@ -35227,7 +35336,8 @@
           "id": "l65",
           "start": 479.95,
           "end": 480.29,
-          "text": "Well, I.."
+          "text": "Well, I..",
+          "translation": "嗯，我……"
         },
         {
           "id": "l66",
@@ -35254,7 +35364,8 @@
           "id": "l69",
           "start": 493.65,
           "end": 493.95,
-          "text": "Wow!"
+          "text": "Wow!",
+          "translation": "哇！"
         },
         {
           "id": "l70",
@@ -35413,13 +35524,15 @@
           "id": "l92",
           "start": 657.05,
           "end": 658.4,
-          "text": "I know."
+          "text": "I know.",
+          "translation": "我知道。"
         },
         {
           "id": "l93",
           "start": 658.4,
           "end": 659.25,
-          "text": "I'm sorry."
+          "text": "I'm sorry.",
+          "translation": "对不起。"
         },
         {
           "id": "l94",
@@ -35502,7 +35615,8 @@
           "id": "l105",
           "start": 719.5,
           "end": 719.8,
-          "text": "Oh."
+          "text": "Oh.",
+          "translation": "哦。"
         },
         {
           "id": "l106",
@@ -36424,7 +36538,8 @@
           "id": "l9",
           "start": 38.3,
           "end": 40.47,
-          "text": "Good morning."
+          "text": "Good morning.",
+          "translation": "早上好。"
         },
         {
           "id": "l10",
@@ -36987,7 +37102,8 @@
           "id": "l90",
           "start": 657.9,
           "end": 658.8,
-          "text": "Question eleven."
+          "text": "Question eleven.",
+          "translation": "问题十一。"
         },
         {
           "id": "l91",
@@ -37605,7 +37721,8 @@
           "id": "l179",
           "start": 1440.2,
           "end": 1440.8,
-          "text": "嗯."
+          "text": "嗯.",
+          "translation": "嗯。"
         }
       ],
       "status": "published",
@@ -38340,7 +38457,8 @@
           "id": "l63",
           "start": 490.51,
           "end": 491.07,
-          "text": "But how?"
+          "text": "But how?",
+          "translation": "可是怎么做到呢？"
         },
         {
           "id": "l64",
@@ -38416,7 +38534,8 @@
           "id": "l74",
           "start": 540.82,
           "end": 541.55,
-          "text": "Not ourselves."
+          "text": "Not ourselves.",
+          "translation": "不是我们自己。"
         },
         {
           "id": "l75",
@@ -38512,13 +38631,15 @@
           "id": "l88",
           "start": 657.65,
           "end": 658.21,
-          "text": "Hello, Mr."
+          "text": "Hello, Mr.",
+          "translation": "您好，先生。"
         },
         {
           "id": "l89",
           "start": 658.21,
           "end": 658.6,
-          "text": "Brown."
+          "text": "Brown.",
+          "translation": "……布朗。"
         },
         {
           "id": "l90",
@@ -38545,7 +38666,8 @@
           "id": "l93",
           "start": 666.65,
           "end": 667.05,
-          "text": "No, no."
+          "text": "No, no.",
+          "translation": "不，不。"
         },
         {
           "id": "l94",
@@ -38614,7 +38736,8 @@
           "id": "l103",
           "start": 693.35,
           "end": 693.65,
-          "text": "Yes."
+          "text": "Yes.",
+          "translation": "是的。"
         },
         {
           "id": "l104",
@@ -38627,13 +38750,15 @@
           "id": "l105",
           "start": 698.84,
           "end": 699.3,
-          "text": "Brown?"
+          "text": "Brown?",
+          "translation": "……布朗？"
         },
         {
           "id": "l106",
           "start": 700.1,
           "end": 700.47,
-          "text": "Sure."
+          "text": "Sure.",
+          "translation": "当然。"
         },
         {
           "id": "l107",
@@ -38660,13 +38785,15 @@
           "id": "l110",
           "start": 712.23,
           "end": 712.69,
-          "text": "Right."
+          "text": "Right.",
+          "translation": "对。"
         },
         {
           "id": "l111",
           "start": 712.69,
           "end": 713.75,
-          "text": "Of course."
+          "text": "Of course.",
+          "translation": "当然。"
         },
         {
           "id": "l112",
@@ -38707,7 +38834,8 @@
           "id": "l117",
           "start": 735.03,
           "end": 735.48,
-          "text": "Brown?"
+          "text": "Brown?",
+          "translation": "……布朗？"
         },
         {
           "id": "l118",
@@ -38720,13 +38848,15 @@
           "id": "l119",
           "start": 737.18,
           "end": 738.25,
-          "text": "Thank you."
+          "text": "Thank you.",
+          "translation": "谢谢。"
         },
         {
           "id": "l120",
           "start": 738.25,
           "end": 738.61,
-          "text": "Good."
+          "text": "Good.",
+          "translation": "好。"
         },
         {
           "id": "l121",
@@ -38774,7 +38904,8 @@
           "id": "l127",
           "start": 758.32,
           "end": 759.12,
-          "text": "Okay, great."
+          "text": "Okay, great.",
+          "translation": "好的，太好了。"
         },
         {
           "id": "l128",

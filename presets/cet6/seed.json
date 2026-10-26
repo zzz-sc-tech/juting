@@ -1,7 +1,7 @@
 {
   "preset": "cet6",
-  "version": "20261026.8",
-  "generatedAt": "2026-10-26T14:41:17.235Z",
+  "version": "20261026.9",
+  "generatedAt": "2026-10-26T14:54:51.069Z",
   "group": {
     "id": 8,
     "name": "英语六级真题",
@@ -73855,169 +73855,197 @@
           "id": "l5",
           "start": 42.8,
           "end": 45.32,
-          "text": "M: So, how long have you been a Market Research Consultant?"
+          "text": "M: So, how long have you been a Market Research Consultant?",
+          "translation": "M: 那么，您做市场研究顾问多久了？"
         },
         {
           "id": "l6",
           "start": 47.72,
           "end": 49.4,
-          "text": "W: Well, I started straight after finishing university.,"
+          "text": "W: Well, I started straight after finishing university.,",
+          "translation": "W: 嗯，我大学一毕业就开始做这份工作了。"
         },
         {
           "id": "l7",
           "start": 51.74,
           "end": 53.14,
-          "text": "M: Did you study market research?"
+          "text": "M: Did you study market research?",
+          "translation": "M: 您学的是市场研究吗？"
         },
         {
           "id": "l8",
           "start": 54.51,
           "end": 64.87,
-          "text": "W: Yeah, and it really helped me to get into the industry, but I have to say that it's more important to get experience in different types of market research to find out exactly what you're interested in."
+          "text": "W: Yeah, and it really helped me to get into the industry, but I have to say that it's more important to get experience in different types of market research to find out exactly what you're interested in.",
+          "translation": "W: 是的，这确实帮我进入了这个行业，但我得说，更重要的是积累不同类型市场研究的经验，才能弄清楚自己真正感兴趣的是什么。"
         },
         {
           "id": "l9",
           "start": 68.23,
           "end": 70.15,
-          "text": "M: So what are you interested in?"
+          "text": "M: So what are you interested in?",
+          "translation": "M: 那您感兴趣的是什么呢？"
         },
         {
           "id": "l10",
           "start": 71.1,
           "end": 76.26,
-          "text": "W: Well, at the moment, I specialize in quantitative advertising research, which means that I do two types of projects."
+          "text": "W: Well, at the moment, I specialize in quantitative advertising research, which means that I do two types of projects.",
+          "translation": "W: 嗯，目前我专门做定量广告研究，也就是说我做两类项目。"
         },
         {
           "id": "l11",
           "start": 79.75,
           "end": 84.51,
-          "text": "Trackers, which are ongoing projects that look at trends or customer satisfaction over a long period of time."
+          "text": "Trackers, which are ongoing projects that look at trends or customer satisfaction over a long period of time.",
+          "translation": "一类是追踪调查，也就是长期观察趋势或客户满意度的持续性项目。"
         },
         {
           "id": "l12",
           "start": 87.38,
           "end": 91.3,
-          "text": "The only problem. with trackers is that it takes up a lot of your time."
+          "text": "The only problem. with trackers is that it takes up a lot of your time.",
+          "translation": "追踪调查唯一的问题在于它非常占用你的时间。"
         },
         {
           "id": "l13",
           "start": 93.35,
           "end": 96.15,
-          "text": "But you do build up a good relationship with the client."
+          "text": "But you do build up a good relationship with the client.",
+          "translation": "但你确实能和客户建立起良好的关系。"
         },
         {
           "id": "l14",
           "start": 97.6,
           "end": 100.96,
-          "text": "I also do a couple of ad-hoc jobs which are much shorter projects."
+          "text": "I also do a couple of ad-hoc jobs which are much shorter projects.",
+          "translation": "我还做几个临时项目，这类项目周期要短得多。"
         },
         {
           "id": "l15",
           "start": 102.1,
           "end": 105.12,
-          "text": "M: What exactly do you mean by ad-hoc jobs?"
+          "text": "M: What exactly do you mean by ad-hoc jobs?",
+          "translation": "M: 您说的临时项目具体指什么？"
         },
         {
           "id": "l16",
           "start": 105.3,
           "end": 109.77,
-          "text": "W: It's basically when companies need quick answers to their questions about their consumers' habits."
+          "text": "W: It's basically when companies need quick answers to their questions about their consumers' habits.",
+          "translation": "W: 基本上就是公司需要快速了解消费者习惯方面的问题时找我们。"
         },
         {
           "id": "l17",
           "start": 113.1,
           "end": 121.06,
-          "text": "They just ask for one questionnaire to be sent out, for example, so the time you spend on an ad-hoc project tends to be fairly short."
+          "text": "They just ask for one questionnaire to be sent out, for example, so the time you spend on an ad-hoc project tends to be fairly short.",
+          "translation": "比如他们只是要求发放一份问卷，所以花在临时项目上的时间往往相当短。"
         },
         {
           "id": "l18",
           "start": 122.15,
           "end": 124.5,
-          "text": "M: Which do you prefer, trackers or ad-hoc?"
+          "text": "M: Which do you prefer, trackers or ad-hoc?",
+          "translation": "M: 您更喜欢哪一种，追踪调查还是临时项目？"
         },
         {
           "id": "l19",
           "start": 125.05,
           "end": 131.35,
-          "text": "W: I like doing both and in fact I need to do both at the same time to keep me from going crazy."
+          "text": "W: I like doing both and in fact I need to do both at the same time to keep me from going crazy.",
+          "translation": "W: 两种我都喜欢，实际上我需要同时做这两类工作，才不至于被逼疯。"
         },
         {
           "id": "l20",
           "start": 131.35,
           "end": 132.19,
-          "text": "I need the variety."
+          "text": "I need the variety.",
+          "translation": "我需要这种多样性。"
         },
         {
           "id": "l21",
           "start": 132.19,
           "end": 136.15,
-          "text": "M: Can you just explain what process you go through with a new client?"
+          "text": "M: Can you just explain what process you go through with a new client?",
+          "translation": "M: 您能简单讲讲接一个新客户要经过哪些流程吗？"
         },
         {
           "id": "l22",
           "start": 137.65,
           "end": 141.29,
-          "text": "W: Well, together we decide on the methodology and the objectives of the research."
+          "text": "W: Well, together we decide on the methodology and the objectives of the research.",
+          "translation": "W: 嗯，我们会一起确定研究的方法和目标。"
         },
         {
           "id": "l23",
           "start": 144.02,
           "end": 145.1,
-          "text": "I then design a questionnaire."
+          "text": "I then design a questionnaire.",
+          "translation": "然后由我来设计问卷。"
         },
         {
           "id": "l24",
           "start": 145.85,
           "end": 152.49,
-          "text": "Once the interviewers have been briefed, I send the client a schedule and then they get back to me with deadlines."
+          "text": "Once the interviewers have been briefed, I send the client a schedule and then they get back to me with deadlines.",
+          "translation": "等访问员交代清楚任务后，我把进度表发给客户，然后他们再把截止时间反馈给我。"
         },
         {
           "id": "l25",
           "start": 152.55,
           "end": 160.38,
-          "text": "Once the final charts and tables are ready, I have to check them and organize a presentation."
+          "text": "Once the final charts and tables are ready, I have to check them and organize a presentation.",
+          "translation": "最终的图表做好后，我得核对它们，并组织一次汇报。"
         },
         {
           "id": "l26",
           "start": 164.75,
           "end": 165.2,
-          "text": "M: Hmm."
+          "text": "M: Hmm.",
+          "translation": "M: 嗯。"
         },
         {
           "id": "l27",
           "start": 165.25,
           "end": 168.61,
-          "text": "One last question, what do you like and dislike about your job?"
+          "text": "One last question, what do you like and dislike about your job?",
+          "translation": "最后一个问题，您对这份工作喜欢什么、不喜欢什么？"
         },
         {
           "id": "l28",
           "start": 168.61,
           "end": 174.49,
-          "text": "W: As I said, variety is important and as for what I don't like, it has to be the checking of charts and tables."
+          "text": "W: As I said, variety is important and as for what I don't like, it has to be the checking of charts and tables.",
+          "translation": "W: 正如我说的，多样性很重要；至于不喜欢的，那一定是核对图表。"
         },
         {
           "id": "l29",
           "start": 176.5,
           "end": 180.5,
-          "text": "Q1. What position does the woman hold in the company?"
+          "text": "Q1. What position does the woman hold in the company?",
+          "translation": "Q1. 这位女士在公司担任什么职位？"
         },
         {
           "id": "l30",
           "start": 194.15,
           "end": 198.05,
-          "text": "Q2. What does the woman specialize in at the moment?"
+          "text": "Q2. What does the woman specialize in at the moment?",
+          "translation": "Q2. 这位女士目前专门从事什么？"
         },
         {
           "id": "l31",
           "start": 211.75,
           "end": 215.55,
-          "text": "Q3. What does the woman say about trackers?"
+          "text": "Q3. What does the woman say about trackers?",
+          "translation": "Q3. 关于追踪调查，这位女士说了什么？"
         },
         {
           "id": "l32",
           "start": 229.3,
           "end": 233.1,
-          "text": "Q4. What does the woman dislike about her job?"
+          "text": "Q4. What does the woman dislike about her job?",
+          "translation": "Q4. 这位女士不喜欢自己工作的哪一点？"
         },
         {
           "id": "l33",
@@ -74029,181 +74057,211 @@
           "id": "l34",
           "start": 250.1,
           "end": 250.55,
-          "text": "W: Hello."
+          "text": "W: Hello.",
+          "translation": "W: 你好。"
         },
         {
           "id": "l35",
           "start": 250.55,
           "end": 252.25,
-          "text": "I'm here with Frederick."
+          "text": "I'm here with Frederick.",
+          "translation": "我现在和弗雷德里克在一起。"
         },
         {
           "id": "l36",
           "start": 252.25,
           "end": 254.94,
-          "text": "Now Fred, you went to university in Canada?"
+          "text": "Now Fred, you went to university in Canada?",
+          "translation": "弗雷德，你是在加拿大上的大学吗？"
         },
         {
           "id": "l37",
           "start": 254.94,
           "end": 255.43,
-          "text": "M: Yeah, that's right."
+          "text": "M: Yeah, that's right.",
+          "translation": "M: 是的，没错。"
         },
         {
           "id": "l38",
           "start": 255.53,
           "end": 259.06,
-          "text": "W: OK, and you have very strong views about universities in Canada."
+          "text": "W: OK, and you have very strong views about universities in Canada.",
+          "translation": "W: 好，你对加拿大的大学有很强烈的看法。"
         },
         {
           "id": "l39",
           "start": 259.58,
           "end": 260.9,
-          "text": "Could you please explain?"
+          "text": "Could you please explain?",
+          "translation": "能请你解释一下吗？"
         },
         {
           "id": "l40",
           "start": 260.9,
           "end": 263.54,
-          "text": "M: Well, we don't have private universities in Canada."
+          "text": "M: Well, we don't have private universities in Canada.",
+          "translation": "M: 嗯，加拿大没有私立大学。"
         },
         {
           "id": "l41",
           "start": 264.69,
           "end": 265.8,
-          "text": "They're all public."
+          "text": "They're all public.",
+          "translation": "它们全是公立的。"
         },
         {
           "id": "l42",
           "start": 266.3,
           "end": 276.66,
-          "text": "All the universities are owned by the government, so there is the Ministry of Education in charge of creating the curriculum for. the universities and so there's not much room for flexibility."
+          "text": "All the universities are owned by the government, so there is the Ministry of Education in charge of creating the curriculum for. the universities and so there's not much room for flexibility.",
+          "translation": "所有大学都归政府所有，由教育部负责制定大学的课程，因此没有多少灵活空间。"
         },
         {
           "id": "l43",
           "start": 279.6,
           "end": 282.4,
-          "text": "Since it's a government-operated institution, things don't move very fast."
+          "text": "Since it's a government-operated institution, things don't move very fast.",
+          "translation": "由于是政府运营的机构，事情推进得并不快。"
         },
         {
           "id": "l44",
           "start": 284.09,
           "end": 291.09,
-          "text": "If you want something to be done, then their staff do not have so much incentive to help you because he's a worker for the government."
+          "text": "If you want something to be done, then their staff do not have so much incentive to help you because he's a worker for the government.",
+          "translation": "如果你想办成一件事，那里的员工并没有多大动力帮你，因为他是给政府干活的。"
         },
         {
           "id": "l45",
           "start": 292.2,
           "end": 293.88,
-          "text": "So I don't think it's very efficient."
+          "text": "So I don't think it's very efficient.",
+          "translation": "所以我认为效率不高。"
         },
         {
           "id": "l46",
           "start": 295.95,
           "end": 299.87,
-          "text": "However, there are certain advantages of public universities,. such as the fees being free."
+          "text": "However, there are certain advantages of public universities,. such as the fees being free.",
+          "translation": "不过公立大学也有某些好处，比如学费免费。"
         },
         {
           "id": "l47",
           "start": 301.76,
           "end": 304.35,
-          "text": "You don't have to pay for your education."
+          "text": "You don't have to pay for your education.",
+          "translation": "你不必为教育付费。"
         },
         {
           "id": "l48",
           "start": 305.2,
           "end": 308.9,
-          "text": "But the system isn't efficient, and it does not work that well."
+          "text": "But the system isn't efficient, and it does not work that well.",
+          "translation": "但这个体系效率不高，运转得也不太好。"
         },
         {
           "id": "l49",
           "start": 308.9,
           "end": 310.75,
-          "text": "W: Yeah, I can see your point."
+          "text": "W: Yeah, I can see your point.",
+          "translation": "W: 是的，我明白你的意思。"
         },
         {
           "id": "l50",
           "start": 310.75,
           "end": 315.73,
-          "text": "But in the United States we have many private universities, and I think they're large bureaucracies also."
+          "text": "But in the United States we have many private universities, and I think they're large bureaucracies also.",
+          "translation": "但在美国我们有很多私立大学，而我认为它们同样也是庞大的官僚机构。"
         },
         {
           "id": "l51",
           "start": 317.65,
           "end": 322.13,
-          "text": "Maybe people don't act that much differently, because it's the same thing working for a private university."
+          "text": "Maybe people don't act that much differently, because it's the same thing working for a private university.",
+          "translation": "也许人们的行为并没有多大差别，因为在私立大学工作也是一回事。"
         },
         {
           "id": "l52",
           "start": 324.52,
           "end": 326.2,
-          "text": "They get paid for their job."
+          "text": "They get paid for their job.",
+          "translation": "他们工作挣钱。"
         },
         {
           "id": "l53",
           "start": 326.77,
           "end": 330.13,
-          "text": "I don't know if they're that much more motivated to help people."
+          "text": "I don't know if they're that much more motivated to help people.",
+          "translation": "我不知道他们是否真有更大的动力去帮人。"
         },
         {
           "id": "l54",
           "start": 331.9,
           "end": 338.62,
-          "text": "Also, we have a problem in the United States that usually only wealthy kids go to the best schools and it's kind of a problem actually."
+          "text": "Also, we have a problem in the United States that usually only wealthy kids go to the best schools and it's kind of a problem actually.",
+          "translation": "另外，美国还有一个问题：通常只有富裕家庭的孩子才能上最好的学校，这确实算个问题。"
         },
         {
           "id": "l55",
           "start": 340.14,
           "end": 341.85,
-          "text": "M: I agree with you."
+          "text": "M: I agree with you.",
+          "translation": "M: 我同意你的看法。"
         },
         {
           "id": "l56",
           "start": 341.85,
           "end": 346.04,
-          "text": "I think it's a problem because you're not giving equal access to education to everybody."
+          "text": "I think it's a problem because you're not giving equal access to education to everybody.",
+          "translation": "我认为这是个问题，因为你没有给每个人平等的受教育机会。"
         },
         {
           "id": "l57",
           "start": 347.8,
           "end": 352,
-          "text": "It's not easy, -but having only public universities also might not be the best solution."
+          "text": "It's not easy, -but having only public universities also might not be the best solution.",
+          "translation": "这不容易，但只办公立大学也可能不是最好的解决办法。"
         },
         {
           "id": "l58",
           "start": 354.15,
           "end": 358.35,
-          "text": "Perhaps we can learn from Japan where they have a system of private and public universities."
+          "text": "Perhaps we can learn from Japan where they have a system of private and public universities.",
+          "translation": "也许我们可以借鉴日本，他们有一套私立与公立大学并存的体系。"
         },
         {
           "id": "l59",
           "start": 360,
           "end": 363.08,
-          "text": "Now, in Japan, public universities are considered to be the best."
+          "text": "Now, in Japan, public universities are considered to be the best.",
+          "translation": "在日本，公立大学被认为是最好的。"
         },
         {
           "id": "l60",
           "start": 363.78,
           "end": 364.65,
-          "text": "W: Right."
+          "text": "W: Right.",
+          "translation": "W: 对。"
         },
         {
           "id": "l61",
           "start": 364.65,
           "end": 368,
-          "text": "It's the exact opposite in the United States."
+          "text": "It's the exact opposite in the United States.",
+          "translation": "在美国情况恰恰相反。"
         },
         {
           "id": "l62",
           "start": 368.35,
           "end": 372.25,
-          "text": "M: So, as you see, it's very hard to say which one is better."
+          "text": "M: So, as you see, it's very hard to say which one is better.",
+          "translation": "M: 所以你看，很难说哪一种更好。"
         },
         {
           "id": "l63",
           "start": 372.25,
           "end": 373.2,
-          "text": "I w: Right, a good point."
+          "text": "I w: Right, a good point.",
+          "translation": "I w: 对，说得好。"
         },
         {
           "id": "l64",
@@ -74215,25 +74273,29 @@
           "id": "l65",
           "start": 379.85,
           "end": 383.8,
-          "text": "Q5. What does the woman want Frederick to talk about?"
+          "text": "Q5. What does the woman want Frederick to talk about?",
+          "translation": "Q5. 女士想让弗雷德里克谈什么？"
         },
         {
           "id": "l66",
           "start": 397.3,
           "end": 402.95,
-          "text": "Q6. What does the man say about the curriculum in Canadian universities?"
+          "text": "Q6. What does the man say about the curriculum in Canadian universities?",
+          "translation": "Q6. 关于加拿大大学的课程，男士说了什么？"
         },
         {
           "id": "l67",
           "start": 416.55,
           "end": 420.25,
-          "text": "Q7. On what point do the speakers agree?"
+          "text": "Q7. On what point do the speakers agree?",
+          "translation": "Q7. 两位说话者在哪一点上意见一致？"
         },
         {
           "id": "l68",
           "start": 433.95,
           "end": 438.55,
-          "text": "Q8. What point does the man make at the end of the conversation?"
+          "text": "Q8. What point does the man make at the end of the conversation?",
+          "translation": "Q8. 男士在对话最后提出了什么观点？"
         },
         {
           "id": "l69",
@@ -74257,73 +74319,85 @@
           "id": "l72",
           "start": 484.9,
           "end": 494.42,
-          "text": "A recent International Labor Organization report says the deterioration of real wages around the world calls into question the true extent of an economic recovery, especially if government rescue packages are phased out too-early."
+          "text": "A recent International Labor Organization report says the deterioration of real wages around the world calls into question the true extent of an economic recovery, especially if government rescue packages are phased out too-early.",
+          "translation": "国际劳工组织最近的一份报告称，全球实际工资的恶化使人们质疑经济复苏的真实程度，尤其是如果政府的救助方案过早退出的话。"
         },
         {
           "id": "l73",
           "start": 502.55,
           "end": 508.15,
-          "text": "The report warns the picture on wages is likely to get worse this year despite indications of an economic rebound."
+          "text": "The report warns the picture on wages is likely to get worse this year despite indications of an economic rebound.",
+          "translation": "该报告警告说，尽管有经济回暖的迹象，今年的工资状况仍可能进一步恶化。"
         },
         {
           "id": "l74",
           "start": 511.95,
           "end": 533.95,
-          "text": "Patrick Belser, an International Labor Organization specialist says declining wage rates are linked to the levels of unemployment.\"The quite dramatic unemployment figures, which we now see in some of the countries strongly suggest that there will be greater pressure on wages in the future as more people will be unemployed, more people will be looking for jobs and the pressure on employers to raise wages to attract workers will decline."
+          "text": "Patrick Belser, an International Labor Organization specialist says declining wage rates are linked to the levels of unemployment.\"The quite dramatic unemployment figures, which we now see in some of the countries strongly suggest that there will be greater pressure on wages in the future as more people will be unemployed, more people will be looking for jobs and the pressure on employers to raise wages to attract workers will decline.",
+          "translation": "国际劳工组织的专家帕特里克·贝尔瑟说，工资水平下降与失业率有关。他说，我们现在在一些国家看到的相当惊人的失业数字强烈表明，未来工资将面临更大压力，因为会有更多人失业、更多人找工作，雇主为吸引工人而加薪的压力将会减弱。"
         },
         {
           "id": "l75",
           "start": 533.95,
           "end": 536.75,
-          "text": "Q9. What is the International Labor Organization's report mainly about?"
+          "text": "Q9. What is the International Labor Organization's report mainly about?",
+          "translation": "Q9. 国际劳工组织的这份报告主要讲什么？"
         },
         {
           "id": "l76",
           "start": 541.35,
           "end": 551.99,
-          "text": "So, we expect that the second part of the year will not be very good in terms of wage growth.\"The report finds more than a quarter of the countries experienced flat or falling monthly wages in real terms."
+          "text": "So, we expect that the second part of the year will not be very good in terms of wage growth.\"The report finds more than a quarter of the countries experienced flat or falling monthly wages in real terms.",
+          "translation": "因此，我们预计今年下半年在工资增长方面不会太好。报告发现，超过四分之一的国家实际月工资持平或下降。"
         },
         {
           "id": "l77",
           "start": 555.4,
           "end": 558.76,
-          "text": "They include the United States, Austria, Costa Rica, South Africa and Germany."
+          "text": "They include the United States, Austria, Costa Rica, South Africa and Germany.",
+          "translation": "这些国家包括美国、奥地利、哥斯达黎加、南非和德国。"
         },
         {
           "id": "l78",
           "start": 564.25,
           "end": 570.69,
-          "text": "International Labor Organization economists say some nations have come up with policies to lessen the impact of lower wages during the economic crisis."
+          "text": "International Labor Organization economists say some nations have come up with policies to lessen the impact of lower wages during the economic crisis.",
+          "translation": "国际劳工组织的经济学家说，一些国家已出台政策，以减轻经济危机期间低工资的影响。"
         },
         {
           "id": "l79",
           "start": 575.75,
           "end": 580.55,
-          "text": "An example of these is Work Sharing with government subsidies."
+          "text": "An example of these is Work Sharing with government subsidies.",
+          "translation": "其中一个例子是带政府补贴的工作分享方案。"
         },
         {
           "id": "l80",
           "start": 580.55,
           "end": 588.15,
-          "text": "Under this scheme, the number of individual working hours is reduced in an effort to avoid layoffs."
+          "text": "Under this scheme, the number of individual working hours is reduced in an effort to avoid layoffs.",
+          "translation": "在这一方案下，为尽量避免裁员，个人的工作时数被减少。"
         },
         {
           "id": "l81",
           "start": 588.15,
           "end": 599.96,
-          "text": "For this scheme to work, the government must provide wage subsidies to compensate for lost pay due to the shorter hours."
+          "text": "For this scheme to work, the government must provide wage subsidies to compensate for lost pay due to the shorter hours.",
+          "translation": "该方案要奏效，政府必须提供工资补贴，以弥补工时缩短造成的收入损失。"
         },
         {
           "id": "l82",
           "start": 621.55,
           "end": 627.15,
-          "text": "Q10. According to an International Labor Organization's specialist, how will employers feel if there are more people looking for jobs?"
+          "text": "Q10. According to an International Labor Organization's specialist, how will employers feel if there are more people looking for jobs?",
+          "translation": "Q10. 据国际劳工组织的一位专家所说，如果找工作的人增多，雇主会有何感受？"
         },
         {
           "id": "l83",
           "start": 644.8,
           "end": 649.1,
-          "text": "Q11. What does the speaker mean by the Work Sharing scheme?"
+          "text": "Q11. What does the speaker mean by the Work Sharing scheme?",
+          "translation": "Q11. 说话者所说的“工作分享”方案是什么意思？"
         },
         {
           "id": "l84",
@@ -74335,97 +74409,113 @@
           "id": "l85",
           "start": 664.65,
           "end": 668.05,
-          "text": "Is there really a magic memory pill or a herbal recall remedy?"
+          "text": "Is there really a magic memory pill or a herbal recall remedy?",
+          "translation": "真的存在神奇的健脑药片或草本记忆良方吗？"
         },
         {
           "id": "l86",
           "start": 668.87,
           "end": 671.39,
-          "text": "I have been frequently asked if these memory supplements work."
+          "text": "I have been frequently asked if these memory supplements work.",
+          "translation": "经常有人问我这些记忆补充剂是否有效。"
         },
         {
           "id": "l87",
           "start": 674.87,
           "end": 683.5,
-          "text": "You'know, one of these first things I like to tell people when they ask me about the supplements, is that a lot of them are promoted as a cure for your memory."
+          "text": "You'know, one of these first things I like to tell people when they ask me about the supplements, is that a lot of them are promoted as a cure for your memory.",
+          "translation": "你知道，当人们问起这些补充剂时，我首先想告诉他们的一点是，其中很多都被宣传成治疗记忆的良药。"
         },
         {
           "id": "l88",
           "start": 684.65,
           "end": 686.7,
-          "text": "But your memory doesn't need a cure."
+          "text": "But your memory doesn't need a cure.",
+          "translation": "但你的记忆力并不需要治疗。"
         },
         {
           "id": "l89",
           "start": 687.45,
           "end": 689.75,
-          "text": "What your memory needs is a good work-out."
+          "text": "What your memory needs is a good work-out.",
+          "translation": "你的记忆力需要的是好好锻炼。"
         },
         {
           "id": "l90",
           "start": 689.75,
           "end": 695.59,
-          "text": "So really, those supplements aren't going to give you that perfect memory in the way that they promise."
+          "text": "So really, those supplements aren't going to give you that perfect memory in the way that they promise.",
+          "translation": "所以说，这些补充剂并不能像它们承诺的那样给你完美的记忆。"
         },
         {
           "id": "l91",
           "start": 695.9,
           "end": 704.02,
-          "text": "The other thing is that a lot of these supplements aren't necessarily what they claim to be, and you really have to be wary when you take any of them."
+          "text": "The other thing is that a lot of these supplements aren't necessarily what they claim to be, and you really have to be wary when you take any of them.",
+          "translation": "另一点是，很多这类补充剂未必如其所宣称的那样，服用任何一种时你都确实需要保持警惕。"
         },
         {
           "id": "l92",
           "start": 704.92,
           "end": 707.16,
-          "text": "The science isn't there behind most of them."
+          "text": "The science isn't there behind most of them.",
+          "translation": "它们大多数缺乏科学依据。"
         },
         {
           "id": "l93",
           "start": 708.17,
           "end": 711.81,
-          "text": "They're not really well-regulated unless they adhere to some industry standard."
+          "text": "They're not really well-regulated unless they adhere to some industry standard.",
+          "translation": "除非遵循某种行业标准，否则它们并没有受到很好的监管。"
         },
         {
           "id": "l94",
           "start": 713.8,
           "end": 717.72,
-          "text": "You don't really know that what they say is in there, isn't in there."
+          "text": "You don't really know that what they say is in there, isn't in there.",
+          "translation": "你并不真的知道它们声称含有的成分是否真的在里面。"
         },
         {
           "id": "l95",
           "start": 719.4,
           "end": 724.72,
-          "text": "What you must understand is that those supplements,. especially in some eastern cultures, are part of a medical practice tradition."
+          "text": "What you must understand is that those supplements,. especially in some eastern cultures, are part of a medical practice tradition.",
+          "translation": "你必须明白，这些补充剂，尤其在一些东方文化中，是医疗实践传统的一部分。"
         },
         {
           "id": "l96",
           "start": 726.41,
           "end": 729.77,
-          "text": "People don't just go in a local grocery store and buy these supplements."
+          "text": "People don't just go in a local grocery store and buy these supplements.",
+          "translation": "人们并不是随便走进一家本地杂货店就买这些补充剂的。"
         },
         {
           "id": "l97",
           "start": 731.53,
           "end": 737.41,
-          "text": "In fact, they are prescribed and they're given at a certain level, a dosage that is understood by a practitioner who's been trained."
+          "text": "In fact, they are prescribed and they're given at a certain level, a dosage that is understood by a practitioner who's been trained.",
+          "translation": "事实上，它们由医生开具处方，按一定剂量给予，这个剂量是受过训练的执业医师所掌握的。"
         },
         {
           "id": "l98",
           "start": 740.8,
           "end": 744.16,
-          "text": "And that's not really the way they're used in this country."
+          "text": "And that's not really the way they're used in this country.",
+          "translation": "而在这个国家，人们并不是这样使用它们的。"
         },
         {
           "id": "l99",
           "start": 744.7,
           "end": 749.9,
-          "text": "The other thing that people do forget is that these. are medicines, so they do have an impact."
+          "text": "The other thing that people do forget is that these. are medicines, so they do have an impact.",
+          "translation": "人们还容易忘记的另一点是，这些是药品，所以确实会产生作用。"
         },
         {
           "id": "l100",
           "start": 749.9,
           "end": 761.94,
-          "text": "A lot of times people are not really aware of the impact they have, or the fact that taking them in combination with other medications might put you at increased risk for something, that you wouldn't otherwise being countering or be at risk for."
+          "text": "A lot of times people are not really aware of the impact they have, or the fact that taking them in combination with other medications might put you at increased risk for something, that you wouldn't otherwise being countering or be at risk for.",
+          "translation": "很多时候，人们并不真正了解这些药的作用，也不了解把它们与其他药物同时服用，可能使你在原本不会遭遇的风险上承担更大的风险。"
         },
         {
           "id": "l101",
@@ -74437,25 +74527,29 @@
           "id": "l102",
           "start": 772.35,
           "end": 776.9,
-          "text": "Q12. What question is frequently put to the speaker?"
+          "text": "Q12. What question is frequently put to the speaker?",
+          "translation": "Q12. 人们经常向说话者提出什么问题？"
         },
         {
           "id": "l103",
           "start": 790.5,
           "end": 795.75,
-          "text": "Q13. What does the speaker say about most memory supplements?"
+          "text": "Q13. What does the speaker say about most memory supplements?",
+          "translation": "Q13. 关于大多数记忆补充剂，说话者说了什么？"
         },
         {
           "id": "l104",
           "start": 809.5,
           "end": 815.05,
-          "text": "Q14. What do we learn about memory supplements in eastern cultures?"
+          "text": "Q14. What do we learn about memory supplements in eastern cultures?",
+          "translation": "Q14. 关于东方文化中的记忆补充剂，我们了解到什么？"
         },
         {
           "id": "l105",
           "start": 828.9,
           "end": 834.6,
-          "text": "Q15. What does the speaker say about memory supplements at the end?"
+          "text": "Q15. What does the speaker say about memory supplements at the end?",
+          "translation": "Q15. 说话者在最后对记忆补充剂说了什么？"
         },
         {
           "id": "l106",
@@ -74479,157 +74573,183 @@
           "id": "l109",
           "start": 879.95,
           "end": 882.75,
-          "text": "The negative impacts of natural disasters can be seen everywhere."
+          "text": "The negative impacts of natural disasters can be seen everywhere.",
+          "translation": "自然灾害的负面影响随处可见。"
         },
         {
           "id": "l110",
           "start": 884.85,
           "end": 894.31,
-          "text": "In just the past few weeks, the world has witnessed the destructive power of earthquakes in Indonesia, typhoons in the Philippines, and the destructive sea waves that struck Samoa and neighboring islands."
+          "text": "In just the past few weeks, the world has witnessed the destructive power of earthquakes in Indonesia, typhoons in the Philippines, and the destructive sea waves that struck Samoa and neighboring islands.",
+          "translation": "就在过去几周里，世界目睹了印度尼西亚地震、菲律宾台风以及袭击萨摩亚及邻近岛屿的破坏性海浪的威力。"
         },
         {
           "id": "l111",
           "start": 899.3,
           "end": 907.26,
-          "text": "A study by the Center for Research on the Epidemiology of Disasters finds that, between 1980 and 2007, nearly 8,400 natural disasters killed more than two-million people."
+          "text": "A study by the Center for Research on the Epidemiology of Disasters finds that, between 1980 and 2007, nearly 8,400 natural disasters killed more than two-million people.",
+          "translation": "灾害流行病学研究中心的一项研究发现，1980年至2007年间，近8400起自然灾害造成200多万人死亡。"
         },
         {
           "id": "l112",
           "start": 914.7,
           "end": 917.5,
-          "text": "These catastrophic events caused more than 1.5 trillion in economic losses."
+          "text": "These catastrophic events caused more than 1.5 trillion in economic losses.",
+          "translation": "这些灾难性事件造成超过1.5万亿美元的经济损失。"
         },
         {
           "id": "l113",
           "start": 922.86,
           "end": 929.3,
-          "text": "U. N. weather expert Geoffrey Love says that is the bad news.\"Over the last 50 years, economic losses have increased by a factor of 50."
+          "text": "U. N. weather expert Geoffrey Love says that is the bad news.\"Over the last 50 years, economic losses have increased by a factor of 50.",
+          "translation": "联合国气象专家杰弗里·洛夫说，这是坏消息。他说，过去50年间，经济损失增长了50倍。"
         },
         {
           "id": "l114",
           "start": 931.45,
           "end": 939.29,
-          "text": "That sounds pretty terrible, but the loss of life has decreased by a factor of 10 simply because we are getting better at warning people: We: are making a difference."
+          "text": "That sounds pretty terrible, but the loss of life has decreased by a factor of 10 simply because we are getting better at warning people: We: are making a difference.",
+          "translation": "这听起来相当糟糕，但人员伤亡已降至原来的十分之一，原因只是我们在预警方面做得更好了：我们正在带来改变。"
         },
         {
           "id": "l115",
           "start": 943.85,
           "end": 945.81,
-          "text": "Extreme events, however, will continue to occur."
+          "text": "Extreme events, however, will continue to occur.",
+          "translation": "不过，极端事件仍会继续发生。"
         },
         {
           "id": "l116",
           "start": 947.5,
           "end": 959.26,
-          "text": "But the message is that they need not be disasters.\"Love, who is director of Weather and Disaster Risk Reduction at the World Meteorological Organization, says most of the deaths and economic losses were caused by weather, climate, or water-related extremes."
+          "text": "But the message is that they need not be disasters.\"Love, who is director of Weather and Disaster Risk Reduction at the World Meteorological Organization, says most of the deaths and economic losses were caused by weather, climate, or water-related extremes.",
+          "translation": "但要传达的信息是：它们未必成为灾难。洛夫是世界气象组织天气与减灾司司长，他说大多数死亡和经济损失都是由天气、气候或与水相关的极端事件造成的。"
         },
         {
           "id": "l117",
           "start": 959.26,
           "end": 961.22,
-          "text": "Q16. What is the talk mainly about?"
+          "text": "Q16. What is the talk mainly about?",
+          "translation": "Q16. 这篇讲话主要讲什么？"
         },
         {
           "id": "l118",
           "start": 967.2,
           "end": 970.88,
-          "text": "These include droughts, floods, windstorms, strong tropical winds and wildfires."
+          "text": "These include droughts, floods, windstorms, strong tropical winds and wildfires.",
+          "translation": "这些极端事件包括干旱、洪水、风暴、强热带风以及野火。"
         },
         {
           "id": "l119",
           "start": 975.15,
           "end": 976.83,
-          "text": "He says extreme events will continue."
+          "text": "He says extreme events will continue.",
+          "translation": "他说极端事件将继续发生。"
         },
         {
           "id": "l120",
           "start": 977.36,
           "end": 981.91,
-          "text": "But, he says extreme events become disasters only when people fail to prepare for them."
+          "text": "But, he says extreme events become disasters only when people fail to prepare for them.",
+          "translation": "但他表示，只有当人们没有做好防范时，极端事件才会变成灾难。"
         },
         {
           "id": "l121",
           "start": 984.35,
           "end": 985.24,
-          "text": "Many of the remedies are well-known."
+          "text": "Many of the remedies are well-known.",
+          "translation": "许多应对办法都是众所周知的。"
         },
         {
           "id": "l122",
           "start": 985.4,
           "end": 987.63,
-          "text": "From a planning perspective, it's pretty simple."
+          "text": "From a planning perspective, it's pretty simple.",
+          "translation": "从规划的角度看，事情相当简单。"
         },
         {
           "id": "l123",
           "start": 989.7,
           "end": 990.54,
-          "text": "Buid better buildings."
+          "text": "Buid better buildings.",
+          "translation": "建造更坚固的建筑物。"
         },
         {
           "id": "l124",
           "start": 990.65,
           "end": 993.34,
-          "text": "Don't build where the hazards will destroy them."
+          "text": "Don't build where the hazards will destroy them.",
+          "translation": "不要把房屋建在会被灾害摧毁的地方。"
         },
         {
           "id": "l125",
           "start": 994.45,
           "end": 998.93,
-          "text": "From an early-warning perspective, make sure the warnings go right down to the community level."
+          "text": "From an early-warning perspective, make sure the warnings go right down to the community level.",
+          "translation": "从预警的角度看，要确保预警信息直达社区一级。"
         },
         {
           "id": "l126",
           "start": 1000.15,
           "end": 1009.39,
-          "text": "Build community action plans.\"The World Meteorological Organization points to Cuba and Bangladesh as examples of countries that have successfully reduced the loss of life caused by natural disasters by taking preventive action."
+          "text": "Build community action plans.\"The World Meteorological Organization points to Cuba and Bangladesh as examples of countries that have successfully reduced the loss of life caused by natural disasters by taking preventive action.",
+          "translation": "制定社区行动计划。世界气象组织指出，古巴和孟加拉国是通过采取预防措施成功减少自然灾害致死人数国家的范例。"
         },
         {
           "id": "l127",
           "start": 1017.33,
           "end": 1021.81,
-          "text": "It says tropical storms formerly claimed dozens, if not hundreds of lives, each year, in Cuba."
+          "text": "It says tropical storms formerly claimed dozens, if not hundreds of lives, each year, in Cuba.",
+          "translation": "该组织说，过去在古巴，热带风暴每年都会夺去数十人乃至上百人的生命。"
         },
         {
           "id": "l128",
           "start": 1023.6,
           "end": 1026.96,
-          "text": "But the development of an early-warning system has reversed that trend."
+          "text": "But the development of an early-warning system has reversed that trend.",
+          "translation": "但预警系统的发展扭转了这一趋势。"
         },
         {
           "id": "l129",
           "start": 1029.64,
           "end": 1033.84,
-          "text": "In 2008, Cuba was hit by five successive hurricanes, but only seven people were killed."
+          "text": "In 2008, Cuba was hit by five successive hurricanes, but only seven people were killed.",
+          "translation": "2008年，古巴接连遭受五次飓风袭击，但只有七人遇难。"
         },
         {
           "id": "l130",
           "start": 1036.5,
           "end": 1038.18,
-          "text": "Bangladesh also has achieved substantial results."
+          "text": "Bangladesh also has achieved substantial results.",
+          "translation": "孟加拉国也取得了可观的成效。"
         },
         {
           "id": "l131",
           "start": 1040.35,
           "end": 1046.26,
-          "text": "Major storm surges in 1970 and 1991 caused the deaths of about 440,000 people."
+          "text": "Major storm surges in 1970 and 1991 caused the deaths of about 440,000 people.",
+          "translation": "1970年和1991年的特大风暴潮造成约44万人死亡。"
         },
         {
           "id": "l132",
           "start": 1049.65,
           "end": 1055.95,
-          "text": "Through careful preparation, the death toll from a super tropical storm in November 2007 was less than 3,500."
+          "text": "Through careful preparation, the death toll from a super tropical storm in November 2007 was less than 3,500.",
+          "translation": "通过周密的准备，2007年11月一次超强热带风暴造成的死亡人数不到3500人。"
         },
         {
           "id": "l133",
           "start": 1082.6,
           "end": 1087.95,
-          "text": "Q17. How can we stop extreme events from turning into disasters?"
+          "text": "Q17. How can we stop extreme events from turning into disasters?",
+          "translation": "Q17. 我们怎样才能阻止极端事件演变为灾难？"
         },
         {
           "id": "l134",
           "start": 1102,
           "end": 1106.05,
-          "text": "Q18. What does the example of Cuba serve to show?"
+          "text": "Q18. What does the example of Cuba serve to show?",
+          "translation": "Q18. 古巴的例子用来说明什么？"
         },
         {
           "id": "l135",
@@ -74641,115 +74761,134 @@
           "id": "l136",
           "start": 1123.55,
           "end": 1131.95,
-          "text": "As U.S. banks recovered with the help of the American government and the American taxpayer, President Obama held meetings with top bank executives, telling them it's time to return the favor."
+          "text": "As U.S. banks recovered with the help of the American government and the American taxpayer, President Obama held meetings with top bank executives, telling them it's time to return the favor.",
+          "translation": "在美国银行业在美国政府和纳税人帮助下复苏之际，奥巴马总统与银行高管们举行了会面，告诉他们现在是回报的时候了。"
         },
         {
           "id": "l137",
           "start": 1137.2,
           "end": 1142.24,
-          "text": "The way I see it are banks now having a greater obligation to the goal of a wider recovery, he said."
+          "text": "The way I see it are banks now having a greater obligation to the goal of a wider recovery, he said.",
+          "translation": "他说，在我看来，银行如今对实现更广泛复苏这一目标负有更大的义务。"
         },
         {
           "id": "l138",
           "start": 1144.35,
           "end": 1148.05,
-          "text": "But the president may be giving the financial sector too much credit."
+          "text": "But the president may be giving the financial sector too much credit.",
+          "translation": "但总统也许给了金融界过多的赞誉。"
         },
         {
           "id": "l139",
           "start": 1149.67,
           "end": 1154.15,
-          "text": "It was in a free fall, and it was a very scary period, Economist Martin Neil Baily said."
+          "text": "It was in a free fall, and it was a very scary period, Economist Martin Neil Baily said.",
+          "translation": "经济学家马丁·尼尔·贝利说，当时金融业处于自由落体状态，那是一段非常可怕的时期。"
         },
         {
           "id": "l140",
           "start": 1155.45,
           "end": 1163.01,
-          "text": "After the failure of Lehman Brothers, many of the world's largest banks feared the worst as the collapse of the housing bubble exposed investments in risky loans."
+          "text": "After the failure of Lehman Brothers, many of the world's largest banks feared the worst as the collapse of the housing bubble exposed investments in risky loans.",
+          "translation": "雷曼兄弟倒闭后，随着房地产泡沫破裂使高风险贷款投资暴露出来，世界上许多最大的银行都担心出现最坏的情况。"
         },
         {
           "id": "l141",
           "start": 1166.7,
           "end": 1170.62,
-          "text": "Although he says the worst is over, Baily says the banking crisis is not."
+          "text": "Although he says the worst is over, Baily says the banking crisis is not.",
+          "translation": "贝利说，尽管最糟糕的时期已经过去，但银行业危机并未结束。"
         },
         {
           "id": "l142",
           "start": 1172.65,
           "end": 1174.61,
-          "text": "More than 130 U.S. banks failed in 2009."
+          "text": "More than 130 U.S. banks failed in 2009.",
+          "translation": "2009年美国有130多家银行倒闭。"
         },
         {
           "id": "l143",
           "start": 1177,
           "end": 1182.04,
-          "text": "He predicts high failure rates for smaller, regional banks in 2010 as commercial real estate loans come due."
+          "text": "He predicts high failure rates for smaller, regional banks in 2010 as commercial real estate loans come due.",
+          "translation": "他预测，随着商业房地产贷款到期，2010年较小的地区性银行倒闭率将居高不下。"
         },
         {
           "id": "l144",
           "start": 1183.7,
           "end": 1189.58,
-          "text": "So there may actually be a worsening of credit availability to small and medium-sized businesses in the next year or so."
+          "text": "So there may actually be a worsening of credit availability to small and medium-sized businesses in the next year or so.",
+          "translation": "因此未来一年左右，中小企业获得信贷的情况实际上可能会恶化。"
         },
         {
           "id": "l145",
           "start": 1193.55,
           "end": 1198.31,
-          "text": "Analysts say the biggest problem is high unemployment, which weakens demand and makes banks reluctant to lend."
+          "text": "Analysts say the biggest problem is high unemployment, which weakens demand and makes banks reluctant to lend.",
+          "translation": "分析人士说，最大的问题是高失业率，它削弱了需求，也使银行不愿放贷。"
         },
         {
           "id": "l146",
           "start": 1201.4,
           "end": 1203.92,
-          "text": "But U.S. Bancorp chief Richard Davis sees the situation differently."
+          "text": "But U.S. Bancorp chief Richard Davis sees the situation differently.",
+          "translation": "但美国合众银行首席执行官理查德·戴维斯对形势的看法不同。"
         },
         {
           "id": "l147",
           "start": 1206.11,
           "end": 1208.91,
-          "text": "We're probably more optimistic than the experts might be."
+          "text": "We're probably more optimistic than the experts might be.",
+          "translation": "我们可能比专家们更乐观。"
         },
         {
           "id": "l148",
           "start": 1210.05,
           "end": 1213.13,
-          "text": "With that in mind, we're putting in everything we can."
+          "text": "With that in mind, we're putting in everything we can.",
+          "translation": "考虑到这一点，我们正竭尽全力。"
         },
         {
           "id": "l149",
           "start": 1213.45,
           "end": 1217.37,
-          "text": "Lending is the coal to our engine, so we want to make more loans."
+          "text": "Lending is the coal to our engine, so we want to make more loans.",
+          "translation": "放贷是我们这台引擎的煤，所以我们想多放贷。"
         },
         {
           "id": "l150",
           "start": 1217.77,
           "end": 1222.65,
-          "text": "We have to find a way to qualify more people and not put ourselves at risk."
+          "text": "We have to find a way to qualify more people and not put ourselves at risk.",
+          "translation": "我们必须想办法让更多人符合条件，同时又不让自己承担风险。"
         },
         {
           "id": "l151",
           "start": 1223.6,
           "end": 1230.6,
-          "text": "While some economists predict continued recovery in the future, Baily says the only certainty is that banks are unlikely to make the same mistakes twice."
+          "text": "While some economists predict continued recovery in the future, Baily says the only certainty is that banks are unlikely to make the same mistakes twice.",
+          "translation": "虽然一些经济学家预测未来会继续复苏，但贝利说，唯一确定的是银行不太可能重复同样的错误。"
         },
         {
           "id": "l152",
           "start": 1234.68,
           "end": 1238.88,
-          "text": "You know, forecasting's become a very hazardous business so I don't want to commit myself too much."
+          "text": "You know, forecasting's become a very hazardous business so I don't want to commit myself too much.",
+          "translation": "你知道，预测已经成了一件很危险的事，所以我不想把话说得太死。"
         },
         {
           "id": "l153",
           "start": 1241.6,
           "end": 1248.88,
-          "text": "I don't think we know exactly what's going to happen but it's certainly possible that we could get very slow growth over the next year or two."
+          "text": "I don't think we know exactly what's going to happen but it's certainly possible that we could get very slow growth over the next year or two.",
+          "translation": "我认为我们并不确切知道会发生什么，但未来一两年增长非常缓慢确实是可能的。"
         },
         {
           "id": "l154",
           "start": 1249.1,
           "end": 1260.1,
-          "text": "If the economy starts to shrink again, Baily says it would make a strong case for a second stimulus -- something the Obama administration hopes will not be necessary."
+          "text": "If the economy starts to shrink again, Baily says it would make a strong case for a second stimulus -- something the Obama administration hopes will not be necessary.",
+          "translation": "贝利说，如果经济再次开始萎缩，那将为第二轮刺激提供有力理由，而这是奥巴马政府希望不必采取的。"
         },
         {
           "id": "l155",
@@ -74761,25 +74900,29 @@
           "id": "l156",
           "start": 1266.05,
           "end": 1270.45,
-          "text": "Q19. What does president Obama hope the banks will do?"
+          "text": "Q19. What does president Obama hope the banks will do?",
+          "translation": "Q19. 奥巴马总统希望银行做什么？"
         },
         {
           "id": "l157",
           "start": 1284.55,
           "end": 1291,
-          "text": "Q20. What is Martin Neil Baily's prediction about the financial situation in the future?"
+          "text": "Q20. What is Martin Neil Baily's prediction about the financial situation in the future?",
+          "translation": "Q20. 马丁·尼尔·贝利对未来金融形势作了什么预测？"
         },
         {
           "id": "l158",
           "start": 1305.15,
           "end": 1312.2,
-          "text": "Q21. What does U.S. Bancorp chief Richard Davis say about its future operation?"
+          "text": "Q21. What does U.S. Bancorp chief Richard Davis say about its future operation?",
+          "translation": "Q21. 美国合众银行首席执行官理查德·戴维斯对该行未来的经营说了什么？"
         },
         {
           "id": "l159",
           "start": 1326.55,
           "end": 1333.1,
-          "text": "Q22. What does Martin Neil Baily think of a second stimulus to the economy?"
+          "text": "Q22. What does Martin Neil Baily think of a second stimulus to the economy?",
+          "translation": "Q22. 马丁·尼尔·贝利对第二轮经济刺激怎么看？"
         },
         {
           "id": "l160",
@@ -74791,103 +74934,120 @@
           "id": "l161",
           "start": 1349.8,
           "end": 1355.12,
-          "text": "A new study has failed to find any conclusive evidence that lifestyle changes can prevent cognitive decline in older adults."
+          "text": "A new study has failed to find any conclusive evidence that lifestyle changes can prevent cognitive decline in older adults.",
+          "translation": "一项新研究未能找到任何确凿证据表明改变生活方式可以防止老年人认知能力下降。"
         },
         {
           "id": "l162",
           "start": 1359.5,
           "end": 1365.1,
-          "text": "Still, there are good reasons to make positive changes in how we live and what we eat as we age."
+          "text": "Still, there are good reasons to make positive changes in how we live and what we eat as we age.",
+          "translation": "尽管如此，随着年龄增长，在生活方式和饮食上做出积极改变仍有充分理由。"
         },
         {
           "id": "l163",
           "start": 1367.1,
           "end": 1373.82,
-          "text": "Cognitive decline is the loss of ability to learn new skills, or recall words, names, and faces that is most common as we age."
+          "text": "Cognitive decline is the loss of ability to learn new skills, or recall words, names, and faces that is most common as we age.",
+          "translation": "认知能力下降是指学习新技能或回忆词语、名字和面孔的能力丧失，这种情况在我们变老时最为常见。"
         },
         {
           "id": "l164",
           "start": 1376.79,
           "end": 1382.38,
-          "text": "To reduce or avoid it, researchers have examined the effect of smoking, diet, brain-challenging games, exercise and other strategies."
+          "text": "To reduce or avoid it, researchers have examined the effect of smoking, diet, brain-challenging games, exercise and other strategies.",
+          "translation": "为减少或避免这种情况，研究人员考察了吸烟、饮食、益智游戏、运动及其他策略的作用。"
         },
         {
           "id": "l165",
           "start": 1389.5,
           "end": 1396.78,
-          "text": "Researchers at Duke University scrutinized more than 160 published studies and found an absence of strong evidence that any of these approaches can make a big difference."
+          "text": "Researchers at Duke University scrutinized more than 160 published studies and found an absence of strong evidence that any of these approaches can make a big difference.",
+          "translation": "杜克大学的研究人员仔细审查了160多项已发表的研究，发现没有强有力的证据表明这些方法中任何一种能带来大的改变。"
         },
         {
           "id": "l166",
           "start": 1402.15,
           "end": 1404.39,
-          "text": "Co-author James Burke helped design the study."
+          "text": "Co-author James Burke helped design the study.",
+          "translation": "共同作者詹姆斯·伯克参与设计了这项研究。"
         },
         {
           "id": "l167",
           "start": 1405.07,
           "end": 1409.16,
-          "text": "In the observational studies we found that some of the B vitamins were beneficial."
+          "text": "In the observational studies we found that some of the B vitamins were beneficial.",
+          "translation": "在观察性研究中，我们发现某些B族维生素是有益的。"
         },
         {
           "id": "l168",
           "start": 1410.95,
           "end": 1417.79,
-          "text": "Exercise, diet, cognitive stimulation showed some positive effects, although the evidence was not so strong that we could actually consider these firmly established."
+          "text": "Exercise, diet, cognitive stimulation showed some positive effects, although the evidence was not so strong that we could actually consider these firmly established.",
+          "translation": "运动、饮食和认知刺激显示出一些积极效果，尽管证据还不够强，不足以让我们认为这些已得到确证。"
         },
         {
           "id": "l169",
           "start": 1422.2,
           "end": 1426.4,
-          "text": "Some previous studies have suggested that challenging your brain with mentally stimulating activities might help."
+          "text": "Some previous studies have suggested that challenging your brain with mentally stimulating activities might help.",
+          "translation": "此前一些研究表明，用费脑力的活动来挑战大脑可能有帮助。"
         },
         {
           "id": "l170",
           "start": 1429.6,
           "end": 1436.65,
-          "text": "And Burke says that actually does seem to help, based on randomized studies -- the researcher's gold standard."
+          "text": "And Burke says that actually does seem to help, based on randomized studies -- the researcher's gold standard.",
+          "translation": "伯克说，根据随机对照研究——这是研究者的黄金标准——这种做法确实似乎有帮助。"
         },
         {
           "id": "l171",
           "start": 1437.15,
           "end": 1440.79,
-          "text": "Cognitive stimulation is one of the areas where we did find some benefit."
+          "text": "Cognitive stimulation is one of the areas where we did find some benefit.",
+          "translation": "认知刺激是我们确实发现有一些益处的领域之一。"
         },
         {
           "id": "l172",
           "start": 1442.3,
           "end": 1447.06,
-          "text": "The exact type of stimulation that an individual uses is not as important as being intellectually engaged."
+          "text": "The exact type of stimulation that an individual uses is not as important as being intellectually engaged.",
+          "translation": "个人采用何种具体的刺激方式，并不如保持思维活跃那么重要。"
         },
         {
           "id": "l173",
           "start": 1450,
           "end": 1455.88,
-          "text": "The expert review also found insufficient evidence to recommend any drugs or dietary supplements that could prevent or slow cognitive decline."
+          "text": "The expert review also found insufficient evidence to recommend any drugs or dietary supplements that could prevent or slow cognitive decline.",
+          "translation": "这项专家评估还发现，证据不足以推荐任何可预防或延缓认知衰退的药物或膳食补充剂。"
         },
         {
           "id": "l174",
           "start": 1460.45,
           "end": 1470.14,
-          "text": "However, given that there is at least some evidence for positive effects from some of these lifestyle changes, plus other benefits apparently unrelated to cognitive decline, Burke was willing to offer some recommendations."
+          "text": "However, given that there is at least some evidence for positive effects from some of these lifestyle changes, plus other benefits apparently unrelated to cognitive decline, Burke was willing to offer some recommendations.",
+          "translation": "不过，鉴于至少有一些证据表明其中某些生活方式改变具有积极效果，而且还有明显与认知衰退无关的其他益处，伯克愿意提出一些建议。"
         },
         {
           "id": "l175",
           "start": 1486.2,
           "end": 1490.22,
-          "text": "I think that by having people adopt a healthy lifestyle, both from a medical standpoint as well as nutritional and cognitive stimulation standpoint, we can reduce the incidence of cognitive decline, which will be proof that these factors are, in fact, important."
+          "text": "I think that by having people adopt a healthy lifestyle, both from a medical standpoint as well as nutritional and cognitive stimulation standpoint, we can reduce the incidence of cognitive decline, which will be proof that these factors are, in fact, important.",
+          "translation": "我认为，让人们采取健康的生活方式，无论从医学角度还是从营养和认知刺激角度来看，都能降低认知衰退的发生率，而这将证明这些因素确实重要。"
         },
         {
           "id": "l176",
           "start": 1492.15,
           "end": 1498.99,
-          "text": "James Burke of Duke University is one of the authors of a study reviewing previous research on cognitive decline."
+          "text": "James Burke of Duke University is one of the authors of a study reviewing previous research on cognitive decline.",
+          "translation": "杜克大学的詹姆斯·伯克是一项回顾以往认知衰退研究的研究报告的作者之一。"
         },
         {
           "id": "l177",
           "start": 1500.3,
           "end": 1503.38,
-          "text": "The paper is published online by the Annals of Internal Medicine."
+          "text": "The paper is published online by the Annals of Internal Medicine.",
+          "translation": "该论文由《内科学年鉴》在线发表。"
         },
         {
           "id": "l178",
@@ -74899,19 +75059,22 @@
           "id": "l179",
           "start": 1510.8,
           "end": 1518.6,
-          "text": "Q23. According to the speaker, what might be a symptom of cognitive decline in older adults?"
+          "text": "Q23. According to the speaker, what might be a symptom of cognitive decline in older adults?",
+          "translation": "Q23. 据说话者所说，老年人认知衰退的一个症状可能是什么？"
         },
         {
           "id": "l180",
           "start": 1532.8,
           "end": 1539.65,
-          "text": "Q24. According to James Burke, what does seem to help reduce cognitive decline?"
+          "text": "Q24. According to James Burke, what does seem to help reduce cognitive decline?",
+          "translation": "Q24. 据詹姆斯·伯克所说，什么似乎有助于减轻认知衰退？"
         },
         {
           "id": "l181",
           "start": 1553.25,
           "end": 1559.75,
-          "text": "Q25. What did James Burke recommend to reduce the incidence of cognitive decline?"
+          "text": "Q25. What did James Burke recommend to reduce the incidence of cognitive decline?",
+          "translation": "Q25. 詹姆斯·伯克建议如何降低认知衰退的发生率？"
         }
       ],
       "status": "published",
@@ -74957,13 +75120,15 @@
           "id": "l4",
           "start": 20.95,
           "end": 23.47,
-          "text": "questions. Both the conversation and the questions will be"
+          "text": "questions. Both the conversation and the questions will be",
+          "translation": "问题。对话和问题都将"
         },
         {
           "id": "l5",
           "start": 34.8,
           "end": 38.2,
-          "text": "A, B, C, and D. Then mark the corresponding letter on answer sheet 1 with a single line"
+          "text": "A, B, C, and D. Then mark the corresponding letter on answer sheet 1 with a single line",
+          "translation": "A、B、C、D。然后在答题卡1上用一条横线标出相应的字母。"
         },
         {
           "id": "l6",
@@ -74975,229 +75140,267 @@
           "id": "l7",
           "start": 43.6,
           "end": 49.55,
-          "text": "W: So, Mike, you managed the innovation project at CucinTech."
+          "text": "W: So, Mike, you managed the innovation project at CucinTech.",
+          "translation": "W: 那么，迈克，你在CucinTech负责管理创新项目。"
         },
         {
           "id": "l8",
           "start": 49.55,
           "end": 50.11,
-          "text": "M: I did, indeed."
+          "text": "M: I did, indeed.",
+          "translation": "M: 确实是我。"
         },
         {
           "id": "l9",
           "start": 50.11,
           "end": 50.67,
-          "text": "W: Well, then."
+          "text": "W: Well, then.",
+          "translation": "W: 那么。"
         },
         {
           "id": "l10",
           "start": 50.67,
           "end": 51.23,
-          "text": "First, congratulations!"
+          "text": "First, congratulations!",
+          "translation": "首先，恭喜你！"
         },
         {
           "id": "l11",
           "start": 51.5,
           "end": 53.96,
-          "text": "It seems to have been very successful."
+          "text": "It seems to have been very successful.",
+          "translation": "这个项目看来非常成功。"
         },
         {
           "id": "l12",
           "start": 54.55,
           "end": 55,
-          "text": "M: Thanks."
+          "text": "M: Thanks.",
+          "translation": "M: 谢谢。"
         },
         {
           "id": "l13",
           "start": 55.07,
           "end": 55.65,
-          "text": "Yes."
+          "text": "Yes.",
+          "translation": "是的。"
         },
         {
           "id": "l14",
           "start": 56.05,
           "end": 58.01,
-          "text": "I really helped things turn around at CucinTech."
+          "text": "I really helped things turn around at CucinTech.",
+          "translation": "我确实帮CucinTech扭转了局面。"
         },
         {
           "id": "l15",
           "start": 59.45,
           "end": 62.53,
-          "text": "W: Was the revival in their fortunes entirely due to strategic innovation?"
+          "text": "W: Was the revival in their fortunes entirely due to strategic innovation?",
+          "translation": "W: 他们的复苏完全归功于战略创新吗？"
         },
         {
           "id": "l16",
           "start": 64.85,
           "end": 65.41,
-          "text": "M: Yes, yes."
+          "text": "M: Yes, yes.",
+          "translation": "M: 是的，是的。"
         },
         {
           "id": "l17",
           "start": 65.41,
           "end": 66.8,
-          "text": "I think it was."
+          "text": "I think it was.",
+          "translation": "我认为是这样。"
         },
         {
           "id": "l18",
           "start": 67.13,
           "end": 73.01,
-          "text": "CucinTech was a company who were very much following the pack, doing what everyone else was doing, and getting rapidly left behind."
+          "text": "CucinTech was a company who were very much following the pack, doing what everyone else was doing, and getting rapidly left behind.",
+          "translation": "CucinTech当时是一家非常随大流的公司，别人做什么它就做什么，结果很快被甩在了后面。"
         },
         {
           "id": "l19",
           "start": 75.2,
           "end": 80.41,
-          "text": "I could see there was a lot of talent there, and:. some great potential, particularly in their product development."
+          "text": "I could see there was a lot of talent there, and:. some great potential, particularly in their product development.",
+          "translation": "我能看出那里有很多人才，还有很大的潜力，尤其是在产品开发方面。"
         },
         {
           "id": "l20",
           "start": 81.56,
           "end": 83.24,
-          "text": "I just had to harness that somehow."
+          "text": "I just had to harness that somehow.",
+          "translation": "我只需要想办法把这种潜力利用起来。"
         },
         {
           "id": "l21",
           "start": 84.95,
           "end": 85.93,
-          "text": "W: Was innovation at the core of the project?"
+          "text": "W: Was innovation at the core of the project?",
+          "translation": "W: 创新是这个项目的核心吗？"
         },
         {
           "id": "l22",
           "start": 86.52,
           "end": 87.35,
-          "text": "M: Absolutely."
+          "text": "M: Absolutely.",
+          "translation": "M: 绝对是。"
         },
         {
           "id": "l23",
           "start": 87.75,
           "end": 93.74,
-          "text": "If it doesn't sound like too much of a cliché, our world is constantly changing and it's changing quickly."
+          "text": "If it doesn't sound like too much of a cliché, our world is constantly changing and it's changing quickly.",
+          "translation": "如果这话听起来不算太老套：我们的世界一直在变，而且变得很快。"
         },
         {
           "id": "l24",
           "start": 96.05,
           "end": 99.5,
-          "text": "We need to be innovating constantly to keep up with this."
+          "text": "We need to be innovating constantly to keep up with this.",
+          "translation": "我们需要不断创新才能跟上这种变化。"
         },
         {
           "id": "l25",
           "start": 100.05,
           "end": 101.73,
-          "text": "Stand still, and you're lost."
+          "text": "Stand still, and you're lost.",
+          "translation": "停下来不动，你就输了。"
         },
         {
           "id": "l26",
           "start": 102.2,
           "end": 104,
-          "text": "W: No stopping to sniff the roses?"
+          "text": "W: No stopping to sniff the roses?",
+          "translation": "W: 就不能停下来闻闻玫瑰花香吗？"
         },
         {
           "id": "l27",
           "start": 104.4,
           "end": 106.64,
-          "text": "M: Well, I'll do that in my personal life."
+          "text": "M: Well, I'll do that in my personal life.",
+          "translation": "M: 嗯，我在个人生活里会这么做。"
         },
         {
           "id": "l28",
           "start": 106.64,
           "end": 107.09,
-          "text": "Sure."
+          "text": "Sure.",
+          "translation": "当然。"
         },
         {
           "id": "l29",
           "start": 107.7,
           "end": 110.34,
-          "text": "But as a business strategy, I'm afraid there is no stopping."
+          "text": "But as a business strategy, I'm afraid there is no stopping.",
+          "translation": "但作为商业策略，恐怕不能停。"
         },
         {
           "id": "l30",
           "start": 110.78,
           "end": 112.86,
-          "text": "W: What exactly is strategic innovation then?"
+          "text": "W: What exactly is strategic innovation then?",
+          "translation": "W: 那么战略创新到底是什么？"
         },
         {
           "id": "l31",
           "start": 113.8,
           "end": 123.12,
-          "text": "M: Strategic innovation is the process of managing innovation, of making sure it takes place at all levels of the company and that is related to the company's overall strategy."
+          "text": "M: Strategic innovation is the process of managing innovation, of making sure it takes place at all levels of the company and that is related to the company's overall strategy.",
+          "translation": "M: 战略创新就是管理创新的过程，确保创新在公司各个层面都发生，并且与公司的总体战略相关联。"
         },
         {
           "id": "l32",
           "start": 125.93,
           "end": 126.23,
-          "text": "W: I see."
+          "text": "W: I see.",
+          "translation": "W: 我明白了。"
         },
         {
           "id": "l33",
           "start": 126.6,
           "end": 137.59,
-          "text": "M: So, instead of innovation for innovation's sake and new products being created simply because the technology is there, the company culture must switch from these point-in-time innovations to a continuous pipeline of innovations from everywhere and everyone."
+          "text": "M: So, instead of innovation for innovation's sake and new products being created simply because the technology is there, the company culture must switch from these point-in-time innovations to a continuous pipeline of innovations from everywhere and everyone.",
+          "translation": "M: 所以，与其为创新而创新、仅仅因为技术条件具备就开发新产品，公司文化必须从这种一时一地的创新，转向由各处、各人持续不断提供创新的流水线。"
         },
         {
           "id": "l34",
           "start": 145.15,
           "end": 147.39,
-          "text": "W: How did you align strategies throughout the company?"
+          "text": "W: How did you align strategies throughout the company?",
+          "translation": "W: 你如何让整个公司的战略协调一致？"
         },
         {
           "id": "l35",
           "start": 148.6,
           "end": 152.55,
-          "text": "M: I soon became aware that campaigning is useless."
+          "text": "M: I soon became aware that campaigning is useless.",
+          "translation": "M: 我很快就意识到，搞运动式的宣传是没用的。"
         },
         {
           "id": "l36",
           "start": 154.15,
           "end": 155.27,
-          "text": "People take no notice."
+          "text": "People take no notice.",
+          "translation": "人们不会理会。"
         },
         {
           "id": "l37",
           "start": 156.38,
           "end": 158.9,
-          "text": "Simply, it came about through good practice trickling down."
+          "text": "Simply, it came about through good practice trickling down.",
+          "translation": "说白了，它是靠好的做法自上而下渗透形成的。"
         },
         {
           "id": "l38",
           "start": 163.1,
           "end": 163.94,
-          "text": "This built consent."
+          "text": "This built consent.",
+          "translation": "这形成了共识。"
         },
         {
           "id": "l39",
           "start": 164.68,
           "end": 167.48,
-          "text": "People could see it was the best way to work."
+          "text": "People could see it was the best way to work.",
+          "translation": "人们能看出这是最好的工作方式。"
         },
         {
           "id": "l40",
           "start": 168.12,
           "end": 171.24,
-          "text": "W: Does innovation on this scale really give a competitive advantage?"
+          "text": "W: Does innovation on this scale really give a competitive advantage?",
+          "translation": "W: 这种规模的创新真的能带来竞争优势吗？"
         },
         {
           "id": "l41",
           "start": 174.86,
           "end": 178.9,
-          "text": "M: I'm certain of it, absolutely, especially if it's difficult for a competitor to copy."
+          "text": "M: I'm certain of it, absolutely, especially if it's difficult for a competitor to copy.",
+          "translation": "M: 我确信如此，绝对是的，尤其是当竞争对手难以模仿的时候。"
         },
         {
           "id": "l42",
           "start": 181.75,
           "end": 183.13,
-          "text": "The risk is of course that innovation may frequently lead to imitation."
+          "text": "The risk is of course that innovation may frequently lead to imitation.",
+          "translation": "当然风险在于，创新常常会招致模仿。"
         },
         {
           "id": "l43",
           "start": 183.13,
           "end": 183.82,
-          "text": "W: But not if it's strategic?"
+          "text": "W: But not if it's strategic?",
+          "translation": "W: 但如果是战略性的就不会？"
         },
         {
           "id": "l44",
           "start": 184.3,
           "end": 184.75,
-          "text": "M: Precisely."
+          "text": "M: Precisely.",
+          "translation": "M: 正是。"
         },
         {
           "id": "l45",
@@ -75209,37 +75412,43 @@
           "id": "l46",
           "start": 188.8,
           "end": 189.49,
-          "text": "W: Thanks for talking to us."
+          "text": "W: Thanks for talking to us.",
+          "translation": "W: 谢谢你接受我们的访谈。"
         },
         {
           "id": "l47",
           "start": 189.49,
           "end": 189.79,
-          "text": "M: Sure.,"
+          "text": "M: Sure.,",
+          "translation": "M: 没问题。"
         },
         {
           "id": "l48",
           "start": 189.85,
           "end": 195.85,
-          "text": "Q1. What seems to have been very successful according to the woman speaker?"
+          "text": "Q1. What seems to have been very successful according to the woman speaker?",
+          "translation": "Q1. 据女士所说，什么似乎非常成功？"
         },
         {
           "id": "l49",
           "start": 209.2,
           "end": 214.65,
-          "text": "Q2. What did the company lack before the man's scheme was implemented?"
+          "text": "Q2. What did the company lack before the man's scheme was implemented?",
+          "translation": "Q2. 在男士的方案实施之前，这家公司缺少什么？"
         },
         {
           "id": "l50",
           "start": 228.1,
           "end": 232.75,
-          "text": "Q3. What does the man say he should do in his business?"
+          "text": "Q3. What does the man say he should do in his business?",
+          "translation": "Q3. 男士说他在经营中应该做什么？"
         },
         {
           "id": "l51",
           "start": 246.25,
           "end": 250.95,
-          "text": "Q4. What does the man say is the risk of innovation?"
+          "text": "Q4. What does the man say is the risk of innovation?",
+          "translation": "Q4. 男士说创新的风险是什么？"
         },
         {
           "id": "l52",
@@ -75251,151 +75460,176 @@
           "id": "l53",
           "start": 265.15,
           "end": 269.91,
-          "text": "M: Today my guest is Dana Ivanovich, who has worked for the last 20 years as an interpreter."
+          "text": "M: Today my guest is Dana Ivanovich, who has worked for the last 20 years as an interpreter.",
+          "translation": "M: 今天的嘉宾是达娜·伊万诺维奇，她过去20年一直从事口译工作。"
         },
         {
           "id": "l54",
           "start": 270.92,
           "end": 271.48,
-          "text": "Dana, welcome."
+          "text": "Dana, welcome.",
+          "translation": "达娜，欢迎。"
         },
         {
           "id": "l55",
           "start": 271.85,
           "end": 272.65,
-          "text": "W: Thank you."
+          "text": "W: Thank you.",
+          "translation": "W: 谢谢。"
         },
         {
           "id": "l56",
           "start": 272.65,
           "end": 279.14,
-          "text": "M: Now, I'd like to begin by saying that I have on occasions used an interpreter myself as a foreign correspondent."
+          "text": "M: Now, I'd like to begin by saying that I have on occasions used an interpreter myself as a foreign correspondent.",
+          "translation": "M: 我想先说一句，我作为驻外记者，自己也偶尔请过口译员。"
         },
         {
           "id": "l57",
           "start": 286.6,
           "end": 288.76,
-          "text": "But I think your profession is sometimes underrated and many people think anyone who speaks more than one language can do it."
+          "text": "But I think your profession is sometimes underrated and many people think anyone who speaks more than one language can do it.",
+          "translation": "但我认为你们这个职业有时被低估了，很多人以为只要会说一种以上的语言就能做口译。"
         },
         {
           "id": "l58",
           "start": 288.86,
           "end": 291.1,
-          "text": "So I'm full of admiration for what you do."
+          "text": "So I'm full of admiration for what you do.",
+          "translation": "所以我对你们的工作充满敬佩。"
         },
         {
           "id": "l59",
           "start": 294.75,
           "end": 298.11,
-          "text": "W: There aren't any interpreters I know who don't have professional qualifications and training."
+          "text": "W: There aren't any interpreters I know who don't have professional qualifications and training.",
+          "translation": "W: 我认识的口译员没有一个是没受过专业资格培训的。"
         },
         {
           "id": "l60",
           "start": 299.42,
           "end": 303.05,
-          "text": "You only really get profession after many years in the job."
+          "text": "You only really get profession after many years in the job.",
+          "translation": "只有在这个行业干上很多年，你才真正成为专业人士。"
         },
         {
           "id": "l61",
           "start": 304.7,
           "end": 310.02,
-          "text": "M: And am I right in saying you can divide what you do into two distinct methods: simultaneous and consecutive interpreting?"
+          "text": "M: And am I right in saying you can divide what you do into two distinct methods: simultaneous and consecutive interpreting?",
+          "translation": "M: 我可以说你们的工作分为两种截然不同的方式——同声传译和交替传译，对吗？"
         },
         {
           "id": "l62",
           "start": 311.85,
           "end": 312.85,
-          "text": "W: That's right."
+          "text": "W: That's right.",
+          "translation": "W: 对。"
         },
         {
           "id": "l63",
           "start": 312.85,
           "end": 315.53,
-          "text": "The techniques you use are different."
+          "text": "The techniques you use are different.",
+          "translation": "两者使用的技巧不同。"
         },
         {
           "id": "l64",
           "start": 316.5,
           "end": 321.3,
-          "text": "And a lot of interpreters will say one is easier than the other, less stressful."
+          "text": "And a lot of interpreters will say one is easier than the other, less stressful.",
+          "translation": "很多口译员会说其中一种比另一种更容易、压力更小。"
         },
         {
           "id": "l65",
           "start": 321.95,
           "end": 327.55,
-          "text": "M: Simultaneous interpreting, putting someone's words into another language more or less as they speak, sounds tome like the more difficult."
+          "text": "M: Simultaneous interpreting, putting someone's words into another language more or less as they speak, sounds tome like the more difficult.",
+          "translation": "M: 同声传译，也就是在别人说话的同时几乎同步地把话译成另一种语言，在我看来似乎更难。"
         },
         {
           "id": "l66",
           "start": 331.3,
           "end": 332.14,
-          "text": "W: Well, actually no."
+          "text": "W: Well, actually no.",
+          "translation": "W: 嗯，其实不是。"
         },
         {
           "id": "l67",
           "start": 332.2,
           "end": 336.52,
-          "text": "Most people in the business would agree that consecutive interpreting is the more stressful."
+          "text": "Most people in the business would agree that consecutive interpreting is the more stressful.",
+          "translation": "业内大多数人都会同意，交替传译压力更大。"
         },
         {
           "id": "l68",
           "start": 338.55,
           "end": 347.23,
-          "text": "You have to wait for the speaker to deliver quite a chunk of language before you then put it into the second language, which puts your short-term memory under intense stress."
+          "text": "You have to wait for the speaker to deliver quite a chunk of language before you then put it into the second language, which puts your short-term memory under intense stress.",
+          "translation": "你得等说话人讲完一大段话，才能把它译成另一种语言，这会给你的短时记忆带来极大压力。"
         },
         {
           "id": "l69",
           "start": 348.1,
           "end": 350.72,
-          "text": "M: You make notes, I presume?"
+          "text": "M: You make notes, I presume?",
+          "translation": "M: 我猜你会做笔记？"
         },
         {
           "id": "l70",
           "start": 351.18,
           "end": 351.63,
-          "text": "W: Absolutely."
+          "text": "W: Absolutely.",
+          "translation": "W: 当然。"
         },
         {
           "id": "l71",
           "start": 351.98,
           "end": 357.3,
-          "text": "Anything like numbers, names, places have to be noted down, but the rest is never translated word for word."
+          "text": "Anything like numbers, names, places have to be noted down, but the rest is never translated word for word.",
+          "translation": "像数字、名字、地点之类的内容都必须记下来，但其余部分从不逐字翻译。"
         },
         {
           "id": "l72",
           "start": 358.73,
           "end": 363.1,
-          "text": "You have to find a way of summarizing it, so that the message is there."
+          "text": "You have to find a way of summarizing it, so that the message is there.",
+          "translation": "你得想办法把它概括出来，让信息保持完整。"
         },
         {
           "id": "l73",
           "start": 363.75,
           "end": 370.47,
-          "text": "Turning every single word into the target language would put too much strain on the interpreter and slow down the whole process too much."
+          "text": "Turning every single word into the target language would put too much strain on the interpreter and slow down the whole process too much.",
+          "translation": "把每一个词都译成目标语言会给译员带来过大的负担，也会使整个过程过于缓慢。"
         },
         {
           "id": "l74",
           "start": 371.49,
           "end": 376.57,
-          "text": "M: But with simultaneous interpreting, you 'start translating almost as soon as the other person starts speaking."
+          "text": "M: But with simultaneous interpreting, you 'start translating almost as soon as the other person starts speaking.",
+          "translation": "M: 但做同声传译时，对方一开口你几乎就要开始翻译。"
         },
         {
           "id": "l75",
           "start": 378.49,
           "end": 380.17,
-          "text": "You must have some preparation beforehand."
+          "text": "You must have some preparation beforehand.",
+          "translation": "你一定得事先做些准备。"
         },
         {
           "id": "l76",
           "start": 382.2,
           "end": 387.55,
-          "text": "W: Well, hopefully, the speakers will let you have an outline of the topic a day or two in advance."
+          "text": "W: Well, hopefully, the speakers will let you have an outline of the topic a day or two in advance.",
+          "translation": "W: 嗯，但愿如此，发言人会提前一两天把话题提纲给你。"
         },
         {
           "id": "l77",
           "start": 387.55,
           "end": 391.74,
-          "text": "You have a little time to do research, prepare technical expressions and so on."
+          "text": "You have a little time to do research, prepare technical expressions and so on.",
+          "translation": "你有一点时间去查资料、准备专业表达等等。"
         },
         {
           "id": "l78",
@@ -75407,25 +75641,29 @@
           "id": "l79",
           "start": 398.7,
           "end": 402.35,
-          "text": "Q5. What are the speakers mainly talking about?"
+          "text": "Q5. What are the speakers mainly talking about?",
+          "translation": "Q5. 两位说话者主要在谈什么？"
         },
         {
           "id": "l80",
           "start": 415.8,
           "end": 419.75,
-          "text": "Q6. What does the man think of Dana's profession?"
+          "text": "Q6. What does the man think of Dana's profession?",
+          "translation": "Q6. 男士怎样看待达娜的职业？"
         },
         {
           "id": "l81",
           "start": 433.5,
           "end": 438.3,
-          "text": "Q7. What does Dana say about the interpreters she knows?"
+          "text": "Q7. What does Dana say about the interpreters she knows?",
+          "translation": "Q7. 关于她认识的口译员，达娜说了什么？"
         },
         {
           "id": "l82",
           "start": 452.05,
           "end": 457.25,
-          "text": "Q8. What do most interpreters think of consecutive interpreting?"
+          "text": "Q8. What do most interpreters think of consecutive interpreting?",
+          "translation": "Q8. 大多数口译员怎样看待交替传译？"
         },
         {
           "id": "l83",
@@ -75449,79 +75687,92 @@
           "id": "l86",
           "start": 503.8,
           "end": 512.42,
-          "text": "Mothers have been warned for years that sleeping with their newborn infant is a bad idea, because it increases the risk that the baby might die unexpectedly during the night."
+          "text": "Mothers have been warned for years that sleeping with their newborn infant is a bad idea, because it increases the risk that the baby might die unexpectedly during the night.",
+          "translation": "多年来，母亲们一直被告诫不要与新生儿同睡，因为这会增加婴儿在夜间意外死亡的风险。"
         },
         {
           "id": "l87",
           "start": 514.7,
           "end": 521.7,
-          "text": "But now Israeli researchers are reporting that even sleeping in the same room can have negative consequences, not for the child, but for the mother."
+          "text": "But now Israeli researchers are reporting that even sleeping in the same room can have negative consequences, not for the child, but for the mother.",
+          "translation": "但现在以色列研究人员报告说，即使睡在同一个房间也可能带来负面后果，不是对孩子，而是对母亲。"
         },
         {
           "id": "l88",
           "start": 525.65,
           "end": 535.41,
-          "text": "Mothers who slept in the same room as their infants, whether in the same bed or just the same room, had poorer sleep than mothers whose baby slept elsewhere in the house."
+          "text": "Mothers who slept in the same room as their infants, whether in the same bed or just the same room, had poorer sleep than mothers whose baby slept elsewhere in the house.",
+          "translation": "与婴儿睡在同一房间的母亲——无论同床还是仅同室——睡眠质量都低于让宝宝睡在别处的母亲。"
         },
         {
           "id": "l89",
           "start": 535.61,
           "end": 541.21,
-          "text": "They woke up more frequently, were awake approximately 20 minutes longer per night, and had shorter periods of uninterrupted sleep."
+          "text": "They woke up more frequently, were awake approximately 20 minutes longer per night, and had shorter periods of uninterrupted sleep.",
+          "translation": "她们夜间醒来的次数更多，每晚清醒时间约多20分钟，连续睡眠的时间也更短。"
         },
         {
           "id": "l90",
           "start": 542.1,
           "end": 546.02,
-          "text": "Q9. What is the long-held view about mothers' sleeping with new-born babies?"
+          "text": "Q9. What is the long-held view about mothers' sleeping with new-born babies?",
+          "translation": "Q9. 关于母亲与新生儿同睡，长期以来的看法是什么？"
         },
         {
           "id": "l91",
           "start": 546.25,
           "end": 552.13,
-          "text": "These results held true even taking into account that many of the women in the study were breast-feeding their babies."
+          "text": "These results held true even taking into account that many of the women in the study were breast-feeding their babies.",
+          "translation": "即使考虑到研究中许多女性正在母乳喂养，这些结果依然成立。"
         },
         {
           "id": "l92",
           "start": 554.4,
           "end": 560.84,
-          "text": "Infants, on the other hand, didn't appear to have worse sleep whether they slept in the same or different room from their mothers."
+          "text": "Infants, on the other hand, didn't appear to have worse sleep whether they slept in the same or different room from their mothers.",
+          "translation": "另一方面，无论与母亲同室还是分室睡，婴儿的睡眠似乎都没有变差。"
         },
         {
           "id": "l93",
           "start": 563.45,
           "end": 570.57,
-          "text": "The researchers acknowledge that since the families they studied were all middle-class Israelis, it's possible the results would be different in different cultures."
+          "text": "The researchers acknowledge that since the families they studied were all middle-class Israelis, it's possible the results would be different in different cultures.",
+          "translation": "研究人员承认，由于他们研究的家庭都是以色列中产阶级，在不同文化中结果可能会不同。"
         },
         {
           "id": "l94",
           "start": 575.15,
           "end": 584.84,
-          "text": "Lead author Lyati Sotski wrote in an email that the research team also didn't measure fathers' sleep, so it's possible that their sleep patterns could also be causing the sleep disruptions for mums."
+          "text": "Lead author Lyati Sotski wrote in an email that the research team also didn't measure fathers' sleep, so it's possible that their sleep patterns could also be causing the sleep disruptions for mums.",
+          "translation": "第一作者利亚蒂·索茨基在电子邮件中写道，研究团队也没有测量父亲的睡眠，因此他们的睡眠模式也可能导致母亲的睡眠被打断。"
         },
         {
           "id": "l95",
           "start": 587.05,
           "end": 597.45,
-          "text": "Right now, to reduce the risk of sudden infant death syndrome, the American Academy of Pediatrics recommends that mothers not sleep in the same bed as their babies, but sleep in the same room."
+          "text": "Right now, to reduce the risk of sudden infant death syndrome, the American Academy of Pediatrics recommends that mothers not sleep in the same bed as their babies, but sleep in the same room.",
+          "translation": "目前，为降低婴儿猝死综合征的风险，美国儿科学会建议母亲不要与婴儿同床睡，但要同室睡。"
         },
         {
           "id": "l96",
           "start": 604.75,
           "end": 610.07,
-          "text": "The Israeli study suggests that doing so may be best for the baby, but may take a toll on mum."
+          "text": "The Israeli study suggests that doing so may be best for the baby, but may take a toll on mum.",
+          "translation": "这项以色列研究表明，这样做可能对宝宝最好，但可能会损害妈妈的健康。"
         },
         {
           "id": "l97",
           "start": 632.95,
           "end": 637.6,
-          "text": "Q10. What do Israeli researchers' findings show?"
+          "text": "Q10. What do Israeli researchers' findings show?",
+          "translation": "Q10. 以色列研究人员的发现说明了什么？"
         },
         {
           "id": "l98",
           "start": 651.25,
           "end": 657.45,
-          "text": "Q11. What does the American Academy of Pediatrics recommend mothers do?"
+          "text": "Q11. What does the American Academy of Pediatrics recommend mothers do?",
+          "translation": "Q11. 美国儿科学会建议母亲怎么做？"
         },
         {
           "id": "l99",
@@ -75533,55 +75784,64 @@
           "id": "l100",
           "start": 673.9,
           "end": 682.58,
-          "text": "The US has already lost more than a third of the native languages that existed before European colonization and the remaining 192 are classed by UNESCO as ranging between unsafe and extinct."
+          "text": "The US has already lost more than a third of the native languages that existed before European colonization and the remaining 192 are classed by UNESCO as ranging between unsafe and extinct.",
+          "translation": "美国已经失去了欧洲殖民前所存在的三分之一以上的本土语言，其余192种被联合国教科文组织归入从不安全到已灭绝的各个等级。"
         },
         {
           "id": "l101",
           "start": 689.8,
           "end": 715.99,
-          "text": "We need more funding and more effort to return these languages to everyday use,\"says Fred Nawusky of the National Museum of the American Indian.\"We are making progress, but money needs to be spent on revitalizing languages, not just documenting them.\"Some 40 languages mainly in California and Oklahoma where thousands of Indians were forced to relocate in the 19th century have fewer than 10 native speakers."
+          "text": "We need more funding and more effort to return these languages to everyday use,\"says Fred Nawusky of the National Museum of the American Indian.\"We are making progress, but money needs to be spent on revitalizing languages, not just documenting them.\"Some 40 languages mainly in California and Oklahoma where thousands of Indians were forced to relocate in the 19th century have fewer than 10 native speakers.",
+          "translation": "美国印第安人国家博物馆的弗雷德·纳沃斯基说，我们需要更多资金和更多努力，让这些语言重回日常使用。他说，我们正在取得进展，但钱必须花在复兴语言上，而不只是把它们记录存档。约有40种语言——主要在加利福尼亚和俄克拉何马，19世纪那里有成千上万的印第安人被迫迁移——的母语使用者不足10人。"
         },
         {
           "id": "l102",
           "start": 720.95,
           "end": 737.47,
-          "text": "Part of the issue is that tribal groups themselves don't always believe their languages are endangered until they are down to the last handful of speakers.\"But progress is being made through emerging schools, because if you teach children when they are young, it will stay with them as adults and that's the future,\"says Mr. Nawusky, a Comanche Indian."
+          "text": "Part of the issue is that tribal groups themselves don't always believe their languages are endangered until they are down to the last handful of speakers.\"But progress is being made through emerging schools, because if you teach children when they are young, it will stay with them as adults and that's the future,\"says Mr. Nawusky, a Comanche Indian.",
+          "translation": "问题的一部分在于，部落群体自己往往并不相信本族语言已濒危，直到只剩最后几个人会说。科曼奇印第安人纳沃斯基先生说，但通过新建的学校正在取得进展，因为如果在孩子小的时候教他们，这些会伴随他们成年，那就是未来。"
         },
         {
           "id": "l103",
           "start": 744.35,
           "end": 751.63,
-          "text": "Such schools have become a model in Hawaii, but the islanders' local language is still classed by UNESCO as critically endangered because only 1,000 people speak it."
+          "text": "Such schools have become a model in Hawaii, but the islanders' local language is still classed by UNESCO as critically endangered because only 1,000 people speak it.",
+          "translation": "这类学校在夏威夷已成为典范，但岛上本地的语言仍被联合国教科文组织列为极度濒危，因为只有1000人会说。"
         },
         {
           "id": "l104",
           "start": 756.65,
           "end": 759.45,
-          "text": "The decline in American Indian languages has its historical roots."
+          "text": "The decline in American Indian languages has its historical roots.",
+          "translation": "美洲印第安语言的衰落有其历史根源。"
         },
         {
           "id": "l105",
           "start": 760.79,
           "end": 767.5,
-          "text": "In the mid-19th century, the US government adopted a policy of Americanizing Indian children by removing them from their homes and culture."
+          "text": "In the mid-19th century, the US government adopted a policy of Americanizing Indian children by removing them from their homes and culture.",
+          "translation": "19世纪中叶，美国政府推行了一项政策，把印第安儿童带离家庭和本族文化，使他们美国化。"
         },
         {
           "id": "l106",
           "start": 769.77,
           "end": 772.29,
-          "text": "Within a few generations, most had forgotten their native tongues."
+          "text": "Within a few generations, most had forgotten their native tongues.",
+          "translation": "几代人之内，大多数人就忘记了自己的母语。"
         },
         {
           "id": "l107",
           "start": 776.95,
           "end": 778.91,
-          "text": "Another challenge to language survival is television."
+          "text": "Another challenge to language survival is television.",
+          "translation": "语言存续的另一项挑战是电视。"
         },
         {
           "id": "l108",
           "start": 780.4,
           "end": 786.28,
-          "text": "It has brought English into homes, and pushed out traditional storytelling and family time together, accelerating the extinction of native languages."
+          "text": "It has brought English into homes, and pushed out traditional storytelling and family time together, accelerating the extinction of native languages.",
+          "translation": "电视把英语带进了家庭，挤掉了传统的讲故事和家庭共处时间，加速了本土语言的消亡。"
         },
         {
           "id": "l109",
@@ -75593,25 +75853,29 @@
           "id": "l110",
           "start": 796.45,
           "end": 799.9,
-          "text": "Q12. What do we learn from the report?"
+          "text": "Q12. What do we learn from the report?",
+          "translation": "Q12. 我们从这份报告中了解到什么？"
         },
         {
           "id": "l111",
           "start": 814.25,
           "end": 819.65,
-          "text": "Q13. For what purpose does Fred Nawusky appeal for more funding?"
+          "text": "Q13. For what purpose does Fred Nawusky appeal for more funding?",
+          "translation": "Q13. 弗雷德·纳沃斯基呼吁增加资金是出于什么目的？"
         },
         {
           "id": "l112",
           "start": 833.15,
           "end": 839.05,
-          "text": "Q14. What is the historical cause of the decline in American Indian Languages?"
+          "text": "Q14. What is the historical cause of the decline in American Indian Languages?",
+          "translation": "Q14. 美洲印第安语言衰落的历史原因是什么？"
         },
         {
           "id": "l113",
           "start": 853.1,
           "end": 857.45,
-          "text": "Q15. What does the speaker say about television?"
+          "text": "Q15. What does the speaker say about television?",
+          "translation": "Q15. 关于电视，说话者说了什么？"
         },
         {
           "id": "l114",
@@ -75629,151 +75893,176 @@
           "id": "l116",
           "start": 902.45,
           "end": 906.93,
-          "text": "W: Greg Rosen lost his job as a sales manager nearly three years ago and is still unemployed."
+          "text": "W: Greg Rosen lost his job as a sales manager nearly three years ago and is still unemployed.",
+          "translation": "W: 格雷格·罗森近三年前丢掉了销售经理的工作，至今仍处于失业状态。"
         },
         {
           "id": "l117",
           "start": 908.19,
           "end": 916.03,
-          "text": "M: \"It literally is like something in a dream to remember what it's like to actually be able to go out and put in a day's work and receive a day's pay.\""
+          "text": "M: \"It literally is like something in a dream to remember what it's like to actually be able to go out and put in a day's work and receive a day's pay.\"",
+          "translation": "M: 回想真正能出门干一天活、拿一天工资是什么感觉，简直就像做梦一样。"
         },
         {
           "id": "l118",
           "start": 917.79,
           "end": 922,
-          "text": "W: At first Rosen bought groceries and made house payments with the help from unemployment insurance."
+          "text": "W: At first Rosen bought groceries and made house payments with the help from unemployment insurance.",
+          "translation": "W: 起初，罗森靠失业保险的帮助购买食品杂货并支付房贷。"
         },
         {
           "id": "l119",
           "start": 925.32,
           "end": 930.2,
-          "text": "It pays laid-off workers up to half of their previous wages while they look for work."
+          "text": "It pays laid-off workers up to half of their previous wages while they look for work.",
+          "translation": "失业保险在被裁员工找工作期间，支付其原工资最多一半的补助。"
         },
         {
           "id": "l120",
           "start": 931.51,
           "end": 935.99,
-          "text": "But now, that insurance has run out for him and he has to make tough choices."
+          "text": "But now, that insurance has run out for him and he has to make tough choices.",
+          "translation": "但现在，他的失业保险已经用完了，他不得不做出艰难的选择。"
         },
         {
           "id": "l121",
           "start": 937.07,
           "end": 940.99,
-          "text": "He's cut back on medications and he no longer helps support his disabled mother."
+          "text": "He's cut back on medications and he no longer helps support his disabled mother.",
+          "translation": "他减少了用药，也不再资助他残疾的母亲。"
         },
         {
           "id": "l122",
           "start": 942.01,
           "end": 943.13,
-          "text": "It is a devastating experience."
+          "text": "It is a devastating experience.",
+          "translation": "这是一段毁灭性的经历。"
         },
         {
           "id": "l123",
           "start": 944.95,
           "end": 947.47,
-          "text": "New research says the US recession is now over."
+          "text": "New research says the US recession is now over.",
+          "translation": "新的研究称，美国的经济衰退现已结束。"
         },
         {
           "id": "l124",
           "start": 948.27,
           "end": 951.91,
-          "text": "But many people remain unemployed and unemployed workers face difficult odds."
+          "text": "But many people remain unemployed and unemployed workers face difficult odds.",
+          "translation": "但许多人仍然失业，失业工人面临着艰难的处境。"
         },
         {
           "id": "l125",
           "start": 955,
           "end": 962.91,
-          "text": "There is literally only one job opening for every five unemployed workers, so four out of five unemployed workers have actually no chance of finding a new job."
+          "text": "There is literally only one job opening for every five unemployed workers, so four out of five unemployed workers have actually no chance of finding a new job.",
+          "translation": "实际上每五名失业工人只有一个职位空缺，因此五分之四的失业者根本没有机会找到新工作。"
         },
         {
           "id": "l126",
           "start": 967.2,
           "end": 972.24,
-          "text": "Businesses have downsized or shut down across America, leading fewer job opportunities for those in search of work."
+          "text": "Businesses have downsized or shut down across America, leading fewer job opportunities for those in search of work.",
+          "translation": "全美各地企业纷纷裁员或关闭，导致求职者的就业机会减少。"
         },
         {
           "id": "l127",
           "start": 976.3,
           "end": 985.1,
-          "text": "Experts who monitor unemployment statistics here in Bucks County, Pennsylvania say about 28,000 people are unemployed and many of them are jobless due to no fault of their own."
+          "text": "Experts who monitor unemployment statistics here in Bucks County, Pennsylvania say about 28,000 people are unemployed and many of them are jobless due to no fault of their own.",
+          "translation": "在宾夕法尼亚州巴克斯县监测失业统计数据的专家说，约有2.8万人失业，其中许多人失业并非自身过错。"
         },
         {
           "id": "l128",
           "start": 989.9,
           "end": 992.14,
-          "text": "That's where the Bucks County Careerlink comes in."
+          "text": "That's where the Bucks County Careerlink comes in.",
+          "translation": "巴克斯县就业联络中心正是为此而设。"
         },
         {
           "id": "l129",
           "start": 994.29,
           "end": 1001.08,
-          "text": "W: Local director Elizabeth Walsh says they provide training and guidance to help unemployed workers find local job opportunities.\"So here's the job opening."
+          "text": "W: Local director Elizabeth Walsh says they provide training and guidance to help unemployed workers find local job opportunities.\"So here's the job opening.",
+          "translation": "W: 当地负责人伊丽莎白·沃尔什说，他们提供培训和指导，帮助失业工人找到当地的就业机会。她说，这里有职位空缺。"
         },
         {
           "id": "l130",
           "start": 1006.35,
           "end": 1007.47,
-          "text": "Here's the job seeker."
+          "text": "Here's the job seeker.",
+          "translation": "这里有求职者。"
         },
         {
           "id": "l131",
           "start": 1008.32,
           "end": 1009.21,
-          "text": "Match them together under one roof,\"she says."
+          "text": "Match them together under one roof,\"she says.",
+          "translation": "在同一屋檐下把他们匹配起来。"
         },
         {
           "id": "l132",
           "start": 1009.5,
           "end": 1016.13,
-          "text": "But the lack of work opportunities in Bucks County limits how much she can help."
+          "text": "But the lack of work opportunities in Bucks County limits how much she can help.",
+          "translation": "但巴克斯县缺少工作机会，这限制了她能提供的帮助。"
         },
         {
           "id": "l133",
           "start": 1019.3,
           "end": 1021.54,
-          "text": "Rosen says he hopes Congress will take action."
+          "text": "Rosen says he hopes Congress will take action.",
+          "translation": "罗森说，他希望国会采取行动。"
         },
         {
           "id": "l134",
           "start": 1022.8,
           "end": 1028.85,
-          "text": "This month, he launched the Ninety-Niners Union, an umbrella organization of eighteen Internet-based grass roots groups of Ninety-Niners."
+          "text": "This month, he launched the Ninety-Niners Union, an umbrella organization of eighteen Internet-based grass roots groups of Ninety-Niners.",
+          "translation": "本月，他发起了“99联盟”，这是一个由十八个基于互联网的“99族”草根团体组成的联合组织。"
         },
         {
           "id": "l135",
           "start": 1029.55,
           "end": 1032.35,
-          "text": "Their goal is to convince lawmakers to extend unemployment benefits."
+          "text": "Their goal is to convince lawmakers to extend unemployment benefits.",
+          "translation": "他们的目标是说服立法者延长失业救济。"
         },
         {
           "id": "l136",
           "start": 1035.65,
           "end": 1041.04,
-          "text": "But Pennsylvania State representative Scott Petri says governments simply do not have enough money to extend unemployment insurance."
+          "text": "But Pennsylvania State representative Scott Petri says governments simply do not have enough money to extend unemployment insurance.",
+          "translation": "但宾夕法尼亚州议员斯科特·彼得里说，政府根本没有足够的钱来延长失业保险。"
         },
         {
           "id": "l137",
           "start": 1045.94,
           "end": 1053.22,
-          "text": "He thinks the best way to help the long-term unemployed is to allow private citizens to invest in local companies that can create more jobs."
+          "text": "He thinks the best way to help the long-term unemployed is to allow private citizens to invest in local companies that can create more jobs.",
+          "translation": "他认为帮助长期失业者的最好办法，是允许公民个人投资于能创造更多就业岗位的本地公司。"
         },
         {
           "id": "l138",
           "start": 1054.62,
           "end": 1063.02,
-          "text": "But the boost in investor confidence needed for the plan to work will take time-time that Rosen says still requires him to buy food and make monthly mortgage payments."
+          "text": "But the boost in investor confidence needed for the plan to work will take time-time that Rosen says still requires him to buy food and make monthly mortgage payments.",
+          "translation": "但该计划要奏效所需的投资者信心提升需要时间，而罗森说，在这段时间里他仍然要买食品、按月还房贷。"
         },
         {
           "id": "l139",
           "start": 1067.55,
           "end": 1070.3,
-          "text": "Rosen says he'll use the last of his savings to try to hang onto the home he worked for more than twenty years to buy."
+          "text": "Rosen says he'll use the last of his savings to try to hang onto the home he worked for more than twenty years to buy.",
+          "translation": "罗森说，他会用最后的积蓄尽力保住他辛苦工作二十多年才买下的房子。"
         },
         {
           "id": "l140",
           "start": 1074.69,
           "end": 1078.89,
-          "text": "But once that money is gone, he says he doesn't know what he'll do."
+          "text": "But once that money is gone, he says he doesn't know what he'll do.",
+          "translation": "但他说，一旦这笔钱用完，他不知道自己该怎么办。"
         },
         {
           "id": "l141",
@@ -75785,19 +76074,22 @@
           "id": "l142",
           "start": 1086,
           "end": 1090.8,
-          "text": "Q16. How does unemployment insurance help the unemployed?"
+          "text": "Q16. How does unemployment insurance help the unemployed?",
+          "translation": "Q16. 失业保险如何帮助失业者？"
         },
         {
           "id": "l143",
           "start": 1104.35,
           "end": 1111.15,
-          "text": "Q17. What is local director Elizabeth Walsh of the Bucks County Careerlink doing?"
+          "text": "Q17. What is local director Elizabeth Walsh of the Bucks County Careerlink doing?",
+          "translation": "Q17. 巴克斯县就业联络中心的当地负责人伊丽莎白·沃尔什在做什么？"
         },
         {
           "id": "l144",
           "start": 1124.65,
           "end": 1133.45,
-          "text": "Q18. What does Pennsylvania State representative Scott Petri say is the best way to help the long-term unemployed?"
+          "text": "Q18. What does Pennsylvania State representative Scott Petri say is the best way to help the long-term unemployed?",
+          "translation": "Q18. 宾夕法尼亚州议员斯科特·彼得里说，帮助长期失业者的最好办法是什么？"
         },
         {
           "id": "l145",
@@ -75809,145 +76101,169 @@
           "id": "l146",
           "start": 1149.4,
           "end": 1156.96,
-          "text": "W: Earlier this year, British explorer Pen Hadow and his team trekked for three months across the frozen Arctic Ocean, taking measurements and recording observations about the ice."
+          "text": "W: Earlier this year, British explorer Pen Hadow and his team trekked for three months across the frozen Arctic Ocean, taking measurements and recording observations about the ice.",
+          "translation": "W: 今年早些时候，英国探险家彭·哈多及其团队在冰封的北冰洋上跋涉了三个月，对冰层进行测量并记录观测结果。"
         },
         {
           "id": "l147",
           "start": 1161.35,
           "end": 1170.59,
-          "text": "M: \"Well, we've been led to believe that we would encounter a good proportion of this older, thicker, technically multi-year ice that's been around for a few years and just get thicker and thicker."
+          "text": "M: \"Well, we've been led to believe that we would encounter a good proportion of this older, thicker, technically multi-year ice that's been around for a few years and just get thicker and thicker.",
+          "translation": "M: 我们一直被告知，会碰到相当比例的更老、更厚的所谓多年冰，这些冰已经存在了好几年，而且会越来越厚。"
         },
         {
           "id": "l148",
           "start": 1173.1,
           "end": 1176.2,
-          "text": "We actually found there wasn't any multi-year ice at all.\""
+          "text": "We actually found there wasn't any multi-year ice at all.\"",
+          "translation": "而我们实际上发现根本没有多年冰。"
         },
         {
           "id": "l149",
           "start": 1177.4,
           "end": 1183.05,
-          "text": "W: Satellite observations and submarine surveys over the past few years had shown less ice in the polar region."
+          "text": "W: Satellite observations and submarine surveys over the past few years had shown less ice in the polar region.",
+          "translation": "W: 过去几年的卫星观测和潜艇调查显示，极地地区的冰减少了。"
         },
         {
           "id": "l150",
           "start": 1187.62,
           "end": 1191.76,
-          "text": "But the recent measurements show the lost is more pronounced than previously thought."
+          "text": "But the recent measurements show the lost is more pronounced than previously thought.",
+          "translation": "但最近的测量显示，冰的损失比先前认为的更为明显。"
         },
         {
           "id": "l151",
           "start": 1195.85,
           "end": 1203.97,
-          "text": "M: \"We are looking at roughly 80 percent loss of ice cover on the Arctic ocean in ten years, roughly ten years and 100 percent loss in nearly twenty years.\""
+          "text": "M: \"We are looking at roughly 80 percent loss of ice cover on the Arctic ocean in ten years, roughly ten years and 100 percent loss in nearly twenty years.\"",
+          "translation": "M: 我们看到的是，北冰洋冰盖在十年内大约减少80%，大约十年，而在近二十年内将减少100%。"
         },
         {
           "id": "l152",
           "start": 1206.1,
           "end": 1211.54,
-          "text": "W: Cambridge scientist Peter Wadhams, who's been measuring and monitoring the Arctic since 1971, says the decline is irreversible."
+          "text": "W: Cambridge scientist Peter Wadhams, who's been measuring and monitoring the Arctic since 1971, says the decline is irreversible.",
+          "translation": "W: 剑桥科学家彼得·沃德姆斯自1971年以来一直在测量和监测北极，他说这种减少是不可逆的。"
         },
         {
           "id": "l153",
           "start": 1217.53,
           "end": 1221.36,
-          "text": "M: \"The more you lose, the more open water is created, the more warming goes on in that open water during the summer, the less ice forms in the winter, the more melt there is the following summer."
+          "text": "M: \"The more you lose, the more open water is created, the more warming goes on in that open water during the summer, the less ice forms in the winter, the more melt there is the following summer.",
+          "translation": "M: 冰失去得越多，形成的开阔水域就越多，夏季开阔水域中的升温就越多，冬季结的冰就越少，来年夏天融化的就越多。"
         },
         {
           "id": "l154",
           "start": 1221.9,
           "end": 1229.36,
-          "text": "It becomes a breakdown process where everything ends up accelerating until it's all gone.\""
+          "text": "It becomes a breakdown process where everything ends up accelerating until it's all gone.\"",
+          "translation": "这变成了一个崩溃过程，一切最终都在加速，直到冰全部消失。"
         },
         {
           "id": "l155",
           "start": 1230.53,
           "end": 1234.7,
-          "text": "W: Martin Summercorn runs the Arctic program for the environmental charity the World Wildlife Fund."
+          "text": "W: Martin Summercorn runs the Arctic program for the environmental charity the World Wildlife Fund.",
+          "translation": "W: 马丁·萨默科恩负责环保慈善机构世界自然基金会的北极项目。"
         },
         {
           "id": "l156",
           "start": 1234.7,
           "end": 1239.74,
-          "text": "M: \"The Arctic sea ice holds a central position in the earth's climate system and it's deteriorating faster than expected."
+          "text": "M: \"The Arctic sea ice holds a central position in the earth's climate system and it's deteriorating faster than expected.",
+          "translation": "M: 北极海冰在地球气候系统中处于核心位置，而它的恶化速度快于预期。"
         },
         {
           "id": "l157",
           "start": 1242.8,
           "end": 1244.76,
-          "text": "Actually, it has to translate into more urgency to deal with the climate change problem and reduce emissions.\""
+          "text": "Actually, it has to translate into more urgency to deal with the climate change problem and reduce emissions.\"",
+          "translation": "实际上，这必须转化为应对气候变化问题和减少排放的更大紧迫性。"
         },
         {
           "id": "l158",
           "start": 1246.51,
           "end": 1253.78,
-          "text": "W: Summercorn says a plan to reduce greenhouse gas emissions blamed for global warming needs to come out of the Copenhagen Climate Change Summit in December."
+          "text": "W: Summercorn says a plan to reduce greenhouse gas emissions blamed for global warming needs to come out of the Copenhagen Climate Change Summit in December.",
+          "translation": "W: 萨默科恩说，12月的哥本哈根气候变化峰会需要拿出一份减少温室气体排放的计划，温室气体被认为是全球变暖的元凶。"
         },
         {
           "id": "l159",
           "start": 1260.85,
           "end": 1262.42,
-          "text": "M: \"We have to basically achieve: there--the commitment to deal with the problem now."
+          "text": "M: \"We have to basically achieve: there--the commitment to deal with the problem now.",
+          "translation": "M: 我们基本上必须达成——现在就着手解决这一问题的承诺。"
         },
         {
           "id": "l160",
           "start": 1263.62,
           "end": 1264.46,
-          "text": "That's the minimum."
+          "text": "That's the minimum.",
+          "translation": "这是最低要求。"
         },
         {
           "id": "l161",
           "start": 1265.45,
           "end": 1269.65,
-          "text": "We have to do that equitably, and we have to find a commitment that is quick.\""
+          "text": "We have to do that equitably, and we have to find a commitment that is quick.\"",
+          "translation": "我们必须公平地做到这一点，而且必须找到迅速的承诺。"
         },
         {
           "id": "l162",
           "start": 1272,
           "end": 1273.68,
-          "text": "W: Wadhams echoes the need for urgency."
+          "text": "W: Wadhams echoes the need for urgency.",
+          "translation": "W: 沃德姆斯也呼应了这种紧迫的必要性。"
         },
         {
           "id": "l163",
           "start": 1274.7,
           "end": 1279.18,
-          "text": "M: \"The carbon that we've put into the atmosphere keeps having a warming effect for 100 years."
+          "text": "M: \"The carbon that we've put into the atmosphere keeps having a warming effect for 100 years.",
+          "translation": "M: 我们排入大气中的碳会在100年里持续产生升温效应。"
         },
         {
           "id": "l164",
           "start": 1280.25,
           "end": 1282.9,
-          "text": "So we have to cut back rapidly now."
+          "text": "So we have to cut back rapidly now.",
+          "translation": "所以我们现在必须迅速削减。"
         },
         {
           "id": "l165",
           "start": 1282.9,
           "end": 1287.66,
-          "text": "Because it would take a long time to work its way through into our response by the atmosphere."
+          "text": "Because it would take a long time to work its way through into our response by the atmosphere.",
+          "translation": "因为大气要花很长时间才会在反应中体现出来。"
         },
         {
           "id": "l166",
           "start": 1288.4,
           "end": 1293.47,
-          "text": "We can't switch off global warming just by being good in future."
+          "text": "We can't switch off global warming just by being good in future.",
+          "translation": "我们不能只靠将来表现良好就关掉全球变暖。"
         },
         {
           "id": "l167",
           "start": 1294.28,
           "end": 1296.24,
-          "text": "We have to 'start being good now."
+          "text": "We have to 'start being good now.",
+          "translation": "我们必须从现在开始就做好。"
         },
         {
           "id": "l168",
           "start": 1297.12,
           "end": 1300.75,
-          "text": "W: Wadhams says there is no easy technological fix to climate change."
+          "text": "W: Wadhams says there is no easy technological fix to climate change.",
+          "translation": "W: 沃德姆斯说，气候变化没有简单的技术解决方案。"
         },
         {
           "id": "l169",
           "start": 1301.52,
           "end": 1307.68,
-          "text": "He and other scientists say there are basically two options to replacing fossil fuels, generating energy with renewables or embracing nuclear power."
+          "text": "He and other scientists say there are basically two options to replacing fossil fuels, generating energy with renewables or embracing nuclear power.",
+          "translation": "他和其他科学家说，替代化石燃料基本上有两个选择：用可再生能源发电，或者拥抱核能。"
         },
         {
           "id": "l170",
@@ -75959,25 +76275,29 @@
           "id": "l171",
           "start": 1318,
           "end": 1321.64,
-          "text": "Q19. What did Pen Hadow and his team do in the Arctic Ocean?"
+          "text": "Q19. What did Pen Hadow and his team do in the Arctic Ocean?",
+          "translation": "Q19. 彭·哈多和他的团队在北冰洋做了什么？"
         },
         {
           "id": "l172",
           "start": 1336.75,
           "end": 1341.2,
-          "text": "Q20. What does the report say about the Arctic region?"
+          "text": "Q20. What does the report say about the Arctic region?",
+          "translation": "Q20. 报告对北极地区说了什么？"
         },
         {
           "id": "l173",
           "start": 1354.85,
           "end": 1360.35,
-          "text": "Q21. What does Cambridge scientist Peter Wadhams say in his study?"
+          "text": "Q21. What does Cambridge scientist Peter Wadhams say in his study?",
+          "translation": "Q21. 剑桥科学家彼得·沃德姆斯在他的研究中说了什么？"
         },
         {
           "id": "l174",
           "start": 1373.75,
           "end": 1375.99,
-          "text": "Q22. How does Peter Wadhams view climate change?"
+          "text": "Q22. How does Peter Wadhams view climate change?",
+          "translation": "Q22. 彼得·沃德姆斯如何看待气候变化？"
         },
         {
           "id": "l175",
@@ -75989,121 +76309,141 @@
           "id": "l176",
           "start": 1393.8,
           "end": 1397.16,
-          "text": "M: From a very early age, some children exhibit better self-control than others."
+          "text": "M: From a very early age, some children exhibit better self-control than others.",
+          "translation": "M: 从很小的时候起，有些孩子就表现出比别的孩子更强的自控力。"
         },
         {
           "id": "l177",
           "start": 1399.25,
           "end": 1408.89,
-          "text": "Now, a new study that began with about 1,000 children in New Zealand has tracked how a child's low self-control can predict poor health, money troubles and even a criminal record in their adult years."
+          "text": "Now, a new study that began with about 1,000 children in New Zealand has tracked how a child's low self-control can predict poor health, money troubles and even a criminal record in their adult years.",
+          "translation": "现在，一项以新西兰约1000名儿童为起点的新研究追踪了儿童自控力低如何预示其成年后健康不佳、财务困难甚至犯罪记录。"
         },
         {
           "id": "l178",
           "start": 1413.6,
           "end": 1416.68,
-          "text": "Researchers have been studying this group of children for decades now."
+          "text": "Researchers have been studying this group of children for decades now.",
+          "translation": "研究人员研究这群孩子已有数十年。"
         },
         {
           "id": "l179",
           "start": 1417.9,
           "end": 1422.66,
-          "text": "Some of their earliest observations have to do with the level of self-control the youngsters displayed."
+          "text": "Some of their earliest observations have to do with the level of self-control the youngsters displayed.",
+          "translation": "他们最早的一些观察与这些孩子表现出的自控力水平有关。"
         },
         {
           "id": "l180",
           "start": 1424.9,
           "end": 1430.5,
-          "text": "Parents, teachers, even the kids themselves, scored the youngsters on measures like\"acting before thinking\"and\"persistence in reaching goals\"."
+          "text": "Parents, teachers, even the kids themselves, scored the youngsters on measures like\"acting before thinking\"and\"persistence in reaching goals\".",
+          "translation": "父母、老师甚至孩子自己，都按“未加思考就行动”和“坚持达成目标”等指标给这些孩子打分。"
         },
         {
           "id": "l181",
           "start": 1434.5,
           "end": 1437.58,
-          "text": "The children of the study are now adults in their thirties."
+          "text": "The children of the study are now adults in their thirties.",
+          "translation": "研究中的这些孩子现在已是三十多岁的成年人。"
         },
         {
           "id": "l182",
           "start": 1438.79,
           "end": 1448.03,
-          "text": "Terrie Moffitt of Duke University and her research colleagues found that kids with self-control issues tended to grow up to become adults with a far more troubling set of issues to deal with."
+          "text": "Terrie Moffitt of Duke University and her research colleagues found that kids with self-control issues tended to grow up to become adults with a far more troubling set of issues to deal with.",
+          "translation": "杜克大学的特里·莫菲特及其研究同事发现，有自控问题的孩子长大后，往往要面对一系列麻烦得多的问题。"
         },
         {
           "id": "l183",
           "start": 1451.1,
           "end": 1459.78,
-          "text": "W: \"The children who had the lowest self-control when they were age 3 to 10, later on had the most health problems in their thirties, and they had the worst financial situation."
+          "text": "W: \"The children who had the lowest self-control when they were age 3 to 10, later on had the most health problems in their thirties, and they had the worst financial situation.",
+          "translation": "W: 3到10岁时自控力最低的孩子，后来在三十多岁时健康问题最多，财务状况也最差。"
         },
         {
           "id": "l184",
           "start": 1461.44,
           "end": 1467.33,
-          "text": "And they were more likely to have a criminal record and to be raising a child as a single parent on a very low income.\""
+          "text": "And they were more likely to have a criminal record and to be raising a child as a single parent on a very low income.\"",
+          "translation": "他们也更可能有犯罪记录，并以极低的收入作为单亲抚养孩子。"
         },
         {
           "id": "l185",
           "start": 1468.08,
           "end": 1475.08,
-          "text": "M: Speaking from New Zealand via Skype, Moffitt explained that self-control problems were widely observed and weren't just a feature of a small group of misbehaving kids."
+          "text": "M: Speaking from New Zealand via Skype, Moffitt explained that self-control problems were widely observed and weren't just a feature of a small group of misbehaving kids.",
+          "translation": "M: 莫菲特在新西兰通过Skype表示，自控问题被广泛观察到，并不只是一小群行为不端孩子的特点。"
         },
         {
           "id": "l186",
           "start": 1479.23,
           "end": 1485.33,
-          "text": "W: \"Even the children who had above-average self-control as pre-schoolers, could have benefited from more self-control training."
+          "text": "W: \"Even the children who had above-average self-control as pre-schoolers, could have benefited from more self-control training.",
+          "translation": "W: 即使是学龄前自控力高于平均水平的孩子，也能从更多的自控训练中获益。"
         },
         {
           "id": "l187",
           "start": 1486.49,
           "end": 1491.85,
-          "text": "They could have improved their financial situation and their physical and mental health situation 30 years later.\""
+          "text": "They could have improved their financial situation and their physical and mental health situation 30 years later.\"",
+          "translation": "他们本可以改善30年后的财务状况以及身心健康状况。"
         },
         {
           "id": "l188",
           "start": 1494.9,
           "end": 1500.22,
-          "text": "M: So, children with minor self-control problems were likely as adults to have minor health problems, and so on."
+          "text": "M: So, children with minor self-control problems were likely as adults to have minor health problems, and so on.",
+          "translation": "M: 所以，自控问题轻微的孩子成年后很可能有轻微的健康问题，依此类推。"
         },
         {
           "id": "l189",
           "start": 1503.35,
           "end": 1512.03,
-          "text": "Moffitt said it's still unclear why some children have better self-control than others, though she says other researchers have found that it's mostly a learned behavior, with relatively little genetic influence."
+          "text": "Moffitt said it's still unclear why some children have better self-control than others, though she says other researchers have found that it's mostly a learned behavior, with relatively little genetic influence.",
+          "translation": "莫菲特说，目前仍不清楚为什么有些孩子的自控力比其他人强，不过她说其他研究者发现这主要是一种习得行为，遗传影响相对较小。"
         },
         {
           "id": "l190",
           "start": 1517.2,
           "end": 1525.88,
-          "text": "But good self-control can be set to run in families in that children who have good self-control are more likely to grow up to be healthy and prosperous parents."
+          "text": "But good self-control can be set to run in families in that children who have good self-control are more likely to grow up to be healthy and prosperous parents.",
+          "translation": "但良好的自控力可能会在家族中延续，因为自控力好的孩子长大后更可能成为健康、富足的家长。"
         },
         {
           "id": "l191",
           "start": 1527.6,
           "end": 1537.97,
-          "text": "W: \"Whereas some of the low self-control study members are more likely to be single parents with a very low income and the parent is in poor health and likely to be a heavy substance abuser."
+          "text": "W: \"Whereas some of the low self-control study members are more likely to be single parents with a very low income and the parent is in poor health and likely to be a heavy substance abuser.",
+          "translation": "W: 而研究中一些自控力低的成员更可能成为收入极低的单亲家长，而且家长本人健康不佳，很可能还严重滥用药物。"
         },
         {
           "id": "l192",
           "start": 1542.8,
           "end": 1544.76,
-          "text": "So that's not a good atmosphere for a child."
+          "text": "So that's not a good atmosphere for a child.",
+          "translation": "所以这对孩子来说不是一个好的氛围。"
         },
         {
           "id": "l193",
           "start": 1544.76,
           "end": 1549.52,
-          "text": "So it looks as though self-control is something that in one generation can disadvantage the next generation.\""
+          "text": "So it looks as though self-control is something that in one generation can disadvantage the next generation.\"",
+          "translation": "所以看起来，自控力是一代人的特质，却可能让下一代处于不利地位。"
         },
         {
           "id": "l194",
           "start": 1550.15,
           "end": 1557.32,
-          "text": "M: But the good news is that Moffitt says self-control can be taught by parents, and through school curricula that have proved to be effective."
+          "text": "M: But the good news is that Moffitt says self-control can be taught by parents, and through school curricula that have proved to be effective.",
+          "translation": "M: 但好消息是，莫菲特说自控力可以由父母教授，也可以通过已被证明有效的学校课程来培养。"
         },
         {
           "id": "l195",
           "start": 1557.8,
           "end": 1565.5,
-          "text": "Terrie Moffitt's paper\"On the Link Between Childhood Self-control and Adults' Status Decades Later\"is published in the Proceedings of the National Academy of Sciences."
+          "text": "Terrie Moffitt's paper\"On the Link Between Childhood Self-control and Adults' Status Decades Later\"is published in the Proceedings of the National Academy of Sciences.",
+          "translation": "特里·莫菲特的论文《童年自控力与数十年后成年地位的关联》发表在《美国国家科学院院刊》上。"
         },
         {
           "id": "l196",
@@ -76115,19 +76455,22 @@
           "id": "l197",
           "start": 1576.7,
           "end": 1580.65,
-          "text": "Q23. What is the new study about?"
+          "text": "Q23. What is the new study about?",
+          "translation": "Q23. 这项新研究是关于什么的？"
         },
         {
           "id": "l198",
           "start": 1594.15,
           "end": 1598.25,
-          "text": "Q24. What does the study seem to show?"
+          "text": "Q24. What does the study seem to show?",
+          "translation": "Q24. 这项研究似乎表明了什么？"
         },
         {
           "id": "l199",
           "start": 1611.65,
           "end": 1617,
-          "text": "Q25. What does Moffitt say is the good news from their study?"
+          "text": "Q25. What does Moffitt say is the good news from their study?",
+          "translation": "Q25. 莫菲特说他们的研究带来的好消息是什么？"
         }
       ],
       "status": "published",
@@ -76173,115 +76516,134 @@
           "id": "l4",
           "start": 46.6,
           "end": 54.4,
-          "text": "W: Professor Henderson, could you give us a brief overview of what you do, where you work and your main area of research?"
+          "text": "W: Professor Henderson, could you give us a brief overview of what you do, where you work and your main area of research?",
+          "translation": "W: 亨德森教授，您能简要介绍一下您从事的工作、您工作的地方以及您的主要研究领域吗？"
         },
         {
           "id": "l5",
           "start": 54.4,
           "end": 60,
-          "text": "M: Well, the Center for Climate Research where I work links the science of climate change to issues around economics and policy."
+          "text": "M: Well, the Center for Climate Research where I work links the science of climate change to issues around economics and policy.",
+          "translation": "M: 嗯，我所在的气候研究中心把气候变化科学与经济和政策问题联系起来。"
         },
         {
           "id": "l6",
           "start": 61.94,
           "end": 67.53,
-          "text": "Some of our research is to do with the likely impacts of climate change and all of the associated risks."
+          "text": "Some of our research is to do with the likely impacts of climate change and all of the associated risks.",
+          "translation": "我们的一部分研究涉及气候变化的可能影响以及所有相关风险。"
         },
         {
           "id": "l7",
           "start": 70.6,
           "end": 73.68,
-          "text": "W: And how strong is the evidence that climate change is happening?"
+          "text": "W: And how strong is the evidence that climate change is happening?",
+          "translation": "W: 那么，气候变化正在发生的证据有多强？"
         },
         {
           "id": "l8",
           "start": 74.84,
           "end": 77.64,
-          "text": "That is really something we need to be worried about."
+          "text": "That is really something we need to be worried about.",
+          "translation": "这确实是我们需要担心的事。"
         },
         {
           "id": "l9",
           "start": 78.75,
           "end": 83.79,
-          "text": "M: Well most of the science of climate change, particularly that to do with global warming, is simply fact."
+          "text": "M: Well most of the science of climate change, particularly that to do with global warming, is simply fact.",
+          "translation": "M: 嗯，气候变化科学的大部分内容，尤其是与全球变暖有关的部分，就是事实。"
         },
         {
           "id": "l10",
           "start": 85.16,
           "end": 89.08,
-          "text": "But other aspects of the science are less certain or at least more disputed."
+          "text": "But other aspects of the science are less certain or at least more disputed.",
+          "translation": "但这门科学的其他方面不那么确定，或者至少更有争议。"
         },
         {
           "id": "l11",
           "start": 91.65,
           "end": 93.89,
-          "text": "And so we're really talking about risk."
+          "text": "And so we're really talking about risk.",
+          "translation": "所以我们实际上谈的是风险。"
         },
         {
           "id": "l12",
           "start": 94.85,
           "end": 102.41,
-          "text": "What the economics tells us is that it's probably cheaper to avoid climate change to avoid the risk than it is to deal with the likely consequences."
+          "text": "What the economics tells us is that it's probably cheaper to avoid climate change to avoid the risk than it is to deal with the likely consequences.",
+          "translation": "经济学告诉我们，为避免风险而防止气候变化，可能比应对其可能的后果更便宜。"
         },
         {
           "id": "l13",
           "start": 104.85,
           "end": 106.25,
-          "text": "W: So what are we doing?"
+          "text": "W: So what are we doing?",
+          "translation": "W: 那我们在做什么？"
         },
         {
           "id": "l14",
           "start": 106.25,
           "end": 107.93,
-          "text": "What can we do about it?"
+          "text": "What can we do about it?",
+          "translation": "我们对此能做些什么？"
         },
         {
           "id": "l15",
           "start": 107.93,
           "end": 114.09,
-          "text": "M: Well, I would argue that we need to develop the science specifically to understand the likely impacts of climate change in different contexts."
+          "text": "M: Well, I would argue that we need to develop the science specifically to understand the likely impacts of climate change in different contexts.",
+          "translation": "M: 嗯，我认为我们需要专门发展这门科学，以了解气候变化在不同情境下的可能影响。"
         },
         {
           "id": "l16",
           "start": 117.4,
           "end": 121.04,
-          "text": "As I said, we need to understand the best ways of avoiding climate change."
+          "text": "As I said, we need to understand the best ways of avoiding climate change.",
+          "translation": "正如我所说，我们需要了解避免气候变化的最佳方式。"
         },
         {
           "id": "l17",
           "start": 122.67,
           "end": 125.75,
-          "text": "And this will involve a huge transition to low-carbon energy systems."
+          "text": "And this will involve a huge transition to low-carbon energy systems.",
+          "translation": "这将涉及向低碳能源体系的巨大转变。"
         },
         {
           "id": "l18",
           "start": 127.76,
           "end": 129.44,
-          "text": "And the transition is a tremendous priority."
+          "text": "And the transition is a tremendous priority.",
+          "translation": "这一转变是极为重要的优先事项。"
         },
         {
           "id": "l19",
           "start": 131.5,
           "end": 135.15,
-          "text": "And for this to happen, we may need action on a global scale."
+          "text": "And for this to happen, we may need action on a global scale.",
+          "translation": "要做到这一点，我们可能需要在全球范围内采取行动。"
         },
         {
           "id": "l20",
           "start": 135.8,
           "end": 145.49,
-          "text": "From a political perspective, We need to understand the terms on which major countries like China and the USA might sign up to a global agreement because at the moment we don't have that consensus."
+          "text": "From a political perspective, We need to understand the terms on which major countries like China and the USA might sign up to a global agreement because at the moment we don't have that consensus.",
+          "translation": "从政治角度看，我们需要了解中国和美国这样的主要国家在什么条件下可能签署全球协议，因为目前我们还没有这种共识。"
         },
         {
           "id": "l21",
           "start": 148.73,
           "end": 149.18,
-          "text": "W: Right."
+          "text": "W: Right.",
+          "translation": "W: 对。"
         },
         {
           "id": "l22",
           "start": 149.23,
           "end": 161.55,
-          "text": "M: And we also need to plan ahead so that we are in a position to deal with the likely levels of climate change which are already inevitable, and even more so, too, for the levels that are likely if we don't get those global agreements."
+          "text": "M: And we also need to plan ahead so that we are in a position to deal with the likely levels of climate change which are already inevitable, and even more so, too, for the levels that are likely if we don't get those global agreements.",
+          "translation": "M: 我们还需要提前规划，以便有能力应对已经不可避免的、可能达到的气候变化程度；如果我们达不成那些全球协议，情况更是如此。"
         },
         {
           "id": "l23",
@@ -76293,25 +76655,29 @@
           "id": "l24",
           "start": 169.9,
           "end": 176.15,
-          "text": "Q1. What does Professor Henderson say about his main area of research?"
+          "text": "Q1. What does Professor Henderson say about his main area of research?",
+          "translation": "Q1. 亨德森教授怎样介绍他的主要研究领域？"
         },
         {
           "id": "l25",
           "start": 190.15,
           "end": 195.6,
-          "text": "Q2. What does Professor Henderson say about climate change?"
+          "text": "Q2. What does Professor Henderson say about climate change?",
+          "translation": "Q2. 关于气候变化，亨德森教授说了什么？"
         },
         {
           "id": "l26",
           "start": 209.7,
           "end": 217,
-          "text": "Q3. What does Professor Henderson say is a top priority in combating climate change?"
+          "text": "Q3. What does Professor Henderson say is a top priority in combating climate change?",
+          "translation": "Q3. 亨德森教授说，应对气候变化的首要任务是什么？"
         },
         {
           "id": "l27",
           "start": 230.95,
           "end": 238.3,
-          "text": "Q4. What does Professor Henderson advise us to do to better deal with climate change?"
+          "text": "Q4. What does Professor Henderson advise us to do to better deal with climate change?",
+          "translation": "Q4. 亨德森教授建议我们怎样更好地应对气候变化？"
         },
         {
           "id": "l28",
@@ -76323,151 +76689,176 @@
           "id": "l29",
           "start": 255.05,
           "end": 256.45,
-          "text": "W: I have many business English students."
+          "text": "W: I have many business English students.",
+          "translation": "W: 我有很多商务英语学生。"
         },
         {
           "id": "l30",
           "start": 257,
           "end": 262.88,
-          "text": "When I teach in the classroom, we often end up talking about things like success and what leads to success."
+          "text": "When I teach in the classroom, we often end up talking about things like success and what leads to success.",
+          "translation": "我在课堂上讲课时，我们最后常常会谈到成功以及成功的因素这类话题。"
         },
         {
           "id": "l31",
           "start": 264.3,
           "end": 267.66,
-          "text": "And it's interesting that many of them mention the element of luck."
+          "text": "And it's interesting that many of them mention the element of luck.",
+          "translation": "有趣的是，他们中很多人都提到运气这一因素。"
         },
         {
           "id": "l32",
           "start": 268.61,
           "end": 269.75,
-          "text": "M: Right."
+          "text": "M: Right.",
+          "translation": "M: 对。"
         },
         {
           "id": "l33",
           "start": 270.65,
           "end": 271.34,
-          "text": "W: Luck is important to success."
+          "text": "W: Luck is important to success.",
+          "translation": "W: 运气对成功很重要。"
         },
         {
           "id": "l34",
           "start": 271.85,
           "end": 279.07,
-          "text": "But since you've seen that fantastic video on the TED Talks website by Richard St. John, he doesn't mention luck at all."
+          "text": "But since you've seen that fantastic video on the TED Talks website by Richard St. John, he doesn't mention luck at all.",
+          "translation": "但既然你看过TED演讲网站上理查德·圣约翰那个精彩的视频，他根本没提运气。"
         },
         {
           "id": "l35",
           "start": 280.57,
           "end": 283.65,
-          "text": "M: Well, I'm a firm believer that people can make their own luck."
+          "text": "M: Well, I'm a firm believer that people can make their own luck.",
+          "translation": "M: 嗯，我坚信人能够自己创造运气。"
         },
         {
           "id": "l36",
           "start": 284.62,
           "end": 288.53,
-          "text": "I mean what people regard as luck, you can actually create, to a degree."
+          "text": "I mean what people regard as luck, you can actually create, to a degree.",
+          "translation": "我的意思是，人们所谓的运气，在一定程度上是可以创造出来的。"
         },
         {
           "id": "l37",
           "start": 289.25,
           "end": 289.7,
-          "text": "W: Sure."
+          "text": "W: Sure.",
+          "translation": "W: 当然。"
         },
         {
           "id": "l38",
           "start": 289.75,
           "end": 295.36,
-          "text": "I think a lot of what people consider D luck is attributed to how you respond to the opportunities that come your way."
+          "text": "I think a lot of what people consider D luck is attributed to how you respond to the opportunities that come your way.",
+          "translation": "我认为很多人们视为运气的东西，要归因于你如何回应降临到你面前的机会。"
         },
         {
           "id": "l39",
           "start": 297.36,
           "end": 298.1,
-          "text": "M: Yes."
+          "text": "M: Yes.",
+          "translation": "M: 是的。"
         },
         {
           "id": "l40",
           "start": 298.1,
           "end": 298.94,
-          "text": "Very good point."
+          "text": "Very good point.",
+          "translation": "说得非常好。"
         },
         {
           "id": "l41",
           "start": 298.94,
           "end": 299.78,
-          "text": "W: \"Seizing the opportunities."
+          "text": "W: \"Seizing the opportunities.",
+          "translation": "W: 抓住机会。"
         },
         {
           "id": "l42",
           "start": 301.7,
           "end": 305.62,
-          "text": "But was there any point in the video that you thought was particularly interesting?"
+          "text": "But was there any point in the video that you thought was particularly interesting?",
+          "translation": "但视频里有没有哪一点你觉得特别有意思？"
         },
         {
           "id": "l43",
           "start": 305.71,
           "end": 306.16,
-          "text": "M: Yes."
+          "text": "M: Yes.",
+          "translation": "M: 有。"
         },
         {
           "id": "l44",
           "start": 306.21,
           "end": 307.05,
-          "text": "Actually there was."
+          "text": "Actually there was.",
+          "translation": "确实有。"
         },
         {
           "id": "l45",
           "start": 307.05,
           "end": 315.11,
-          "text": "Something very impressive to me is many people think that luck is important and that natural talent is something you must have in order to be successful."
+          "text": "Something very impressive to me is many people think that luck is important and that natural talent is something you must have in order to be successful.",
+          "translation": "让我印象很深的一点是，很多人认为运气很重要，认为天赋是成功必须具备的。"
         },
         {
           "id": "l46",
           "start": 318.55,
           "end": 324.5,
-          "text": "And in the video we saw, '\"the point about getting good at something is not about having some natural talent."
+          "text": "And in the video we saw, '\"the point about getting good at something is not about having some natural talent.",
+          "translation": "而在我们看的那个视频里，把一件事做好的关键并不在于有多少天赋。"
         },
         {
           "id": "l47",
           "start": 326.04,
           "end": 328.17,
-          "text": "It's all about practice, practice, practice."
+          "text": "It's all about practice, practice, practice.",
+          "translation": "关键在于练习、练习、再练习。"
         },
         {
           "id": "l48",
           "start": 329.1,
           "end": 329.66,
-          "text": "W: Definitely yeah."
+          "text": "W: Definitely yeah.",
+          "translation": "W: 确实是这样。"
         },
         {
           "id": "l49",
           "start": 330.29,
           "end": 338.41,
-          "text": "Natural talent helps in some way but at the end of the day you really do need to work hard and get really, really good at what you do."
+          "text": "Natural talent helps in some way but at the end of the day you really do need to work hard and get really, really good at what you do.",
+          "translation": "天赋在某种程度上是有帮助的，但说到底你真的需要努力，把自己做的事做得非常非常好。"
         },
         {
           "id": "l50",
           "start": 339.13,
           "end": 339.8,
-          "text": "M: Sure."
+          "text": "M: Sure.",
+          "translation": "M: 当然。"
         },
         {
           "id": "l51",
           "start": 339.8,
           "end": 344.6,
-          "text": "W: I thought one interesting thing in the video was the idea of passion being so important."
+          "text": "W: I thought one interesting thing in the video was the idea of passion being so important.",
+          "translation": "W: 我觉得视频里有意思的一点是，它认为热情如此重要。"
         },
         {
           "id": "l52",
           "start": 345,
           "end": 347.94,
-          "text": "And there're people who really love what they do - of course, you're going to want to work harder and put the time and effort into it."
+          "text": "And there're people who really love what they do - of course, you're going to want to work harder and put the time and effort into it.",
+          "translation": "有些人真的热爱自己做的事——当然，你就会愿意更努力，投入时间和精力。"
         },
         {
           "id": "l53",
           "start": 352.79,
           "end": 360.63,
-          "text": "And the funny thing is that\"if you love what you do and are really passionate about it and work really hard, the money kind of comes automatically."
+          "text": "And the funny thing is that\"if you love what you do and are really passionate about it and work really hard, the money kind of comes automatically.",
+          "translation": "有趣的是，如果你热爱自己做的事、真正充满热情并非常努力，钱差不多会自动到来。"
         },
         {
           "id": "l54",
@@ -76479,25 +76870,29 @@
           "id": "l55",
           "start": 369.2,
           "end": 373.1,
-          "text": "Q5. What are the speakers mainly talking about?"
+          "text": "Q5. What are the speakers mainly talking about?",
+          "translation": "Q5. 两位说话者主要在谈什么？"
         },
         {
           "id": "l56",
           "start": 387.55,
           "end": 391.3,
-          "text": "Q6. What is the woman's view of luck?"
+          "text": "Q6. What is the woman's view of luck?",
+          "translation": "Q6. 女士对运气持什么看法？"
         },
         {
           "id": "l57",
           "start": 405.75,
           "end": 410.6,
-          "text": "Q7. What is the chief point the TED Talks video makes?"
+          "text": "Q7. What is the chief point the TED Talks video makes?",
+          "translation": "Q7. TED演讲视频的主要观点是什么？"
         },
         {
           "id": "l58",
           "start": 425.05,
           "end": 430.45,
-          "text": "Q8. What does the woman think is the funny thing in the TED Talks video?"
+          "text": "Q8. What does the woman think is the funny thing in the TED Talks video?",
+          "translation": "Q8. 女士认为TED演讲视频中有趣的一点是什么？"
         },
         {
           "id": "l59",
@@ -76521,73 +76916,85 @@
           "id": "l62",
           "start": 483.05,
           "end": 488.37,
-          "text": "Devils Tower, the first national monument in America, could almost be mistaken for the stump of an enormous tree."
+          "text": "Devils Tower, the first national monument in America, could almost be mistaken for the stump of an enormous tree.",
+          "translation": "魔鬼塔是美国第一座国家纪念地，它几乎会被误认为是一棵巨树的树桩。"
         },
         {
           "id": "l63",
           "start": 490.6,
           "end": 496.1,
-          "text": "Its sheer rock sides sweep up from a broad base until they cut off abruptly at the flat summit."
+          "text": "Its sheer rock sides sweep up from a broad base until they cut off abruptly at the flat summit.",
+          "translation": "它陡直的岩壁从宽阔的基部向上延伸，到平坦的顶部陡然截断。"
         },
         {
           "id": "l64",
           "start": 497.6,
           "end": 507.75,
-          "text": "Rising more than 1,000 feet in the middle of the gently rolling plains of Wyoming, the massive column of rock looks as though it was dropped down into this location from a different time and place."
+          "text": "Rising more than 1,000 feet in the middle of the gently rolling plains of Wyoming, the massive column of rock looks as though it was dropped down into this location from a different time and place.",
+          "translation": "这根巨大的岩柱在怀俄明州缓缓起伏的平原中央拔地而起，高逾1000英尺，看上去仿佛是从另一个时空落到这里的。"
         },
         {
           "id": "l65",
           "start": 512.9,
           "end": 514.02,
-          "text": "In a sense it was."
+          "text": "In a sense it was.",
+          "translation": "从某种意义上说，确实如此。"
         },
         {
           "id": "l66",
           "start": 514.18,
           "end": 521.74,
-          "text": "Devils Tower is a relic of the past, when the molten rock of the earth's core forced its way to the surface to form the throat of a volcano."
+          "text": "Devils Tower is a relic of the past, when the molten rock of the earth's core forced its way to the surface to form the throat of a volcano.",
+          "translation": "魔鬼塔是往昔的遗迹，那时地心的熔岩挤到地表，形成了火山的喉道。"
         },
         {
           "id": "l67",
           "start": 525.56,
           "end": 530.21,
-          "text": "As the centuries passed, the rock cooled and hardened, shrinking and cracking into long columns."
+          "text": "As the centuries passed, the rock cooled and hardened, shrinking and cracking into long columns.",
+          "translation": "随着几个世纪过去，岩石冷却硬化，收缩并裂成长长的石柱。"
         },
         {
           "id": "l68",
           "start": 532.94,
           "end": 538.26,
-          "text": "Born in fire and fury, Devils Tower was then shaped by the slow, gentle work of wind and water."
+          "text": "Born in fire and fury, Devils Tower was then shaped by the slow, gentle work of wind and water.",
+          "translation": "魔鬼塔诞生于火与狂暴之中，随后又被风与水缓慢而温和的作用所塑造。"
         },
         {
           "id": "l69",
           "start": 540.65,
           "end": 545.13,
-          "text": "The outer layers of the volcano were worn away, until the hard core stood completely exposed."
+          "text": "The outer layers of the volcano were worn away, until the hard core stood completely exposed.",
+          "translation": "火山的外层被侵蚀殆尽，直到坚硬的核心完全暴露出来。"
         },
         {
           "id": "l70",
           "start": 547.44,
           "end": 552.04,
-          "text": "Small wonder that an Indian legend described Devils Tower as being formed by supernatural powers."
+          "text": "Small wonder that an Indian legend described Devils Tower as being formed by supernatural powers.",
+          "translation": "难怪一则印第安传说把魔鬼塔说成是由超自然力量形成的。"
         },
         {
           "id": "l71",
           "start": 555.4,
           "end": 564.14,
-          "text": "The legend says that when seven girls were attacked by be ars, they took refuge on top of a small rock, and they appealed to the Rock God for help."
+          "text": "The legend says that when seven girls were attacked by be ars, they took refuge on top of a small rock, and they appealed to the Rock God for help.",
+          "translation": "传说七位女孩遭到熊的袭击时，躲到一块小岩石顶上，向岩石之神求救。"
         },
         {
           "id": "l72",
           "start": 564.77,
           "end": 573.24,
-          "text": "The god caused the rock to grow and to lift the girls far above the ground, while its sides were scored by the claws of the angry be ars."
+          "text": "The god caused the rock to grow and to lift the girls far above the ground, while its sides were scored by the claws of the angry be ars.",
+          "translation": "神让岩石长高，把女孩们托到远离地面的高处，而岩石的四周被愤怒的熊爪抓出深深的痕迹。"
         },
         {
           "id": "l73",
           "start": 576.6,
           "end": 582.76,
-          "text": "Even today, says the legend, the girls can be seen above the towering rock, as seven shining stars in the night sky."
+          "text": "Even today, says the legend, the girls can be seen above the towering rock, as seven shining stars in the night sky.",
+          "translation": "传说中说，直到今天，人们仍能在高耸的岩石上方看到那些女孩，她们是夜空中的七颗明星。"
         },
         {
           "id": "l74",
@@ -76599,25 +77006,29 @@
           "id": "l75",
           "start": 591.1,
           "end": 593.06,
-          "text": "Q9. What does Devils Tower look like?"
+          "text": "Q9. What does Devils Tower look like?",
+          "translation": "Q9. 魔鬼塔看上去像什么？"
         },
         {
           "id": "l76",
           "start": 608.45,
           "end": 613.15,
-          "text": "Q10. What caused the volcano's outer layers to wear away?"
+          "text": "Q10. What caused the volcano's outer layers to wear away?",
+          "translation": "Q10. 是什么使火山的外层被侵蚀掉？"
         },
         {
           "id": "l77",
           "start": 627.05,
           "end": 632,
-          "text": "Q11. What does an Indian legend say about Devils Tower?"
+          "text": "Q11. What does an Indian legend say about Devils Tower?",
+          "translation": "Q11. 一则印第安传说对魔鬼塔说了什么？"
         },
         {
           "id": "l78",
           "start": 646,
           "end": 651.7,
-          "text": "Q12. How did the Rock God help the seven girls in the Indian legend?"
+          "text": "Q12. How did the Rock God help the seven girls in the Indian legend?",
+          "translation": "Q12. 在印第安传说中，岩石之神怎样帮助了七位女孩？"
         },
         {
           "id": "l79",
@@ -76629,67 +77040,78 @@
           "id": "l80",
           "start": 667.63,
           "end": 670.71,
-          "text": "It's no accident that most gas stations have convenience stores attached."
+          "text": "It's no accident that most gas stations have convenience stores attached.",
+          "translation": "大多数加油站都附设便利店，这并非偶然。"
         },
         {
           "id": "l81",
           "start": 672.25,
           "end": 684.57,
-          "text": "Few of us can fill up the tank without buying a few snacks, cigarettes, soft drinks or other items we can live without.\"I deserve it.\"That's what hard-working men and women say to justify their lavish vacations, big stereo systems or regular restaurant meals."
+          "text": "Few of us can fill up the tank without buying a few snacks, cigarettes, soft drinks or other items we can live without.\"I deserve it.\"That's what hard-working men and women say to justify their lavish vacations, big stereo systems or regular restaurant meals.",
+          "translation": "我们很少有人能在加油时忍住不买几样零食、香烟、软饮料或其他并非必需的东西。一句“我值得”，就是辛勤工作的男女为自己的豪华假期、大型音响或经常下馆子找的理由。"
         },
         {
           "id": "l82",
           "start": 691.65,
           "end": 693.4,
-          "text": "They do deserve such indulgences."
+          "text": "They do deserve such indulgences.",
+          "translation": "他们确实配得上这样的享受。"
         },
         {
           "id": "l83",
           "start": 694.05,
           "end": 699.16,
-          "text": "However, they also deserve a home of their own, a secure retirement and freedom from worrying about unpaid bills."
+          "text": "However, they also deserve a home of their own, a secure retirement and freedom from worrying about unpaid bills.",
+          "translation": "然而，他们同样应该拥有自己的住房、有保障的退休生活，以及不必为欠账单发愁的自由。"
         },
         {
           "id": "l84",
           "start": 701.05,
           "end": 706.37,
-          "text": "No one should have to live with what a Texas mother described as constant stress, tension, even fear about money."
+          "text": "No one should have to live with what a Texas mother described as constant stress, tension, even fear about money.",
+          "translation": "没有人应该过那种一位得克萨斯母亲所描述的日子——持续的紧张、压力，甚至对金钱的恐惧。"
         },
         {
           "id": "l85",
           "start": 708.89,
           "end": 712.81,
-          "text": "Sadly, the pleasure that comes from extravagances often disappears long before the bills do."
+          "text": "Sadly, the pleasure that comes from extravagances often disappears long before the bills do.",
+          "translation": "遗憾的是，奢侈消费带来的快乐往往在账单还清之前很久就消失了。"
         },
         {
           "id": "l86",
           "start": 715.67,
           "end": 720.71,
-          "text": "The video camera that one single mother bought for a special occasion, for example, is not much fun now."
+          "text": "The video camera that one single mother bought for a special occasion, for example, is not much fun now.",
+          "translation": "比如，一位单亲妈妈为某个特殊场合买的那台摄像机，现在已没什么乐趣可言。"
         },
         {
           "id": "l87",
           "start": 724,
           "end": 729.35,
-          "text": "She's figured out that it will take her another three years to pay it off at $30 a month."
+          "text": "She's figured out that it will take her another three years to pay it off at $30 a month.",
+          "translation": "她算过，每月还30美元，还要三年才能付清。"
         },
         {
           "id": "l88",
           "start": 729.35,
           "end": 743.35,
-          "text": "And the New Yorkers who spent a bundle on an outdoor hot tub now admit they rarely use it,\"because we can't afford to heat it in winter.\"The solution set priorities, add up the annual cost of each item, then consider what else she could buy with the same money."
+          "text": "And the New Yorkers who spent a bundle on an outdoor hot tub now admit they rarely use it,\"because we can't afford to heat it in winter.\"The solution set priorities, add up the annual cost of each item, then consider what else she could buy with the same money.",
+          "translation": "那些花了一大笔钱买户外热水浴缸的纽约人现在承认很少用它，因为冬天我们付不起加热的费用。解决办法是：确定优先次序，把每件物品的年度开销加起来，再想想用同样的钱还能买什么。"
         },
         {
           "id": "l89",
           "start": 748.95,
           "end": 753.88,
-          "text": "That will help you decide which items are really worth it."
+          "text": "That will help you decide which items are really worth it.",
+          "translation": "这能帮你判断哪些东西真正值得买。"
         },
         {
           "id": "l90",
           "start": 755.45,
           "end": 768.33,
-          "text": "One Chicago woman, for example, discovered that daily lunches with coworkers cost her $2,000 a year; she decided to take lunch to work instead.\"I now put $200 a week into my vacation fund and another 20 into retirement savings,\"she says.\"Those mean more to me than lunch.\""
+          "text": "One Chicago woman, for example, discovered that daily lunches with coworkers cost her $2,000 a year; she decided to take lunch to work instead.\"I now put $200 a week into my vacation fund and another 20 into retirement savings,\"she says.\"Those mean more to me than lunch.\"",
+          "translation": "例如，芝加哥一位女士发现，每天和同事一起吃午饭一年要花2000美元；她决定改为自带午饭上班。她说，我现在每周把200美元存进度假基金，另外20美元存进退休储蓄，这些对我来说比午饭更重要。"
         },
         {
           "id": "l91",
@@ -76701,19 +77123,22 @@
           "id": "l92",
           "start": 781.75,
           "end": 788.25,
-          "text": "Q13. What does the speaker say about drivers who stop at gas stations?"
+          "text": "Q13. What does the speaker say about drivers who stop at gas stations?",
+          "translation": "Q13. 关于在加油站停车的司机，说话者说了什么？"
         },
         {
           "id": "l93",
           "start": 803.3,
           "end": 807.95,
-          "text": "Q14. What does the speaker say about extravagances?"
+          "text": "Q14. What does the speaker say about extravagances?",
+          "translation": "Q14. 关于奢侈消费，说话者说了什么？"
         },
         {
           "id": "l94",
           "start": 823.05,
           "end": 828.75,
-          "text": "Q15. What does the speaker want to show by the example of the Chicago woman?"
+          "text": "Q15. What does the speaker want to show by the example of the Chicago woman?",
+          "translation": "Q15. 说话者用芝加哥那位女士的例子想说明什么？"
         },
         {
           "id": "l95",
@@ -76743,163 +77168,190 @@
           "id": "l99",
           "start": 876.7,
           "end": 880.9,
-          "text": "Let's say you start to brainstorm a list of all the emotions you've ever experienced."
+          "text": "Let's say you start to brainstorm a list of all the emotions you've ever experienced.",
+          "translation": "假设你开始动脑列一张清单，写下你经历过的所有情绪。"
         },
         {
           "id": "l100",
           "start": 882.5,
           "end": 884.18,
-          "text": "Just for fun, try it now."
+          "text": "Just for fun, try it now.",
+          "translation": "就当好玩，现在就试试。"
         },
         {
           "id": "l101",
           "start": 886.1,
           "end": 887.45,
-          "text": "What's on your list?"
+          "text": "What's on your list?",
+          "translation": "你的清单上有什么？"
         },
         {
           "id": "l102",
           "start": 887.45,
           "end": 894.15,
-          "text": "Chances are, you included things like happy, sad, excited, angry, afraid, grateful, proud, scared, confused, stressed, relaxed and amazed."
+          "text": "Chances are, you included things like happy, sad, excited, angry, afraid, grateful, proud, scared, confused, stressed, relaxed and amazed.",
+          "translation": "很可能你写下了快乐、悲伤、兴奋、愤怒、害怕、感激、自豪、恐惧、困惑、紧张、放松和惊讶等等。"
         },
         {
           "id": "l103",
           "start": 901.1,
           "end": 904.9,
-          "text": "Now sort your list into two categories positive emotions and negative emotions."
+          "text": "Now sort your list into two categories positive emotions and negative emotions.",
+          "translation": "现在把你的清单分成两类：正面情绪和负面情绪。"
         },
         {
           "id": "l104",
           "start": 909.55,
           "end": 912.91,
-          "text": "Feeling both positive and negative emotions is a natural part of being human."
+          "text": "Feeling both positive and negative emotions is a natural part of being human.",
+          "translation": "感受到正面和负面两种情绪，是人之所以为人的自然组成部分。"
         },
         {
           "id": "l105",
           "start": 913.99,
           "end": 920.71,
-          "text": "We might use the word\"negative\"to describe more difficult emotions, but it doesn't mean those emotions are bad or we shouldn't have them."
+          "text": "We might use the word\"negative\"to describe more difficult emotions, but it doesn't mean those emotions are bad or we shouldn't have them.",
+          "translation": "我们也许会用“负面”一词来描述较难应对的情绪，但这并不意味着这些情绪是坏的，或者我们不该有它们。"
         },
         {
           "id": "l106",
           "start": 925.85,
           "end": 929.21,
-          "text": "Still, most people would probably rather feel a positive emotion than a negative one."
+          "text": "Still, most people would probably rather feel a positive emotion than a negative one.",
+          "translation": "不过，大多数人大概还是宁愿感受正面情绪而不是负面情绪。"
         },
         {
           "id": "l107",
           "start": 932.19,
           "end": 936.9,
-          "text": "It's likely you'd prefer to feel happy instead of sad, or confident instead of insecure."
+          "text": "It's likely you'd prefer to feel happy instead of sad, or confident instead of insecure.",
+          "translation": "你很可能更愿意感到快乐而不是悲伤，更愿意自信而不是缺乏安全感。"
         },
         {
           "id": "l108",
           "start": 938.73,
           "end": 944.33,
-          "text": "What matters is how our emotions are balanced how much of each type of emotion, positive or negative, we experience."
+          "text": "What matters is how our emotions are balanced how much of each type of emotion, positive or negative, we experience.",
+          "translation": "重要的是我们的情绪如何平衡——我们体验到每种情绪（正面或负面）的量有多少。"
         },
         {
           "id": "l109",
           "start": 948.32,
           "end": 952.75,
-          "text": "Negative emotions warn us of threats or challenges that we may need to deal with."
+          "text": "Negative emotions warn us of threats or challenges that we may need to deal with.",
+          "translation": "负面情绪提醒我们注意可能需要应对的威胁或挑战。"
         },
         {
           "id": "l110",
           "start": 953.6,
           "end": 956.12,
-          "text": "For example, fear can alert us to possible danger."
+          "text": "For example, fear can alert us to possible danger.",
+          "translation": "例如，恐惧能让我们警觉可能的危险。"
         },
         {
           "id": "l111",
           "start": 957.75,
           "end": 960.5,
-          "text": "It's a signal that we might need to protect ourselves."
+          "text": "It's a signal that we might need to protect ourselves.",
+          "translation": "它是一个信号，说明我们可能需要保护自己。"
         },
         {
           "id": "l112",
           "start": 962.33,
           "end": 967.09,
-          "text": "Angry feelings warn us that someone is stepping on our toes, crossing a boundary, or violating our trust."
+          "text": "Angry feelings warn us that someone is stepping on our toes, crossing a boundary, or violating our trust.",
+          "translation": "愤怒的情绪提醒我们，有人触犯了我们、越过了界限或辜负了我们的信任。"
         },
         {
           "id": "l113",
           "start": 969.15,
           "end": 973.07,
-          "text": "Anger can be a signal that we might need to act on our own behalf."
+          "text": "Anger can be a signal that we might need to act on our own behalf.",
+          "translation": "愤怒可以是一个信号，说明我们可能需要为自己采取行动。"
         },
         {
           "id": "l114",
           "start": 974.25,
           "end": 975.65,
-          "text": "Negative emotions focus our awareness."
+          "text": "Negative emotions focus our awareness.",
+          "translation": "负面情绪会让我们的注意力集中。"
         },
         {
           "id": "l115",
           "start": 976.43,
           "end": 980.35,
-          "text": "They help us to zero in on a problem so we can deal with it."
+          "text": "They help us to zero in on a problem so we can deal with it.",
+          "translation": "它们帮助我们聚焦于一个问题，从而能够处理它。"
         },
         {
           "id": "l116",
           "start": 982.2,
           "end": 986.85,
-          "text": "But too many negative emotions can make us feel overwhelmed, anxious, exhausted or stressed out."
+          "text": "But too many negative emotions can make us feel overwhelmed, anxious, exhausted or stressed out.",
+          "translation": "但过多的负面情绪会让我们感到不堪重负、焦虑、疲惫或压力过大。"
         },
         {
           "id": "l117",
           "start": 988.43,
           "end": 992.4,
-          "text": "When negative emotions are out of balance, problems might seem too big to handle."
+          "text": "When negative emotions are out of balance, problems might seem too big to handle.",
+          "translation": "当负面情绪失衡时，问题可能显得大到无法应对。"
         },
         {
           "id": "l118",
           "start": 996.3,
           "end": 1000.65,
-          "text": "The more we dwell on negative emotions, the more negative we begin to feel."
+          "text": "The more we dwell on negative emotions, the more negative we begin to feel.",
+          "translation": "我们越是沉溺于负面情绪，就越会开始感到消极。"
         },
         {
           "id": "l119",
           "start": 1001.65,
           "end": 1003.61,
-          "text": "Focusing on negativity just keeps it going."
+          "text": "Focusing on negativity just keeps it going.",
+          "translation": "专注于消极只会让它持续下去。"
         },
         {
           "id": "l120",
           "start": 1005.95,
           "end": 1010.09,
-          "text": "Positive emotions balance out negative ones, but they have other powerful benefits, too."
+          "text": "Positive emotions balance out negative ones, but they have other powerful benefits, too.",
+          "translation": "正面情绪能平衡负面情绪，但它们还有其他强大的好处。"
         },
         {
           "id": "l121",
           "start": 1013.05,
           "end": 1019.49,
-          "text": "Instead of narrowing our focus like negative emotions do, positive emotions affect our brains in ways that increase our awareness, attention and memory."
+          "text": "Instead of narrowing our focus like negative emotions do, positive emotions affect our brains in ways that increase our awareness, attention and memory.",
+          "translation": "与负面情绪使我们的注意力变窄不同，正面情绪以增强我们意识、注意力和记忆力的方式影响大脑。"
         },
         {
           "id": "l122",
           "start": 1023.05,
           "end": 1029.49,
-          "text": "They help us take in more information, hold several ideas in mind at once, and understand how different ideas relate to each other."
+          "text": "They help us take in more information, hold several ideas in mind at once, and understand how different ideas relate to each other.",
+          "translation": "它们帮助我们接收更多信息、同时记住几个想法，并理解不同想法之间的关联。"
         },
         {
           "id": "l123",
           "start": 1036.67,
           "end": 1041.55,
-          "text": "Whenpositiveemotionsopenus up to new possibilities, we are more able to learn and build on our skills."
+          "text": "Whenpositiveemotionsopenus up to new possibilities, we are more able to learn and build on our skills.",
+          "translation": "当正面情绪让我们面向新的可能性时，我们更有能力学习并提升自己的技能。"
         },
         {
           "id": "l124",
           "start": 1043.4,
           "end": 1044.48,
-          "text": "That leads to doing better on tasks and tests."
+          "text": "That leads to doing better on tasks and tests.",
+          "translation": "这会让人在任务和测试中表现更好。"
         },
         {
           "id": "l125",
           "start": 1044.97,
           "end": 1051.75,
-          "text": "People who have plenty of positive emotions in their everyday lives tend to be happier, healthier, learn better, and get along well with others."
+          "text": "People who have plenty of positive emotions in their everyday lives tend to be happier, healthier, learn better, and get along well with others.",
+          "translation": "日常生活中正面情绪充足的人往往更快乐、更健康、学得更好，也更容易与他人相处。"
         },
         {
           "id": "l126",
@@ -76911,19 +77363,22 @@
           "id": "l127",
           "start": 1066.4,
           "end": 1071.8,
-          "text": "Q16. What does the speaker say about negative emotions?"
+          "text": "Q16. What does the speaker say about negative emotions?",
+          "translation": "Q16. 关于负面情绪，说话者说了什么？"
         },
         {
           "id": "l128",
           "start": 1085.65,
           "end": 1092,
-          "text": "Q17. What happens to people whose negative emotions are out of balance?"
+          "text": "Q17. What happens to people whose negative emotions are out of balance?",
+          "translation": "Q17. 负面情绪失衡的人会怎样？"
         },
         {
           "id": "l129",
           "start": 1105.35,
           "end": 1110.2,
-          "text": "Q18. How do positive emotions affect us?"
+          "text": "Q18. How do positive emotions affect us?",
+          "translation": "Q18. 正面情绪如何影响我们？"
         },
         {
           "id": "l130",
@@ -76935,151 +77390,176 @@
           "id": "l131",
           "start": 1126.82,
           "end": 1132.2,
-          "text": "In the past few months, I've been traveling for weeks at a time with only one suitcase of clothes."
+          "text": "In the past few months, I've been traveling for weeks at a time with only one suitcase of clothes.",
+          "translation": "过去几个月里，我常常一次出差好几周，只带一个行李箱的衣服。"
         },
         {
           "id": "l132",
           "start": 1132.65,
           "end": 1137.13,
-          "text": "One day, I was invited to an important event, and I wanted to wear something special for it."
+          "text": "One day, I was invited to an important event, and I wanted to wear something special for it.",
+          "translation": "有一天，我受邀参加一个重要活动，想穿点特别的。"
         },
         {
           "id": "l133",
           "start": 1139.15,
           "end": 1141.95,
-          "text": "I looked through my suitcase but couldn't find anything to wear."
+          "text": "I looked through my suitcase but couldn't find anything to wear.",
+          "translation": "我翻遍行李箱，却找不到可穿的衣服。"
         },
         {
           "id": "l134",
           "start": 1143,
           "end": 1147.95,
-          "text": "I was lucky to be at the technology conference then, and I had access to 3D printers."
+          "text": "I was lucky to be at the technology conference then, and I had access to 3D printers.",
+          "translation": "幸好我当时在参加一个科技会议，可以用到3D打印机。"
         },
         {
           "id": "l135",
           "start": 1149.8,
           "end": 1154.07,
-          "text": "So I quickly designed a skirt on my computer, and I loaded the file on the printer."
+          "text": "So I quickly designed a skirt on my computer, and I loaded the file on the printer.",
+          "translation": "于是我很快在电脑上设计了一条裙子，把文件载入打印机。"
         },
         {
           "id": "l136",
           "start": 1156.05,
           "end": 1157.73,
-          "text": "It just printed the pieces overnight."
+          "text": "It just printed the pieces overnight.",
+          "translation": "它一夜之间就把各个部件打印好了。"
         },
         {
           "id": "l137",
           "start": 1159.25,
           "end": 1167.08,
-          "text": "The next morning, I just took all the pieces, assembled them together in my hotel room, and this is actually the skirt that I'm wearing right now."
+          "text": "The next morning, I just took all the pieces, assembled them together in my hotel room, and this is actually the skirt that I'm wearing right now.",
+          "translation": "第二天早上，我把所有部件拿到酒店房间里拼装起来——这就是我现在身上穿的这条裙子。"
         },
         {
           "id": "l138",
           "start": 1169.55,
           "end": 1172.07,
-          "text": "So it wasn't the first time that I printed clothes."
+          "text": "So it wasn't the first time that I printed clothes.",
+          "translation": "所以这已不是我第一次打印衣服了。"
         },
         {
           "id": "l139",
           "start": 1172.7,
           "end": 1179.35,
-          "text": "For my senior collection at fashion design school, I decided to try and 3D print an entire fashion collection from my home."
+          "text": "For my senior collection at fashion design school, I decided to try and 3D print an entire fashion collection from my home.",
+          "translation": "为了时装设计学院的毕业作品系列，我决定尝试在家里用3D打印做出一整个时装系列。"
         },
         {
           "id": "l140",
           "start": 1182.9,
           "end": 1189.62,
-          "text": "The problem was that I barely knew anything about 3D printing, and I had only nine months to figure out how to print five fashionable looks."
+          "text": "The problem was that I barely knew anything about 3D printing, and I had only nine months to figure out how to print five fashionable looks.",
+          "translation": "问题在于我对3D打印几乎一无所知，而只有九个月时间弄明白怎么打印出五个时尚造型。"
         },
         {
           "id": "l141",
           "start": 1193.55,
           "end": 1195.79,
-          "text": "I always felt most creative when I worked from home."
+          "text": "I always felt most creative when I worked from home.",
+          "translation": "我在家工作时总觉得最有创造力。"
         },
         {
           "id": "l142",
           "start": 1197.85,
           "end": 1204.74,
-          "text": "I loved experimenting with new materials, and I always tried to develop new techniques to make the most unique textiles for my fashion projects."
+          "text": "I loved experimenting with new materials, and I always tried to develop new techniques to make the most unique textiles for my fashion projects.",
+          "translation": "我喜欢尝试新材料，也总是努力开发新技术，为我的时装项目做出最独特的织物。"
         },
         {
           "id": "l143",
           "start": 1208.2,
           "end": 1212.68,
-          "text": "One summer break, I came here to New York for an internship at a fashion house in Chinatown."
+          "text": "One summer break, I came here to New York for an internship at a fashion house in Chinatown.",
+          "translation": "有一个暑假，我来纽约，在唐人街一家时装公司实习。"
         },
         {
           "id": "l144",
           "start": 1216.05,
           "end": 1218.85,
-          "text": "We worked on two incredible dresses that were 3D printed."
+          "text": "We worked on two incredible dresses that were 3D printed.",
+          "translation": "我们参与制作了两条非常出色的3D打印连衣裙。"
         },
         {
           "id": "l145",
           "start": 1220.48,
           "end": 1223.22,
-          "text": "They were amazing like you can see here."
+          "text": "They were amazing like you can see here.",
+          "translation": "它们非常惊艳，就像你们在这里看到的。"
         },
         {
           "id": "l146",
           "start": 1224.15,
           "end": 1225.83,
-          "text": "But I had a few problems with them."
+          "text": "But I had a few problems with them.",
+          "translation": "但它们也存在几个问题。"
         },
         {
           "id": "l147",
           "start": 1227,
           "end": 1231.09,
-          "text": "They were made from hard plastics and that's why they were very breakable."
+          "text": "They were made from hard plastics and that's why they were very breakable.",
+          "translation": "它们由硬质塑料制成，因此非常容易破损。"
         },
         {
           "id": "l148",
           "start": 1232.55,
           "end": 1237.31,
-          "text": "The models couldn't sit in them, and they even got scratched from the plastics under their arms."
+          "text": "The models couldn't sit in them, and they even got scratched from the plastics under their arms.",
+          "translation": "模特穿着它们没法坐下，腋下的塑料甚至把她们刮伤了。"
         },
         {
           "id": "l149",
           "start": 1239.14,
           "end": 1245.58,
-          "text": "So now, the main challenge was to find the right material for printing clothes with, I mean the material you feed the printer with."
+          "text": "So now, the main challenge was to find the right material for printing clothes with, I mean the material you feed the printer with.",
+          "translation": "所以现在的主要挑战是找到适合打印衣服的材料，我是说喂给打印机的那种材料。"
         },
         {
           "id": "l150",
           "start": 1248.4,
           "end": 1252.6,
-          "text": "The breakthrough came when I was introduced to Filaflex, which is a new kind of printing material."
+          "text": "The breakthrough came when I was introduced to Filaflex, which is a new kind of printing material.",
+          "translation": "突破出现在我接触到Filaflex的时候，这是一种新型打印材料。"
         },
         {
           "id": "l151",
           "start": 1255.15,
           "end": 1256.55,
-          "text": "It's strong, yet very flexible."
+          "text": "It's strong, yet very flexible.",
+          "translation": "它强度高，同时又非常柔韧。"
         },
         {
           "id": "l152",
           "start": 1257.58,
           "end": 1263.17,
-          "text": "And with it, I was able to print the first garment, a red jacket that had the word\"freedom\"embedded into it."
+          "text": "And with it, I was able to print the first garment, a red jacket that had the word\"freedom\"embedded into it.",
+          "translation": "用它我打印出了第一件成衣——一件嵌有“自由”字样的红色夹克。"
         },
         {
           "id": "l153",
           "start": 1265.55,
           "end": 1269.75,
-          "text": "And actually, you can easily download this jacket, and change the word to something else."
+          "text": "And actually, you can easily download this jacket, and change the word to something else.",
+          "translation": "实际上，你可以很方便地下载这件夹克，把那几个字换成别的。"
         },
         {
           "id": "l154",
           "start": 1271.08,
           "end": 1273.32,
-          "text": "For example, your name or your sweetheart's name."
+          "text": "For example, your name or your sweetheart's name.",
+          "translation": "比如你的名字，或者你爱人的名字。"
         },
         {
           "id": "l155",
           "start": 1274.75,
           "end": 1281.19,
-          "text": "So I think in the future, materials will evolve, and they will look and feel like fabrics we know today, like cotton or silk."
+          "text": "So I think in the future, materials will evolve, and they will look and feel like fabrics we know today, like cotton or silk.",
+          "translation": "所以我认为将来材料会不断演进，外观和手感会像我们今天熟悉的棉或丝绸那样的织物。"
         },
         {
           "id": "l156",
@@ -77091,25 +77571,29 @@
           "id": "l157",
           "start": 1290.2,
           "end": 1295.2,
-          "text": "Q19. What does the speaker say about the skirt she is wearing now?"
+          "text": "Q19. What does the speaker say about the skirt she is wearing now?",
+          "translation": "Q19. 关于她现在穿的这条裙子，说话者说了什么？"
         },
         {
           "id": "l158",
           "start": 1309.7,
           "end": 1314.95,
-          "text": "Q20. When did the speaker start experimenting with 3D printing?"
+          "text": "Q20. When did the speaker start experimenting with 3D printing?",
+          "translation": "Q20. 说话者什么时候开始尝试3D打印？"
         },
         {
           "id": "l159",
           "start": 1329.6,
           "end": 1336.05,
-          "text": "Q21. What was the problem with the material the speaker worked on at a New York fashion house?"
+          "text": "Q21. What was the problem with the material the speaker worked on at a New York fashion house?",
+          "translation": "Q21. 说话者在纽约一家时装公司使用的材料有什么问题？"
         },
         {
           "id": "l160",
           "start": 1350.6,
           "end": 1355.4,
-          "text": "Q22. What does the speaker say about Filaflex?"
+          "text": "Q22. What does the speaker say about Filaflex?",
+          "translation": "Q22. 关于Filaflex，说话者说了什么？"
         },
         {
           "id": "l161",
@@ -77121,109 +77605,127 @@
           "id": "l162",
           "start": 1372.45,
           "end": 1376.93,
-          "text": "Welcome to the third lecture in our series on the future of small businesses in Europe."
+          "text": "Welcome to the third lecture in our series on the future of small businesses in Europe.",
+          "translation": "欢迎来到我们关于欧洲小企业未来系列讲座的第三讲。"
         },
         {
           "id": "l163",
           "start": 1379.1,
           "end": 1392.32,
-          "text": "The purpose of today's lecture, as you have seen from the title and the abstract, is to examine in more detail the problems facing small-and medium-sized enterprises which arise at least in part from having to adapt to rapid advances in technology."
+          "text": "The purpose of today's lecture, as you have seen from the title and the abstract, is to examine in more detail the problems facing small-and medium-sized enterprises which arise at least in part from having to adapt to rapid advances in technology.",
+          "translation": "正如你们从标题和摘要中看到的，今天这堂课的目的是更详细地探讨中小企业面临的问题，这些问题至少部分源于它们不得不适应技术的快速进步。"
         },
         {
           "id": "l164",
           "start": 1396.54,
           "end": 1402.7,
-          "text": "And I want to look at these both from a financial and from a personnel point of view and to offer a few hopefully effective solutions."
+          "text": "And I want to look at these both from a financial and from a personnel point of view and to offer a few hopefully effective solutions.",
+          "translation": "我想从财务和人事两个角度来考察这些问题，并提出几个但愿有效的解决方案。"
         },
         {
           "id": "l165",
           "start": 1405.55,
           "end": 1410.59,
-          "text": "Here we have three of the most important problems facing small businesses that I want to look at today."
+          "text": "Here we have three of the most important problems facing small businesses that I want to look at today.",
+          "translation": "这里列出的是小企业面临的最重要的三个问题，也是我今天想谈的。"
         },
         {
           "id": "l166",
           "start": 1410.93,
           "end": 1422.13,
-          "text": "First, keeping up with the pace of technological change, recruiting high quality staff in a time of skills shortages in IT as a whole and in a highly competitive market, and the issue of retaining staff once they've been recruited and trained."
+          "text": "First, keeping up with the pace of technological change, recruiting high quality staff in a time of skills shortages in IT as a whole and in a highly competitive market, and the issue of retaining staff once they've been recruited and trained.",
+          "translation": "第一，跟上技术变革的步伐；在整个IT行业技能短缺、市场竞争激烈的时期招聘高素质员工；以及员工招聘和培训之后的留任问题。"
         },
         {
           "id": "l167",
           "start": 1429.8,
           "end": 1432.88,
-          "text": "Now, all of these problems involve significant costs for all businesses."
+          "text": "Now, all of these problems involve significant costs for all businesses.",
+          "translation": "这些问题对所有企业都意味着可观的成本。"
         },
         {
           "id": "l168",
           "start": 1434.28,
           "end": 1437.64,
-          "text": "But they are particularly challenging issues for small-and medium- sized enterprises."
+          "text": "But they are particularly challenging issues for small-and medium- sized enterprises.",
+          "translation": "但对中小企业来说，这些问题尤其具有挑战性。"
         },
         {
           "id": "l169",
           "start": 1441.85,
           "end": 1445.95,
-          "text": "And those costs would vary depending on the size and scale of the businesses."
+          "text": "And those costs would vary depending on the size and scale of the businesses.",
+          "translation": "而这些成本会因企业的规模和大小而不同。"
         },
         {
           "id": "l170",
           "start": 1445.95,
           "end": 1452.74,
-          "text": "So let's come to the first issue on our list which is keeping pace with developments in technology."
+          "text": "So let's come to the first issue on our list which is keeping pace with developments in technology.",
+          "translation": "那么让我们来看清单上的第一个问题，也就是跟上技术发展。"
         },
         {
           "id": "l171",
           "start": 1455,
           "end": 1466.47,
-          "text": "Now we all know that the technology industry is intensely competitive with new products being launched all year round as the various companies strive to compete with each other, rather than, say, once a year or every couple of years."
+          "text": "Now we all know that the technology industry is intensely competitive with new products being launched all year round as the various companies strive to compete with each other, rather than, say, once a year or every couple of years.",
+          "translation": "我们都知道，技术行业竞争极为激烈，各家公司为了相互竞争，全年都在推出新产品，而不是说一年或每两年才推出一次。"
         },
         {
           "id": "l172",
           "start": 1468.79,
           "end": 1471.03,
-          "text": "And this is a real headache for smaller businesses."
+          "text": "And this is a real headache for smaller businesses.",
+          "translation": "这对较小的企业来说确实很头疼。"
         },
         {
           "id": "l173",
           "start": 1473.6,
           "end": 1476.68,
-          "text": "So, let's imagine we have a small company which is doing OK."
+          "text": "So, let's imagine we have a small company which is doing OK.",
+          "translation": "那么，假设我们有一家经营尚可的小公司。"
         },
         {
           "id": "l174",
           "start": 1477.34,
           "end": 1482.04,
-          "text": "It's just about making a profit and it spends most of its income on the overheads."
+          "text": "It's just about making a profit and it spends most of its income on the overheads.",
+          "translation": "它勉强能盈利，大部分收入都花在管理费用上。"
         },
         {
           "id": "l175",
           "start": 1482.16,
           "end": 1490.28,
-          "text": "So for a company in this situation, keeping up to date with the latest technology, even if it's only for the benefit of key staff, this can be hugely expensive."
+          "text": "So for a company in this situation, keeping up to date with the latest technology, even if it's only for the benefit of key staff, this can be hugely expensive.",
+          "translation": "所以对于处在这种境况的公司，跟上最新技术——即使只是为了关键员工的利益——也可能代价高昂。"
         },
         {
           "id": "l176",
           "start": 1494,
           "end": 1504.08,
-          "text": "So in my view, some creative thinking needs to come in here to find ways to help companies in this situation to stay ahead in the game, but at the same time, to remain technologically competitive."
+          "text": "So in my view, some creative thinking needs to come in here to find ways to help companies in this situation to stay ahead in the game, but at the same time, to remain technologically competitive.",
+          "translation": "所以在我看来，这里需要一些创造性的思考，想办法帮助这类公司在竞争中保持领先，同时保持技术上的竞争力。"
         },
         {
           "id": "l177",
           "start": 1509.35,
           "end": 1520.77,
-          "text": "Well, there's a possibility that small groups of companies with similar requirements but not directly competing with each other they could share the cost of upgrading in much the same way as, let's say, an intranet operates within large organizations."
+          "text": "Well, there's a possibility that small groups of companies with similar requirements but not directly competing with each other they could share the cost of upgrading in much the same way as, let's say, an intranet operates within large organizations.",
+          "translation": "有一种可能是，需求相似但并不直接竞争的小型公司群体可以分摊升级成本，方式很像大型组织内部运行的内联网。"
         },
         {
           "id": "l178",
           "start": 1527.68,
           "end": 1532.7,
-          "text": "In fact, cost-sharing could be a very practical solution, especially in times of financial difficulty."
+          "text": "In fact, cost-sharing could be a very practical solution, especially in times of financial difficulty.",
+          "translation": "事实上，分摊成本可能是一个非常实际的解决方案，尤其是在财务困难的时期。"
         },
         {
           "id": "l179",
           "start": 1533.75,
           "end": 1542.05,
-          "text": "If there's downward pressure on costs, because of a need for investment in other areas, I would argue that this is a perfectly feasible solution."
+          "text": "If there's downward pressure on costs, because of a need for investment in other areas, I would argue that this is a perfectly feasible solution.",
+          "translation": "如果因为需要在其他领域投资而存在成本下行的压力，我认为这是一个完全可行的方案。"
         },
         {
           "id": "l180",
@@ -77235,19 +77737,22 @@
           "id": "l181",
           "start": 1550.85,
           "end": 1559.4,
-          "text": "Q23. What does the speaker say about the problems facing small and medium sized enterprises?"
+          "text": "Q23. What does the speaker say about the problems facing small and medium sized enterprises?",
+          "translation": "Q23. 关于中小企业面临的问题，说话者说了什么？"
         },
         {
           "id": "l182",
           "start": 1573.2,
           "end": 1579.25,
-          "text": "Q24. What does the speaker say about the technology industry?"
+          "text": "Q24. What does the speaker say about the technology industry?",
+          "translation": "Q24. 关于技术行业，说话者说了什么？"
         },
         {
           "id": "l183",
           "start": 1593.75,
           "end": 1601.45,
-          "text": "Q25. What is a practical solution to the problems of small and medium-sized businesses?"
+          "text": "Q25. What is a practical solution to the problems of small and medium-sized businesses?",
+          "translation": "Q25. 对中小企业问题的实际解决方案是什么？"
         }
       ],
       "status": "published",
