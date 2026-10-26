@@ -1,7 +1,7 @@
 {
   "preset": "cet4",
-  "version": "20261025.4",
-  "generatedAt": "2026-10-25T16:44:35.042Z",
+  "version": "20261026.5",
+  "generatedAt": "2026-10-26T02:08:50.248Z",
   "group": {
     "id": 9,
     "name": "英语四级真题",
@@ -381,7 +381,7 @@
         },
         {
           "id": "l10",
-          "start": 55.16,
+          "start": 57.3,
           "end": 70.1,
           "text": "Formerly several stories high, no part of the building remained standing after the disaster, and hundreds of rescue workers, including soldiers, have been picking through concrete and bricks to find survivors.",
           "translation": "这座建筑原来有好几层高，灾后没有一处还立着，包括士兵在内的数百名救援人员正在混凝土和砖块中搜寻幸存者。"
@@ -776,13 +776,13 @@
         {
           "id": "l67",
           "start": 521.19,
-          "end": 522.92,
+          "end": 521.98,
           "text": "I would like to speak to Mr.",
           "translation": "我想和……先生通话。"
         },
         {
           "id": "l68",
-          "start": 522.92,
+          "start": 522.17,
           "end": 532.19,
           "text": "Grant to discuss ways in which we could help TGC protect itself from such problems and save money at the same time.",
           "translation": "找格兰特谈谈，看我们怎么帮TGC避免这类问题，同时还能省钱。"
@@ -1019,13 +1019,13 @@
         {
           "id": "l103",
           "start": 688.25,
-          "end": 696.41,
+          "end": 695.2,
           "text": "Miss Yamada, did you ever think that you would find yourself living and working in the Western world?",
           "translation": "山田小姐，你有没有想过自己会在西方国家生活和工作？"
         },
         {
           "id": "l104",
-          "start": 696.41,
+          "start": 695.2,
           "end": 704,
           "text": "No, not really, although I've always listened to recordings of great orchestras from Europe.",
           "translation": "没有，真的没想过，不过我一直听欧洲大乐团的唱片。"
@@ -1390,8 +1390,8 @@
         },
         {
           "id": "l157",
-          "start": 976.95,
-          "end": 981.68,
+          "start": 979.1,
+          "end": 980.28,
           "text": "All of these myths are interesting, but are they true?",
           "translation": "这些传说都很有意思，但它们是真的吗？"
         },
@@ -1627,13 +1627,13 @@
         {
           "id": "l191",
           "start": 1268.25,
-          "end": 1282.32,
+          "end": 1281.1,
           "text": "The British are supposed to be famous for laughing at themselves, but even their sense of humour has a limit, as the British retailer Gerald Ratner found out to his cost.",
           "translation": "短文3 英国人以自我调侃著称，但即使是他们的幽默感也有极限，英国零售商杰拉尔德·拉特纳就为此付出了代价。"
         },
         {
           "id": "l192",
-          "start": 1282.32,
+          "start": 1281.1,
           "end": 1292.42,
           "text": "When Ratner took over his father's chain of 130 jewellery shops in 1984, he introduced a very clear company policy.",
           "translation": "1984年，拉特纳接手父亲的130家珠宝店连锁后，制定了一个非常明确的公司政策。"
@@ -2191,13 +2191,13 @@
         {
           "id": "l18",
           "start": 105.72,
-          "end": 111.02,
+          "end": 107.1,
           "text": "Questions one and two are based on the news report you have just heard.",
           "translation": "第1题和第2题基于你刚刚听到的新闻报道。"
         },
         {
           "id": "l19",
-          "start": 111.02,
+          "start": 107.1,
           "end": 116.85,
           "text": "Question one: Why were many passengers stranded at the railway station?",
           "translation": "第1题：为什么许多乘客滞留在火车站？"
@@ -2219,13 +2219,13 @@
         {
           "id": "l22",
           "start": 155.55,
-          "end": 167.74,
+          "end": 165.95,
           "text": "The United States has experienced a decline in happiness during the past ten years, although it remains among the world's happiest countries.",
           "translation": "新闻报道二：过去10年间，美国人的幸福感有所下降，但它仍然是世界上最幸福的国家之一。"
         },
         {
           "id": "l23",
-          "start": 167.74,
+          "start": 165.95,
           "end": 178.54,
           "text": "The World Happiness Report found that Americans showed significant decreases in happiness from 2005 to 2007, and again from 2013 to 2015.",
           "translation": "《世界幸福报告》发现，美国人的幸福感在2005年至2007年间显著下降，2013年至2015年间再次下降。"
@@ -3004,8 +3004,8 @@
         },
         {
           "id": "l136",
-          "start": 985.81,
-          "end": 990.57,
+          "start": 987.95,
+          "end": 989.13,
           "text": "All of these myths are interesting, but are they true?",
           "translation": "这些传说都很有趣，但它们是真的吗？"
         },
@@ -3101,13 +3101,13 @@
         {
           "id": "l150",
           "start": 1114.37,
-          "end": 1124.59,
+          "end": 1123.35,
           "text": "A headache is important because it can be the first warning of a serious condition that could probably be controlled if discovered early.",
           "translation": "头痛值得重视，因为它可能是某种严重疾病的第一个警告信号，而这种病如果早期发现，很可能可以控制。"
         },
         {
           "id": "l151",
-          "start": 1124.59,
+          "start": 1123.35,
           "end": 1132.82,
           "text": "If a person removes the warning day after day with a painkiller, he or she may pass the point of easy control.",
           "translation": "如果一个人天天用止痛药来消除这种警报，他可能就会错过容易控制的阶段。"
@@ -4005,20 +4005,20 @@
         {
           "id": "l43",
           "start": 347.49,
-          "end": 359.34,
+          "end": 357.9,
           "text": "Detectives have not been able to interview the victim, and any decision on the filing of criminal charges will not come until after we speak with the victim, the sheriff's department said.",
           "translation": "治安部门说，警探还没能向受害人问话，是否提起刑事控诉，要等我们和受害人谈过之后才能决定。"
         },
         {
           "id": "l44",
-          "start": 359.34,
-          "end": 365.44,
+          "start": 357.9,
+          "end": 363.65,
           "text": "The victim's four-year-old son is being Cared for by relatives, the sheriff's department said.",
           "translation": "治安部门说，受害人的4岁儿子目前由亲戚照料。"
         },
         {
           "id": "l45",
-          "start": 365.44,
+          "start": 363.65,
           "end": 371.25,
           "text": "On Thursday, the Associated Press reported that Gilt was in stable condition at a Florida hospital.",
           "translation": "据美联社周四报道，吉尔特在佛罗里达州一家医院情况稳定。"
@@ -4133,7 +4133,7 @@
         },
         {
           "id": "l62",
-          "start": 492.34,
+          "start": 491.95,
           "end": 500.14,
           "text": "Well, it is cold, very cold in winter, sometimes as cold as 26 degrees below centigrade.",
           "translation": "嗯，冬天很冷，非常冷，有时冷到零下26摄氏度。"
@@ -4162,13 +4162,13 @@
         {
           "id": "l66",
           "start": 517.4,
-          "end": 519.05,
+          "end": 518.09,
           "text": "And what about the darkness?",
           "translation": "那黑暗呢？"
         },
         {
           "id": "l67",
-          "start": 519.05,
+          "start": 518.6,
           "end": 525.75,
           "text": "Well, yeah, around Christmas time, there's only one hour of daylight, so you really look forward to the spring.",
           "translation": "嗯，对，圣诞节前后只有一小时的日照，所以你真的很盼着春天来。"
@@ -4803,13 +4803,13 @@
         {
           "id": "l159",
           "start": 1196.2,
-          "end": 1200.12,
+          "end": 1199.54,
           "text": "Question twenty-one: What does Chris hope for?",
           "translation": "问题21：克里斯希望什么？"
         },
         {
           "id": "l160",
-          "start": 1200.29,
+          "start": 1200.2,
           "end": 1201.41,
           "text": "In the near future.",
           "translation": "在不久的将来。"
@@ -5323,7 +5323,7 @@
         },
         {
           "id": "l12",
-          "start": 55.89,
+          "start": 57.7,
           "end": 65.59,
           "text": "The first big storm of the winter bl Encompassed the Lake Tahoe area of Nevada with snow that had caused travel chaos for Christmas travelers.",
           "translation": "冬季的第一场大暴风雪给内华达州太浩湖地区带来了大雪，造成圣诞出行的旅客交通大乱。"
@@ -5582,13 +5582,13 @@
         {
           "id": "l49",
           "start": 365.61,
-          "end": 370.58,
+          "end": 370.15,
           "text": "Sometimes it's impossible to overcome the realities of speed and distance.",
           "translation": "有时，速度和距离的客观现实是无法克服的。"
         },
         {
           "id": "l50",
-          "start": 370.58,
+          "start": 370.15,
           "end": 380.86,
           "text": "In the six years of our project, we've been involved in 12 minor accidents during more than 1.8 million miles of autonomous and manual driving combined.\"",
           "translation": "在项目开展的6年里，自动驾驶和手动驾驶合计行驶超过180万英里，其间我们卷入了12起轻微事故。\""
@@ -5724,13 +5724,13 @@
         {
           "id": "l70",
           "start": 502.07,
-          "end": 504.1,
+          "end": 502.96,
           "text": "Uh, have you been to us before?",
           "translation": "呃，您以前来过我们这里吗？"
         },
         {
           "id": "l71",
-          "start": 504.1,
+          "start": 503.27,
           "end": 510.63,
           "text": "No, but you've managed to get jobs for some of my friends, so I thought perhaps, you know.",
           "translation": "没有，不过你们帮我几个朋友找到了工作，所以我想也许可以，您知道的。"
@@ -5823,20 +5823,20 @@
         {
           "id": "l85",
           "start": 534.4,
-          "end": 536.29,
+          "end": 535.19,
           "text": "Which school did you go to?",
           "translation": "您上的是哪所学校？"
         },
         {
           "id": "l86",
-          "start": 536.29,
-          "end": 539.36,
+          "start": 535.25,
+          "end": 538.61,
           "text": "I went to a secondary school in Southtown.",
           "translation": "我上的是Southtown的一所中学。"
         },
         {
           "id": "l87",
-          "start": 539.36,
+          "start": 538.61,
           "end": 541.43,
           "text": "And have you been To college?",
           "translation": "那您上过大学吗？"
@@ -6040,7 +6040,7 @@
         },
         {
           "id": "l117",
-          "start": 718.85,
+          "start": 719.9,
           "end": 732.3,
           "text": "Well, I think having the right customers to start with, selling the right beer, keeping it good, and most of all keeping a good attitude yourself, even though you probably feel very tired.",
           "translation": "嗯，我觉得首先要有对的客人，卖对的啤酒，把酒保持好，最最重要的是你自己要保持好的态度，哪怕你可能已经很累了。"
@@ -6323,8 +6323,8 @@
         },
         {
           "id": "l158",
-          "start": 991.66,
-          "end": 995.86,
+          "start": 994.05,
+          "end": 997.13,
           "text": "By this time, it's too late, and the person is hooked.",
           "translation": "到了这个时候，就为时已晚，这个人已经上瘾了。"
         },
@@ -6338,13 +6338,13 @@
         {
           "id": "l160",
           "start": 1004.25,
-          "end": 1008.75,
+          "end": 1005.43,
           "text": "Question 16: What does the speaker say about drug abuse?",
           "translation": "第16题：关于药物滥用，说话人说了什么？"
         },
         {
           "id": "l161",
-          "start": 1008.75,
+          "start": 1006.05,
           "end": 1030,
           "text": "Question 17: What does the speaker say about recreational drug users?",
           "translation": "第17题：关于娱乐型吸毒者，说话人说了什么？"
@@ -6414,7 +6414,7 @@
         },
         {
           "id": "l171",
-          "start": 1116.22,
+          "start": 1118.6,
           "end": 1124.07,
           "text": "According to the firm's vice president of marketing and sales, \"We benefited from low expectations.",
           "translation": "该公司营销与销售副总裁说：\"我们受益于人们的低期望。"
@@ -6567,14 +6567,14 @@
         },
         {
           "id": "l193",
-          "start": 1338.54,
+          "start": 1340.6,
           "end": 1343,
           "text": "Roach's lawyer fought the decision to execute him.",
           "translation": "罗奇的律师对处决他的判决提出上诉。"
         },
         {
           "id": "l194",
-          "start": 1343,
+          "start": 1344.2,
           "end": 1350.63,
           "text": "The young murderer remained on death row for ten years while his lawyer appealed to the governor.",
           "translation": "这名年轻的谋杀犯在死囚牢房里待了10年，期间他的律师不断向州长申诉。"
@@ -6596,13 +6596,13 @@
         {
           "id": "l197",
           "start": 1369.57,
-          "end": 1376.08,
+          "end": 1374.7,
           "text": "Nonetheless, the governor of South Carolina refused to stop the execution.",
           "translation": "然而，南卡罗来纳州州长拒绝阻止行刑。"
         },
         {
           "id": "l198",
-          "start": 1376.08,
+          "start": 1374.7,
           "end": 1378.85,
           "text": "Roach was finally executed in 1986.",
           "translation": "罗奇最终于1986年被处决。"
@@ -7116,7 +7116,7 @@
         },
         {
           "id": "l26",
-          "start": 177.04,
+          "start": 179.7,
           "end": 193.45,
           "text": "Presents options for dealing with everything from the long-term goals of combating climate change to financial assistance for developing nations that will need help to move away from fossil fuels.",
           "translation": "文本为应对各种问题提供了多种选择，从应对气候变化的长期目标，到为需要帮助摆脱化石燃料的发展中国家提供财政援助。"
@@ -7416,8 +7416,8 @@
         },
         {
           "id": "l70",
-          "start": 501.52,
-          "end": 503.93,
+          "start": 502.4,
+          "end": 503.29,
           "text": "Why do so many people speak English?",
           "translation": "那为什么这么多人说英语呢？"
         },
@@ -7617,12 +7617,12 @@
         {
           "id": "l99",
           "start": 687.59,
-          "end": 688.11,
+          "end": 687.95,
           "text": "Hello."
         },
         {
           "id": "l100",
-          "start": 688.11,
+          "start": 687.95,
           "end": 690.62,
           "text": "Is that the sales department?",
           "translation": "是销售部吗？"
@@ -7630,21 +7630,21 @@
         {
           "id": "l101",
           "start": 690.62,
-          "end": 691.11,
+          "end": 691.46,
           "text": "Yes, it is.",
           "translation": "是的。"
         },
         {
           "id": "l102",
-          "start": 691.35,
+          "start": 692.3,
           "end": 695.42,
           "text": "Oh, well, my name's Jane Kingsbury of GPF Limited.",
           "translation": "哦，是这样，我是GPF有限公司的简·金斯伯里。"
         },
         {
           "id": "l103",
-          "start": 695.42,
-          "end": 699.94,
+          "start": 697.55,
+          "end": 698.63,
           "text": "Um, we need some supplies for our design office.",
           "translation": "嗯，我们设计室需要一些办公用品。"
         },
@@ -7690,8 +7690,8 @@
         },
         {
           "id": "l110",
-          "start": 711.89,
-          "end": 715.86,
+          "start": 714,
+          "end": 714.89,
           "text": "Well, the forty five costs fifteen pounds more.",
           "translation": "嗯，四十五的那款要贵十五英镑。"
         },
@@ -7703,7 +7703,7 @@
         },
         {
           "id": "l112",
-          "start": 716.21,
+          "start": 718.55,
           "end": 722.44,
           "text": "So what's the total price It's three hundred and eighty-seven pounds.",
           "translation": "那总价是多少？是387英镑。"
@@ -7778,8 +7778,8 @@
         },
         {
           "id": "l123",
-          "start": 741.66,
-          "end": 743.94,
+          "start": 742.2,
+          "end": 743.18,
           "text": "And how long does it take to deliver?",
           "translation": "那送货要多长时间？"
         },
@@ -8000,8 +8000,8 @@
         },
         {
           "id": "l156",
-          "start": 919.32,
-          "end": 923.09,
+          "start": 921.35,
+          "end": 922.33,
           "text": "These first kites were probably made of wood.",
           "translation": "这些最早的风筝很可能是木头做的。"
         },
@@ -8014,8 +8014,8 @@
         },
         {
           "id": "l158",
-          "start": 929.17,
-          "end": 932.88,
+          "start": 931.15,
+          "end": 932.04,
           "text": "Early kites were built for certain uses.",
           "translation": "早期的风筝是为特定用途而制作的。"
         },
@@ -8106,13 +8106,13 @@
         {
           "id": "l171",
           "start": 996.32,
-          "end": 1004.5,
+          "end": 1003.15,
           "text": "Benjamin's idea was first laughed at, but later on it led to the invention of the lightning rod.",
           "translation": "本杰明的想法起初被嘲笑，但后来促成了避雷针的发明。"
         },
         {
           "id": "l172",
-          "start": 1004.5,
+          "start": 1003.15,
           "end": 1011.1,
           "text": "With such grand history, kite flying is sure to remain an entertaining and popular sport.",
           "translation": "有着如此悠久的历史，放风筝一定会继续是一项有趣又受欢迎的运动。"
@@ -8363,13 +8363,13 @@
         {
           "id": "l208",
           "start": 1365.97,
-          "end": 1371.04,
+          "end": 1369.8,
           "text": "\"She would put check marks on them like she had been reading them.",
           "translation": "\"她会在上面打勾，好像真的读过一样。"
         },
         {
           "id": "l209",
-          "start": 1371.04,
+          "start": 1369.8,
           "end": 1379.22,
           "text": "As I began to read about scientists, economists, and philosophers, I started imagining myself in their shoes.\"",
           "translation": "当我开始读科学家、经济学家和哲学家的故事时，我开始想象自己成为他们那样的人。\""
@@ -8904,14 +8904,14 @@
         },
         {
           "id": "l27",
-          "start": 184.9,
-          "end": 188.31,
+          "start": 187.6,
+          "end": 188.49,
           "text": "All of their savings have been depleted.",
           "translation": "他们的积蓄已经全部耗尽。"
         },
         {
           "id": "l28",
-          "start": 188.31,
+          "start": 188.49,
           "end": 196.05,
           "text": "Many have moved into the settlements because they are cheaper than living in flats or apartments in town.",
           "translation": "许多人搬进了安置点，因为这里比住在城里的公寓便宜。"
@@ -9194,7 +9194,7 @@
         },
         {
           "id": "l69",
-          "start": 490.2,
+          "start": 492,
           "end": 497.53,
           "text": "When I was working full time as a salesman for a big company, I seldom had time to enjoy my hobby.",
           "translation": "以前我在一家大公司全职做推销员的时候，几乎没有时间享受自己的爱好。"
@@ -9243,7 +9243,7 @@
         },
         {
           "id": "l76",
-          "start": 525.7,
+          "start": 526.25,
           "end": 534.87,
           "text": "Well, the sign on my store says the hours are 10 to 6, but if business is slower than usual, I can just lock up and take off early.",
           "translation": "嗯，我店门口的牌子上写的是10点到6点，不过要是生意比平时冷清，我就可以锁门提前走人。"
@@ -9407,7 +9407,7 @@
         },
         {
           "id": "l100",
-          "start": 681.93,
+          "start": 682.3,
           "end": 689.7,
           "text": "As for paper processing, there's still a little, but it's no longer what it once was in the region.",
           "translation": "至于造纸加工，还剩一点，但已今非昔比了。"
@@ -9441,13 +9441,13 @@
         {
           "id": "l105",
           "start": 703.8,
-          "end": 707.54,
+          "end": 706.2,
           "text": "What do you mean by geographical problems?",
           "translation": "你说的地理问题是什么意思？"
         },
         {
           "id": "l106",
-          "start": 707.54,
+          "start": 706.2,
           "end": 715.87,
           "text": "Well, what I mean is the area is very hilly, mountainous in parts, so there used to be transport problems.",
           "translation": "嗯，我的意思是这个地区丘陵起伏，有些地方是山地，所以以前交通不便。"
@@ -9515,8 +9515,8 @@
         },
         {
           "id": "l116",
-          "start": 747.06,
-          "end": 750.26,
+          "start": 749.2,
+          "end": 751.16,
           "text": "In general, it's very good and improving.",
           "translation": "总体来说很不错，而且还在不断提高。"
         },
@@ -9682,13 +9682,13 @@
         {
           "id": "l140",
           "start": 965.48,
-          "end": 975.09,
+          "end": 974.65,
           "text": "Since this realization, I have begun to make an even more determined effort to find friends in unexpected people and places.",
           "translation": "意识到这一点后，我开始更加用心地去从意想不到的人和地方寻找朋友。"
         },
         {
           "id": "l141",
-          "start": 976.5,
+          "start": 974.65,
           "end": 982.85,
           "text": "Questions sixteen to eighteen are based on the passage you have just heard.",
           "translation": "第16至18题基于你刚才听到的短文。"
@@ -9743,7 +9743,7 @@
         },
         {
           "id": "l149",
-          "start": 1059.93,
+          "start": 1060.7,
           "end": 1065.05,
           "text": "He turned into his building's parking lot, but all the spaces were full.",
           "translation": "他拐进公寓楼的停车场，但车位全满了。"
@@ -10417,7 +10417,7 @@
         },
         {
           "id": "l15",
-          "start": 113.91,
+          "start": 116.45,
           "end": 127.15,
           "text": "Its key objective is to place at the center of recovery efforts, measures that will generate higher levels of employment and provide basic social protection for the most vulnerable.",
           "translation": "其核心目标是把能够创造更多就业岗位、并为最弱势群体提供基本社会保护的措施置于经济复苏工作的中心。"
@@ -10473,13 +10473,13 @@
         {
           "id": "l23",
           "start": 212.35,
-          "end": 217.19,
+          "end": 215.95,
           "text": "And we expect this will have a huge impact on obesity.",
           "translation": "而且我们预计这会对肥胖问题产生巨大影响。"
         },
         {
           "id": "l24",
-          "start": 217.19,
+          "start": 215.95,
           "end": 226.31,
           "text": "And of course, if it has an impact on obesity, it will have an impact on diabetes and heart disease and high blood pressure.",
           "translation": "当然，如果它能影响肥胖问题，也就会影响糖尿病、心脏病和高血压。"
@@ -10597,7 +10597,7 @@
         },
         {
           "id": "l41",
-          "start": 385.58,
+          "start": 387.6,
           "end": 396.35,
           "text": "Sometimes its employees are released from their daily jobs for weeks and spend their time interacting in the innovation facility instead.",
           "translation": "有时员工会被免去日常工作数周，转而在创新设施里交流互动。"
@@ -10736,7 +10736,7 @@
         },
         {
           "id": "l61",
-          "start": 530.25,
+          "start": 531,
           "end": 533.8,
           "text": "Sometimes I don't really want to talk to the person.",
           "translation": "有时候我其实不想跟对方说话。"
@@ -11014,13 +11014,13 @@
         {
           "id": "l101",
           "start": 752.3,
-          "end": 760.26,
+          "end": 759.75,
           "text": "But that afternoon, even though I'd finished my assigned work, I was told to help other colleagues finish their work too.",
           "translation": "可是那天下午，尽管我自己的活都干完了，却还是被叫去帮其他同事干活。"
         },
         {
           "id": "l102",
-          "start": 760.26,
+          "start": 759.75,
           "end": 763.59,
           "text": "But surely that's a positive sign showing that Mr.",
           "translation": "不过这肯定是个好兆头，说明……"
@@ -11269,14 +11269,14 @@
         },
         {
           "id": "l138",
-          "start": 991.85,
-          "end": 997.64,
+          "start": 994.35,
+          "end": 997.71,
           "text": "At the same time, high blood pressure has become an increasing problem.",
           "translation": "与此同时，高血压成了日益严重的问题。"
         },
         {
           "id": "l139",
-          "start": 997.64,
+          "start": 999.5,
           "end": 1004.45,
           "text": "Blood pressure and heart rate are typically at their lowest levels during sleep.",
           "translation": "血压和心率通常在睡眠时降到最低。"
@@ -11298,13 +11298,13 @@
         {
           "id": "l142",
           "start": 1018.66,
-          "end": 1027.88,
+          "end": 1027,
           "text": "When people are sleep deprived, There are higher levels of stress hormones in their bodies, which can decrease immune function, says Dr.",
           "translation": "芝加哥西北大学的齐·菲利斯博士说，人睡眠不足时，体内压力荷尔蒙水平会升高，从而削弱免疫功能。"
         },
         {
           "id": "l143",
-          "start": 1027.88,
+          "start": 1027,
           "end": 1032.33,
           "text": "Phyllis Zee of Northwestern University in Chicago.",
           "translation": "芝加哥西北大学的菲利斯·齐。"
@@ -11618,7 +11618,7 @@
         },
         {
           "id": "l188",
-          "start": 1388.85,
+          "start": 1391.05,
           "end": 1396.65,
           "text": "Service stations came with the motorway, and the legend of the transport cafe was born.",
           "translation": "服务区随着高速公路一同出现，路边餐馆的传奇也由此诞生。"
@@ -12127,13 +12127,13 @@
         {
           "id": "l23",
           "start": 193.45,
-          "end": 201.18,
+          "end": 200.43,
           "text": "The Competition Commission is now to investigate whether the British Airports Authority needs to sell off some of its assets.",
           "translation": "竞争委员会现在要调查英国机场管理局是否需要卖掉部分资产。"
         },
         {
           "id": "l24",
-          "start": 201.18,
+          "start": 200.43,
           "end": 206.7,
           "text": "The idea is that competition between rival operators would lead to better service at airports.",
           "translation": "这一想法是，让不同运营商相互竞争，可以改善机场服务。"
@@ -12390,7 +12390,7 @@
         },
         {
           "id": "l61",
-          "start": 513.39,
+          "start": 514.75,
           "end": 524.38,
           "text": "There is plenty I can get to read and listen to, but for speaking, there really is no substitute for trying to speak and use the language in a relaxed atmosphere.",
           "translation": "能读能听的东西有很多，但说到口语，没有什么能替代在轻松的氛围中开口说、实际运用这门语言。"
@@ -12555,8 +12555,8 @@
         },
         {
           "id": "l85",
-          "start": 705.28,
-          "end": 708.66,
+          "start": 707.15,
+          "end": 707.94,
           "text": "People there do drive responsibly though.",
           "translation": "不过那里的人开车还是很负责任的。"
         },
@@ -12577,13 +12577,13 @@
         {
           "id": "l88",
           "start": 718.5,
-          "end": 720.45,
+          "end": 719.29,
           "text": "When you've got speed limits.",
           "translation": "而有了限速之后。"
         },
         {
           "id": "l89",
-          "start": 720.78,
+          "start": 720.03,
           "end": 725.46,
           "text": "This creates situations that actually present dangers on the road.",
           "translation": "反而会造成一些路上的危险情况。"
@@ -12684,7 +12684,7 @@
         },
         {
           "id": "l104",
-          "start": 766.97,
+          "start": 767.4,
           "end": 772.15,
           "text": "Not really, because the police don't have time to police every single driver.",
           "translation": "基本没用，因为警察没时间去管每一个司机。"
@@ -13009,7 +13009,7 @@
         },
         {
           "id": "l151",
-          "start": 1155.25,
+          "start": 1157.3,
           "end": 1170.62,
           "text": "Graduation requirements specify the number of credits you must earn, the minimum grade point average you must achieve, and the distribution of credits you must have from among differing departments or fields of study.",
           "translation": "毕业要求规定了你必须修满的学分、必须达到的最低平均成绩，以及必须从不同系或不同学习领域获得的学分分布。"
@@ -13142,20 +13142,20 @@
         {
           "id": "l170",
           "start": 1342.1,
-          "end": 1351.9,
+          "end": 1350.45,
           "text": "Finally, she addresses self-respect and the notion that a person's sense of beauty must include more than how much a person weighs.",
           "translation": "最后，她谈到自尊，强调一个人对美的感受不能只看体重多少。"
         },
         {
           "id": "l171",
-          "start": 1351.9,
-          "end": 1358.25,
+          "start": 1350.45,
+          "end": 1356.4,
           "text": "Sometimes, Jody feels that she succeeds in persuading some students to stop dieting.",
           "translation": "有时候，乔迪觉得她说服了一些学生放弃节食。"
         },
         {
           "id": "l172",
-          "start": 1358.25,
+          "start": 1356.4,
           "end": 1361.96,
           "text": "Other times, she feels that she fails.",
           "translation": "有时候，她觉得自己失败了。"
@@ -13578,7 +13578,7 @@
         },
         {
           "id": "l12",
-          "start": 52.34,
+          "start": 53,
           "end": 69.72,
           "text": "On Sunday, the castle's owner, John Gordon, 76, was forced to move out of his property after the River Dee swept away about 60 feet of land, leaving the castle dangerously close to the river, according to the Scottish Daily Record.",
           "translation": "据《苏格兰每日记录报》报道，周日，城堡主人、76岁的约翰·戈登被迫搬离自己的房产，此前迪河冲走了约60英尺长的岸土，使城堡离河面近得岌岌可危。"
@@ -13599,14 +13599,14 @@
         },
         {
           "id": "l15",
-          "start": 92.04,
+          "start": 96.8,
           "end": 108.22,
           "text": "The Scottish Environment Protection Agency has issued more than 35 flood warnings covering several regions as Scotland continues to clean up after Storm Frank hit the country last Wednesday.",
           "translation": "苏格兰环境保护署已发布35条以上的洪水预警，覆盖多个地区；上周三风暴\"弗兰克\"袭击苏格兰，目前当地仍在清理灾情。"
         },
         {
           "id": "l16",
-          "start": 108.22,
+          "start": 111.25,
           "end": 117.26,
           "text": "This means that rivers will rise more slowly, but then stay high for much longer, the environmental agency said.",
           "translation": "该环保机构表示，这意味着河水会上涨得更慢，但高水位维持的时间会长得多。"
@@ -13654,7 +13654,7 @@
         },
         {
           "id": "l23",
-          "start": 181.54,
+          "start": 183.4,
           "end": 194.35,
           "text": "\"Emergency workers have made contact with the miners via a radio, and they all appear to be uninjured,\" said Jessica Verfus, the emergency department's assistant director.",
           "translation": "\"救援人员已通过无线电与矿工取得联系，他们似乎都没有受伤，\"该应急部门副主任杰西卡·维弗斯说。"
@@ -13676,20 +13676,20 @@
         {
           "id": "l26",
           "start": 211.15,
-          "end": 219.08,
+          "end": 217.7,
           "text": "The mine, along New York's Cayuga Lake, processes salt used for road treatment.",
           "translation": "这座矿位于纽约州卡尤加湖畔，加工用于道路处理的盐。"
         },
         {
           "id": "l27",
-          "start": 219.08,
-          "end": 228.23,
+          "start": 217.7,
+          "end": 226.55,
           "text": "It produces about two million tons of salt that is shipped to more than 1,500 places in the northeastern United States.",
           "translation": "它年产约200万吨盐，运往美国东北部1,500多个地方。"
         },
         {
           "id": "l28",
-          "start": 228.23,
+          "start": 226.55,
           "end": 234.9,
           "text": "The Rock Salt Mine is one of three operated by Cargill, with the other two in Louisiana and Ohio.",
           "translation": "这座岩盐矿是嘉吉公司运营的3座矿之一，另外两座在路易斯安那州和俄亥俄州。"
@@ -13743,7 +13743,7 @@
         },
         {
           "id": "l36",
-          "start": 305.16,
+          "start": 305.65,
           "end": 317.17,
           "text": "Last week, for example, Postmaster General Pat Donahoe announced plans to stop mail delivery on Saturdays, a move he says could save three billion dollars annually.",
           "translation": "例如，邮政总长帕特·多诺霍上周宣布了停止周六投递邮件的计划，他说此举每年可节省30亿美元。"
@@ -13764,7 +13764,7 @@
         },
         {
           "id": "l39",
-          "start": 323.78,
+          "start": 324.2,
           "end": 329.65,
           "text": "We want to be self-sufficient, so like any other business, you have to make choices.\"",
           "translation": "我们想自给自足，所以像任何其他企业一样，你必须做出选择。\""
@@ -13883,7 +13883,7 @@
         },
         {
           "id": "l56",
-          "start": 457.18,
+          "start": 457.65,
           "end": 459.45,
           "text": "But that's a straightforward affair.",
           "translation": "这不是什么大事嘛。"
@@ -14112,15 +14112,15 @@
         },
         {
           "id": "l89",
-          "start": 634.14,
+          "start": 634.75,
           "end": 639.69,
           "text": "So many people who visit Britain say it's difficult to make friends with British people.",
           "translation": "很多来英国的人都说，和英国人交朋友很难。"
         },
         {
           "id": "l90",
-          "start": 639.69,
-          "end": 642.45,
+          "start": 641.3,
+          "end": 642.19,
           "text": "They say we're cold, reserved, unfriendly.",
           "translation": "他们说我们冷淡、矜持、不友好。"
         },
@@ -14188,8 +14188,8 @@
         },
         {
           "id": "l100",
-          "start": 665.25,
-          "end": 668.87,
+          "start": 666.25,
+          "end": 667.43,
           "text": "Capital cities are full of tourists and are never friendly.",
           "translation": "首都城市全是游客，从来不友好。"
         },
@@ -14435,21 +14435,21 @@
         },
         {
           "id": "l136",
-          "start": 891.11,
-          "end": 896.18,
+          "start": 893,
+          "end": 896.36,
           "text": "Of course, there are opportunities for part-time work off campus too.",
           "translation": "当然，校外也有兼职机会。"
         },
         {
           "id": "l137",
-          "start": 896.18,
+          "start": 898.55,
           "end": 907.9,
           "text": "If you spend a little time digging for the right part-time jobs, you'll save yourself time when you find a job that leaves you with enough time to get your schoolwork done, too.",
           "translation": "如果你花点时间去挖掘合适的兼职，找到一份能让你有足够时间完成学业的工作，就能省下不少时间。"
         },
         {
           "id": "l138",
-          "start": 907.9,
+          "start": 909.7,
           "end": 920.15,
           "text": "If you're a college student looking for work but worried you won't have enough time to devote to academic subjects, consider working as a study hall or library monitor.",
           "translation": "如果你是大学生，想找工作又担心没足够时间学习功课，可以考虑做自习室或图书馆管理员。"
@@ -14525,7 +14525,7 @@
         },
         {
           "id": "l149",
-          "start": 1021.9,
+          "start": 1022.4,
           "end": 1027.4,
           "text": "All appears to be well, but the farmers who planted the bushes are worried.",
           "translation": "一切看似良好，但种下这些茶树的农民却忧心忡忡。"
@@ -14614,15 +14614,15 @@
         },
         {
           "id": "l162",
-          "start": 1085.67,
+          "start": 1086.65,
           "end": 1094.88,
           "text": "He says the market for the tea is unstable, and he is often forced to sell his purple tea for the same price as green tea leaves.",
           "translation": "他说这种茶的市场很不稳定，他常常被迫把紫茶按绿茶的价格卖掉。"
         },
         {
           "id": "l163",
-          "start": 1094.88,
-          "end": 1100.42,
+          "start": 1096.85,
+          "end": 1101.05,
           "text": "He says there are not enough buyers willing to pay more for the purple tea.",
           "translation": "他说愿意出高价买紫茶的买家太少了。"
         },
@@ -15213,29 +15213,29 @@
         },
         {
           "id": "l12",
-          "start": 85.84,
+          "start": 87.8,
           "end": 92.74,
           "text": "When that happened, people came from all over the world to see the falls turned off.",
           "translation": "那次关闭时，人们从世界各地赶来观看断流的瀑布。"
         },
         {
           "id": "l13",
-          "start": 92.74,
+          "start": 94.5,
           "end": 97.84,
           "text": "People are curious by nature; they want to see what's underneath.",
           "translation": "人天生好奇，总想看看下面藏着什么。"
         },
         {
           "id": "l14",
-          "start": 97.84,
-          "end": 102.55,
+          "start": 99.8,
+          "end": 103.16,
           "text": "In fact, those who first came to have a look did see something.",
           "translation": "事实上，最早跑去看的人确实看到了一些东西。"
         },
         {
           "id": "l15",
-          "start": 102.55,
-          "end": 105.92,
+          "start": 105.25,
+          "end": 107.49,
           "text": "They found millions of coins on the bottom.",
           "translation": "他们在底部发现了数百万枚硬币。"
         },
@@ -15276,7 +15276,7 @@
         },
         {
           "id": "l21",
-          "start": 165.79,
+          "start": 167.6,
           "end": 176.2,
           "text": "The interior and defense ministries said that the Tunisian government has closed its two border crossings with Libya because of the attack.",
           "translation": "内政部和国防部表示，由于此次袭击，突尼斯政府已关闭了与利比亚的两个边境口岸。"
@@ -15298,13 +15298,13 @@
         {
           "id": "l24",
           "start": 195.45,
-          "end": 205.34,
+          "end": 203.95,
           "text": "Officials of the Tunisian government are especially worried after dozens of tourists were killed in the attacks in Tunisia last year.",
           "translation": "去年数十名游客在突尼斯的袭击中丧生后，突尼斯政府官员格外忧心。"
         },
         {
           "id": "l25",
-          "start": 205.34,
+          "start": 203.95,
           "end": 219.27,
           "text": "Defence Minister Farhat Hachani said last week that German and American security experts were expected to come to help Tunisia devise a new electronic video supervision system on its border with Libya.",
           "translation": "国防部长法尔哈特·哈沙尼上周表示，德国和美国的安全专家将来到突尼斯，协助设计一套新的边境电子视频监控系统。"
@@ -15354,13 +15354,13 @@
         {
           "id": "l32",
           "start": 289.51,
-          "end": 297.88,
+          "end": 297.15,
           "text": "The three engineering students got the idea for the device while sitting in their school's courtyard.",
           "translation": "这3名工程系学生是在学校院子里坐着时想出这个点子的。"
         },
         {
           "id": "l33",
-          "start": 297.88,
+          "start": 297.15,
           "end": 301.5,
           "text": "Their invention is a small biological circuit.",
           "translation": "他们的发明是一个小型生物电路。"
@@ -15374,7 +15374,7 @@
         },
         {
           "id": "l35",
-          "start": 302.7,
+          "start": 302.46,
           "end": 311.91,
           "text": "It captures the energy which plants produce during photosynthesis, a process of converting sunlight into energy.",
           "translation": "它能捕捉植物在光合作用中产生的能量，也就是把阳光转化为能量的过程。"
@@ -15409,15 +15409,15 @@
         },
         {
           "id": "l40",
-          "start": 327.17,
+          "start": 329.45,
           "end": 332.96,
           "text": "The Ekaia solves two problems for the engineering students.",
           "translation": "Ekaia为这些工科学生解决了两个问题。"
         },
         {
           "id": "l41",
-          "start": 332.96,
-          "end": 335.87,
+          "start": 334.3,
+          "end": 335.19,
           "text": "They needed an idea for a class project.",
           "translation": "他们需要一个课程项目的创意。"
         },
@@ -15430,14 +15430,14 @@
         },
         {
           "id": "l43",
-          "start": 340.29,
+          "start": 342.2,
           "end": 351.86,
           "text": "One of the student inventors, Camilla Rypcik, says the device changes the energy released from the plant into low-level power to charge phones.",
           "translation": "发明者之一、学生卡米拉·里普奇克说，这个装置能把植物释放的能量转化为低电压电能，为手机充电。"
         },
         {
           "id": "l44",
-          "start": 351.86,
+          "start": 353.75,
           "end": 357.86,
           "text": "The Ekaia is able to fully recharge a mobile phone in less than two hours.",
           "translation": "Ekaia不到2小时就能把一部手机充满电。"
@@ -15611,13 +15611,13 @@
         {
           "id": "l70",
           "start": 485.66,
-          "end": 486.63,
+          "end": 486.06,
           "text": "I'm afraid not.",
           "translation": "恐怕不行。"
         },
         {
           "id": "l71",
-          "start": 486.63,
+          "start": 486.2,
           "end": 492.47,
           "text": "The stand ins are already in use on line six, and the ones from line six are being serviced.",
           "translation": "备用机已经用在六号线上了，而六号线原来那批正在检修。"
@@ -15732,22 +15732,22 @@
         },
         {
           "id": "l88",
-          "start": 534.18,
-          "end": 536,
-          "text": "Thank you very much, Helen.",
-          "translation": "非常感谢，海伦。"
-        },
-        {
-          "id": "l89",
           "start": 536,
           "end": 537.38,
           "text": "You're most welcome.",
           "translation": "不客气。"
         },
         {
-          "id": "l90",
+          "id": "l89",
           "start": 537.38,
-          "end": 540.19,
+          "end": 538.07,
+          "text": "Thank you very much, Helen.",
+          "translation": "非常感谢，海伦。"
+        },
+        {
+          "id": "l90",
+          "start": 538.75,
+          "end": 540.71,
           "text": "Sorry to spoil your It doesn't matter.",
           "translation": "抱歉打扰了你。——没关系。"
         },
@@ -15801,7 +15801,7 @@
         },
         {
           "id": "l98",
-          "start": 631.66,
+          "start": 632.1,
           "end": 639.62,
           "text": "I'm speaking to Delroy Simmons, an unemployed Brooklyn man who missed a job interview Tuesday for the best of reasons.",
           "translation": "我现在连线的是德尔罗伊·西蒙斯，一位来自布鲁克林的失业男子，他周二错过了一个面试，原因却令人敬佩。"
@@ -15815,14 +15815,14 @@
         },
         {
           "id": "l100",
-          "start": 647.52,
-          "end": 651.66,
+          "start": 650.6,
+          "end": 651.88,
           "text": "Everybody is making me out to be some sort of superhero.",
           "translation": "大家都把我捧成了什么超级英雄。"
         },
         {
           "id": "l101",
-          "start": 651.66,
+          "start": 651.88,
           "end": 655.55,
           "text": "I'm just an ordinary person, and a father of two.",
           "translation": "我只是个普通人，是两个孩子的父亲。"
@@ -15850,8 +15850,8 @@
         },
         {
           "id": "l105",
-          "start": 668.37,
-          "end": 671.35,
+          "start": 668.85,
+          "end": 669.93,
           "text": "I've been looking for a job for a year and more.",
           "translation": "我已经找工作一年多了。"
         },
@@ -15913,21 +15913,21 @@
         },
         {
           "id": "l114",
-          "start": 696.36,
-          "end": 702.11,
+          "start": 698.65,
+          "end": 702.57,
           "text": "In the distance, people could see the train rounding a bend, headed into the station.",
           "translation": "远处，人们能看到火车正转过弯道，驶进车站。"
         },
         {
           "id": "l115",
-          "start": 702.11,
-          "end": 705.01,
+          "start": 704.1,
+          "end": 705.28,
           "text": "I guess you were not aware of any of these, right?",
           "translation": "我猜这些你当时都没注意到吧？"
         },
         {
           "id": "l116",
-          "start": 705.01,
+          "start": 705.28,
           "end": 708.05,
           "text": "No, I just jumped down and grabbed the baby.",
           "translation": "没有，我直接跳下去一把抱起了婴儿。"
@@ -15955,8 +15955,8 @@
         },
         {
           "id": "l120",
-          "start": 717.21,
-          "end": 718.43,
+          "start": 717.75,
+          "end": 718.87,
           "text": "Thank you very much.",
           "translation": "非常感谢。"
         },
@@ -16059,7 +16059,7 @@
         },
         {
           "id": "l135",
-          "start": 853.61,
+          "start": 855.85,
           "end": 860.7,
           "text": "When I was a little girl, I saw an ice cream truck and knew I wanted to have one someday, McCartney said.",
           "translation": "\"我小时候看到一辆冰淇淋车，就想着有一天也要拥有一辆，\"麦卡特尼说。"
@@ -16123,20 +16123,20 @@
         {
           "id": "l144",
           "start": 904.37,
-          "end": 909.76,
+          "end": 908.55,
           "text": "While the treats may be ice cold, Maria has a warm heart for little faces.",
           "translation": "冰品虽然冰凉，玛丽亚对小朋友们却有一副热心肠。"
         },
         {
           "id": "l145",
-          "start": 909.76,
-          "end": 915.56,
+          "start": 908.55,
+          "end": 914.2,
           "text": "Her truck features a donation bucket for kids who don't have money for ice cream.",
           "translation": "她的车上设有一个捐款箱，给那些没钱买冰淇淋的孩子。"
         },
         {
           "id": "l146",
-          "start": 915.56,
+          "start": 914.2,
           "end": 926.4,
           "text": "\"When there are three kids and only two of them have money, I always make sure the third one gets something because I can't drive away and have that third one not have something,\" she said.",
           "translation": "\"如果三个孩子里只有两个有钱，我总会让第三个孩子也拿到一份，因为我不能开车走掉，让第三个孩子什么都没有，\"她说。"
@@ -16387,20 +16387,20 @@
         {
           "id": "l182",
           "start": 1170.7,
-          "end": 1175.38,
+          "end": 1174.15,
           "text": "One of these countries contains less than a square mile of land.",
           "translation": "其中一个国家的国土还不到1平方英里。"
         },
         {
           "id": "l183",
-          "start": 1175.38,
-          "end": 1178.96,
+          "start": 1174.15,
+          "end": 1177.75,
           "text": "Another is surrounded on all sides by Italy.",
           "translation": "另一个国家四面都被意大利包围。"
         },
         {
           "id": "l184",
-          "start": 1178.96,
+          "start": 1177.75,
           "end": 1184.45,
           "text": "Yet each is an independent land with its own government, trade, and customs.",
           "translation": "但它们各自都是独立的国家，有自己的政府、贸易和风俗。"
@@ -16408,20 +16408,20 @@
         {
           "id": "l185",
           "start": 1184.45,
-          "end": 1188.68,
+          "end": 1187.45,
           "text": "One of the best known of these small countries is Monaco.",
           "translation": "这些小国中最出名的一个是摩纳哥。"
         },
         {
           "id": "l186",
-          "start": 1188.68,
+          "start": 1187.45,
           "end": 1229.26,
           "text": "It is situated on the Mediterranean Sea and surrounded by France on three sides. Monaco became familiar to Americans when its ruler, Prince Rainier, married the American actress Grace. Kelly. Rainier's family has ruled Monaco almost continuously since 1297. The land has been independent for over 300 years. Andorra, with an area of some 200 square miles, is considerably larger than Monaco. This country is located in the Pyrenees Mountains, with France on one side and Spain on the other. Potatoes and tobacco are grown in",
           "translation": "它坐落在地中海边，三面与法国接壤。摩纳哥为美国人所熟知，是因为它的统治者兰尼埃亲王娶了美国女演员格蕾丝·凯利。兰尼埃家族自1297年起几乎一直统治着摩纳哥。这片土地独立已有300多年。安道尔面积约200平方英里，比摩纳哥大得多。这个国家位于比利牛斯山脉，一边是法国，一边是西班牙。土豆和烟草种在"
         },
         {
           "id": "l187",
-          "start": 1229.26,
+          "start": 1229.8,
           "end": 1273.9,
           "text": "Andorra's steep mountain valleys. One of the products it exports is clothing. Andorra is also known for its excellent skiing locations. Within the Alps in central Europe is Lichenstein, a tiny country of about 30,000 people who speak mostly German. Lichtenstein uses the same money as its neighbour Switzerland, but it has been an independent country since the 1860s. Taxes are low, so many businesses have their headquarters here. The country makes and exports a lot of machinery. Other small independent states in Europe are San Marino and Luxembourg. Each of these has unique qualities as well.",
           "translation": "安道尔陡峭的山谷里。它出口的产品之一是服装。安道尔还以出色的滑雪胜地闻名。在中欧的阿尔卑斯山中，有个叫列支敦士登的小国，约有3万人，主要说德语。列支敦士登使用邻国瑞士的货币，但从19世纪60年代起就是一个独立国家。这里税收低，所以很多企业把总部设在这里。该国制造并出口大量机械。欧洲其他小型独立国家还有圣马力诺和卢森堡，它们也各有独特之处。"
@@ -16920,7 +16920,7 @@
         },
         {
           "id": "l24",
-          "start": 183.05,
+          "start": 185.3,
           "end": 188.77,
           "text": "When he looked closer, he realized it was a huge group of bees.",
           "translation": "当他凑近一看，才发现那是一大群蜜蜂。"
@@ -16955,7 +16955,7 @@
         },
         {
           "id": "l29",
-          "start": 212.54,
+          "start": 214.45,
           "end": 216.85,
           "text": "I thought that someone might do something stupid.\"",
           "translation": "我觉得可能会有人做出什么蠢事。\""
@@ -17053,13 +17053,13 @@
         {
           "id": "l43",
           "start": 323.05,
-          "end": 323.84,
+          "end": 324.73,
           "text": "The team was led by Dr.",
           "translation": "该团队由"
         },
         {
           "id": "l44",
-          "start": 324.49,
+          "start": 325,
           "end": 327.55,
           "text": "Graham Reynolds from Harvard University.",
           "translation": "哈佛大学的格雷厄姆·雷诺兹博士率领。"
@@ -17361,13 +17361,13 @@
         {
           "id": "l88",
           "start": 540.08,
-          "end": 543.88,
+          "end": 543.2,
           "text": "And I'd like to recommend your hotel to my friends and colleagues.",
           "translation": "我想把贵酒店推荐给我的朋友和同事。"
         },
         {
           "id": "l89",
-          "start": 543.88,
+          "start": 543.2,
           "end": 545.3,
           "text": "That's very kind of you.",
           "translation": "您真是太好了。"
@@ -18451,8 +18451,8 @@
         },
         {
           "id": "l2",
-          "start": 3.58,
-          "end": 5.64,
+          "start": 5.1,
+          "end": 5.9,
           "text": "Listening Comprehension."
         },
         {
@@ -18478,7 +18478,7 @@
         },
         {
           "id": "l6",
-          "start": 19.94,
+          "start": 20.4,
           "end": 24.82,
           "text": "Both the news report and the questions will be spoken only once.",
           "translation": "新闻报道和问题都只朗读一遍。"
@@ -18602,7 +18602,7 @@
         },
         {
           "id": "l24",
-          "start": 195.09,
+          "start": 195.6,
           "end": 206,
           "text": "A snowmobile driver had repeatedly attempted to harm her and her team, and one of Zirkel's dogs had received a non-life-threatening injury.",
           "translation": "一名驾驶雪地摩托的人一再试图伤害她和她的队伍，齐克尔的一只狗受了伤，但没有生命危险。"
@@ -18638,20 +18638,20 @@
         {
           "id": "l29",
           "start": 232.92,
-          "end": 245.34,
+          "end": 243.55,
           "text": "Although this incident very much alters the race of the two participants competing for a win, both are go going to continue on their way toward the finish line.",
           "translation": "虽然这起事件大大改变了两名选手争夺冠军的局面，但两人仍将继续向终点前进。"
         },
         {
           "id": "l30",
-          "start": 245.34,
-          "end": 252.32,
+          "start": 243.55,
+          "end": 250.6,
           "text": "Alaska State Troopers released a statement saying they've arrested Arnold Demosky, 26.",
           "translation": "阿拉斯加州警发布声明说，他们已逮捕26岁的阿诺德·德莫斯基。"
         },
         {
           "id": "l31",
-          "start": 252.32,
+          "start": 250.6,
           "end": 254.9,
           "text": "He faces trial on several charges.",
           "translation": "他面临数项指控的审判。"
@@ -18706,7 +18706,7 @@
         },
         {
           "id": "l39",
-          "start": 324.65,
+          "start": 325.1,
           "end": 334.48,
           "text": "The boat, traveling between Nicaragua's Big Corn Island and Little Corn Island, turned over Saturday near the larger island.",
           "translation": "这艘船在尼加拉瓜大科恩岛和小科恩岛之间航行，周六在靠近较大岛屿处翻覆。"
@@ -18714,13 +18714,13 @@
         {
           "id": "l40",
           "start": 334.48,
-          "end": 341.99,
+          "end": 341.4,
           "text": "Some passengers remain missing, the Costa Rican foreign ministry said, but did not specify how many.",
           "translation": "哥斯达黎加外交部表示，仍有部分乘客失踪，但未说明具体人数。"
         },
         {
           "id": "l41",
-          "start": 341.99,
+          "start": 341.4,
           "end": 350.6,
           "text": "A local radio said an unspecified number of people were rescued, including the tour boat's owner, Hilario Blandon.",
           "translation": "当地一家电台称，有若干人获救，包括游船船主希拉里奥·布兰东。"
@@ -18849,14 +18849,14 @@
         },
         {
           "id": "l60",
-          "start": 489.14,
+          "start": 489.7,
           "end": 491.19,
           "text": "I always look smart, James.",
           "translation": "我一直都很精神，詹姆斯。"
         },
         {
           "id": "l61",
-          "start": 491.19,
+          "start": 492.1,
           "end": 494.42,
           "text": "Actually, I'm on my way to a job interview.",
           "translation": "其实，我正要去参加一个求职面试。"
@@ -18869,8 +18869,8 @@
         },
         {
           "id": "l63",
-          "start": 495.1,
-          "end": 498.44,
+          "start": 497.25,
+          "end": 498.14,
           "text": "Oh, you mean for the summer holidays?",
           "translation": "哦，你是说暑假那份工作吗？"
         },
@@ -18882,14 +18882,14 @@
         },
         {
           "id": "l65",
-          "start": 498.83,
+          "start": 499.65,
           "end": 501.07,
           "text": "There's only two weeks to go.",
           "translation": "只剩两个星期了。"
         },
         {
           "id": "l66",
-          "start": 501.07,
+          "start": 502.05,
           "end": 508.01,
           "text": "I've got a second interview with that big foreign accountancy firm in the city centre.",
           "translation": "我要去市中心那家大型外资会计师事务所参加第二轮面试。"
@@ -19105,14 +19105,14 @@
         },
         {
           "id": "l98",
-          "start": 588.75,
-          "end": 590.27,
+          "start": 589.85,
+          "end": 590.54,
           "text": "Don't want to be late.",
           "translation": "可别迟到了。"
         },
         {
           "id": "l99",
-          "start": 590.27,
+          "start": 591.05,
           "end": 595.7,
           "text": "Questions eight to eleven are based on the conversation you have just heard.",
           "translation": "第8题到第11题根据你刚才听到的对话回答。"
@@ -19285,14 +19285,14 @@
         },
         {
           "id": "l124",
-          "start": 776.31,
+          "start": 776.65,
           "end": 779.95,
           "text": "What does that tell us about our education system?",
           "translation": "这说明我们的教育体系怎么了？"
         },
         {
           "id": "l125",
-          "start": 779.95,
+          "start": 780.8,
           "end": 787.85,
           "text": "Well, it tells us that we need to think about the preparedness of our students as they are leaving high school.",
           "translation": "嗯，这说明我们需要关注学生高中毕业时的准备程度。"
@@ -19443,20 +19443,20 @@
         {
           "id": "l147",
           "start": 960.14,
-          "end": 961.15,
+          "end": 960.8,
           "text": "Around 800 A.D.",
           "translation": "大约在公元800年。"
         },
         {
           "id": "l148",
-          "start": 961.15,
-          "end": 972.13,
+          "start": 960.8,
+          "end": 970.9,
           "text": "People in Central Asia managed to develop a new kind of carrot, a purple carrot, that attracted more interest from international traders.",
           "translation": "中亚人培育出了一种新品种——紫色胡萝卜，吸引了国际商贩的更多兴趣。"
         },
         {
           "id": "l149",
-          "start": 972.13,
+          "start": 970.9,
           "end": 982.35,
           "text": "Then, in the late 1500s, food scientists in the Netherlands cultivated large, straight, sweet red carrots, like the ones we eat today.",
           "translation": "后来，在16世纪末，荷兰的食品科学家培育出了又大又直又甜的红胡萝卜，就像我们今天吃的那种。"
@@ -19546,7 +19546,7 @@
         },
         {
           "id": "l162",
-          "start": 1102.37,
+          "start": 1103.8,
           "end": 1108.5,
           "text": "With Facebook, she could stay connected with her family, no matter how far away they were.",
           "translation": "有了脸书，不管家人住得多远，她都能和他们保持联系。"
@@ -19693,13 +19693,13 @@
         {
           "id": "l183",
           "start": 1273.01,
-          "end": 1276.25,
+          "end": 1275.85,
           "text": "Do you know where a mule comes from?",
           "translation": "你知道骡子是怎么来的吗？"
         },
         {
           "id": "l184",
-          "start": 1276.25,
+          "start": 1275.85,
           "end": 1279.2,
           "text": "It is the child of a donkey and a horse.",
           "translation": "它是驴和马生的后代。"
@@ -19756,13 +19756,13 @@
         {
           "id": "l192",
           "start": 1330.2,
-          "end": 1337.43,
+          "end": 1337.4,
           "text": "Farmers and farm animal breeders would bring their animals to market every April to show, buy, and trade.",
           "translation": "每年4月，农民和牲畜繁育者都会带着他们的牲口到集市上展示、买卖和交换。"
         },
         {
           "id": "l193",
-          "start": 1337.43,
+          "start": 1337.4,
           "end": 1347.3,
           "text": "This was an important business before the days of tractors, when many families made a living from farming, and mules were used as work animals.",
           "translation": "在拖拉机问世之前，这是一门重要的营生，当时许多家庭以务农为生，骡子被用作役畜。"
@@ -20243,14 +20243,14 @@
         },
         {
           "id": "l14",
-          "start": 103.2,
+          "start": 106.15,
           "end": 116.17,
           "text": "The family turned to social media, expressing their gratitude, saying, \"From the bottom of our hearts, we would like to deeply thank each and every person that stopped by.\"",
           "translation": "这一家人随即在社交媒体上表达感激之情，写道：\"我们由衷地深深感谢每一位光顾的人。\""
         },
         {
           "id": "l15",
-          "start": 117.15,
+          "start": 119.45,
           "end": 123.2,
           "text": "One and two are based on the news report you have just heard.",
           "translation": "第1题和第2题基于你刚才听到的新闻报道。"
@@ -20640,7 +20640,7 @@
         },
         {
           "id": "l72",
-          "start": 543.62,
+          "start": 544.3,
           "end": 548.67,
           "text": "I'm dying to know what kind of trip he has planned or where we're going.\"",
           "translation": "我快好奇死了，他到底安排了什么样的旅行，我们要去哪里。"
@@ -20675,7 +20675,7 @@
         },
         {
           "id": "l77",
-          "start": 559.54,
+          "start": 561.4,
           "end": 563.95,
           "text": "\"I'm sure both of you will have a fantastic time.",
           "translation": "我相信你们俩一定会玩得特别开心。"
@@ -21058,13 +21058,13 @@
         {
           "id": "l132",
           "start": 988.7,
-          "end": 996.74,
+          "end": 995.45,
           "text": "These products are only a few examples of the many ways space technology helps us in our everyday lives.",
           "translation": "这些产品只是航天技术在我们日常生活中帮助我们的众多方式中的几个例子。"
         },
         {
           "id": "l133",
-          "start": 996.74,
+          "start": 995.45,
           "end": 1002.6,
           "text": "No one knows how new spin-off technology from the International Space Station will help us in the future.",
           "translation": "没有人知道国际空间站的新衍生技术将来会如何帮助我们。"
@@ -21113,8 +21113,8 @@
         },
         {
           "id": "l140",
-          "start": 1077.8,
-          "end": 1081.16,
+          "start": 1080.25,
+          "end": 1081.14,
           "text": "Because it was the beginning of something.",
           "translation": "因为那是一个新时代的开端。"
         },
@@ -21859,13 +21859,13 @@
         {
           "id": "l27",
           "start": 200.13,
-          "end": 206.57,
+          "end": 205.25,
           "text": "The traffic increase comes at the same time as gas prices dropped significantly.",
           "translation": "交通量上升的同时，油价大幅下跌。"
         },
         {
           "id": "l28",
-          "start": 206.57,
+          "start": 205.25,
           "end": 211.31,
           "text": "The current average gas price in the U.S is $1.71 per gallon.",
           "translation": "目前美国的平均油价是每加仑1.71美元。"
@@ -22004,8 +22004,8 @@
         },
         {
           "id": "l48",
-          "start": 358.25,
-          "end": 362.6,
+          "start": 360.15,
+          "end": 363.23,
           "text": "This is his big chance, and you're making it possible.",
           "translation": "这是他难得的机会，是你们让这一切成为可能。"
         },
@@ -22397,14 +22397,14 @@
         {
           "id": "l105",
           "start": 647.87,
-          "end": 653.25,
+          "end": 651.85,
           "text": "Do you think we should take a holiday overseas to relax and have fun?",
           "translation": "你觉得我们该出国度假放松一下、玩一玩吗？"
         },
         {
           "id": "l106",
-          "start": 653.25,
-          "end": 655.21,
+          "start": 651.85,
+          "end": 653.81,
           "text": "I've saved my tips from my waiter job these past few months, and I should have enough by July.",
           "translation": "这几个月我把当服务员的小费都攒下来了，到7月应该够了。"
         },
@@ -22418,20 +22418,20 @@
         {
           "id": "l108",
           "start": 657.97,
-          "end": 659.93,
+          "end": 663.01,
           "text": "I've got A little put aside for a rainy day, but I might need to earn a little more before we go.",
           "translation": "我存了一点应急的钱，不过出发前可能还得再多挣一点。"
         },
         {
           "id": "l109",
-          "start": 662.52,
-          "end": 667,
+          "start": 666.4,
+          "end": 667.48,
           "text": "By the way, what's it like working in a restaurant?",
           "translation": "顺便问一下，在餐馆工作怎么样？"
         },
         {
           "id": "l110",
-          "start": 667,
+          "start": 667.48,
           "end": 673.57,
           "text": "Well, it's really tough, as working a ten-hour shift is like hell.",
           "translation": "嗯，真的很辛苦，上10小时的班简直像受罪。"
@@ -22446,13 +22446,13 @@
         {
           "id": "l112",
           "start": 681.35,
-          "end": 685.41,
+          "end": 682.63,
           "text": "Do you think we should invite some others to come along?",
           "translation": "你觉得我们该再叫上几个人一起去吗？"
         },
         {
           "id": "l113",
-          "start": 685.41,
+          "start": 684.2,
           "end": 689.46,
           "text": "Yes, we could ask Tom and Tracy if they're interested.",
           "translation": "好啊，我们可以问问汤姆和特蕾西有没有兴趣。"
@@ -22514,8 +22514,8 @@
         },
         {
           "id": "l122",
-          "start": 724.01,
-          "end": 727.41,
+          "start": 725.9,
+          "end": 728.7,
           "text": "If not, it'll be back to the drawing board.",
           "translation": "如果他们不去，那就得重新计划了。"
         },
@@ -22945,13 +22945,13 @@
         {
           "id": "l184",
           "start": 1217.45,
-          "end": 1218.63,
+          "end": 1220.25,
           "text": "Where do you think you'll be in ten years?",
           "translation": "你觉得十年后你会在哪里？"
         },
         {
           "id": "l185",
-          "start": 1219.63,
+          "start": 1221.65,
           "end": 1229.87,
           "text": "It's difficult to know exactly where you'll be and what you'll be doing, but everyone dreams about the future.",
           "translation": "很难准确知道你将来会在哪里、会做什么，但每个人都会憧憬未来。"
@@ -23515,8 +23515,8 @@
         },
         {
           "id": "l15",
-          "start": 98.33,
-          "end": 104.26,
+          "start": 101.25,
+          "end": 102.53,
           "text": "She held up to her father's promise, giving Buffington that reward.",
           "translation": "她兑现了父亲的承诺，把酬金给了巴芬顿。"
         },
@@ -23565,27 +23565,27 @@
         {
           "id": "l22",
           "start": 170.49,
-          "end": 186.21,
+          "end": 184.5,
           "text": "The insect spraying over the weekend left more than two million bees dead on the spot in Dorchester County, South Carolina, where four travel-related Cases of Zika disease have been confirmed in the area.",
           "translation": "周末的喷洒作业导致南卡罗来纳州多切斯特县200多万只蜜蜂当场死亡，该地区已确认4例输入性寨卡病例。"
         },
         {
           "id": "l23",
-          "start": 186.21,
-          "end": 194.48,
+          "start": 184.5,
+          "end": 193.05,
           "text": "Most of the deaths came from Flower Town Bee Farm, a company in Somerville that sells bees and honey products.",
           "translation": "大多数死亡的蜜蜂来自\"鲜花镇\"养蜂场，这是一家位于萨默维尔、销售蜜蜂和蜂蜜产品的公司。"
         },
         {
           "id": "l24",
-          "start": 194.48,
-          "end": 200.96,
+          "start": 193.05,
+          "end": 199.35,
           "text": "Juanita Stanley, who owns the company, said the farm looks like it's been destroyed.",
           "translation": "公司老板胡安妮塔·斯坦利说，农场看起来像是被摧毁了。"
         },
         {
           "id": "l25",
-          "start": 200.96,
+          "start": 199.35,
           "end": 203.45,
           "text": "The farm lost about 2.5 million bees.",
           "translation": "农场损失了约250万只蜜蜂。"
@@ -23683,15 +23683,15 @@
         },
         {
           "id": "l39",
-          "start": 329.91,
+          "start": 331.8,
           "end": 337.82,
           "text": "The makers believe it's the future of aircraft, and one day we'll be using them to go places.",
           "translation": "制造商认为它是飞行器的未来，总有一天我们会乘坐它出行。"
         },
         {
           "id": "l40",
-          "start": 337.82,
-          "end": 341.04,
+          "start": 339.7,
+          "end": 340.59,
           "text": "But there's still a long way to go.",
           "translation": "但前方的路还很长。"
         },
@@ -23704,8 +23704,8 @@
         },
         {
           "id": "l42",
-          "start": 349.99,
-          "end": 354.77,
+          "start": 351.8,
+          "end": 355.72,
           "text": "If it passes, though, we can hope we'll all get some extra legroom.",
           "translation": "不过，如果通过了，我们就有望都能多些腿部空间了。"
         },
@@ -23807,7 +23807,7 @@
         },
         {
           "id": "l57",
-          "start": 467.56,
+          "start": 467.22,
           "end": 469.48,
           "text": "We haven't been out for ages.",
           "translation": "我们好久没出去了。"
@@ -23919,13 +23919,13 @@
         {
           "id": "l73",
           "start": 507.69,
-          "end": 510.54,
+          "end": 508.67,
           "text": "Let's see what it says in the paper.",
           "translation": "我们看看报纸上怎么说的。"
         },
         {
           "id": "l74",
-          "start": 510.54,
+          "start": 509.85,
           "end": 516.48,
           "text": "Ana Gomez leads in an exciting production of the great Spanish love story, Carmen.",
           "translation": "安娜·戈麦斯主演了激动人心的新版西班牙伟大爱情故事《卡门》。"
@@ -24069,14 +24069,14 @@
         },
         {
           "id": "l95",
-          "start": 561.52,
-          "end": 564.42,
+          "start": 564,
+          "end": 565.4,
           "text": "I'll book the tickets online.",
           "translation": "我来上网订票。"
         },
         {
           "id": "l96",
-          "start": 564.42,
+          "start": 566.55,
           "end": 570.8,
           "text": "Questions eight to eleven are based on the conversation you have just heard.",
           "translation": "第8到11题基于你刚听到的对话。"
@@ -24432,7 +24432,7 @@
         },
         {
           "id": "l148",
-          "start": 883.15,
+          "start": 885,
           "end": 892.82,
           "text": "In the study, researchers found that hunger outweighed other physical drives, including fear, thirst, and social needs.",
           "translation": "研究人员在研究中发现，饥饿会压过其他生理需求，包括恐惧、口渴和社交需求。"
@@ -24615,13 +24615,13 @@
         {
           "id": "l174",
           "start": 1123.85,
-          "end": 1125.32,
+          "end": 1127.49,
           "text": "The idea was to connect the new system to existing expressways and freeways.",
           "translation": "设想是把新系统与现有的高速公路和快速路连接起来。"
         },
         {
           "id": "l175",
-          "start": 1127.19,
+          "start": 1129.9,
           "end": 1135.03,
           "text": "And though the system was built mostly to make car travel easier, defense was not forgotten.",
           "translation": "虽然修建这套系统主要是为了让驾车出行更方便，但国防需求并没有被忽视。"
@@ -25114,20 +25114,20 @@
         {
           "id": "l3",
           "start": 6.57,
-          "end": 11.7,
+          "end": 11.25,
           "text": "Directions: In this section, you will hear three news reports.",
           "translation": "说明：在这一部分，你将听到3篇新闻报道。"
         },
         {
           "id": "l4",
-          "start": 12.25,
-          "end": 16.69,
+          "start": 11.25,
+          "end": 16.05,
           "text": "At the end of each news report, you will hear two or three questions.",
           "translation": "每篇新闻报道结束后，你将听到2到3个问题。"
         },
         {
           "id": "l5",
-          "start": 16.69,
+          "start": 16.05,
           "end": 21.51,
           "text": "Both the news report and the questions will be spoken only once.",
           "translation": "新闻报道和问题都只朗读一遍。"
@@ -25176,13 +25176,13 @@
         {
           "id": "l12",
           "start": 66.8,
-          "end": 74.96,
+          "end": 74.75,
           "text": "\"It was rough, with big scales,\" said Swisher, who was on her way to pick up her friend at the airport when it happened.",
           "translation": "\"它很粗糙，鳞片很大，\"斯威舍说。事发时她正开车去机场接朋友。"
         },
         {
           "id": "l13",
-          "start": 74.96,
+          "start": 74.75,
           "end": 79.23,
           "text": "\"I don't know whether I had my hands on the steering wheel or not.",
           "translation": "\"我不知道我当时手还扶不扶着方向盘。"
@@ -25314,7 +25314,7 @@
         },
         {
           "id": "l32",
-          "start": 243.97,
+          "start": 246,
           "end": 254.09,
           "text": "Of course, consumers also want their orders prepared correctly, and on that score, Ochis says accuracy is still really high.",
           "translation": "当然，消费者也希望订单不出差错，奥奇斯说，在这方面准确率仍然非常高。"
@@ -25398,13 +25398,13 @@
         {
           "id": "l44",
           "start": 371.98,
-          "end": 378.59,
+          "end": 376.8,
           "text": "Moon Express is not the only company seeking for the rights to travel to outer space.",
           "translation": "月球快车并不是唯一一家争取外太空旅行权利的公司。"
         },
         {
           "id": "l45",
-          "start": 378.59,
+          "start": 376.8,
           "end": 383.5,
           "text": "Elon Musk's Space X aims to send an unmanned aircraft to Mars by 2018.",
           "translation": "埃隆·马斯克的太空探索技术公司计划在2018年前向火星发射一架无人飞行器。"
@@ -25501,7 +25501,7 @@
         },
         {
           "id": "l59",
-          "start": 488.3,
+          "start": 489.25,
           "end": 496.93,
           "text": "Actually, I'm on holiday with my family in Thailand at the moment, although I wish it were with my friends instead.",
           "translation": "其实我现在和家人在泰国度假，不过我倒希望能和朋友一起来。"
@@ -25515,20 +25515,20 @@
         {
           "id": "l61",
           "start": 497.49,
-          "end": 500.68,
+          "end": 498.47,
           "text": "You never said you were going to Thailand.",
           "translation": "你从没说过要去泰国啊。"
         },
         {
           "id": "l62",
-          "start": 500.68,
-          "end": 501.71,
+          "start": 499.6,
+          "end": 500.96,
           "text": "How I envy you!",
           "translation": "我真羡慕你！"
         },
         {
           "id": "l63",
-          "start": 501.71,
+          "start": 500.96,
           "end": 506.88,
           "text": "I've only been here a week, but, you know, Thailand's an amazing place.",
           "translation": "我才来了一周，不过你知道吗，泰国真是个了不起的地方。"
@@ -25556,28 +25556,28 @@
         },
         {
           "id": "l67",
-          "start": 518.98,
-          "end": 520.95,
-          "text": "Have you been here before?",
-          "translation": "你以前来过这里吗？"
-        },
-        {
-          "id": "l68",
           "start": 521.4,
           "end": 522.46,
           "text": "No, I wish I had.",
           "translation": "没有，真希望我来过。"
         },
         {
-          "id": "l69",
+          "id": "l68",
           "start": 522.46,
           "end": 528.16,
           "text": "What else have you been doing in Thailand besides enjoying the sun?",
           "translation": "除了晒太阳，你在泰国还做了些什么？"
         },
         {
-          "id": "l70",
+          "id": "l69",
           "start": 528.16,
+          "end": 528.85,
+          "text": "Have you been here before?",
+          "translation": "你以前来过这里吗？"
+        },
+        {
+          "id": "l70",
+          "start": 528.85,
           "end": 531.24,
           "text": "Well, I met a guy from Germany yesterday.",
           "translation": "嗯，我昨天认识了一个德国人。"
@@ -25742,13 +25742,13 @@
         {
           "id": "l94",
           "start": 670.94,
-          "end": 672.53,
+          "end": 672.4,
           "text": "Yes, more than glad to.",
           "translation": "好啊，非常乐意。"
         },
         {
           "id": "l95",
-          "start": 672.53,
+          "start": 672.4,
           "end": 674.88,
           "text": "I haven't been to a gym for ages.",
           "translation": "我已经好久没去健身房了。"
@@ -25804,13 +25804,13 @@
         {
           "id": "l103",
           "start": 701.63,
-          "end": 705.69,
+          "end": 702.91,
           "text": "But I'm not sure which of the gym equipment would best help.",
           "translation": "但我不太确定用哪种健身器材最管用。"
         },
         {
           "id": "l104",
-          "start": 705.69,
+          "start": 704.4,
           "end": 714.29,
           "text": "Well, I'm no expert at that, but I think you can try lifting weights and do at least two hundred sit-ups twice a day.",
           "translation": "嗯，这方面我也不是专家，不过我觉得你可以试试举重，每天做至少200个仰卧起坐，一天两次。"
@@ -25818,13 +25818,13 @@
         {
           "id": "l105",
           "start": 714.29,
-          "end": 717.27,
+          "end": 716.52,
           "text": "I've never tried weightlifting before.",
           "translation": "我以前从没举过重。"
         },
         {
           "id": "l106",
-          "start": 717.27,
+          "start": 716.52,
           "end": 718.44,
           "text": "Is it dangerous?",
           "translation": "危险吗？"
@@ -26073,7 +26073,7 @@
         },
         {
           "id": "l142",
-          "start": 978.44,
+          "start": 980.3,
           "end": 990.18,
           "text": "Only apply for positions you're qualified for, and make each application count, personalizing each cover letter and updating and editing your resume.",
           "translation": "只申请你够资格的职位，让每一份申请都发挥作用：求职信要个性化，简历要更新和修改。"
@@ -26172,13 +26172,13 @@
         {
           "id": "l156",
           "start": 1127.36,
-          "end": 1135.5,
+          "end": 1134.2,
           "text": "That will take the students out into the city and help them to use it and its people as a resource.",
           "translation": "这将让学生走进城市，帮助他们把城市和城市里的人当作学习资源。"
         },
         {
           "id": "l157",
-          "start": 1135.5,
+          "start": 1134.2,
           "end": 1154.05,
           "text": "In other words, students, perhaps in groups, perhaps independently, will go to libraries, museums, exhibitions, courtrooms, radio and TV stations, meetings, businesses and laboratories to learn about their world and society at first hand.",
           "translation": "换句话说，学生们可能结伴，也可能独自前往图书馆、博物馆、展览馆、法庭、广播电视台、会议、企业和实验室，亲身了解他们的世界和社会。"
@@ -26289,7 +26289,7 @@
         },
         {
           "id": "l173",
-          "start": 1272.84,
+          "start": 1273.3,
           "end": 1275.86,
           "text": "Bridges runs dance classes for all ages.",
           "translation": "布里奇斯开设各个年龄段的舞蹈课。"
@@ -26338,7 +26338,7 @@
         },
         {
           "id": "l180",
-          "start": 1296.89,
+          "start": 1297.05,
           "end": 1301.85,
           "text": "\"They arrive at the class in a bad mood, and they leave with a smile.",
           "translation": "\"他们来上课时心情不好，走的时候却带着笑容。"
@@ -26366,28 +26366,28 @@
         },
         {
           "id": "l184",
-          "start": 1319.63,
-          "end": 1324.52,
+          "start": 1321.6,
+          "end": 1324.68,
           "text": "Even after all these years, I want to get better and better.",
           "translation": "即使过了这么多年，我还是想跳得越来越好。"
         },
         {
           "id": "l185",
-          "start": 1324.52,
+          "start": 1326.4,
           "end": 1328.47,
           "text": "I keep practicing even when I'm exhausted.",
           "translation": "哪怕累得不行，我也坚持练习。"
         },
         {
           "id": "l186",
-          "start": 1328.47,
-          "end": 1330.78,
+          "start": 1330.4,
+          "end": 1331.09,
           "text": "I find it hard to stop.",
           "translation": "我发现自己很难停下来。"
         },
         {
           "id": "l187",
-          "start": 1330.78,
+          "start": 1331.2,
           "end": 1333.74,
           "text": "Dancing reminds me I'm alive.",
           "translation": "跳舞让我感到自己还活着。"
@@ -26823,13 +26823,13 @@
         {
           "id": "l14",
           "start": 73.86,
-          "end": 81.24,
+          "end": 79.9,
           "text": "This is a project with the goal of landing the first privately paid-for mission to the Moon.",
           "translation": "这是一个旨在实现首次由私人出资的登月任务的项目。"
         },
         {
           "id": "l15",
-          "start": 81.59,
+          "start": 79.9,
           "end": 89.15,
           "text": "The 4G mission is set to launch from Cape Canaveral in the United States on a SpaceX Falcon 9 rocket in 2019.",
           "translation": "这项4G任务计划于2019年在美国卡纳维拉尔角，由SpaceX猎鹰9号火箭发射。"
@@ -26850,7 +26850,7 @@
         },
         {
           "id": "l18",
-          "start": 106.01,
+          "start": 108.15,
           "end": 112.76,
           "text": "This is because fifth-generation networks are still in testing and trial phases.",
           "translation": "这是因为5G网络仍处于测试和试验阶段。"
@@ -26911,15 +26911,15 @@
         },
         {
           "id": "l27",
-          "start": 180.8,
+          "start": 183.15,
           "end": 186.07,
           "text": "Six fire engines, two trucks, and two chiefs responded to the scene.",
           "translation": "6辆消防车、2辆卡车和2名消防队长赶赴现场。"
         },
         {
           "id": "l28",
-          "start": 186.07,
-          "end": 194.58,
+          "start": 188.75,
+          "end": 191.01,
           "text": "Crews had the fire under control in about 45 minutes and managed to contain the fire to its point of origin.",
           "translation": "消防人员大约45分钟就控制住了火势，并设法将火势控制在起火点范围内。"
         },
@@ -26960,8 +26960,8 @@
         },
         {
           "id": "l34",
-          "start": 230.41,
-          "end": 234.21,
+          "start": 232.35,
+          "end": 235.15,
           "text": "However, the plan was dropped due to lack of funds.",
           "translation": "不过，由于资金不足，该计划被搁置。"
         },
@@ -27161,7 +27161,7 @@
         },
         {
           "id": "l63",
-          "start": 463.52,
+          "start": 464.25,
           "end": 468.47,
           "text": "Yes, he is not a very exciting speaker, but the subject is interesting.",
           "translation": "是啊，他讲课确实不怎么吸引人，但内容挺有意思的。"
@@ -27688,13 +27688,13 @@
         {
           "id": "l139",
           "start": 931.35,
-          "end": 947.25,
+          "end": 945.7,
           "text": "And roughly half think their libraries contribute a lot to their communities in terms of helping spark creativity among young people and providing a trusted place for people to learn about new technologies.",
           "translation": "约有一半人认为，图书馆在激发年轻人创造力、为人们了解新技术提供可信场所等方面，对社区贡献很大。"
         },
         {
           "id": "l140",
-          "start": 947.25,
+          "start": 945.7,
           "end": 957.75,
           "text": "As in past Pew Research Center surveys of library use, the April 2016 survey also measured Americans' usage of and engagement with libraries.",
           "translation": "与以往皮尤研究中心开展的图书馆使用调查一样，2016年4月的调查也考察了美国人使用图书馆及参与图书馆活动的情况。"
@@ -27771,7 +27771,7 @@
         },
         {
           "id": "l151",
-          "start": 1090.24,
+          "start": 1092.4,
           "end": 1098.11,
           "text": "They have a spotted coat similar to that of many types of wild cats, and their ears are very large.",
           "translation": "它们的皮毛有斑点，与许多野猫相似，耳朵非常大。"
@@ -28369,8 +28369,8 @@
         },
         {
           "id": "l13",
-          "start": 61.31,
-          "end": 67.3,
+          "start": 63.15,
+          "end": 64.82,
           "text": "A man described as a non-worker civilian was buried up to his waist in the basement.",
           "translation": "一名据称是非施工人员的平民被埋在地下室，深度及腰。"
         },
@@ -28811,13 +28811,13 @@
         {
           "id": "l77",
           "start": 527.31,
-          "end": 533.44,
+          "end": 531.85,
           "text": "Well, back in the 50s and 60s, Romania was a lot poorer than it is today.",
           "translation": "嗯，早在五六十年代，罗马尼亚比现在穷得多。"
         },
         {
           "id": "l78",
-          "start": 533.44,
+          "start": 531.85,
           "end": 541.3,
           "text": "My grandfather and father did not have much capital, and our customers didn't have much money either.",
           "translation": "我祖父和父亲没有多少资金，我们的客户也没有多少钱。"
@@ -28825,13 +28825,13 @@
         {
           "id": "l79",
           "start": 541.3,
-          "end": 543.21,
+          "end": 541.89,
           "text": "So That limited growth.",
           "translation": "所以这限制了发展。"
         },
         {
           "id": "l80",
-          "start": 543.21,
+          "start": 541.9,
           "end": 548.49,
           "text": "The big change was in 2007, when Romania joined the European Union.",
           "translation": "最大的变化发生在2007年，罗马尼亚加入了欧盟。"
@@ -28991,7 +28991,7 @@
         },
         {
           "id": "l103",
-          "start": 701.72,
+          "start": 702.25,
           "end": 704.55,
           "text": "Does it only focus on new restaurant openings?",
           "translation": "它只关注新餐厅开业吗？"
@@ -29398,8 +29398,8 @@
         },
         {
           "id": "l162",
-          "start": 1109,
-          "end": 1113.19,
+          "start": 1111.15,
+          "end": 1112.13,
           "text": "The equipment stayed there after its missions ended.",
           "translation": "任务结束后，这些设备就留在了那里。"
         },
@@ -30163,7 +30163,7 @@
         },
         {
           "id": "l35",
-          "start": 318.19,
+          "start": 320.2,
           "end": 327.66,
           "text": "Aside from cleaning up, the two will also cook breakfast and even get coffee and painkillers for recovering merrymakers.",
           "translation": "除了打扫卫生，两人还会做早餐，甚至给宿醉的狂欢者准备咖啡和止痛药。"
@@ -30294,8 +30294,8 @@
         },
         {
           "id": "l54",
-          "start": 471.52,
-          "end": 476.47,
+          "start": 473.45,
+          "end": 474.83,
           "text": "The people who worked at the test center were very kind though.",
           "translation": "不过考试中心的工作人员都很友善。"
         },
@@ -30723,7 +30723,7 @@
         },
         {
           "id": "l116",
-          "start": 884.52,
+          "start": 886.45,
           "end": 893.74,
           "text": "A very small percentage of ants do harm to humans, but those are incredibly challenging to control.",
           "translation": "只有极少数蚂蚁对人类有害，但这些蚂蚁却极难控制。"
@@ -30897,7 +30897,7 @@
         },
         {
           "id": "l141",
-          "start": 1099.16,
+          "start": 1101.1,
           "end": 1109.05,
           "text": "They come to the university to provide us with blood samples, to be interviewed, and to help us carry out a whole range of research.",
           "translation": "他们来大学为我们提供血样、接受访谈，并协助我们开展一系列研究。"
@@ -30932,7 +30932,7 @@
         },
         {
           "id": "l146",
-          "start": 1126.49,
+          "start": 1128.65,
           "end": 1141.86,
           "text": "I want to make sure that older adults are still able to enjoy their old age, and that they're not spending time in hospital with infections, feeling unwell, and being weak.",
           "translation": "我要确保老年人依然能享受晚年，而不是因感染住在医院里，身体不适、虚弱无力。"
@@ -31518,13 +31518,13 @@
         {
           "id": "l15",
           "start": 105.5,
-          "end": 118.25,
+          "end": 117,
           "text": "According to the French government, the country is the number one tourist destination in the world, and tourism is extremely important to the French economy.",
           "translation": "据法国政府称，法国是世界第一大旅游目的地，旅游业对法国经济极为重要。"
         },
         {
           "id": "l16",
-          "start": 118.25,
+          "start": 117,
           "end": 122.26,
           "text": "The sector represents roughly 9 percent of its GDP.",
           "translation": "该行业约占其GDP的9%。"
@@ -31600,7 +31600,7 @@
         },
         {
           "id": "l27",
-          "start": 230.41,
+          "start": 232.25,
           "end": 239.31,
           "text": "Normally, planes don't go to the polar post from February to October because of the dangers of flying in the pitch dark.",
           "translation": "通常，由于在漆黑中飞行的危险，从2月到10月飞机不会前往这个极地考察站。"
@@ -31608,12 +31608,12 @@
         {
           "id": "l28",
           "start": 239.54,
-          "end": 239.94,
+          "end": 240.1,
           "text": "And cold."
         },
         {
           "id": "l29",
-          "start": 239.94,
+          "start": 242.2,
           "end": 248.08,
           "text": "\"Antarctica creates a hostile environment,\" says the operations director for the British Antarctic Survey.",
           "translation": "“南极洲环境恶劣，”英国南极调查局的运营总监说。"
@@ -31709,7 +31709,7 @@
         },
         {
           "id": "l43",
-          "start": 361.77,
+          "start": 363.7,
           "end": 369.47,
           "text": "\"You've got to do everything safe in life, and that's what I did today,\" he said.",
           "translation": "“生活中做任何事都要注意安全，我今天就是这么做的，”他说。"
@@ -32506,7 +32506,7 @@
         },
         {
           "id": "l159",
-          "start": 1089.2,
+          "start": 1091.6,
           "end": 1099.5,
           "text": "In my line of work, you hear a lot about talent, which is an idea we've mostly invented to give ourselves an excuse to be lazy.",
           "translation": "在我这行，你经常听到\"天赋\"这个词，而这多半是我们自己发明出来、好给自己偷懒找借口的说辞。"
@@ -32659,7 +32659,7 @@
         },
         {
           "id": "l181",
-          "start": 1265.03,
+          "start": 1267.35,
           "end": 1277,
           "text": "My dancing life began not because I wanted to do it, but because my mother was sick and tired of seeing me running around after school doing nothing.",
           "translation": "我开始跳舞不是因为我想跳，而是因为我妈妈受够了看我放学后到处瞎跑、无所事事。"
@@ -33118,13 +33118,13 @@
         {
           "id": "l10",
           "start": 52.78,
-          "end": 60.97,
+          "end": 59.7,
           "text": "The confused creature and camera-holding humans stared at each other through a fence for several minutes.",
           "translation": "这头不知所措的动物和拿着相机的人类隔着栅栏对视了好几分钟。"
         },
         {
           "id": "l11",
-          "start": 60.97,
+          "start": 59.7,
           "end": 70.6,
           "text": "At Other times, the cow wandered around the 526-acre park and the artificial grass field normally used for human sporting events.",
           "translation": "其余时间，这头牛在占地526英亩的公园里四处游荡，还踩上了平时供人们进行体育活动的人造草坪。"
@@ -33159,8 +33159,8 @@
         },
         {
           "id": "l16",
-          "start": 94.9,
-          "end": 99.1,
+          "start": 96.85,
+          "end": 97.93,
           "text": "Then officers waited for the drug to take effect.",
           "translation": "然后警员们等药效发作。"
         },
@@ -33262,7 +33262,7 @@
         },
         {
           "id": "l31",
-          "start": 202.44,
+          "start": 204.55,
           "end": 207.43,
           "text": "In the meantime, the current collection will be closed.",
           "translation": "与此同时，目前的展厅将关闭。"
@@ -33601,13 +33601,13 @@
         {
           "id": "l80",
           "start": 538.5,
-          "end": 539.29,
+          "end": 540.18,
           "text": "Okay, so it'll be both.",
           "translation": "好吧，那它就是两者兼有。"
         },
         {
           "id": "l81",
-          "start": 540,
+          "start": 540.45,
           "end": 542.79,
           "text": "Educational and entertaining.",
           "translation": "既有教育性又有娱乐性。"
@@ -34787,13 +34787,13 @@
         {
           "id": "l8",
           "start": 40.2,
-          "end": 48.18,
+          "end": 46.45,
           "text": "The British government has called for more men to consider a career in nursing.",
           "translation": "新闻报道一：英国政府呼吁更多男性考虑从事护理工作。"
         },
         {
           "id": "l9",
-          "start": 48.18,
+          "start": 46.45,
           "end": 52.65,
           "text": "Figures show the number of male nurses has fallen in the last three years.",
           "translation": "数据显示，男性护士人数在过去3年有所下降。"
@@ -35721,13 +35721,13 @@
         {
           "id": "l143",
           "start": 983.86,
-          "end": 992.42,
+          "end": 991,
           "text": "Any social group that encourages free exchange of ideas and pursuit of knowledge is beneficial.",
           "translation": "任何鼓励自由交流思想和追求知识的社会群体都是有益的。"
         },
         {
           "id": "l144",
-          "start": 992.42,
+          "start": 991,
           "end": 995.85,
           "text": "It helps you to actively develop your analytical skills.",
           "translation": "它帮助你积极地培养分析能力。"
@@ -35796,7 +35796,7 @@
         },
         {
           "id": "l154",
-          "start": 1093.94,
+          "start": 1094.4,
           "end": 1098.7,
           "text": "Mark Beckoff, a researcher and former professor of animal behavior.",
           "translation": "马克·贝科夫，他是一位研究者，也是动物行为学的前教授。"
@@ -35942,7 +35942,7 @@
         },
         {
           "id": "l175",
-          "start": 1292.47,
+          "start": 1294.3,
           "end": 1299.85,
           "text": "\"It was fortunate that the family didn't try to dig up the fossil because that could destroy the specimen.",
           "translation": "\"幸运的是，这家人没有试图把化石挖出来，那样可能会损坏标本。"
@@ -36789,7 +36789,7 @@
         },
         {
           "id": "l68",
-          "start": 490.07,
+          "start": 489.94,
           "end": 492.8,
           "text": "I find the isolation challenging at times.",
           "translation": "我发现这种孤独感有时挺难熬的。"
@@ -36853,13 +36853,13 @@
         {
           "id": "l77",
           "start": 528.42,
-          "end": 540.14,
+          "end": 539.1,
           "text": "Coffee shops seem to have effectively become office spaces for so many people in this digital age, though I'm not sure how cafe owners feel about it, having so many people.",
           "translation": "在这个数字时代，咖啡馆似乎已经成了很多人的办公场所，不过我不确定店主怎么想，来了这么多人。"
         },
         {
           "id": "l78",
-          "start": 540.14,
+          "start": 539.85,
           "end": 543.85,
           "text": "People who go to their places to work rather than drink and eat.",
           "translation": "他们是来工作而不是来吃喝的。"
@@ -37880,20 +37880,20 @@
         {
           "id": "l3",
           "start": 7.62,
-          "end": 12.06,
+          "end": 11.7,
           "text": "Directions: In this section, you'll hear three news reports.",
           "translation": "说明：在本节中，你将听到三篇新闻报道。"
         },
         {
           "id": "l4",
-          "start": 12.45,
-          "end": 16.86,
+          "start": 11.7,
+          "end": 16.5,
           "text": "At the end of each news report, you'll hear two or three questions.",
           "translation": "每篇新闻报道结束后，你将听到两个或三个问题。"
         },
         {
           "id": "l5",
-          "start": 16.86,
+          "start": 16.5,
           "end": 21.57,
           "text": "Both the news report and the questions will be spoken only once.",
           "translation": "新闻报道和问题都只朗读一遍。"
@@ -37920,14 +37920,14 @@
         },
         {
           "id": "l9",
-          "start": 37.73,
-          "end": 46.12,
+          "start": 39,
+          "end": 46.1,
           "text": "A NASA satellite orbiting over Portugal took photographs that reveal the effects of pollution from ships.",
           "translation": "NASA的一颗卫星在葡萄牙上空运行时拍摄的照片，揭示了船只污染的影响。"
         },
         {
           "id": "l10",
-          "start": 46.12,
+          "start": 46.1,
           "end": 57.63,
           "text": "One of the photos shows a thin film of clouds above the brilliant blue of the North Atlantic, cut by white lines of thicker clouds that look like scars.",
           "translation": "其中一张照片显示，北大西洋湛蓝的海面上方有一层薄薄的云，被一道道较厚的白色云带划过，看起来像伤疤。"
@@ -38075,13 +38075,13 @@
         {
           "id": "l31",
           "start": 213.37,
-          "end": 220.36,
+          "end": 220,
           "text": "However, a spokesman of the supermarket said the store had taken strong action in response to incidents.",
           "translation": "不过超市发言人表示，该店已对这些事件采取了有力措施。"
         },
         {
           "id": "l32",
-          "start": 220.36,
+          "start": 220,
           "end": 226.21,
           "text": "We have found very few instances of bad customer behavior at our store in the past year.",
           "translation": "过去一年我们店里顾客的不良行为非常少见。"
@@ -38129,7 +38129,7 @@
         },
         {
           "id": "l39",
-          "start": 286.65,
+          "start": 287.6,
           "end": 300.75,
           "text": "Drivers on their way to the Polish capital of Warsaw on Wednesday morning found the road blocked by an unusual obstacle, tons of liquid chocolate that spilled onto the motorway.",
           "translation": "周三上午，驾车前往波兰首都华沙的司机发现道路被一种不寻常的障碍物堵住了——数吨液态巧克力洒在了高速公路上。"
@@ -38164,7 +38164,7 @@
         },
         {
           "id": "l44",
-          "start": 334.54,
+          "start": 335.85,
           "end": 344.05,
           "text": "After contacting the chocolate manufacturer, the firefighters resorted to spraying hot, pressurized water to get rid of the sticky substance.",
           "translation": "联系了巧克力生产商后，消防员只好用高压热水冲洗，来清除这些黏糊糊的东西。"
@@ -38282,14 +38282,14 @@
         },
         {
           "id": "l61",
-          "start": 479.5,
+          "start": 480.25,
           "end": 483.2,
           "text": "I'm only using payment apps if that's the only option.",
           "translation": "只有别无选择时我才会用支付软件。"
         },
         {
           "id": "l62",
-          "start": 483.2,
+          "start": 483.85,
           "end": 490.51,
           "text": "I'm trying to save money for a new phone, and I find that using cash rather than payment apps helps me to save.",
           "translation": "我正在攒钱买新手机，我发现用现金比用支付软件更容易存下钱。"
@@ -38297,19 +38297,19 @@
         {
           "id": "l63",
           "start": 490.51,
-          "end": 490.91,
+          "end": 491.07,
           "text": "But how?"
         },
         {
           "id": "l64",
-          "start": 491.02,
-          "end": 492.61,
+          "start": 492.25,
+          "end": 493.65,
           "text": "Money is money, isn't it?",
           "translation": "钱就是钱，不是吗？"
         },
         {
           "id": "l65",
-          "start": 492.61,
+          "start": 494.2,
           "end": 504.3,
           "text": "I don't think it matters whether you take it out of the bank and put it in your wallet, or simply transfer it from your bank account to the seller's bank account using an app.",
           "translation": "我觉得不管你把钱从银行取出来放进钱包，还是用软件从银行账户直接转给卖家的账户，都没什么区别。"
@@ -38345,13 +38345,13 @@
         {
           "id": "l70",
           "start": 517.96,
-          "end": 527.77,
+          "end": 527.3,
           "text": "Since I stopped carrying cash around and started using my phone apps to pay, I may have developed a tendency to buy more small or non-essential items.",
           "translation": "自从我不带现金、开始用手机软件付款以来，我好像更容易买一些小东西或者不必要的东西了。"
         },
         {
           "id": "l71",
-          "start": 527.77,
+          "start": 527.3,
           "end": 529.39,
           "text": "That's highly possible.",
           "translation": "很有可能。"
@@ -38455,7 +38455,7 @@
         },
         {
           "id": "l86",
-          "start": 637.77,
+          "start": 637.13,
           "end": 640.57,
           "text": "Question eleven, what does the man think of electronic payment?",
           "translation": "问题11：这位男士怎么看电子支付？"
@@ -38487,7 +38487,7 @@
         },
         {
           "id": "l91",
-          "start": 660.27,
+          "start": 660.8,
           "end": 665.03,
           "text": "My secretary told me you were having some problems with the wooden table.",
           "translation": "我秘书告诉我，您那张木桌出了点问题。"
@@ -38514,8 +38514,8 @@
         },
         {
           "id": "l95",
-          "start": 668.3,
-          "end": 670.23,
+          "start": 669.05,
+          "end": 669.74,
           "text": "The problem is the chairs.",
           "translation": "问题出在椅子上。"
         },
@@ -38542,8 +38542,8 @@
         },
         {
           "id": "l99",
-          "start": 680.93,
-          "end": 684.79,
+          "start": 683.15,
+          "end": 684.23,
           "text": "There must have been some confusion with our order.",
           "translation": "我们的订单肯定弄混了。"
         },
@@ -38563,20 +38563,20 @@
         },
         {
           "id": "l102",
-          "start": 691.68,
-          "end": 692.87,
+          "start": 692.55,
+          "end": 693.04,
           "text": "Is that correct?",
           "translation": "对吗？"
         },
         {
           "id": "l103",
-          "start": 692.87,
-          "end": 693.17,
+          "start": 693.35,
+          "end": 693.65,
           "text": "Yes."
         },
         {
           "id": "l104",
-          "start": 693.17,
+          "start": 694.95,
           "end": 698.84,
           "text": "Do you mind describing the chairs that were delivered to your apartment, Mr.",
           "translation": "您能描述一下送到您公寓的椅子吗，先生。"
@@ -38635,7 +38635,7 @@
         },
         {
           "id": "l113",
-          "start": 719.35,
+          "start": 720.6,
           "end": 724.07,
           "text": "As you said, there must have been some confusion with the order.",
           "translation": "正如您所说，订单肯定弄混了。"
@@ -38709,7 +38709,7 @@
         },
         {
           "id": "l124",
-          "start": 744.35,
+          "start": 745.3,
           "end": 747.13,
           "text": "The mirror and two paintings are here.",
           "translation": "镜子和两幅画都在这儿。"
@@ -38889,7 +38889,7 @@
         },
         {
           "id": "l150",
-          "start": 943.29,
+          "start": 944.3,
           "end": 952.35,
           "text": "First-hand accounts seem to indicate a small wave of people bringing piles of donation bags to used goods stores.",
           "translation": "从第一手的反馈来看，似乎有一小波人正扛着一袋袋捐赠品涌向旧货店。"
@@ -38903,7 +38903,7 @@
         },
         {
           "id": "l152",
-          "start": 957.9,
+          "start": 958.7,
           "end": 966.15,
           "text": "January is usually the stores' slow season for donations because it's cold and people don't want to bother.",
           "translation": "1月通常是这些店的捐赠淡季，因为天冷，人们懒得折腾。"
@@ -38925,13 +38925,13 @@
         {
           "id": "l155",
           "start": 972.14,
-          "end": 982.09,
+          "end": 981.34,
           "text": "One used bookstore received a month's worth of books in donations in a week when a man gave over 50 boxes of books from his home.",
           "translation": "一家二手书店一周内就收到了平时一个月的书籍捐赠量，一名男子从家里捐出了50多箱书。"
         },
         {
           "id": "l156",
-          "start": 982.09,
+          "start": 981.75,
           "end": 986.35,
           "text": "It seems Marie's TV show is having a big impact after all.",
           "translation": "看来麻理惠的电视节目确实影响巨大。"
@@ -39001,7 +39001,7 @@
         },
         {
           "id": "l166",
-          "start": 1084.6,
+          "start": 1084.75,
           "end": 1094.36,
           "text": "The mayor of Mike's town feels that Mike is a great community leader, especially in such times of so much negative news.",
           "translation": "迈克所在镇的镇长认为，迈克是一位出色的社区领袖，尤其是在这么多负面新闻的当下。"
@@ -39043,7 +39043,7 @@
         },
         {
           "id": "l172",
-          "start": 1121.73,
+          "start": 1122.3,
           "end": 1135.96,
           "text": "To date, his online page to raise funds has brought in more than $44,000 and counting, raising more than $17,000 in just one day, with the help of many famous actors and others.",
           "translation": "到目前为止，他的网上筹款页面已筹得超过44000美元，而且还在增加；在众多知名演员和其他人的帮助下，仅一天就筹得超过17000美元。"
@@ -39128,13 +39128,13 @@
         {
           "id": "l184",
           "start": 1254.7,
-          "end": 1264.37,
+          "end": 1263.1,
           "text": "Midway through the second group's solving of the puzzles, the experimenter called one of phones and let it ring for a while before hanging up.",
           "translation": "第二组做游戏进行到一半时，实验者拨打其中一部手机的电话，让铃声响了一会儿才挂断。"
         },
         {
           "id": "l185",
-          "start": 1264.37,
+          "start": 1263.1,
           "end": 1273.3,
           "text": "Many of the students in that group were unable to focus from then on, becoming anxious and performing more poorly than the first group.",
           "translation": "该组的许多学生从那时起就无法集中注意力，变得焦虑，表现也比第一组差。"
@@ -39148,14 +39148,14 @@
         },
         {
           "id": "l187",
-          "start": 1280.34,
+          "start": 1280.9,
           "end": 1290.24,
           "text": "Rather than having real-life conversations, many express emotions and engage in deep conversations through social media sites.",
           "translation": "很多人不再进行面对面的交谈，而是通过社交媒体表达情感、深入交流。"
         },
         {
           "id": "l188",
-          "start": 1290.24,
+          "start": 1290.95,
           "end": 1299.02,
           "text": "Many students use their phones and computers during class for non-academic activities, which leads to poor grades.",
           "translation": "很多学生上课时用手机和电脑做与学业无关的事，导致成绩不佳。"
@@ -39204,7 +39204,7 @@
         },
         {
           "id": "l195",
-          "start": 1337.65,
+          "start": 1338.6,
           "end": 1343.78,
           "text": "Question 22: What were the college students in both groups required to do in the study?",
           "translation": "问题22：在这项研究中，两组大学生都被要求做什么？"
@@ -39634,7 +39634,7 @@
         },
         {
           "id": "l15",
-          "start": 87.99,
+          "start": 89.8,
           "end": 97.55,
           "text": "After being spotted in the Mediterranean, a marine scientist says, the fish is spreading, and that's a cause for concern.",
           "translation": "一位海洋科学家说，这种鱼在被发现进入地中海后正在扩散，这一点令人担忧。"
@@ -39697,7 +39697,7 @@
         },
         {
           "id": "l24",
-          "start": 172.97,
+          "start": 175.1,
           "end": 180.19,
           "text": "On the first Sunday of every month, Paris clears traffic from eight lanes of main road.",
           "translation": "每个月的第一个星期日，巴黎会在8条主干道车道上禁止车辆通行。"
@@ -40172,13 +40172,13 @@
         {
           "id": "l93",
           "start": 650.3,
-          "end": 652.06,
+          "end": 651.09,
           "text": "Where did you get your ideas?",
           "translation": "你的想法是从哪儿来的？"
         },
         {
           "id": "l94",
-          "start": 652.06,
+          "start": 651.5,
           "end": 654.81,
           "text": "I wouldn't know where to start.",
           "translation": "我都不知道该从哪儿下手。"
@@ -40248,8 +40248,8 @@
         },
         {
           "id": "l104",
-          "start": 691.92,
-          "end": 698.26,
+          "start": 694.2,
+          "end": 696.16,
           "text": "Greg was also able to get some discounted materials from a recent project he was working on as well.",
           "translation": "格雷格还从他最近做的一个项目里弄到了一些打折材料。"
         },
@@ -40261,8 +40261,8 @@
         },
         {
           "id": "l106",
-          "start": 698.6,
-          "end": 702.6,
+          "start": 701.2,
+          "end": 702.48,
           "text": "If you don't mind, I'd like to pick your brain a bit more.",
           "translation": "如果你不介意的话，我还想再请教你几个问题。"
         },
@@ -40385,13 +40385,13 @@
         {
           "id": "l124",
           "start": 849.45,
-          "end": 863.7,
+          "end": 860.6,
           "text": "Children were responsible for the vast majority of cases: 95% of objects removed from noses and 85% from ears.",
           "translation": "绝大多数病例都是儿童：鼻子异物中95%、耳朵异物中85%出自儿童。"
         },
         {
           "id": "l125",
-          "start": 863.7,
+          "start": 860.6,
           "end": 879.24,
           "text": "Every year, an average of 1,218 nose and 2,479 ear removals took place between 2010 and 2016, according to England's hospital episode statistics.",
           "translation": "根据英格兰医院就诊统计数据，2010到2016年间，平均每年取出鼻腔异物1218例、耳道异物2479例。"
@@ -41169,21 +41169,21 @@
         },
         {
           "id": "l10",
-          "start": 44.51,
-          "end": 50.56,
+          "start": 47.25,
+          "end": 50.89,
           "text": "The waiter found a bank envelope while cleaning off a table last Saturday at a restaurant.",
           "translation": "上周六，这位服务员在一家餐厅收拾桌子时发现了一个银行信封。"
         },
         {
           "id": "l11",
-          "start": 50.56,
-          "end": 53.62,
+          "start": 53.35,
+          "end": 54.33,
           "text": "He ran outside, but the customer was gone.",
           "translation": "他追了出去，但那位顾客已经走了。"
         },
         {
           "id": "l12",
-          "start": 53.62,
+          "start": 54.33,
           "end": 56.49,
           "text": "He opened the envelope and got a shock.",
           "translation": "他打开信封，大吃一惊。"
@@ -41419,7 +41419,7 @@
         },
         {
           "id": "l46",
-          "start": 305.05,
+          "start": 306.85,
           "end": 315.38,
           "text": "For the experiment, Foran's team went to a shopping center, a mall, two office buildings, and a coffee shop.",
           "translation": "在这个实验中，福兰的团队去了一个商业中心、一个商场、两栋写字楼和一家咖啡店。"
@@ -41427,14 +41427,14 @@
         {
           "id": "l47",
           "start": 315.38,
-          "end": 316.95,
+          "end": 319.3,
           "text": "The door was held for 15 to 20 people at a time at each location.",
           "translation": "在每个地点，一次会为15到20个人扶门。"
         },
         {
           "id": "l48",
-          "start": 319.27,
-          "end": 323.1,
+          "start": 321.45,
+          "end": 322.43,
           "text": "We did have one that didn't say thank you.",
           "translation": "确实有一个人没说谢谢。"
         },
@@ -41586,20 +41586,20 @@
         {
           "id": "l70",
           "start": 460.28,
-          "end": 461.56,
+          "end": 463.36,
           "text": "He tells me it has saved him over $500 thus far.",
           "translation": "他说到目前为止已经省了500多美元。"
         },
         {
           "id": "l71",
-          "start": 463.17,
-          "end": 465.86,
+          "start": 465.05,
+          "end": 465.94,
           "text": "Does that sound about right to you?",
           "translation": "这个数字靠谱吗？"
         },
         {
           "id": "l72",
-          "start": 465.86,
+          "start": 465.94,
           "end": 474.99,
           "text": "Well, I'm not familiar with your neighbor or his particular setup, but that amount is definitely possible.",
           "translation": "嗯，我不了解您邻居的情况，也不清楚他家的具体配置，但省这么多是完全可能的。"
@@ -41830,13 +41830,13 @@
         {
           "id": "l106",
           "start": 666.3,
-          "end": 668.5,
+          "end": 668.15,
           "text": "Yeah, that sounds pretty good.",
           "translation": "嗯，听起来挺不错的。"
         },
         {
           "id": "l107",
-          "start": 668.5,
+          "start": 668.15,
           "end": 672.85,
           "text": "I'm going with my family, so it would be nice to have everything taken care of.",
           "translation": "我是和家人一起去，所以最好什么都安排好。"
@@ -41892,8 +41892,8 @@
         },
         {
           "id": "l115",
-          "start": 701.12,
-          "end": 708.96,
+          "start": 703.2,
+          "end": 705.46,
           "text": "You could visit Canberra, for example, or the Blue Mountains, or you could go for a drive down the Great Ocean Road.",
           "translation": "比如说，您可以去堪培拉，或者蓝山，也可以开车走一趟大洋路。"
         },
@@ -42091,7 +42091,7 @@
         },
         {
           "id": "l144",
-          "start": 908.81,
+          "start": 910.85,
           "end": 913.5,
           "text": "The regulation will come into full effect next month.",
           "translation": "这项规定将于下月全面生效。"
@@ -42174,7 +42174,7 @@
         },
         {
           "id": "l156",
-          "start": 1041.83,
+          "start": 1043.8,
           "end": 1047.26,
           "text": "That brings the number seen in nearby waters alone this year to three.",
           "translation": "这使得仅在附近海域今年被发现的数量就达到了3头。"
@@ -42224,13 +42224,13 @@
         {
           "id": "l163",
           "start": 1092.15,
-          "end": 1096.66,
+          "end": 1095.45,
           "text": "The northeast coast is a critically important source of food.",
           "translation": "东北海岸是极为重要的食物来源。"
         },
         {
           "id": "l164",
-          "start": 1096.66,
+          "start": 1095.45,
           "end": 1099.56,
           "text": "The animals often feed close to shore.",
           "translation": "这些动物常常在近岸觅食。"
@@ -42341,8 +42341,8 @@
         },
         {
           "id": "l180",
-          "start": 1244.63,
-          "end": 1249.24,
+          "start": 1246.6,
+          "end": 1247.88,
           "text": "This can cause physical pain and produce gas in the stomach.",
           "translation": "这会引起身体疼痛，并在胃里产生气体。"
         },
@@ -42786,7 +42786,7 @@
         },
         {
           "id": "l9",
-          "start": 51.73,
+          "start": 53.95,
           "end": 64.56,
           "text": "Rather than shutting down the habit of drawing in his school's workbook, Joe's parents decided To encourage his creativity, by sending their son to an after-school art class.",
           "translation": "乔的父母没有制止他在学校练习本上画画的习惯，而是决定送儿子去上课外美术班，鼓励他的创造力。"
@@ -42877,15 +42877,15 @@
         },
         {
           "id": "l22",
-          "start": 164.59,
+          "start": 166.65,
           "end": 174.99,
           "text": "After combing through the security video outside a Goebel's shop, Kirsten has now posted an image of a man suspected of stealing the dog.",
           "translation": "柯斯滕仔细查看了Goebel's商店外面的监控录像后，现已公布了一名涉嫌偷狗男子的照片。"
         },
         {
           "id": "l23",
-          "start": 174.99,
-          "end": 179.82,
+          "start": 176.8,
+          "end": 178.18,
           "text": "The image appears to show a man carrying the dog in his arms.",
           "translation": "照片显示一名男子把狗抱在怀里。"
         },
@@ -42975,7 +42975,7 @@
         },
         {
           "id": "l36",
-          "start": 293.56,
+          "start": 295.75,
           "end": 304.85,
           "text": "He wants to provide a bridge for people to connect, in an area that has been divided by class and wealth, by providing affordable breakfasts.",
           "translation": "他希望通过提供价格实惠的早餐，在这个被阶级和财富割裂的地区，为人们架起一座沟通的桥梁。"
@@ -42996,8 +42996,8 @@
         },
         {
           "id": "l39",
-          "start": 319.72,
-          "end": 324.99,
+          "start": 321.9,
+          "end": 323.28,
           "text": "It doesn't take donations, and doesn't want to be seen as a charity.",
           "translation": "它不接受捐款，也不希望被视为慈善机构。"
         },
@@ -43125,8 +43125,8 @@
         },
         {
           "id": "l58",
-          "start": 453.54,
-          "end": 458.05,
+          "start": 453.3,
+          "end": 457.5,
           "text": "Then we'll have the afternoon to prepare food and drink and stuff like that.",
           "translation": "这样我们下午就有时间准备食物、饮料之类的东西。"
         },
@@ -43605,13 +43605,13 @@
         {
           "id": "l128",
           "start": 862.04,
-          "end": 867.57,
+          "end": 866.35,
           "text": "In fact, they're one of the most damaging invasive species on the continent.",
           "translation": "事实上，它们是这片大陆上危害最大的入侵物种之一。"
         },
         {
           "id": "l129",
-          "start": 867.57,
+          "start": 866.35,
           "end": 872.07,
           "text": "Wild pigs cause millions of dollars in crop damage yearly.",
           "translation": "野猪每年造成数百万美元的农作物损失。"
@@ -43633,20 +43633,20 @@
         {
           "id": "l132",
           "start": 886.27,
-          "end": 897.66,
+          "end": 896.1,
           "text": "In addition to either eating other animals or their food supply, wild pigs damage native habitats by rooting up grasses and rubbing on trees.",
           "translation": "野猪除了吃掉其他动物或它们的食物，还会拱食草类、蹭磨树木，破坏本土栖息地。"
         },
         {
           "id": "l133",
-          "start": 897.66,
-          "end": 905.21,
+          "start": 896.1,
+          "end": 903.5,
           "text": "Their activities may also create opportunities for invasive plants to colonize these areas.",
           "translation": "它们的活动还可能为入侵植物在这些地区扎根创造机会。"
         },
         {
           "id": "l134",
-          "start": 905.21,
+          "start": 903.5,
           "end": 910.55,
           "text": "Wild pigs will eat almost anything containing calories.",
           "translation": "野猪几乎什么都吃，只要含有热量。"
@@ -43661,20 +43661,20 @@
         {
           "id": "l136",
           "start": 915.4,
-          "end": 925.27,
+          "end": 924.05,
           "text": "They can also harm other wild species through indirect competition, rather than eating them or shrinking their food supply.",
           "translation": "它们还会通过间接竞争伤害其他野生动物，而不是靠吃掉它们或减少它们的食物。"
         },
         {
           "id": "l137",
-          "start": 925.27,
-          "end": 935.04,
+          "start": 924.05,
+          "end": 933.55,
           "text": "On one particular United States island, wild pigs themselves became an attractive food source for a species of mainland eagle.",
           "translation": "在美国的一个特定岛屿上，野猪本身成了一种大陆猛禽的诱人食物来源。"
         },
         {
           "id": "l138",
-          "start": 935.04,
+          "start": 933.55,
           "end": 941.17,
           "text": "The eagles began breeding on the island and also feeding on a species of native fox.",
           "translation": "这些鹰开始在岛上繁殖，也捕食一种本土狐狸。"
@@ -43682,13 +43682,13 @@
         {
           "id": "l139",
           "start": 941.17,
-          "end": 945.09,
+          "end": 945.05,
           "text": "The foxes were almost wiped out completely.",
           "translation": "这些狐狸几乎被赶尽杀绝。"
         },
         {
           "id": "l140",
-          "start": 946.4,
+          "start": 945.05,
           "end": 950.11,
           "text": "Questions 16 to 18 are based on the passage you have just heard.",
           "translation": "第16至18题基于你刚听到的这段话。"
@@ -43793,13 +43793,13 @@
         {
           "id": "l155",
           "start": 1088.82,
-          "end": 1092.88,
+          "end": 1091.9,
           "text": "It is not clear how much they would charge for a cup.",
           "translation": "目前尚不清楚一杯咖啡会卖多少钱。"
         },
         {
           "id": "l156",
-          "start": 1092.88,
+          "start": 1091.9,
           "end": 1101.21,
           "text": "Surprisingly, the space roaster concept, should it go ahead, will not be the first attempt to take coffee into space.",
           "translation": "令人意外的是，即便这个太空烘焙方案真的付诸实施，它也不是第一次把咖啡带上太空的尝试。"
@@ -43876,8 +43876,8 @@
         },
         {
           "id": "l167",
-          "start": 1208.08,
-          "end": 1213.41,
+          "start": 1210.55,
+          "end": 1211.83,
           "text": "Lucky for them, Tukotna is famous for its delicious fruit pies.",
           "translation": "他们运气不错，图科特纳以美味的水果派闻名。"
         },
@@ -44592,7 +44592,7 @@
         },
         {
           "id": "l42",
-          "start": 352.76,
+          "start": 354.85,
           "end": 358.39,
           "text": "Still, cats in the workplace have been a tremendous success for the company.",
           "translation": "尽管如此，办公室养猫在这家公司还是大获成功。"
@@ -44937,13 +44937,13 @@
         {
           "id": "l92",
           "start": 671.11,
-          "end": 673.04,
+          "end": 671.9,
           "text": "But there must be some problems.",
           "translation": "但肯定也会有些问题吧。"
         },
         {
           "id": "l93",
-          "start": 673.04,
+          "start": 672.65,
           "end": 679.05,
           "text": "I mean, how do you know that you won't get bad fruit, or that the eggs won't be broken?",
           "translation": "我是说，你怎么保证不会买到不好的水果，或者鸡蛋不会碎呢？"
@@ -45290,7 +45290,7 @@
         },
         {
           "id": "l143",
-          "start": 1040.23,
+          "start": 1042.1,
           "end": 1045.74,
           "text": "Much of that time is devoted to text messages and social media.",
           "translation": "这些时间很多都用在了短信和社交媒体上。"
@@ -46027,13 +46027,13 @@
         {
           "id": "l24",
           "start": 181.47,
-          "end": 184.73,
+          "end": 182.55,
           "text": "Zoo officials say the baby was born on Monday.",
           "translation": "动物园工作人员说，小象是在周一出生的。"
         },
         {
           "id": "l25",
-          "start": 184.73,
+          "start": 183.87,
           "end": 189.05,
           "text": "It is a female, and she weighs nearly 130 kilograms.",
           "translation": "是一头雌性小象，体重将近130公斤。"
@@ -46199,13 +46199,13 @@
         {
           "id": "l49",
           "start": 327.08,
-          "end": 331.3,
+          "end": 329.95,
           "text": "Three days later, the happy wife called to claim the ring.",
           "translation": "3天后，那位高兴的妻子打来电话认领戒指。"
         },
         {
           "id": "l50",
-          "start": 331.3,
+          "start": 329.95,
           "end": 337.05,
           "text": "She even texted pictures of her and her husband eating there in 2017 as proof.",
           "translation": "她甚至还发了她和丈夫2017年在那里用餐的照片作为证明。"
@@ -46545,7 +46545,7 @@
         },
         {
           "id": "l99",
-          "start": 675.52,
+          "start": 677.65,
           "end": 686.1,
           "text": "The second is guaranteed to look great for about ten years, whereas the cheaper one will start to dull after around six or seven years.",
           "translation": "贵的那种保证大约10年都好看，便宜的那种大概六七年就会变暗淡。"
@@ -47055,13 +47055,13 @@
         {
           "id": "l173",
           "start": 1234.74,
-          "end": 1240.72,
+          "end": 1239.45,
           "text": "They claim that thousands of children are still being penalised for being left-handed.",
           "translation": "他们称，成千上万的孩子仍因是左撇子而受到不利对待。"
         },
         {
           "id": "l174",
-          "start": 1240.72,
+          "start": 1239.45,
           "end": 1247.69,
           "text": "This is due to a lack of action from ministers who have failed to take any meaningful action for years.",
           "translation": "这是因为部长们多年来没有采取任何有意义的行动。"
@@ -47535,13 +47535,13 @@
         {
           "id": "l9",
           "start": 52.7,
-          "end": 61.91,
+          "end": 60.65,
           "text": "The unnamed woman from the province of Shandong started to have coughing problems when she was seven or eight years old.",
           "translation": "这名来自山东省的女子（未透露姓名）在七八岁时开始出现咳嗽问题。"
         },
         {
           "id": "l10",
-          "start": 61.91,
+          "start": 60.65,
           "end": 65.39,
           "text": "For 14 years, she made numerous hospital visits.",
           "translation": "14年来，她多次去医院就诊。"
@@ -47681,14 +47681,14 @@
         },
         {
           "id": "l30",
-          "start": 201.34,
+          "start": 202.8,
           "end": 205.97,
           "text": "They even recorded her with cameras installed to monitor deer activity.",
           "translation": "他们甚至用安装来监测鹿群活动的摄像头拍到过她。"
         },
         {
           "id": "l31",
-          "start": 205.97,
+          "start": 207.9,
           "end": 214.18,
           "text": "But while they knew Prickles was alive, they couldn't find her, and never expected her to return by herself.",
           "translation": "但虽然知道\"小刺\"还活着，他们却找不到她，也从没想过她会自己回来。"
@@ -47875,20 +47875,20 @@
         {
           "id": "l58",
           "start": 442,
-          "end": 444.64,
+          "end": 442.89,
           "text": "Hello, you're through to customer service.",
           "translation": "您好，这里是客服中心。"
         },
         {
           "id": "l59",
-          "start": 444.64,
-          "end": 446.22,
+          "start": 443.89,
+          "end": 445.6,
           "text": "This is Michael speaking.",
           "translation": "我是迈克尔。"
         },
         {
           "id": "l60",
-          "start": 446.22,
+          "start": 445.6,
           "end": 454.85,
           "text": "Before we continue, I just want to make you aware that this call is being recorded and may be used in the future for training purposes.",
           "translation": "在我们继续之前，我想提醒您，本次通话正在录音，今后可能用于培训目的。"
@@ -47924,13 +47924,13 @@
         {
           "id": "l65",
           "start": 469.25,
-          "end": 480.32,
+          "end": 479.8,
           "text": "It says on your website that your company will pay back the money within three working days of you receiving the returned item, but it's been five working days.",
           "translation": "你们网站上说收到退货后3个工作日内退款，但现在已经5个工作日了。"
         },
         {
           "id": "l66",
-          "start": 480.55,
+          "start": 480.35,
           "end": 482.45,
           "text": "And I haven't received anything.",
           "translation": "我还没收到任何退款。"
@@ -48012,13 +48012,13 @@
         {
           "id": "l78",
           "start": 519.95,
-          "end": 524.82,
+          "end": 524.8,
           "text": "Well, you'll need to update your card details directly on our website.",
           "translation": "那您需要直接在我们网站上更新卡的信息。"
         },
         {
           "id": "l79",
-          "start": 524.82,
+          "start": 524.8,
           "end": 534.4,
           "text": "Just make sure you're logged in, and then under the description of your personal information, you should see an option for updating payment methods.",
           "translation": "确保您已登录，然后在个人信息说明下面，应该能看到更新付款方式的选项。"
@@ -48263,7 +48263,7 @@
         },
         {
           "id": "l115",
-          "start": 694.71,
+          "start": 695.1,
           "end": 696.78,
           "text": "So, would you consider Mexican?",
           "translation": "那墨西哥菜呢，你考虑吗？"
@@ -48524,13 +48524,13 @@
         {
           "id": "l153",
           "start": 908.1,
-          "end": 914.41,
+          "end": 913.1,
           "text": "They were also more likely to have an ongoing medical condition and be overweight.",
           "translation": "他们也更有可能患有长期的健康问题并且体重超标。"
         },
         {
           "id": "l154",
-          "start": 914.41,
+          "start": 913.1,
           "end": 921.79,
           "text": "The research also found that mentally well-adjusted owners had calmer, happier, and healthier cats.",
           "translation": "研究还发现，心理状态良好的主人，养的猫更平静、更快乐、也更健康。"
@@ -48809,7 +48809,7 @@
         },
         {
           "id": "l194",
-          "start": 1291.38,
+          "start": 1293.3,
           "end": 1298.62,
           "text": "The interior of the house, including fittings and furniture, was also designed by the same person.",
           "translation": "房子的内部，包括配件和家具，也是由同一个人设计的。"
@@ -48830,7 +48830,7 @@
         },
         {
           "id": "l197",
-          "start": 1310.24,
+          "start": 1312.05,
           "end": 1320.75,
           "text": "Fortunately, all the blueprints for both the building and its contents have been preserved, so we've been able to replace badly damaged damage furniture.",
           "translation": "幸运的是，建筑本身及其内部物品的所有图纸都保存了下来，所以我们能够替换严重受损的家具。"
@@ -49254,7 +49254,7 @@
         },
         {
           "id": "l11",
-          "start": 52.5,
+          "start": 54.65,
           "end": 56.35,
           "text": "Participants worked in the health profession.",
           "translation": "参与者都从事医疗健康行业。"
@@ -50131,7 +50131,7 @@
         },
         {
           "id": "l138",
-          "start": 1037.07,
+          "start": 1038.9,
           "end": 1047.52,
           "text": "This means that they strive to implement the golden rule whenever possible, as long as it doesn't clash with a more important concept.",
           "translation": "也就是说，只要不与更重要的理念冲突，他们就尽量奉行黄金法则。"
@@ -51783,13 +51783,13 @@
         {
           "id": "l151",
           "start": 1011.63,
-          "end": 1014.17,
+          "end": 1012.32,
           "text": "There are only two seats available.",
           "translation": "只剩下两个座位。"
         },
         {
           "id": "l152",
-          "start": 1014.17,
+          "start": 1012.9,
           "end": 1016.71,
           "text": "One is next to a small, elderly woman.",
           "translation": "一个旁边是一位身材瘦小的老太太。"
@@ -52617,7 +52617,7 @@
         },
         {
           "id": "l27",
-          "start": 217.75,
+          "start": 219.6,
           "end": 229.1,
           "text": "The baby's mother commented that they had already prepared room for five babies at home, so they will have to rearrange things for their happy surprise.",
           "translation": "宝宝的妈妈说，他们已经在家里为5个宝宝准备好了房间，所以这次惊喜让他们得重新安排一下。"
@@ -53089,8 +53089,8 @@
         },
         {
           "id": "l96",
-          "start": 668.2,
-          "end": 671.08,
+          "start": 668.8,
+          "end": 669.98,
           "text": "Can we discuss the return trip to the head office?",
           "translation": "我们能聊聊回总部的行程吗？"
         },
@@ -53149,8 +53149,8 @@
         },
         {
           "id": "l105",
-          "start": 698.49,
-          "end": 701.22,
+          "start": 699.5,
+          "end": 700.39,
           "text": "The nearest metro station is Earl's Court.",
           "translation": "最近的地铁站是伯爵宫。"
         },
@@ -53169,8 +53169,8 @@
         },
         {
           "id": "l108",
-          "start": 707.6,
-          "end": 711.5,
+          "start": 709.55,
+          "end": 710.63,
           "text": "I've never been to the head office, you know.",
           "translation": "你知道的，我从来没去过总部。"
         },
@@ -53343,13 +53343,13 @@
         {
           "id": "l133",
           "start": 867.28,
-          "end": 878.41,
+          "end": 877,
           "text": "The researchers behind the study state that many parts of the world have made good economic progress, but women's rights are often overlooked.",
           "translation": "该研究的研究人员表示，世界许多地方经济取得了良好进展，但妇女权利却常常被忽视。"
         },
         {
           "id": "l134",
-          "start": 878.41,
+          "start": 877,
           "end": 883.95,
           "text": "Thus, they wanted to determine if there was a link between protection of women's rights and public health.",
           "translation": "因此，他们想确定保护妇女权利与公共健康之间是否存在联系。"
@@ -54157,13 +54157,13 @@
         {
           "id": "l10",
           "start": 53.12,
-          "end": 60.19,
+          "end": 58.9,
           "text": "Over 4,000 pipers and drummers are expected to descend on the city for the annual event.",
           "translation": "预计将有4000多名风笛手和鼓手涌入这座城市参加这场年度盛事。"
         },
         {
           "id": "l11",
-          "start": 60.19,
+          "start": 58.9,
           "end": 67.35,
           "text": "It will take place at the St James' Playing Fields in Glasgow on Saturday 18 May from 10 a.m until 7 p.m.",
           "translation": "比赛将于5月18日周六上午10点至晚上7点在格拉斯哥圣詹姆斯球场举行。"
@@ -54296,14 +54296,14 @@
         },
         {
           "id": "l30",
-          "start": 211.45,
+          "start": 213.3,
           "end": 220.87,
           "text": "That means that not only is the ice melting very fast, it has more time to melt this summer than it would in a normal climate system.",
           "translation": "这意味着不仅冰层融化速度极快，而且今年夏天的融化时间比正常气候系统下更长。"
         },
         {
           "id": "l31",
-          "start": 220.87,
+          "start": 222.7,
           "end": 229.7,
           "text": "Longer melt seasons like this one seem to lead to much greater contributions to sea level rise than in previous decades.",
           "translation": "像这样更长的融化季节，似乎比过去几十年导致了更多海平面上升。"
@@ -54359,7 +54359,7 @@
         },
         {
           "id": "l39",
-          "start": 307.04,
+          "start": 308.95,
           "end": 314.35,
           "text": "The bundles are usually left in plain sight and have been scattered across the small coastal village.",
           "translation": "这些现金捆通常放在显眼处，散落在这个沿海小村庄各处。"
@@ -54491,13 +54491,13 @@
         {
           "id": "l58",
           "start": 459.41,
-          "end": 461.52,
+          "end": 460.2,
           "text": "I often feel strange on my birthday.",
           "translation": "我过生日时经常感觉怪怪的。"
         },
         {
           "id": "l59",
-          "start": 461.52,
+          "start": 461.05,
           "end": 464.62,
           "text": "It's like my brain decides to have a crisis.",
           "translation": "就像我的大脑决定要闹一场危机。"
@@ -54691,13 +54691,13 @@
         {
           "id": "l87",
           "start": 667.15,
-          "end": 668.99,
+          "end": 667.94,
           "text": "Why didn't you take the bus?",
           "translation": "你干嘛不坐公交？"
         },
         {
           "id": "l88",
-          "start": 668.99,
+          "start": 668.35,
           "end": 672.45,
           "text": "The bus takes twice as long, and it's just as crowded.",
           "translation": "公交要多花一倍时间，而且一样挤。"
@@ -54733,13 +54733,13 @@
         {
           "id": "l93",
           "start": 688.74,
-          "end": 692.6,
+          "end": 691.3,
           "text": "Have you thought about getting an electric motorbike?",
           "translation": "你有没有想过买辆电动摩托车？"
         },
         {
           "id": "l94",
-          "start": 692.6,
+          "start": 691.3,
           "end": 700.35,
           "text": "I considered that for maybe a minute, but honestly, I've just seen too many horrible accidents involving those dangerous monsters.",
           "translation": "我想了大概一分钟吧，但说实话，我见过太多那些危险家伙出的严重事故了。"
@@ -54951,8 +54951,8 @@
         },
         {
           "id": "l125",
-          "start": 872.87,
-          "end": 876.53,
+          "start": 874.9,
+          "end": 875.69,
           "text": "Communicating in meetings was very difficult.",
           "translation": "在会议上交流非常困难。"
         },
@@ -55126,27 +55126,27 @@
         {
           "id": "l150",
           "start": 1073.96,
-          "end": 1080.08,
+          "end": 1075.92,
           "text": "If it gives you joy every time you open the cupboard, you can start to take it further.",
           "translation": "如果每次打开橱柜都让你感到愉悦，你就可以把颜色用得更大胆一些。"
         },
         {
           "id": "l151",
-          "start": 1080.08,
-          "end": 1086.89,
+          "start": 1078.8,
+          "end": 1085.1,
           "text": "One can also paint the Wooden frameworks the same color as the walls, helping the rooms look bigger.",
           "translation": "也可以把木质框架刷成和墙面一样的颜色，让房间显得更大。"
         },
         {
           "id": "l152",
-          "start": 1086.89,
-          "end": 1099.92,
+          "start": 1085.1,
+          "end": 1098.55,
           "text": "In the kitchen, painting the overhead cupboards and the walls in the same color can make it feel more spacious, while painting the kitchen counters a bold color can make everything feel more open and lighter.",
           "translation": "在厨房里，把吊柜和墙刷成同一种颜色会显得更宽敞；把厨房台面刷成醒目的颜色，则会让一切显得更开阔、更明亮。"
         },
         {
           "id": "l153",
-          "start": 1099.92,
+          "start": 1098.55,
           "end": 1106.95,
           "text": "Additionally, a painted ceiling is a magical thing without being too obvious, and can affect how the space feels as well.",
           "translation": "此外，刷了颜色的天花板效果很奇妙，又不会太张扬，也会影响空间的整体感受。"
@@ -55683,7 +55683,7 @@
         },
         {
           "id": "l11",
-          "start": 57.09,
+          "start": 58.9,
           "end": 61.35,
           "text": "Europe has abolished Many internal borders.",
           "translation": "欧洲已经废除了许多内部边界。"
@@ -55829,13 +55829,13 @@
         {
           "id": "l32",
           "start": 238.95,
-          "end": 240.23,
+          "end": 239.7,
           "text": "Questions three and four.",
           "translation": "第3题和第4题。"
         },
         {
           "id": "l33",
-          "start": 240.23,
+          "start": 239.7,
           "end": 243.03,
           "text": "Four are based on the news report you have just heard.",
           "translation": "这4道题基于你刚听到的新闻报道。"
@@ -56169,8 +56169,8 @@
         },
         {
           "id": "l82",
-          "start": 540.85,
-          "end": 546.05,
+          "start": 542.75,
+          "end": 544.42,
           "text": "Then you can walk down through the train to your carriage and take your seats.",
           "translation": "然后你就可以穿过火车走到你的车厢，坐到座位上。"
         },
@@ -56184,13 +56184,13 @@
         {
           "id": "l84",
           "start": 552.44,
-          "end": 554.09,
+          "end": 553.13,
           "text": "Thank you for the information.",
           "translation": "谢谢你提供这些信息。"
         },
         {
           "id": "l85",
-          "start": 554.09,
+          "start": 553.6,
           "end": 556.23,
           "text": "That's very helpful.",
           "translation": "非常有帮助。"
@@ -56367,14 +56367,14 @@
         {
           "id": "l111",
           "start": 707.39,
-          "end": 708.96,
+          "end": 707.98,
           "text": "Sure, there's enough demand.",
           "translation": "当然有，需求很充足。"
         },
         {
           "id": "l112",
-          "start": 708.96,
-          "end": 710.73,
+          "start": 708.4,
+          "end": 712.88,
           "text": "The fact that we have been open and in business for all these years proves it.",
           "translation": "我们这么多年一直开门营业，就证明了这一点。"
         },
@@ -56850,14 +56850,14 @@
         },
         {
           "id": "l181",
-          "start": 1247.75,
+          "start": 1249.9,
           "end": 1256.44,
           "text": "In the first study, more than 600 high school students were surveyed about their tendency to take risks and feel confident.",
           "translation": "在第一项研究中，600多名高中生接受了关于冒险倾向和自信程度的调查。"
         },
         {
           "id": "l182",
-          "start": 1256.44,
+          "start": 1258.45,
           "end": 1268.15,
           "text": "In the second study, the Those born on both sides of the cutoff date for starting school were asked to complete online math questions and rate their performance.",
           "translation": "在第二项研究中，出生在入学截止日期前后的人被要求完成在线数学题，并给自己的表现打分。"
@@ -57392,14 +57392,14 @@
         },
         {
           "id": "l25",
-          "start": 161.06,
-          "end": 166.23,
+          "start": 163.65,
+          "end": 166.73,
           "text": "The paid volunteers will work in an environment similar to Mars.",
           "translation": "这些有报酬的志愿者将在类似火星的环境中工作。"
         },
         {
           "id": "l26",
-          "start": 166.23,
+          "start": 168.1,
           "end": 172.7,
           "text": "They will have limited communications with family, restricted food and resources.",
           "translation": "他们与家人的联系会受到限制，食物和资源也受限。"
@@ -57801,7 +57801,7 @@
         },
         {
           "id": "l84",
-          "start": 536.74,
+          "start": 539,
           "end": 550.7,
           "text": "Well, the research Which I've read shows that sleep is probably even more important than we thought, and that not having enough sleep can contribute to serious health problems like obesity and heart disease.",
           "translation": "嗯，我读到的研究显示，睡眠可能比我们想象的还重要，睡眠不足会引发肥胖、心脏病等严重健康问题。"
@@ -58133,13 +58133,13 @@
         {
           "id": "l132",
           "start": 948.79,
-          "end": 960.02,
+          "end": 958.3,
           "text": "The KaiOS devices offer an alternative to the more expensive models that remain out of reach of many Africans and contribute to the digital divide.",
           "translation": "KaiOS设备为更昂贵的机型提供了替代选择，那些机型许多非洲人仍然买不起，加剧了数字鸿沟。"
         },
         {
           "id": "l133",
-          "start": 960.02,
+          "start": 958.3,
           "end": 963.64,
           "text": "The body of KaiOS phones is as basic as it gets.",
           "translation": "KaiOS手机的外观简朴到不能再简朴。"
@@ -58264,21 +58264,21 @@
         },
         {
           "id": "l151",
-          "start": 1115.48,
+          "start": 1117.5,
           "end": 1121.77,
           "text": "Smaller manufacturers may also be forced to use new plastic to reduce costs.",
           "translation": "较小的制造商也可能被迫改用新塑料来降低成本。"
         },
         {
           "id": "l152",
-          "start": 1121.77,
+          "start": 1123.6,
           "end": 1129.2,
           "text": "Makers of clear plastic bottles may also opt for new fossil fuel-based plastic to save money.",
           "translation": "透明塑料瓶的制造商也可能为了省钱而选用新的化石燃料基塑料。"
         },
         {
           "id": "l153",
-          "start": 1129.2,
+          "start": 1131.65,
           "end": 1135.73,
           "text": "Plastic packaging makers are being pressured to use more recycled plastic.",
           "translation": "塑料包装制造商正面临压力，要求使用更多再生塑料。"
@@ -58299,7 +58299,7 @@
         },
         {
           "id": "l156",
-          "start": 1150.69,
+          "start": 1152.8,
           "end": 1158.45,
           "text": "Additionally, the government is planning to increase the quantity of recycled plastic in the market.",
           "translation": "此外，政府还计划增加市场上再生塑料的供应量。"
@@ -59000,13 +59000,13 @@
         {
           "id": "l29",
           "start": 169.2,
-          "end": 180.65,
+          "end": 179.3,
           "text": "The following weeks, she found other outfits in her dressing-up box and dressed up as different characters and famous people, sharing her exploits on social media.",
           "translation": "接下来的几个星期，她从化妆箱里找出其他服装，打扮成不同角色和名人，并把自己的趣事分享到社交媒体上。"
         },
         {
           "id": "l30",
-          "start": 180.65,
+          "start": 179.3,
           "end": 190.04,
           "text": "Before long, People started offering up their own fancy dresses for her to wear, and, before she knew it, she had done twenty weeks.",
           "translation": "不久，人们开始拿出自己的华丽礼服给她穿，不知不觉间，她已经坚持了20周。"
@@ -59388,8 +59388,8 @@
         },
         {
           "id": "l86",
-          "start": 518.88,
-          "end": 525.9,
+          "start": 520.8,
+          "end": 526.12,
           "text": "They're able to hear what the other person is saying and express their own feelings and thoughts effectively.",
           "translation": "他们能听进对方的话，并且有效地表达自己的感受和想法。"
         },
@@ -59638,13 +59638,13 @@
         {
           "id": "l122",
           "start": 718.87,
-          "end": 720.19,
+          "end": 719.8,
           "text": "Five hundred dollars?",
           "translation": "500美元？"
         },
         {
           "id": "l123",
-          "start": 720.19,
+          "start": 719.8,
           "end": 721.8,
           "text": "Boy, that's expensive.",
           "translation": "天哪，太贵了。"
@@ -62250,22 +62250,22 @@
         },
         {
           "id": "l11",
-          "start": 50.56,
+          "start": 52.45,
           "end": 56.49,
           "text": "He expected to find a driver who was either very drunk or having a medical emergency.",
           "translation": "他原以为会发现一个要么喝得烂醉、要么突发疾病的司机。"
         },
         {
           "id": "l12",
-          "start": 56.49,
-          "end": 62.63,
+          "start": 58.45,
+          "end": 62.93,
           "text": "Instead, the officer discovered discovered a five-year-old boy sat on the edge of the driver's seat.",
           "translation": "结果，警察发现一个5岁的小男孩坐在驾驶座的边缘。"
         },
         {
           "id": "l13",
-          "start": 62.63,
-          "end": 70.09,
+          "start": 64.85,
+          "end": 67.11,
           "text": "His feet could barely reach the brake, and his head was only just high enough to see out of the windows.",
           "translation": "他的脚勉强够得到刹车，头也只是刚好高到能从车窗看出去。"
         },
@@ -62969,19 +62969,19 @@
         {
           "id": "l116",
           "start": 646.85,
-          "end": 654.09,
+          "end": 649.3,
           "text": "They are right next to each other on the ground floor, since you mentioned in your message that they have trouble with stairs.",
           "translation": "两个房间就在一楼，紧挨着，因为您在留言里说过他们上下楼梯不方便。"
         },
         {
           "id": "l117",
-          "start": 654.09,
-          "end": 655.1,
+          "start": 652.95,
+          "end": 654.15,
           "text": "That's wonderful."
         },
         {
           "id": "l118",
-          "start": 655.1,
+          "start": 654.15,
           "end": 660.64,
           "text": "My father-in-law has had terrible problems getting up and down stairs since his knee operation last August.",
           "translation": "我岳父去年8月做了膝盖手术之后，上下楼梯一直很困难。"
@@ -63183,8 +63183,8 @@
         },
         {
           "id": "l147",
-          "start": 865.94,
-          "end": 868.75,
+          "start": 867.85,
+          "end": 868.54,
           "text": "Research indicates that it does.",
           "translation": "研究表明，确实会有影响。"
         },
@@ -63226,27 +63226,27 @@
         {
           "id": "l153",
           "start": 915.92,
-          "end": 924.72,
+          "end": 923.5,
           "text": "But they could also indicate that they, or their agent, would strategically express anger toward the opponent to gain advantage.",
           "translation": "但他们也可以表示，自己或其代理会策略性地对对手表现出愤怒，以争取优势。"
         },
         {
           "id": "l154",
-          "start": 924.72,
-          "end": 932.78,
+          "start": 923.5,
+          "end": 931.4,
           "text": "Or they could opt to convey dissatisfaction with the encounter so that the other party would think they were losing interest.",
           "translation": "或者他们可以选择表达对这次接触的不满，让对方以为他们失去了兴趣。"
         },
         {
           "id": "l155",
-          "start": 932.78,
-          "end": 936.6,
+          "start": 931.4,
+          "end": 935.3,
           "text": "These are both examples of deceptive strategies.",
           "translation": "这两个都是欺骗策略的例子。"
         },
         {
           "id": "l156",
-          "start": 936.6,
+          "start": 935.3,
           "end": 943.55,
           "text": "Participants were more willing to employ deceptive strategies when assigned an AI agent to negotiate on their behalf.",
           "translation": "当被指派AI代理代为谈判时，参与者更愿意使用欺骗策略。"
@@ -63407,7 +63407,7 @@
         },
         {
           "id": "l179",
-          "start": 1118.3,
+          "start": 1121.15,
           "end": 1126.32,
           "text": "This change in confidence could lead to a gender balance in home cooking.",
           "translation": "这种信心的变化可能会让家庭烹饪的性别比例趋于平衡。"
@@ -64205,7 +64205,7 @@
         },
         {
           "id": "l41",
-          "start": 305.36,
+          "start": 307.3,
           "end": 311.29,
           "text": "Tests show that the clone and her mother are almost identical genetically.",
           "translation": "检测显示，克隆犬与其母亲的基因几乎完全相同。"
@@ -64385,13 +64385,13 @@
         {
           "id": "l67",
           "start": 514.16,
-          "end": 516.45,
+          "end": 515.14,
           "text": "I think it's better to read the book first.",
           "translation": "我觉得最好先看书。"
         },
         {
           "id": "l68",
-          "start": 516.45,
+          "start": 516.1,
           "end": 524.85,
           "text": "It's rare for the show or movie to be better than the book, and then you just end up ruining the book for yourself if the show isn't very good.",
           "translation": "剧或电影很少比原著好，如果剧拍得不好，你就会毁了自己对这本书的好印象。"
@@ -64413,13 +64413,13 @@
         {
           "id": "l71",
           "start": 535.7,
-          "end": 537.11,
+          "end": 536.75,
           "text": "I can't remember exactly.",
           "translation": "我记不太清了。"
         },
         {
           "id": "l72",
-          "start": 537.11,
+          "start": 536.75,
           "end": 540.1,
           "text": "It's pretty soon, and it's going to be quite long.",
           "translation": "快了，而且会很长。"
@@ -64502,13 +64502,13 @@
         {
           "id": "l84",
           "start": 648.25,
-          "end": 649.47,
+          "end": 648.74,
           "text": "Hello, good afternoon.",
           "translation": "你好，下午好。"
         },
         {
           "id": "l85",
-          "start": 649.47,
+          "start": 649,
           "end": 650.9,
           "text": "I have an inquiry to make.",
           "translation": "我想咨询一下。"
@@ -65070,13 +65070,13 @@
         {
           "id": "l166",
           "start": 1306.26,
-          "end": 1313.59,
+          "end": 1312.8,
           "text": "Whether that's likely or even possible anytime soon is anyone's guess.",
           "translation": "至于这在近期是否有可能实现，谁也说不准。"
         },
         {
           "id": "l167",
-          "start": 1315.2,
+          "start": 1312.8,
           "end": 1316.67,
           "text": "Questions 22 to 25 are based on the passage you have just heard.",
           "translation": "问题22至25基于你刚听到的短文。"
@@ -65645,14 +65645,14 @@
         },
         {
           "id": "l34",
-          "start": 283,
+          "start": 284.8,
           "end": 292.35,
           "text": "As the night goes on, groups of riders are often seen traveling in just about every direction in the streets and on pedestrian paths.",
           "translation": "随着夜色渐深，经常能看到成群的骑行者在街道和人行道上朝各个方向穿行。"
         },
         {
           "id": "l35",
-          "start": 292.35,
+          "start": 294.4,
           "end": 297.35,
           "text": "That is increasing the probability of dangerous accidents.",
           "translation": "这增加了发生危险事故的可能性。"
@@ -66223,13 +66223,13 @@
         {
           "id": "l118",
           "start": 898.65,
-          "end": 900.48,
+          "end": 899.89,
           "text": "So I'm launching a campaign.",
           "translation": "所以我要发起一个行动。"
         },
         {
           "id": "l119",
-          "start": 900.64,
+          "start": 899.89,
           "end": 904.02,
           "text": "To stop people complaining about being busy.",
           "translation": "让人们别再抱怨自己忙。"
@@ -67356,20 +67356,20 @@
         {
           "id": "l64",
           "start": 465.72,
-          "end": 469.7,
+          "end": 468.4,
           "text": "You're thinking I shouldn't replace my phone this soon.",
           "translation": "你是觉得我不该这么快就换手机。"
         },
         {
           "id": "l65",
-          "start": 469.7,
-          "end": 473.89,
+          "start": 468.4,
+          "end": 472.75,
           "text": "No, actually, I was wondering how you could possibly afford a new phone.",
           "translation": "不是，其实我在想你怎么买得起新手机。"
         },
         {
           "id": "l66",
-          "start": 473.89,
+          "start": 472.75,
           "end": 480.06,
           "text": "But now that you mention it, I do think getting another phone so soon is wasteful, regardless of the cost.",
           "translation": "不过既然你提到了，我确实觉得这么快又买部新手机太浪费了，不管花多少钱。"
@@ -67425,7 +67425,7 @@
         },
         {
           "id": "l74",
-          "start": 518.47,
+          "start": 519.2,
           "end": 523.14,
           "text": "I still think it's a bad idea to use a credit card for something you don't need.",
           "translation": "我还是觉得用信用卡买不需要的东西不是好主意。"
@@ -67804,27 +67804,27 @@
         {
           "id": "l129",
           "start": 952.25,
-          "end": 963.95,
+          "end": 962.55,
           "text": "Finally, we know that physical activity is important for our physical and mental health, and cultivating the habit of physical Activity starts early.",
           "translation": "最后，我们都知道体育活动对身心健康很重要，而培养体育运动的习惯要趁早。"
         },
         {
           "id": "l130",
-          "start": 963.95,
-          "end": 973.03,
+          "start": 962.55,
+          "end": 971.45,
           "text": "Children are more likely to develop a lifelong love of physical activity from frequent, positive early experiences.",
           "translation": "经常有积极的早期运动体验的孩子，更可能终身热爱体育活动。"
         },
         {
           "id": "l131",
-          "start": 973.03,
-          "end": 978.81,
+          "start": 971.45,
+          "end": 977.31,
           "text": "Not every child enjoys competitive sports or playing with balls, and that's okay.",
           "translation": "并不是每个孩子都喜欢竞技运动或球类游戏，这没关系。"
         },
         {
           "id": "l132",
-          "start": 978.81,
+          "start": 977.31,
           "end": 988.41,
           "text": "There are plenty of other options, such as imaginative play, non-competitive games, and gardening or nature experiences.",
           "translation": "还有很多其他选择，比如想象力游戏、非竞技性游戏，以及园艺或亲近自然的体验。"
@@ -68880,7 +68880,7 @@
         },
         {
           "id": "l73",
-          "start": 507.7,
+          "start": 508.05,
           "end": 510.95,
           "text": "It seems like you'd have the same problems with cash.",
           "translation": "用现金你也会有同样的问题吧。"
@@ -69197,7 +69197,7 @@
         },
         {
           "id": "l119",
-          "start": 872.46,
+          "start": 874.35,
           "end": 879.77,
           "text": "This is the equivalent produced by your average car driving almost 70 times around the world.",
           "translation": "这相当于一辆普通汽车绕地球行驶将近70圈的排放量。"
@@ -69212,13 +69212,13 @@
         {
           "id": "l121",
           "start": 886.75,
-          "end": 894.24,
+          "end": 892.7,
           "text": "These issues are growing more pressing with the emergence of commercial spaceflight.",
           "translation": "随着商业航天的兴起，这些问题变得愈发紧迫。"
         },
         {
           "id": "l122",
-          "start": 894.24,
+          "start": 892.7,
           "end": 900.45,
           "text": "There were 114 space launches in 2020, but there may be up to 1,000 per year in Future.",
           "translation": "2020年全球共进行了114次航天发射，但未来每年可能多达1000次。"
@@ -69261,13 +69261,13 @@
         {
           "id": "l128",
           "start": 934.05,
-          "end": 946.7,
+          "end": 945.25,
           "text": "Traditionally, boosters, fuel tanks, and other components are treated as expendable, but guiding them back to Earth in a controlled manner opens new possibilities.",
           "translation": "传统上，助推器、燃料箱等部件都被视为一次性用品，但把它们受控地引导回地球开启了新的可能。"
         },
         {
           "id": "l129",
-          "start": 946.7,
+          "start": 945.25,
           "end": 951.85,
           "text": "Most components from the Falcon 9 can be reused up to 100 times.",
           "translation": "猎鹰9号的大部分部件可重复使用多达100次。"
@@ -69359,13 +69359,13 @@
         {
           "id": "l142",
           "start": 1112.57,
-          "end": 1119.08,
+          "end": 1117.7,
           "text": "A child's physical development can benefit greatly from taking pets for walks in the fresh air.",
           "translation": "带宠物在新鲜空气中散步，对孩子的身体发育大有裨益。"
         },
         {
           "id": "l143",
-          "start": 1119.08,
+          "start": 1117.7,
           "end": 1124.82,
           "text": "Even their fine motor skills can be utilized in taking care of a beloved animal.",
           "translation": "甚至照顾心爱的动物也能锻炼他们的精细动作能力。"
@@ -69373,13 +69373,13 @@
         {
           "id": "l144",
           "start": 1124.82,
-          "end": 1134.67,
+          "end": 1133.1,
           "text": "When responsibilities are well paced and communicated, a child can benefit greatly from involvement in bringing up a happy and healthy pet.",
           "translation": "当责任的分配节奏合理、沟通到位时，参与养大一只快乐健康的宠物会让孩子受益匪浅。"
         },
         {
           "id": "l145",
-          "start": 1134.67,
+          "start": 1133.1,
           "end": 1143.2,
           "text": "And of course, if a child doesn't have a pet in their own household, they can still benefit from all of the above When visiting a friend who does.",
           "translation": "当然，如果孩子自己家里没有宠物，在去有宠物的朋友家做客时，他们仍然能获得以上所有好处。"
@@ -69519,13 +69519,13 @@
         {
           "id": "l165",
           "start": 1318.79,
-          "end": 1326.42,
+          "end": 1325.6,
           "text": "This bill would require the university and colleges to send a packet directly to students.",
           "translation": "这项法案将要求高校直接把资料包寄给学生。"
         },
         {
           "id": "l166",
-          "start": 1327.9,
+          "start": 1325.6,
           "end": 1329.37,
           "text": "Questions 22 to 25 are based on the passage you have just heard.",
           "translation": "22至25题基于你刚听到的短文。"
@@ -70412,13 +70412,13 @@
         {
           "id": "l79",
           "start": 538.72,
-          "end": 540.22,
+          "end": 539.31,
           "text": "Bus number thirty six goes.",
           "translation": "36路公交车。"
         },
         {
           "id": "l80",
-          "start": 540.22,
+          "start": 539.7,
           "end": 542.67,
           "text": "Go straight from my house to the office.",
           "translation": "从我家直接到办公室。"
@@ -70731,8 +70731,8 @@
         },
         {
           "id": "l126",
-          "start": 726.63,
-          "end": 728.9,
+          "start": 727.75,
+          "end": 728.54,
           "text": "\"Because his girlfriend wanted him to.\"",
           "translation": "\"因为他女朋友想让他做。\""
         },
@@ -71069,7 +71069,7 @@
         },
         {
           "id": "l175",
-          "start": 1082.23,
+          "start": 1084.15,
           "end": 1092.82,
           "text": "Experiments showed that participants were less likely to choose someone who signals their wealth or status to join a group seeking cooperative members.",
           "translation": "实验显示，在寻找合作型成员的群体中，参与者不太会选择炫耀财富或地位的人加入。"
@@ -71195,13 +71195,13 @@
         {
           "id": "l193",
           "start": 1258.02,
-          "end": 1260,
+          "end": 1259.48,
           "text": "They probably had short lives.",
           "translation": "它们的寿命可能很短。"
         },
         {
           "id": "l194",
-          "start": 1260.23,
+          "start": 1259.95,
           "end": 1264.35,
           "text": "And the remains show evidence of severe injuries.",
           "translation": "残骸上还留有严重受伤的痕迹。"
@@ -71215,8 +71215,8 @@
         },
         {
           "id": "l196",
-          "start": 1271.01,
-          "end": 1277.95,
+          "start": 1273.45,
+          "end": 1275.32,
           "text": "Researchers think the zoo was started with animals brought home from a far-off land known as Punt.",
           "translation": "研究人员认为，这个动物园最初是用从一个叫蓬特的遥远国度带回来的动物建立的。"
         },
@@ -72810,20 +72810,20 @@
         {
           "id": "l174",
           "start": 1128,
-          "end": 1139.83,
+          "end": 1138.05,
           "text": "By allowing employees to donate their time during work hours, the workplace becomes an outlet for personal fulfillment without affecting personal time.",
           "translation": "允许员工在工作时间做志愿服务，职场就成为了实现个人价值的出口，而不会占用个人时间。"
         },
         {
           "id": "l175",
-          "start": 1139.83,
-          "end": 1154.61,
+          "start": 1138.05,
+          "end": 1153.9,
           "text": "In one survey, 89 percent Of employees perceived companies that sponsored volunteer activities as creating a better working environment, and 75% said volunteering was critical to their well-being.",
           "translation": "在一项调查中，89%的员工认为赞助志愿活动的公司能营造更好的工作环境，75%的人说志愿服务对他们的幸福感至关重要。"
         },
         {
           "id": "l176",
-          "start": 1156.25,
+          "start": 1153.9,
           "end": 1157.72,
           "text": "Questions 19 to 21 are based on the passage you have just heard.",
           "translation": "第19至21题根据你刚才听到的短文回答。"
@@ -72893,8 +72893,8 @@
         },
         {
           "id": "l186",
-          "start": 1270.4,
-          "end": 1274.68,
+          "start": 1272.5,
+          "end": 1273.68,
           "text": "Food delivery seems to be a big thing here, she says.",
           "translation": "她说，送餐在这里似乎很火。"
         },
@@ -73994,8 +73994,8 @@
         },
         {
           "id": "l100",
-          "start": 660.25,
-          "end": 661.48,
+          "start": 660.85,
+          "end": 661.44,
           "text": "Oh, I didn't know that.",
           "translation": "哦，我还不知道呢。"
         },
@@ -74410,20 +74410,20 @@
         {
           "id": "l160",
           "start": 1197.87,
-          "end": 1204.77,
+          "end": 1203.35,
           "text": "The price of school uniforms can spark panic among Families struggling with the high cost of living.",
           "translation": "校服的价格会让那些难以承受高昂生活成本的家庭感到恐慌。"
         },
         {
           "id": "l161",
-          "start": 1204.77,
-          "end": 1208.29,
+          "start": 1203.35,
+          "end": 1206.6,
           "text": "Nearly all British schools have uniforms.",
           "translation": "几乎所有英国学校都有校服。"
         },
         {
           "id": "l162",
-          "start": 1208.29,
+          "start": 1206.6,
           "end": 1213.05,
           "text": "They cost parents an average of £337 per year for each secondary school child.",
           "translation": "每名中学生每年的校服平均花费337英镑。"
@@ -74876,13 +74876,13 @@
         {
           "id": "l8",
           "start": 44,
-          "end": 56.83,
+          "end": 54.6,
           "text": "Customs and Border Protection officials are seeing a rise in people illegally bringing eggs from Mexico into border states such as Texas.",
           "translation": "海关与边境保护局官员发现，从墨西哥非法携带鸡蛋进入得克萨斯州等边境州的人越来越多。"
         },
         {
           "id": "l9",
-          "start": 56.83,
+          "start": 54.6,
           "end": 62.77,
           "text": "The U.S average price for a dozen large eggs last month hit $4.",
           "translation": "上个月美国12个大号鸡蛋的平均价格达到了$4。"
@@ -74909,7 +74909,7 @@
         },
         {
           "id": "l13",
-          "start": 72.98,
+          "start": 75.45,
           "end": 84.36,
           "text": "Those bringing eggs into the U.S risk fines of up to $10,000, but officials say they usually seize and destroy the eggs.",
           "translation": "把鸡蛋带入美国的人最高可能被罚款$10,000，但官员说他们通常只是没收并销毁鸡蛋。"
@@ -74923,7 +74923,7 @@
         },
         {
           "id": "l15",
-          "start": 87.93,
+          "start": 90,
           "end": 94.45,
           "text": "The Department of Agriculture banned eggs from Mexico in 2012.",
           "translation": "农业部于2012年禁止从墨西哥进口鸡蛋。"
@@ -75352,7 +75352,7 @@
         },
         {
           "id": "l78",
-          "start": 504.05,
+          "start": 503.5,
           "end": 510.75,
           "text": "I'm not sure of the exact figure, but it's a few million euros, maybe five million euros after tax.",
           "translation": "确切数字我不太清楚，不过有几百万欧元吧，税后大概500万欧元。"
@@ -75367,13 +75367,13 @@
         {
           "id": "l80",
           "start": 513.59,
-          "end": 515.65,
+          "end": 514.48,
           "text": "You're really not joking, are you?",
           "translation": "你真不是在开玩笑，对吧？"
         },
         {
           "id": "l81",
-          "start": 515.65,
+          "start": 514.9,
           "end": 517.17,
           "text": "Honestly, look at my face.",
           "translation": "说真的，你看看我的表情。"
@@ -75635,7 +75635,7 @@
         },
         {
           "id": "l119",
-          "start": 734.04,
+          "start": 734.6,
           "end": 740.12,
           "text": "They have a wonderful arts program that would really challenge Jake in terms of creativity and imagination.",
           "translation": "他们的艺术课程很棒，能在创造力和想象力上真正激发杰克。"
@@ -75857,13 +75857,13 @@
         {
           "id": "l151",
           "start": 975.94,
-          "end": 981.49,
+          "end": 980.9,
           "text": "You also get away from the habit of making guesses or following instincts.",
           "translation": "你也能摆脱靠猜测或凭直觉行事的习惯。"
         },
         {
           "id": "l152",
-          "start": 981.49,
+          "start": 980.9,
           "end": 993.1,
           "text": "Database technology enabled business leaders to look to hard evidence in analyzing target markets and promotional strategies rather than making assumptions or guesses on what works.",
           "translation": "数据库技术使商界领导者在分析目标市场和推广策略时能依靠确凿证据，而不是凭假设或猜测来判断什么有效。"
@@ -76676,7 +76676,7 @@
         },
         {
           "id": "l24",
-          "start": 167.3,
+          "start": 169.25,
           "end": 173.99,
           "text": "They found that elephants socialized more with each other during public feeding times.",
           "translation": "他们发现，在公众喂食时间，大象彼此之间的互动更多。"
@@ -76796,20 +76796,20 @@
         {
           "id": "l41",
           "start": 316,
-          "end": 325.98,
+          "end": 324.6,
           "text": "\"We're honored to be a part of transforming the way Denver wants to move around,\" said Grace Rink, Denver's chief climate officer.",
           "translation": "\"我们很荣幸能参与到改变丹佛市民出行方式的进程中来，\"丹佛市首席气候官格蕾丝·林克说。"
         },
         {
           "id": "l42",
-          "start": 325.98,
-          "end": 330.82,
+          "start": 324.6,
+          "end": 329.05,
           "text": "\"We exhausted three years' worth of funding in six months.\"",
           "translation": "\"我们把3年的经费6个月就花光了。\""
         },
         {
           "id": "l43",
-          "start": 330.82,
+          "start": 329.05,
           "end": 340.86,
           "text": "The city said the program has put 4,400 electric bikes on the streets of Denver and invested $8.6 million into the local economy.",
           "translation": "该市表示，该项目已让4400辆电动自行车出现在丹佛街头，并向当地经济投入了860万美元。"
@@ -77106,13 +77106,13 @@
         {
           "id": "l86",
           "start": 544,
-          "end": 546.57,
+          "end": 544.89,
           "text": "I was also thinking of seeing that tomorrow.",
           "translation": "我还想着明天也去看那里。"
         },
         {
           "id": "l87",
-          "start": 546.57,
+          "start": 545.82,
           "end": 547.71,
           "text": "It sounds very nice.",
           "translation": "听起来很不错。"
@@ -77141,13 +77141,13 @@
         {
           "id": "l91",
           "start": 554.15,
-          "end": 557.65,
+          "end": 556.95,
           "text": "Doing tourist stuff with others would be a welcome change.",
           "translation": "跟别人一起观光会是个不错的变化。"
         },
         {
           "id": "l92",
-          "start": 557.65,
+          "start": 556.95,
           "end": 561.29,
           "text": "Let me ask her first, but I'm sure she'll be up for it.",
           "translation": "我先问问她，不过我确定她会愿意的。"
@@ -77278,13 +77278,13 @@
         {
           "id": "l111",
           "start": 699.81,
-          "end": 706.44,
+          "end": 706.05,
           "text": "So, for example, certain reports that I create at the end of the month may be used by a team in another department.",
           "translation": "比如说，我在月底做的某些报告，可能会被另一个部门的团队用到。"
         },
         {
           "id": "l112",
-          "start": 706.44,
+          "start": 706.05,
           "end": 713.05,
           "text": "That's right, and in that respect, it's also important to learn about the business to see the big picture.",
           "translation": "没错，所以从这个角度说，了解公司业务、看清全局也很重要。"
@@ -77607,13 +77607,13 @@
         {
           "id": "l159",
           "start": 1049.15,
-          "end": 1065.76,
+          "end": 1064.25,
           "text": "Plastics have for years been used to make nearly everything that surrounds us, but along the way they escaped the confines of packaging and objects and settled in the environment, the food we eat, and the air we breathe.",
           "translation": "短文二：多年来，塑料被用来制造我们身边几乎所有的东西，但在此过程中，它们突破了包装和物品的局限，进入了环境、我们吃的食物和我们呼吸的空气中。"
         },
         {
           "id": "l160",
-          "start": 1065.76,
+          "start": 1064.25,
           "end": 1070.82,
           "text": "Americans are consuming and breathing in a lot of plastic.",
           "translation": "美国人正在大量摄入和吸入塑料。"
@@ -78253,7 +78253,7 @@
         },
         {
           "id": "l11",
-          "start": 46.62,
+          "start": 48.7,
           "end": 57.92,
           "text": "Nancy Gifford was born months after the end of the First World War, and spent 102 years living in her three-bedroom house in the Somerset village of Street.",
           "translation": "南西·吉福德出生于第一次世界大战结束后的几个月，在萨默塞特郡斯特里特村的这栋三居室房子里住了102年。"
@@ -78364,8 +78364,8 @@
         },
         {
           "id": "l27",
-          "start": 181.91,
-          "end": 186.53,
+          "start": 184.6,
+          "end": 185.58,
           "text": "To survive, the man collected rainwater with a cloth.",
           "translation": "为了生存，他用一块布收集雨水。"
         },
@@ -78783,13 +78783,13 @@
         {
           "id": "l87",
           "start": 637.32,
-          "end": 644.03,
+          "end": 643.55,
           "text": "Why would you do something like that when our phones make our lives so much more convenient?",
           "translation": "手机让我们的生活方便那么多，你怎么会做这种事呢？"
         },
         {
           "id": "l88",
-          "start": 644.03,
+          "start": 643.55,
           "end": 657.77,
           "text": "Well, I downloaded an app that recorded how much time I spent on my phone, and I was shocked to realize I was using my phone an average of eight hours a day, and on my worst day, I used it for twelve hours.",
           "translation": "是这样，我下载了一个记录手机使用时间的应用，结果惊讶地发现我平均每天用手机8小时，最夸张的一天用了12小时。"
@@ -78999,13 +78999,13 @@
         {
           "id": "l118",
           "start": 898.4,
-          "end": 908.81,
+          "end": 907.1,
           "text": "That now wage growth is slowing down for everyone, and job switchers are getting smaller wage bumps in their new jobs.",
           "translation": "现在所有人的工资增长都在放缓，跳槽者在新工作中获得的加薪幅度也在变小。"
         },
         {
           "id": "l119",
-          "start": 908.81,
+          "start": 907.1,
           "end": 917.65,
           "text": "At the moment, those who change jobs get an average 7.3 percent raise every year, while those who stay get a 5.4 percent raise.",
           "translation": "目前，跳槽者每年平均涨薪7.3%，而留下来的人涨薪5.4%。"

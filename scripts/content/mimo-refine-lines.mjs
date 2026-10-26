@@ -60,7 +60,10 @@ const mimoRaw = async (file) => {
           messages: [{ role: 'user', content: [{ type: 'input_audio', input_audio: { data, format: 'mp3' } }] }],
         }),
       })
-      if (res.status === 429) { await sleep(4000 * (attempt + 1)); continue }
+      if (res.status === 429) {
+        if (attempt === 3) { fails++; throw new Error('429 重试耗尽') }
+        await sleep(4000 * (attempt + 1)); continue
+      }
       const t = await res.text()
       if (res.status !== 200) throw new Error(`HTTP ${res.status}: ${t.slice(0, 100)}`)
       const c = JSON.parse(t).choices?.[0]?.message?.content ?? ''
@@ -71,6 +74,7 @@ const mimoRaw = async (file) => {
       await sleep(1500 * (attempt + 1))
     }
   }
+  throw new Error('不可达：重试循环必须经 return/throw 退出')
 }
 /** 双并发：两条串行链交替领课 */
 const makeChain = () => {
@@ -400,15 +404,19 @@ const jobs = targets.map((row) => async () => {
   // 防串位靠「pos≤3 + 首行守卫」而不是距离——见第二遍的对应注释。
   // ⚠ 岛内非首行预过滤（转写之前）：本行与包含岛起点之间还有别的行起点时，
   // 第二遍的首行守卫必然拦截——提前过滤省掉整段岛的 MiMo 转写（#25 一门就省 ~170 次）。
+  // 尾巴卫生轮（2026-10-26 用户授权扩 MiMo 预算）：偏早悬浮（本行岛在行后 ≥1.8s）也修。
   for (const l of lines) {
     if (consumed.has(l.id)) continue
     if (l.end - l.start < 1.5) continue
     const d = l.start - nearestOnset(l.start)
-    if (d <= 2) continue
-    const near = islands.find(([a, b]) => l.start > a && l.start < b)
-    if (!near) continue   // 空隙悬浮 = 偏早，不修
-    if (lines.some((l2) => l2 !== l && l2.start > near[0] - 0.05 && l2.start < l.start - 0.05)) continue
-    addT(l, 'P3', 12, 25)
+    if (d > 2) {
+      const near = islands.find(([a, b]) => l.start > a && l.start < b)
+      if (!near) { addT(l, 'P3', 12, 25); continue }   // 悬浮在岛后空隙：本行音频应在更后的岛
+      if (lines.some((l2) => l2 !== l && l2.start > near[0] - 0.05 && l2.start < l.start - 0.05)) continue
+      addT(l, 'P3', 12, 25)
+    } else if (d < -1.8) {
+      addT(l, 'P3', 12, 25)
+    }
   }
   if (!targetsRows.length && !deletes.length) return
 
@@ -663,9 +671,9 @@ const jobs = targets.map((row) => async () => {
     // P3 深位守卫：行的词必须就在岛/段的开头（pos≤3）——词在岛中部说明真实起点在岛中部，
     // 岛级管线无词级时间戳，不可修（残余留报告）。
     if (prio === 'P3' && best.pos > 3) continue
-    // P3 政策：只修偏晚；偏早 >3s 也修（行 start 落进上一句岛内属严重错位）
+    // P3 政策：修偏晚 ≥1s；偏早 ≥1.5s 也修（尾巴卫生轮，2026-10-26 扩预算授权）
     if (prio === 'P3') {
-      if (onset > line.start - 1.0 && onset < line.start + 3.0) continue
+      if (onset > line.start - 1.0 && onset < line.start + 1.5) continue
     }
     if (Math.abs(onset - line.start) <= 0.15) continue
     detail.push(`${prio} ${line.start.toFixed(1)} → ${onset.toFixed(1)} 「${String(line.text).slice(0, 34)}」`)
