@@ -121,7 +121,7 @@ const loadSeed = (seedPath = SEED_PATH) => JSON.parse(fs.readFileSync(seedPath, 
 // 带护栏的落库（DB + seed 同步写；seed 每次写必须升版本号）
 //   seedPath：默认 cet6（历史行为）；写四级传 presets/cet4/seed.json。
 export const saveTranscript = async ({ conn, cid, lines, version, expect = {}, dryRun = true, seedPath = SEED_PATH }) => {
-  const { lineDelta = [0, 0], allowTranslationDrop = false, note = '' } = expect
+  const { lineDelta = [0, 0], allowTranslationDrop = false, note = '', allowNewFields = [] } = expect
   const old = await loadTranscript(conn, cid)
   const fails = []
   // 契约字段白名单
@@ -146,7 +146,21 @@ export const saveTranscript = async ({ conn, cid, lines, version, expect = {}, d
     const minLines = b ? b.lines + lineDelta[0] - 1 : undefined
     const maxLines = b ? b.lines + lineDelta[1] + 1 : undefined
     const { fails: bf, warns } = checkAgainstBaseline(cid, collectStats(lines), baseline, null, { minLines, maxLines })
-    fails.push(...bf)
+    // T3 新字段豁免：基线快照里该课程从未出现过的字段，若本次**显式声明**为预期
+    // 新增（如零译文新课首次补 translation——CONTRACT_FIELDS 本来就允许该字段），
+    // 则不作失败。语义与 lineDelta 同构：变更面必须声明，声明过的不是意外。
+    // 未声明的新字段照旧拦——保护不受白名单重建事故（2026-10-01）影响的行为不变。
+    const declaredT3 = []
+    const restFails = bf.filter((f) => {
+      const m = f.match(/^T3 出现契约外字段:\s*([^\s（(]+)/)
+      if (m && allowNewFields.length && allowNewFields.includes(m[1])) {
+        declaredT3.push(m[1])
+        return false
+      }
+      return true
+    })
+    if (declaredT3.length) console.warn(`（已声明新字段）#${cid} 本次新增字段：${declaredT3.join(', ')}（基线重建后回归常态）`)
+    fails.push(...restFails)
     for (const w of warns) console.warn(`#${cid} ${w}`)
   }
   if (fails.length) {
