@@ -78,6 +78,8 @@ const expectWordsOf = (label) => {
     const numRaw = m[2].toLowerCase()
     const num = /^\d+$/.test(numRaw) ? numRaw : NUM_WORD[numRaw] ?? numRaw
     const words = [head, num, String(NUM_WORD[numRaw] ?? '')].filter(Boolean)
+    // 考试头播报特征：5s 窗可能只够念 'College English Test Band 6, Part 2...'（Section A 在其后）——内容正确
+    if (head === 'section') words.push('band', 'listening', 'comprehension', 'college', 'test')
     if (head === 'news report') words.push('news')
     return { words, loose: false }
   }

@@ -25,7 +25,7 @@ const root = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..', '.
 const packageVersion = JSON.parse(fs.readFileSync(path.join(root, 'package.json'), 'utf8')).version;
 const outputRoot = path.join(root, 'temp', 'opus-presets');
 const EXAMS = ['cet6', 'cet4'];
-const SOURCE_EXT_RE = /\.(mp3|m4a)$/i;
+const SOURCE_EXT_RE = /\.(mp3|m4a|ogg)$/i;
 
 const run = (command, args, options = {}) => execFileSync(command, args, { stdio: 'pipe', encoding: 'utf8', ...options });
 const sha256 = (file) => createHash('sha256').update(fs.readFileSync(file)).digest('hex');
@@ -101,7 +101,7 @@ const prepareExam = ({ exam, bitrate, force, seedVersion }) => {
     for (const exercise of seed.exercises) {
         const objectName = exercise.audio_object_name;
         if (typeof objectName !== 'string' || !SOURCE_EXT_RE.test(objectName)) {
-            problems.push(`课程 ${exercise.id}：audio_object_name 不是 .mp3/.m4a（${objectName}）`);
+            problems.push(`课程 ${exercise.id}：audio_object_name 不是 .mp3/.m4a/.ogg（${objectName}）`);
             continue;
         }
         const source = path.join(sourceMedia, objectName);
@@ -127,6 +127,33 @@ const prepareExam = ({ exam, bitrate, force, seedVersion }) => {
         const label = `${exam} 课程 ${exercise.id}`;
         const counter = `${index + 1}/${seed.exercises.length}`;
         fs.mkdirSync(path.dirname(target), { recursive: true });
+
+        // 源已是 opus（六级 2015/2016 新课的入库管线直接产 .ogg）：校验后原样透传。
+        // 比例：源 = 32k 单声道 opus，再转一遍只会损质量不省体积。
+        if (/\.ogg$/i.test(objectName)) {
+            let passthrough = null;
+            try { passthrough = readValidOutput(source); } catch { passthrough = null; }
+            ensure(passthrough, `${label}：源 .ogg 校验失败（要求 opus / 单声道 / 时长 > 0）`);
+            fs.copyFileSync(source, target);
+            const sidecar = `${target}.dlt-meta.json`
+            fs.writeFileSync(sidecar, JSON.stringify({ contentType: 'audio/ogg' }, null, 2) + '\n')
+            const { probe, stream } = passthrough;
+            entries.push({
+                id: exercise.id,
+                title: exercise.title,
+                sourceObjectName: objectName,
+                objectName: opusName,
+                size: fs.statSync(target).size,
+                sha256: sha256(target),
+                durationSec: Number(Number(probe.format.duration).toFixed(3)),
+                codec: stream.codec_name,
+                sampleRate: Number(stream.sample_rate),
+                bitrate,
+            });
+            stats.skipped += 1;
+            console.log(`[透传] ${counter} ${exam} ${opusName}`);
+            continue;
+        }
 
         let result = null;
         let action = 'transcode';
