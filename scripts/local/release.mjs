@@ -14,7 +14,7 @@
  */
 import fs from 'node:fs';
 import path from 'node:path';
-import { execFileSync } from 'node:child_process';
+import { execSync, execFileSync } from 'node:child_process';
 import { fileURLToPath } from 'node:url';
 
 const root = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..', '..');
@@ -28,6 +28,11 @@ const NOTES = argOf('--notes');
 if (!VERSION) { console.error('用法：--version x.y.z 必填（连同 --notes）'); process.exit(1); }
 const run = (cmd, args, opts = {}) => {
     console.log(`[release] ${cmd} ${args.join(' ')}`);
+    // Windows：npm/gh 是 .cmd shim，spawnSync 直呼被 Node 安全策略拒（EINVAL）——走 shell
+    if (process.platform === 'win32' && (cmd === 'npm' || cmd === 'gh')) {
+        return execSync([cmd, ...args].map((a) => /[\s"]/.test(a) ? `"${a.replace(/"/g, '\\"')}"` : a).join(' '),
+            { stdio: opts.quiet ? 'ignore' : ['ignore', opts.pipe ? 'pipe' : 'inherit', 'inherit'], encoding: 'utf8', cwd: root });
+    }
     return execFileSync(cmd, args, { stdio: opts.quiet ? 'ignore' : ['ignore', opts.pipe ? 'pipe' : 'inherit', 'inherit'], encoding: 'utf8', ...opts.extra });
 };
 
