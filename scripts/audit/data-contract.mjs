@@ -121,7 +121,7 @@ const loadSeed = (seedPath = SEED_PATH) => JSON.parse(fs.readFileSync(seedPath, 
 // 带护栏的落库（DB + seed 同步写；seed 每次写必须升版本号）
 //   seedPath：默认 cet6（历史行为）；写四级传 presets/cet4/seed.json。
 export const saveTranscript = async ({ conn, cid, lines, version, expect = {}, dryRun = true, seedPath = SEED_PATH }) => {
-  const { lineDelta = [0, 0], allowTranslationDrop = false, note = '', allowNewFields = [] } = expect
+  const { lineDelta = [0, 0], allowTranslationDrop = false, note = '', allowNewFields = [], allowUntranslatedGrow = false } = expect
   const old = await loadTranscript(conn, cid)
   const fails = []
   // 契约字段白名单
@@ -152,9 +152,15 @@ export const saveTranscript = async ({ conn, cid, lines, version, expect = {}, d
     // 未声明的新字段照旧拦——保护不受白名单重建事故（2026-10-01）影响的行为不变。
     const declaredT3 = []
     const restFails = bf.filter((f) => {
-      const m = f.match(/^T3 出现契约外字段:\s*([^\s（(]+)/)
-      if (m && allowNewFields.length && allowNewFields.includes(m[1])) {
-        declaredT3.push(m[1])
+      const m3 = f.match(/^T3 出现契约外字段:\s*([^\s（(]+)/)
+      if (m3 && allowNewFields.length && allowNewFields.includes(m3[1])) {
+        declaredT3.push(m3[1])
+        return false
+      }
+      // T1 增长豁免：合法新增无译文行（如指令行补行——学习端隐藏、不需要译文）。
+      // 只豁免 fail 方向的「增加」；「减少」（疑似丢译文）永不豁免。
+      if (allowUntranslatedGrow && /^T1 无译文内容增加/.test(f)) {
+        console.warn(`（已声明 T1 增长）#${cid} ${f}（合法新增无译文行）`)
         return false
       }
       return true
@@ -174,16 +180,16 @@ export const saveTranscript = async ({ conn, cid, lines, version, expect = {}, d
     return { ok: true, dryRun: true }
   }
   if (!version) throw new Error('落库必须传 seed 版本号（如 20261001.9）')
+  // 行对象 spread 透传（2026-10-26 治理 seed 噪音 diff）：此前这里按白名单重建行
+  // （空 translation/空数组被静默丢弃），导致每次写入 seed 大 diff（规范化噪音淹没
+  // 真实变更，11.8/译文轮报告里反复出现）。改为原样透传、只归一 id/start/end——
+  // 行里有什么字段就写什么，diff 从此只含真实变化。契约字段白名单校验在上方已跑，
+  // 契约外字段进不来；译文透传守卫照旧生效。
   const fixed = lines.map((l, i) => ({
+    ...l,
     id: `l${i + 1}`,
     start: +Number(l.start).toFixed(2),
     end: +Number(l.end).toFixed(2),
-    text: l.text,
-    // 透传可选字段——只 spread，绝不白名单重建（译文事故的根因就是白名单）
-    ...(l.translation ? { translation: l.translation } : {}),
-    ...(l.translations && Object.keys(l.translations).length ? { translations: l.translations } : {}),
-    ...(l.answers?.length ? { answers: l.answers } : {}),
-    ...(l.keywords?.length ? { keywords: l.keywords } : {}),
   }))
   await conn.query('UPDATE exercises SET transcript_json=? WHERE id=?', [JSON.stringify(fixed), cid])
   const seed = loadSeed(seedPath)

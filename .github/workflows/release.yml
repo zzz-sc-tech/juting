@@ -1,0 +1,77 @@
+# 自动发版：tag push（v*）或手动触发 → 打包三 flavor → 上传 Release 资产。
+#
+# ⚠ 试验性（2026-10-26 首建，未在 CI 实跑过）：打包依赖本机便携 MySQL
+# （temp/runtime/mysql），CI 上通过「解压上一个 Release 的 lite 包提取」补齐——
+# lite 包本身自带便携 MySQL，闭环成立。首跑请用 workflow_dispatch 手动触发并观察
+# 全程；失败时退回本机 scripts/local/release.mjs（已验证路径）。
+#
+# 本地等价命令：node scripts/local/release.mjs --version x.y.z --notes <file>
+name: release
+
+on:
+  push:
+    tags: ['v*']
+  workflow_dispatch:
+    inputs:
+      version:
+        description: '版本号（如 0.7.8；tag 触发时忽略，取 tag 名）'
+        required: false
+
+permissions:
+  contents: write
+
+jobs:
+  package:
+    runs-on: windows-latest
+    timeout-minutes: 90
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+
+      - name: 解析版本号
+        id: ver
+        shell: bash
+        run: |
+          if [ "${{ github.event_name }}" = "push" ]; then
+            echo "version=${GITHUB_REF_NAME#v}" >> "$GITHUB_OUTPUT"
+          else
+            echo "version=${{ inputs.version }}" >> "$GITHUB_OUTPUT"
+          fi
+
+      - name: 安装依赖与构建
+        run: |
+          npm install --no-audit --no-fund
+          npm run build
+
+      - name: 补齐便携 MySQL（从上一个 Release 的 lite 包提取）
+        shell: pwsh
+        run: |
+          if (Test-Path "temp/runtime/mysql/mysqld.exe") { echo "已有便携 MySQL，跳过"; exit 0 }
+          $prev = gh release list -R $env:GITHUB_REPOSITORY --limit 10 --json tagName,isLatest --jq '.[] | select(.isLatest) | .tagName'
+          if (-not $prev) { $prev = gh release list -R $env:GITHUB_REPOSITORY --limit 1 --json tagName --jq '.[0].tagName' }
+          echo "从 $prev 的 lite 包提取便携 MySQL…"
+          gh release download $prev -R $env:GITHUB_REPOSITORY -p "*win-lite.7z" -O prev-lite.7z
+          7z x prev-lite.7z -o"prev-stage" -y
+          New-Item -ItemType Directory -Force -Path "temp/runtime" | Out-Null
+          Move-Item "prev-stage/temp/runtime/mysql" "temp/runtime/mysql"
+          Remove-Item -Recurse -Force "prev-stage", "prev-lite.7z"
+        env:
+          GH_TOKEN: ${{ github.token }}
+
+      - name: 打包三 flavor
+        run: |
+          node scripts/local/package-release.mjs --skip-build --version ${{ steps.ver.outputs.version }}
+          node scripts/local/package-release.mjs --skip-build --skip-launcher --version ${{ steps.ver.outputs.version }} --flavor cet4
+          node scripts/local/package-release.mjs --skip-build --skip-launcher --version ${{ steps.ver.outputs.version }} --flavor cet6
+
+      - name: 上传 Release 资产
+        uses: softprops/action-gh-release@v2
+        with:
+          tag_name: v${{ steps.ver.outputs.version }}
+          files: |
+            ../juting-release/juting-v${{ steps.ver.outputs.version }}*
+            ../juting-release/SHA256SUMS.txt
+          fail_on_unmatched_files: true
