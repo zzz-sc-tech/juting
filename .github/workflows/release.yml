@@ -54,7 +54,8 @@ jobs:
           if (-not (Test-Path "temp/runtime/node/node.exe")) { throw "node.exe 复制失败" }
 
           # 便携 MySQL：从最新 Release 的 lite 包提取（lite 自带裁剪版，闭环成立）
-          if (Test-Path "temp/runtime/mysql/mysqld.exe") { echo "已有便携 MySQL，跳过"; exit 0 }
+          # mysqld.exe 在 bin/ 子目录下，探测要带 bin/（首跑就栽在少写这层）
+          if (Test-Path "temp/runtime/mysql/bin/mysqld.exe") { echo "已有便携 MySQL，跳过"; exit 0 }
           $prev = gh release list -R $env:GITHUB_REPOSITORY --limit 10 --json tagName,isLatest --jq '.[] | select(.isLatest) | .tagName'
           if (-not $prev) { $prev = gh release list -R $env:GITHUB_REPOSITORY --limit 1 --json tagName --jq '.[0].tagName' }
           echo "从 $prev 的 lite 包提取便携 MySQL…"
@@ -63,7 +64,7 @@ jobs:
           # lite 包内层根目录是 juting/（打包从 juting-package 暂存根整树压缩）；
           # 两种布局都试，找不到 mysqld.exe 就带明确信息失败，别让后面打包步报模糊错
           $mysql = @("prev-stage/juting/temp/runtime/mysql", "prev-stage/temp/runtime/mysql") |
-            Where-Object { Test-Path (Join-Path $_ "mysqld.exe") } | Select-Object -First 1
+            Where-Object { Test-Path (Join-Path $_ "bin/mysqld.exe") } | Select-Object -First 1
           if (-not $mysql) { throw "lite 包里找不到 temp/runtime/mysql（含 mysqld.exe）——包内布局可能变了，请检查本步骤" }
           New-Item -ItemType Directory -Force -Path "temp/runtime" | Out-Null
           Move-Item $mysql "temp/runtime/mysql"
