@@ -7,6 +7,11 @@
  * 处理：按组播报模板改写该行文本（去掉题干译文——播报行在库里一贯无译文），
  * 起点钉到播报首词 145.92，终点 150.0（Q1 题干 152.83 之前）。
  *
+ * 注意：本脚本改完文本/起点后，必须再跑一次
+ *   node scripts/content/retime-by-wordmap-v2.mjs --apply --ids 55
+ * （原重复的两行在钉位时被判为同文，后一行被最小时长顶到 153.88s；
+ *   文本改正后重钉才能回到 Q1 题干真实词位 152.83s）
+ *
  * 用法：node scripts/content/fix-55-group-intro.mjs [--apply]
  */
 import { connect, saveTranscript } from '../audit/data-contract.mjs'

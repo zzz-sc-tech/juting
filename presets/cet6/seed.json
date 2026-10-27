@@ -1,7 +1,7 @@
 {
   "preset": "cet6",
-  "version": "20261027.32",
-  "generatedAt": "2026-10-27T09:52:29.823Z",
+  "version": "20261027.33",
+  "generatedAt": "2026-10-27T10:06:38.353Z",
   "group": {
     "id": 8,
     "name": "英语六级真题",
@@ -68872,7 +68872,7 @@
           "id": "l36",
           "end": 169.92,
           "text": "Q1. What does the man say about the job in the States?",
-          "start": 153.88,
+          "start": 152.83,
           "translation": "Q1. 关于美国的那份工作，男士说了什么？"
         },
         {
