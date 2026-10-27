@@ -25,6 +25,11 @@ on:
       notes:
         description: '发版说明（可空；留空则建空说明的 Release，之后可再编辑）'
         required: false
+      test:
+        description: '测试构建（版本号与 package.json 不一致时放行，用于一次性验证运行）'
+        type: boolean
+        required: false
+        default: false
 
 permissions:
   contents: write
@@ -73,10 +78,15 @@ jobs:
           GH_TOKEN: ${{ github.token }}
 
       - name: 打包三 flavor
+        shell: bash
         run: |
-          node scripts/local/package-release.mjs --skip-build --version ${{ inputs.version }}
-          node scripts/local/package-release.mjs --skip-build --skip-launcher --version ${{ inputs.version }} --flavor cet4
-          node scripts/local/package-release.mjs --skip-build --skip-launcher --version ${{ inputs.version }} --flavor cet6
+          # 测试构建放行版本号不一致（package-release 的守卫会拦「--version 与 package.json
+          # 不符」，正式发版必须先提交版本号，测试运行用 --allow-version-mismatch 绕过）
+          MISMATCH=""
+          if [ "${{ inputs.test }}" = "true" ]; then MISMATCH="--allow-version-mismatch"; fi
+          node scripts/local/package-release.mjs --skip-build $MISMATCH --version ${{ inputs.version }}
+          node scripts/local/package-release.mjs --skip-build --skip-launcher $MISMATCH --version ${{ inputs.version }} --flavor cet4
+          node scripts/local/package-release.mjs --skip-build --skip-launcher $MISMATCH --version ${{ inputs.version }} --flavor cet6
 
       - name: 上传 Release 资产
         uses: softprops/action-gh-release@v2
