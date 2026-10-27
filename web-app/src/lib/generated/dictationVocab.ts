@@ -11739,6 +11739,7 @@ export const DICTATION_CORPUS: readonly string[] = [
   "thirteen-week",
   "thirties",
   "thirty",
+  "thirty-four",
   "thirty-minute",
   "thirty-one",
   "thirty-six",
