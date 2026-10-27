@@ -14,8 +14,8 @@ const gates = [
   { name: '时长健全', cmd: ['node', ['scripts/audit/check-duration-sanity.mjs']] },
   { name: '重叠-cet4', cmd: ['node', ['scripts/audit/check-timeline-speech-overlap.mjs', 'cet4']] },
   { name: '重叠-cet6', cmd: ['node', ['scripts/audit/check-timeline-speech-overlap.mjs', 'cet6']] },
-  { name: '缺题', cmd: ['node', ['temp/v3.mjs']] },
-  { name: '单调/重叠/负时长', cmd: ['node', ['temp/final-check.mjs']] },
+  { name: '缺题', cmd: ['node', ['scripts/audit/check-missing-questions.mjs']] },
+  { name: '单调/重叠/负时长', cmd: ['node', ['scripts/audit/check-monotonicity.mjs']] },
 ]
 
 const results = []

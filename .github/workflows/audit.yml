@@ -1,0 +1,29 @@
+# 夜间语料审计：每天凌晨（北京时间 05:00）跑门禁一条龙，数据漂移（误提交、
+# 生成脚本回归、手工改库）第二天自动报警（workflow 失败 → GitHub 邮件）。
+#
+# 门禁内容见 scripts/audit/check-all.mjs（不变式/时长健全/时间轴重叠×2/缺题/
+# 单调重叠负时长，纯 node:fs 零依赖，node 24 原生跑 .ts import 无需安装依赖）。
+# 媒体不在 git，check-media-vs-seed（发版守卫）在 release.yml 里跑，这里不重复。
+name: audit
+
+on:
+  schedule:
+    - cron: '0 21 * * *'   # UTC 21:00 = 北京 05:00
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  gates:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 24
+
+      - name: 门禁一条龙（6 gates）
+        run: node scripts/audit/check-all.mjs
