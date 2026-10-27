@@ -7,10 +7,11 @@ import path from 'node:path'
 import { fileURLToPath } from 'node:url'
 
 const root = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..', '..')
-const seed = JSON.parse(fs.readFileSync(path.join(root, 'presets/cet6/seed.json'), 'utf8'))
+// 两个预设都要进词表——四级课的词形不在表里会被长词宽容误放行（错拼当生词）
+const seeds = ['cet6', 'cet4'].map((k) => JSON.parse(fs.readFileSync(path.join(root, 'presets/' + k + '/seed.json'), 'utf8')))
 
 const vocab = new Set()
-for (const ex of seed.exercises) {
+for (const seed of seeds) for (const ex of seed.exercises) {
   for (const line of ex.transcript_json) {
     for (const w of line.text.toLowerCase().match(/[a-z][a-z'-]*/g) ?? []) {
       vocab.add(w)
