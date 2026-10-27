@@ -1,17 +1,25 @@
 # 云端发版：手动触发（workflow_dispatch）→ 打包三 flavor → 创建 Release 并上传资产。
 #
-# 2026-10-27 v0.7.9 首跑（当时还是 tag 自动触发）失败复盘，两处教训：
-#   1) lite 7z 的内层根目录是 juting/，提取便携 MySQL 的 Move-Item 少写了一层 → 已修；
-#   2) tag 触发会与本机 scripts/local/release.mjs 重复上传同名资产互相冲突 → 改为仅手动触发。
+# 复盘史（2026-10-27，0.7.9-ci1 三次实弹验证逐步暴露）：
+#   1) lite 7z 内层根目录是 juting/，MySQL 提取路径少写一层 → 已修；
+#   2) mysqld.exe 在 mysql/bin/ 下，探测路径又少写一层 bin/ → 已修；
+#   3) --version 与 package.json 不符被版本守卫正确拦截 → test 开关显式放行；
+#   4) 预设音频（~1.4GB opus）不在 git 里，CI 打出残包（无 media.zip、7z 只有 73MB）
+#      → 媒体从上一个 Release 的双全量包自举提取 + seed 引用守卫。
+#
+# ⚠ 云端发版的固有边界：媒体层只能沿用上一版音频。若本轮音频有新增/替换
+#   （seed 引用的文件在提取出的媒体树里缺失），守卫会报错终止——此时走本机
+#   scripts/local/release.mjs（它能拿到本机最新 presets/*/media）。
 #
 # 云端发版流程（产物 ~4.5GB 由 runner 上传，不占本机带宽）：
 #   1. 本机：npm version x.y.z --no-git-tag-version && 提交推送（版本号先进 package.json）
 #   2. Actions 页面手动触发本工作流，version=x.y.z（必须是尚不存在 Release 的新版本号）
 #   3. 完成后到 Release 页补发版说明（或在触发时填 notes 输入）
 #
-# CI 环境补齐两个本机才有的文件（打包脚本 copyFile 缺源即中止）：
-#   - temp/runtime/mysql     ：解压上一个 Release 的 lite 包提取（lite 自带，闭环）
-#   - temp/runtime/node.exe  ：复制 setup-node 装的 node.exe（本机为 v24.x，保持同大版本）
+# CI 环境补齐三个 git 里没有的东西（打包脚本缺源即中止）：
+#   - temp/runtime/node/node.exe：复制 setup-node 装的 node.exe（v24，与本机便携版同大版本）
+#   - temp/runtime/mysql        ：解压上一个 Release 的 lite 包提取（lite 自带裁剪版，闭环）
+#   - presets/{cet4,cet6}/media ：解压上一个双全量包提取（seed.json 以 git 检出的新版为准，绝不覆盖）
 #
 # 本机等价命令：node scripts/local/release.mjs --version x.y.z --notes <file>
 name: release
@@ -50,32 +58,56 @@ jobs:
           npm install --no-audit --no-fund
           npm run build
 
-      - name: 补齐便携 Node 与 MySQL（CI 缺的两个本机文件）
+      - name: 自举本机专属文件（便携 Node / 便携 MySQL / 预设媒体）
         shell: pwsh
         run: |
-          # 便携 Node：setup-node 装的就是，复制一份到打包脚本期望的位置
+          # ── 便携 Node：setup-node 装的就是，复制到打包脚本期望的位置 ──
           New-Item -ItemType Directory -Force -Path "temp/runtime/node" | Out-Null
           Copy-Item (Get-Command node).Source "temp/runtime/node/node.exe"
           if (-not (Test-Path "temp/runtime/node/node.exe")) { throw "node.exe 复制失败" }
 
-          # 便携 MySQL：从最新 Release 的 lite 包提取（lite 自带裁剪版，闭环成立）
-          # mysqld.exe 在 bin/ 子目录下，探测要带 bin/（首跑就栽在少写这层）
-          if (Test-Path "temp/runtime/mysql/bin/mysqld.exe") { echo "已有便携 MySQL，跳过"; exit 0 }
+          # ── 定位上一个 Release（自举源）──
           $prev = gh release list -R $env:GITHUB_REPOSITORY --limit 10 --json tagName,isLatest --jq '.[] | select(.isLatest) | .tagName'
           if (-not $prev) { $prev = gh release list -R $env:GITHUB_REPOSITORY --limit 1 --json tagName --jq '.[0].tagName' }
-          echo "从 $prev 的 lite 包提取便携 MySQL…"
-          gh release download $prev -R $env:GITHUB_REPOSITORY -p "*win-lite.7z" -O prev-lite.7z
-          7z x prev-lite.7z -o"prev-stage" -y
-          # lite 包内层根目录是 juting/（打包从 juting-package 暂存根整树压缩）；
-          # 两种布局都试，找不到 mysqld.exe 就带明确信息失败，别让后面打包步报模糊错
-          $mysql = @("prev-stage/juting/temp/runtime/mysql", "prev-stage/temp/runtime/mysql") |
-            Where-Object { Test-Path (Join-Path $_ "bin/mysqld.exe") } | Select-Object -First 1
-          if (-not $mysql) { throw "lite 包里找不到 temp/runtime/mysql（含 mysqld.exe）——包内布局可能变了，请检查本步骤" }
-          New-Item -ItemType Directory -Force -Path "temp/runtime" | Out-Null
-          Move-Item $mysql "temp/runtime/mysql"
-          Remove-Item -Recurse -Force "prev-stage", "prev-lite.7z"
+          echo "自举源：$prev"
+
+          # ── 便携 MySQL：从 lite 包提取（mysqld.exe 在 bin/ 子目录下，探测要带 bin/）──
+          if (-not (Test-Path "temp/runtime/mysql/bin/mysqld.exe")) {
+            gh release download $prev -R $env:GITHUB_REPOSITORY -p "*win-lite.7z" -O prev-lite.7z
+            7z x prev-lite.7z -o"prev-stage" -y | Out-Null
+            # lite 包内层根目录是 juting/（打包从 juting-package 暂存根整树压缩）
+            $mysql = @("prev-stage/juting/temp/runtime/mysql", "prev-stage/temp/runtime/mysql") |
+              Where-Object { Test-Path (Join-Path $_ "bin/mysqld.exe") } | Select-Object -First 1
+            if (-not $mysql) { throw "lite 包里找不到含 bin/mysqld.exe 的 temp/runtime/mysql——包内布局可能变了" }
+            New-Item -ItemType Directory -Force -Path "temp/runtime" | Out-Null
+            Move-Item $mysql "temp/runtime/mysql"
+            Remove-Item -Recurse -Force "prev-stage", "prev-lite.7z"
+            echo "便携 MySQL 已从 $prev 提取"
+          }
+
+          # ── 预设媒体（~1.4GB opus 不在 git）：从双全量包提取 presets 子树 ──
+          # seed.json 用 git 检出的新版（本版语料精修就在里面），绝不接受旧包覆盖
+          if (-not (Test-Path "presets/cet6/media/audio")) {
+            gh release download $prev -R $env:GITHUB_REPOSITORY -p "*win-full-cet6cet4.7z" -O prev-full.7z
+            7z x prev-full.7z -o"prev-full-stage" -y "juting/presets/*" | Out-Null
+            foreach ($key in @("cet4", "cet6")) {
+              $src = "prev-full-stage/juting/presets/$key/media"
+              if (-not (Test-Path "$src/audio")) { throw "双全量包里找不到 presets/$key/media/audio——布局可能变了" }
+              New-Item -ItemType Directory -Force -Path "presets/$key" | Out-Null
+              Move-Item $src "presets/$key/media"
+            }
+            Remove-Item -Recurse -Force "prev-full-stage", "prev-full.7z"
+            echo "预设媒体已从 $prev 提取"
+          }
         env:
           GH_TOKEN: ${{ github.token }}
+
+      - name: 媒体与 seed 同步守卫
+        shell: bash
+        run: |
+          # seed（git 新版）引用的每个音频都必须在提取出的媒体树里——缺文件说明
+          # 本轮音频有更新，云端自举的旧媒体打包必然残缺，应改走本机发版
+          node scripts/local/check-media-vs-seed.mjs
 
       - name: 打包三 flavor
         shell: bash
@@ -87,6 +119,21 @@ jobs:
           node scripts/local/package-release.mjs --skip-build $MISMATCH --version ${{ inputs.version }}
           node scripts/local/package-release.mjs --skip-build --skip-launcher $MISMATCH --version ${{ inputs.version }} --flavor cet4
           node scripts/local/package-release.mjs --skip-build --skip-launcher $MISMATCH --version ${{ inputs.version }} --flavor cet6
+
+      - name: 产物清点（防漏 flavor / 漏层——v0.7.9-ci1 首验证就漏了三个 media.zip）
+        shell: pwsh
+        run: |
+          $v = "${{ inputs.version }}"
+          $expect = @(
+            "juting-v$v-win-lite.7z", "juting-v$v-win-lite-update.zip", "juting-v$v-win-lite-deps.zip",
+            "juting-v$v-win-cet4.7z", "juting-v$v-win-cet4-update.zip", "juting-v$v-win-cet4-deps.zip", "juting-v$v-win-cet4-media.zip",
+            "juting-v$v-win-full-cet6.7z", "juting-v$v-win-full-cet6-update.zip", "juting-v$v-win-full-cet6-deps.zip", "juting-v$v-win-full-cet6-media.zip",
+            "juting-v$v-win-full-cet6cet4.7z", "juting-v$v-win-full-cet6cet4-update.zip", "juting-v$v-win-full-cet6cet4-deps.zip", "juting-v$v-win-full-cet6cet4-media.zip",
+            "SHA256SUMS.txt"
+          ) | ForEach-Object { Join-Path "..\juting-release" $_ }
+          $missing = $expect | Where-Object { -not (Test-Path $_) }
+          if ($missing) { throw "产物不全（$($missing.Count) 个缺失）：`n$($missing -join "`n")" }
+          echo "产物齐全：$($expect.Count) 个"
 
       - name: 上传 Release 资产
         uses: softprops/action-gh-release@v2
