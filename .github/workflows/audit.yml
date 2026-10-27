@@ -1,9 +1,13 @@
-# 夜间语料审计：每天凌晨（北京时间 05:00）跑门禁一条龙，数据漂移（误提交、
-# 生成脚本回归、手工改库）第二天自动报警（workflow 失败 → GitHub 邮件）。
+# 夜间语料审计：每天凌晨（北京时间 05:00）跑 seed 级门禁，数据漂移（误提交、
+# 生成脚本回归）第二天自动报警（workflow 失败 → GitHub 邮件）。
 #
-# 门禁内容见 scripts/audit/check-all.mjs（不变式/时长健全/时间轴重叠×2/缺题/
-# 单调重叠负时长，纯 node:fs 零依赖，node 24 原生跑 .ts import 无需安装依赖）。
-# 媒体不在 git，check-media-vs-seed（发版守卫）在 release.yml 里跑，这里不重复。
+# 只跑仓库可验的两道门（纯 node:fs 零依赖，node 24 原生跑无需安装任何包）：
+#   - check-missing-questions.mjs   题组连续性/缺题（cet4+cet6 seed）
+#   - check-monotonicity.mjs        时间轴单调/重叠/负时长（cet4+cet6 seed）
+#
+# 完整六道门禁（含连 MySQL 活库的不变式/时长健全、含 ffmpeg 啃音频的重叠门）
+# 依赖数据库与媒体，只能在有运行环境的机器上跑：node scripts/audit/check-all.mjs。
+# （CI 上这两类门会分别「连不上库崩溃」和「无媒体空转假绿」，故不放进本 workflow。）
 name: audit
 
 on:
@@ -17,7 +21,7 @@ permissions:
 jobs:
   gates:
     runs-on: ubuntu-latest
-    timeout-minutes: 15
+    timeout-minutes: 10
     steps:
       - uses: actions/checkout@v4
 
@@ -25,5 +29,7 @@ jobs:
         with:
           node-version: 24
 
-      - name: 门禁一条龙（6 gates）
-        run: node scripts/audit/check-all.mjs
+      - name: seed 门禁（缺题 + 单调/重叠/负时长）
+        run: |
+          node scripts/audit/check-missing-questions.mjs
+          node scripts/audit/check-monotonicity.mjs
