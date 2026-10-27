@@ -503,3 +503,51 @@
 .command-button.ghost-accent:hover {
   background: var(--accent-soft);
 }
+
+/* ── 盲听位置线：字幕关闭时的位置指示（HANDOFF-V7 泛听候选 4）──────────
+   水平线随当前句序位移动（换句平滑过渡），右端 chip 挂当前锚点标签与行序。
+   只给位置与段落结构感，不出现任何文本内容——盲听不被剧透。 */
+.blind-position-rail {
+  inset: 12% 10%;
+  position: absolute;
+}
+
+.blind-position-line {
+  height: 2px;
+  left: 0;
+  position: absolute;
+  right: 0;
+  background: var(--accent, #1cb0f6);
+  border-radius: 2px;
+  opacity: 0.65;
+  transition: top 0.45s ease;
+}
+
+.blind-position-chip {
+  align-items: center;
+  background: var(--card, #fff);
+  border: 1px solid var(--line, rgba(0, 0, 0, 0.12));
+  border-radius: 999px;
+  box-shadow: 0 1px 6px rgba(0, 0, 0, 0.08);
+  color: var(--ink, inherit);
+  display: inline-flex;
+  font-size: 12px;
+  gap: 8px;
+  line-height: 1;
+  padding: 5px 12px;
+  position: absolute;
+  right: 0;
+  top: -14px;
+  white-space: nowrap;
+}
+
+.blind-position-anchor {
+  color: var(--accent, #1cb0f6);
+  font-weight: 600;
+}
+
+.blind-position-count {
+  color: var(--ink-3, inherit);
+  font-variant-numeric: tabular-nums;
+  opacity: 0.8;
+}

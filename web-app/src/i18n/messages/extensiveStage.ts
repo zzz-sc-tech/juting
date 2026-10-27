@@ -19,4 +19,6 @@ export const extensiveStageMessages = {
     'extensive.rate': '倍速',
     'extensive.takeExam': '考一遍',
     'extensive.passes': '已泛听 {{count}} 遍',
+    // 盲听位置线（字幕关闭时的位置指示，不出现文本内容）
+    'extensive.blindLineCount': '{{current}} / {{total}} 句',
 }

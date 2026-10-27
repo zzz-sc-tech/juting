@@ -90,6 +90,18 @@ export function ExtensiveStage({
   const scrolledOnceRef = useRef(false)
   // 只在「激活句切换」时重定位：依赖句 id 而非句对象，避免 4Hz 播放时钟整拍重跑
   const activeLineId = activeLine?.id
+
+  // 盲听位置线（字幕关闭时）：当前句在全部行里的序位——只给位置感，
+  // 不泄露文本内容；线随换句平滑移动，旁挂当前锚点标签与行序。
+  const activeIndex = useMemo(() => {
+    if (activeLineId == null) return -1
+    return exercise.lines.findIndex((line) => line.id === activeLineId)
+  }, [exercise.lines, activeLineId])
+  const activeAnchorLabel = useMemo(
+    () => dialogueAnchors.find((anchor) => anchor.id === activeAnchorId)?.label ?? '',
+    [dialogueAnchors, activeAnchorId],
+  )
+
   useEffect(() => {
     const container = lyricsRef.current
     if (!container || activeLineId == null) {
@@ -145,7 +157,11 @@ export function ExtensiveStage({
                   unclearLineIds={unclearLineIds}
                 />
               ) : (
-                <div aria-hidden="true" className="listen-visual-waves" />
+                <BlindPositionTrack
+                  anchorLabel={activeAnchorLabel}
+                  currentIndex={activeIndex}
+                  total={exercise.lines.length}
+                />
               )}
             </>
           )}
@@ -262,6 +278,45 @@ export function ExtensiveStage({
     </section>
   )
 }
+
+/**
+ * 盲听位置线：字幕关闭（纯听）时歌词区的位置指示。
+ * 一条水平线随当前句序位平滑移动 + 当前锚点标签/行序 chip——只有位置与段落
+ * 结构，不出现任何文本内容，保持盲听不被剧透（HANDOFF-V7 泛听候选 4）。
+ */
+const BlindPositionTrack = memo(function BlindPositionTrack({
+  anchorLabel,
+  currentIndex,
+  total,
+}: {
+  anchorLabel: string
+  currentIndex: number
+  total: number
+}) {
+  const { t } = useLanguage()
+  // 开头静音区（首句 start>0）currentIndex 为 -1：线仍显示在顶部、行序按 1 计——
+  // 位置线是持续的位置参照，不应在待播时整个消失
+  const safeIndex = Math.max(currentIndex, 0)
+  const percent = total > 1 ? (safeIndex / (total - 1)) * 100 : 0
+  return (
+    <div
+      aria-hidden="true"
+      className="listen-visual-waves"
+      data-testid="blind-position-track"
+    >
+      <div className="blind-position-rail">
+        <div className="blind-position-line" style={{ top: `${percent}%` }}>
+          <span className="blind-position-chip">
+            {anchorLabel && <span className="blind-position-anchor">{anchorLabel}</span>}
+            <span className="blind-position-count">
+              {t('extensive.blindLineCount', { current: safeIndex + 1, total })}
+            </span>
+          </span>
+        </div>
+      </div>
+    </div>
+  )
+})
 
 const ExtensiveLyrics = memo(function ExtensiveLyrics({
   lines,
