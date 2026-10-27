@@ -1,20 +1,29 @@
-# 自动发版：tag push（v*）或手动触发 → 打包三 flavor → 上传 Release 资产。
+# 云端发版：手动触发（workflow_dispatch）→ 打包三 flavor → 创建 Release 并上传资产。
 #
-# ⚠ 试验性（2026-10-26 首建，未在 CI 实跑过）：打包依赖本机便携 MySQL
-# （temp/runtime/mysql），CI 上通过「解压上一个 Release 的 lite 包提取」补齐——
-# lite 包本身自带便携 MySQL，闭环成立。首跑请用 workflow_dispatch 手动触发并观察
-# 全程；失败时退回本机 scripts/local/release.mjs（已验证路径）。
+# 2026-10-27 v0.7.9 首跑（当时还是 tag 自动触发）失败复盘，两处教训：
+#   1) lite 7z 的内层根目录是 juting/，提取便携 MySQL 的 Move-Item 少写了一层 → 已修；
+#   2) tag 触发会与本机 scripts/local/release.mjs 重复上传同名资产互相冲突 → 改为仅手动触发。
 #
-# 本地等价命令：node scripts/local/release.mjs --version x.y.z --notes <file>
+# 云端发版流程（产物 ~4.5GB 由 runner 上传，不占本机带宽）：
+#   1. 本机：npm version x.y.z --no-git-tag-version && 提交推送（版本号先进 package.json）
+#   2. Actions 页面手动触发本工作流，version=x.y.z（必须是尚不存在 Release 的新版本号）
+#   3. 完成后到 Release 页补发版说明（或在触发时填 notes 输入）
+#
+# CI 环境补齐两个本机才有的文件（打包脚本 copyFile 缺源即中止）：
+#   - temp/runtime/mysql     ：解压上一个 Release 的 lite 包提取（lite 自带，闭环）
+#   - temp/runtime/node.exe  ：复制 setup-node 装的 node.exe（本机为 v24.x，保持同大版本）
+#
+# 本机等价命令：node scripts/local/release.mjs --version x.y.z --notes <file>
 name: release
 
 on:
-  push:
-    tags: ['v*']
   workflow_dispatch:
     inputs:
       version:
-        description: '版本号（如 0.7.8；tag 触发时忽略，取 tag 名）'
+        description: '版本号（如 0.7.10；须已提交进 package.json 且尚无同名 Release）'
+        required: true
+      notes:
+        description: '发版说明（可空；留空则建空说明的 Release，之后可再编辑）'
         required: false
 
 permissions:
@@ -29,49 +38,51 @@ jobs:
 
       - uses: actions/setup-node@v4
         with:
-          node-version: 20
-
-      - name: 解析版本号
-        id: ver
-        shell: bash
-        run: |
-          if [ "${{ github.event_name }}" = "push" ]; then
-            echo "version=${GITHUB_REF_NAME#v}" >> "$GITHUB_OUTPUT"
-          else
-            echo "version=${{ inputs.version }}" >> "$GITHUB_OUTPUT"
-          fi
+          node-version: 24
 
       - name: 安装依赖与构建
         run: |
           npm install --no-audit --no-fund
           npm run build
 
-      - name: 补齐便携 MySQL（从上一个 Release 的 lite 包提取）
+      - name: 补齐便携 Node 与 MySQL（CI 缺的两个本机文件）
         shell: pwsh
         run: |
+          # 便携 Node：setup-node 装的就是，复制一份到打包脚本期望的位置
+          New-Item -ItemType Directory -Force -Path "temp/runtime/node" | Out-Null
+          Copy-Item (Get-Command node).Source "temp/runtime/node/node.exe"
+          if (-not (Test-Path "temp/runtime/node/node.exe")) { throw "node.exe 复制失败" }
+
+          # 便携 MySQL：从最新 Release 的 lite 包提取（lite 自带裁剪版，闭环成立）
           if (Test-Path "temp/runtime/mysql/mysqld.exe") { echo "已有便携 MySQL，跳过"; exit 0 }
           $prev = gh release list -R $env:GITHUB_REPOSITORY --limit 10 --json tagName,isLatest --jq '.[] | select(.isLatest) | .tagName'
           if (-not $prev) { $prev = gh release list -R $env:GITHUB_REPOSITORY --limit 1 --json tagName --jq '.[0].tagName' }
           echo "从 $prev 的 lite 包提取便携 MySQL…"
           gh release download $prev -R $env:GITHUB_REPOSITORY -p "*win-lite.7z" -O prev-lite.7z
           7z x prev-lite.7z -o"prev-stage" -y
+          # lite 包内层根目录是 juting/（打包从 juting-package 暂存根整树压缩）；
+          # 两种布局都试，找不到 mysqld.exe 就带明确信息失败，别让后面打包步报模糊错
+          $mysql = @("prev-stage/juting/temp/runtime/mysql", "prev-stage/temp/runtime/mysql") |
+            Where-Object { Test-Path (Join-Path $_ "mysqld.exe") } | Select-Object -First 1
+          if (-not $mysql) { throw "lite 包里找不到 temp/runtime/mysql（含 mysqld.exe）——包内布局可能变了，请检查本步骤" }
           New-Item -ItemType Directory -Force -Path "temp/runtime" | Out-Null
-          Move-Item "prev-stage/temp/runtime/mysql" "temp/runtime/mysql"
+          Move-Item $mysql "temp/runtime/mysql"
           Remove-Item -Recurse -Force "prev-stage", "prev-lite.7z"
         env:
           GH_TOKEN: ${{ github.token }}
 
       - name: 打包三 flavor
         run: |
-          node scripts/local/package-release.mjs --skip-build --version ${{ steps.ver.outputs.version }}
-          node scripts/local/package-release.mjs --skip-build --skip-launcher --version ${{ steps.ver.outputs.version }} --flavor cet4
-          node scripts/local/package-release.mjs --skip-build --skip-launcher --version ${{ steps.ver.outputs.version }} --flavor cet6
+          node scripts/local/package-release.mjs --skip-build --version ${{ inputs.version }}
+          node scripts/local/package-release.mjs --skip-build --skip-launcher --version ${{ inputs.version }} --flavor cet4
+          node scripts/local/package-release.mjs --skip-build --skip-launcher --version ${{ inputs.version }} --flavor cet6
 
       - name: 上传 Release 资产
         uses: softprops/action-gh-release@v2
         with:
-          tag_name: v${{ steps.ver.outputs.version }}
+          tag_name: v${{ inputs.version }}
+          body: ${{ inputs.notes }}
           files: |
-            ../juting-release/juting-v${{ steps.ver.outputs.version }}*
+            ../juting-release/juting-v${{ inputs.version }}*
             ../juting-release/SHA256SUMS.txt
           fail_on_unmatched_files: true
