@@ -27,6 +27,7 @@ export type BackupFile = {
     prefs?: unknown
     dailyGoal?: unknown
     theme?: unknown
+    mode?: unknown
     /** 生词复习调度（A3 补入；老备份可能没有） */
     vocabReview?: unknown
     /** 所听时长（A3 补入；老备份可能没有） */
@@ -55,6 +56,7 @@ const KEYS = {
   dailyGoal: 'juting.web.daily-goal.v1',
   legacyDailyGoal: 'duolinting.web.daily-goal.v1',
   theme: 'juting.web.theme.v1',
+  mode: 'juting.web.mode.v1',
   vocabReview: 'juting.web.vocab-review.v1',
   listenTime: 'juting.web.listen-time.v1',
   autobackup: 'juting.web.autobackup.v1',
@@ -89,6 +91,7 @@ export const exportAll = (): BackupFile => ({
     prefs: readRaw(KEYS.prefs),
     dailyGoal: readRaw(KEYS.dailyGoal, KEYS.legacyDailyGoal),
     theme: readRaw(KEYS.theme),
+    mode: readRaw(KEYS.mode),
     vocabReview: readRaw(KEYS.vocabReview),
     listenTime: readRaw(KEYS.listenTime),
   },
@@ -220,6 +223,9 @@ const sanitizeDailyGoal = (value: unknown): number | null => {
 const THEMES = ['paper', 'gazette', 'minimal', 'exam'] as const
 const sanitizeTheme = (value: unknown): string | null =>
   typeof value === 'string' && (THEMES as readonly string[]).includes(value) ? value : null
+const MODES = ['system', 'light', 'dark'] as const
+const sanitizeMode = (value: unknown): string | null =>
+  typeof value === 'string' && (MODES as readonly string[]).includes(value) ? value : null
 
 type VocabReviewLike = {
   addedAt: number
@@ -479,6 +485,13 @@ export const importAll = (backup: BackupFile, mode: ImportMode): ImportResult =>
       else if (theme) {
         writeRaw(KEYS.theme, theme)
         imported.push(KEYS.theme)
+      }
+
+      const mode = sanitizeMode(data.mode)
+      if (data.mode !== undefined && !mode) skipped.push('mode')
+      else if (mode) {
+        writeRaw(KEYS.mode, mode)
+        imported.push(KEYS.mode)
       }
 
       const vocabReview = sanitizeVocabReview(data.vocabReview)

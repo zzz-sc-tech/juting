@@ -277,3 +277,51 @@ textarea {
   --wave-region: rgba(46, 49, 83, 0.08);
   --wave-region-active: rgba(176, 48, 48, 0.22);
 }
+
+/* ══════════════════════════════════════════════════════════════
+   纸墨书房 · 深色（charcoal 墨黑）
+   明暗只对 paper 提供变体：gazette/minimal/exam 各自是完整视觉身份，不做反转。
+   色值与安卓端 charcoal 深色板同源（ui/theme/Color.kt），双端夜读观感一致。
+   data-mode 属性由 lib/theme.ts 的 applyMode 管理（跟随系统/浅/深三档）。
+   ══════════════════════════════════════════════════════════════ */
+:root[data-mode='dark'] {
+  color-scheme: dark;
+}
+
+:root[data-theme='paper'][data-mode='dark'] {
+  /* 纸面层次 */
+  --bg: #1b1b17;
+  --bg-sunken: #151511;
+  --surface: #2b2b25; /* 仅浮层（弹窗/下拉/工具提示） */
+  --line: #3a3a33;
+  --line-strong: #4e4e45;
+
+  /* 主色：深松绿的反相——深底上用亮松绿（安卓 accent 同源） */
+  --accent: #a8cdbf;
+  --accent-strong: #c3ded3;
+  --accent-soft: #2c3b35;
+  --accent-soft-2: #25332d;
+  --accent-ink: #a8cdbf; /* 淡绿底上的主色文字态 */
+
+  /* 墨色四级（反相）。--ink-3 仍守「正文级灰字 ≥4.5:1」：#a8a298 对 #1b1b17 ≈ 7:1 */
+  --ink: #e8e4dc;
+  --ink-2: #c7c1b6;
+  --ink-3: #a8a298;
+  --ink-4: #57534a;
+
+  /* 语义色（深底高亮变体，安卓同源） */
+  --success: #8cc0a4;
+  --success-soft: #24352c;
+  --warning: #d8a87a;
+  --warning-soft: #3a2e22;
+  --danger: #e0938b;
+  --danger-soft: #3b2523;
+
+  /* 阴影与聚焦环（深底改黑投影 + 亮绿环） */
+  --shadow-float: 0 12px 32px rgba(0, 0, 0, 0.5), 0 2px 8px rgba(0, 0, 0, 0.35);
+  --focus-ring: 0 0 0 3px rgba(168, 205, 191, 0.26);
+
+  /* 波形画布色（canvas 不解析 CSS 变量，走 getComputedStyle） */
+  --wave-region: rgba(168, 205, 191, 0.12);
+  --wave-region-active: rgba(168, 205, 191, 0.34);
+}

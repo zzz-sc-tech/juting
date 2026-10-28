@@ -27,9 +27,13 @@ import {
   readQuarantineCopies,
 } from '../lib/storageSafety'
 import {
+  applyMode,
   applyTheme,
+  getStoredMode,
   getStoredTheme,
+  persistMode,
   persistTheme,
+  type ThemeMode,
   type UiTheme,
 } from '../lib/theme'
 import {
@@ -52,6 +56,12 @@ import { UpdatePanel } from './UpdatePanel'
  * 主题选择：四套主题是视觉差异，用一个原生下拉只能读到名字，看不到配色。
  * 改为 2×2 卡片（每组 3 个色块：纸底 / 墨色 / 主色），用 radiogroup 保留键盘与读屏。
  */
+const MODE_OPTIONS: { id: ThemeMode; labelKey: 'settings.modeSystem' | 'settings.modeLight' | 'settings.modeDark' }[] = [
+  { id: 'system', labelKey: 'settings.modeSystem' },
+  { id: 'light', labelKey: 'settings.modeLight' },
+  { id: 'dark', labelKey: 'settings.modeDark' },
+]
+
 const THEME_CARDS: Array<{
   id: UiTheme
   labelKey: MessageKey
@@ -68,6 +78,7 @@ export function SettingsPage() {
   const { t } = useLanguage()
   const [dailyGoal, setDailyGoal] = useState(loadDailyGoal)
   const [theme, setTheme] = useState<UiTheme>(getStoredTheme)
+  const [mode, setMode] = useState<ThemeMode>(getStoredMode)
   const [prefs, setPrefs] = useState<UserPrefs>(loadUserPrefs)
   // 数据备份区：选完文件先挂起，由用户选覆盖/合并后才真正写入
   const [pendingBackup, setPendingBackup] = useState<BackupFile | null>(null)
@@ -91,6 +102,12 @@ export function SettingsPage() {
     setTheme(value)
     applyTheme(value)
     persistTheme(value)
+  }
+
+  const handleModeChange = (value: ThemeMode) => {
+    setMode(value)
+    applyMode(value)
+    persistMode(value)
   }
 
   const handlePrefsChange = (patch: Partial<UserPrefs>) => {
@@ -229,6 +246,18 @@ export function SettingsPage() {
                 <span className="theme-card-name">{t(card.labelKey)}</span>
               </button>
             ))}
+          </div>
+          <div className="settings-field">
+            <span className="settings-field-label">{t('settings.mode')}</span>
+            <SettingsSelect
+              ariaLabel={t('settings.mode')}
+              onChange={(value) => handleModeChange(value as ThemeMode)}
+              options={MODE_OPTIONS.map((option) => ({ value: option.id, label: t(option.labelKey) }))}
+              value={mode}
+            />
+            {mode !== 'system' && theme !== 'paper' ? (
+              <p className="settings-field-hint">{t('settings.modeHint')}</p>
+            ) : null}
           </div>
         </section>
 
