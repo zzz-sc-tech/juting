@@ -1,4 +1,5 @@
 import express from 'express';
+import localBackupRouter from './local-backup';
 import {
     getUpdateState,
     requestLauncherAction,
@@ -14,6 +15,9 @@ import {
  * 后端只做信使：写命令文件、读状态文件。
  */
 const router = express.Router();
+
+// 学习存档自动镜像（localStorage → temp/runtime/local-backups/，见 local-backup.ts）
+router.use('/', localBackupRouter);
 
 router.get('/update', (_req, res) => {
     res.send(getUpdateState());

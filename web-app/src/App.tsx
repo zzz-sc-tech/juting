@@ -1,10 +1,11 @@
-import { lazy, Suspense } from 'react'
+import { lazy, Suspense, useEffect } from 'react'
 import { Navigate, Route, Routes } from 'react-router-dom'
 import './App.css'
 // 首页是默认落地页，保持静态 import：拆出去反而多一次请求
 import { DashboardPage } from './components/dashboard/DashboardPage'
 import { ErrorBoundary } from './components/ErrorBoundary'
 import { StorageAlertBanner } from './components/StorageAlertBanner'
+import { startLocalBackupMirror } from './lib/localBackupMirror'
 
 // 其余页面按路由懒加载（命名导出要转成 default，否则报 Element type is invalid）。
 // 收益主要来自 StudyPage（五舞台 + 波形）与生词本页（1.3MB 词典）。
@@ -15,6 +16,8 @@ const SearchPage = lazy(() => import('./pages/SearchPage').then((m) => ({ defaul
 const SettingsPage = lazy(() => import('./components/SettingsPage').then((m) => ({ default: m.SettingsPage })))
 
 function App() {
+  // 学习存档自动镜像到后端（localStorage → temp/runtime/local-backups/，见 lib/localBackupMirror）
+  useEffect(() => startLocalBackupMirror(), [])
   return (
     <ErrorBoundary>
       {/* 存储故障常驻横幅：写盘失败/数据损坏时置顶提示，任何页面都看得到 */}
