@@ -300,6 +300,7 @@ type ExerciseProgressLike = {
   showTranslation?: boolean
   hideTranscript?: boolean
   playbackRate?: number
+  lastPositionSec?: number
   extensivePasses?: number
   updatedAt?: string
   lines?: Record<string, LineProgressLike>

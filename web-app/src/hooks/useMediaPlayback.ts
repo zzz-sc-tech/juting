@@ -1,14 +1,24 @@
 import { useCallback, useEffect, useRef, useState, type RefObject } from 'react'
 import { accumulateListenTime, flushListenTime } from '../lib/listenTime'
+import { validResumePosition, worthSaving } from '../lib/playbackResume'
 
 type UseMediaPlaybackOptions = {
   mediaRef: RefObject<HTMLMediaElement | null>
   playbackRate: number
+  /** 断点续听的课程键（seriesId/exerciseId）；undefined = 不保存不恢复（如实战）。 */
+  courseKey?: string
+  /** 位置落库回调（sec=null 表示清除，ended 后调用）；节流由本 hook 负责。 */
+  onSavePosition?: (sec: number | null) => void
+  /** 该课程上次保存的位置秒数（courseKey 变化时尝试恢复）。 */
+  savedPositionSec?: number
 }
 
 export function useMediaPlayback({
   mediaRef,
   playbackRate,
+  courseKey,
+  onSavePosition,
+  savedPositionSec,
 }: UseMediaPlaybackOptions) {
   const [isPlaying, setIsPlaying] = useState(false)
   const isPlayingRef = useRef(false)
@@ -20,6 +30,67 @@ export function useMediaPlayback({
   const stopPlaybackRef = useRef(false)
   const playbackTokenRef = useRef(0)
   const rangeCleanupRef = useRef<(() => void) | null>(null)
+
+  // ---- 断点续听 ----
+  // 保存：播放中每 10s 节流写一次；pause 事件即时写（换课/换舞台前的最后一刻）；
+  // ended 清除。恢复：courseKey 变化时收下 savedPositionSec，媒体元数据就绪后
+  // 且还没被别处 seek 过，才静默 seek 过去（暂停态，是否播放由用户决定）。
+  const courseKeyRef = useRef(courseKey)
+  courseKeyRef.current = courseKey
+  const savePositionRef = useRef(onSavePosition)
+  savePositionRef.current = onSavePosition
+  const lastTimeRef = useRef(0)
+  const pendingResumeRef = useRef<number | null>(null)
+  const restoredKeyRef = useRef<string | undefined>(undefined)
+
+  const persistPosition = useCallback(
+    (sec: number | null) => {
+      const key = courseKeyRef.current
+      if (!key || !savePositionRef.current) {
+        return
+      }
+      savePositionRef.current(sec)
+    },
+    [],
+  )
+
+  const tryPersistCurrent = useCallback(() => {
+    const media = mediaRef.current
+    if (!media) {
+      return
+    }
+    const time = media.currentTime
+    lastTimeRef.current = time
+    if (worthSaving(time, Number.isFinite(media.duration) ? media.duration : 0)) {
+      persistPosition(time)
+    }
+  }, [mediaRef, persistPosition])
+
+  useEffect(() => {
+    if (restoredKeyRef.current === courseKey) {
+      return
+    }
+    restoredKeyRef.current = courseKey
+    pendingResumeRef.current =
+      courseKey && savedPositionSec ? validResumePosition(savedPositionSec, 0) : null
+    // 竞态兜底：音频已缓存时 loadedmetadata 可能早于本 effect 触发（attach 时的
+    // applyPendingResume 还没拿到意图）——元数据已就绪就立即补一次
+    const media = mediaRef.current
+    if (pendingResumeRef.current != null && media && media.readyState >= 1) {
+      const target = pendingResumeRef.current
+      if (media.currentTime <= 0.5) {
+        const dur = Number.isFinite(media.duration) ? media.duration : 0
+        const valid = validResumePosition(target, dur)
+        pendingResumeRef.current = null
+        if (valid != null) {
+          media.currentTime = valid
+          setCurrentTime(valid)
+        }
+      } else {
+        pendingResumeRef.current = null
+      }
+    }
+  }, [courseKey, savedPositionSec])
 
   useEffect(() => {
     // 舞台组件挂载媒体元素发生在本 effect 之后（ref 绑定不触发重渲），
@@ -44,23 +115,67 @@ export function useMediaPlayback({
         setDuration(Number.isFinite(media.duration) ? media.duration : 0)
       }
 
+      // 断点恢复：元数据就绪且尚未被别处 seek 过（currentTime 仍在起点）才应用
+      const applyPendingResume = () => {
+        const target = pendingResumeRef.current
+        if (target == null || media.currentTime > 0.5) {
+          return
+        }
+        const dur = Number.isFinite(media.duration) ? media.duration : 0
+        const valid = validResumePosition(target, dur)
+        pendingResumeRef.current = null
+        if (valid != null) {
+          media.currentTime = valid
+          setCurrentTime(valid)
+        }
+      }
+
+      const onPauseSync = () => {
+        syncPlaybackState()
+        tryPersistCurrent()
+      }
+      const onEndedSync = () => {
+        syncPlaybackState()
+        persistPosition(null)
+      }
+      const onMetadataSync = () => {
+        syncPlaybackState()
+        applyPendingResume()
+      }
+
       syncPlaybackState()
       // 元素后挂载时把当前速率立即放上去（applyPlaybackRate 的 effect 只在
       // 速率变化时重跑，首挂载那一刻它早已跑过、当时 ref 还是空的）
       media.playbackRate = playbackRateRef.current
+      // 断点恢复兜底：pending 还挂着且元数据已就绪（loadedmetadata 可能已在
+      // StrictMode 双挂载的清理窗口里错过）→ 每次挂载/轮询 attach 时补应用
+      if (pendingResumeRef.current != null && media.readyState >= 1) {
+        const target = pendingResumeRef.current
+        if (media.currentTime <= 0.5) {
+          const dur = Number.isFinite(media.duration) ? media.duration : 0
+          const valid = validResumePosition(target, dur)
+          if (valid != null) {
+            media.currentTime = valid
+            setCurrentTime(valid)
+          }
+          pendingResumeRef.current = null
+        } else {
+          pendingResumeRef.current = null
+        }
+      }
       media.addEventListener('play', syncPlaybackState)
-      media.addEventListener('pause', syncPlaybackState)
-      media.addEventListener('ended', syncPlaybackState)
+      media.addEventListener('pause', onPauseSync)
+      media.addEventListener('ended', onEndedSync)
       media.addEventListener('timeupdate', syncPlaybackState)
-      media.addEventListener('loadedmetadata', syncPlaybackState)
-      media.addEventListener('durationchange', syncPlaybackState)
+      media.addEventListener('loadedmetadata', onMetadataSync)
+      media.addEventListener('durationchange', onMetadataSync)
       detach = () => {
         media.removeEventListener('play', syncPlaybackState)
-        media.removeEventListener('pause', syncPlaybackState)
-        media.removeEventListener('ended', syncPlaybackState)
+        media.removeEventListener('pause', onPauseSync)
+        media.removeEventListener('ended', onEndedSync)
         media.removeEventListener('timeupdate', syncPlaybackState)
-        media.removeEventListener('loadedmetadata', syncPlaybackState)
-        media.removeEventListener('durationchange', syncPlaybackState)
+        media.removeEventListener('loadedmetadata', onMetadataSync)
+        media.removeEventListener('durationchange', onMetadataSync)
       }
     }
 
@@ -78,6 +193,28 @@ export function useMediaPlayback({
     },
     [],
   )
+
+  // 断点续听：播放中每 10s 落一次位置；页面隐藏/卸载时补一次
+  useEffect(() => {
+    const timer = window.setInterval(() => {
+      if (isPlayingRef.current && !document.hidden) {
+        tryPersistCurrent()
+      }
+    }, 10_000)
+    const flushOnHide = () => {
+      if (isPlayingRef.current) {
+        tryPersistCurrent()
+      }
+    }
+    window.addEventListener('pagehide', flushOnHide)
+    return () => {
+      window.clearInterval(timer)
+      window.removeEventListener('pagehide', flushOnHide)
+      if (isPlayingRef.current) {
+        tryPersistCurrent()
+      }
+    }
+  }, [tryPersistCurrent])
 
   // ---- 所听时长累计（任务：首页「所听时长」统计）----
   // 在本 hook 的播放状态上按墙钟时间累计（不乘倍速），复用这一层而不是另起采集体系。

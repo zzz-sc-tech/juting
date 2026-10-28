@@ -408,6 +408,8 @@ export type ExerciseProgress = {
   showTranslation: boolean
   hideTranscript: boolean
   playbackRate?: number
+  /** 断点续听：上次播放到的媒体秒数（ended 后清除；由播放链路节流写入）。 */
+  lastPositionSec?: number
   /** 泛听遍数：每次完整听完一遍累加（复训计划的依据）。 */
   extensivePasses?: number
   updatedAt: string

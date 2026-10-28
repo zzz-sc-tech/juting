@@ -52,7 +52,35 @@ export function MediaPlaybackProvider({
   // mediaRef 与四个舞台组件共享：哪个阶段挂载，哪个就把自己的 audio/video
   // 元素绑到同一个 ref 上（同一时间只有一个舞台渲染媒体元素）。
   const mediaRef = useRef<HTMLMediaElement | null>(null)
-  const { activeExercise, selectLine } = useStudySession()
+  const {
+    activeExercise,
+    selectLine,
+    selectedSeriesId,
+    studyStage,
+    progress,
+    updateActiveProgress,
+  } = useStudySession()
+
+  // 断点续听：非实战阶段按 seriesId/exerciseId 记录播放位置（实战从头考，不续）。
+  // 位置存进 ExerciseProgress.lastPositionSec，随进度存档持久化。
+  const courseKey =
+    activeExercise && studyStage !== 'exam'
+      ? `${selectedSeriesId}/${activeExercise.id}`
+      : undefined
+  const savedPositionSec = progress?.lastPositionSec
+  const onSavePosition = useCallback(
+    (sec: number | null) => {
+      if (!activeExercise) {
+        return
+      }
+      updateActiveProgress((current) => ({
+        ...current,
+        lastPositionSec: sec ?? undefined,
+      }))
+    },
+    [activeExercise, updateActiveProgress],
+  )
+
   const {
     currentTime,
     duration,
@@ -64,7 +92,7 @@ export function MediaPlaybackProvider({
     seekMedia,
     stopPlayback,
     toggleMediaPlayback,
-  } = useMediaPlayback({ mediaRef, playbackRate })
+  } = useMediaPlayback({ mediaRef, playbackRate, courseKey, onSavePosition, savedPositionSec })
 
   const playSingleLine = useCallback(
     async (line: TranscriptLine) => {
