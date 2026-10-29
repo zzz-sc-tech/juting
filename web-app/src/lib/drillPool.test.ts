@@ -162,11 +162,11 @@ describe('questionAudioRange', () => {
   const questions = [question(1), question(2), question(3)]
 
   it('从该部分材料报头起播，到本题题干念完（材料不能被切掉）', () => {
-    expect(questionAudioRange(questions, lines, 2, { anchors })).toEqual({ start: 5, end: 48 })
+    expect(questionAudioRange(questions, lines, 2, { anchors })).toEqual({ start: 5, end: 48, partLineId: 'c1' })
   })
 
   it('同一部分里靠后的题也从头听材料（Q3 起于 Conversation 2）', () => {
-    expect(questionAudioRange(questions, lines, 3, { anchors })).toEqual({ start: 48, end: 94 })
+    expect(questionAudioRange(questions, lines, 3, { anchors })).toEqual({ start: 48, end: 94, partLineId: 'c2' })
   })
 
   it('认 "Question 7." 词形，不只认 "Q7."', () => {
@@ -191,7 +191,7 @@ describe('questionAudioRange', () => {
       { ...line('s', 30, 36), text: 'What does the man imply?' },
     ]
     const range = questionAudioRange([question(1, 's')], plain, 1, { anchors })
-    expect(range).toEqual({ start: 5, end: 36 })
+    expect(range).toEqual({ start: 5, end: 36, partLineId: 'c1' })
   })
 
   it('题干行没有结束时间时，退到下一题起点 / duration', () => {
@@ -200,15 +200,44 @@ describe('questionAudioRange', () => {
       { id: 'q1', start: 10, end: Number.NaN, text: 'Q1. Why?', translation: '', answers: [], keywords: [] },
       { ...line('q2', 60, 64), text: 'Q2. What?' },
     ]
-    expect(questionAudioRange([question(1), question(2)], broken, 1, { anchors })).toEqual({ start: 5, end: 60 })
+    expect(questionAudioRange([question(1), question(2)], broken, 1, { anchors })).toEqual({ start: 5, end: 60, partLineId: 'c1' })
   })
 
   it('duration 会截断越界区间', () => {
-    expect(questionAudioRange(questions, lines, 3, { anchors, duration: 92 })).toEqual({ start: 48, end: 92 })
+    expect(questionAudioRange(questions, lines, 3, { anchors, duration: 92 })).toEqual({ start: 48, end: 92, partLineId: 'c2' })
   })
 
   it('没有字幕时间轴 / 题号不存在时返回 null', () => {
     expect(questionAudioRange(questions, [], 1, { anchors })).toBeNull()
     expect(questionAudioRange(questions, lines, 25, { anchors })).toBeNull()
+  })
+})
+
+describe('takeRound 抽样', () => {
+  const build = (courses: number, perCourse: number) => {
+    const list: DrillQuestion[] = []
+    for (let course = 1; course <= courses; course += 1) {
+      for (let n = 1; n <= perCourse; n += 1) {
+        list.push({ key: `${course}:${n}`, exerciseId: course, n } as DrillQuestion)
+      }
+    }
+    return list
+  }
+
+  it('课程足够时，一轮覆盖的课数 = 题数（不再同一套卷连抽）', () => {
+    const round = takeRound(build(20, 5), 10, () => 0)
+    expect(round).toHaveLength(10)
+    expect(new Set(round.map((q) => q.exerciseId)).size).toBe(10)
+  })
+
+  it('课程不够时先每课一题再补第二圈', () => {
+    const round = takeRound(build(3, 5), 10, () => 0)
+    expect(round).toHaveLength(10)
+    const firstThree = new Set(round.slice(0, 3).map((q) => q.exerciseId))
+    expect(firstThree.size).toBe(3)
+  })
+
+  it('题池小于一轮时全给', () => {
+    expect(takeRound(build(2, 2), 10)).toHaveLength(4)
   })
 })

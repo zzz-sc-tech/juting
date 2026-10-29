@@ -99,14 +99,38 @@ export const shuffle = <T>(list: T[], random: () => number = Math.random): T[] =
   return next
 }
 
-/** 从题池里取一轮：不足 size 时全给（宁少不重复，同题连做两遍没意义）。 */
+/**
+ * 从题池里取一轮：按课去重优先——先每门课取一题，不够再补第二圈。
+ * 纯 shuffle 会连着抽到同一套卷（实测 5 题里同一套出现两次），
+ * 十道题尽量覆盖十套卷，训练面才够宽。
+ */
 export const takeRound = (
   pool: DrillQuestion[],
   size: number,
   random: () => number = Math.random,
-): DrillQuestion[] => shuffle(pool, random).slice(0, Math.max(1, size))
+): DrillQuestion[] => {
+  const target = Math.max(1, size)
+  const shuffled = shuffle(pool, random)
+  const seenCourses = new Set<number>()
+  const firstPass: DrillQuestion[] = []
+  const secondPass: DrillQuestion[] = []
+  for (const question of shuffled) {
+    if (seenCourses.has(question.exerciseId)) {
+      secondPass.push(question)
+    } else {
+      seenCourses.add(question.exerciseId)
+      firstPass.push(question)
+    }
+  }
+  return [...firstPass, ...secondPass].slice(0, target)
+}
 
-export type AudioRange = { start: number; end: number }
+export type AudioRange = {
+  start: number
+  end: number
+  /** 该部分材料首行（跳到精听时用来落地） */
+  partLineId?: string
+}
 
 const finite = (value: number | undefined | null): value is number =>
   typeof value === 'number' && Number.isFinite(value)
@@ -160,11 +184,13 @@ export const questionAudioRange = (
 
   const anchors = options.anchors ?? []
   let start = 0
+  let partLineId: string | undefined
   if (anchors.length > 0) {
     for (const anchor of anchors) {
       if (anchor.kind !== 'text' || !PART_BOUNDARY.test(anchor.label)) continue
-      if (finite(anchor.start) && anchor.start <= targetLine.start + 0.2) {
-        start = Math.max(start, anchor.start)
+      if (finite(anchor.start) && anchor.start <= targetLine.start + 0.2 && anchor.start >= start) {
+        start = anchor.start
+        partLineId = anchor.lineIds[0]
       }
     }
   } else {
@@ -198,5 +224,5 @@ export const questionAudioRange = (
   if (!(end > start)) {
     end = start + 30
   }
-  return { start, end }
+  return partLineId ? { start, end, partLineId } : { start, end }
 }

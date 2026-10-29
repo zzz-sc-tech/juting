@@ -37,6 +37,7 @@ export const examStageMessages = {
     'exam.lockedHint': '本部分已锁定——材料只播一遍，请把后面的题听完',
     // 错题定位（从仪表盘「你最常错的题」点进来）
     'exam.targetedChip': '定位练习 · 第 {{n}} 题',
+    'exam.targetingHint': '正在定位到第 {{n}} 题…',
     'exam.targetedNotRecorded': '本次为单题定位练习，不计入成绩档案与常错题统计',
     'exam.targetedResult': '第 {{n}} 题 {{result}}',
     'exam.targetedRight': '答对了',

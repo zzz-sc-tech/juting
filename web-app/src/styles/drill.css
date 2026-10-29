@@ -338,6 +338,78 @@
   font-size: 13px;
 }
 
+.drill-verdict-actions {
+  align-items: center;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+/* 错题本入口：夹在选题型与开始之间的一条横幅 */
+.drill-wrongbar {
+  align-items: center;
+  background: var(--warning-soft);
+  border: 1px solid var(--line);
+  border-radius: var(--radius-md);
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  justify-content: space-between;
+  padding: 10px 12px;
+}
+
+.drill-wrongbar-main {
+  align-items: center;
+  color: var(--ink);
+  display: inline-flex;
+  font-size: 13px;
+  font-weight: 500;
+  gap: 6px;
+}
+
+.drill-wrongbar-main svg {
+  color: var(--warning);
+}
+
+.drill-wrongbar-count {
+  color: var(--ink-3);
+  font-size: 12px;
+  font-weight: 400;
+}
+
+.drill-wrongbar-actions {
+  display: inline-flex;
+  gap: 8px;
+}
+
+/* 错题重练的轮次标记 */
+.drill-mode-chip {
+  background: var(--accent-soft);
+  border-radius: var(--radius-pill);
+  color: var(--accent-ink);
+  font-size: 11px;
+  font-weight: 500;
+  padding: 2px 8px;
+}
+
+.drill-retry-note {
+  color: var(--ink-3);
+  font-size: 12px;
+}
+
+.drill-key-hint {
+  color: var(--ink-3);
+  font-size: 11px;
+  margin: 0;
+}
+
+.drill-summary-detail {
+  color: var(--ink-3);
+  font-size: 13px;
+  font-variant-numeric: tabular-nums;
+  margin: 0;
+}
+
 .drill-verdict-foot {
   align-items: center;
   display: flex;

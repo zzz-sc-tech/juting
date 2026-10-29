@@ -427,3 +427,57 @@ describe('备考三功能分区（专项刷题统计 / 考试日期）', () => {
     expect(JSON.parse(storage.get('juting.web.drill-stats.v1') ?? '{}')).toEqual(drillStatsFixture)
   })
 })
+
+describe('专项错题本分区', () => {
+  const wrongFixture = {
+    '13:9': { exerciseId: 13, n: 9, wrongCount: 2, lastWrongAt: '2026-10-27T10:00:00.000Z' },
+    '14:3': { exerciseId: 14, n: 3, wrongCount: 1, lastWrongAt: '2026-10-28T10:00:00.000Z' },
+  }
+
+  let storage: Map<string, string>
+  beforeEach(() => {
+    storage = installStorage({ 'juting.web.drill-wrong.v1': JSON.stringify(wrongFixture) })
+  })
+
+  it('导出包含错题本', () => {
+    expect(exportAll().data.drillWrong).toEqual(wrongFixture)
+  })
+
+  it('replace 导入可恢复错题本', () => {
+    const backup = exportAll()
+    storage.clear()
+    const result = importAll(backup, 'replace')
+    expect(result.ok).toBe(true)
+    expect(JSON.parse(storage.get('juting.web.drill-wrong.v1') ?? '{}')).toEqual(wrongFixture)
+  })
+
+  it('合并取并集：两边各自错过的题都留着，次数取大、时间取近', () => {
+    const file = parseBackup(
+      JSON.stringify({
+        format: 'juting-backup',
+        version: 1,
+        data: {
+          drillWrong: {
+            '13:9': { exerciseId: 13, n: 9, wrongCount: 5, lastWrongAt: '2026-10-20T10:00:00.000Z' },
+            '20:16': { exerciseId: 20, n: 16, wrongCount: 1, lastWrongAt: '2026-10-29T10:00:00.000Z' },
+          },
+        },
+      }),
+    )
+    importAll(file, 'merge')
+    const merged = JSON.parse(storage.get('juting.web.drill-wrong.v1') ?? '{}')
+    expect(Object.keys(merged).sort()).toEqual(['13:9', '14:3', '20:16'])
+    expect(merged['13:9'].wrongCount).toBe(5)
+    // 时间取更近的一侧（本机 10-27 晚于备份 10-20）
+    expect(merged['13:9'].lastWrongAt).toBe('2026-10-27T10:00:00.000Z')
+  })
+
+  it('畸形错题本整项跳过，不清空本机', () => {
+    const file = parseBackup(
+      JSON.stringify({ format: 'juting-backup', version: 1, data: { drillWrong: ['nope'] } }),
+    )
+    const result = importAll(file, 'replace')
+    expect(result.skipped).toContain('drillWrong')
+    expect(JSON.parse(storage.get('juting.web.drill-wrong.v1') ?? '{}')).toEqual(wrongFixture)
+  })
+})

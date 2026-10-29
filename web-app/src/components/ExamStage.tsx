@@ -272,6 +272,18 @@ export function ExamStage({
     seekToQuestion(targetIdx)
   }, [seekToQuestion, targetIdx])
 
+  // 定位练习：seek 之后 currentTime 要等播放器推一拍才同步，
+  // 这段时间里 activePartIdx 还是 -1，题卡会误报「这部分还没播到」。
+  // 记一次「目标部分已经激活」，之后再回退进度也不改口。
+  const [targetArrived, setTargetArrived] = useState(!targeted)
+  useEffect(() => {
+    if (!targeted || targetIdx < 0) return
+    const targetPart = parts.findIndex((part) => part.items.includes(targetIdx))
+    if (targetPart >= 0 && activePartIdx >= targetPart) {
+      setTargetArrived(true)
+    }
+  }, [activePartIdx, parts, targeted, targetIdx])
+
   // 播放结束 = 自然收卷
   useEffect(() => {
     if (
@@ -646,9 +658,11 @@ export function ExamStage({
             {/* 不能作答时必须说人话：只靠题头右上角 12px 的小字，用户只会觉得点不动 */}
             {!submitted && !answerable && (
               <p className="exam-answerable-hint">
-                {viewPartIdx >= 0 && viewPartIdx < activePartIdx
-                  ? t('exam.lockedHint')
-                  : t('exam.answerableHint', { n: viewPartIdx + 1 })}
+                {targeted && !targetArrived
+                  ? t('exam.targetingHint', { n: initialQuestion ?? 0 })
+                  : viewPartIdx >= 0 && viewPartIdx < activePartIdx
+                    ? t('exam.lockedHint')
+                    : t('exam.answerableHint', { n: viewPartIdx + 1 })}
               </p>
             )}
             <div className="exam-options">

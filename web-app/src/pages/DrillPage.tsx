@@ -19,7 +19,16 @@ import {
   recordDrillAnswer,
   type DrillStats,
 } from '../lib/drillStats'
-import type { ExamLetter, ExamSection } from '../lib/examHistory'
+import {
+  addDrillWrong,
+  clearDrillWrong,
+  drillWrongList,
+  loadDrillWrong,
+  removeDrillWrong,
+  wrongKey,
+  type DrillWrongStore,
+} from '../lib/drillWrong'
+import { sectionOfQuestion, type ExamLetter, type ExamSection } from '../lib/examHistory'
 
 // 按题型专项刷题：从 38 套有答案钥匙的真题里按 Section 抽题，单题作答、立即判分。
 // 刻意独立成页、独立记账：实战舞台是「整套卷模拟」，混进单题训练会毁掉它的语义，
@@ -69,7 +78,7 @@ function useExerciseDetailLite(exerciseId: number | null) {
         if (mounted) setDetail(exercise)
       })
       .catch(() => {
-        // 详情拉不到只影响「播放本题音频」，题目本身照做
+        // 详情拉不到只影响「播放本题音频」与跳转定位，题目本身照做
       })
     return () => {
       mounted = false
@@ -79,12 +88,21 @@ function useExerciseDetailLite(exerciseId: number | null) {
 }
 
 type DrillRound = {
+  /** pool = 按题型抽题；wrong = 错题本／本轮错题重练 */
+  mode: 'pool' | 'wrong'
   section: ExamSection
   queue: DrillQuestion[]
   index: number
   answer: ExamLetter | null
   correct: number
   wrong: number
+  skipped: number
+  /** 本轮答错的题：小结页「只练本轮错题」用它 */
+  wrongThisRound: DrillQuestion[]
+  /** 当前题是否已计入统计（重做后不再计，避免同一题算两次） */
+  counted: boolean
+  /** 当前题是重做过的（判分条上标「重做不计分」） */
+  retried: boolean
 }
 
 export function DrillPage() {
@@ -94,6 +112,7 @@ export function DrillPage() {
   const [section, setSection] = useState<ExamSection>('A')
   const [round, setRound] = useState<DrillRound | null>(null)
   const [stats, setStats] = useState<DrillStats>(loadDrillStats)
+  const [wrongStore, setWrongStore] = useState<DrillWrongStore>(loadDrillWrong)
 
   const pools = useMemo(
     () => ({
@@ -102,6 +121,21 @@ export function DrillPage() {
       C: buildDrillPool(exercises, 'C'),
     }),
     [exercises],
+  )
+  // 错题本里存的是 exerciseId:题号，跨 Section；重建题目要回到总池里找
+  const questionByKey = useMemo(() => {
+    const map = new Map<string, DrillQuestion>()
+    for (const item of [...pools.A, ...pools.B, ...pools.C]) {
+      map.set(item.key, item)
+    }
+    return map
+  }, [pools])
+  const wrongQuestions = useMemo(
+    () =>
+      drillWrongList(wrongStore)
+        .map((entry) => questionByKey.get(wrongKey(entry.exerciseId, entry.n)))
+        .filter((item): item is DrillQuestion => Boolean(item)),
+    [questionByKey, wrongStore],
   )
 
   const current = round && round.index < round.queue.length ? round.queue[round.index] : null
@@ -183,41 +217,82 @@ export function DrillPage() {
   }
 
   // ── 一轮的推进 ──
-  const startRound = useCallback(() => {
-    const pool = pools[section]
-    if (pool.length === 0) return
-    playedKeyRef.current = null
-    stopAudio()
-    setRound({
-      section,
-      queue: takeRound(pool, ROUND_SIZE),
-      index: 0,
-      answer: null,
-      correct: 0,
-      wrong: 0,
-    })
-  }, [pools, section, stopAudio])
+  const startRound = useCallback(
+    (mode: 'pool' | 'wrong', preset?: DrillQuestion[]) => {
+      const queue =
+        preset ??
+        (mode === 'wrong'
+          ? wrongQuestions.slice(0, ROUND_SIZE)
+          : takeRound(pools[section], ROUND_SIZE))
+      if (queue.length === 0) return
+      playedKeyRef.current = null
+      stopAudio()
+      setRound({
+        mode,
+        section,
+        queue,
+        index: 0,
+        answer: null,
+        correct: 0,
+        wrong: 0,
+        skipped: 0,
+        wrongThisRound: [],
+        counted: false,
+        retried: false,
+      })
+    },
+    [pools, section, stopAudio, wrongQuestions],
+  )
 
   const choose = (letter: ExamLetter) => {
     if (!round || round.answer !== null || !current) return
     const isCorrect = letter === current.answer
-    setRound((state) =>
-      state
-        ? {
-            ...state,
-            answer: letter,
-            correct: state.correct + (isCorrect ? 1 : 0),
-            wrong: state.wrong + (isCorrect ? 0 : 1),
-          }
-        : state,
-    )
-    setStats(recordDrillAnswer(round.section, isCorrect))
+    const counts = !round.counted
+    setRound({
+      ...round,
+      answer: letter,
+      counted: true,
+      correct: round.correct + (counts && isCorrect ? 1 : 0),
+      wrong: round.wrong + (counts && !isCorrect ? 1 : 0),
+      wrongThisRound:
+        counts && !isCorrect ? [...round.wrongThisRound, current] : round.wrongThisRound,
+    })
+    if (counts) {
+      setStats(recordDrillAnswer(sectionOfQuestion(current.n), isCorrect))
+      setWrongStore(
+        isCorrect
+          ? removeDrillWrong(current.exerciseId, current.n)
+          : addDrillWrong(current.exerciseId, current.n),
+      )
+    }
     stopAudio()
   }
 
   const goNext = () => {
+    if (!round || round.answer === null) return
     stopAudio()
-    setRound((state) => (state ? { ...state, index: state.index + 1, answer: null } : state))
+    setRound({ ...round, index: round.index + 1, answer: null, counted: false, retried: false })
+  }
+
+  /** 跳过：不计对错、不进统计，只累加跳过数（卡住时不必作废整轮） */
+  const skip = () => {
+    if (!round || round.answer !== null) return
+    stopAudio()
+    setRound({
+      ...round,
+      index: round.index + 1,
+      answer: null,
+      counted: false,
+      retried: false,
+      skipped: round.skipped + 1,
+    })
+  }
+
+  /** 重做：清掉这次选择再来一遍；第一次的对错已计入，重做不再计分 */
+  const redo = () => {
+    if (!round || round.answer === null) return
+    stopAudio()
+    setRound({ ...round, answer: null, counted: true, retried: true })
   }
 
   const quitRound = () => {
@@ -225,6 +300,73 @@ export function DrillPage() {
     playedKeyRef.current = null
     setRound(null)
   }
+
+  const jumpToCourse = () => {
+    if (!current) return
+    const lineId = range?.partLineId
+    navigate(
+      `/courses/${current.categoryId}/chapters/${current.exerciseId}?stage=intensive${lineId ? `&line=${encodeURIComponent(lineId)}` : ''}`,
+    )
+  }
+
+  const clearWrong = () => {
+    if (!window.confirm(t('drill.wrong.confirmClear'))) return
+    setWrongStore(clearDrillWrong())
+  }
+
+  // ── 键盘作答：A–D / 1–4 选，Enter/→ 下一题，R 重听，S 跳过 ──
+  // 处理器走 ref：播放中每 250ms 一次 timeupdate 都会重渲染，若进依赖数组，
+  // 监听器会被反复摘挂（实战舞台踩过同样的坑）。
+  const keyStateRef = useRef({ choose, goNext, skip, playCurrent, round, current, finished })
+  keyStateRef.current = { choose, goNext, skip, playCurrent, round, current, finished }
+  useEffect(() => {
+    const letterByKey: Record<string, ExamLetter> = {
+      a: 'A',
+      b: 'B',
+      c: 'C',
+      d: 'D',
+      1: 'A',
+      2: 'B',
+      3: 'C',
+      4: 'D',
+    }
+    const onKeyDown = (event: KeyboardEvent) => {
+      if (event.metaKey || event.ctrlKey || event.altKey) return
+      const target = event.target instanceof HTMLElement ? event.target : null
+      if (target?.closest('input, textarea, select, [contenteditable="true"]')) return
+      const state = keyStateRef.current
+      if (!state.round || state.finished || !state.current) return
+      const key = event.key.toLowerCase()
+      const letter = letterByKey[key]
+      if (letter) {
+        if (state.round.answer === null) {
+          event.preventDefault()
+          state.choose(letter)
+        }
+        return
+      }
+      if (key === 'enter' || key === 'arrowright') {
+        if (state.round.answer !== null) {
+          event.preventDefault()
+          state.goNext()
+        }
+        return
+      }
+      if (key === 's') {
+        if (state.round.answer === null) {
+          event.preventDefault()
+          state.skip()
+        }
+        return
+      }
+      if (key === 'r') {
+        event.preventDefault()
+        state.playCurrent()
+      }
+    }
+    window.addEventListener('keydown', onKeyDown)
+    return () => window.removeEventListener('keydown', onKeyDown)
+  }, [])
 
   const poolCount = pools[section].length
   const roundSize = Math.min(ROUND_SIZE, poolCount)
@@ -286,20 +428,47 @@ export function DrillPage() {
                 </div>
 
                 {poolCount > 0 ? (
-                  <button className="drill-start" onClick={startRound} type="button">
+                  <button className="drill-start" onClick={() => startRound('pool')} type="button">
                     <Headphones size={16} aria-hidden="true" />
                     {t('drill.start', { count: roundSize })}
                   </button>
                 ) : (
                   <p className="drill-empty">{t('drill.emptyPool')}</p>
                 )}
+
+                {wrongQuestions.length > 0 && (
+                  <div className="drill-wrongbar">
+                    <span className="drill-wrongbar-main">
+                      <CircleAlert size={14} aria-hidden="true" />
+                      {t('drill.wrong.title')}
+                      <span className="drill-wrongbar-count">
+                        {t('drill.wrong.count', { count: wrongQuestions.length })}
+                      </span>
+                    </span>
+                    <span className="drill-wrongbar-actions">
+                      <button className="drill-ghost" onClick={() => startRound('wrong')} type="button">
+                        {t('drill.wrong.start')}
+                      </button>
+                      <button className="drill-ghost" onClick={clearWrong} type="button">
+                        {t('drill.wrong.clear')}
+                      </button>
+                    </span>
+                  </div>
+                )}
               </section>
             )}
 
             {round && !finished && current && (
-              <section className="drill-question-card">
+              <section
+                className="drill-question-card"
+                data-exercise-id={current.exerciseId}
+                data-question-no={current.n}
+              >
                 <div className="drill-q-head">
                   <span className="drill-q-no">{t('drill.questionLabel', { n: current.n })}</span>
+                  {round.mode === 'wrong' && (
+                    <span className="drill-mode-chip">{t('drill.mode.wrong')}</span>
+                  )}
                   <span className="drill-q-source">{current.title}</span>
                   <span className="drill-q-progress">
                     {t('drill.roundProgress', {
@@ -307,6 +476,11 @@ export function DrillPage() {
                       total: round.queue.length,
                     })}
                   </span>
+                  {round.answer === null && (
+                    <button className="drill-ghost" onClick={skip} type="button">
+                      {t('drill.skip')}
+                    </button>
+                  )}
                   <button className="drill-ghost" onClick={quitRound} type="button">
                     {t('drill.quit')}
                   </button>
@@ -356,32 +530,43 @@ export function DrillPage() {
                 </div>
 
                 {round.answer !== null && (
-                  <div className={round.answer === current.answer ? 'drill-verdict ok' : 'drill-verdict bad'}>
+                  <div
+                    aria-live="polite"
+                    className={round.answer === current.answer ? 'drill-verdict ok' : 'drill-verdict bad'}
+                  >
                     <div className="drill-verdict-head">
                       <strong>
                         {round.answer === current.answer ? t('drill.right') : t('drill.wrong')}
                       </strong>
                       <span>{t('drill.correctAnswer', { letter: current.answer })}</span>
+                      {round.retried && <span className="drill-retry-note">{t('drill.retryNotCounted')}</span>}
                     </div>
                     <div className="drill-verdict-foot">
-                      <button
-                        className="drill-ghost"
-                        onClick={() =>
-                          navigate(
-                            `/courses/${current.categoryId}/chapters/${current.exerciseId}?stage=intensive`,
-                          )
-                        }
-                        type="button"
-                      >
-                        {t('drill.goCourse')}
-                        <ChevronRight size={14} aria-hidden="true" />
-                      </button>
-                      <button className="drill-next" onClick={goNext} type="button">
-                        {round.index + 1 >= round.queue.length ? t('drill.finish') : t('drill.next')}
-                      </button>
+                      <div className="drill-verdict-actions">
+                        <button className="drill-ghost" onClick={jumpToCourse} type="button">
+                          {t('drill.goCourse')}
+                          <ChevronRight size={14} aria-hidden="true" />
+                        </button>
+                        <button className="drill-ghost" onClick={playCurrent} type="button">
+                          <RotateCcw size={14} aria-hidden="true" />
+                          {t('drill.replay')}
+                        </button>
+                      </div>
+                      <div className="drill-verdict-actions">
+                        {round.answer !== current.answer && (
+                          <button className="drill-ghost" onClick={redo} type="button">
+                            {t('drill.redo')}
+                          </button>
+                        )}
+                        <button className="drill-next" onClick={goNext} type="button">
+                          {round.index + 1 >= round.queue.length ? t('drill.finish') : t('drill.next')}
+                        </button>
+                      </div>
                     </div>
                   </div>
                 )}
+
+                <p className="drill-key-hint">{t('drill.keyHint')}</p>
               </section>
             )}
 
@@ -391,9 +576,26 @@ export function DrillPage() {
                 <p className="drill-summary-score">
                   <strong>{round.correct}</strong> / {round.queue.length}
                 </p>
+                <p className="drill-summary-detail">
+                  {t('drill.stats.detail', { correct: round.correct, wrong: round.wrong })}
+                  {round.skipped > 0 ? ` · ${t('drill.done.skipped', { count: round.skipped })}` : ''}
+                </p>
                 <p className="drill-summary-hint">{t('drill.done.hint')}</p>
                 <div className="drill-summary-actions">
-                  <button className="drill-start" onClick={startRound} type="button">
+                  {round.wrongThisRound.length > 0 && (
+                    <button
+                      className="drill-start"
+                      onClick={() => startRound('wrong', round.wrongThisRound)}
+                      type="button"
+                    >
+                      {t('drill.done.wrongOnly', { count: round.wrongThisRound.length })}
+                    </button>
+                  )}
+                  <button
+                    className={round.wrongThisRound.length > 0 ? 'drill-ghost' : 'drill-start'}
+                    onClick={() => startRound(round.mode)}
+                    type="button"
+                  >
                     {t('drill.again')}
                   </button>
                   <button className="drill-ghost" onClick={quitRound} type="button">

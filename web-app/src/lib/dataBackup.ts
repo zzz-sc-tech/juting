@@ -14,6 +14,7 @@
  */
 
 import { emptyDrillStats, normalizeDrillStats, type DrillStats } from './drillStats'
+import { normalizeDrillWrong, type DrillWrongStore } from './drillWrong'
 import { isValidExamDate } from './examDate'
 import { registerSpaceReclaimer, safeSetItem } from './storageSafety'
 
@@ -36,6 +37,8 @@ export type BackupFile = {
     listenTime?: unknown
     /** 按题型专项刷题的累计对/错（备考三功能补入） */
     drillStats?: unknown
+    /** 专项刷题的错题本（答对即出队；备考优化批补入） */
+    drillWrong?: unknown
     /** 考试日期 'YYYY-MM-DD'（备考三功能补入） */
     examDate?: unknown
   }
@@ -66,6 +69,7 @@ const KEYS = {
   vocabReview: 'juting.web.vocab-review.v1',
   listenTime: 'juting.web.listen-time.v1',
   drillStats: 'juting.web.drill-stats.v1',
+  drillWrong: 'juting.web.drill-wrong.v1',
   examDate: 'juting.web.exam-date.v1',
   autobackup: 'juting.web.autobackup.v1',
   lastExport: 'juting.web.last-export.v1',
@@ -103,6 +107,7 @@ export const exportAll = (): BackupFile => ({
     vocabReview: readRaw(KEYS.vocabReview),
     listenTime: readRaw(KEYS.listenTime),
     drillStats: readRaw(KEYS.drillStats),
+    drillWrong: readRaw(KEYS.drillWrong),
     examDate: readRaw(KEYS.examDate),
   },
 })
@@ -473,6 +478,26 @@ export const mergeDrillStats = (local: unknown, incoming: unknown): DrillStats =
   }
 }
 
+/**
+ * 错题本合并：按键取并集，次数取大、时间取近。
+ * 与统计不同，这里不能只留一侧——另一台设备上错过的题，同样是你要补的题。
+ */
+export const mergeDrillWrong = (local: unknown, incoming: unknown): DrillWrongStore => {
+  const merged: DrillWrongStore = { ...(normalizeDrillWrong(local) ?? {}) }
+  for (const [key, entry] of Object.entries(normalizeDrillWrong(incoming) ?? {})) {
+    const existing = merged[key]
+    merged[key] = existing
+      ? {
+          ...entry,
+          wrongCount: Math.max(existing.wrongCount, entry.wrongCount),
+          lastWrongAt:
+            existing.lastWrongAt > entry.lastWrongAt ? existing.lastWrongAt : entry.lastWrongAt,
+        }
+      : entry
+  }
+  return merged
+}
+
 // ---------- 导入 ----------
 /** 导入备份；mode=replace 原样写回（校验过的部分），mode=merge 按并集规则合并。 */
 export const importAll = (backup: BackupFile, mode: ImportMode): ImportResult => {
@@ -553,6 +578,13 @@ export const importAll = (backup: BackupFile, mode: ImportMode): ImportResult =>
         imported.push(KEYS.drillStats)
       }
 
+      const drillWrong = normalizeDrillWrong(data.drillWrong)
+      if (data.drillWrong !== undefined && !drillWrong) skipped.push('drillWrong')
+      else if (drillWrong) {
+        writeRaw(KEYS.drillWrong, drillWrong)
+        imported.push(KEYS.drillWrong)
+      }
+
       const examDate = sanitizeExamDate(data.examDate)
       if (data.examDate !== undefined && !examDate) skipped.push('examDate')
       else if (examDate) {
@@ -592,6 +624,13 @@ export const importAll = (backup: BackupFile, mode: ImportMode): ImportResult =>
         imported.push(KEYS.listenTime)
       } else if (data.listenTime !== undefined) {
         skipped.push('listenTime')
+      }
+
+      if (data.drillWrong !== undefined && normalizeDrillWrong(data.drillWrong) !== null) {
+        writeRaw(KEYS.drillWrong, mergeDrillWrong(readRaw(KEYS.drillWrong), data.drillWrong))
+        imported.push(KEYS.drillWrong)
+      } else if (data.drillWrong !== undefined) {
+        skipped.push('drillWrong')
       }
 
       if (data.drillStats !== undefined && normalizeDrillStats(data.drillStats) !== null) {
