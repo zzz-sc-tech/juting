@@ -23,8 +23,7 @@ export type WrongStat = {
   section: ExamSection
 }
 
-/** 跨课程聚合反复错题，按 wrongCount 降序；同错次数按题号升序稳定输出。 */
-export const aggregateWrong = (
+/** 跨课程聚合反复错题，按 wrongCount 降序；同错次数按题号升序稳定输出。 */export const aggregateWrong = (
   attemptsByCourse: Record<string, ExamAttempt[]>,
 ): WrongStat[] => {
   const byQuestion = new Map<string, WrongStat>()
@@ -60,3 +59,11 @@ export const aggregateWrong = (
     right.wrongCount - left.wrongCount || left.courseId - right.courseId || left.questionNo - right.questionNo,
   )
 }
+
+/**
+ * 「反复错」的门槛：考过 ≥2 场，或同一题错过 ≥2 次。
+ * 只错一次的题很可能只是没听清，不值得进错题清单——这也是仪表盘 TOP5
+ * 一直沿用的口径，两处共用避免首页和清单页数字对不上。
+ */
+export const isRepeatedWrong = (stat: WrongStat): boolean =>
+  stat.attemptCount >= 2 || stat.wrongCount >= 2

@@ -16,6 +16,7 @@ import { stageMessages } from './messages/studyStages'
 import { studyStatesMessages } from './messages/studyStates'
 import { vocabMessages } from './messages/vocab'
 import { waveformStageMessages } from './messages/waveformStage'
+import { wrongBookMessages } from './messages/wrongBook'
 
 // 单语（简体中文）文案表：各模块维护在 messages/ 下（每模块一张扁平键表，
 // key 以模块名做前缀），这里合并成一张总表供 useLanguage().t(key) 查询。
@@ -38,6 +39,7 @@ const messages = {
   ...studyStatesMessages,
   ...vocabMessages,
   ...waveformStageMessages,
+  ...wrongBookMessages,
 }
 
 export type MessageKey = keyof typeof messages

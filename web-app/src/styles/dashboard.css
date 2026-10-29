@@ -182,6 +182,23 @@
   font-size: 12px;
 }
 
+/* 卡片头右侧的轻量入口（如「全部 N 题」）：文字按钮，不抢 h2 的位置 */
+.dashboard-card-link {
+  background: none;
+  border: none;
+  color: var(--accent-ink);
+  cursor: pointer;
+  font: inherit;
+  font-size: 12px;
+  padding: 0;
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+
+.dashboard-card-link:hover {
+  color: var(--accent);
+}
+
 .dashboard-empty {
   color: var(--ink-3);
   font-size: 13px;

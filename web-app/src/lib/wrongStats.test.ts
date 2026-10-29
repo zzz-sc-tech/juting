@@ -1,6 +1,6 @@
 import { describe, expect, it } from 'vitest'
 import type { ExamAttempt } from './examHistory'
-import { aggregateWrong } from './wrongStats'
+import { aggregateWrong, isRepeatedWrong } from './wrongStats'
 
 /**
  * 反复错题聚合：跨场次计数、最近错期、Section 归属、排序稳定。
@@ -68,5 +68,28 @@ describe('aggregateWrong', () => {
   it('同一题在同一场里重复出现只按追加处理（数据脏时的兜底行为）', () => {
     const stats = aggregateWrong({ '1': [attempt('2026-10-01', [4, 4])] })
     expect(stats[0].wrongCount).toBe(2)
+  })
+})
+
+describe('isRepeatedWrong', () => {
+  const stat = (wrongCount: number, attemptCount: number) => ({
+    courseId: 1,
+    questionNo: 3,
+    wrongCount,
+    attemptCount,
+    lastWrongDate: '2026-10-29T00:00:00.000Z',
+    section: 'A' as const,
+  })
+
+  it('考过两场以上就算反复错（哪怕只错一次）', () => {
+    expect(isRepeatedWrong(stat(1, 2))).toBe(true)
+  })
+
+  it('同一题错两次也算', () => {
+    expect(isRepeatedWrong(stat(2, 1))).toBe(true)
+  })
+
+  it('只考过一场且只错一次：不进清单', () => {
+    expect(isRepeatedWrong(stat(1, 1))).toBe(false)
   })
 })

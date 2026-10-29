@@ -34,6 +34,7 @@ export const dashboardMessages = {
     'dashboard.wrong.meta': '错 {{wrong}} 次 / 考过 {{attempts}} 场 · Section {{section}}',
     'dashboard.wrong.empty': '还没有反复错的题——保持！',
     'dashboard.wrong.hint': '点一题去实战重做',
+    'dashboard.wrong.all': '全部 {{count}} 题',
     // 考试倒计时（设置页设了考试日期才出现）
     'dashboard.countdown.label': '距考试',
     'dashboard.countdown.labelPast': '考试已过',

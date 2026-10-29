@@ -1,0 +1,213 @@
+/* 错题清单（/wrong）：按 Section 分组的可折叠列表，一行一题。 */
+
+.wrongbook-page {
+  min-height: 100vh;
+  padding-bottom: env(safe-area-inset-bottom, 0px);
+}
+
+.wrongbook-container {
+  display: grid;
+  gap: 16px;
+  margin: 0 auto;
+  max-width: 980px;
+  padding: 26px 28px 48px;
+}
+
+.wrongbook-header {
+  align-items: baseline;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  justify-content: space-between;
+}
+
+.wrongbook-header h1 {
+  color: var(--ink);
+  font-size: 28px;
+  font-weight: 600;
+  letter-spacing: -0.01em;
+  margin: 0 0 6px;
+}
+
+.wrongbook-header p {
+  color: var(--ink-3);
+  font-size: 14px;
+  margin: 0;
+  max-width: 620px;
+}
+
+.wrongbook-total {
+  color: var(--ink-3);
+  font-size: 13px;
+  font-variant-numeric: tabular-nums;
+}
+
+.wrongbook-empty {
+  background: var(--surface);
+  border: 1px dashed var(--line-strong);
+  border-radius: var(--radius-lg);
+  color: var(--ink-3);
+  display: grid;
+  font-size: 14px;
+  gap: 10px;
+  justify-items: start;
+  margin: 0;
+  padding: 24px;
+}
+
+.wrongbook-empty p {
+  margin: 0;
+}
+
+.wrongbook-empty-hint {
+  font-size: 13px;
+}
+
+.wrongbook-retry {
+  align-items: center;
+  background: transparent;
+  border: 1px solid var(--accent);
+  border-radius: var(--radius-md);
+  color: var(--accent-ink);
+  cursor: pointer;
+  display: inline-flex;
+  font: inherit;
+  font-size: 13px;
+  min-height: 34px;
+  padding: 0 14px;
+}
+
+.wrongbook-groups {
+  display: grid;
+  gap: 14px;
+}
+
+.wrongbook-group {
+  background: var(--surface);
+  border: 1px solid var(--line);
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+}
+
+.wrongbook-group-head {
+  align-items: center;
+  background: none;
+  border: none;
+  border-bottom: 1px solid transparent;
+  color: var(--ink);
+  cursor: pointer;
+  display: flex;
+  font: inherit;
+  gap: 10px;
+  padding: 12px 16px;
+  text-align: left;
+  width: 100%;
+}
+
+.wrongbook-group-head:hover {
+  background: var(--accent-soft-2);
+}
+
+.wrongbook-group-title {
+  font-size: 14px;
+  font-weight: 600;
+}
+
+.wrongbook-group-count {
+  color: var(--ink-3);
+  font-size: 12px;
+  font-variant-numeric: tabular-nums;
+}
+
+.wrongbook-group-chevron {
+  color: var(--ink-3);
+  margin-left: auto;
+  transform: rotate(90deg);
+  transition: transform 0.15s ease;
+}
+
+.wrongbook-group-chevron.open {
+  transform: rotate(-90deg);
+}
+
+.wrongbook-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.wrongbook-list li + li {
+  border-top: 1px solid var(--line);
+}
+
+.wrongbook-list button {
+  align-items: center;
+  background: none;
+  border: none;
+  color: inherit;
+  cursor: pointer;
+  display: flex;
+  font: inherit;
+  gap: 12px;
+  padding: 11px 16px;
+  text-align: left;
+  width: 100%;
+}
+
+.wrongbook-list button:hover {
+  background: var(--accent-soft-2);
+}
+
+.wrongbook-icon {
+  color: var(--danger);
+  flex-shrink: 0;
+}
+
+.wrongbook-main {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  min-width: 0;
+}
+
+.wrongbook-title {
+  color: var(--ink);
+  font-size: 13px;
+  font-weight: 500;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.wrongbook-list button:hover .wrongbook-title {
+  color: var(--accent);
+}
+
+.wrongbook-meta {
+  color: var(--ink-3);
+  font-size: 12px;
+}
+
+.wrongbook-action {
+  align-items: center;
+  color: var(--ink-3);
+  display: inline-flex;
+  flex-shrink: 0;
+  font-size: 12px;
+  gap: 2px;
+  margin-left: auto;
+}
+
+.wrongbook-list button:hover .wrongbook-action {
+  color: var(--accent-ink);
+}
+
+@media (max-width: 720px) {
+  .wrongbook-container {
+    padding: 18px 16px 40px;
+  }
+
+  .wrongbook-action {
+    display: none;
+  }
+}

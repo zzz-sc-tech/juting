@@ -3,7 +3,7 @@ import { useEffect, useMemo, useState } from 'react'
 import { useNavigate } from 'react-router-dom'
 import { useLanguage } from '../../i18n/LanguageProvider'
 import { getAllAttempts, getLatestByCourse } from '../../lib/examHistory'
-import { aggregateWrong } from '../../lib/wrongStats'
+import { aggregateWrong, isRepeatedWrong } from '../../lib/wrongStats'
 import { daysUntil, loadExamDate } from '../../lib/examDate'
 import { useCatalog } from '../../hooks/useCatalog'
 import { useCategoryExercises } from '../../hooks/useCategoryExercises'
@@ -155,17 +155,15 @@ export function DashboardPage() {
     return { entries, avg, count: entries.length, last: entries[0] ?? null }
   }, [allExercises])
 
-  // 反复错题：历次实战 wrong[] 跨场次累计，取最常错的 5 题（需考过 2 次以上才算"反复"）
-  const wrongTop = useMemo(() => {
-    const all = getAllAttempts()
-    const stats = aggregateWrong(all)
-      .filter((stat) => stat.attemptCount >= 2 || stat.wrongCount >= 2)
-      .slice(0, 5)
+  // 反复错题：历次实战 wrong[] 跨场次累计（需考过 2 次以上或同题错 2 次）
+  const wrongAll = useMemo(() => {
+    const stats = aggregateWrong(getAllAttempts()).filter(isRepeatedWrong)
     return stats.map((stat) => {
       const exercise = allExercises.find((item) => item.id === stat.courseId)
       return { ...stat, title: exercise?.title ?? `#${stat.courseId}`, categoryId: exercise?.categoryId ?? 1 }
     })
   }, [allExercises])
+  const wrongTop = useMemo(() => wrongAll.slice(0, 5), [wrongAll])
 
   const chart = useMemo(() => {
     const dayMs = 24 * 60 * 60 * 1000
@@ -437,8 +435,18 @@ export function DashboardPage() {
             <section className="dashboard-card dashboard-wrong-card" aria-label={t('dashboard.wrong.title')}>
               <div className="dashboard-card-head">
                 <h2>{t('dashboard.wrong.title')}</h2>
-                {wrongTop.length > 0 && (
-                  <span className="dashboard-card-subtitle">{t('dashboard.wrong.hint')}</span>
+                {wrongAll.length > 5 ? (
+                  <button
+                    className="dashboard-card-link"
+                    onClick={() => navigate('/wrong')}
+                    type="button"
+                  >
+                    {t('dashboard.wrong.all', { count: wrongAll.length })}
+                  </button>
+                ) : (
+                  wrongTop.length > 0 && (
+                    <span className="dashboard-card-subtitle">{t('dashboard.wrong.hint')}</span>
+                  )
                 )}
               </div>
               {wrongTop.length > 0 ? (
