@@ -34,4 +34,13 @@ export const dashboardMessages = {
     'dashboard.wrong.meta': '错 {{wrong}} 次 / 考过 {{attempts}} 场 · Section {{section}}',
     'dashboard.wrong.empty': '还没有反复错的题——保持！',
     'dashboard.wrong.hint': '点一题去实战重做',
+    // 考试倒计时（设置页设了考试日期才出现）
+    'dashboard.countdown.label': '距考试',
+    'dashboard.countdown.labelPast': '考试已过',
+    'dashboard.countdown.unit': '天',
+    'dashboard.countdown.pace': '按每天 {{goal}} 句，到考试约掌握 {{capacity}} 句（≈ {{courses}} 门课）',
+    'dashboard.countdown.paceAll': '按每天 {{goal}} 句，全部课程都覆盖得到',
+    'dashboard.countdown.done': '全部句子都已掌握',
+    'dashboard.countdown.today': '就是今天——去把错题过一遍',
+    'dashboard.countdown.past': '考试日已过，改个新日期继续',
 }

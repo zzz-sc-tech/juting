@@ -2,6 +2,13 @@
 export const settingsMessages = {
     'settings.dailyGoal': '每日目标',
     'settings.dailyGoalDescription': '每天掌握几句（1–500）',
+    // 备考倒计时（考试日期）
+    'settings.examDate.title': '备考',
+    'settings.examDate.label': '考试日期',
+    'settings.examDate.hint': '设好后仪表盘会显示倒计时，并按剩余未掌握句数算每天要啃多少。',
+    'settings.examDate.days': '距考试还有 {{days}} 天',
+    'settings.examDate.past': '这个日期已经过了，改一个吧',
+    'settings.examDate.clear': '清除日期',
     'settings.title': '设置',
     'settings.back': '返回',
     'settings.theme': '界面主题',

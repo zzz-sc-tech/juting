@@ -15,6 +15,63 @@
   margin-bottom: 22px;
 }
 
+/* 头行：左边今日进度，右边考试倒计时；没设考试日期时右边不渲染，左侧保持原样 */
+.dashboard-hero-main {
+  align-items: flex-end;
+  display: flex;
+  gap: 24px;
+  justify-content: space-between;
+}
+
+.dashboard-hero-left {
+  min-width: 0;
+}
+
+/* 倒计时：一根主色竖线隔开，数字右对齐，像报纸刊头的「距截稿」计数 */
+.dashboard-countdown {
+  border-left: 2px solid var(--accent);
+  display: grid;
+  flex: 0 0 auto;
+  gap: 3px;
+  justify-items: end;
+  padding: 2px 0 2px 16px;
+  text-align: right;
+}
+
+.dashboard-countdown-label {
+  color: var(--ink-3);
+  font-size: 12px;
+  letter-spacing: 0.04em;
+}
+
+.dashboard-countdown-value {
+  align-items: baseline;
+  color: var(--ink-3);
+  display: inline-flex;
+  font-size: 13px;
+  gap: 5px;
+}
+
+.dashboard-countdown-value strong {
+  color: var(--accent-ink);
+  font-size: 34px;
+  font-variant-numeric: tabular-nums;
+  font-weight: 600;
+  line-height: 1;
+}
+
+.dashboard-countdown-date {
+  color: var(--ink-3);
+  font-size: 12px;
+  font-variant-numeric: tabular-nums;
+}
+
+.dashboard-countdown-pace {
+  color: var(--ink-2);
+  font-size: 12px;
+  max-width: 280px;
+}
+
 .dashboard-hero h1 {
   color: var(--ink);
   font-size: 28px;
@@ -530,4 +587,26 @@
 .dashboard-wrong-meta {
   color: var(--ink-3);
   font-size: 12px;
+}
+
+/* 窄屏：倒计时从「首屏右侧」改成「今日进度下面一条」，
+   竖线转横线，避免和标题挤在同一行 */
+@media (max-width: 720px) {
+  .dashboard-hero-main {
+    align-items: stretch;
+    flex-direction: column;
+    gap: 14px;
+  }
+
+  .dashboard-countdown {
+    border-left: none;
+    border-top: 2px solid var(--accent);
+    justify-items: start;
+    padding: 10px 0 0;
+    text-align: left;
+  }
+
+  .dashboard-countdown-pace {
+    max-width: none;
+  }
 }

@@ -13,6 +13,7 @@
  * 导出时 legacy 值会作为 progress 导出，导入统一写回新键。
  */
 
+import { isValidExamDate } from './examDate'
 import { registerSpaceReclaimer, safeSetItem } from './storageSafety'
 
 export type BackupFile = {
@@ -32,6 +33,8 @@ export type BackupFile = {
     vocabReview?: unknown
     /** 所听时长（A3 补入；老备份可能没有） */
     listenTime?: unknown
+    /** 考试日期 'YYYY-MM-DD'（备考三功能补入） */
+    examDate?: unknown
   }
 }
 
@@ -59,6 +62,7 @@ const KEYS = {
   mode: 'juting.web.mode.v1',
   vocabReview: 'juting.web.vocab-review.v1',
   listenTime: 'juting.web.listen-time.v1',
+  examDate: 'juting.web.exam-date.v1',
   autobackup: 'juting.web.autobackup.v1',
   lastExport: 'juting.web.last-export.v1',
 } as const
@@ -94,6 +98,7 @@ export const exportAll = (): BackupFile => ({
     mode: readRaw(KEYS.mode),
     vocabReview: readRaw(KEYS.vocabReview),
     listenTime: readRaw(KEYS.listenTime),
+    examDate: readRaw(KEYS.examDate),
   },
 })
 
@@ -281,6 +286,10 @@ const sanitizeListenTime = (value: unknown): ListenTimeLike | null => {
   const summed = Object.values(byDay).reduce((sum, ms) => sum + ms, 0)
   return { totalMs: Math.max(declared, summed), byDay }
 }
+
+/** 考试日期：只接受合法的 'YYYY-MM-DD'，脏值整项跳过（宁可不恢复也不写坏数据）。 */
+const sanitizeExamDate = (value: unknown): string | null =>
+  typeof value === 'string' && isValidExamDate(value) ? value : null
 
 const writeRaw = (key: string, value: unknown) => {
   // 导入写盘同样不能静默失败：配额满时用户以为恢复成功，实际一条没写进去
@@ -507,6 +516,13 @@ export const importAll = (backup: BackupFile, mode: ImportMode): ImportResult =>
         writeRaw(KEYS.listenTime, listenTime)
         imported.push(KEYS.listenTime)
       }
+
+      const examDate = sanitizeExamDate(data.examDate)
+      if (data.examDate !== undefined && !examDate) skipped.push('examDate')
+      else if (examDate) {
+        writeRaw(KEYS.examDate, examDate)
+        imported.push(KEYS.examDate)
+      }
     } else {
       // 合并：只碰学习数据（progress/activity/examHistory）；偏好/目标/主题保留本机
       const localProgress = readRaw(KEYS.progress, KEYS.legacyProgress)
@@ -541,6 +557,8 @@ export const importAll = (backup: BackupFile, mode: ImportMode): ImportResult =>
       } else if (data.listenTime !== undefined) {
         skipped.push('listenTime')
       }
+
+      // 考试日期属于「目标」类设置（和每日目标同族）：合并时保留本机不动
     }
   } catch (error) {
     return {

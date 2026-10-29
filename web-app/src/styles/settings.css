@@ -1071,3 +1071,16 @@
   color: var(--ink-2);
   font-size: 13px;
 }
+
+/* 考试日期输入：原生 date 控件比数字输入宽，且自带日历按钮 */
+.settings-exam-date {
+  width: 176px;
+}
+
+.settings-exam-date-foot {
+  align-items: center;
+  display: flex;
+  gap: 12px;
+  justify-content: space-between;
+  margin-top: 6px;
+}

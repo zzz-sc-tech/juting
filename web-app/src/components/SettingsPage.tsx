@@ -1,4 +1,4 @@
-import { ArrowLeft, Database, Download, HardDriveDownload, History, Newspaper, Play, ShieldCheck, Target, Upload } from 'lucide-react'
+import { ArrowLeft, CalendarDays, Database, Download, HardDriveDownload, History, Newspaper, Play, ShieldCheck, Target, Upload } from 'lucide-react'
 import { useRef, useState, type ChangeEvent } from 'react'
 import { useNavigate } from 'react-router-dom'
 import { useLanguage } from '../i18n/LanguageProvider'
@@ -21,6 +21,7 @@ import {
   persistDailyGoal,
   resumeProgressWrites,
 } from '../lib/progressStore'
+import { daysUntil, loadExamDate, persistExamDate } from '../lib/examDate'
 import {
   clearStorageIssue,
   listQuarantineKeys,
@@ -77,6 +78,8 @@ export function SettingsPage() {
   const navigate = useNavigate()
   const { t } = useLanguage()
   const [dailyGoal, setDailyGoal] = useState(loadDailyGoal)
+  // 考试日期（备考倒计时的唯一输入）：null = 没设置，仪表盘整卡隐藏
+  const [examDate, setExamDate] = useState<string | null>(loadExamDate)
   const [theme, setTheme] = useState<UiTheme>(getStoredTheme)
   const [mode, setMode] = useState<ThemeMode>(getStoredMode)
   const [prefs, setPrefs] = useState<UserPrefs>(loadUserPrefs)
@@ -97,6 +100,14 @@ export function SettingsPage() {
     setDailyGoal(value)
     persistDailyGoal(value)
   }
+
+  const handleExamDateChange = (value: string) => {
+    // 原生 date input 只会给合法 'YYYY-MM-DD' 或空串（清空按钮）
+    setExamDate(value || null)
+    persistExamDate(value || null)
+  }
+
+  const examDays = examDate ? daysUntil(examDate) : null
 
   const handleThemeChange = (value: UiTheme) => {
     setTheme(value)
@@ -316,6 +327,39 @@ export function SettingsPage() {
               value={dailyGoal}
             />
           </label>
+        </section>
+
+        <section className="settings-card">
+          <h2 className="settings-card-title">
+            <CalendarDays size={15} />
+            {t('settings.examDate.title')}
+          </h2>
+          <label className="settings-field">
+            <span className="settings-field-label">{t('settings.examDate.label')}</span>
+            <input
+              className="settings-goal-input settings-exam-date"
+              onChange={(event) => handleExamDateChange(event.target.value)}
+              type="date"
+              value={examDate ?? ''}
+            />
+          </label>
+          <p className="settings-field-hint">{t('settings.examDate.hint')}</p>
+          {examDate && (
+            <div className="settings-exam-date-foot">
+              <span className="settings-field-hint">
+                {examDays !== null && examDays >= 0
+                  ? t('settings.examDate.days', { days: examDays })
+                  : t('settings.examDate.past')}
+              </span>
+              <button
+                className="settings-data-button"
+                onClick={() => handleExamDateChange('')}
+                type="button"
+              >
+                {t('settings.examDate.clear')}
+              </button>
+            </div>
+          )}
         </section>
 
         <section className="settings-card">

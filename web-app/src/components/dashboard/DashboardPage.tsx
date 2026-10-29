@@ -4,6 +4,7 @@ import { useNavigate } from 'react-router-dom'
 import { useLanguage } from '../../i18n/LanguageProvider'
 import { getAllAttempts, getLatestByCourse } from '../../lib/examHistory'
 import { aggregateWrong } from '../../lib/wrongStats'
+import { daysUntil, loadExamDate } from '../../lib/examDate'
 import { useCatalog } from '../../hooks/useCatalog'
 import { useCategoryExercises } from '../../hooks/useCategoryExercises'
 import {
@@ -65,6 +66,7 @@ export function DashboardPage() {
   const navigate = useNavigate()
   const [store] = useState<StudyStore>(loadStoredStudyStore)
   const [dailyGoal] = useState(loadDailyGoal)
+  const [examDate] = useState<string | null>(loadExamDate)
   const [activity] = useState<LocalDailyActivity>(loadLocalActivity)
   // 所听时长（localStorage 落盘值；进入首页时重新读一次，够新鲜）
   const [listenTime] = useState(loadListenTime)
@@ -184,6 +186,43 @@ export function DashboardPage() {
 
   const goalPercent = percentOf(todayCount, dailyGoal)
 
+  /**
+   * 考试倒计时：剩余天数 + 「按现在的每日目标，到考试能覆盖多少」。
+   * 只报天数作用有限，但也不该报「要刷完 48 门每天得 194 句」——那是做不到的数，
+   * 唯一作用是让人关掉这个应用。这里改成正向口径：按当前节奏算得出来的量。
+   */
+  const countdown = useMemo(() => {
+    if (!examDate) return null
+    const days = daysUntil(examDate)
+    if (days === null) return null
+    const totalLines = allExercises.reduce(
+      (sum, exercise) => sum + (exercise.contentLineCount ?? exercise.lineCount ?? 0),
+      0,
+    )
+    const remaining = Math.max(0, totalLines - totalMastered)
+    const capacity = totalMastered + dailyGoal * Math.max(0, days)
+    const perCourse = totalLines / Math.max(1, allExercises.length)
+    const courses = Math.min(
+      allExercises.length,
+      Math.round(capacity / Math.max(1, perCourse)),
+    )
+    let pace = ''
+    if (totalLines > 0) {
+      if (days < 0) {
+        pace = t('dashboard.countdown.past')
+      } else if (days === 0) {
+        pace = t('dashboard.countdown.today')
+      } else if (remaining === 0) {
+        pace = t('dashboard.countdown.done')
+      } else if (capacity >= totalLines) {
+        pace = t('dashboard.countdown.paceAll', { goal: dailyGoal })
+      } else {
+        pace = t('dashboard.countdown.pace', { goal: dailyGoal, capacity, courses })
+      }
+    }
+    return { days, dateLabel: examDate.replaceAll('-', '.'), pace }
+  }, [allExercises, dailyGoal, examDate, t, totalMastered])
+
   // 首页三个数字必须互相自洽：今日掌握 ≤ 累计掌握；今日有掌握则在学课程 ≥ 1。
   // 曾经出现过「今日 4 / 累计 0 / 在学 0」同屏（统计口径不同源），
   // 用户第一反应是数据坏了。开发期把不自洽喊出来，别让它再悄悄出现。
@@ -206,22 +245,44 @@ export function DashboardPage() {
       <TopBar active="home" />
       <div className="dashboard-container">
         <header className="dashboard-hero">
-          <h1>{t('dashboard.title')}</h1>
-          {/* 首屏第一眼应该是「今天做了多少」——28px 主数字 + 4px 进度条，
-              原先这里是 14px 灰字，而 24px 的累计时长抢了视觉首位 */}
-          <div className="dashboard-hero-goal">
-            <div className="dashboard-hero-goal-head">
-              <span className="dashboard-hero-count">
-                <strong>{todayCount}</strong>
-                <span>{t('dashboard.goal.suffix', { goal: dailyGoal })}</span>
-              </span>
-              <span className="dashboard-hero-goal-label">
-                {goalPercent >= 100 ? t('dashboard.goal.done') : t('dashboard.goal.title')}
-              </span>
+          <div className="dashboard-hero-main">
+            <div className="dashboard-hero-left">
+              <h1>{t('dashboard.title')}</h1>
+              {/* 首屏第一眼应该是「今天做了多少」——28px 主数字 + 4px 进度条，
+                  原先这里是 14px 灰字，而 24px 的累计时长抢了视觉首位 */}
+              <div className="dashboard-hero-goal">
+                <div className="dashboard-hero-goal-head">
+                  <span className="dashboard-hero-count">
+                    <strong>{todayCount}</strong>
+                    <span>{t('dashboard.goal.suffix', { goal: dailyGoal })}</span>
+                  </span>
+                  <span className="dashboard-hero-goal-label">
+                    {goalPercent >= 100 ? t('dashboard.goal.done') : t('dashboard.goal.title')}
+                  </span>
+                </div>
+                <span className="dashboard-hero-track">
+                  <span className="dashboard-hero-fill" style={{ width: `${goalPercent}%` }} />
+                </span>
+              </div>
             </div>
-            <span className="dashboard-hero-track">
-              <span className="dashboard-hero-fill" style={{ width: `${goalPercent}%` }} />
-            </span>
+            {/* 考试倒计时：没设日期就整块不渲染，不留一个「去设置」的空壳占首屏 */}
+            {countdown && (
+              <div className="dashboard-countdown" aria-label={t('dashboard.countdown.label')}>
+                <span className="dashboard-countdown-label">
+                  {countdown.days >= 0
+                    ? t('dashboard.countdown.label')
+                    : t('dashboard.countdown.labelPast')}
+                </span>
+                <span className="dashboard-countdown-value">
+                  <strong>{Math.abs(countdown.days)}</strong>
+                  <span>{t('dashboard.countdown.unit')}</span>
+                </span>
+                <span className="dashboard-countdown-date">{countdown.dateLabel}</span>
+                {countdown.pace && (
+                  <span className="dashboard-countdown-pace">{countdown.pace}</span>
+                )}
+              </div>
+            )}
           </div>
         </header>
 
