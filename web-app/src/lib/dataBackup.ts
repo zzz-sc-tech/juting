@@ -13,6 +13,7 @@
  * 导出时 legacy 值会作为 progress 导出，导入统一写回新键。
  */
 
+import { emptyDrillStats, normalizeDrillStats, type DrillStats } from './drillStats'
 import { isValidExamDate } from './examDate'
 import { registerSpaceReclaimer, safeSetItem } from './storageSafety'
 
@@ -33,6 +34,8 @@ export type BackupFile = {
     vocabReview?: unknown
     /** 所听时长（A3 补入；老备份可能没有） */
     listenTime?: unknown
+    /** 按题型专项刷题的累计对/错（备考三功能补入） */
+    drillStats?: unknown
     /** 考试日期 'YYYY-MM-DD'（备考三功能补入） */
     examDate?: unknown
   }
@@ -62,6 +65,7 @@ const KEYS = {
   mode: 'juting.web.mode.v1',
   vocabReview: 'juting.web.vocab-review.v1',
   listenTime: 'juting.web.listen-time.v1',
+  drillStats: 'juting.web.drill-stats.v1',
   examDate: 'juting.web.exam-date.v1',
   autobackup: 'juting.web.autobackup.v1',
   lastExport: 'juting.web.last-export.v1',
@@ -98,6 +102,7 @@ export const exportAll = (): BackupFile => ({
     mode: readRaw(KEYS.mode),
     vocabReview: readRaw(KEYS.vocabReview),
     listenTime: readRaw(KEYS.listenTime),
+    drillStats: readRaw(KEYS.drillStats),
     examDate: readRaw(KEYS.examDate),
   },
 })
@@ -444,6 +449,30 @@ export const mergeListenTime = (local: unknown, incoming: unknown): ListenTimeLi
   return { totalMs: Math.max(localTime.totalMs, incomingTime.totalMs, summed), byDay }
 }
 
+/**
+ * 专项刷题累计：逐 Section 取较大值。
+ * 与听时长同理——同一批题在两台设备各做过一遍，相加会把正确率算高；
+ * 取「更用功的那一侧」既不会丢训练量，也不会造出凭空的正确率。
+ */
+export const mergeDrillStats = (local: unknown, incoming: unknown): DrillStats => {
+  const localStats = normalizeDrillStats(local) ?? emptyDrillStats()
+  const incomingStats = normalizeDrillStats(incoming) ?? localStats
+  return {
+    A: {
+      correct: Math.max(localStats.A.correct, incomingStats.A.correct),
+      wrong: Math.max(localStats.A.wrong, incomingStats.A.wrong),
+    },
+    B: {
+      correct: Math.max(localStats.B.correct, incomingStats.B.correct),
+      wrong: Math.max(localStats.B.wrong, incomingStats.B.wrong),
+    },
+    C: {
+      correct: Math.max(localStats.C.correct, incomingStats.C.correct),
+      wrong: Math.max(localStats.C.wrong, incomingStats.C.wrong),
+    },
+  }
+}
+
 // ---------- 导入 ----------
 /** 导入备份；mode=replace 原样写回（校验过的部分），mode=merge 按并集规则合并。 */
 export const importAll = (backup: BackupFile, mode: ImportMode): ImportResult => {
@@ -517,6 +546,13 @@ export const importAll = (backup: BackupFile, mode: ImportMode): ImportResult =>
         imported.push(KEYS.listenTime)
       }
 
+      const drillStats = normalizeDrillStats(data.drillStats)
+      if (data.drillStats !== undefined && !drillStats) skipped.push('drillStats')
+      else if (drillStats) {
+        writeRaw(KEYS.drillStats, drillStats)
+        imported.push(KEYS.drillStats)
+      }
+
       const examDate = sanitizeExamDate(data.examDate)
       if (data.examDate !== undefined && !examDate) skipped.push('examDate')
       else if (examDate) {
@@ -558,6 +594,12 @@ export const importAll = (backup: BackupFile, mode: ImportMode): ImportResult =>
         skipped.push('listenTime')
       }
 
+      if (data.drillStats !== undefined && normalizeDrillStats(data.drillStats) !== null) {
+        writeRaw(KEYS.drillStats, mergeDrillStats(readRaw(KEYS.drillStats), data.drillStats))
+        imported.push(KEYS.drillStats)
+      } else if (data.drillStats !== undefined) {
+        skipped.push('drillStats')
+      }
       // 考试日期属于「目标」类设置（和每日目标同族）：合并时保留本机不动
     }
   } catch (error) {

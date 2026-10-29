@@ -11,6 +11,7 @@ import { startLocalBackupMirror } from './lib/localBackupMirror'
 // 收益主要来自 StudyPage（五舞台 + 波形）与生词本页（1.3MB 词典）。
 const StudyPage = lazy(() => import('./features/study/StudyPage').then((m) => ({ default: m.StudyPage })))
 const GlobalReviewPage = lazy(() => import('./pages/GlobalReviewPage').then((m) => ({ default: m.GlobalReviewPage })))
+const DrillPage = lazy(() => import('./pages/DrillPage').then((m) => ({ default: m.DrillPage })))
 const VocabularyPage = lazy(() => import('./pages/VocabularyPage').then((m) => ({ default: m.VocabularyPage })))
 const SearchPage = lazy(() => import('./pages/SearchPage').then((m) => ({ default: m.SearchPage })))
 const SettingsPage = lazy(() => import('./components/SettingsPage').then((m) => ({ default: m.SettingsPage })))
@@ -30,6 +31,7 @@ function App() {
           <Route path="/courses/:seriesId" element={<StudyPage />} />
           <Route path="/courses/:seriesId/chapters/:exerciseId" element={<StudyPage />} />
           <Route path="/review" element={<GlobalReviewPage />} />
+          <Route path="/drill" element={<DrillPage />} />
           <Route path="/vocabulary" element={<VocabularyPage />} />
           <Route path="/search" element={<SearchPage />} />
           <Route path="/settings" element={<SettingsPage />} />

@@ -3,8 +3,8 @@ import { useNavigate } from 'react-router-dom'
 import { useLanguage } from '../i18n/LanguageProvider'
 
 type TopBarProps = {
-  /** 当前所在导航：首页（仪表盘）/ 学习页 / 难点复习 / 生词本 / 搜索 / 设置。 */
-  active?: 'home' | 'study' | 'review' | 'vocabulary' | 'search' | 'settings'
+  /** 当前所在导航：首页（仪表盘）/ 学习页 / 专项刷题 / 难点复习 / 生词本 / 搜索 / 设置。 */
+  active?: 'home' | 'study' | 'drill' | 'review' | 'vocabulary' | 'search' | 'settings'
 }
 
 // 本地免登录模式：顶栏 = 品牌入口 + 首页/学习切换 + 设置；语言切换在设置页。
@@ -40,6 +40,13 @@ export function TopBar({ active }: TopBarProps) {
           type="button"
         >
           {t('dashboard.nav.study')}
+        </button>
+        <button
+          className={active === 'drill' ? 'topbar-nav-item active' : 'topbar-nav-item'}
+          onClick={() => navigate('/drill')}
+          type="button"
+        >
+          {t('topbar.drill')}
         </button>
         <button
           className={active === 'review' ? 'topbar-nav-item active' : 'topbar-nav-item'}

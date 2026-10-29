@@ -1,0 +1,480 @@
+/* 按题型专项刷题（/drill）：单列窄版式，一屏一题——训练页不该有第二件事抢注意力。 */
+
+.drill-page {
+  min-height: 100vh;
+  padding-bottom: env(safe-area-inset-bottom, 0px);
+}
+
+.drill-container {
+  display: grid;
+  gap: 16px;
+  margin: 0 auto;
+  max-width: 860px;
+  padding: 26px 28px 48px;
+}
+
+.drill-header h1 {
+  color: var(--ink);
+  font-size: 28px;
+  font-weight: 600;
+  letter-spacing: -0.01em;
+  margin: 0 0 6px;
+}
+
+.drill-header p {
+  color: var(--ink-3);
+  font-size: 14px;
+  margin: 0;
+}
+
+.drill-empty {
+  background: var(--surface);
+  border: 1px dashed var(--line-strong);
+  border-radius: var(--radius-lg);
+  color: var(--ink-3);
+  display: grid;
+  font-size: 14px;
+  gap: 12px;
+  justify-items: start;
+  margin: 0;
+  padding: 22px;
+}
+
+/* ── 选题型 ───────────────────────────────────────────── */
+.drill-panel {
+  background: var(--surface);
+  border: 1px solid var(--line);
+  border-radius: var(--radius-lg);
+  display: grid;
+  gap: 16px;
+  padding: 18px 20px;
+}
+
+.drill-section-tabs {
+  display: grid;
+  gap: 10px;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+
+.drill-section-tab {
+  background: var(--bg);
+  border: 1px solid var(--line-strong);
+  border-radius: var(--radius-md);
+  cursor: pointer;
+  display: grid;
+  gap: 5px;
+  padding: 12px 14px;
+  text-align: left;
+  transition: border-color 0.15s ease, background 0.15s ease;
+}
+
+.drill-section-tab:hover {
+  border-color: var(--accent);
+}
+
+.drill-section-tab.active {
+  background: var(--accent-soft);
+  border-color: var(--accent);
+}
+
+.drill-section-title {
+  align-items: baseline;
+  color: var(--ink);
+  display: flex;
+  font-size: 14px;
+  font-weight: 600;
+  gap: 8px;
+  justify-content: space-between;
+}
+
+.drill-section-range {
+  color: var(--ink-3);
+  font-size: 12px;
+  font-weight: 400;
+  font-variant-numeric: tabular-nums;
+}
+
+.drill-section-count {
+  color: var(--ink-3);
+  font-size: 12px;
+  font-variant-numeric: tabular-nums;
+}
+
+/* 主行动：文字颜色取页面底色——浅色主题下是深绿配米白，
+   深色主题下是浅绿配墨黑，两种都能读（硬编码 #fff 在深色下会发虚） */
+.drill-start,
+.drill-next {
+  align-items: center;
+  background: var(--accent);
+  border: none;
+  border-radius: var(--radius-md);
+  color: var(--bg);
+  cursor: pointer;
+  display: inline-flex;
+  font: inherit;
+  font-size: 14px;
+  font-weight: 500;
+  gap: 7px;
+  justify-content: center;
+  min-height: 42px;
+  padding: 0 20px;
+  transition: background 0.15s ease;
+}
+
+.drill-start:hover,
+.drill-next:hover {
+  background: var(--accent-strong);
+}
+
+.drill-ghost {
+  align-items: center;
+  background: transparent;
+  border: 1px solid var(--line-strong);
+  border-radius: var(--radius-md);
+  color: var(--ink-2);
+  cursor: pointer;
+  display: inline-flex;
+  font: inherit;
+  font-size: 13px;
+  gap: 5px;
+  min-height: 34px;
+  padding: 0 12px;
+  transition: border-color 0.15s ease, color 0.15s ease;
+}
+
+.drill-ghost:hover {
+  border-color: var(--accent);
+  color: var(--accent-ink);
+}
+
+/* ── 题目卡 ───────────────────────────────────────────── */
+.drill-question-card {
+  background: var(--surface);
+  border: 1px solid var(--line);
+  border-radius: var(--radius-lg);
+  display: grid;
+  gap: 14px;
+  padding: 18px 20px 20px;
+}
+
+.drill-q-head {
+  align-items: center;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.drill-q-no {
+  color: var(--ink);
+  font-size: 15px;
+  font-weight: 600;
+  font-variant-numeric: tabular-nums;
+}
+
+.drill-q-source {
+  color: var(--ink-3);
+  font-size: 12px;
+  min-width: 0;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.drill-q-progress {
+  color: var(--ink-3);
+  font-size: 12px;
+  font-variant-numeric: tabular-nums;
+  margin-left: auto;
+}
+
+.drill-audio {
+  align-items: center;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+
+.drill-play {
+  align-items: center;
+  background: var(--accent-soft);
+  border: 1px solid var(--accent);
+  border-radius: var(--radius-md);
+  color: var(--accent-ink);
+  cursor: pointer;
+  display: inline-flex;
+  font: inherit;
+  font-size: 13px;
+  font-weight: 500;
+  gap: 7px;
+  min-height: 38px;
+  padding: 0 16px;
+}
+
+.drill-play:disabled {
+  background: var(--bg);
+  border-color: var(--line-strong);
+  color: var(--ink-3);
+  cursor: default;
+}
+
+.drill-clock {
+  color: var(--ink-3);
+  font-size: 12px;
+  font-variant-numeric: tabular-nums;
+}
+
+.drill-audio-hint {
+  color: var(--warning);
+  font-size: 12px;
+}
+
+/* ── 选项 ───────────────────────────────────────────── */
+.drill-options {
+  display: grid;
+  gap: 8px;
+}
+
+.drill-option {
+  align-items: center;
+  background: var(--bg);
+  border: 1px solid var(--line);
+  border-radius: var(--radius-md);
+  color: var(--ink);
+  cursor: pointer;
+  display: flex;
+  font: inherit;
+  font-size: 14px;
+  gap: 12px;
+  min-height: 46px;
+  padding: 8px 14px;
+  text-align: left;
+  transition: border-color 0.15s ease, background 0.15s ease;
+}
+
+.drill-option:hover:not(:disabled) {
+  border-color: var(--accent);
+}
+
+.drill-option:disabled {
+  cursor: default;
+}
+
+.drill-option-letter {
+  align-items: center;
+  background: var(--surface);
+  border: 1px solid var(--line-strong);
+  border-radius: 50%;
+  color: var(--ink-2);
+  display: inline-flex;
+  flex: 0 0 auto;
+  font-size: 12px;
+  font-weight: 600;
+  height: 24px;
+  justify-content: center;
+  width: 24px;
+}
+
+.drill-option-text {
+  flex: 1 1 auto;
+  min-width: 0;
+}
+
+.drill-option-mark {
+  flex: 0 0 auto;
+}
+
+.drill-option.correct {
+  background: var(--success-soft);
+  border-color: var(--success);
+}
+
+.drill-option.correct .drill-option-letter {
+  border-color: var(--success);
+  color: var(--success);
+}
+
+.drill-option.wrong {
+  background: var(--danger-soft);
+  border-color: var(--danger);
+}
+
+.drill-option.wrong .drill-option-letter {
+  border-color: var(--danger);
+  color: var(--danger);
+}
+
+/* ── 判分条 ───────────────────────────────────────────── */
+.drill-verdict {
+  border: 1px solid var(--line);
+  border-radius: var(--radius-md);
+  display: grid;
+  gap: 10px;
+  padding: 12px 14px;
+}
+
+.drill-verdict.ok {
+  background: var(--success-soft);
+  border-color: var(--success);
+}
+
+.drill-verdict.bad {
+  background: var(--danger-soft);
+  border-color: var(--danger);
+}
+
+.drill-verdict-head {
+  align-items: baseline;
+  display: flex;
+  gap: 12px;
+}
+
+.drill-verdict-head strong {
+  color: var(--ink);
+  font-size: 15px;
+}
+
+.drill-verdict-head span {
+  color: var(--ink-2);
+  font-size: 13px;
+}
+
+.drill-verdict-foot {
+  align-items: center;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  justify-content: space-between;
+}
+
+/* ── 本轮小结 ───────────────────────────────────────────── */
+.drill-summary {
+  background: var(--surface);
+  border: 1px solid var(--line);
+  border-radius: var(--radius-lg);
+  display: grid;
+  gap: 10px;
+  justify-items: start;
+  padding: 24px;
+}
+
+.drill-summary h2 {
+  color: var(--ink);
+  font-size: 15px;
+  font-weight: 600;
+  margin: 0;
+}
+
+.drill-summary-score {
+  color: var(--ink-3);
+  font-size: 16px;
+  font-variant-numeric: tabular-nums;
+  margin: 0;
+}
+
+.drill-summary-score strong {
+  color: var(--ink);
+  font-size: 40px;
+  font-weight: 600;
+  line-height: 1;
+}
+
+.drill-summary-hint {
+  color: var(--ink-3);
+  font-size: 13px;
+  margin: 0;
+}
+
+.drill-summary-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-top: 4px;
+}
+
+/* ── 累计战绩 ───────────────────────────────────────────── */
+.drill-stats {
+  background: var(--surface);
+  border: 1px solid var(--line);
+  border-radius: var(--radius-lg);
+  padding: 16px 20px;
+}
+
+.drill-stats h2 {
+  color: var(--ink);
+  font-size: 14px;
+  font-weight: 600;
+  margin: 0 0 10px;
+}
+
+.drill-stats ul {
+  display: grid;
+  gap: 8px;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.drill-stats li {
+  align-items: baseline;
+  border-top: 1px solid var(--line);
+  display: flex;
+  gap: 12px;
+  padding-top: 8px;
+}
+
+.drill-stats li:first-child {
+  border-top: none;
+  padding-top: 0;
+}
+
+.drill-stats-name {
+  align-items: baseline;
+  color: var(--ink);
+  display: flex;
+  font-size: 13px;
+  font-weight: 500;
+  gap: 8px;
+  min-width: 120px;
+}
+
+.drill-stats-range {
+  color: var(--ink-3);
+  font-size: 12px;
+  font-weight: 400;
+}
+
+.drill-stats-detail {
+  color: var(--ink-3);
+  font-size: 12px;
+  font-variant-numeric: tabular-nums;
+}
+
+.drill-stats-accuracy {
+  color: var(--ink);
+  font-size: 13px;
+  font-variant-numeric: tabular-nums;
+  margin-left: auto;
+}
+
+.drill-note {
+  align-items: center;
+  color: var(--ink-3);
+  display: flex;
+  font-size: 12px;
+  gap: 6px;
+  margin: 0;
+}
+
+@media (max-width: 720px) {
+  .drill-container {
+    padding: 18px 16px 40px;
+  }
+
+  .drill-section-tabs {
+    grid-template-columns: 1fr;
+  }
+
+  .drill-stats-name {
+    min-width: 0;
+  }
+}

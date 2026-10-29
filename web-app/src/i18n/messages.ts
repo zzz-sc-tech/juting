@@ -4,6 +4,7 @@ import { courseMapMessages } from './messages/courseMap'
 import { dashboardMessages } from './messages/dashboard'
 import { difficultReviewMessages } from './messages/difficultReview'
 import { dialogueAnchorMessages } from './messages/dialogueAnchors'
+import { drillMessages } from './messages/drill'
 import { examStageMessages } from './messages/examStage'
 import { extensiveStageMessages } from './messages/extensiveStage'
 import { globalReviewMessages } from './messages/globalReview'
@@ -25,6 +26,7 @@ const messages = {
   ...dashboardMessages,
   ...difficultReviewMessages,
   ...dialogueAnchorMessages,
+  ...drillMessages,
   ...examStageMessages,
   ...extensiveStageMessages,
   ...globalReviewMessages,

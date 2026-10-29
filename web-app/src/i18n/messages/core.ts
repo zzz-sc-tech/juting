@@ -13,4 +13,5 @@ export const coreMessages = {
     'tooltip.shortcut': '快捷键：{{shortcut}}',
     'topbar.review': '难点复习',
     'topbar.vocabulary': '生词本',
+    'topbar.drill': '专项刷题',
 }

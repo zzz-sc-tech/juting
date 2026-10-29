@@ -354,3 +354,76 @@ describe('自动快照（A3：只写不读 → 可列出/可恢复）', () => {
     expect(JSON.parse(storage.get('juting.web.progress.v1') ?? '{}').progressByExercise['1']).toBeDefined()
   })
 })
+
+describe('备考三功能分区（专项刷题统计 / 考试日期）', () => {
+  const drillStatsFixture = {
+    A: { correct: 3, wrong: 1 },
+    B: { correct: 0, wrong: 2 },
+    C: { correct: 12, wrong: 4 },
+  }
+
+  let storage: Map<string, string>
+  beforeEach(() => {
+    storage = installStorage({
+      'juting.web.drill-stats.v1': JSON.stringify(drillStatsFixture),
+      'juting.web.exam-date.v1': '2026-12-12',
+    })
+  })
+
+  it('导出包含两个新分区', () => {
+    const backup = exportAll()
+    expect(backup.data.drillStats).toEqual(drillStatsFixture)
+    expect(backup.data.examDate).toBe('2026-12-12')
+  })
+
+  it('清空后 replace 导入可恢复', () => {
+    const backup = exportAll()
+    storage.clear()
+    const result = importAll(backup, 'replace')
+    expect(result.ok).toBe(true)
+    expect(JSON.parse(storage.get('juting.web.drill-stats.v1') ?? '{}')).toEqual(drillStatsFixture)
+    expect(storage.get('juting.web.exam-date.v1')).toBe('2026-12-12')
+  })
+
+  it('脏考试日期被跳过而不是写坏数据', () => {
+    const file = parseBackup(
+      JSON.stringify({ format: 'juting-backup', version: 1, data: { examDate: '2026-02-30' } }),
+    )
+    const result = importAll(file, 'replace')
+    expect(result.ok).toBe(true)
+    expect(result.skipped).toContain('examDate')
+    expect(storage.get('juting.web.exam-date.v1')).toBe('2026-12-12')
+  })
+
+  it('合并时逐 Section 取较大值，不把两遍训练相加', () => {
+    const file = parseBackup(
+      JSON.stringify({
+        format: 'juting-backup',
+        version: 1,
+        data: { drillStats: { A: { correct: 5, wrong: 0 }, C: { correct: 1, wrong: 9 } } },
+      }),
+    )
+    importAll(file, 'merge')
+    const merged = JSON.parse(storage.get('juting.web.drill-stats.v1') ?? '{}')
+    // 逐项取大：correct 取 5（本机 3），wrong 取 1（备份 0）；不是相加
+    expect(merged.A).toEqual({ correct: 5, wrong: 1 })
+    expect(merged.C).toEqual({ correct: 12, wrong: 9 })
+  })
+
+  it('合并导入保留本机考试日期（属目标类设置，跟每日目标同族）', () => {
+    const file = parseBackup(
+      JSON.stringify({ format: 'juting-backup', version: 1, data: { examDate: '2027-06-12' } }),
+    )
+    importAll(file, 'merge')
+    expect(storage.get('juting.web.exam-date.v1')).toBe('2026-12-12')
+  })
+
+  it('老备份没有这两个分区时不动本机数据', () => {
+    const file = parseBackup(
+      JSON.stringify({ format: 'juting-backup', version: 1, data: { theme: 'paper' } }),
+    )
+    importAll(file, 'replace')
+    expect(storage.get('juting.web.exam-date.v1')).toBe('2026-12-12')
+    expect(JSON.parse(storage.get('juting.web.drill-stats.v1') ?? '{}')).toEqual(drillStatsFixture)
+  })
+})
