@@ -1,4 +1,5 @@
-import { useCallback } from 'react'
+import { useCallback, useEffect, useState } from 'react'
+import { useSearchParams } from 'react-router-dom'
 import { ExamStage } from '../../../components/ExamStage'
 import {
   useMediaControls,
@@ -22,6 +23,24 @@ export function ExamContainer() {
   const { isPlaying } = useMediaPlaying()
   const { mediaRef, playMediaRange, toggleMediaPlayback } = useMediaControls()
   const goToStage = useStageNavigation()
+  const [searchParams, setSearchParams] = useSearchParams()
+
+  // ?q=19：仪表盘「你最常错的题」点进来的题号。只在挂载时读一次——
+  // 之后用户自己翻题/切阶段都不该再被拉回这一题。
+  const [initialQuestion] = useState<number | undefined>(() => {
+    const raw = searchParams.get('q')
+    if (!raw || !/^\d{1,2}$/.test(raw)) return undefined
+    const value = Number(raw)
+    return value >= 1 && value <= 25 ? value : undefined
+  })
+
+  // 消费掉查询参数：切到精听再回来时不该又变成「定位练习」
+  useEffect(() => {
+    if (!searchParams.has('q')) return
+    const next = new URLSearchParams(searchParams)
+    next.delete('q')
+    setSearchParams(next, { replace: true })
+  }, [searchParams, setSearchParams])
 
   const handleGoIntensive = useCallback(
     (stemLineId: string | null, fallbackStart: number | null) => {
@@ -59,6 +78,7 @@ export function ExamContainer() {
       duration={duration}
       isPlaying={isPlaying}
       dialogueAnchors={dialogueAnchors}
+      initialQuestion={initialQuestion}
       onTogglePlayback={() => void toggleMediaPlayback()}
       onRestart={() => void toggleMediaPlayback({ restartAt: 0 })}
       onComplete={() => setStageCompleted('exam', true)}

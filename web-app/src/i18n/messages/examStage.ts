@@ -35,10 +35,16 @@ export const examStageMessages = {
     'exam.drillFinish': '完成',
     'exam.answerableHint': '第 {{n}} 部分还没播到——先往下听，播到这部分才能作答',
     'exam.lockedHint': '本部分已锁定——材料只播一遍，请把后面的题听完',
+    // 错题定位（从仪表盘「你最常错的题」点进来）
+    'exam.targetedChip': '定位练习 · 第 {{n}} 题',
+    'exam.targetedNotRecorded': '本次为单题定位练习，不计入成绩档案与常错题统计',
+    'exam.targetedResult': '第 {{n}} 题 {{result}}',
+    'exam.targetedRight': '答对了',
+    'exam.targetedWrong': '答错了',
     // 成绩历史（交卷后展示本课历场）
     'exam.history.title': '成绩历史',
     'exam.history.empty': '还没有历史成绩——这是本课的第一场',
-    'exam.history.row': '{{date}} · {{score}}/{{total}}',
+    'exam.history.row': '{{score}}/{{total}}',
     'exam.history.wrongCount': '错 {{wrong}} · 未答 {{unanswered}}',
     'exam.history.sections': 'A {{a}} / B {{b}} / C {{c}}',
     'exam.history.trend': '得分走势（%）',

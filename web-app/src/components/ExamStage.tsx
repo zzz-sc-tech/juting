@@ -7,6 +7,7 @@ import {
   Play,
   RotateCcw,
   Send,
+  Target,
 } from 'lucide-react'
 import type { DialogueAnchor, ExamQuestion, ListeningExercise } from '@juting/shared'
 import { useLanguage } from '../i18n/LanguageProvider'
@@ -80,6 +81,12 @@ type ExamStageProps = {
   duration: number
   isPlaying: boolean
   dialogueAnchors: DialogueAnchor[]
+  /**
+   * 错题重练定位：从仪表盘点某道错题进来时带题号。
+   * 有值时进入「定位练习」——直接停在那一题、音频跳到该部分开头；
+   * 不弹中断恢复、不写进行中暂存、不记成绩档案（详见下方注释）。
+   */
+  initialQuestion?: number
   onTogglePlayback: () => void
   onRestart: () => void
   onComplete: () => void
@@ -95,6 +102,7 @@ export function ExamStage({
   duration,
   isPlaying,
   dialogueAnchors,
+  initialQuestion,
   onTogglePlayback,
   onRestart,
   onComplete,
@@ -103,6 +111,8 @@ export function ExamStage({
 }: ExamStageProps) {
   const { t } = useLanguage()
   const questions = useMemo(() => exercise.questions ?? [], [exercise.questions])
+  // 定位练习：整场的账不走（否则 1 题作答会把另外 24 题记成错题，污染常错题统计）
+  const targeted = typeof initialQuestion === 'number' && Number.isFinite(initialQuestion)
   const [answers, setAnswers] = useState<Record<number, Letter>>({})
   const [submitted, setSubmitted] = useState(false)
   const [viewIdx, setViewIdx] = useState(0)
@@ -117,14 +127,18 @@ export function ExamStage({
   const [drillIdx, setDrillIdx] = useState(0)
   const [drillAnswers, setDrillAnswers] = useState<Record<number, Letter>>({})
 
-  // 中断恢复询问：仅当本课有「已作答未交卷」的暂存时弹一次
+  // 中断恢复询问：仅当本课有「已作答未交卷」的暂存时弹一次。
+  // 定位练习不弹：用户的意图是「就看这道题」，再让他先回答「继续还是重来」是打断。
   useEffect(() => {
+    if (targeted) {
+      return
+    }
     const saved = getInprogress(exercise.id)
     if (saved) {
       setResumeAsk({ answers: saved.answers as Record<number, Letter>, currentTime: saved.currentTime })
     }
     // key=exercise.id 保证换课重挂，这里只看挂载时
-  }, [exercise.id])
+  }, [exercise.id, targeted])
 
   // 恢复层与交卷确认层互斥：恢复层解决（继续/重开）时顺带关确认层，
   // 防止两层叠开（对账层共享按钮类名，叠开会有点击歧义）
@@ -218,6 +232,46 @@ export function ExamStage({
     }
   }, [activePartIdx, parts])
 
+  // ── 错题定位（initialQuestion） ─────────────────────────────
+  const targetIdx = useMemo(() => {
+    if (!targeted) return -1
+    return timing.findIndex((item) => item.question.n === initialQuestion)
+  }, [initialQuestion, targeted, timing])
+
+  /**
+   * 把音频挪到该题所属部分的起点，而不是题干起点：
+   * 答案信息在题干之前的材料里，直接跳到题干等于让人凭空猜。
+   * 挪到部分起点后，该部分窗口按既有规则自然打开（activePartIdx 跟上）。
+   */
+  const seekToQuestion = useCallback(
+    (idx: number) => {
+      const partIdx = parts.findIndex((part) => part.items.includes(idx))
+      const seekTo = partIdx >= 0 ? parts[partIdx]!.start : timing[idx]?.start
+      if (typeof seekTo !== 'number' || !Number.isFinite(seekTo)) return
+      const media = mediaRef.current
+      if (!media) return
+      const apply = () => {
+        if (media.readyState >= 1) {
+          media.currentTime = seekTo
+        }
+      }
+      apply()
+      if (media.readyState < 1) {
+        media.addEventListener('loadedmetadata', apply, { once: true })
+      }
+    },
+    [mediaRef, parts, timing],
+  )
+
+  // 只在挂载后应用一次：后续用户自己翻题/拖进度不应该被拉回来
+  const appliedTargetRef = useRef(false)
+  useEffect(() => {
+    if (appliedTargetRef.current || targetIdx < 0) return
+    appliedTargetRef.current = true
+    setViewIdx(targetIdx)
+    seekToQuestion(targetIdx)
+  }, [seekToQuestion, targetIdx])
+
   // 播放结束 = 自然收卷
   useEffect(() => {
     if (
@@ -239,7 +293,8 @@ export function ExamStage({
   }, [currentTime])
 
   useEffect(() => {
-    if (submitted || Object.keys(answers).length === 0) {
+    // 定位练习不留暂存：它会覆盖用户之前那场真实作答的存档
+    if (submitted || targeted || Object.keys(answers).length === 0) {
       return
     }
     const timer = window.setTimeout(() => {
@@ -250,7 +305,7 @@ export function ExamStage({
       })
     }, 800)
     return () => window.clearTimeout(timer)
-  }, [answers, exercise.id, submitted])
+  }, [answers, exercise.id, submitted, targeted])
 
   // 交卷后自动滚到第一条错题（无错题则滚回顶部）
   useEffect(() => {
@@ -262,12 +317,12 @@ export function ExamStage({
     return () => window.clearTimeout(timer)
   }, [submitted])
 
-  // 交卷（含播完自然收卷）只通知一次 + 记入成绩档案 + 清暂存
+  // 交卷（含播完自然收卷）只通知一次 + 记入成绩档案 + 清暂存。
+  // 定位练习例外：不记账（见 targeted 注释）、不清别人的暂存、不宣布「实战完成」。
   const completeRef = useRef(false)
   useEffect(() => {
     if (submitted && !completeRef.current) {
       completeRef.current = true
-      clearInprogress(exercise.id)
       const answerKey = exercise.answerKey ?? {}
       const wrong: number[] = []
       let unanswered = 0
@@ -281,6 +336,11 @@ export function ExamStage({
           wrong.push(q.n)
         }
       }
+      if (targeted) {
+        setLastAttempt({ score: questions.length - wrong.length, total: questions.length })
+        return
+      }
+      clearInprogress(exercise.id)
       const attempt = recordAttempt(exercise.id, {
         score: questions.length - wrong.length,
         total: questions.length,
@@ -293,7 +353,7 @@ export function ExamStage({
     if (!submitted) {
       completeRef.current = false
     }
-  }, [answers, exercise.answerKey, exercise.id, onComplete, questions, submitted])
+  }, [answers, exercise.answerKey, exercise.id, onComplete, questions, submitted, targeted])
 
   // 弹层键盘行为：Esc 关确认层；Tab 在弹层内循环（aria-modal 不能只写在属性上）
   useEffect(() => {
@@ -363,6 +423,12 @@ export function ExamStage({
       ).length,
     [answerKey, answers],
   )
+  // 定位练习的对错只看被定位的那一题（其余 24 题本来就没考）
+  const targetCorrect = useMemo(() => {
+    if (!targeted || targetIdx < 0 || typeof initialQuestion !== 'number') return false
+    const mine = answers[initialQuestion]
+    return mine !== undefined && mine === answerKey[String(initialQuestion)]
+  }, [answerKey, answers, initialQuestion, targetIdx, targeted])
   // 历史场数在仪表盘分数曲线展示；本页只展示本场折算分
 
   // 键盘作答：A-D/1-4 选当前题、←/→ 移动视图、回车走确认。
@@ -473,8 +539,14 @@ export function ExamStage({
   const retake = () => {
     setAnswers({})
     setSubmitted(false)
-    setViewIdx(0)
     setLastAttempt(null)
+    if (targetIdx >= 0) {
+      // 定位练习的「重来」是重做这一题，不是从整卷开头重播
+      setViewIdx(targetIdx)
+      seekToQuestion(targetIdx)
+      return
+    }
+    setViewIdx(0)
     onRestart()
   }
 
@@ -498,6 +570,13 @@ export function ExamStage({
           <div className="exam-head-status">
             <span className={submitted ? 'exam-dot done' : 'exam-dot live'} />
             <span>{submitted ? t('exam.submitted') : t('exam.inProgress')}</span>
+          </div>
+        )}
+        {/* 定位练习要说清楚「这不是一场完整考试」：否则用户会拿 1/25 的分自我怀疑 */}
+        {targeted && !submitted && (
+          <div className="exam-target-chip">
+            <Target size={13} aria-hidden="true" />
+            <span>{t('exam.targetedChip', { n: initialQuestion ?? 0 })}</span>
           </div>
         )}
         <div className="exam-head-progress">
@@ -701,20 +780,40 @@ export function ExamStage({
         <>
           <div className="exam-score-card">
             <div className="exam-score-ring">
-              <span className="exam-score-value">{score}</span>
-              <span className="exam-score-total">/ {questions.length}</span>
+              {/* 定位练习只有一道题的成绩，画成 x/25 的环只会让人以为考砸了 */}
+              {targeted ? (
+                <span className={targetCorrect ? 'exam-score-value is-ok' : 'exam-score-value is-bad'}>
+                  {targetCorrect ? '✓' : '✗'}
+                </span>
+              ) : (
+                <>
+                  <span className="exam-score-value">{score}</span>
+                  <span className="exam-score-total">/ {questions.length}</span>
+                </>
+              )}
             </div>
             <div className="exam-score-side">
-              <p className="exam-score-line">{t('exam.scoreLine', { score, total: questions.length })}</p>
-              <p className="exam-score-sub">{t('exam.scoreSub', {
-                wrong: answeredCount - score,
-                unanswered: questions.length - answeredCount,
-              })}</p>
-              {lastAttempt && (
+              <p className="exam-score-line">
+                {targeted
+                  ? t('exam.targetedResult', {
+                      n: initialQuestion ?? 0,
+                      result: targetCorrect ? t('exam.targetedRight') : t('exam.targetedWrong'),
+                    })
+                  : t('exam.scoreLine', { score, total: questions.length })}
+              </p>
+              {!targeted && (
+                <p className="exam-score-sub">{t('exam.scoreSub', {
+                  wrong: answeredCount - score,
+                  unanswered: questions.length - answeredCount,
+                })}</p>
+              )}
+              {/* 单题定位的卷面折算没有意义（1 题满分 248.5 会吓人），只报对错 */}
+              {lastAttempt && !targeted && (
                 <p className="exam-scaled">{t('exam.scaledScore', {
                   score: Math.round((lastAttempt.score / lastAttempt.total) * SCALED_FULL * 10) / 10,
                 })}</p>
               )}
+              {targeted && <p className="exam-targeted-note">{t('exam.targetedNotRecorded')}</p>}
               {wrongUnion.length > 0 && (
                 <button
                   className="exam-retake"

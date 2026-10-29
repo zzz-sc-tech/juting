@@ -38,6 +38,25 @@
   gap: 8px;
 }
 
+/* 定位练习的身份标记：说明这场只为一题而来，不是整卷开考 */
+.exam-target-chip {
+  align-items: center;
+  background: var(--accent-soft);
+  border-radius: var(--radius-pill);
+  color: var(--accent-ink);
+  display: inline-flex;
+  font-size: 12px;
+  font-weight: 500;
+  gap: 5px;
+  padding: 4px 10px;
+}
+
+.exam-targeted-note {
+  color: var(--ink-3);
+  font-size: 12px;
+  margin: 8px 0 0;
+}
+
 .exam-dot {
   border-radius: 50%;
   height: 8px;
@@ -390,6 +409,15 @@
   font-size: 40px;
   font-weight: 700;
   line-height: 1;
+}
+
+/* 定位练习的结论：只报这一题的对错 */
+.exam-score-value.is-ok {
+  color: var(--success);
+}
+
+.exam-score-value.is-bad {
+  color: var(--danger);
 }
 
 .exam-score-total {

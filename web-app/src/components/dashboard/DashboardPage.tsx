@@ -376,13 +376,22 @@ export function DashboardPage() {
             <section className="dashboard-card dashboard-wrong-card" aria-label={t('dashboard.wrong.title')}>
               <div className="dashboard-card-head">
                 <h2>{t('dashboard.wrong.title')}</h2>
+                {wrongTop.length > 0 && (
+                  <span className="dashboard-card-subtitle">{t('dashboard.wrong.hint')}</span>
+                )}
               </div>
               {wrongTop.length > 0 ? (
                 <ul className="dashboard-wrong-list">
                   {wrongTop.map((stat) => (
                     <li key={`${stat.courseId}:${stat.questionNo}`}>
                       <button
-                        onClick={() => navigate(`/courses/${stat.categoryId}/chapters/${stat.courseId}?stage=intensive`)}
+                        /* 点进去直接停在那一题（实战舞台的定位练习），
+                           原先只到精听首页，用户还得自己找回题号 */
+                        onClick={() =>
+                          navigate(
+                            `/courses/${stat.categoryId}/chapters/${stat.courseId}?stage=exam&q=${stat.questionNo}`,
+                          )
+                        }
                         type="button"
                       >
                         <CircleAlert size={14} aria-hidden="true" className="dashboard-wrong-icon" />

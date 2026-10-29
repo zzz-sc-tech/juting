@@ -33,4 +33,5 @@ export const dashboardMessages = {
     'dashboard.wrong.item': '{{title}} · 第 {{no}} 题',
     'dashboard.wrong.meta': '错 {{wrong}} 次 / 考过 {{attempts}} 场 · Section {{section}}',
     'dashboard.wrong.empty': '还没有反复错的题——保持！',
+    'dashboard.wrong.hint': '点一题去实战重做',
 }
