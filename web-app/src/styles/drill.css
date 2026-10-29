@@ -471,6 +471,34 @@
   padding: 16px 20px;
 }
 
+.drill-stats-head {
+  align-items: baseline;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-bottom: 10px;
+}
+
+.drill-stats-head h2 {
+  color: var(--ink);
+  font-size: 14px;
+  font-weight: 600;
+  margin: 0;
+}
+
+.drill-stats-total {
+  color: var(--ink-3);
+  font-size: 12px;
+  font-variant-numeric: tabular-nums;
+}
+
+.drill-stats-head .drill-ghost {
+  margin-left: auto;
+  min-height: 28px;
+  padding: 0 10px;
+  font-size: 12px;
+}
+
 .drill-stats h2 {
   color: var(--ink);
   font-size: 14px;

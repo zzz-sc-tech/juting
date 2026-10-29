@@ -59,9 +59,18 @@ export function useDrillData() {
     }
     let mounted = true
     setStatus('loading')
-    Promise.all(categories.map((category) => fetchFullExercises(category.id)))
-      .then((lists) => {
+    // 用 allSettled：某一门课的摘要挂了，其他课的题照样能练——
+    // 专项刷题的题池是「越多越好」，没有理由为了一门课把整页打成错误态
+    Promise.allSettled(categories.map((category) => fetchFullExercises(category.id)))
+      .then((results) => {
         if (!mounted) return
+        const lists = results.flatMap((result) =>
+          result.status === 'fulfilled' ? [result.value] : [],
+        )
+        if (lists.length === 0) {
+          setStatus('error')
+          return
+        }
         setExercises(lists.flat())
         setStatus('ready')
       })

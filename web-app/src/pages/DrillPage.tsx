@@ -6,7 +6,12 @@ import { TopBar } from '../components/TopBar'
 import { useDrillData } from '../hooks/useDrillData'
 import { useLanguage } from '../i18n/LanguageProvider'
 import type { MessageKey } from '../i18n/messages'
-import { apiClient, resolveApiUrl } from '../lib/apiClient'
+import { resolveApiUrl } from '../lib/apiClient'
+import {
+  fetchExerciseDetail,
+  getCachedExerciseDetail,
+  prefetchExerciseDetail,
+} from '../lib/drillDetail'
 import {
   buildDrillPool,
   questionAudioRange,
@@ -17,6 +22,7 @@ import {
   accuracyOf,
   loadDrillStats,
   recordDrillAnswer,
+  resetDrillStats,
   type DrillStats,
 } from '../lib/drillStats'
 import {
@@ -54,9 +60,7 @@ const formatClock = (seconds: number) => {
   return `${Math.floor(whole / 60)}:${String(whole % 60).padStart(2, '0')}`
 }
 
-// 单课详情（拿题干时间轴）：按课缓存，一轮 10 题通常只碰 2-3 门课
-const detailCache = new Map<number, ListeningExercise>()
-
+// 单课详情（拿题干时间轴）：由 lib/drillDetail 统一缓存，换题时可直接命中预取结果
 function useExerciseDetailLite(exerciseId: number | null) {
   const [detail, setDetail] = useState<ListeningExercise | null>(null)
   useEffect(() => {
@@ -64,17 +68,15 @@ function useExerciseDetailLite(exerciseId: number | null) {
       setDetail(null)
       return
     }
-    const cached = detailCache.get(exerciseId)
+    const cached = getCachedExerciseDetail(exerciseId)
     if (cached) {
       setDetail(cached)
       return
     }
     let mounted = true
     setDetail(null)
-    apiClient
-      .getExercise(exerciseId, 'zh-CN')
+    fetchExerciseDetail(exerciseId)
       .then((exercise) => {
-        detailCache.set(exerciseId, exercise)
         if (mounted) setDetail(exercise)
       })
       .catch(() => {
@@ -140,6 +142,14 @@ export function DrillPage() {
 
   const current = round && round.index < round.queue.length ? round.queue[round.index] : null
   const finished = Boolean(round && round.index >= round.queue.length)
+  const nextQuestion =
+    round && round.index + 1 < round.queue.length ? round.queue[round.index + 1] : null
+
+  // 答当前题的时候就把下一题那门课的详情取好：换题时不再等一次 70KB 请求
+  useEffect(() => {
+    prefetchExerciseDetail(nextQuestion?.exerciseId)
+  }, [nextQuestion?.exerciseId])
+
   const detail = useExerciseDetailLite(current?.exerciseId ?? null)
   // 部分边界（Conversation 1 / Passage 2 …）：单题区间的起点靠它，
   // 否则只能从上一题念完处起播，等于把答案所在的材料切掉
@@ -313,6 +323,18 @@ export function DrillPage() {
     if (!window.confirm(t('drill.wrong.confirmClear'))) return
     setWrongStore(clearDrillWrong())
   }
+
+  const resetStats = () => {
+    if (!window.confirm(t('drill.stats.confirmReset'))) return
+    setStats(resetDrillStats())
+  }
+
+  const totalStat = useMemo(() => {
+    const correct = SECTIONS.reduce((sum, item) => sum + stats[item].correct, 0)
+    const wrong = SECTIONS.reduce((sum, item) => sum + stats[item].wrong, 0)
+    const total = correct + wrong
+    return { total, accuracy: total > 0 ? Math.round((correct / total) * 100) : null }
+  }, [stats])
 
   // ── 键盘作答：A–D / 1–4 选，Enter/→ 下一题，R 重听，S 跳过 ──
   // 处理器走 ref：播放中每 250ms 一次 timeupdate 都会重渲染，若进依赖数组，
@@ -606,7 +628,22 @@ export function DrillPage() {
             )}
 
             <section className="drill-stats" aria-label={t('drill.stats.title')}>
-              <h2>{t('drill.stats.title')}</h2>
+              <div className="drill-stats-head">
+                <h2>{t('drill.stats.title')}</h2>
+                <span className="drill-stats-total">
+                  {totalStat.accuracy === null
+                    ? t('drill.stats.totalEmpty')
+                    : t('drill.stats.total', {
+                        count: totalStat.total,
+                        accuracy: totalStat.accuracy,
+                      })}
+                </span>
+                {totalStat.total > 0 && (
+                  <button className="drill-ghost" onClick={resetStats} type="button">
+                    {t('drill.stats.reset')}
+                  </button>
+                )}
+              </div>
               <ul>
                 {SECTIONS.map((item) => {
                   const stat = stats[item]
