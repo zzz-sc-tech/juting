@@ -187,39 +187,45 @@ export function DashboardPage() {
   /**
    * 考试倒计时：剩余天数 + 「按现在的每日目标，到考试能覆盖多少」。
    * 只报天数作用有限，但也不该报「要刷完 48 门每天得 194 句」——那是做不到的数，
-   * 唯一作用是让人关掉这个应用。这里改成正向口径：按当前节奏算得出来的量。
+   * 唯一作用是让人关掉这个应用。口径取「正在学的课」：全部 48 门只是个素材库，
+   * 真正要复习完的是自己开过的那几门。
    */
   const countdown = useMemo(() => {
     if (!examDate) return null
     const days = daysUntil(examDate)
     if (days === null) return null
-    const totalLines = allExercises.reduce(
+    const allLines = allExercises.reduce(
       (sum, exercise) => sum + (exercise.contentLineCount ?? exercise.lineCount ?? 0),
       0,
     )
-    const remaining = Math.max(0, totalLines - totalMastered)
+    // 有在学课程就只看它们；一门都没开始时才回落到全部课程
+    const scoped = courseProgressList.length > 0
+    const scopeLines = scoped
+      ? courseProgressList.reduce((sum, entry) => sum + entry.total, 0)
+      : allLines
+    const scopeCount = scoped ? courseProgressList.length : allExercises.length
+    const remaining = Math.max(0, scopeLines - totalMastered)
     const capacity = totalMastered + dailyGoal * Math.max(0, days)
-    const perCourse = totalLines / Math.max(1, allExercises.length)
-    const courses = Math.min(
-      allExercises.length,
-      Math.round(capacity / Math.max(1, perCourse)),
-    )
+    const perCourse = scopeLines / Math.max(1, scopeCount)
+    const courses = Math.min(scopeCount, Math.round(capacity / Math.max(1, perCourse)))
     let pace = ''
-    if (totalLines > 0) {
+    if (scopeLines > 0) {
       if (days < 0) {
         pace = t('dashboard.countdown.past')
       } else if (days === 0) {
         pace = t('dashboard.countdown.today')
       } else if (remaining === 0) {
         pace = t('dashboard.countdown.done')
-      } else if (capacity >= totalLines) {
-        pace = t('dashboard.countdown.paceAll', { goal: dailyGoal })
+      } else if (capacity >= scopeLines) {
+        pace = scoped
+          ? t('dashboard.countdown.paceScopeAll', { goal: dailyGoal, count: scopeCount })
+          : t('dashboard.countdown.paceAll', { goal: dailyGoal })
       } else {
         pace = t('dashboard.countdown.pace', { goal: dailyGoal, capacity, courses })
       }
     }
     return { days, dateLabel: examDate.replaceAll('-', '.'), pace }
-  }, [allExercises, dailyGoal, examDate, t, totalMastered])
+  }, [allExercises, courseProgressList, dailyGoal, examDate, t, totalMastered])
 
   // 首页三个数字必须互相自洽：今日掌握 ≤ 累计掌握；今日有掌握则在学课程 ≥ 1。
   // 曾经出现过「今日 4 / 累计 0 / 在学 0」同屏（统计口径不同源），

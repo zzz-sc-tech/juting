@@ -41,6 +41,7 @@ export const dashboardMessages = {
     'dashboard.countdown.unit': '天',
     'dashboard.countdown.pace': '按每天 {{goal}} 句，到考试约掌握 {{capacity}} 句（≈ {{courses}} 门课）',
     'dashboard.countdown.paceAll': '按每天 {{goal}} 句，全部课程都覆盖得到',
+    'dashboard.countdown.paceScopeAll': '按每天 {{goal}} 句，在学的 {{count}} 门课都能覆盖',
     'dashboard.countdown.done': '全部句子都已掌握',
     'dashboard.countdown.today': '就是今天——去把错题过一遍',
     'dashboard.countdown.past': '考试日已过，改个新日期继续',
