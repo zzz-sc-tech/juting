@@ -18,15 +18,18 @@ import type {
   ExamQuestion,
   TranscriptLine,
 } from '@juting/shared'
-import { sectionOfQuestion, type ExamLetter, type ExamSection } from './examHistory'
+import {
+  sectionOfQuestion,
+  type ExamLetter,
+  type ExamSection,
+} from './examHistory'
+import { indexQuestionLines } from './questionLines'
 
 const LETTERS: ExamLetter[] = ['A', 'B', 'C', 'D']
 
 /** 材料报头：一个部分的起点（与 ExamStage 的部分划分同一套标签） */
 const PART_BOUNDARY = /^(?:Conversation|Passage|Recording|Text)\s*\d|^Section\s+[ABC]/i
 
-/** 题干行：'Q7. What...' / 'Question 7. What...' / 'Q7 What...' */
-const READ_OUT = /^(?:Q|Question)\s*(\d{1,2})\b/i
 
 export type DrillQuestion = {
   /** exerciseId:n，React key 与去重都用它 */
@@ -135,18 +138,6 @@ export type AudioRange = {
 const finite = (value: number | undefined | null): value is number =>
   typeof value === 'number' && Number.isFinite(value)
 
-/** 从字幕里按题干文本建「题号 → 题干行」索引；同一题号取第一次出现的行。 */
-const readOutIndex = (lines: TranscriptLine[]): Map<number, TranscriptLine> => {
-  const index = new Map<number, TranscriptLine>()
-  for (const line of lines) {
-    const match = READ_OUT.exec(line.text.trim())
-    if (!match) continue
-    const n = Number(match[1])
-    if (!index.has(n)) index.set(n, line)
-  }
-  return index
-}
-
 export type QuestionRangeOptions = {
   /** 部分是材料报头（Conversation 1 / Passage 2 / Recording 3 / Section A），由 extractDialogueAnchors 产出 */
   anchors?: DialogueAnchor[]
@@ -173,7 +164,7 @@ export const questionAudioRange = (
   if (!ordered.some((question) => question.n === targetN)) return null
 
   const lineById = new Map(lines.map((line) => [line.id, line]))
-  const readOuts = readOutIndex(lines)
+  const readOuts = indexQuestionLines(lines)
   const stemOf = (question: ExamQuestion | undefined) => {
     const id = question?.stemLineId
     return id ? lineById.get(id) : undefined

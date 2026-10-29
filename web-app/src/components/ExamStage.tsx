@@ -13,6 +13,7 @@ import type { DialogueAnchor, ExamQuestion, ListeningExercise } from '@juting/sh
 import { useLanguage } from '../i18n/LanguageProvider'
 import type { MessageKey } from '../i18n/messages'
 import { resolveApiUrl } from '../lib/apiClient'
+import { indexQuestionLines, resolveQuestionLine } from '../lib/questionLines'
 import { smoothOrAuto } from '../lib/scroll'
 import {
   getAttempts,
@@ -148,6 +149,8 @@ export function ExamStage({
   }, [])
 
   // 每题的时序锚：题干行（首选）或覆盖该题号的锚点块（兜底）。
+  // 题干行按字幕文本定位（见 lib/questionLines）：questions_json 的 stemLineId
+  // 有系统性偏移（950 题里 413 条指错），按文本找才能让高亮和「去句听」落对地方。
   const timing = useMemo(() => {
     const anchorStartByQuestion = new Map<number, number>()
     for (const anchor of dialogueAnchors) {
@@ -159,11 +162,9 @@ export function ExamStage({
         }
       }
     }
-    const lineById = new Map(exercise.lines.map((line) => [line.id, line]))
+    const questionLineIndex = indexQuestionLines(exercise.lines)
     return questions.map((question: ExamQuestion) => {
-      const line = question.stemLineId
-        ? lineById.get(question.stemLineId)
-        : undefined
+      const line = resolveQuestionLine(question, exercise.lines, questionLineIndex)
       const fallback = anchorStartByQuestion.get(question.n) ?? null
       const start = line?.start ?? fallback ?? Number.NaN
       return {
@@ -909,7 +910,7 @@ export function ExamStage({
                     <button
                       className="exam-review-jump"
                       onClick={() =>
-                        onGoIntensive(item.question.stemLineId ?? null, Number.isFinite(item.start) ? item.start : null)
+                        onGoIntensive(item.stem?.id ?? item.question.stemLineId ?? null, Number.isFinite(item.start) ? item.start : null)
                       }
                       type="button"
                     >
