@@ -1,0 +1,40 @@
+# 代码质量门禁：push 到 main 即跑 typecheck + 测试（语料审计另有 nightly audit.yml）。
+#
+# 背景（2026-11-01 立）：本仓库多 agent 跨会话改动，此前 typecheck/测试全靠本地
+# 手动跑——接手方实测发现 `npx tsc --noEmit` 在 web-app 下是空转（tsconfig 只有
+# references），必须 `tsc -b --force`，这里用真实命令。
+name: ci
+
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  checks:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 24
+
+      - name: 安装依赖
+        run: npm install --no-audit --no-fund
+
+      - name: web-app typecheck
+        run: npx tsc -b --force
+        working-directory: web-app
+
+      - name: web-app 测试
+        run: npx vitest run
+        working-directory: web-app
+
+      - name: backend typecheck
+        run: npx tsc --noEmit
+        working-directory: backend
