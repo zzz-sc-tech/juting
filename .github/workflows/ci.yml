@@ -27,6 +27,16 @@ jobs:
       - name: 安装依赖
         run: npm install --no-audit --no-fund
 
+      # web-app 的类型声明依赖工作区包的 dist（@juting/shared/domain 等）；
+      # 裸 checkout 不构建就 tsc，会报 Cannot find module '@juting/shared'
+      - name: 构建工作区包
+        run: |
+          npm run build --workspace @juting/domain
+          npm run build --workspace @juting/app-config
+          npm run build --workspace @juting/ui-tokens
+          npm run build --workspace @juting/api-client
+          npm run build --workspace @juting/shared
+
       - name: web-app typecheck
         run: npx tsc -b --force
         working-directory: web-app
