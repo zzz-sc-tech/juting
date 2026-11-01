@@ -184,6 +184,7 @@ export function DashboardPage() {
 
   const goalPercent = percentOf(todayCount, dailyGoal)
 
+
   /**
    * 考试倒计时：剩余天数 + 「按现在的每日目标，到考试能覆盖多少」。
    * 只报天数作用有限，但也不该报「要刷完 48 门每天得 194 句」——那是做不到的数，
@@ -227,6 +228,40 @@ export function DashboardPage() {
     return { days, dateLabel: examDate.replaceAll('-', '.'), pace }
   }, [allExercises, courseProgressList, dailyGoal, examDate, t, totalMastered])
 
+  /**
+   * 冲刺计划：把倒计时/进度/错题三张孤立数据卡串成「今天做什么」。
+   * 只在设了考试日期且未过期时出现——没有 D-day 就没有计划可言。
+   * 主任务取课：优先目录顺序里第一门没碰过的；全开过就回刷进度最低的。
+   */
+  const plan = useMemo(() => {
+    if (!countdown || countdown.days < 0) return null
+    const startedIds = new Set(courseProgressList.map((entry) => entry.exercise.id))
+    const ordered = [...allExercises].sort(
+      (left, right) => left.categoryId - right.categoryId || left.id - right.id,
+    )
+    const untouched = ordered.find((exercise) => !startedIds.has(exercise.id))
+    const weakest = [...courseProgressList].sort((left, right) => left.percent - right.percent)[0]
+    const courseRow = untouched
+      ? {
+          exercise: untouched,
+          label: t('dashboard.plan.untouched', { title: untouched.title }),
+          detail: t('dashboard.plan.untouchedDetail', {
+            index: ordered.indexOf(untouched) + 1,
+            count: ordered.length,
+          }),
+        }
+      : weakest
+        ? {
+            exercise: weakest.exercise,
+            label: t('dashboard.plan.weakest', { title: weakest.exercise.title }),
+            detail: t('dashboard.plan.weakestDetail', { percent: weakest.percent }),
+          }
+        : null
+    const bySection: Record<'A' | 'B' | 'C', number> = { A: 0, B: 0, C: 0 }
+    for (const stat of wrongAll) bySection[stat.section] += 1
+    return { courseRow, bySection }
+  }, [countdown, allExercises, courseProgressList, wrongAll, t])
+
   // 首页三个数字必须互相自洽：今日掌握 ≤ 累计掌握；今日有掌握则在学课程 ≥ 1。
   // 曾经出现过「今日 4 / 累计 0 / 在学 0」同屏（统计口径不同源），
   // 用户第一反应是数据坏了。开发期把不自洽喊出来，别让它再悄悄出现。
@@ -267,6 +302,16 @@ export function DashboardPage() {
                 <span className="dashboard-hero-track">
                   <span className="dashboard-hero-fill" style={{ width: `${goalPercent}%` }} />
                 </span>
+                {/* 目标没完成时给一条最短路径：剩下的量去专项刷题补 */}
+                {goalPercent < 100 && dailyGoal > 0 && (
+                  <button
+                    className="dashboard-hero-goal-link"
+                    onClick={() => navigate('/drill')}
+                    type="button"
+                  >
+                    {t('dashboard.goal.drill', { count: dailyGoal - todayCount })}
+                  </button>
+                )}
               </div>
             </div>
             {/* 考试倒计时：没设日期就整块不渲染，不留一个「去设置」的空壳占首屏 */}
@@ -385,6 +430,55 @@ export function DashboardPage() {
                 </div>
               )}
             </section>
+
+            {/* 冲刺计划卡：设了考试日期才出现；紧跟继续学习卡——两卡都是「下一步」 */}
+            {plan && (
+              <section className="dashboard-card dashboard-plan-card">
+                <div className="dashboard-card-head">
+                  <h2>{t('dashboard.plan.title', { days: countdown?.days ?? 0 })}</h2>
+                  <span className="dashboard-card-subtitle">{t('dashboard.plan.subtitle')}</span>
+                </div>
+                <div className="dashboard-plan-rows">
+                  {plan.courseRow && (
+                    <div className="dashboard-plan-row">
+                      <div className="dashboard-plan-info">
+                        <strong>{plan.courseRow.label}</strong>
+                        <span>{plan.courseRow.detail}</span>
+                      </div>
+                      <button
+                        className="dashboard-primary-button"
+                        onClick={() => openCourse(plan.courseRow!.exercise)}
+                        type="button"
+                      >
+                        <Play size={14} aria-hidden="true" />
+                        {t('dashboard.plan.study')}
+                      </button>
+                    </div>
+                  )}
+                  {wrongAll.length > 0 && (
+                    <div className="dashboard-plan-row">
+                      <div className="dashboard-plan-info">
+                        <strong>{t('dashboard.plan.wrongTitle', { count: wrongAll.length })}</strong>
+                        <span>
+                          {t('dashboard.plan.wrongDetail', {
+                            a: plan.bySection.A,
+                            b: plan.bySection.B,
+                            c: plan.bySection.C,
+                          })}
+                        </span>
+                      </div>
+                      <button
+                        className="dashboard-primary-button is-ghost"
+                        onClick={() => navigate('/wrong')}
+                        type="button"
+                      >
+                        {t('dashboard.plan.wrongAction')}
+                      </button>
+                    </div>
+                  )}
+                </div>
+              </section>
+            )}
 
             <section className="dashboard-card dashboard-chart-card">
               <div className="dashboard-card-head">

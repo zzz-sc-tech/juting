@@ -627,3 +627,56 @@
     max-width: none;
   }
 }
+
+/* 目标环下的刷题捷径：目标没完成时的最短路径 */
+.dashboard-hero-goal-link {
+  background: none;
+  border: none;
+  color: var(--accent);
+  cursor: pointer;
+  font-size: 12px;
+  margin-top: 6px;
+  padding: 0;
+  text-align: left;
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+
+.dashboard-hero-goal-link:hover {
+  color: var(--accent-strong);
+}
+
+/* 冲刺计划卡：两行动作行 */
+.dashboard-plan-rows {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.dashboard-plan-row {
+  align-items: center;
+  background: var(--bg-sunken);
+  border: 1px solid var(--line);
+  border-radius: var(--radius-md);
+  display: flex;
+  gap: 12px;
+  justify-content: space-between;
+  padding: 10px 14px;
+}
+
+.dashboard-plan-info {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  min-width: 0;
+}
+
+.dashboard-plan-info strong {
+  color: var(--ink);
+  font-size: 14px;
+}
+
+.dashboard-plan-info span {
+  color: var(--ink-3);
+  font-size: 12px;
+}
