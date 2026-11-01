@@ -211,3 +211,28 @@
     display: none;
   }
 }
+
+/* 题型筛选 chips（全部/A/B/C） */
+.wrongbook-filter {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-bottom: 14px;
+}
+
+.wrongbook-chip {
+  background: var(--bg-sunken);
+  border: 1px solid var(--line);
+  border-radius: var(--radius-pill);
+  color: var(--ink-2);
+  cursor: pointer;
+  font-size: 13px;
+  padding: 5px 14px;
+}
+
+.wrongbook-chip.active {
+  background: var(--accent-soft);
+  border-color: var(--accent);
+  color: var(--accent-ink);
+  font-weight: 600;
+}

@@ -50,6 +50,7 @@ export function WrongBookPage() {
   const { catalog, catalogLoadFailed, catalogLoading, reload } = useCatalog(undefined)
   const { exercisesByCategory, loadExercises } = useCategoryExercises(undefined)
   const [collapsed, setCollapsed] = useState<Partial<Record<ExamSection, boolean>>>({})
+  const [filter, setFilter] = useState<'all' | ExamSection>('all')
 
   useEffect(() => {
     for (const category of catalog.categories) {
@@ -105,6 +106,17 @@ export function WrongBookPage() {
     [rows],
   )
 
+  const sectionCounts = useMemo(() => {
+    const counts: Record<ExamSection, number> = { A: 0, B: 0, C: 0 }
+    for (const row of rows) counts[row.section] += 1
+    return counts
+  }, [rows])
+
+  const visibleGroups = useMemo(
+    () => (filter === 'all' ? grouped : grouped.filter(({ section }) => section === filter)),
+    [filter, grouped],
+  )
+
   const loading = catalogLoading && allExercises.length === 0
 
   return (
@@ -138,11 +150,34 @@ export function WrongBookPage() {
             <p className="wrongbook-empty-hint">{t('wrongBook.emptyHint')}</p>
           </div>
         ) : (
-          <div className="wrongbook-groups">
-            {grouped.map(({ section, items }) => {
-              if (items.length === 0) return null
-              const isCollapsed = collapsed[section] === true
-              return (
+          <>
+            <div className="wrongbook-filter" role="group" aria-label={t('wrongBook.filterLabel')}>
+              <button
+                aria-pressed={filter === 'all'}
+                className={filter === 'all' ? 'wrongbook-chip active' : 'wrongbook-chip'}
+                onClick={() => setFilter('all')}
+                type="button"
+              >
+                {t('wrongBook.filterAll', { count: rows.length })}
+              </button>
+              {SECTIONS.map((section) => (
+                <button
+                  aria-pressed={filter === section}
+                  className={filter === section ? 'wrongbook-chip active' : 'wrongbook-chip'}
+                  key={section}
+                  onClick={() => setFilter(section)}
+                  type="button"
+                >
+                  {t(SECTION_LABEL[section])} · {sectionCounts[section]}
+                </button>
+              ))}
+            </div>
+            <div className="wrongbook-groups">
+              {visibleGroups.map(({ section, items }) => {
+                if (items.length === 0) return null
+                // 筛到单一 Section 时无视折叠态——用户点名要看的就是它
+                const isCollapsed = filter === 'all' && collapsed[section] === true
+                return (
                 <section className="wrongbook-group" key={section}>
                   <button
                     aria-expanded={!isCollapsed}
@@ -200,7 +235,11 @@ export function WrongBookPage() {
                 </section>
               )
             })}
-          </div>
+            {visibleGroups.every(({ items }) => items.length === 0) && (
+              <p className="wrongbook-empty">{t('wrongBook.filterEmpty')}</p>
+            )}
+            </div>
+          </>
         )}
       </div>
     </div>
